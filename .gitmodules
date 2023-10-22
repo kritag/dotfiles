@@ -1,0 +1,6 @@
+[submodule "pfetch"]
+	path = pfetch
+	url = https://github.com/dylanaraps/pfetch
+[submodule "dracula_terminator"]
+	path = dracula_terminator
+	url = https://github.com/dracula/terminator
