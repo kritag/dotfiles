@@ -4,3 +4,6 @@
 [submodule "dracula_terminator"]
 	path = dracula_terminator
 	url = https://github.com/dracula/terminator
+[submodule "GTK4ThemeAdapter"]
+	path = GTK4ThemeAdapter
+	url = https://github.com/Cornul11/GTK4ThemeAdapter/
