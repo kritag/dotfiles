@@ -1,0 +1,213 @@
+[global_config]
+  broadcast_default = off
+  inactive_color_offset = 0.61
+  enabled_plugins = Logger, TerminatorThemes
+  suppress_multiple_term_dialog = True
+  putty_paste_style_source_clipboard = True
+  link_single_click = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#282a36"
+    font = DroidSansM Nerd Font 11
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#262626:#e356a7:#42e66c:#e4f34a:#9b6bdf:#e64747:#75d7ec:#efa554:#7a7a7a:#ff79c6:#50fa7b:#f1fa8c:#bd93f9:#ff5555:#8be9fd:#ffb86c"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[Chesterish]]
+    background_color = "#293340"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#cdd2e9"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#293340:#e17e85:#61ba86:#ffec8e:#4cb2ff:#be86e3:#2dced0:#cdd2e9:#546386:#e17e85:#61ba86:#ffec8e:#4cb2ff:#be86e3:#2dced0:#cdd2e9"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[Abernathy]]
+    background_color = "#111416"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#eeeeec"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#1093f5:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#11b5f6:#ff00ff:#00ffff:#ffffff"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[Aci]]
+    background_color = "#0d1926"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#b4e1fd"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6:#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[Aco]]
+    background_color = "#1f1305"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#b4e1fd"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#3f3f3f:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#bebebe:#474747:#ff1e8e:#8eff1e:#ff8e1e:#0883ff:#8e1eff:#1eff8e:#c4c4c4"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[Adventure]]
+    background_color = "#040404"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#feffff"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#040404:#d84a33:#5da602:#eebb6e:#417ab3:#e5c499:#bdcfe5:#dbded8:#685656:#d76b42:#99b52c:#ffb670:#97d7ef:#aa7900:#bdcfe5:#e4d5c7"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[AdventureTime]]
+    background_color = "#1f1d45"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#f8dcc0"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#050404:#bd0013:#4ab118:#e7741e:#0f4ac6:#665993:#70a598:#f8dcc0:#4e7cbf:#fc5f5a:#9eff6e:#efc11a:#1997c6:#9b5953:#c8faf4:#f6f5fb"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[After Dark]]
+    background_color = "#10111b"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#2e3436:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#d3d7cf:#555753:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#eeeeec"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[Andromeda]]
+    background_color = "#262a33"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#e5e5e5"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#000000:#cd3131:#05bc79:#e5e512:#2472c8:#bc3fbc:#0fa8cd:#e5e5e5:#666666:#cd3131:#05bc79:#e5e512:#2472c8:#bc3fbc:#0fa8cd:#e5e5e5"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[arcoiris]]
+    background_color = "#201f1e"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#eee4d9"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#333333:#da2700:#12c258:#ffc656:#518bfc:#e37bd9:#63fad5:#bab2b2:#777777:#ffb9b9:#e3f6aa:#ffddaa:#b3e8f3:#cbbaf9:#bcffc7:#efefef"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[Ayu mirage]]
+    background_color = "#1f2430"
+    font = DroidSansMono Nerd Font 11
+    foreground_color = "#cbccc6"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#191e2a:#ed8274:#a6cc70:#fad07b:#6dcbfa:#cfbafa:#90e1c6:#c7c7c7:#686868:#f28779:#bae67e:#ffd580:#73d0ff:#d4bfff:#95e6cb:#ffffff"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+  [[Dracula]]
+    background_color = "#1e1f29"
+    cursor_bg_color = "#aaaaaa"
+    font = DroidSansM Nerd Font 11
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    scrollback_lines = 10000
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 1920, 1011
+      title = ""
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = None, None, None, None, None, None
+      last_active_term = 15a108ef-4605-471c-ab0e-bc4f2efc7d4e, 49649394-01bf-402b-b7d9-4381f06be004, 22da856d-836c-4c3f-847f-968bc208b5a8, c0a12552-80ed-438f-aa8e-4d006c95b662, b556edc1-1330-4969-9922-485dd7dd6036, 7e870c3a-8e5b-4e88-bb99-5e35de871fe6
+      active_page = 2
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = 15a108ef-4605-471c-ab0e-bc4f2efc7d4e
+    [[[child3]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 1266
+      ratio = 0.661787767903816
+    [[[child4]]]
+      type = HPaned
+      parent = child3
+      order = 0
+      position = 625
+      ratio = 0.4956383822363204
+    [[[terminal5]]]
+      type = Terminal
+      parent = child4
+      order = 0
+      group = Tab 1
+      profile = default
+      uuid = 49649394-01bf-402b-b7d9-4381f06be004
+    [[[terminal6]]]
+      type = Terminal
+      parent = child4
+      order = 1
+      group = Tab 1
+      profile = default
+      uuid = 9d757cf2-f039-429a-a041-256b136a6f4a
+    [[[terminal7]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      group = Tab 1
+      profile = default
+      uuid = a9e3cf0f-1ed8-4293-9ed7-0557e08a65d7
+    [[[terminal8]]]
+      type = Terminal
+      parent = child1
+      order = 2
+      profile = default
+      uuid = 22da856d-836c-4c3f-847f-968bc208b5a8
+    [[[terminal9]]]
+      type = Terminal
+      parent = child1
+      order = 3
+      profile = default
+      uuid = c0a12552-80ed-438f-aa8e-4d006c95b662
+    [[[terminal10]]]
+      type = Terminal
+      parent = child1
+      order = 4
+      profile = default
+      uuid = b556edc1-1330-4969-9922-485dd7dd6036
+    [[[terminal11]]]
+      type = Terminal
+      parent = child1
+      order = 5
+      profile = default
+      uuid = 7e870c3a-8e5b-4e88-bb99-5e35de871fe6
+[plugins]
