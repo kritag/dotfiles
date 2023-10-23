@@ -1,5 +1,4 @@
 #zmodload zsh/zprof
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -39,6 +38,8 @@ export SYSTEMD_EDITOR=vim
 
 alias sudo='sudo '
 alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(git rev-parse --abbrev-ref HEAD | tr / -).patch ; cd $(git rev-parse --show-toplevel) ; git format-patch master --stdout > $XXX_PATCH ; cd - ; echo Patchfile created: $XXX_PATCH'
+alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager grep"
+alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
 
 # Using lsdeluxe instead of ls, see https://github.com/Peltoche/lsd
 alias ls='lsd'
@@ -53,22 +54,11 @@ compdef _ssh_hosts s sr
 zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
 
 # Display system info https://github.com/dylanaraps/pfetch
-PF_INFO="ascii title os host kernel uptime memory" /usr/local/bin/pfetch 
+PF_INFO="ascii title os host kernel wm editor uptime shell palette" /usr/local/bin/pfetch 
 PATH="${PATH}:/home/tageskri/.local/bin:/home/tageskri/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_ROOT:-$HOME/.krew}/bin"; export PATH;
 
 # Source k8s related functions and kube-ps1 prompt
 source $HOME/.zshrc-k8s.zsh
-# This speeds up pasting w/ autosuggest
-# https://github.com/zsh-users/zsh-autosuggestions/issues/238
-#pasteinit() {
-#  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-#  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
-#}
-#pastefinish() {
-#  zle -N self-insert $OLD_SELF_INSERT
-#}
-#zstyle :bracketed-paste-magic paste-init pasteinit
-#zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # Adds completion from brew
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
