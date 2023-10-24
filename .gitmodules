@@ -7,3 +7,22 @@
 [submodule "GTK4ThemeAdapter"]
 	path = GTK4ThemeAdapter
 	url = https://github.com/Cornul11/GTK4ThemeAdapter/
+[submodule "zsh-autosuggestions"]
+	path = zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "lsd"]
+	path = lsd
+	url = https://github.com/dracula/lsd
+[submodule "dracula_lsd"]
+	path = dracula_lsd
+	url = https://github.com/dracula/lsd
+[submodule "dracula_gtk"]
+	path = dracula_gtk
+	url = https://github.com/dracula/gtk
+[submodule "dracula_zsh"]
+	path = dracula_zsh
+	url = https://github.com/dracula/zsh
