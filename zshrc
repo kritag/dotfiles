@@ -1,36 +1,19 @@
 #zmodload zsh/zprof
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="dracula"
-
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="false"
 
-plugins=(
-    git 
-    gitfast
-    oc
-    cp 
-    colored-man-pages 
-    colorize 
-    kube-ps1
-    kubectx
-    kubectl
-    pip 
-    python 
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
+# source antidote
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-
-source $HOME/bin/zsh-syntax-highlighting.zshrc
-source $HOME/bin/manpages.zshrc
-source $ZSH/oh-my-zsh.sh
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
+#source $HOME/antigen.zsh
+#antigen init .antigenrc
+#source $HOME/bin/zsh-syntax-highlighting.zshrc
+#source $HOME/bin/manpages.zshrc
 source $HOME/.env
 
 export EDITOR=vim
@@ -41,7 +24,7 @@ alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(
 alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager grep"
 alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
 
-# Using lsdeluxe instead of ls, see https://github.com/Peltoche/lsd
+# Using lsdeluxe instead of ls
 alias ls='lsd'
 
 # Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
@@ -68,5 +51,24 @@ DRACULA_DISPLAY_CONTEXT=1
 DRACULA_DISPLAY_FULL_CWD=1
 DRACULA_DISPLAY_NEW_LINE=1
 
-autoload -U +X compinit && compinit
+# Fix zsh-syntax hightlight
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 
+#
+ZSH_COLORIZE_STYLE="dracula"
+
+autoload -Uz compinit
+ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
+
+# cache .zcompdump for about a day
+if [[ $ZSH_COMPDUMP(#qNmh-20) ]]; then
+  compinit -C -d "$ZSH_COMPDUMP"
+else
+  compinit -i -d "$ZSH_COMPDUMP"; touch "$ZSH_COMPDUMP"
+fi
+{
+  # compile .zcompdump
+  if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
+    zcompile "$ZSH_COMPDUMP"
+  fi
+} &!

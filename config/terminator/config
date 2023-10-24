@@ -1,5 +1,7 @@
 [global_config]
   broadcast_default = off
+  use_custom_url_handler = True
+  custom_url_handler = firefox
   inactive_color_offset = 0.61
   enabled_plugins = Logger, TerminatorThemes
   suppress_multiple_term_dialog = True
