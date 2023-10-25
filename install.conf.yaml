@@ -18,6 +18,27 @@
       path: dracula_vim/*
       glob: true
       exclude: [ dracula_vim/*.md, dracula_vim/LICENSE, dracula_vim/doc, dracula_vim/*.png ]
+    ~/.themes/Dracula:
+      create: true
+      path: dracula_gtk/*
+      glob: true
+      exclude: [ dracula_gtk/*.md, dracula_gtk/LICENSE, dracula_gtk/doc, dracula_gtk/*.png ]
+    ~/.config/gtk-4.0:
+      create: true
+      glob: true
+      path: dracula_gtk/gtk-4.0/*
+    ~/.config/assets:
+      create: true
+      glob: true
+      path: dracula_gtk/assets/*
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  -
+    command: wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/
+    stdout: true
+    description: Installing the dracula cursor theme
+  -
+    ommand: wget https://github.com/dracula/gtk/files/5214870/Dracula.zip -O ~/.tmp/temp.zip; unzip -d ~/.icons/ ~/.tmp/temp.zip; rm ~/.tmp/temp.zip
+    stdout: true
+    description: Installing the dracula icon theme
