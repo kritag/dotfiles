@@ -7,12 +7,17 @@
 - link:
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.gitconfig.local:
+    ~/.gitconfig:
+      create: true
+      path: dracula_git/config/gitconfig
     ~/.config/terminator:
       create: true
       path: config/terminator/*
       glob: true
     ~/.zsh_plugins.txt: zsh_plugins.txt
     ~/.zshrc-k8s.zsh: zshrc-k8s.zsh
+    ~/.config/btop/themes/dracula.theme: dracula_bashtop/dracula.theme
     ~/.vim/pack/themes/start/dracula:
       create: true
       path: dracula_vim/*
@@ -32,13 +37,21 @@
       glob: true
       path: dracula_gtk/assets/*
 
+- sudo:
+    - link:
+        /usr/share/gnome-text-editor/styles/dracula.xml: dracula_gedit/dracula.xml
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   -
     command: wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/
-    stdout: true
+      #stdout: true
     description: Installing the dracula cursor theme
   -
-    ommand: wget https://github.com/dracula/gtk/files/5214870/Dracula.zip -O ~/.tmp/temp.zip; unzip -d ~/.icons/ ~/.tmp/temp.zip; rm ~/.tmp/temp.zip
-    stdout: true
+    command: wget https://github.com/dracula/gtk/files/5214870/Dracula.zip -O ~/.tmp/temp.zip;  unzip -d ~/.icons/ ~/.tmp/temp.zip; rm ~/.tmp/temp.zip
+      #stdout: true
     description: Installing the dracula icon theme
+  -
+    command: ./set_dracula_theme.sh
+    stdout: true
+    description: Setting the Dracula theme
