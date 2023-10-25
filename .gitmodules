@@ -26,3 +26,9 @@
 [submodule "dracula_zsh"]
 	path = dracula_zsh
 	url = https://github.com/dracula/zsh
+[submodule "dracula_vim"]
+	path = dracula_vim
+	url = https://github.com/dracula/vim
+[submodule "dracula_slack"]
+	path = dracula_slack
+	url = https://github.com/dracula/slack

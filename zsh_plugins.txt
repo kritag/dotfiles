@@ -20,3 +20,4 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 dracula/zsh-syntax-highlighting
 dracula/zsh
+dracula/zsh     path:lib

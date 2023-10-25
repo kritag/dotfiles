@@ -5,7 +5,6 @@
 - clean: ['~']
 
 - link:
-  #~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.config/terminator:
@@ -13,6 +12,12 @@
       path: config/terminator/*
       glob: true
     ~/.zsh_plugins.txt: zsh_plugins.txt
+    ~/.zshrc-k8s.zsh: zshrc-k8s.zsh
+    ~/.vim/pack/themes/start/dracula:
+      create: true
+      path: dracula_vim/*
+      glob: true
+      exclude: [ dracula_vim/*.md, dracula_vim/LICENSE, dracula_vim/doc, dracula_vim/*.png ]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
