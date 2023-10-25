@@ -32,3 +32,15 @@
 [submodule "dracula_slack"]
 	path = dracula_slack
 	url = https://github.com/dracula/slack
+[submodule "dracula_gedit"]
+	path = dracula_gedit
+	url = https://github.com/dracula/gedit
+[submodule "dotbot-sudo"]
+	path = dotbot-sudo
+	url = https://github.com/DrDynamic/dotbot-sudo.git
+[submodule "dracula_git"]
+	path = dracula_git
+	url = https://github.com/dracula/git
+[submodule "dracula_bashtop"]
+	path = dracula_bashtop
+	url = https://github.com/dracula/bashtop
