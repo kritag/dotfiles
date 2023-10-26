@@ -17,7 +17,15 @@
       glob: true
     ~/.zsh_plugins.txt: zsh_plugins.txt
     ~/.zshrc-k8s.zsh: zshrc-k8s.zsh
+    ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/btop/themes/dracula.theme: dracula_bashtop/dracula.theme
+    ~/.config/lvim/config.lua: config/lvim/config.lua
+    ~/.config/lsd/themes/dracula.yaml:
+      create: true
+      path: dracula_lsd/dracula.yaml
+    ~/.config/lsd/config.yaml:
+      create: true
+      path: dracula_lsd/config.yaml
     ~/.vim/pack/themes/start/dracula:
       create: true
       path: dracula_vim/*

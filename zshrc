@@ -1,9 +1,25 @@
-#zmodload zsh/zprof
+zmodload zsh/zprof
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="false"
+
+autoload -Uz compinit
+ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
+
+# cache .zcompdump for about a day
+if [[ $ZSH_COMPDUMP(#qNmh-20) ]]; then
+  compinit -C -d "$ZSH_COMPDUMP"
+else
+  compinit -i -d "$ZSH_COMPDUMP"; touch "$ZSH_COMPDUMP"
+fi
+{
+  # compile .zcompdump
+  if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
+    zcompile "$ZSH_COMPDUMP"
+  fi
+} &!
 
 # source antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
@@ -15,6 +31,8 @@ antidote load
 #source $HOME/bin/zsh-syntax-highlighting.zshrc
 #source $HOME/bin/manpages.zshrc
 source $HOME/.env
+
+export ZSH_CACHE_DIR="$HOME/.cache"
 
 export EDITOR=vim
 export SYSTEMD_EDITOR=vim
@@ -57,18 +75,3 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 #
 ZSH_COLORIZE_STYLE="dracula"
 
-autoload -Uz compinit
-ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
-
-# cache .zcompdump for about a day
-if [[ $ZSH_COMPDUMP(#qNmh-20) ]]; then
-  compinit -C -d "$ZSH_COMPDUMP"
-else
-  compinit -i -d "$ZSH_COMPDUMP"; touch "$ZSH_COMPDUMP"
-fi
-{
-  # compile .zcompdump
-  if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
-    zcompile "$ZSH_COMPDUMP"
-  fi
-} &!

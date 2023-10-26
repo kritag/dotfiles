@@ -6,6 +6,12 @@ then
     PROMPT='$(kube_ps1) '$PROMPT
 fi
 
+#function get_cluster_short() {
+#  echo "$1" | cut -d . -f1
+#}
+
+#KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
+
 function kresources () {
   # Get resource requests and limits for all containers in all pods in a namespace
   # Usage: kresources [<project_name>]
