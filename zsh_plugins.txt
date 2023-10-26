@@ -1,5 +1,3 @@
-#ohmyzsh/ohmyzsh
-#ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:lib/completion.zsh
 ohmyzsh/ohmyzsh path:lib/directories.zsh
@@ -12,8 +10,10 @@ ohmyzsh/ohmyzsh path:lib/misc.zsh
 ohmyzsh/ohmyzsh path:lib/prompt_info_functions.zsh
 ohmyzsh/ohmyzsh path:lib/spectrum.zsh
 ohmyzsh/ohmyzsh path:lib/termsupport.zsh
-ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
-ohmyzsh/ohmyzsh path:lib/vcs_info.zsh
+#ohmyzsh/ohmyzsh path:lib/theme-and-appearance.zsh
+#ohmyzsh/ohmyzsh path:lib/vcs_info.zsh
+# Plugins
+ohmyzsh/ohmyzsh path:plugins/dirhistory
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
 ohmyzsh/ohmyzsh path:plugins/oc

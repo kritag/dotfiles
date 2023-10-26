@@ -8,6 +8,10 @@
   putty_paste_style_source_clipboard = True
   link_single_click = True
 [keybindings]
+  go_up = ""
+  go_down = ""
+  go_left = ""
+  go_right = ""
 [profiles]
   [[default]]
     background_color = "#282a36"
