@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+#zmodload zsh/zprof
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
