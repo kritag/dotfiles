@@ -5,8 +5,9 @@
 - clean: ['~']
 
 - link:
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
+    ~/.vimrc: 
+    ~/.zshrc: 
+    ~/.aliases:
     ~/.gitconfig.local:
     ~/.gitconfig:
       create: true
