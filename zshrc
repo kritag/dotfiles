@@ -1,9 +1,14 @@
-#zmodload zsh/zprof
+zmodload zsh/zprof
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="false"
+
+PATH="${PATH}:$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_ROOT:-$HOME/.krew}/bin"; export PATH;
+
+# Adds completion from brew
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 autoload -Uz compinit
 ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
@@ -26,10 +31,7 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
-#source $HOME/antigen.zsh
-#antigen init .antigenrc
-#source $HOME/bin/zsh-syntax-highlighting.zshrc
-#source $HOME/bin/manpages.zshrc
+
 source $HOME/.env
 
 export ZSH_CACHE_DIR="$HOME/.cache"
@@ -37,17 +39,13 @@ export ZSH_CACHE_DIR="$HOME/.cache"
 export EDITOR=vim
 export SYSTEMD_EDITOR=vim
 
-alias sudo='sudo '
-alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(git rev-parse --abbrev-ref HEAD | tr / -).patch ; cd $(git rev-parse --show-toplevel) ; git format-patch master --stdout > $XXX_PATCH ; cd - ; echo Patchfile created: $XXX_PATCH'
-alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager grep"
-alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
+source $HOME/.aliases
 
-# Using lsdeluxe instead of ls
-alias ls='lsd'
-
-# Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
-alias sr='sshpass -f $HOME/pass ssh -l root -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
-alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
+# Ensure up and down arrow works for searching history
+bindkey '^[[A' history-substring-search-up
+bindkey '^[OA' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey '^[OB' history-substring-search-down
 
 # Ensuring that autocomplete works with sshpass aliases
 setopt COMPLETE_ALIASES
@@ -56,13 +54,9 @@ zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
 
 # Display system info https://github.com/dylanaraps/pfetch
 PF_INFO="ascii title os host kernel wm editor uptime shell palette" /usr/local/bin/pfetch 
-PATH="${PATH}:/home/tageskri/.local/bin:/home/tageskri/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_ROOT:-$HOME/.krew}/bin"; export PATH;
 
-# Source k8s related functions and kube-ps1 prompt
+# Sourcing k8s related stuff and prompt if using k8s
 source $HOME/.zshrc-k8s.zsh
-
-# Adds completion from brew
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # Theme env vars
 DRACULA_DISPLAY_CONTEXT=1
