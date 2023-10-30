@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+#zmodload zsh/zprof
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
@@ -48,12 +48,12 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^[OB' history-substring-search-down
 
 # Ensuring that autocomplete works with sshpass aliases
-setopt COMPLETE_ALIASES
-compdef _ssh_hosts s sr
+#setopt completealiases
+#compdef _ssh_hosts s sr
 zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
 
 # Display system info https://github.com/dylanaraps/pfetch
-PF_INFO="ascii title os host kernel wm editor uptime shell palette" /usr/local/bin/pfetch 
+PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/local/bin/pfetch 
 
 # Sourcing k8s related stuff and prompt if using k8s
 source $HOME/.zshrc-k8s.zsh
