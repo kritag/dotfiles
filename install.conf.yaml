@@ -45,6 +45,11 @@
       create: true
       glob: true
       path: dracula_gtk/assets/*
+        #~/.config/rofi/dracula_theme.rasi: dracula_rofi/theme/config1.rasi
+        #~/.config/rofi/:
+        #create: true
+        #path: config/rofi/*
+        #glob: true
 
 - sudo:
     - link:

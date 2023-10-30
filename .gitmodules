@@ -44,3 +44,6 @@
 [submodule "dracula_bashtop"]
 	path = dracula_bashtop
 	url = https://github.com/dracula/bashtop
+[submodule "dracula_rofi"]
+	path = dracula_rofi
+	url = https://github.com/dracula/rofi
