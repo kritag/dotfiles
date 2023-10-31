@@ -1,0 +1,47 @@
+# Installs dnf packages
+#- omnipkg:
+#    - install: [
+#        zsh,
+#        yp-tools,
+#        sqlite,
+#       dnf-automatic,
+#        btop,
+#        neovim]
+- install-brew: true
+
+- brewfile:
+    - Brewfile.server
+  
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean:
+    - "~"
+    - "~/.config"
+- link:
+    ~/.vimrc: 
+    ~/.zshrc: 
+    ~/.aliases:
+    ~/.gitconfig:
+      create: true
+      path: dracula_git/config/gitconfig
+    ~/.zsh_plugins.txt: zsh_plugins.txt
+    ~/.config/btop/btop.conf: config/btop/btop.conf
+    ~/.config/btop/themes/dracula.theme: dracula_bashtop/dracula.theme
+    ~/.config/lvim/config.lua: config/lvim/config.lua
+    ~/.config/lsd/themes/dracula.yaml:
+      create: true
+      path: dracula_lsd/dracula.yaml
+    ~/.config/lsd/config.yaml:
+      create: true
+      path: dracula_lsd/config.yaml
+    ~/.vim/pack/themes/start/dracula:
+      create: true
+      path: dracula_vim/*
+      glob: true
+      exclude: [ dracula_vim/*.md, dracula_vim/LICENSE, dracula_vim/doc, dracula_vim/*.png ]
+    
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
