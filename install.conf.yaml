@@ -1,3 +1,25 @@
+# Installs dnf packages
+#- omnipkg:
+#    - install: [
+#        zsh,
+#        yp-tools,
+#        vlc,
+#        terminator,
+#        sqlite,
+#        rpmrebuild,
+#        keepassxc,
+#        gnome-tweaks,
+#        freerdp,
+#        ffmpeg,
+#        dnf-automatic,
+#        btop,
+#        neovim]
+# Installs brew if missing
+- install-brew: true
+
+- brewfile:
+    - Brewfile.workstation
+
 - defaults:
     link:
       relink: true
@@ -45,11 +67,6 @@
       create: true
       glob: true
       path: dracula_gtk/assets/*
-        #~/.config/rofi/dracula_theme.rasi: dracula_rofi/theme/config1.rasi
-        #~/.config/rofi/:
-        #create: true
-        #path: config/rofi/*
-        #glob: true
 
 - sudo:
     - link:
@@ -69,3 +86,8 @@
     command: ./set_dracula_theme.sh
     stdout: true
     description: Setting the Dracula theme
+# Flatpaks
+- flatpak:
+    - com.github.tchx84.Flatseal
+    - com.microsoft.Edge
+    - com.spotify.Client

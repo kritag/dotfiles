@@ -47,3 +47,12 @@
 [submodule "dracula_rofi"]
 	path = dracula_rofi
 	url = https://github.com/dracula/rofi
+[submodule "dotbot-brew"]
+	path = dotbot-brew
+	url = https://github.com/wren/dotbot-brew.git
+[submodule "dotbot-flatpak"]
+	path = dotbot-flatpak
+	url = https://github.com/DrDynamic/dotbot-flatpak.git
+[submodule "dotbot-omnipkg"]
+	path = dotbot-omnipkg
+	url = https://github.com/code-maniac/dotbot-omnipkg
