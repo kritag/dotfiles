@@ -59,3 +59,6 @@
 [submodule "dracula-icons"]
 	path = dracula-icons
 	url = https://github.com/m4thewz/dracula-icons
+[submodule "zsh/antidote"]
+	path = zsh/antidote
+	url = https://github.com/mattmc3/antidote

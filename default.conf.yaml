@@ -22,12 +22,12 @@
     - "~/.config"
 - link:
     ~/.vimrc: 
-    ~/.zshrc: 
-    ~/.aliases:
+    ~/.zshrc: zsh/zshrc
+    ~/.aliases: zsh/aliases
+    ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.gitconfig:
       create: true
       path: dracula_git/config/gitconfig
-    ~/.zsh_plugins.txt: zsh_plugins.txt
     ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/btop/themes/dracula.theme: dracula_bashtop/dracula.theme
     ~/.config/lvim/config.lua: config/lvim/config.lua
@@ -43,5 +43,12 @@
       glob: true
       exclude: [ dracula_vim/*.md, dracula_vim/LICENSE, dracula_vim/doc, dracula_vim/*.png ]
     
+- sudo:
+    - shell:
+      -
+        command: sudo install pfetch/pfetch /usr/local/bin/
+        stdout: true
+        description: Installing pfetch
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

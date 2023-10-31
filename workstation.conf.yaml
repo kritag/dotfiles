@@ -22,7 +22,7 @@
       create: true
       path: config/terminator/*
       glob: true
-    ~/.zshrc-k8s.zsh: zshrc-k8s.zsh
+    ~/.zshrc-k8s.zsh: zsh/zshrc-k8s.zsh
     ~/.themes/Dracula:
       create: true
       path: dracula_gtk/*
