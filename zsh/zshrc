@@ -1,9 +1,8 @@
 #zmodload zsh/zprof
-# Uncomment the following line to automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="false"
+DOTFILES="$HOME/.dotfiles"
+source $DOTFILES/zsh/aliases
+source $DOTFILES/zsh/zshenv
+source $HOME/.env
 
 PATH="${PATH}:$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_ROOT:-$HOME/.krew}/bin"; export PATH;
 
@@ -27,19 +26,10 @@ fi
 } &!
 
 # source antidote
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+source $DOTFILES/zsh/antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
-
-source $HOME/.env
-
-export ZSH_CACHE_DIR="$HOME/.cache"
-
-export EDITOR=vim
-export SYSTEMD_EDITOR=vim
-
-source $HOME/.aliases
 
 # Ensure up and down arrow works for searching history
 bindkey '^[[A' history-substring-search-up
@@ -57,15 +47,4 @@ PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/loca
 
 # Sourcing k8s related stuff and prompt if using k8s
 source $HOME/.zshrc-k8s.zsh
-
-# Theme env vars
-DRACULA_DISPLAY_CONTEXT=1
-DRACULA_DISPLAY_FULL_CWD=1
-DRACULA_DISPLAY_NEW_LINE=1
-
-# Fix zsh-syntax hightlight
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
-
-#
-ZSH_COLORIZE_STYLE="dracula"
 

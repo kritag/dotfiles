@@ -664,7 +664,7 @@
   "system": {
     "linux": {
       "Fedora release 38 (Thirty Eight)": {
-        "HOMEBREW_VERSION": "4.1.18-27-ga36e145",
+        "HOMEBREW_VERSION": "4.1.18-29-g2b747f4",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
         "Homebrew/homebrew-core": "api",
         "GCC": "13.2.1"
