@@ -656,7 +656,7 @@
         }
       },
       "fluxcd/tap/flux": {
-        "version": "2.1.1",
+        "version": "2.1.2",
         "bottle": false
       }
     }
@@ -664,7 +664,7 @@
   "system": {
     "linux": {
       "Fedora release 38 (Thirty Eight)": {
-        "HOMEBREW_VERSION": "4.1.18-19-g0a6c521",
+        "HOMEBREW_VERSION": "4.1.18-23-gabc0eec",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
         "Homebrew/homebrew-core": "api",
         "GCC": "13.2.1"

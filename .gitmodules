@@ -56,3 +56,6 @@
 [submodule "dotbot-omnipkg"]
 	path = dotbot-omnipkg
 	url = https://github.com/code-maniac/dotbot-omnipkg
+[submodule "dracula-icons"]
+	path = dracula-icons
+	url = https://github.com/m4thewz/dracula-icons
