@@ -1,0 +1,50 @@
+#zmodload zsh/zprof
+DOTFILES="$HOME/.dotfiles"
+source $DOTFILES/zsh/aliases
+source $DOTFILES/zsh/zshenv
+source $HOME/.env
+
+PATH="${PATH}:$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_ROOT:-$HOME/.krew}/bin"; export PATH;
+
+# Adds completion from brew
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+autoload -Uz compinit
+ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
+
+# cache .zcompdump for about a day
+if [[ $ZSH_COMPDUMP(#qNmh-20) ]]; then
+  compinit -C -d "$ZSH_COMPDUMP"
+else
+  compinit -i -d "$ZSH_COMPDUMP"; touch "$ZSH_COMPDUMP"
+fi
+{
+  # compile .zcompdump
+  if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
+    zcompile "$ZSH_COMPDUMP"
+  fi
+} &!
+
+# source antidote
+source $DOTFILES/zsh/antidote/antidote.zsh
+
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
+
+# Ensure up and down arrow works for searching history
+bindkey '^[[A' history-substring-search-up
+bindkey '^[OA' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey '^[OB' history-substring-search-down
+
+# Ensuring that autocomplete works with sshpass aliases
+#setopt completealiases
+#compdef _ssh_hosts s sr
+zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
+
+# Display system info https://github.com/dylanaraps/pfetch
+PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/local/bin/pfetch 
+
+# Sourcing k8s related stuff and prompt if using k8s
+source $HOME/.zshrc-k8s.zsh
+
