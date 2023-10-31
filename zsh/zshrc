@@ -1,12 +1,10 @@
 #zmodload zsh/zprof
 DOTFILES="$HOME/.dotfiles"
 source $DOTFILES/zsh/aliases
-source $DOTFILES/zsh/zshenv
 source $HOME/.env
 
 PATH="${PATH}:$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_ROOT:-$HOME/.krew}/bin"; export PATH;
 
-# Adds completion from brew
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 autoload -Uz compinit
@@ -25,10 +23,7 @@ fi
   fi
 } &!
 
-# source antidote
 source $DOTFILES/zsh/antidote/antidote.zsh
-
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
 
 # Ensure up and down arrow works for searching history
@@ -39,12 +34,13 @@ bindkey '^[OB' history-substring-search-down
 
 # Ensuring that autocomplete works with sshpass aliases
 #setopt completealiases
-#compdef _ssh_hosts s sr
+compdef _ssh_hosts sshpass s sr
 zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
 
 # Display system info https://github.com/dylanaraps/pfetch
 PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/local/bin/pfetch 
 
 # Sourcing k8s related stuff and prompt if using k8s
-source $HOME/.zshrc-k8s.zsh
+source $DOTFILES/zsh/zshenv
+source $DOTFILES/zsh/functions_k8s
 
