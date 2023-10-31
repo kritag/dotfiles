@@ -41,6 +41,8 @@
       create: true
       glob: true
       path: dracula_gtk/assets/*
+    ~/.config/alacritty/themes/dracula.yml: config/alacritty/themes/dracula.yml
+    ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
 
 - sudo:
     - link:
