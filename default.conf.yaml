@@ -4,7 +4,15 @@
 #        zsh,
 #        yp-tools,
 #        sqlite,
-#       dnf-automatic,
+#        git,
+#        make,
+#        pip,
+#        python,
+#        npm,
+#        node,
+#        cargo,
+#        gh,
+#        dnf-automatic,
 #        btop,
 #        neovim]
 - install-brew: true
@@ -50,6 +58,10 @@
         command: sudo install pfetch/pfetch /usr/local/bin/
         stdout: true
         description: Installing pfetch
+      -
+        command: cp wifi-powersave-off.conf /etc/NetworkManager/conf.d
+        stdout: true
+        description: Disable wifi poersaving
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

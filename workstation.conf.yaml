@@ -43,6 +43,7 @@
       path: dracula_gtk/assets/*
     ~/.config/alacritty/themes/dracula.yml: config/alacritty/themes/dracula.yml
     ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
+    ~/.config/foot/foot.ini: config/foot/foot.ini
 
 - sudo:
     - link:
@@ -51,12 +52,13 @@
 - shell:
   -
     command: wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/
-      #stdout: true
     description: Installing the dracula cursor theme
   -
     command: ./set_dracula_theme.sh
-    stdout: true
     description: Setting the Dracula theme
+  -
+    command: command -v keybase || sudo yum install https://prerelease.keybase.io/keybase_amd64.rpm
+    description: Installing keybase if not present
 # Flatpaks
 #- flatpak:
 #    - com.github.tchx84.Flatseal
