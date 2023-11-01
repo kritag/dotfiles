@@ -1,0 +1,15 @@
+[Unit]
+Description=Kickoff Minikube Cluster
+After=docker.service network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/linuxbrew/.linuxbrew/bin/minikube start
+RemainAfterExit=true
+ExecStop=/home/linuxbrew/.linuxbrew/bin/minikube stop
+StandardOutput=journal
+User=tageskri
+Group=tageskri
+
+[Install]
+WantedBy=multi-user.target

@@ -44,17 +44,22 @@
     ~/.config/alacritty/themes/dracula.yml: config/alacritty/themes/dracula.yml
     ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
     ~/.config/foot/foot.ini: config/foot/foot.ini
+    ~/.config/remmina/remmina.pref: config/remmina/remmina.pref
 
 - sudo:
     - link:
         /usr/share/gnome-text-editor/styles/dracula.xml: dracula_gedit/dracula.xml
+        /usr/local/bin/pwquality.sh: scripts/pwquality.sh
+    - shell:
+        -
+          command: cp services/*.service /etc/systemd/system/
 
 - shell:
   -
     command: wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/
     description: Installing the dracula cursor theme
   -
-    command: ./set_dracula_theme.sh
+    command: scripts/set_dracula_theme.sh
     description: Setting the Dracula theme
   -
     command: command -v keybase || sudo yum install https://prerelease.keybase.io/keybase_amd64.rpm

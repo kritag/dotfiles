@@ -59,7 +59,7 @@
         stdout: true
         description: Installing pfetch
       -
-        command: cp wifi-powersave-off.conf /etc/NetworkManager/conf.d
+        command: cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d
         stdout: true
         description: Disable wifi poersaving
 
