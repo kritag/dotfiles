@@ -19,10 +19,11 @@ ohmyzsh/ohmyzsh path:plugins/oc
 ohmyzsh/ohmyzsh path:plugins/pip
 ohmyzsh/ohmyzsh path:plugins/python
 
+
 zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-completions
-zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions path:src kind:fpath
+
+romkatv/zsh-bench kind:path
 
 mafredri/zsh-async
 
@@ -31,3 +32,6 @@ MichaelAquilina/zsh-you-should-use
 dracula/zsh-syntax-highlighting
 dracula/zsh
 dracula/zsh     path:lib
+
+zsh-users/zsh-autosuggestions kind:defer
+zsh-users/zsh-history-substring-search
