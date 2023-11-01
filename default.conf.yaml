@@ -30,7 +30,7 @@
     - "~"
     - "~/.config"
 - link:
-    ~/.vimrc: 
+    ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
     ~/.aliases: zsh/aliases
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
