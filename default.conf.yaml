@@ -15,11 +15,12 @@
 #        dnf-automatic,
 #        btop,
 #        neovim]
+#
 - install-brew: true
 
-- brewfile:
-    - Brewfile.server
-  
+- brew:
+    - lazygit
+
 - defaults:
     link:
       relink: true
@@ -56,11 +57,9 @@
     - shell:
       -
         command: sudo install pfetch/pfetch /usr/local/bin/
-        stdout: true
         description: Installing pfetch
       -
         command: cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d
-        stdout: true
         description: Disable wifi poersaving
 
 - shell:
