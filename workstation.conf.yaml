@@ -8,9 +8,22 @@
 #        gnome-tweaks,
 #        freerdp,
 #        ffmpeg]
-# Installs brew if missing
-- brewfile:
-    - Brewfile.workstation
+#
+- brew:
+    - helm
+    - oniguruma
+    - jq
+    - kubernetes-cli
+    - krew
+    - kubectx
+    - kubeseal
+    - minikube
+    - openshift-cli
+    - sops
+    - stern
+    - tldr
+    - yq
+    - fluxcd/tap/flux
 
 - defaults:
     link:
