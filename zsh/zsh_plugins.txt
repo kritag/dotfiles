@@ -18,13 +18,11 @@ ohmyzsh/ohmyzsh path:plugins/oc
 ohmyzsh/ohmyzsh path:plugins/pip
 ohmyzsh/ohmyzsh path:plugins/python
 
-
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-completions path:src kind:fpath
 
-romkatv/powerlevel10k kind:fpath
-
-mafredri/zsh-async
+romkatv/zsh-bench kind:path
+romkatv/powerlevel10k
 
 MichaelAquilina/zsh-you-should-use
 
