@@ -23,15 +23,15 @@ ohmyzsh/ohmyzsh path:plugins/python
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-completions path:src kind:fpath
 
-romkatv/zsh-bench kind:path
+romkatv/powerlevel10k
 
 mafredri/zsh-async
 
 MichaelAquilina/zsh-you-should-use
 
 dracula/zsh-syntax-highlighting
-dracula/zsh
-dracula/zsh     path:lib
+#dracula/zsh
+#dracula/zsh     path:lib
 
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search
