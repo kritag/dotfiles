@@ -1,5 +1,5 @@
-DOTFILES="$HOME/.dotfiles"
-source $DOTFILES/zsh/aliases
+#DOTFILES="$HOME/.dotfiles"
+source $HOME/.aliases
 source $HOME/.env
 
 PATH="${PATH}:$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_ROOT:-$HOME/.krew}/bin"; export PATH;
@@ -22,23 +22,9 @@ fi
   fi
 } &!
 
-# Set the name of the static .zsh plugins file antidote will generate.
-zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
-
-# Lazy-load antidote.
-fpath+=(${ZDOTDIR:-~}/.dotfiles/zsh/antidote)
-autoload -Uz $fpath[-1]/antidote
-
-# Generate static file in a subshell when .zsh_plugins.txt is updated.
-if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
-  (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
-fi
-
-# Source your static plugins file.
-source $zsh_plugins
-
 #source $DOTFILES/zsh/antidote/antidote.zsh
-#antidote load
+source $HOME/.antidote/antidote.zsh
+antidote load
 
 # Ensure up and down arrow works for searching history
 bindkey '^[[A' history-substring-search-up
@@ -55,7 +41,7 @@ zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
 PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/local/bin/pfetch 
 
 # Sourcing k8s related stuff and prompt if using k8s
-source $DOTFILES/zsh/zshenv
+source $HOME/.zshenv
 if command -v kubectl &> /dev/null
 then
     source $DOTFILES/zsh/functions_k8s

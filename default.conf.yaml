@@ -52,6 +52,10 @@
       path: dracula_vim/*
       glob: true
       exclude: [ dracula_vim/*.md, dracula_vim/LICENSE, dracula_vim/doc, dracula_vim/*.png ]
+    ~/.antidote:
+      create: true
+      path: zsh/antidote/*
+      glob: true
     
 - sudo:
     - shell:
