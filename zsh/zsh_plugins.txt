@@ -13,7 +13,6 @@ ohmyzsh/ohmyzsh path:plugins/dirhistory
 ohmyzsh/ohmyzsh path:plugins/docker/completions kind:fpath
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
-ohmyzsh/ohmyzsh path:plugins/kube-ps1
 ohmyzsh/ohmyzsh path:plugins/kubectl
 ohmyzsh/ohmyzsh path:plugins/oc
 ohmyzsh/ohmyzsh path:plugins/pip
@@ -23,15 +22,13 @@ ohmyzsh/ohmyzsh path:plugins/python
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-completions path:src kind:fpath
 
-romkatv/powerlevel10k
+romkatv/powerlevel10k kind:fpath
 
 mafredri/zsh-async
 
 MichaelAquilina/zsh-you-should-use
 
 dracula/zsh-syntax-highlighting
-#dracula/zsh
-#dracula/zsh     path:lib
 
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search
