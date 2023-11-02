@@ -1,10 +1,7 @@
 # Set kube_ps1 vars
-if command -v kubectl &> /dev/null
-then
-    export KUBE_PS1_BINARY=oc
-    export KUBE_PS1_CTX_COLOR='yellow'
-    PROMPT='$(kube_ps1) '$PROMPT
-fi
+export KUBE_PS1_BINARY=oc
+export KUBE_PS1_CTX_COLOR='yellow'
+PROMPT='$(kube_ps1) '$PROMPT
 
 function get_cluster_short() {
   echo "$1" | cut -d "/" -f 1,2 | cut -d ":" -f 1 | cut -d "-" -f 1,2,3,4| sed 's/api-//g' 
