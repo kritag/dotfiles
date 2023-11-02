@@ -13,11 +13,11 @@ PATH="${PATH}:$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_R
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-autoload -Uz compinit
+autoload -Uz compinit -u
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-	compinit;
+	compinit -u;
 else
-	compinit -C;
+	compinit -Cu;
 fi;
 
 source $HOME/.antidote/antidote.zsh
