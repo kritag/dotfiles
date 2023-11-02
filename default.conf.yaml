@@ -62,14 +62,8 @@
     
 - sudo:
     - shell:
-      -
-        command: install pfetch/pfetch /usr/local/bin/
-        description: Installing pfetch
-      -
-        command: cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d
-        description: Disable wifi poersaving
-      -
-        command: touch /root/test
+      - [install pfetch/pfetch /usr/local/bin/]
+      - [cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
