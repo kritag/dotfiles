@@ -20,6 +20,9 @@
 
 - brew:
     - lazygit
+    - chroma
+    - yq
+    - jq
 
 - defaults:
     link:
@@ -60,11 +63,13 @@
 - sudo:
     - shell:
       -
-        command: sudo install pfetch/pfetch /usr/local/bin/
+        command: install pfetch/pfetch /usr/local/bin/
         description: Installing pfetch
       -
         command: cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d
         description: Disable wifi poersaving
+      -
+        command: touch /root/test
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
