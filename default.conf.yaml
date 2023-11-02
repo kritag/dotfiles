@@ -64,3 +64,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [touch ~/.env, Creating the .env file if it does not exist]
