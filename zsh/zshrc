@@ -56,4 +56,7 @@ PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/loca
 
 # Sourcing k8s related stuff and prompt if using k8s
 source $DOTFILES/zsh/zshenv
-source $DOTFILES/zsh/functions_k8s
+if command -v kubectl &> /dev/null
+then
+    source $DOTFILES/zsh/functions_k8s
+fi
