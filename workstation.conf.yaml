@@ -12,7 +12,6 @@
 - brew:
     - helm
     - oniguruma
-    - jq
     - kubernetes-cli
     - krew
     - kubectx
@@ -22,7 +21,6 @@
     - sops
     - stern
     - tldr
-    - yq
     - fluxcd/tap/flux
 
 - defaults:
