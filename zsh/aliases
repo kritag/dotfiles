@@ -4,6 +4,7 @@ alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager gr
 alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
 alias l='ls -lh'
 alias la='ls -lAh'
+alias pf='PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/local/bin/pfetch'
 
 # Using lsdeluxe instead of ls
 alias ls='lsd'
