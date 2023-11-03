@@ -75,7 +75,8 @@
     phpenv                  # php version from phpenv (https://github.com/phpenv/phpenv)
     scalaenv                # scala version from scalaenv (https://github.com/scalaenv/scalaenv)
     haskell_stack           # haskell version from stack (https://haskellstack.org/)
-    kubecontext             # current kubernetes context (https://kubernetes.io/)
+    #kubecontext             # current kubernetes context (https://kubernetes.io/)
+    my_kube_ps1
     terraform               # terraform workspace (https://www.terraform.io)
     # terraform_version     # terraform version (https://www.terraform.io)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
@@ -1649,7 +1650,13 @@
   #
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
-    p10k segment -f 208 -i '⭐' -t 'hello, %n'
+      p10k segment -f 208 -i '⭐' -t 'hello, %n'
+  }
+  typeset -gA  _foo_cache
+  prompt_my_kube_ps1() {
+    local msg
+    msg="$(kube_ps1)"
+    p10k segment -t "${msg}"
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
@@ -1668,7 +1675,7 @@
     # Since prompt_example always makes the same `p10k segment` calls, we can call it from
     # instant_prompt_example. This will give us the same `example` prompt segment in the instant
     # and regular prompts.
-    prompt_example
+    prompt_example 
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
@@ -1682,7 +1689,7 @@
   #   - always:   Trim down prompt when accepting a command line.
   #   - same-dir: Trim down prompt when accepting a command line unless this is the first command
   #               typed after changing current working directory.
-  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
+  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=on
 
   # Instant prompt mode.
   #
