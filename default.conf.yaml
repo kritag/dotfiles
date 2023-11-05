@@ -30,7 +30,7 @@
     ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
     ~/.aliases: zsh/aliases
-      #~/.p10k.zsh: zsh/p10k.zsh
+    ~/.p10k.zsh: zsh/p10k.zsh
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.zshenv: zsh/zshenv
     ~/.gitconfig:
