@@ -65,3 +65,6 @@
 [submodule "dracula_alacritty"]
 	path = dracula_alacritty
 	url = https://github.com/dracula/alacritty
+[submodule "vim-plug"]
+	path = vim-plug
+	url = https://github.com/junegunn/vim-plug
