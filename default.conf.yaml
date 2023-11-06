@@ -29,6 +29,8 @@
 - link:
     ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
+    ~/.config/nvim/init.vim: config/nvim/init.vim
+    $HOME/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
     ~/.aliases: zsh/aliases
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt

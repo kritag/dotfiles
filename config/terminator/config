@@ -7,13 +7,6 @@
   suppress_multiple_term_dialog = True
   putty_paste_style_source_clipboard = True
   link_single_click = True
-  title_transmit_fg_color = "#282a36"
-  title_transmit_bg_color = "#50fa7b"
-  title_receive_fg_color = "#282a36"
-  title_receive_bg_color = "#ff79c6"
-  title_inactive_fg_color = "#f8f8f2"
-  title_inactive_bg_color = "#44475a"
-  title_hide_sizetext = True
 [keybindings]
   go_up = ""
   go_down = ""
@@ -39,77 +32,55 @@
       position = 0:0
       maximised = True
       fullscreen = False
-      size = 1920, 1011
-      title = ""
+      size = 1872, 1044
       last_active_window = True
     [[[child1]]]
       type = Notebook
       parent = child0
       order = 0
-      labels = None, None, None, None, None, None
-      last_active_term = 15a108ef-4605-471c-ab0e-bc4f2efc7d4e, 49649394-01bf-402b-b7d9-4381f06be004, 22da856d-836c-4c3f-847f-968bc208b5a8, c0a12552-80ed-438f-aa8e-4d006c95b662, b556edc1-1330-4969-9922-485dd7dd6036, 7e870c3a-8e5b-4e88-bb99-5e35de871fe6
-      active_page = 2
+      labels = None, None, None, None, None, None, None
+      last_active_term = df07c558-250b-494f-8986-868d1739ae56, 725996d2-8575-4538-969d-5a68d2fd0a11, acdf75e6-fb7a-4fe1-bac9-28c8a032c052, 4d470154-cd47-4291-8664-b0856190a7fb, a22a33f8-7e6b-4161-81f5-b615534ef9ad, a09fed21-bf17-49f1-b7a7-915369c69e09, da4b1e23-cdd1-4d9f-8f37-95394cb14b4b
+      active_page = 6
     [[[terminal2]]]
       type = Terminal
       parent = child1
       order = 0
       profile = default
-      uuid = 15a108ef-4605-471c-ab0e-bc4f2efc7d4e
-    [[[child3]]]
-      type = HPaned
+      uuid = df07c558-250b-494f-8986-868d1739ae56
+    [[[terminal3]]]
+      type = Terminal
       parent = child1
       order = 1
-      position = 1266
-      ratio = 0.661787767903816
-    [[[child4]]]
-      type = HPaned
-      parent = child3
-      order = 0
-      position = 625
-      ratio = 0.4956383822363204
-    [[[terminal5]]]
-      type = Terminal
-      parent = child4
-      order = 0
-      group = Tab 1
       profile = default
-      uuid = 49649394-01bf-402b-b7d9-4381f06be004
-    [[[terminal6]]]
-      type = Terminal
-      parent = child4
-      order = 1
-      group = Tab 1
-      profile = default
-      uuid = 9d757cf2-f039-429a-a041-256b136a6f4a
-    [[[terminal7]]]
-      type = Terminal
-      parent = child3
-      order = 1
-      group = Tab 1
-      profile = default
-      uuid = a9e3cf0f-1ed8-4293-9ed7-0557e08a65d7
-    [[[terminal8]]]
+      uuid = 725996d2-8575-4538-969d-5a68d2fd0a11
+    [[[terminal4]]]
       type = Terminal
       parent = child1
       order = 2
       profile = default
-      uuid = 22da856d-836c-4c3f-847f-968bc208b5a8
-    [[[terminal9]]]
+      uuid = acdf75e6-fb7a-4fe1-bac9-28c8a032c052
+    [[[terminal5]]]
       type = Terminal
       parent = child1
       order = 3
       profile = default
-      uuid = c0a12552-80ed-438f-aa8e-4d006c95b662
-    [[[terminal10]]]
+      uuid = 4d470154-cd47-4291-8664-b0856190a7fb
+    [[[terminal6]]]
       type = Terminal
       parent = child1
       order = 4
       profile = default
-      uuid = b556edc1-1330-4969-9922-485dd7dd6036
-    [[[terminal11]]]
+      uuid = a22a33f8-7e6b-4161-81f5-b615534ef9ad
+    [[[terminal7]]]
       type = Terminal
       parent = child1
       order = 5
       profile = default
-      uuid = 7e870c3a-8e5b-4e88-bb99-5e35de871fe6
+      uuid = a09fed21-bf17-49f1-b7a7-915369c69e09
+    [[[terminal8]]]
+      type = Terminal
+      parent = child1
+      order = 6
+      profile = default
+      uuid = da4b1e23-cdd1-4d9f-8f37-95394cb14b4b
 [plugins]
