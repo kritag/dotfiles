@@ -6,6 +6,7 @@
 #        rpmrebuild,
 #        keepassxc,
 #        gnome-tweaks,
+#        tealdeer,
 #        freerdp,
 #        ffmpeg]
 #
@@ -20,7 +21,6 @@
     - openshift-cli
     - sops
     - stern
-    - tldr
     - fluxcd/tap/flux
 
 - defaults:
