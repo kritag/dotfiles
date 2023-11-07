@@ -30,7 +30,9 @@
     ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
     ~/.config/nvim/init.vim: config/nvim/init.vim
-    $HOME/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
+    ~/.local/share/nvim/site/autoload/plug.vim: 
+      path: vim-plug/plug.vim 
+      create: true
     ~/.aliases: zsh/aliases
     ~/.zstyle: zsh/zstyle
     ~/.p10k.zsh: zsh/p10k.zsh
