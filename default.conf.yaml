@@ -32,6 +32,7 @@
     ~/.config/nvim/init.vim: config/nvim/init.vim
     $HOME/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
     ~/.aliases: zsh/aliases
+    ~/.zstyle: zsh/zstyle
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.zshenv: zsh/zshenv
@@ -61,6 +62,7 @@
     - shell:
       - [install pfetch/pfetch /usr/local/bin/]
       - [cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d]
+      - [mkdir -p /usr/local/share/zsh/site-functions; wget -P /usr/local/share/zsh/site-functions https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

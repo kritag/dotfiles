@@ -55,3 +55,6 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
+" Set default syntax for all files
+filetype plugin on
+au BufNewFile,BufRead * if &ft == '' | set ft=zsh | endif
