@@ -23,6 +23,9 @@
       relink: true
       create: true
 
+- create:
+    - "~/.local/share/nvim/site/autoload"
+
 - clean:
     - "~"
     - "~/.config"
