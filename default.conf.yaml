@@ -10,6 +10,7 @@
 #        python3,
 #        nodejs-npm,
 #        cargo,
+#        lsd,
 #        gh,
 #        dnf-automatic,
 #        btop,
