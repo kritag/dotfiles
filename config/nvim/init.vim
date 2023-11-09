@@ -28,6 +28,15 @@ set expandtab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+" Show line numbers
+set nu
+" relative line numbering
+set rnu 
+" skip redrawing screen in some cases
+set lazyredraw
+" open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
 " Linebreak on 500 characters
 set linebreak
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
@@ -50,11 +59,17 @@ fun! CleanExtraSpaces()
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
-
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
-
 " Set default syntax for all files
 filetype plugin on
 au BufNewFile,BufRead * if &ft == '' | set ft=zsh | endif
+" Highlight current line
+augroup CursorLineOnlyInActiveWindow
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd WinLeave * setlocal nocursorline
+augroup END
+" save read-only files
+command -nargs=0 Sudow w !sudo tee % >/dev/null
