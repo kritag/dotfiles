@@ -3,7 +3,7 @@
   use_custom_url_handler = True
   custom_url_handler = firefox
   inactive_color_offset = 0.61
-  enabled_plugins = Logger
+  enabled_plugins = CurrDirOpen,
   suppress_multiple_term_dialog = True
   putty_paste_style_source_clipboard = True
   link_single_click = True

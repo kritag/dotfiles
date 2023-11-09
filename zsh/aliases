@@ -10,6 +10,8 @@ alias ls='lsd'
 alias sr='sshpass -f $HOME/pass ssh -l root -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias vim='nvim'
+alias ncspot='flatpak run io.github.hrkfdn.ncspot'
+alias mk='minikube'
 
 # Docker
 alias dbl='docker build'
