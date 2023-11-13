@@ -13,6 +13,7 @@ export POWERLEVEL9K_DIR_SHORTENED_FOREGROUND="blue"
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline prompt_char)
 export SAVEHIST=10000
 export SYSTEMD_EDITOR=nvim
+export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH="${HOME}/.dotfiles/zsh"
 export ZSH_CACHE_DIR="$HOME/.cache"
