@@ -45,7 +45,7 @@
     ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/btop/themes/dracula.theme: dracula_bashtop/dracula.theme
     ~/.config/lvim/config.lua: config/lvim/config.lua
-    ~/.config/lsd/themes/dracula.yaml:
+    ~/.config/lsd/colors.yaml:
       create: true
       path: dracula_lsd/dracula.yaml
     ~/.config/lsd/config.yaml:
