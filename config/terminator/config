@@ -6,7 +6,7 @@
   enabled_plugins = CurrDirOpen,
   suppress_multiple_term_dialog = True
   putty_paste_style_source_clipboard = True
-  link_single_click = True
+  clear_select_on_copy = True
 [keybindings]
   go_up = ""
   go_down = ""
