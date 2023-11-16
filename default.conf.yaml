@@ -32,7 +32,7 @@
 - link:
     ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
-    ~/.config/nvim/init.vim: config/nvim/init.vim
+    ~/.config/nvim/init.lua: config/nvim/init.lua
     ~/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
     ~/.aliases: zsh/aliases
     ~/.zstyle: zsh/zstyle
