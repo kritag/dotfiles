@@ -1,5 +1,6 @@
 call plug#begin()
   Plug 'Mofiqul/dracula.nvim'
+  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 colorscheme dracula
 

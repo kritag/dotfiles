@@ -7,3 +7,4 @@ lvim.colorscheme = "dracula"
 lvim.plugins = {
   { "maxmx03/dracula.nvim" },
 }
+vim.opt.relativenumber = true
