@@ -8,3 +8,6 @@ lvim.plugins = {
   { "maxmx03/dracula.nvim" },
 }
 vim.opt.relativenumber = true
+lvim.leader = ","
+lvim.builtin.lualine.options.theme = "dracula"
+lvim.builtin.lualine.sections.lualine_a = { "mode" }
