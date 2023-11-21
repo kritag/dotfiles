@@ -1,5 +1,5 @@
 export DOTFILES="${HOME}/.dotfiles"
-export EDITOR=nvim
+export EDITOR=lvim
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=50000
 export MANPAGER="nvim +Man!"
@@ -12,7 +12,7 @@ export POWERLEVEL9K_DIR_FOREGROUND="blue"
 export POWERLEVEL9K_DIR_SHORTENED_FOREGROUND="blue"
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs newline prompt_char)
 export SAVEHIST=10000
-export SYSTEMD_EDITOR=nvim
+export SYSTEMD_EDITOR=lvim
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH="${HOME}/.dotfiles/zsh"
