@@ -9,7 +9,7 @@ alias ls='lsd'
 # Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
 alias sr='sshpass -f $HOME/pass ssh -l root -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
-alias vim='nvim'
+alias vim='lvim'
 alias ncspot='flatpak run io.github.hrkfdn.ncspot'
 alias mk='minikube'
 
