@@ -50,7 +50,7 @@
       path: dracula_lsd/dracula.yaml
     ~/.config/lsd/config.yaml:
       create: true
-      path: dracula_lsd/config.yaml
+      path: config/lsd/config.yaml
     ~/.vim/pack/themes/start/dracula:
       create: true
       path: dracula_vim/*
