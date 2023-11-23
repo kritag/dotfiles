@@ -29,6 +29,9 @@
       create: true
 
 - link:
+    ~/.local/share/fonts:
+      glob: true
+      path: fonts/*
     ~/.config/terminator:
       create: true
       path: config/terminator/*
