@@ -31,3 +31,7 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.keys.normal_mode["0"] = "^" -- Remap VIM 0 to first non-blank characte
 lvim.keys.normal_mode["<leader><cr>"] = ":noh<cr>" -- Remap VIM 0 to first non-blank characte
 lvim.keys.normal_mode["<space>"] = "/" -- Remap VIM 0 to first non-blank characte
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "codespell", filetypes = { "javascript", "python" }, },
+}
