@@ -68,3 +68,6 @@
 [submodule "vim-plug"]
 	path = vim-plug
 	url = https://github.com/junegunn/vim-plug
+[submodule "dotbot-yum"]
+	path = dotbot-yum
+	url = https://gitlab.com/flyingchipmunk/dotbot-yum.git
