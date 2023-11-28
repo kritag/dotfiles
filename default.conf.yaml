@@ -21,6 +21,7 @@
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.zshenv: zsh/zshenv
+    ~/.config/bat/config: config/bat/config
     ~/.gitconfig:
       create: true
       path: dracula_git/config/gitconfig

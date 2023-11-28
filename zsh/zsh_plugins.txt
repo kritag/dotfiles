@@ -8,12 +8,11 @@ ohmyzsh/ohmyzsh path:plugins/gitfast
 
 zdharma-continuum/fast-syntax-highlighting
 
-romkatv/zsh-bench kind:path
 romkatv/powerlevel10k
 
 MichaelAquilina/zsh-you-should-use
 
-mattmc3/zephyr path:plugins/completion
+#mattmc3/zephyr path:plugins/completion
 
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
