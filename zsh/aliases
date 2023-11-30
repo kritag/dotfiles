@@ -12,7 +12,9 @@ alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=pass
 alias vim='lvim'
 alias ncspot='flatpak run io.github.hrkfdn.ncspot'
 alias mk='minikube'
-
+# Uses bat to colorize help switches
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 # Docker
 alias dbl='docker build'
 alias dcin='docker container inspect'

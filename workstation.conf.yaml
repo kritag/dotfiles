@@ -73,6 +73,7 @@
 - shell:
   - [wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/, Installing the dracula cursor theme]
   - [scripts/set_dracula_theme.sh, Setting the Dracula theme]
+  #- [dconf load / < scripts/dump.dconf, Load Gnome settings]
   - [command -v keybase || sudo yum install https://prerelease.keybase.io/keybase_amd64.rpm, Installing keybase if not present]
 # Flatpaks
 #- flatpak:
