@@ -3,6 +3,7 @@ export EDITOR=lvim
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=50000
 export MANPAGER="nvim +Man!"
+export LESS="-IRs"
 export MYVIMRC="${XDG_CONFIG_HOME}/nvim/init.vim"
 export POWERLEVEL9K_CONTEXT_FOREGROUND="magenta"
 export POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND="magenta"
@@ -17,10 +18,8 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH="${HOME}/.dotfiles/zsh"
 export ZSH_CACHE_DIR="$HOME/.cache"
-export ZSH_COLORIZE_CHROMA_FORMATTER=terminal256
-export ZSH_COLORIZE_STYLE="dracula"
-export ZSH_COLORIZE_TOOL=chroma
-export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+export BAT_PAGER="less -R"
+export LESSOPEN="| bat --pager=always -n %s"
 POWERLEVEL9K_VCS_BRANCH_ICON="%fon %F{cyan}\uE0A0 "
 setopt APPEND_HISTORY
 setopt AUTO_MENU
