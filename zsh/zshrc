@@ -7,9 +7,9 @@ source $HOME/.aliases
 source $HOME/.env
 source $HOME/.zstyle
 
-PATH="${PATH}:$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:${KREW_ROOT:-$HOME/.krew}/bin"; export PATH;
+PATH="${PATH}:$HOME/.local/bin:$HOME/bin"; export PATH;
 
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+#FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 source $HOME/.antidote/antidote.zsh
 antidote load
