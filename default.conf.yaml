@@ -1,4 +1,4 @@
-- install-brew: true
+#- install-brew: true
 
 - defaults:
     link:
@@ -52,44 +52,44 @@
           stderr: True
         stdout: true
         stderr: true
-    - shell:
-      - [install pfetch/pfetch /usr/local/bin/, Installing Pfetch]
-      - [cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
-      - [mkdir -p /usr/local/share/zsh/site-functions; wget -nc -P /usr/local/share/zsh/site-functions https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker, Add docker completion]
-      - [scripts/add_sudoers.sh, Adding USER to sudoers]
-      - [scripts/changeshell.sh]
-      - [scripts/addusertodockergrp.sh]
-      - [dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo, Adding docker-ce repo]
-    - yum: [
-        zsh,
-        yp-tools,
-        sqlite,
-        git,
-        make,
-        dnf-plugins-core,
-        python3-pip,
-        python3,
-        nodejs-npm,
-        cargo,
-        docker-ce,
-        docker-ce-cli,
-        containerd.io,
-        docker-buildx-plugin,
-        docker-compose-plugin,
-        lsd,
-        gh,
-        dnf-automatic,
-        bat,
-        btop,
-        neofetch,
-        neovim]
+  #  - shell:
+  #    - [install pfetch/pfetch /usr/local/bin/, Installing Pfetch]
+  #    - [cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
+  #    - [mkdir -p /usr/local/share/zsh/site-functions; wget -nc -P /usr/local/share/zsh/site-functions https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker, Add docker completion]
+  #    - [scripts/add_sudoers.sh, Adding USER to sudoers]
+  #    - [scripts/changeshell.sh]
+#      - [scripts/addusertodockergrp.sh]
+#      - [dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo, Adding docker-ce repo]
+#    - yum: [
+#        zsh,
+#        yp-tools,
+#        sqlite,
+#        git,
+#        make,
+#        dnf-plugins-core,
+#        python3-pip,
+#        python3,
+#        nodejs-npm,
+#        cargo,
+#        docker-ce,
+#        docker-ce-cli,
+#        containerd.io,
+#        docker-buildx-plugin,
+#        docker-compose-plugin,
+#        lsd,
+#        gh,
+#        dnf-automatic,
+#        bat,
+#        btop,
+#        neofetch,
+#        neovim]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [touch ~/.env, Creating the .env file if it does not exist]
  
-- brew:
-    - lazygit
-    - chroma
-    - yq
-    - jq
+#- brew:
+#    - lazygit
+#    - chroma
+#    - yq
+#    - jq
