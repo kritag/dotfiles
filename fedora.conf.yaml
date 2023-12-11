@@ -1,0 +1,42 @@
+- sudo:
+     - defaults:
+         yum:
+           options: "-q -y"
+           stdout: False
+           stderr: True
+     - shell:
+       - [scripts/addusertodockergrp.sh]
+       - [dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo, Adding docker-ce repo]
+     - yum: [
+         vlc,
+         terminator,
+         rpmrebuild,
+         keepassxc,
+         gnome-tweaks,
+         tealdeer,
+         freerdp,
+         foot,
+         ffmpeg,
+         zsh,
+         yp-tools,
+         sqlite,
+         git,
+         make,
+         dnf-plugins-core,
+         python3-pip,
+         python3,
+         nodejs-npm,
+         cargo,
+         docker-ce,
+         docker-ce-cli,
+         containerd.io,
+         docker-buildx-plugin,
+         docker-compose-plugin,
+         lsd,
+         gh,
+         dnf-automatic,
+         bat,
+         btop,
+         neovim]
+- shell:
+     - [command -v keybase || sudo yum install https://prerelease.keybase.io/keybase_amd64.rpm, Installing keybase if not present]

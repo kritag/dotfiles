@@ -1,16 +1,3 @@
-#- brew:
-#    - helm
-#    - oniguruma
-#    - kubernetes-cli
-#    - krew
-#    - kubectx
-#    - kubeseal
-#    - minikube
-#    - openshift-cli
-#    - sops
-#    - stern
-#    - fluxcd/tap/flux
-
 - defaults:
     link:
       relink: true
@@ -20,11 +7,11 @@
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
-#    ~/.config/terminator:
-#      create: true
-#      path: config/terminator/*
-#      glob: true
-#    ~/.functions_k8s: zsh/functions_k8s
+    ~/.config/terminator:
+      create: true
+      path: config/terminator/*
+      glob: true
+    ~/.functions_k8s: zsh/functions_k8s
     ~/.themes/Dracula:
       create: true
       path: dracula_gtk/*
@@ -43,40 +30,33 @@
       create: true
       glob: true
       path: dracula_gtk/assets/*
- #   ~/.config/alacritty/themes/dracula.yml: config/alacritty/themes/dracula.yml
-#    ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
     ~/.config/foot/foot.ini: config/foot/foot.ini
-#    ~/.config/remmina/remmina.pref: config/remmina/remmina.pref
+    ~/.config/remmina/remmina.pref: config/remmina/remmina.pref
 
 - sudo:
-    - defaults:
-        yum:
-          options: "-q -y"
-          stdout: False
-          stderr: True
     - link:
         /usr/share/gnome-text-editor/styles/dracula.xml: dracula_gedit/dracula.xml
         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
     - shell:
         - [cp services/*.service /etc/systemd/system/]
-#    - yum: [
-#        vlc,
-#        terminator,
-#        rpmrebuild,
-#        keepassxc,
-#        gnome-tweaks,
-#        tealdeer,
-#        freerdp,
-#        foot,
-#        ffmpeg]
 
 - shell:
   - [wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/, Installing the dracula cursor theme]
   - [scripts/set_dracula_theme.sh, Setting the Dracula theme]
   #- [dconf load / < scripts/dump.dconf, Load Gnome settings]
-#  - [command -v keybase || sudo yum install https://prerelease.keybase.io/keybase_amd64.rpm, Installing keybase if not present]
-# Flatpaks
-#- flatpak:
-#    - com.github.tchx84.Flatseal
-#    - com.microsoft.Edge
-#    - com.spotify.Client
+- flatpak:
+    - com.github.tchx84.Flatseal
+    - com.microsoft.Edge
+    - com.spotify.Client
+- brew:
+    - helm
+    - oniguruma
+    - kubernetes-cli
+    - krew
+    - kubectx
+    - kubeseal
+    - minikube
+    - openshift-cli
+    - sops
+    - stern
+    - fluxcd/tap/flux
