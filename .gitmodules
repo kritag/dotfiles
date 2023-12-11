@@ -71,3 +71,6 @@
 [submodule "dotbot-yum"]
 	path = dotbot-yum
 	url = https://gitlab.com/flyingchipmunk/dotbot-yum.git
+[submodule "dotbot-yay"]
+	path = dotbot-yay
+	url = https://github.com/oxson/dotbot-yay
