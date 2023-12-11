@@ -1,6 +1,9 @@
 - yay:
  # - btop-gpu-git
   - yp-tools
+  - slack-desktop
+  - extension-manager
+  - yp-tools
 - omnipkg:
   - install: [
       bat,
