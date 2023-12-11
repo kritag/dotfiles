@@ -7,9 +7,9 @@ source $HOME/.aliases
 source $HOME/.env
 source $HOME/.zstyle
 
-PATH="${PATH}:$HOME/.local/bin:$HOME/bin"; export PATH;
+PATH="${PATH}:$HOME/.local/bin:$HOME/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"; export PATH;
 
-#FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 source $HOME/.antidote/antidote.zsh
 antidote load
@@ -31,9 +31,7 @@ fi
 } &!
 
 # Ensure up and down arrow works for searching history
-#bindkey '^[[A' history-substring-search-up
 bindkey '^[OA' history-substring-search-up
-#bindkey '^[[B' history-substring-search-down
 bindkey '^[OB' history-substring-search-down
 
 # Ensuring that autocomplete works with sshpass aliases
