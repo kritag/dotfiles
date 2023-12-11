@@ -7,7 +7,7 @@ source $HOME/.aliases
 source $HOME/.env
 source $HOME/.zstyle
 
-PATH="${PATH}:$HOME/.local/bin:$HOME/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"; export PATH;
+PATH="${PATH}:$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"; export PATH;
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
