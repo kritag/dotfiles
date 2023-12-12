@@ -32,7 +32,7 @@ lvim.keys.normal_mode["0"] = "^" -- Remap VIM 0 to first non-blank characte
 lvim.keys.normal_mode["<leader><cr>"] = ":noh<cr>" -- Remap VIM 0 to first non-blank characte
 lvim.keys.normal_mode["<space>"] = "/" -- Remap VIM 0 to first non-blank characte
 -- Set default syntax for all files
-vim.api.nvim_create_autocmd({"BufNewFile" ,"BufRead"}, {
-  pattern = {"*"},
-  command = "if &ft == '' | set ft=zsh | endif",
-})
+-- vim.api.nvim_create_autocmd({"BufNewFile" ,"BufRead"}, {
+--   pattern = {"*"},
+--   command = "if &ft == '' | set ft=zsh | endif",
+-- })
