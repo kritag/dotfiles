@@ -5,7 +5,6 @@
 - omnipkg:
   - install: [
       bat,
-      btop,
       ffmpeg,
       foot,
       git,
