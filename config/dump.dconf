@@ -13,6 +13,8 @@ style-scheme='Dracula'
 [org/gnome/Weather]
 locations=[<(uint32 2, <('Oslo', 'ENGM', true, [(1.0506882097005865, 0.19344065294494067)], [(1.0457431159710333, 0.18762289458939041)])>)>]
 
+[org/gnome/desktop/session]
+idle-delay=3600
 
 [org/gnome/desktop/interface]
 cursor-theme='Dracula-cursors'
