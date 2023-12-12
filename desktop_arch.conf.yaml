@@ -1,0 +1,30 @@
+- yay:
+  - btop-gpu-git
+  - extension-manager
+  - yp-tools
+- omnipkg:
+  - install: [
+      bat,
+      btop,
+      ffmpeg,
+      foot,
+      git,
+      github-cli,
+      gnome-tweaks,
+      less,
+      lsd,
+      make,
+      nodejs,
+      npm,
+      python,
+      python-pip,
+      qbittorrent,
+      rust,
+      sqlite,
+      solaar,
+      spotify-launcher,
+      systemd-resolvconf,
+      tealdeer,
+      vlc,
+      wl-clipboard,
+      zsh]

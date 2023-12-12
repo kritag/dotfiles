@@ -1,0 +1,37 @@
+- yay:
+  - extension-manager
+  - slack-desktop
+  - yp-tools
+- omnipkg:
+  - install: [
+      bat,
+      btop,
+      docker,
+      docker-compose,
+      ffmpeg,
+      foot,
+      freerdp,
+      git,
+      github-cli,
+      gnome-tweaks,
+      keepassxc,
+      keybase-gui,
+      less,
+      lsd,
+      make,
+      nodejs,
+      npm,
+      python,
+      python-pip,
+      qbittorrent,
+      rust,
+      sqlite,
+      solaar,
+      spotify-launcher,
+      sshpass,
+      sshuttle,
+      systemd-resolvconf,
+      tealdeer,
+      vlc,
+      wl-clipboard,
+      zsh]
