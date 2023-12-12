@@ -14,6 +14,7 @@
       less,
       lsd,
       make,
+      man-db,
       nodejs,
       npm,
       python,
