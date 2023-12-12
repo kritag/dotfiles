@@ -31,14 +31,10 @@
       glob: true
       path: dracula_gtk/assets/*
     ~/.config/foot/foot.ini: config/foot/foot.ini
-    ~/.config/remmina/remmina.pref: config/remmina/remmina.pref
 
 - sudo:
     - link:
         /usr/share/gnome-text-editor/styles/dracula.xml: dracula_gedit/dracula.xml
-        /usr/local/bin/pwquality.sh: scripts/pwquality.sh
-    - shell:
-        - [cp services/*.service /etc/systemd/system/]
 
 - shell:
   - [wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/, Installing the dracula cursor theme]
@@ -46,17 +42,3 @@
   #- [dconf load / < config/dump.dconf, Load Gnome settings]
 - flatpak:
     - com.github.tchx84.Flatseal
-    - com.microsoft.Edge
-    - com.spotify.Client
-- brew:
-    - helm
-    - oniguruma
-    - kubernetes-cli
-    - krew
-    - kubectx
-    - kubeseal
-    - minikube
-    - openshift-cli
-    - sops
-    - stern
-    - fluxcd/tap/flux
