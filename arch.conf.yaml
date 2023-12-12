@@ -1,8 +1,7 @@
 - yay:
  # - btop-gpu-git
-  - yp-tools
-  - slack-desktop
   - extension-manager
+  - slack-desktop
   - yp-tools
 - omnipkg:
   - install: [
@@ -17,14 +16,22 @@
       github-cli,
       gnome-tweaks,
       keepassxc,
+      less,
       lsd,
       make,
       nodejs,
       npm,
       python,
       python-pip,
+      qbittorrent,
       rust,
       sqlite,
+      solaar,
+      spotify-launcher,
+      sshpass,
+      sshuttle,
+      systemd-resolvconf,
       tealdeer,
       vlc,
+      wl-clipboard,
       zsh]
