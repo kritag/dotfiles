@@ -49,14 +49,17 @@
     - com.microsoft.Edge
     - com.spotify.Client
 - brew:
+    - fluxcd/tap/flux
     - helm
-    - oniguruma
-    - kubernetes-cli
+    - jq
     - krew
     - kubectx
+    - kubernetes-cli
     - kubeseal
+    - lazygit
     - minikube
+    - oniguruma
     - openshift-cli
     - sops
     - stern
-    - fluxcd/tap/flux
+    - yq
