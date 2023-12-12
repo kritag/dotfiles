@@ -7,19 +7,9 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 # cache to proxy list of results
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
-# fuzzy matching of completions you mistype them
-#zstyle ':completion:*' completer _complete _match _approximate
-#zstyle ':completion:*:match:*' original only
-#zstyle ':completion:*:approximate:*' max-errors 1 numeric
-# Increase the number of errors based on the length of the typed word. But make
-# sure to cap (at 7) the max-errors to avoid hanging.
-#zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3>7?7:($#PREFIX+$#SUFFIX)/3))numeric)'
-# ignore completion functions
 zstyle ':completion:*:functions' ignore-patterns '_*'
 # if you end up using a directory as argument
 zstyle ':completion:*' squeeze-slashes true
-# case insensitive (all), partial-word and substring completion
-#zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]-_}={[:upper:][:lower:]_-}' 'r:|=*' 'l:|=* r:|=*'
 # Group matches and describe.
 zstyle ':completion:*:matches' group 'yes'
 zstyle ':completion:*:options' description 'yes'
