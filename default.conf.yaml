@@ -1,5 +1,3 @@
-#- install-brew: true
-
 - defaults:
     link:
       relink: true
@@ -26,7 +24,7 @@
       create: true
       path: dracula_git/config/gitconfig
     ~/.config/btop/btop.conf: config/btop/btop.conf
-    ~/.config/btop/themes/dracula.theme: dracula_bashtop/dracula.theme
+    ~/.config/btop/themes/dracula.theme: config/btop/themes/dracula.theme
     ~/.config/lvim/config.lua: config/lvim/config.lua
     ~/.config/lsd/colors.yaml:
       create: true
