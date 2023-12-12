@@ -58,6 +58,5 @@
  
 - brew:
     - lazygit
-    - chroma
     - yq
     - jq
