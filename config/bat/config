@@ -26,5 +26,5 @@
 --theme="Dracula"
 --paging=never
 --color=always
---style="changes,header"
---tabs=0
+--style="plain"
+--tabs=2
