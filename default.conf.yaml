@@ -26,6 +26,10 @@
     ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/btop/themes/dracula.theme: config/btop/themes/dracula.theme
     ~/.config/lvim/config.lua: config/lvim/config.lua
+    ~/.config/lvim/lua: 
+        create: true
+        path: config/lvim/lua/*
+        glob: true
     ~/.config/lsd/colors.yaml:
       create: true
       path: dracula_lsd/dracula.yaml

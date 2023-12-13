@@ -47,7 +47,7 @@
 - flatpak:
     - com.github.tchx84.Flatseal
     - com.microsoft.Edge
-    - com.spotify.Client
+      # - com.spotify.Client
 - brew:
     - fluxcd/tap/flux
     - helm
