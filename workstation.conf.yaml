@@ -43,6 +43,7 @@
 - shell:
   - [wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/, Installing the dracula cursor theme]
   - [scripts/set_dracula_theme.sh, Setting the Dracula theme]
+  - [scripts/fix_cursor_theme.sh, Fixes the cursor theme for non-GTK applications]
   #- [dconf load / < config/dump.dconf, Load Gnome settings]
 - flatpak:
     - com.github.tchx84.Flatseal

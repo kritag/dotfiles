@@ -49,7 +49,7 @@
 - sudo:
   - shell:
     - [install pfetch/pfetch /usr/local/bin/, Installing Pfetch]
-    - [cp scripts/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
+    - [cp config/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
     - [scripts/add_sudoers.sh, Adding USER to sudoers]
     - [scripts/changeshell.sh, Change shell to zsh]
     - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
