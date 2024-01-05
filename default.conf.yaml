@@ -21,6 +21,9 @@
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.zshenv: zsh/zshenv
     ~/.config/bat/config: config/bat/config
+    ~/.config/bat/themes/Catppuccin-mocha.tmTheme:
+      create: true
+      path: catpuccin_bat/Catppuccin-mocha.tmTheme
     ~/.gitconfig:
       create: true
       path: dracula_git/config/gitconfig
@@ -55,6 +58,7 @@
     - [scripts/changeshell.sh, Change shell to zsh]
     - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
     - [rm -f /usr/lib/python*/EXTERNALLY-MANAGED, remove to fix lunarvim]
+    - [scripts/bat_cache.sh, make theme available for bat]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
