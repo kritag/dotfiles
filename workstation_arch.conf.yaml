@@ -25,6 +25,7 @@
       python,
       python-pip,
       qbittorrent,
+      remmina,
       rust,
       sqlite,
       solaar,
