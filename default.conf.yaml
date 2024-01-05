@@ -29,6 +29,7 @@
       path: dracula_git/config/gitconfig
     ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/btop/themes/dracula.theme: config/btop/themes/dracula.theme
+    ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
     ~/.config/lvim/config.lua: config/lvim/config.lua
     ~/.config/lvim/lua: 
         create: true
