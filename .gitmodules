@@ -75,3 +75,6 @@
 [submodule "dotbot-yay"]
 	path = dotbot-yay
 	url = https://github.com/oxson/dotbot-yay
+[submodule "catpuccin_bat"]
+	path = catpuccin_bat
+	url = https://github.com/catppuccin/bat
