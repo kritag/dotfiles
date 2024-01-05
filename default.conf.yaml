@@ -5,6 +5,7 @@
 
 - create:
     - "~/.local/share/nvim/site/autoload"
+    - "~/.config/bat/themes"
 
 - clean:
     - "~"
