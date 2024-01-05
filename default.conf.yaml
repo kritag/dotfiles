@@ -23,7 +23,7 @@
     ~/.config/bat/config: config/bat/config
     ~/.config/bat/themes/Catppuccin-mocha.tmTheme:
       create: true
-      path: catpuccin_bat/Catppuccin-mocha.tmTheme
+      path: catppuccin_bat/Catppuccin-mocha.tmTheme
     ~/.gitconfig:
       create: true
       path: dracula_git/config/gitconfig

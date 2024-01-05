@@ -81,3 +81,9 @@
 [submodule "catpuccin_btop"]
 	path = catpuccin_btop
 	url = https://github.com/catppuccin/btop
+[submodule "catppuccin_btop"]
+	path = catppuccin_btop
+	url = https://github.com/catppuccin/btop
+[submodule "catppuccin_bat"]
+	path = catppuccin_bat
+	url = https://github.com/catppuccin/bat
