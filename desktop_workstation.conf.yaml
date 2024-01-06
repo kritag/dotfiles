@@ -35,6 +35,7 @@
 - sudo:
     - link:
         /usr/share/gnome-text-editor/styles/dracula.xml: dracula_gedit/dracula.xml
+        /usr/local/bin/killsteam.sh: scripts/killsteam.sh
 
 - shell:
   - [wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/, Installing the dracula cursor theme]
