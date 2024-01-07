@@ -1,4 +1,4 @@
-lvim.builtin.lualine.options.theme = "dracula"
+lvim.builtin.lualine.options.theme = "catppuccin-mocha"
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.nvimtree.setup.open_on_setup = true
 lvim.builtin.terminal.active = true
@@ -27,7 +27,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 lvim.builtin.treesitter.highlight.enabled = true
-lvim.colorscheme = "dracula"
+lvim.colorscheme = "catppuccin-mocha"
 lvim.format_on_save = true
 lvim.leader = ","
 lvim.line_wrap_cursor_movement = false

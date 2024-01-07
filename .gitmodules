@@ -87,3 +87,27 @@
 [submodule "catppuccin_bat"]
 	path = catppuccin_bat
 	url = https://github.com/catppuccin/bat
+[submodule "catppuccin_gtk"]
+	path = catppuccin_gtk
+	url = https://github.com/catppuccin/gtk
+[submodule "catppuccin_zsh-fsh"]
+	path = catppuccin_zsh-fsh
+	url = https://github.com/catppuccin/zsh-fsh
+[submodule "catppuccin_gedit"]
+	path = catppuccin_gedit
+	url = https://github.com/catppuccin/gedit
+[submodule "catppuccin_slack"]
+	path = catppuccin_slack
+	url = https://github.com/catppuccin/slack
+[submodule "catppuccin_rofi"]
+	path = catppuccin_rofi
+	url = https://github.com/catppuccin/rofi
+[submodule "catppuccin_vim"]
+	path = catppuccin_vim
+	url = https://github.com/catppuccin/vim
+[submodule "catppuccin_qbittorrent"]
+	path = catppuccin_qbittorrent
+	url = https://github.com/catppuccin/qbittorrent
+[submodule "catppuccin_discord"]
+	path = catppuccin_discord
+	url = https://github.com/catppuccin/discord
