@@ -2,6 +2,8 @@
   - extension-manager
   - slack-desktop
   - yp-tools
+  - catppuccin-gtk-theme-mocha
+  - catppuccin-cursors-mocha
 - omnipkg:
   - install: [
       bat,
@@ -22,6 +24,7 @@
       man-db,
       nodejs,
       npm,
+      papirus-icon-theme,
       python,
       python-pip,
       qbittorrent,
