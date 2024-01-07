@@ -5,3 +5,8 @@ function killsteam() {
   return 0
 }
 killsteam
+function killdiscord() {
+  pkill discord
+  return 0
+}
+killdiscord
