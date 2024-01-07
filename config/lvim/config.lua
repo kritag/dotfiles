@@ -3,6 +3,7 @@ require('keymaps')
 
 lvim.plugins = {
   { "maxmx03/dracula.nvim" },
+  { "catppuccin/nvim" },
 }
 
 lvim.autocommands = {

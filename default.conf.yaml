@@ -30,6 +30,9 @@
     ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/btop/themes/dracula.theme: config/btop/themes/dracula.theme
     ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
+    ~/.config/fsh/catppuccin-mocha.ini:
+        create: true
+        path: catppuccin_zsh-fsh/themes/catppuccin-mocha.ini
     ~/.config/lvim/config.lua: config/lvim/config.lua
     ~/.config/lvim/lua: 
         create: true
@@ -60,6 +63,7 @@
     - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
     - [rm -f /usr/lib/python*/EXTERNALLY-MANAGED, remove to fix lunarvim]
     - [scripts/bat_cache.sh, make theme available for bat]
+      #    - [fast-theme XDG:catppuccin-mocha, set catppuccin-mocha theme for fast syntax highlighting]
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
