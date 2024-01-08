@@ -1,9 +1,10 @@
 - yay:
   - btop-gpu-git
-  - extension-manager
-  - yp-tools
-  - catppuccin-gtk-theme-mocha
   - catppuccin-cursors-mocha
+  - catppuccin-gtk-theme-mocha
+  - extension-manager
+  - papirus-folders-catppuccin-git
+  - yp-tools
 - omnipkg:
   - install: [
       bat,

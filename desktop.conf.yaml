@@ -7,7 +7,6 @@
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
-    ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css
     ~/.themes/Dracula:
       create: true
       path: dracula_gtk/*
@@ -27,6 +26,7 @@
     #  glob: true
     #  path: dracula_gtk/assets/*
     ~/.config/foot/foot.ini: config/foot/foot.ini
+    ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css
 
 - sudo:
     - link:
