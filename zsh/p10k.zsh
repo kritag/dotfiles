@@ -507,9 +507,9 @@
   #typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=76
   #typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=76
   #typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=178
-  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='cyan'
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='cyan'
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='cyan'
+  #typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='cyan'
+  #typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='cyan'
+  #typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='cyan'
 
   ##########################[ status: exit code of the last command ]###########################
   # Enable OK_PIPE, ERROR_PIPE and ERROR_SIGNAL status states to allow us to enable, disable and
@@ -1674,7 +1674,7 @@
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
-  # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
+  #typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
   # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
@@ -1684,7 +1684,7 @@
   #   - always:   Trim down prompt when accepting a command line.
   #   - same-dir: Trim down prompt when accepting a command line unless this is the first command
   #               typed after changing current working directory.
-  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
+  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=never
 
   # Instant prompt mode.
   #
