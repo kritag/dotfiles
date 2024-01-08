@@ -22,10 +22,10 @@
         #   create: true
         #   glob: true
         #   path: dracula_gtk/gtk-4.0/*
-    ~/.config/assets:
-      create: true
-      glob: true
-      path: dracula_gtk/assets/*
+        # ~/.config/assets:
+        #   create: true
+        #   glob: true
+        #   path: dracula_gtk/assets/*
     ~/.config/foot/foot.ini: config/foot/foot.ini
     ~/.config/remmina/remmina.pref: config/remmina/remmina.pref
 
@@ -38,7 +38,7 @@
 
 - shell:
   - [wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/, Installing the dracula cursor theme]
-    #- [scripts/set_dracula_theme.sh, Setting the Dracula theme]
+  #- [scripts/set_dracula_theme.sh, Setting the Dracula theme]
   - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
   - [scripts/fix_cursor_theme.sh, Fixes the cursor theme for non-GTK applications]
   #- [dconf load / < config/dump.dconf, Load Gnome settings]
