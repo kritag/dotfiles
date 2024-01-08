@@ -27,11 +27,11 @@
         #   glob: true
         #   path: dracula_gtk/assets/*
     ~/.config/foot/foot.ini: config/foot/foot.ini
-    ~/.config/remmina/remmina.pref: config/remmina/remmina.pref
 
 - sudo:
     - link:
         /usr/share/gnome-text-editor/styles/dracula.xml: dracula_gedit/dracula.xml
+        /usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
     - shell:
         - [cp services/*.service /etc/systemd/system/]
