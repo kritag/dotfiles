@@ -1641,7 +1641,7 @@
   # behavior where they contain the end times of their preceding commands.
   typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=false
   # Custom icon.
-  typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION=
+  # typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_TIME_PREFIX='%fat '
 
@@ -1651,7 +1651,7 @@
   #
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
-      p10k segment -f 208 -i '⭐' -t 'hello, %n'
+    p10k segment -f 208 -i '⭐' -t 'hello, %n'
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
@@ -1670,7 +1670,7 @@
     # Since prompt_example always makes the same `p10k segment` calls, we can call it from
     # instant_prompt_example. This will give us the same `example` prompt segment in the instant
     # and regular prompts.
-    prompt_example 
+    prompt_example
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
