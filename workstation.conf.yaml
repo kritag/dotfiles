@@ -18,14 +18,14 @@
       path: dracula-icons/*
       glob: true
       exclude: [README.md, Preview.png]
-        # ~/.config/gtk-4.0:
-        #   create: true
-        #   glob: true
-        #   path: dracula_gtk/gtk-4.0/*
-        # ~/.config/assets:
-        #   create: true
-        #   glob: true
-        #   path: dracula_gtk/assets/*
+    #~/.config/gtk-4.0:
+    #  create: true
+    #  glob: true
+    #  path: dracula_gtk/gtk-4.0/*
+    #~/.config/assets:
+    #  create: true
+    #  glob: true
+    #  path: dracula_gtk/assets/*
     ~/.config/foot/foot.ini: config/foot/foot.ini
 
 - sudo:

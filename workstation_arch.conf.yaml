@@ -1,45 +1,46 @@
-#- yay:
-#  - catppuccin-cursors-mocha
-#  - catppuccin-gtk-theme-mocha
-#  - extension-manager
-#  - keybase-bin
-#  - slack-desktop
-#  - yp-tools
-#- omnipkg:
-#  - install: [
-#      bat,
-#      btop,
-#      docker,
-#      docker-compose,
-#      ffmpeg,
-#      foot,
-#      freerdp,
-#      git,
-#      github-cli,
-#      gnome-tweaks,
-#      keepassxc,
-#      less,
-#      lsd,
-#      make,
-#      man-db,
-#      nodejs,
-#      npm,
-#      papirus-icon-theme,
-#      python,
-#      python-pip,
-#      qbittorrent,
-#      remmina,
-#      rust,
-#      sqlite,
-#      solaar,
-#      spotify-launcher,
-#      sshpass,
-#      sshuttle,
-#      systemd-resolvconf,
-#      tealdeer,
-#      vlc,
-#      wl-clipboard,
-#      zsh]
+- yay:
+  - catppuccin-cursors-mocha
+  - catppuccin-gtk-theme-mocha
+  - extension-manager
+  - keybase-bin
+  - papirus-folders-catppuccin-git
+  - slack-desktop
+  - yp-tools
+- omnipkg:
+  - install: [
+      bat,
+      btop,
+      docker,
+      docker-compose,
+      ffmpeg,
+      foot,
+      freerdp,
+      git,
+      github-cli,
+      gnome-tweaks,
+      keepassxc,
+      less,
+      lsd,
+      make,
+      man-db,
+      nodejs,
+      npm,
+      papirus-icon-theme,
+      python,
+      python-pip,
+      qbittorrent,
+      remmina,
+      rust,
+      sqlite,
+      solaar,
+      spotify-launcher,
+      sshpass,
+      sshuttle,
+      systemd-resolvconf,
+      tealdeer,
+      vlc,
+      wl-clipboard,
+      zsh]
 - shell:
   - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager] 
   
