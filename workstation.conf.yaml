@@ -11,7 +11,7 @@
     ~/.config/k9s/skins/catppuccin-mocha-transparent.yaml:
       create: true
       path: catppuccin_k9s/dist/catppuccin-mocha-transparent.yaml
-    ~/.config/k9s/config.yaml: config/k9s/config.yml
+    ~/.config/k9s/config.yaml: config/k9s/config.yaml
     ~/.themes/Dracula:
       create: true
       path: dracula_gtk/*
