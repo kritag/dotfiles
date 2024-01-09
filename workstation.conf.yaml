@@ -8,10 +8,10 @@
       glob: true
       path: fonts/*
     ~/.functions_k8s: zsh/functions_k8s
-    ~/.config/k9s/skins:
+    ~/.config/k9s/skins/catppuccin-mocha-transparent.yaml:
       create: true
       path: catppuccin_k9s/dist/catppuccin-mocha-transparent.yaml
-    ~/.config/k9s/config.yml: config/k9s/config.yml
+    ~/.config/k9s/config.yaml: config/k9s/config.yml
     ~/.themes/Dracula:
       create: true
       path: dracula_gtk/*
@@ -59,6 +59,7 @@
     - fluxcd/tap/flux
     - helm
     - jq
+    - k9s
     - krew
     - kubectx
     - kubernetes-cli
