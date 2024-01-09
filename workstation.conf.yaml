@@ -18,6 +18,10 @@
       path: dracula-icons/*
       glob: true
       exclude: [README.md, Preview.png]
+    ~/.config/spicetify:
+      create: true
+      path: config/spicetify/*
+      glob: true
     #~/.config/gtk-4.0:
     #  create: true
     #  glob: true

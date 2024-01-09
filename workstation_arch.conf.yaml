@@ -1,6 +1,7 @@
 - yay:
   - catppuccin-cursors-mocha
   - catppuccin-gtk-theme-mocha
+  - cava
   - extension-manager
   - keybase-bin
   - papirus-folders-catppuccin-git
