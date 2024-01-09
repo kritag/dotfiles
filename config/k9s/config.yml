@@ -48,3 +48,5 @@ k9s:
       warn: 70
   screenDumpDir: /tmp/k9s-screens-e215142
   disablePodCounting: false
+  ui:
+    skin: catppuccin-mocha-transparent
