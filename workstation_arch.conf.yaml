@@ -4,6 +4,8 @@
   - extension-manager
   - keybase-bin
   - papirus-folders-catppuccin-git
+  - spicetify-cli
+  - spicetify-marketplace-bin
   - slack-desktop
   - yp-tools
 - omnipkg:
