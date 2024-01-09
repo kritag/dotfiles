@@ -4,6 +4,8 @@
   - catppuccin-gtk-theme-mocha
   - extension-manager
   - papirus-folders-catppuccin-git
+  - spicetify-cli
+  - spicetify-marketplace-bin
   - yp-tools
 - omnipkg:
   - install: [
