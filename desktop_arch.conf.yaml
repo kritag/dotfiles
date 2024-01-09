@@ -8,6 +8,7 @@
 - omnipkg:
   - install: [
       bat,
+      eza,
       ffmpeg,
       foot,
       git,
