@@ -34,8 +34,10 @@ fi
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 
-# Ensuring that autocomplete works with sshpass aliases
+# Make autocomplete work with sshpass aliases
 compdef _ssh_hosts sshpass s sr
+# Make autocomplete work for the jctl() function
+compdef _journalctl jctl
 # Sourcing k8s related stuff if using k8s
 if command -v kubectl &> /dev/null
 then
