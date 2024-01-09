@@ -1,5 +1,6 @@
 - yay:
   - btop-gpu-git
+  - cava
   - catppuccin-cursors-mocha
   - catppuccin-gtk-theme-mocha
   - extension-manager
