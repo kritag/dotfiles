@@ -114,3 +114,6 @@
 [submodule "catppuccin_cava"]
 	path = catppuccin_cava
 	url = https://github.com/catppuccin/cava
+[submodule "catppuccin_k9s"]
+	path = catppuccin_k9s
+	url = https://github.com/catppuccin/k9s
