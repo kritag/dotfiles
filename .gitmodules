@@ -111,3 +111,6 @@
 [submodule "catppuccin_discord"]
 	path = catppuccin_discord
 	url = https://github.com/catppuccin/discord
+[submodule "catppuccin_cava"]
+	path = catppuccin_cava
+	url = https://github.com/catppuccin/cava
