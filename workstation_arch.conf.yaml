@@ -22,6 +22,7 @@
       git,
       github-cli,
       gnome-tweaks,
+      k9s,
       keepassxc,
       less,
       lsd,
