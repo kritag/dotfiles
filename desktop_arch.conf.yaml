@@ -32,3 +32,6 @@
       vlc,
       wl-clipboard,
       zsh]
+- shell:
+  - [~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css]
+
