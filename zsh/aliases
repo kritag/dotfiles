@@ -2,10 +2,11 @@ alias sudo='sudo '
 alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(git rev-parse --abbrev-ref HEAD | tr / -).patch ; cd $(git rev-parse --show-toplevel) ; git format-patch  master --stdout > $XXX_PATCH ; cd - ; echo Patchfile created: $XXX_PATCH'
 alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager grep"
 alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
-alias l='ls -lh'
-alias la='ls -lAh'
+alias ls='eza --icons --group-directories-first'
+alias l='ls -l'
+alias la='ls -lA'
+alias tree='ls --tree'
 alias pf='PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/local/bin/pfetch'
-alias ls='lsd'
 # Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
 alias sr='sshpass -f $HOME/pass ssh -l root -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
