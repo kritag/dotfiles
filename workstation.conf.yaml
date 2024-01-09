@@ -12,6 +12,7 @@
       create: true
       path: catppuccin_k9s/dist/catppuccin-mocha-transparent.yaml
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
+    ~/.config/lazygit/mauve.yml: catppuccin_lazygit/themes-mergable/mocha/mauve.yml
     ~/.themes/Dracula:
       create: true
       path: dracula_gtk/*
