@@ -12,6 +12,7 @@
   - install: [
       bat,
       eza,
+      fd,
       ffmpeg,
       foot,
       fzf,
