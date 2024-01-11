@@ -41,6 +41,7 @@ export WORDCHARS='*?[]~&;!#$%^(){}<>'
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH="${HOME}/.dotfiles/zsh"
 export ZSH_CACHE_DIR="$HOME/.cache"
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bg=black,fg=cyan,bold
 setopt APPEND_HISTORY
 setopt AUTO_MENU
 setopt EXTENDED_HISTORY

@@ -17,6 +17,7 @@
     ~/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
     ~/.aliases: zsh/aliases
     ~/.zstyle: zsh/zstyle
+    ~/.zshkeybindings: zsh/zshkeybindings
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.zshenv: zsh/zshenv
