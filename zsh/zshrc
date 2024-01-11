@@ -6,6 +6,7 @@ fi
 source $HOME/.aliases
 source $HOME/.env
 source $HOME/.zstyle
+source $HOME/.zshkeybindings
 
 PATH="${PATH}:$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"; export PATH;
 
