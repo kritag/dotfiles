@@ -16,6 +16,7 @@
       docker,
       docker-compose,
       eza,
+      fd,
       ffmpeg,
       foot,
       freerdp,
