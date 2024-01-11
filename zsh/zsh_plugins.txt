@@ -1,15 +1,10 @@
-ohmyzsh/ohmyzsh path:lib/functions.zsh
-ohmyzsh/ohmyzsh path:lib/key-bindings.zsh
-ohmyzsh/ohmyzsh path:lib/termsupport.zsh
-
 ohmyzsh/ohmyzsh path:plugins/dirhistory
 ohmyzsh/ohmyzsh path:plugins/gitfast
-
-zdharma-continuum/fast-syntax-highlighting
 
 romkatv/powerlevel10k
 
 MichaelAquilina/zsh-you-should-use
 
 zsh-users/zsh-autosuggestions
+zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search

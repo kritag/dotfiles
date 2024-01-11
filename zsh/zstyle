@@ -21,6 +21,3 @@ zstyle ':completion:*:warnings' format ' %F{yellow}-- no matches found --%f'
 zstyle ':completion:*' format ' %F{blue}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
-# Colorize completions using default `ls` colors. 
-#zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*:aliases' list-colors '=*=2;38;5;128'
