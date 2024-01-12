@@ -15,12 +15,12 @@
     ~/.zshrc: zsh/zshrc
     ~/.config/nvim/init.lua: config/nvim/init.lua
     ~/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
-    ~/.aliases: zsh/aliases.zsh
-    ~/.zstyle: zsh/zstyle.zsh
-    ~/.zshkeybindings: zsh/zshkeybindings.zsh
+    ~/.aliases.zsh: zsh/aliases.zsh
+    ~/.zstyle.zsh: zsh/zstyle.zsh
+    ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
-    ~/.zshenv: zsh/zshenv.zsh
+    ~/.zshenv.zsh: zsh/zshenv.zsh
     ~/.ripgreprc: config/ripgreprc
     ~/.config/bat/config: config/bat/config
     ~/.config/bat/themes/Catppuccin-mocha.tmTheme:

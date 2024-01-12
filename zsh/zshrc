@@ -3,14 +3,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $HOME/.aliases
+source $HOME/.aliases.zsh
 source $HOME/.env
-source $HOME/.zstyle
-source $HOME/.zshkeybindings
+source $HOME/.zstyle.zsh
+source $HOME/.zshkeybindings.zsh
 
-PATH="${PATH}:$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"; export PATH;
-
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"; export PATH;
 
 source $HOME/.antidote/antidote.zsh
 antidote load
@@ -46,4 +44,4 @@ then
 fi
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source $HOME/.zshenv
+source $HOME/.zshenv.zsh
