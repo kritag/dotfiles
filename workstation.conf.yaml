@@ -7,7 +7,7 @@
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
-    ~/.functions_k8s: zsh/functions_k8s
+    ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/k9s/skins/catppuccin-mocha-transparent.yaml:
       create: true
       path: catppuccin_k9s/dist/catppuccin-mocha-transparent.yaml
