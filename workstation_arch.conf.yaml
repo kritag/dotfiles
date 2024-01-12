@@ -3,7 +3,10 @@
   - catppuccin-gtk-theme-mocha
   - cava
   - extension-manager
+  - k9s-sbanka-bin
   - keybase-bin
+  - krew
+  - openshift-client-bin
   - papirus-folders-catppuccin-git
   - spicetify-cli
   - spicetify-marketplace-bin
@@ -18,17 +21,25 @@
       eza,
       fd,
       ffmpeg,
+      fluxcd,
       foot,
       freerdp,
       fzf,
       git,
       github-cli,
       gnome-tweaks,
+      helm,
+      jq,
       keepassxc,
+      kubectl,
+      kubectx,
+      kubeseal,
+      lazygit,
       less,
       lsd,
       make,
       man-db,
+      minikube,
       nodejs,
       npm,
       papirus-icon-theme,
@@ -40,13 +51,16 @@
       rust,
       sqlite,
       solaar,
+      sops,
       spotify-launcher,
       sshpass,
       sshuttle,
+      stern,
       systemd-resolvconf,
       tealdeer,
       vlc,
       wl-clipboard,
+      yq,
       zsh]
 - shell:
   - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager] 
