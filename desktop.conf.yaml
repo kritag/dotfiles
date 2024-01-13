@@ -32,6 +32,8 @@
     ~/.config/foot/foot.ini: config/foot/foot.ini
     ~/.config/cava/config: config/cava/config
     ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css
+    ~/.config/hypr/hyprland.conf: config/hypr/hyprland.conf
+    ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
 
 - sudo:
     - link:
