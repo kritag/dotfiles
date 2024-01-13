@@ -123,3 +123,6 @@
 [submodule "catppuccin_hyprland"]
 	path = catppuccin_hyprland
 	url = https://github.com/catppuccin/hyprland
+[submodule "catppuccin_waybar"]
+	path = catppuccin_waybar
+	url = https://github.com/catppuccin/waybar
