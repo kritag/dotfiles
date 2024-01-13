@@ -120,3 +120,6 @@
 [submodule "catppuccin_lazygit"]
 	path = catppuccin_lazygit
 	url = https://github.com/catppuccin/lazygit
+[submodule "catppuccin_hyprland"]
+	path = catppuccin_hyprland
+	url = https://github.com/catppuccin/hyprland
