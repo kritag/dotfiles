@@ -2,7 +2,7 @@ require('settings')
 require('keymaps')
 
 lvim.plugins = {
-  { "maxmx03/dracula.nvim" },
+  --  { "maxmx03/dracula.nvim" },
   { "catppuccin/nvim" },
 }
 
