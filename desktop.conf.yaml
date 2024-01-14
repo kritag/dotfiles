@@ -32,6 +32,14 @@
     ~/.config/foot/foot.ini: config/foot/foot.ini
     ~/.config/cava/config: config/cava/config
     ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css
+    ~/.config/hypr/hyprland.conf: config/hypr/hyprland.conf
+    ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
+    ~/.config/rofi/config.rasi: catppuccin_rofi/basic/.config/rofi/config.rasi
+    ~/.local/share/rofi/themes/catppuccin-mocha.rasi: catppuccin_rofi/basic/.local/share/rofi/themes/catppuccin-mocha.rasi
+    ~/.config/swaync/:
+      create: true
+      glob: true
+      path: config/swaync/*
 
 - sudo:
     - link:
