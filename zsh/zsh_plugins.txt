@@ -5,6 +5,8 @@ romkatv/powerlevel10k
 
 MichaelAquilina/zsh-you-should-use
 
+ajeetdsouza/zoxide
+
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
