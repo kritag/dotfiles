@@ -2,8 +2,10 @@
 --hidden
 # Don't respect ignore files (.gitignore, .ignore, etc.).
 --no-ignore
+# Follow symlinks
+--follow
 #-g '!{/*}'o
---color=always 
+#--color=always 
 --line-number 
 #--no-heading 
 --smart-case 
