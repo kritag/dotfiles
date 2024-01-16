@@ -1,25 +1,32 @@
 # Uses bat to colorize help switches
-# Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias diff='batdiff --paging=never'
 alias cat='bat --paging=never'
+alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager grep"
 alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
 alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(git rev-parse --abbrev-ref HEAD | tr / -).patch ; cd $(git rev-parse --show-toplevel) ; git format-patch  master --stdout > $XXX_PATCH ; cd - ; echo Patchfile created: $XXX_PATCH'
-alias grep='rg'
+alias grep='batgrep --paging=never --max-depth=1'
 alias l='ls -l'
 alias la='ls -lA'
 alias ls='eza --icons --group-directories-first'
+alias lt='ls -lrs age'
+alias lat='ls -lArs age'
 alias mk='minikube'
 alias pf='PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/local/bin/pfetch'
+# Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
 alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias sr='sshpass -f $HOME/pass ssh -l root -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias sudo='sudo '
+alias tail='tailbat'
 alias tree='ls --tree'
 alias vim='lvim'
 # To get bat coloring on journalctl
 jctl(){
    journalctl $@ | bat -l syslog -p}
+tailbat(){
+    \tail -f $@ | bat --paging=never -l log}
 
 # Git
 alias g='git'

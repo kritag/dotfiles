@@ -4,6 +4,7 @@ require('keymaps')
 lvim.plugins = {
   --  { "maxmx03/dracula.nvim" },
   { "catppuccin/nvim" },
+  { "norcalli/nvim-colorizer.lua" },
 }
 
 lvim.autocommands = {
@@ -15,3 +16,4 @@ lvim.autocommands = {
     }
   }
 }
+require 'colorizer'.setup()
