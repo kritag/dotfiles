@@ -36,6 +36,7 @@
     #  glob: true
     #  path: dracula_gtk/assets/*
     ~/.config/foot/foot.ini: config/foot/foot.ini
+    ~/.config/foot/themes/catppuccin-mocha.ini: ./catppuccin_foot/catppuccin-mocha.ini
     ~/.config/cava/config: config/cava/config
 
 - sudo:
