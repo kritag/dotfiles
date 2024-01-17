@@ -5,7 +5,6 @@ fi
 
 source $HOME/.aliases.zsh
 source $HOME/.env
-source $HOME/.zstyle.zsh
 source $HOME/.zshkeybindings.zsh
 
 PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"; export PATH;
@@ -45,3 +44,4 @@ fi
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source $HOME/.zshenv.zsh
+source $HOME/.zstyle.zsh
