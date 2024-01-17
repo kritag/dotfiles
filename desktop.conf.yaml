@@ -31,6 +31,7 @@
     #  path: dracula_gtk/assets/*
     ~/.config/foot/foot.ini: config/foot/foot.ini
     ~/.config/foot/themes/catppuccin-mocha.ini: ./catppuccin_foot/catppuccin-mocha.ini
+    ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
     ~/.config/cava/config: config/cava/config
     ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css
     ~/.config/hypr/hyprland.conf: config/hypr/hyprland.conf
