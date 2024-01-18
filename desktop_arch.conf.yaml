@@ -12,6 +12,7 @@
 - omnipkg:
   - install: [
       bat,
+      duf,
       eza,
       fd,
       ffmpeg,
