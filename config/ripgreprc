@@ -9,6 +9,8 @@
 --line-number 
 #--no-heading 
 --smart-case 
+--after-context=0
+--before-context=0
 #
 #    	fzf --ansi \
 #    			--color "hl:-1:underline,hl+:-1:underline:reverse" \
