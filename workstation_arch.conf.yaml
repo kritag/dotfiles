@@ -4,7 +4,6 @@
   - cava
   - extension-manager
   - k9s-sbanka-bin
-  - keybase-bin
   - krew
   - openshift-client-bin
   - papirus-folders-catppuccin-git
@@ -18,6 +17,7 @@
       btop,
       docker,
       docker-compose,
+      duf,
       eza,
       fd,
       ffmpeg,
@@ -31,6 +31,7 @@
       go-yq,
       helm,
       keepassxc,
+      keybase-gui,
       kubectl,
       kubectx,
       kubeseal,
