@@ -4,12 +4,12 @@ After=docker.service network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/home/linuxbrew/.linuxbrew/bin/minikube start
+ExecStart=/usr/bin/minikube start
 RemainAfterExit=true
-ExecStop=/home/linuxbrew/.linuxbrew/bin/minikube stop
+ExecStop=/usr/bin/minikube stop
 StandardOutput=journal
-User=tageskri
-Group=tageskri
+User=e215142
+Group=e215142
 
 [Install]
 WantedBy=multi-user.target
