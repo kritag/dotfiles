@@ -35,6 +35,7 @@
     ~/.config/cava/config: config/cava/config
     ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css
     ~/.config/hypr/hyprland.conf: config/hypr/hyprland.conf
+    ~/.config/hypr/keybinds.conf: config/hypr/keybinds.conf
     ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
     ~/.config/rofi/config.rasi: catppuccin_rofi/basic/.config/rofi/config.rasi
     ~/.local/share/rofi/themes/catppuccin-mocha.rasi: catppuccin_rofi/basic/.local/share/rofi/themes/catppuccin-mocha.rasi
@@ -42,12 +43,18 @@
       create: true
       glob: true
       path: config/swaync/*
+    ~/.config/waybar/:
+      create: true
+      glob: true
+      path: config/waybar/*
+    ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
 
 - sudo:
     - link:
         /usr/share/gnome-text-editor/styles/dracula.xml: dracula_gedit/dracula.xml
         /usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
         /usr/local/bin/killsteam.sh: scripts/killsteam.sh
+        /bin/powermenu: scripts/powermenu.sh
 
 - shell:
   - [wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/, Installing the dracula cursor theme]
