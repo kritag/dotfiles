@@ -7,7 +7,7 @@ alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {
 alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager grep"
 alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
 alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(git rev-parse --abbrev-ref HEAD | tr / -).patch ; cd $(git rev-parse --show-toplevel) ; git format-patch  master --stdout > $XXX_PATCH ; cd - ; echo Patchfile created: $XXX_PATCH'
-alias grep='batgrep --paging=never --max-depth=1'
+alias grep='rg --max-depth=1'
 alias l='ls -l'
 alias la='ls -lA'
 alias ls='eza --icons --group-directories-first'
