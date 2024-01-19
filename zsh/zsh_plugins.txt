@@ -7,6 +7,8 @@ MichaelAquilina/zsh-you-should-use
 
 ajeetdsouza/zoxide
 
+Aloxaf/fzf-tab
+
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-history-substring-search
