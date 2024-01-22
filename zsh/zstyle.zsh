@@ -21,3 +21,5 @@ zstyle ':completion:*:warnings' format ' %F{yellow}-- no matches found --%f'
 zstyle ':completion:*' format ' %F{blue}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
