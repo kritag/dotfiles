@@ -55,6 +55,7 @@
         /usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
         /usr/local/bin/killsteam.sh: scripts/killsteam.sh
         /bin/powermenu: scripts/powermenu.sh
+        /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
 
 - shell:
   - [wget -c https://github.com/dracula/gtk/releases/latest/download/Dracula-cursors.tar.xz -O - | tar Jxvf - -C ~/.icons/, Installing the dracula cursor theme]

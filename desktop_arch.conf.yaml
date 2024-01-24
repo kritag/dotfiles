@@ -12,6 +12,7 @@
 - omnipkg:
   - install: [
       bat,
+      chafa,
       duf,
       eza,
       fd,
@@ -28,6 +29,7 @@
       nodejs,
       npm,
       papirus-icon-theme,
+      perl-image-exiftool,
       python,
       python-pip,
       qbittorrent,
