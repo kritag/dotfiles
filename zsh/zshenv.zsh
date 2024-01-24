@@ -17,10 +17,10 @@ export HISTFILE=$HOME/.zsh_history
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bg=black,fg=cyan,bold
 export HISTSIZE=50000
 export LESS="-IRs"
-export LESSOPEN="| bat --pager=always -n %s"
+#export LESSOPEN="| bat --pager=always -n %s"
+export LESSOPEN='|~/.lessfilter %s'
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/mauve.yml" 
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
-#export LS_COLORS="di=01;33"
 export MANPAGER="nvim +Man!"
 export MOZ_USE_XINPUT2=1
 export MYVIMRC="${XDG_CONFIG_HOME}/nvim/init.vim"
