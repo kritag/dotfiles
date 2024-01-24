@@ -32,6 +32,7 @@
     ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/btop/themes/dracula.theme: config/btop/themes/dracula.theme
     ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
+    ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.config/fsh/catppuccin-mocha.ini:
         create: true
         path: catppuccin_zsh-fsh/themes/catppuccin-mocha.ini
