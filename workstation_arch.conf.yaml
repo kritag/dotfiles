@@ -15,6 +15,7 @@
   - install: [
       bat,
       btop,
+      chafa,
       docker,
       docker-compose,
       duf,
@@ -44,6 +45,7 @@
       nodejs,
       npm,
       papirus-icon-theme,
+      perl-image-exiftool,
       python,
       python-pip,
       qbittorrent,
