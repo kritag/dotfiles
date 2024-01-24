@@ -7,6 +7,8 @@ MichaelAquilina/zsh-you-should-use
 
 ajeetdsouza/zoxide
 
+Freed-Wu/fzf-tab-source
+
 Aloxaf/fzf-tab
 
 zsh-users/zsh-autosuggestions
