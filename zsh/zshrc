@@ -1,4 +1,4 @@
-zmodload zsh/zprof
+#zmodload zsh/zprof
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -8,6 +8,8 @@ source $HOME/.env
 source $HOME/.zshkeybindings.zsh
 
 PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"; export PATH;
+
+zstyle ':antidote:bundle' use-friendly-names 'yes'
 
 source $HOME/.antidote/antidote.zsh
 antidote load
