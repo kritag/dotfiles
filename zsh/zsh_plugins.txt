@@ -7,7 +7,7 @@ MichaelAquilina/zsh-you-should-use
 
 ajeetdsouza/zoxide
 
-Freed-Wu/fzf-tab-source
+#Freed-Wu/fzf-tab-source
 
 Aloxaf/fzf-tab
 
