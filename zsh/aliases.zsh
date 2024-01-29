@@ -76,6 +76,7 @@ alias pipreq="pip freeze > requirements.txt"
 alias pipir="pip install -r requirements.txt"
 
 # Kubernetes
+alias kubectl='kubecolor'
 alias k='kubectl'
 alias ke='kubens'
 alias kx='kubectx'
