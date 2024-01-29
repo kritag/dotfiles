@@ -1,0 +1,16 @@
+#! /usr/bin/env sh
+mime=$(file -Lbs --mime-type "$1")
+category=${mime%%/*}
+kind=${mime##*/}
+if [ -d "$1" ]; then
+  eza -hl --git --color=always --icons "$1"
+elif [ "$category" = image ]; then
+  fzf-preview.sh "$1"
+	exiftool "$1" | bat --color=always -plyaml
+elif [ "$kind" = json ]; then
+	jq -Cr . "$1"
+elif [ "$category" = text ]; then
+	bat --color=always "$1"
+else
+	lesspipe.sh "$1" | bat --color=always
+fi

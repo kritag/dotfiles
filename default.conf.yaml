@@ -22,6 +22,7 @@
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.zshenv.zsh: zsh/zshenv.zsh
     ~/.ripgreprc: config/ripgreprc
+    ~/.lessfilter: config/lessfilter
     ~/.config/bat/config: config/bat/config
     ~/.config/bat/themes/Catppuccin-mocha.tmTheme:
       create: true
