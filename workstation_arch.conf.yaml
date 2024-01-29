@@ -38,6 +38,7 @@
       kubeseal,
       lazygit,
       less,
+      lesspipe,
       lsd,
       make,
       man-db,

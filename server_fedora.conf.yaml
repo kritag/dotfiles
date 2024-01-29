@@ -24,6 +24,7 @@
          fzf,
          gh,
          git,
+         lesspipe,
          lsd,
          make,
          neovim,
