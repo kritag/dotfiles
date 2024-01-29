@@ -23,6 +23,7 @@
       github-cli,
       gnome-tweaks,
       less,
+      lesspipe,
       lsd,
       make,
       man-db,
