@@ -9,7 +9,8 @@ ajeetdsouza/zoxide
 
 #Freed-Wu/fzf-tab-source
 
-Aloxaf/fzf-tab
+#Aloxaf/fzf-tab
+lincheney/fzf-tab-completion
 
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting
