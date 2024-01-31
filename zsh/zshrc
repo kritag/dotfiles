@@ -40,10 +40,10 @@ compdef _kubectl kubecolor
 # Make autocomplete work for the jctl() function
 compdef _journalctl jctl
 # Sourcing k8s related stuff if using k8s
-if command -v kubectl &> /dev/null
-then
-    source $HOME/.functions_k8s
-fi
+#if command -v kubectl &> /dev/null
+#then
+#    source $HOME/.functions_k8s
+#fi
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source $HOME/.zshenv.zsh
