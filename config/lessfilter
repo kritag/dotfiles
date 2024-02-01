@@ -2,6 +2,7 @@
 mime=$(file -Lbs --mime-type "$1")
 category=${mime%%/*}
 kind=${mime##*/}
+type=$(echo "$1" | grep -o '\.[^.]*$' | cut -d. -f2-)
 if [ -d "$1" ]; then
   eza -hl --git --color=always --icons "$1"
 elif [ "$category" = image ]; then
