@@ -34,6 +34,10 @@ fi
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 
+# fzf stuff
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Make autocomplete work with sshpass aliases
 compdef _ssh_hosts sshpass s sr
 compdef _kubectl kubecolor

@@ -26,17 +26,23 @@ zstyle ':fzf-tab:complete:((-parameter-|unset):|(export|typeset|declare|local):a
 zstyle ':fzf-tab:complete:(-equal-:|(\\|*/|)(sudo|proxychains|strace):argument-1|pudb:option--pre-run-1)' fzf-preview 'less =$word'
 # -command-
 zstyle ':fzf-tab:complete:(-command-:|command:option-(v|V)-rest)' fzf-preview 'case $group in
-'external command')
+"external command")
   less =$word
   ;;
-'executable file')
+"executable file")
   less ${realpath#--*=}
   ;;
-'builtin command')
+"builtin command")
   run-help $word | bat -lman
   ;;
 parameter)
   echo ${(P)word}
+  ;;
+esac'
+# has
+zstyle ':fzf-tab:complete:(\\|*/|)has:argument-rest' fzf-preview 'case $group in
+'external command')
+  has $word
   ;;
 esac'
 # Systemctl
