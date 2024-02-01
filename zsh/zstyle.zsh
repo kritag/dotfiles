@@ -17,6 +17,7 @@ zstyle ':fzf-tab:*' show-group full
 zstyle ':fzf-tab:complete:*:options' fzf-preview 
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 zstyle ':completion:complete:*:options' sort false
+zstyle ':fzf-tab:complete:*:*' query-string input
 # --complete
 #zstyle ':fzf-tab:complete:*' fzf-preview 'less ${realpath#--*=}'
 # --user-expand

@@ -52,3 +52,4 @@ compdef _journalctl jctl
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
+

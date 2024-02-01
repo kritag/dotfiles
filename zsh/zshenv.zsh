@@ -9,13 +9,16 @@
 export BAT_PAGER="less -R"
 export DOTFILES="${HOME}/.dotfiles"
 export EDITOR=lvim
+export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
+export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.node_modules,bulid,dist,vender,mnt} --type f --type l --hidden $FD_OPTIONS"
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --layout=reverse \
---history=$HOME/.fzfhistory
-"
+--history=$HOME/.fzfhistory"
+export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 export HISTFILE=$HOME/.zsh_history
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bg=black,fg=cyan,bold
 export HISTSIZE=50000
