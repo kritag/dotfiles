@@ -10,12 +10,13 @@ zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
 zstyle ':completion:*:functions' ignore-patterns '_*'
 # if you end up using a directory as argument
 zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*:descriptions' format %d
+zstyle ':completion:*:descriptions' format "[%d]"
 zstyle ':fzf-tab:complete:*' extra-opts --preview-window=:hidden
 zstyle ':fzf-tab:*' show-group full
 #zstyle ':fzf-tab:*' fzf-min-height '1000'
 zstyle ':fzf-tab:complete:*:options' fzf-preview 
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
+zstyle ':completion:complete:*:options' sort false
 # --complete
 #zstyle ':fzf-tab:complete:*' fzf-preview 'less ${realpath#--*=}'
 # --user-expand
@@ -25,28 +26,20 @@ zstyle ':fzf-tab:complete:((-parameter-|unset):|(export|typeset|declare|local):a
 # -equal
 zstyle ':fzf-tab:complete:(-equal-:|(\\|*/|)(sudo|proxychains|strace):argument-1|pudb:option--pre-run-1)' fzf-preview 'less =$word'
 # -command-
-zstyle ':fzf-tab:complete:(-command-:|command:option-(v|V)-rest)' fzf-preview 'case $group in
-"external command")
-  less =$word
-  ;;
-"executable file")
-  less ${realpath#--*=}
-  ;;
-"builtin command")
-  run-help $word | bat -lman
-  ;;
-parameter)
-  echo ${(P)word}
-  ;;
-esac'
+ zstyle ':fzf-tab:complete:-command-:*' fzf-preview '(out=$(tldr --color always "$word") 2>/dev/null && echo $out) || (out=$(MANWIDTH=$FZF_PREVIEW_COLUMNS man "$word") 2>/dev/null && echo $out) || (out=$(which "$word") && echo $out) || echo "${(P)word}"'
+zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*'fzf-preview 'echo ${(P)word}'
 # has
 zstyle ':fzf-tab:complete:(\\|*/|)has:argument-rest' fzf-preview 'case $group in
-'external command')
+"external command")
   has $word
   ;;
 esac'
 # Systemctl
-zstyle ':fzf-tab:complete:systemctl-(status|(re|)start|(dis|en)able):*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+zstyle ':fzf-tab:complete:systemctl:*' fzf-flags --preview-window=down:0:wrap
+# TLDR
+zstyle ':fzf-tab:complete:tldr:*' fzf-preview 'tldr --color always $word'
+zstyle ':fzf-tab:complete:tldr:argument-1' fzf-preview 'tldr --color always $word'
 # Man
 zstyle ':fzf-tab:complete:(\\|*/|)man:' fzf-preview 'man $word | bat -lman'
 zstyle ':fzf-tab:complete:(\\|*/|)bat:argument-rest' fzf-preview 'case $group in
