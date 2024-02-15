@@ -28,7 +28,6 @@
       create: true
       path: catppuccin_bat/Catppuccin-mocha.tmTheme
     ~/.config/btop/btop.conf: config/btop/btop.conf
-    ~/.config/btop/themes/dracula.theme: config/btop/themes/dracula.theme
     ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.config/fsh/catppuccin-mocha.ini:
@@ -39,17 +38,9 @@
         create: true
         path: config/lvim/lua/*
         glob: true
-    ~/.config/lsd/colors.yaml:
-      create: true
-      path: dracula_lsd/dracula.yaml
     ~/.config/lsd/config.yaml:
       create: true
       path: config/lsd/config.yaml
-    ~/.vim/pack/themes/start/dracula:
-      create: true
-      path: dracula_vim/*
-      glob: true
-      exclude: [ dracula_vim/*.md, dracula_vim/LICENSE, dracula_vim/doc, dracula_vim/*.png ]
     ~/.antidote:
       create: true
       path: zsh/antidote/*
