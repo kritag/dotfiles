@@ -17,36 +17,6 @@
 [submodule "lsd"]
 	path = lsd
 	url = https://github.com/dracula/lsd
-[submodule "dracula_lsd"]
-	path = dracula_lsd
-	url = https://github.com/dracula/lsd
-[submodule "dracula_gtk"]
-	path = dracula_gtk
-	url = https://github.com/dracula/gtk
-[submodule "dracula_zsh"]
-	path = dracula_zsh
-	url = https://github.com/dracula/zsh
-[submodule "dracula_vim"]
-	path = dracula_vim
-	url = https://github.com/dracula/vim
-[submodule "dracula_slack"]
-	path = dracula_slack
-	url = https://github.com/dracula/slack
-[submodule "dracula_gedit"]
-	path = dracula_gedit
-	url = https://github.com/dracula/gedit
-[submodule "dotbot-sudo"]
-	path = dotbot-sudo
-	url = https://github.com/DrDynamic/dotbot-sudo.git
-[submodule "dracula_git"]
-	path = dracula_git
-	url = https://github.com/dracula/git
-[submodule "dracula_bashtop"]
-	path = dracula_bashtop
-	url = https://github.com/dracula/bashtop
-[submodule "dracula_rofi"]
-	path = dracula_rofi
-	url = https://github.com/dracula/rofi
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
@@ -62,9 +32,6 @@
 [submodule "zsh/antidote"]
 	path = zsh/antidote
 	url = https://github.com/mattmc3/antidote
-[submodule "dracula_alacritty"]
-	path = dracula_alacritty
-	url = https://github.com/dracula/alacritty
 [submodule "vim-plug"]
 	path = vim-plug
 	url = https://github.com/junegunn/vim-plug
@@ -72,9 +39,6 @@
 	path = dotbot-yum
 	url = https://gitlab.com/flyingchipmunk/dotbot-yum.git
   ignore = all
-[submodule "dotbot-yay"]
-	path = dotbot-yay
-	url = https://github.com/kritag/dotbot-yay
 [submodule "catpuccin_bat"]
 	path = catpuccin_bat
 	url = https://github.com/catppuccin/bat
