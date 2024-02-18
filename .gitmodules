@@ -74,7 +74,7 @@
   ignore = all
 [submodule "dotbot-yay"]
 	path = dotbot-yay
-	url = https://github.com/oxson/dotbot-yay
+	url = https://github.com/kritag/dotbot-yay
 [submodule "catpuccin_bat"]
 	path = catpuccin_bat
 	url = https://github.com/catppuccin/bat
