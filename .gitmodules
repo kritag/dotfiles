@@ -1,12 +1,6 @@
 [submodule "pfetch"]
 	path = pfetch
 	url = https://github.com/dylanaraps/pfetch
-[submodule "dracula_terminator"]
-	path = dracula_terminator
-	url = https://github.com/dracula/terminator
-[submodule "GTK4ThemeAdapter"]
-	path = GTK4ThemeAdapter
-	url = https://github.com/Cornul11/GTK4ThemeAdapter/
 [submodule "zsh-autosuggestions"]
 	path = zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
@@ -14,9 +8,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "lsd"]
-	path = lsd
-	url = https://github.com/dracula/lsd
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
@@ -29,9 +20,6 @@
 [submodule "dotbot-sudo"]
 	path = dotbot-sudo
 	url = https://github.com/DrDynamic/dotbot-sudo.git
-[submodule "dracula-icons"]
-	path = dracula-icons
-	url = https://github.com/m4thewz/dracula-icons
 [submodule "zsh/antidote"]
 	path = zsh/antidote
 	url = https://github.com/mattmc3/antidote
