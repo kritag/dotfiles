@@ -14,6 +14,7 @@ export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 export HISTFILE=$HOME/.zsh_history
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bg=black,fg=cyan,bold
 export HISTSIZE=50000
+export KUBECTL_COMMAND=oc
 export LESS="-IRs"
 #export LESSOPEN="| bat --pager=always -n %s"
 export LESSOPEN='|~/.lessfilter %s'
