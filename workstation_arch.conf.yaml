@@ -1,4 +1,5 @@
 - yay:
+  - argocd
   - catppuccin-cursors-mocha
   - catppuccin-gtk-theme-mocha
   - cava
