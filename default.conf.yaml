@@ -27,7 +27,6 @@
     ~/.config/bat/themes/Catppuccin-mocha.tmTheme:
       create: true
       path: catppuccin_bat/Catppuccin-mocha.tmTheme
-    ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.config/fsh/catppuccin-mocha.ini:
