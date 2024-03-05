@@ -4,6 +4,7 @@
   - catppuccin-gtk-theme-mocha
   - cava
   - extension-manager
+  - flux-bin
   - k9s-sbanka-bin
   - krew
   - kubecolor
@@ -24,7 +25,6 @@
       eza,
       fd,
       ffmpeg,
-      fluxcd,
       foot,
       freerdp,
       fzf,
