@@ -50,10 +50,10 @@
     - [install pfetch/pfetch /usr/local/bin/, Installing Pfetch]
     - [cp config/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
     - [scripts/add_sudoers.sh, Adding USER to sudoers]
-    - [scripts/changeshell.sh, Change shell to zsh]
+      #  - [scripts/changeshell.sh, Change shell to zsh]
     - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
     - [rm -f /usr/lib/python*/EXTERNALLY-MANAGED, remove to fix lunarvim]
-    - [scripts/bat_cache.sh, make theme available for bat]
+      #- [scripts/bat_cache.sh, make theme available for bat]
       #    - [fast-theme XDG:catppuccin-mocha, set catppuccin-mocha theme for fast syntax highlighting]
 
 - shell:
