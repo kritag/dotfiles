@@ -22,6 +22,7 @@ export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/ma
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 export MANPAGER="nvim +Man!"
 export MOZ_USE_XINPUT2=1
+export MOZ_ENABLE_WAYLAND=1
 export MYVIMRC="${XDG_CONFIG_HOME}/nvim/init.vim"
 export POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=224
 export POWERLEVEL9K_DIR_FOREGROUND=223
