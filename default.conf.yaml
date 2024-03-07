@@ -26,7 +26,7 @@
     ~/.config/bat/config: config/bat/config
     ~/.config/bat/themes/Catppuccin-mocha.tmTheme:
       create: true
-      path: catppuccin_bat/Catppuccin-mocha.tmTheme
+      path: catppuccin_bat/themes/Catppuccin Mocha.tmTheme
     ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.config/fsh/catppuccin-mocha.ini:
@@ -51,7 +51,7 @@
     - [cp config/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
     - [scripts/add_sudoers.sh, Adding USER to sudoers]
       #  - [scripts/changeshell.sh, Change shell to zsh]
-    - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
+      #    - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
     - [rm -f /usr/lib/python*/EXTERNALLY-MANAGED, remove to fix lunarvim]
       #- [scripts/bat_cache.sh, make theme available for bat]
       #    - [fast-theme XDG:catppuccin-mocha, set catppuccin-mocha theme for fast syntax highlighting]
