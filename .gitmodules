@@ -87,3 +87,6 @@
 [submodule "dotbot-yay"]
 	path = dotbot-yay
 	url = https://github.com/kritag/dotbot-yay
+[submodule "catppuccin_swaync"]
+	path = catppuccin_swaync
+	url = https://github.com/catppuccin/swaync
