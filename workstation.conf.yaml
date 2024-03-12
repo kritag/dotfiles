@@ -21,6 +21,13 @@
     ~/.config/foot/themes/catppuccin-mocha.ini: ./catppuccin_foot/catppuccin-mocha.ini
     ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
     ~/.config/cava/config: config/cava/config
+      #~/.config/hypr/hyprland.conf: config/hypr/hyprland.conf
+    ~/.config/hypr/keybinds.conf: config/hypr/keybinds.conf
+    ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
+    ~/.config/rofi/config.rasi: config/rofi/config.rasi
+    ~/.local/share/rofi/themes/catppuccin-mocha.rasi:
+      create: true
+      path: config/rofi/catppuccin-mocha.rasi
 
 - sudo:
     - link:
