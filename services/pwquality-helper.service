@@ -1,5 +1,5 @@
 [Unit]
-Description=MyDaemon Helper Simple Service
+Description=Ensures pwquality is run at boot
 After=network.target
 
 [Service]
