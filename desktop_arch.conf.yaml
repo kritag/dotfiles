@@ -41,6 +41,7 @@
       spotify-launcher,
       systemd-resolvconf,
       tealdeer,
+      ttf-meslo-nerd-font-powerlevel10k,
       vivid,
       vlc,
       wl-clipboard,
