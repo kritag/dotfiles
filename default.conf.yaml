@@ -10,6 +10,7 @@
 - clean:
     - "~"
     - "~/.config"
+
 - link:
     ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
