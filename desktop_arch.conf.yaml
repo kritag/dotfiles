@@ -2,35 +2,26 @@
   - btop-gpu-git
   - cava
   - catppuccin-cursors-mocha
-  #- catppuccin-gtk-theme-mocha
-  - extension-manager
-  #- papirus-folders-catppuccin-git
   - protonup-qt
   - spicetify-cli
-  #- spicetify-marketplace-bin
-  #  - yp-tools
 - omnipkg:
   - install: [
       bat,
-      #chafa,
       duf,
       eza,
       fd,
       ffmpeg,
       flatpak,
-      #foot,
       fzf,
       gamemode,
       gamescope,
       git,
       github-cli,
-      #   gnome-tweaks,
       kitty,
       less,
       lesspipe,
       lib32-gamemode,
       libreoffice-fresh,
-      #lsd,
       lutris,
       make,
       man-db,
@@ -38,8 +29,6 @@
       neovim,
       nodejs,
       npm,
-      #papirus-icon-theme,
-      #perl-image-exiftool,
       python,
       python-pip,
       qbittorrent,
@@ -57,6 +46,7 @@
       vivid,
       vlc,
       wl-clipboard,
+      zip,
       zoxide,
       zsh]
 - shell:
