@@ -52,12 +52,3 @@ compdef _journalctl jctl
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
-
-
-# pnpm
-export PNPM_HOME="/home/kristian/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
