@@ -25,7 +25,7 @@
     ~/.ripgreprc: config/ripgreprc
     ~/.lessfilter: config/lessfilter
     ~/.config/bat/config: config/bat/config
-    ~/.config/bat/themes/Catppuccin-mocha.tmTheme:
+    ~/.config/bat/themes/Catppuccin Mocha.tmTheme:
       create: true
       path: catppuccin_bat/themes/Catppuccin Mocha.tmTheme
     ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
