@@ -90,3 +90,6 @@
 [submodule "catppuccin_swaync"]
 	path = catppuccin_swaync
 	url = https://github.com/catppuccin/swaync
+[submodule "catpuccin_delta"]
+	path = catpuccin_delta
+	url = https://github.com/catppuccin/delta
