@@ -1,0 +1,5 @@
+[include]
+	path = PATH/TO/delta/themes/catppuccin.gitconfig
+
+[delta]
+	features = catppuccin-mocha
