@@ -1,3 +1,6 @@
+[core]
+  pager = delta
+
 [include]
 	path = ~/.dotfiles/catppuccin_delta/catppuccin.gitconfig
 
