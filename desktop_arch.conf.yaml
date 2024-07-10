@@ -7,6 +7,7 @@
 - omnipkg:
   - install: [
       bat,
+      delta,
       duf,
       eza,
       fd,
