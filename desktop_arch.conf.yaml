@@ -7,7 +7,6 @@
 - omnipkg:
   - install: [
       bat,
-      delta,
       duf,
       eza,
       fd,
@@ -17,6 +16,7 @@
       gamemode,
       gamescope,
       git,
+      git-delta,
       github-cli,
       kitty,
       less,
