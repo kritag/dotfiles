@@ -15,6 +15,7 @@
     ~/.config/hypr/keybinds.conf: config/hypr/keybinds.conf
     ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
     ~/.config/rofi/config.rasi: catppuccin_rofi/basic/.config/rofi/config.rasi
+    ~/.gitconfig.local: config/gitconfig.local
     ~/.local/share/rofi/themes/catppuccin-mocha.rasi: catppuccin_rofi/basic/.local/share/rofi/themes/catppuccin-mocha.rasi
     ~/.config/swaync/:
       create: true
