@@ -93,3 +93,6 @@
 [submodule "catpuccin_delta"]
 	path = catpuccin_delta
 	url = https://github.com/catppuccin/delta
+[submodule "catppuccin_delta"]
+	path = catppuccin_delta
+	url = https://github.com/catppuccin/delta
