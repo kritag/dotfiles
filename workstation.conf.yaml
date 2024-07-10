@@ -14,7 +14,6 @@
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
     ~/.config/lazygit/mauve.yml: catppuccin_lazygit/themes-mergable/mocha/mauve.yml
     ~/.config/foot/foot.ini: config/foot/foot.ini
-    ~/.config/spicetify/config-xpui.ini: ./config/spicetify/config-xpui.ini
     ~/.config/foot/themes/catppuccin-mocha.ini: ./catppuccin_foot/catppuccin-mocha.ini
     ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
     ~/.config/cava/config: config/cava/config
