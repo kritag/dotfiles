@@ -32,6 +32,8 @@
         /usr/local/bin/killsteam.sh: scripts/killsteam.sh
         /bin/powermenu: scripts/powermenu.sh
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
+    - shell:
+        - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
 
 - shell:
   #- [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
