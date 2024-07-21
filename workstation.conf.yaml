@@ -32,6 +32,7 @@
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
     - shell:
         - [cp services/*.service /etc/systemd/system/]
+        - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
 
 - shell:
   - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
