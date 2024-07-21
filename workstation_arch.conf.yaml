@@ -16,6 +16,7 @@
   - yp-tools
 - omnipkg:
   - install: [
+      archlinux-contrib,
       bat,
       btop,
       chafa,
