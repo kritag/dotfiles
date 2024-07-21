@@ -6,6 +6,7 @@
   - spicetify-cli
 - omnipkg:
   - install: [
+      archlinux-contrib,
       bat,
       duf,
       eza,
