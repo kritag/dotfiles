@@ -30,6 +30,7 @@
       neovim,
       nodejs,
       npm,
+      pacman-contrib,
       python,
       python-pip,
       qbittorrent,
