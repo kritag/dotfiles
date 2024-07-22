@@ -40,4 +40,4 @@
   #- [dconf load / < config/dump.dconf, Load Gnome settings]
 - flatpak:
     - com.github.tchx84.Flatseal
-    - com.microsoft.Edge
+    #    - com.microsoft.Edge
