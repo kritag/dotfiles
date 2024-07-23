@@ -34,13 +34,11 @@
         create: true
         path: catppuccin_zsh-fsh/themes/catppuccin-mocha.ini
     ~/.config/lvim/config.lua: config/lvim/config.lua
+    ~/.config/fastfetch/config.jsonc: ./config/fastfetch/config.jsonc
     ~/.config/lvim/lua: 
         create: true
         path: config/lvim/lua/*
         glob: true
-    ~/.config/lsd/config.yaml:
-      create: true
-      path: config/lsd/config.yaml
     ~/.antidote:
       create: true
       path: zsh/antidote/*
