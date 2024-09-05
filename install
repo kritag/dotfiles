@@ -21,6 +21,5 @@ for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
     -p dotbot-yum/yum.py \
     -p dotbot-yay/yay.py \
     --plugin-dir dotbot-brew \
-    --plugin-dir dotbot-flatpak \
     -c "${conf}${CONFIG_SUFFIX}" 
 done
