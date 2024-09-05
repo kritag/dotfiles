@@ -39,5 +39,3 @@
   #- [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
   #- [scripts/fix_cursor_theme.sh, Fixes the cursor theme for non-GTK applications]
   #- [dconf load / < config/dump.dconf, Load Gnome settings]
-- flatpak:
-    - com.github.tchx84.Flatseal
