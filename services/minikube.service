@@ -1,5 +1,5 @@
 [Unit]
-Description=Kickoff Minikube Cluster
+Description=Minikube
 After=docker.service network-online.target
 
 [Service]
