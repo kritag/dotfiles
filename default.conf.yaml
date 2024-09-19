@@ -24,6 +24,7 @@
     ~/.zshenv.zsh: zsh/zshenv.zsh
     ~/.ripgreprc: config/ripgreprc
     ~/.lessfilter: config/lessfilter
+    ~/.gitconfig: config/gitconfig
     ~/.config/bat/config: config/bat/config
     ~/.config/bat/themes/Catppuccin Mocha.tmTheme:
       create: true
