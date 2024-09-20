@@ -14,7 +14,6 @@ alias ls='eza --icons --group-directories-first'
 alias lt='ls -lrs age'
 alias lat='ls -lArs age'
 alias mk='minikube'
-alias pf='PF_INFO="ascii title os host kernel wm editor uptime shell de palette" /usr/local/bin/pfetch'
 # Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
 alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias sr='sshpass -f $HOME/pass ssh -l root -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
