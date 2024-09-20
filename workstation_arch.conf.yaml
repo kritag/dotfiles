@@ -59,6 +59,7 @@
       papirus-icon-theme,
       perl-image-exiftool,
       power-profiles-daemon,
+      procs,
       python,
       python-pip,
       qbittorrent,
