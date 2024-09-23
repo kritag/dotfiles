@@ -18,6 +18,7 @@
       git,
       git-delta,
       github-cli,
+      glow,
       kitty,
       less,
       lesspipe,
