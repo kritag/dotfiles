@@ -1,8 +1,9 @@
 # Uses bat to colorize help switches
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
-alias diff='batdiff --paging=never'
 alias cat='bat --paging=never'
+alias cd='z'
+alias diff='batdiff --paging=never'
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager grep"
 alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
@@ -10,9 +11,9 @@ alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(
 alias grep='rg --max-depth=1'
 alias l='ls -l'
 alias la='ls -lA'
+alias lat='ls -lArs age'
 alias ls='eza --icons --group-directories-first'
 alias lt='ls -lrs age'
-alias lat='ls -lArs age'
 alias mk='minikube'
 # Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
 alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
