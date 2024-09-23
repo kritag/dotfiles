@@ -36,6 +36,10 @@
         path: catppuccin_zsh-fsh/themes/catppuccin-mocha.ini
     ~/.config/lvim/config.lua: config/lvim/config.lua
     ~/.config/fastfetch/config.jsonc: ./config/fastfetch/config.jsonc
+    ~/.config/glow:
+        create: true
+        path: config/glow/*
+        glob: true
     ~/.config/lvim/lua: 
         create: true
         path: config/lvim/lua/*
