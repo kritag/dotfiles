@@ -33,6 +33,7 @@
       fwupd,
       git,
       github-cli,
+      glow,
       gnome-shell-extension-appindicator,
       gnome-shell-extension-arc-menu,
       gnome-shell-extension-dash-to-panel,
