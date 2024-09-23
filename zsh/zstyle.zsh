@@ -2,6 +2,7 @@ zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
 #zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
+zstyle ':completion:*' accept-exact false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s%p
 # cache to proxy list of results
@@ -85,5 +86,15 @@ _FZF_TAB_FZF_FLAGS=(
     '--height=80%' \
     '--layout=reverse' \
 )
-zstyle ':fzf-tab:complete:*' fzf-preview '([[ -f $realpath ]] && bat --color=always "$realpath") || ([[ -d $realpath ]] && (eza --long --git --group-directories-first --icons --color=always "$realpath"))'
+
+#zstyle ':fzf-tab:complete:*' fzf-preview '([[ -f $realpath ]] && bat --color=always "$realpath") || ([[ -d $realpath ]] && (eza --long --git --group-directories-first --icons --color=always "$realpath"))'
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'lesspipe.sh ${(Q)realpath}'
 zstyle ':fzf-tab:complete:*' fzf-flags '--preview-window=50%' $_FZF_TAB_FZF_FLAGS
+#zstyle ':fzf-tab:complete:*' fzf-flags \
+#    --preview-window=50% \
+#    --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+#    --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+#    --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+#    --layout=reverse \
+#    --history=$HOME/.fzfhistory \
+#    --height=80% \
