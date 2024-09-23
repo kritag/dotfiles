@@ -1,4 +1,6 @@
 export BAT_PAGER="less -R"
+export CLICOLOR_FORCE=1
+export COLORTERM=truecolor
 export DOTFILES="${HOME}/.dotfiles"
 export EDITOR=lvim
 export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
@@ -17,7 +19,8 @@ export HISTSIZE=50000
 export KUBECTL_COMMAND=oc
 export LESS="-IRs"
 #export LESSOPEN="| bat --pager=always -n %s"
-export LESSOPEN='|~/.lessfilter %s'
+#export LESSOPEN='|~/.lessfilter %s'
+export LESSOPEN='|/usr/bin/lesspipe.sh %s'
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/mauve.yml" 
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 export MANPAGER="nvim +Man!"
@@ -47,7 +50,6 @@ unset POWERLEVEL9K_KUBECONTEXT_DEFAULT_CONTENT_EXPANSION
 unset POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND
 unset POWERLEVEL9K_PROMPT_ADD_NEWLINE
 setopt APPEND_HISTORY
-setopt AUTO_MENU
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
