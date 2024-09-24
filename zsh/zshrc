@@ -45,7 +45,6 @@ compdef _journalctl jctl
 #    source $HOME/.functions_k8s
 #fi
 
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml)"
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
