@@ -1,8 +1,4 @@
 #zmodload zsh/zprof
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
-
 source $HOME/.aliases.zsh
 source $HOME/.env
 source $HOME/.zshkeybindings.zsh
@@ -50,7 +46,7 @@ compdef _journalctl jctl
 #fi
 
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/omp.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml)"
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
 

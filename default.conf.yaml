@@ -20,6 +20,7 @@
     ~/.zstyle.zsh: zsh/zstyle.zsh
     ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
     ~/.p10k.zsh: zsh/p10k.zsh
+    ~/.config/oh-my-posh/omp.yaml: config/oh-my-posh/omp.yaml
     ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.zshenv.zsh: zsh/zshenv.zsh
     ~/.ripgreprc: config/ripgreprc
