@@ -1,7 +1,7 @@
 ohmyzsh/ohmyzsh path:plugins/dirhistory
 ohmyzsh/ohmyzsh path:plugins/gitfast
 
-romkatv/powerlevel10k
+#romkatv/powerlevel10k
 
 MichaelAquilina/zsh-you-should-use
 

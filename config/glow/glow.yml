@@ -3,6 +3,6 @@ style: $HOME/.config/glow/catppuccin-mocha.json
 # mouse support (TUI-mode only)
 mouse: false
 # use pager to display markdown
-pager: false
+pager: less
 # word-wrap at width
 width: 80
