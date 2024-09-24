@@ -3,6 +3,7 @@ zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 zstyle ':completion:*' accept-exact false
+zstyle ':completion:*' menu no
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s%p
 # cache to proxy list of results
