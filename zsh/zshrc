@@ -1,7 +1,4 @@
 #zmodload zsh/zprof
-source $HOME/.dotfiles/zsh/instant-zsh.zsh
-zcompile $HOME/.dotfiles/zsh/instant-zsh.zsh
-instant-zsh-pre '%{%}❯ %{%} %{%}❯❯ %{%} ?#  +%N:%i>'
 source $HOME/.aliases.zsh
 source $HOME/.env
 source $HOME/.zshkeybindings.zsh
@@ -66,4 +63,4 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-instant-zsh-post
+#zprof
