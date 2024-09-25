@@ -1,6 +1,5 @@
 final_space: true
 version: 2
-console_title_template: '{{ .Shell }} in {{ .Folder }}'
 blocks:
   - alignment: left
     type: prompt
@@ -68,15 +67,15 @@ blocks:
         style: diamond
         template: '{{ $context := splitList "/" .Context }}{{ index $context 0 }}'
       - type: kubectl
-        background: 'p:mauve'
+        background: 'p:peach'
         foreground: 'p:crust'
         leading_diamond: 
         trailing_diamond: 
         style: diamond
         template: '{{ $context := splitList "/" .Context }} {{$cluster:=regexReplaceAll "^api-os-" .Cluster "" }}{{ $leftMost := regexReplaceAll "-[^-]+-[^-]+:.*" $cluster "" }}{{ $leftMost }} '
       - type: kubectl
-        background: 'p:blue'
-        foreground: 'p:crust'
+        background: p:mauve
+        foreground: p:crust
         leading_diamond: 
         style: diamond
         template: '{{ .Namespace }}'
@@ -104,8 +103,8 @@ palette:
   yellow: '#f9e2af'
 transient_prompt:
   foreground_templates:
-    - '{{if gt .Code 0}}red{{end}}'
-    - '{{if eq .Code 0}}mauve{{end}}'
+    - '{{if gt .Code 0}}p:red{{end}}'
+    - '{{if eq .Code 0}}p:green{{end}}'
   background: transparent
   template: '❯ '
 secondary_prompt:
