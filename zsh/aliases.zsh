@@ -21,7 +21,7 @@ alias sr='sshpass -f $HOME/pass ssh -l root -o PreferredAuthentications=password
 alias sudo='sudo '
 alias tail='tailbat'
 alias tree='ls --tree'
-alias vim='lvim'
+alias vim='nvim'
 # To get bat coloring on journalctl
 jctl(){
    journalctl $@ | bat -l syslog -p}
