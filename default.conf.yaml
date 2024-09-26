@@ -4,7 +4,7 @@
       create: true
 
 - create:
-    - "~/.local/share/nvim/site/autoload"
+  #- "~/.local/share/nvim/site/autoload"
     - "~/.config/bat/themes"
 
 - clean:
@@ -14,8 +14,8 @@
 - link:
     ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
-    ~/.config/nvim/init.lua: config/nvim/init.lua
-    ~/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
+    #~/.config/nvim/init.lua: config/nvim/init.lua
+    #~/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
     ~/.aliases.zsh: zsh/aliases.zsh
     ~/.zstyle.zsh: zsh/zstyle.zsh
     ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
