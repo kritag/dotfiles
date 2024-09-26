@@ -2,7 +2,7 @@ export BAT_PAGER="less -R"
 export CLICOLOR_FORCE=1
 export COLORTERM=truecolor
 export DOTFILES="${HOME}/.dotfiles"
-export EDITOR=lvim
+export EDITOR=nvim
 export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.node_modules,bulid,dist,vender,mnt} --type f --type l --hidden $FD_OPTIONS"
 export FZF_DEFAULT_OPTS=" \
@@ -31,7 +31,7 @@ export MYVIMRC="${XDG_CONFIG_HOME}/nvim/init.vim"
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export SAVEHIST=10000
 #export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
-export SYSTEMD_EDITOR=lvim
+export SYSTEMD_EDITOR=nvim
 export WORDCHARS='*?[]~&;!#$%^(){}<>'
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH="${HOME}/.dotfiles/zsh"
