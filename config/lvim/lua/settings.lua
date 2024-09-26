@@ -30,20 +30,25 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.which_key.setup.plugins.presets.z = true
 lvim.colorscheme = "catppuccin-mocha"
 lvim.format_on_save = true
-lvim.leader = ","
 lvim.line_wrap_cursor_movement = false
 lvim.lint_on_save = true
 lvim.transparent_window = true
 
-vim.opt.foldenable = false
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- default is ""
-vim.opt.foldmethod = "expr"                     -- default is "normal"
-vim.opt.lazyredraw = true
-vim.opt.linebreak = true
-vim.opt.relativenumber = true
-vim.opt.showmatch = true
-vim.opt.smartindent = true
-vim.opt.wrap = true
+local options = {
+  foldenable = false,
+  foldexpr = "nvim_treesitter#foldexpr()", -- default is ""
+  foldmethod = "expr",                     -- default is "normal"
+  lazyredraw = true,
+  linebreak = true,
+  relativenumber = true,
+  showmatch = true,
+  smartindent = true,
+  wrap = true,
+}
+
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {

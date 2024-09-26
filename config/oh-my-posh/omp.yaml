@@ -108,7 +108,7 @@ transient_prompt:
   background: transparent
   template: '❯ '
 secondary_prompt:
-  foreground: lavender
+  foreground: p:mauve
   background: transparent
   template: '❯❯ '
 

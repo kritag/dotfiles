@@ -1,12 +1,11 @@
 -- Initialize plugin manager
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
-Plug 'Mofiqul/dracula.nvim'
 Plug('catppuccin/nvim', { as = 'catppuccin' })
 vim.call('plug#end')
 
 vim.cmd.colorscheme('catppuccin-mocha') -- Set colorscheme
-vim.g.mapleader = ","             -- Sets mapsleader to , instead of \
+vim.g.mapleader = ","                   -- Sets mapsleader to , instead of \
 
 local options = {
   clipboard = 'unnamedplus',                                           -- Sets clipboard support
