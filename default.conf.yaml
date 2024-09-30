@@ -4,7 +4,7 @@
       create: true
 
 - create:
-  #- "~/.local/share/nvim/site/autoload"
+    #- "~/.local/share/nvim/site/autoload"
     - "~/.config/bat/themes"
 
 - clean:
@@ -15,7 +15,7 @@
     ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
     #~/.config/nvim/init.lua: config/nvim/init.lua
-    #~/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim 
+    #~/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim
     ~/.aliases.zsh: zsh/aliases.zsh
     ~/.zstyle.zsh: zsh/zstyle.zsh
     ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
@@ -33,33 +33,40 @@
     ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.config/fsh/catppuccin-mocha.ini:
-        create: true
-        path: catppuccin_zsh-fsh/themes/catppuccin-mocha.ini
+      create: true
+      path: catppuccin_zsh-fsh/themes/catppuccin-mocha.ini
     ~/.config/lvim/config.lua: config/lvim/config.lua
     ~/.config/fastfetch/config.jsonc: ./config/fastfetch/config.jsonc
     ~/.config/glow:
-        create: true
-        path: config/glow/*
-        glob: true
-    ~/.config/lvim/lua: 
-        create: true
-        path: config/lvim/lua/*
-        glob: true
+      create: true
+      path: config/glow/*
+      glob: true
+    ~/.config/lvim/lua:
+      create: true
+      path: config/lvim/lua/*
+      glob: true
     ~/.antidote:
       create: true
       path: zsh/antidote/*
       glob: true
-    
+    ~/.config/lazyvim:
+      create: true
+      path: config/lazyvim
+      glob: true
+
 - sudo:
-  - shell:
-    - [cp config/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
-    - [scripts/add_sudoers.sh, Adding USER to sudoers]
-      #  - [scripts/changeshell.sh, Change shell to zsh]
-      #    - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
-    - [rm -f /usr/lib/python*/EXTERNALLY-MANAGED, remove to fix lunarvim]
-      #- [scripts/bat_cache.sh, make theme available for bat]
-      #    - [fast-theme XDG:catppuccin-mocha, set catppuccin-mocha theme for fast syntax highlighting]
+    - shell:
+        - [
+            cp config/wifi-powersave-off.conf /etc/NetworkManager/conf.d,
+            Disables WiFi powersaving,
+          ]
+        - [scripts/add_sudoers.sh, Adding USER to sudoers]
+          #  - [scripts/changeshell.sh, Change shell to zsh]
+          #    - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
+        - [rm -f /usr/lib/python*/EXTERNALLY-MANAGED, remove to fix lunarvim]
+          #- [scripts/bat_cache.sh, make theme available for bat]
+          #    - [fast-theme XDG:catppuccin-mocha, set catppuccin-mocha theme for fast syntax highlighting]
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [touch ~/.env, Creating the .env file if it does not exist]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [touch ~/.env, Creating the .env file if it does not exist]
