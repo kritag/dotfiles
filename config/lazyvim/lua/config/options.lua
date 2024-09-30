@@ -3,34 +3,26 @@
 -- Add any additional options here
 
 local options = {
-  foldenable = false,
-  foldexpr = "nvim_treesitter#foldexpr()", -- default is ""
-  foldmethod = "expr", -- default is "normal"
-  --lazyredraw = true,
   linebreak = true,
+  pumblend = 0,
   relativenumber = true,
   showmatch = true,
   smartindent = true,
   wrap = true,
-  pumblend = 0,
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- Hyprlang LSP
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  pattern = { "*.hl", "hypr*.conf" },
-  callback = function(event)
-    print(string.format("starting hyprls for %s", vim.inspect(event)))
-    vim.lsp.start({
-      name = "hyprlang",
-      cmd = { "hyprls" },
-      root_dir = vim.fn.getcwd(),
-    })
-  end,
-})
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+  extension = {
+    zsh = "sh",
+    sh = "sh", -- force sh-files with zsh-shebang to still get sh as filetype
+  },
+  filename = {
+    [".zshrc"] = "sh",
+    [".zshenv"] = "sh",
+  },
 })
