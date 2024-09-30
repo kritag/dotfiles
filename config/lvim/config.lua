@@ -2,7 +2,10 @@ require('settings')
 require('keymaps')
 
 lvim.plugins = {
-  { "catppuccin/nvim" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin"
+  },
   { "norcalli/nvim-colorizer.lua" },
 }
 

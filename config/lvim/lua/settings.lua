@@ -28,7 +28,7 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.which_key.setup.plugins.presets.z = true
-lvim.colorscheme = "catppuccin-mocha"
+lvim.colorscheme = "catppuccin"
 lvim.format_on_save = true
 lvim.line_wrap_cursor_movement = false
 lvim.lint_on_save = true
