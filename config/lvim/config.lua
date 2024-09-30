@@ -19,3 +19,6 @@ lvim.autocommands = {
   }
 }
 require 'colorizer'.setup()
+vim.api.nvim_create_user_command('ShowLualineConfig', function()
+  print(vim.inspect(require('lualine').get_config()))
+end, {})
