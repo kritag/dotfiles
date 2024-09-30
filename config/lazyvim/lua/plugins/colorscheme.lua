@@ -5,12 +5,12 @@ return {
     name = "catppuccin",
     opts = {
       transparent_background = true,
-      -- custom_highlights = function(colors)
-      --   return {
-      --     IblIndent = { fg = colors.surface0 },
-      --     IblScope = { fg = colors.text },
-      --   }
-      -- end,
+      custom_highlights = function(colors)
+        return {
+          --IblIndent = { fg = colors.surface0 },
+          NavicText = { fg = colors.text },
+        }
+      end,
       flavour = "mocha",
       term_colors = true,
       integrations = {
@@ -44,7 +44,7 @@ return {
             information = { "undercurl" },
           },
         },
-        navic = { enabled = true, custom_bg = "lualine" },
+        navic = { enabled = true, custom_bg = "NONE" },
         neotest = true,
         neotree = true,
         noice = true,
