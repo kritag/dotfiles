@@ -78,3 +78,6 @@ vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
 require("lvim.lsp.manager").setup("taplo")
+vim.api.nvim_create_user_command('ShowLualineConfig', function()
+  print(vim.inspect(require('lualine').get_config()))
+end, {})
