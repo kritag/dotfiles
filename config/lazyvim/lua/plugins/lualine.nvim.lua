@@ -43,18 +43,6 @@ local lsp = {
   -- cond = conditions.hide_in_width,
 }
 
-local treesitter = {
-  function()
-    return ""
-  end,
-  color = function()
-    local buf = vim.api.nvim_get_current_buf()
-    local ts = vim.treesitter.highlighter.active[buf]
-    return { fg = ts and not vim.tbl_isempty(ts) }
-  end,
-  --cond = conditions.hide_in_width,
-}
-
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -175,15 +163,22 @@ return {
           format = "{kind_icon}{symbol.name:Normal}",
           hl_group = "lualine_c_normal",
         })
+        --table.insert(opts.winbar.lualine_c, {
+        --  symbols and symbols.get,
+        --  cond = function()
+        --    return vim.b.trouble_lualine ~= false and symbols.has()
+        --  end,
+        --})
         table.insert(opts.winbar.lualine_c, {
-          symbols and symbols.get,
+          function()
+            return require("nvim-navic").get_location()
+          end,
           cond = function()
-            return vim.b.trouble_lualine ~= false and symbols.has()
+            return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
           end,
         })
       end
       table.insert(opts.sections.lualine_x, lsp)
-      table.insert(opts.sections.lualine_x, treesitter)
       return opts
     end,
   },
