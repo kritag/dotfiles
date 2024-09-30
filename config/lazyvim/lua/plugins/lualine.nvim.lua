@@ -43,6 +43,18 @@ local lsp = {
   -- cond = conditions.hide_in_width,
 }
 
+local treesitter = {
+  function()
+    return ""
+  end,
+  color = function()
+    local buf = vim.api.nvim_get_current_buf()
+    local ts = vim.treesitter.highlighter.active[buf]
+    return { fg = ts and not vim.tbl_isempty(ts) }
+  end,
+  --cond = conditions.hide_in_width,
+}
+
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -144,7 +156,7 @@ return {
         },
         winbar = {
           lualine_c = {
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+            { "filetype", icon_only = true, cond = nil, separator = "", padding = { left = 0, right = 0 } },
             { LazyVim.lualine.pretty_path() },
           },
         },
@@ -171,6 +183,7 @@ return {
         })
       end
       table.insert(opts.sections.lualine_x, lsp)
+      table.insert(opts.sections.lualine_x, treesitter)
       return opts
     end,
   },

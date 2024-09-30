@@ -15,6 +15,7 @@ return {
       "gitcommit",
       "gitignore",
       "html",
+      "hyprlang",
       "ini",
       "javascript",
       "json",
@@ -30,4 +31,5 @@ return {
       "yaml",
     },
   },
+  vim.treesitter.language.register("bash", "zsh"),
 }
