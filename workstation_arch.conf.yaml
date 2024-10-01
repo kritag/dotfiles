@@ -1,89 +1,98 @@
 - yay:
-  - argocd
-  - catppuccin-cursors-mocha
-  - catppuccin-gtk-theme-mocha
-  - cava
-  - extension-manager
-  - flux-bin
-  - k9s-sbanka-bin
-  - krew
-  - kubecolor
-  - microsoft-edge-stable-bin
-  - openshift-client-bin
-  - papirus-folders-catppuccin-git
-  - spicetify-cli
-  - spicetify-marketplace-bin
-  - slack-desktop
-  - yp-tools
+    - argocd
+    - catppuccin-cursors-mocha
+    - catppuccin-gtk-theme-mocha
+    - cava
+    - extension-manager
+    - flux-bin
+    - k9s-sbanka-bin
+    - krew
+    - kubecolor
+    - microsoft-edge-stable-bin
+    - openshift-client-bin
+    - papirus-folders-catppuccin-git
+    - spicetify-cli
+    - spicetify-marketplace-bin
+    - slack-desktop
+    - yp-tools
 - omnipkg:
-  - install: [
-      archlinux-contrib,
-      bat,
-      btop,
-      chafa,
-      docker,
-      docker-compose,
-      duf,
-      eza,
-      fd,
-      ffmpeg,
-      foot,
-      freerdp,
-      fzf,
-      fwupd,
-      git,
-      github-cli,
-      glow,
-      gnome-shell-extension-appindicator,
-      gnome-shell-extension-arc-menu,
-      gnome-shell-extension-dash-to-panel,
-      gnome-tweaks,
-      go-yq,
-      helm,
-      jq,
-      keepassxc,
-      keybase-gui,
-      kubectl,
-      kubectx,
-      kubeseal,
-      lazygit,
-      less,
-      lesspipe,
-      libreoffice-fresh,
-      lsd,
-      make,
-      man-db,
-      minikube,
-      nodejs,
-      npm,
-      pacman-contrib,
-      papirus-icon-theme,
-      perl-image-exiftool,
-      power-profiles-daemon,
-      procs,
-      python,
-      python-pip,
-      qbittorrent,
-      remmina,
-      ripgrep,
-      rust,
-      seahorse,
-      solaar,
-      sops,
-      spotify-launcher,
-      sqlite,
-      sshpass,
-      sshuttle,
-      stern,
-      systemd-resolvconf,
-      tealdeer,
-      ttf-meslo-nerd-font-powerlevel10k,
-      vivid,
-      vlc,
-      wl-clipboard,
-      zoxide,
-      zsh]
+    - install:
+        [
+          archlinux-contrib,
+          bat,
+          btop,
+          chafa,
+          docker,
+          docker-compose,
+          duf,
+          eza,
+          fd,
+          ffmpeg,
+          foot,
+          freerdp,
+          fzf,
+          fwupd,
+          git,
+          github-cli,
+          glow,
+          gnome-shell-extension-appindicator,
+          gnome-shell-extension-arc-menu,
+          gnome-shell-extension-dash-to-panel,
+          gnome-tweaks,
+          go-yq,
+          helm,
+          hyprland,
+          hyprlock,
+          jq,
+          keepassxc,
+          keybase-gui,
+          kubectl,
+          kubectx,
+          kubeseal,
+          lazygit,
+          less,
+          lesspipe,
+          libreoffice-fresh,
+          lsd,
+          make,
+          man-db,
+          minikube,
+          nodejs,
+          npm,
+          pacman-contrib,
+          papirus-icon-theme,
+          perl-image-exiftool,
+          power-profiles-daemon,
+          procs,
+          python,
+          python-pip,
+          qbittorrent,
+          remmina,
+          ripgrep,
+          rust,
+          seahorse,
+          solaar,
+          sops,
+          spotify-launcher,
+          sqlite,
+          sshpass,
+          sshuttle,
+          stern,
+          systemd-resolvconf,
+          tealdeer,
+          ttf-meslo-nerd-font-powerlevel10k,
+          vivid,
+          vlc,
+          wl-clipboard,
+          zoxide,
+          zsh,
+        ]
 - shell:
-  - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager] 
-  - [papirus-folders -C cat-mocha-mauve --theme Papirus-Dark, setting Catpuccin Mocha icons]
-  
+    - [
+        xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search,
+        Set Nautilus as default file manager,
+      ]
+    - [
+        papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
+        setting Catpuccin Mocha icons,
+      ]
