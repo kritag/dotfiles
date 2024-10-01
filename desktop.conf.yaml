@@ -12,6 +12,7 @@
     ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css
     ~/.config/rofi/config.rasi: catppuccin_rofi/basic/.config/rofi/config.rasi
     ~/.config/hypr/hyprland.conf: ./config/hyprland/hyprland-sddm.conf
+    ~/.config/hyprlock/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.gitconfig.local: config/gitconfig.local
     ~/.local/share/rofi/themes/catppuccin-mocha.rasi: catppuccin_rofi/basic/.local/share/rofi/themes/catppuccin-mocha.rasi
     ~/.config/swaync/:
