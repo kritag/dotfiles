@@ -5,40 +5,41 @@ blocks:
     type: prompt
     segments:
       - type: path
-        background: 'p:pink'
-        foreground: 'p:base'
+        background: "p:pink"
+        foreground: "p:base"
         trailing_diamond: 
         leading_diamond: 
         style: diamond
-        template: '{{ if .Writable }}{{else}}{{end}}<b>{{ .Path }}</b>'
+        template: "{{ if .Writable }}{{else}}{{end}}<b>{{ .Path }}</b>"
         properties:
           style: full
+          folder_format: "%s"
       - type: git
         background_templates:
-        - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:peach{{ end }}"
-        - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}"
-        - "{{ if gt .Ahead 0 }}p:lavender{{ end }}"
-        - "{{ if gt .Behind 0 }}p:maroon{{ end }}"
+          - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:peach{{ end }}"
+          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}"
+          - "{{ if gt .Ahead 0 }}p:lavender{{ end }}"
+          - "{{ if gt .Behind 0 }}p:maroon{{ end }}"
         foreground_templates:
-        - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:base{{ end }}"
-        - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:base{{ end }}"
-        - "{{ if gt .Ahead 0 }}p:base{{ end }}"
+          - "{{ if or (.Working.Changed) (.Staging.Changed) }}p:base{{ end }}"
+          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:base{{ end }}"
+          - "{{ if gt .Ahead 0 }}p:base{{ end }}"
         background: p:green
         foreground: p:base
         style: powerline
         powerline_symbol: 
-        template: ' {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} '
+        template: " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
         properties:
-          branch_icon: ' '
-          cherry_pick_icon: ' '
-          commit_icon: ' '
+          branch_icon: " "
+          cherry_pick_icon: " "
+          commit_icon: " "
           fetch_status: true
           fetch_upstream_icon: false
-          merge_icon: ' '
-          no_commits_icon: ' '
-          rebase_icon: ' '
-          revert_icon: ' '
-          tag_icon: ' '
+          merge_icon: " "
+          no_commits_icon: " "
+          rebase_icon: " "
+          revert_icon: " "
+          tag_icon: " "
   - type: session
     style: diamond
     leading_diamond: 
@@ -52,23 +53,23 @@ blocks:
     segments:
       - background: transparent
         foreground_templates:
-          - '{{if gt .Code 0}}red{{end}}'
-          - '{{if eq .Code 0}}mauve{{end}}'
+          - "{{if gt .Code 0}}red{{end}}"
+          - "{{if eq .Code 0}}mauve{{end}}"
         style: plain
         template: ❯
         type: text
   - type: rprompt
     segments:
       - type: kubectl
-        background: 'p:lavender'
-        foreground: 'p:crust'
+        background: "p:lavender"
+        foreground: "p:crust"
         leading_diamond: 
         trailing_diamond: 
         style: diamond
         template: '{{ $context := splitList "/" .Context }}{{ index $context 0 }}'
       - type: kubectl
-        background: 'p:peach'
-        foreground: 'p:crust'
+        background: "p:peach"
+        foreground: "p:crust"
         leading_diamond: 
         trailing_diamond: 
         style: diamond
@@ -78,37 +79,36 @@ blocks:
         foreground: p:crust
         leading_diamond: 
         style: diamond
-        template: '{{ .Namespace }}'
+        template: "{{ .Namespace }}"
         trailing_diamond: 
 palette:
-  base: '#1e1e2e'
-  blue: '#89b4fa'
-  crust: '#11111b'
-  flamingo: '#f2cdcd'
-  green: '#a6e3a1'
-  lavender: '#b4befe'
-  mantle: '#181825'
-  mauve: '#cba6f7'
-  maroon: '#eba0ac'
-  os: '#ACB0BE'
-  peach: '#fab387'
-  pink: '#f5c2e7'
-  red: '#f38ba8'
-  rosewater: '#f5e0dc'
-  sapphire: '#74c7ec'
-  sky: '#89dceb'
-  teal: '#94e2d5'
-  text: '#cdd6f4'
-  wight: '#FFFFFF'
-  yellow: '#f9e2af'
+  base: "#1e1e2e"
+  blue: "#89b4fa"
+  crust: "#11111b"
+  flamingo: "#f2cdcd"
+  green: "#a6e3a1"
+  lavender: "#b4befe"
+  mantle: "#181825"
+  mauve: "#cba6f7"
+  maroon: "#eba0ac"
+  os: "#ACB0BE"
+  peach: "#fab387"
+  pink: "#f5c2e7"
+  red: "#f38ba8"
+  rosewater: "#f5e0dc"
+  sapphire: "#74c7ec"
+  sky: "#89dceb"
+  teal: "#94e2d5"
+  text: "#cdd6f4"
+  wight: "#FFFFFF"
+  yellow: "#f9e2af"
 transient_prompt:
   foreground_templates:
-    - '{{if gt .Code 0}}p:red{{end}}'
-    - '{{if eq .Code 0}}p:green{{end}}'
+    - "{{if gt .Code 0}}p:red{{end}}"
+    - "{{if eq .Code 0}}p:green{{end}}"
   background: transparent
-  template: '❯ '
+  template: "❯ "
 secondary_prompt:
   foreground: p:mauve
   background: transparent
-  template: '❯❯ '
-
+  template: "❯❯ "
