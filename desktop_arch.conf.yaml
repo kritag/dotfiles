@@ -1,58 +1,63 @@
 - yay:
-  - btop-gpu-git
-  - cava
-  - catppuccin-cursors-mocha
-  - protonup-qt
-  - spicetify-cli
+    - btop-gpu-git
+    - cava
+    - catppuccin-cursors-mocha
+    - protonup-qt
+    - spicetify-cli
 - omnipkg:
-  - install: [
-      archlinux-contrib,
-      bat,
-      duf,
-      eza,
-      fd,
-      ffmpeg,
-      fzf,
-      gamemode,
-      gamescope,
-      git,
-      git-delta,
-      github-cli,
-      glow,
-      kitty,
-      less,
-      lesspipe,
-      lib32-gamemode,
-      libreoffice-fresh,
-      lutris,
-      make,
-      man-db,
-      mangohud,
-      neovim,
-      nodejs,
-      npm,
-      pacman-contrib,
-      procs,
-      python,
-      python-pip,
-      qbittorrent,
-      ripgrep,
-      rocm-smi-lib,
-      rust,
-      sqlite,
-      solaar,
-      spotify-launcher,
-      steam,
-      systemd-resolvconf,
-      tealdeer,
-      ttf-meslo-nerd-font-powerlevel10k,
-      unzip,
-      vivid,
-      vlc,
-      wl-clipboard,
-      zip,
-      zoxide,
-      zsh]
+    - install:
+        [
+          archlinux-contrib,
+          bat,
+          duf,
+          eza,
+          fd,
+          ffmpeg,
+          fzf,
+          gamemode,
+          gamescope,
+          git,
+          git-delta,
+          github-cli,
+          glow,
+          hyprland,
+          hyprlock,
+          kitty,
+          less,
+          lesspipe,
+          lib32-gamemode,
+          libreoffice-fresh,
+          lutris,
+          make,
+          man-db,
+          mangohud,
+          neovim,
+          nodejs,
+          npm,
+          pacman-contrib,
+          procs,
+          python,
+          python-pip,
+          qbittorrent,
+          ripgrep,
+          rocm-smi-lib,
+          rust,
+          sqlite,
+          solaar,
+          spotify-launcher,
+          steam,
+          systemd-resolvconf,
+          tealdeer,
+          ttf-meslo-nerd-font-powerlevel10k,
+          unzip,
+          vivid,
+          vlc,
+          wl-clipboard,
+          zip,
+          zoxide,
+          zsh,
+        ]
 - shell:
-  - [~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css]
-
+    - [
+        ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css,
+      ]
