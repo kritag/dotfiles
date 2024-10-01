@@ -9,6 +9,7 @@ alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager gr
 alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
 alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(git rev-parse --abbrev-ref HEAD | tr / -).patch ; cd $(git rev-parse --show-toplevel) ; git format-patch  master --stdout > $XXX_PATCH ; cd - ; echo Patchfile created: $XXX_PATCH'
 alias grep='rg --max-depth=1'
+alias grepr='rg --max-depth=99'
 alias l='ls -l'
 alias la='ls -lA'
 alias lat='ls -lArs age'
