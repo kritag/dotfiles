@@ -18,6 +18,7 @@
     ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-gdm.conf
     ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
+    ~/.config/hypr/hypridle.conf: config/hypridle/hypridle.conf
     ~/.config/rofi/config.rasi: config/rofi/config.rasi
     ~/.local/share/rofi/themes/catppuccin-mocha.rasi:
       create: true
