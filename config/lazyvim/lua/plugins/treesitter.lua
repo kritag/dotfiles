@@ -23,6 +23,7 @@ return {
       "make",
       "markdown",
       "python",
+      "rasi",
       "regex",
       "toml",
       "typescript",
