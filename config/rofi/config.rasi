@@ -1,9 +1,11 @@
 configuration{
-    modes: "drun";
-    icon-theme: "Oranchelo";
+    modes: "run,drun,window";
+    icon-theme: "Papirus-Dark";
     show-icons: true;
+    click-to-exit: true;
     terminal: "kitty";
     drun-display-format: "{icon} {name}";
+    drun-match-fields: "all";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
