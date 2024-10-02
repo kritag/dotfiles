@@ -9,6 +9,7 @@
         [
           archlinux-contrib,
           bat,
+          cpio,
           duf,
           eza,
           fd,
@@ -23,6 +24,7 @@
           hypridle,
           hyprland,
           hyprlock,
+          hyprpaper,
           kitty,
           less,
           lesspipe,
@@ -40,6 +42,7 @@
           procs,
           python,
           python-pip,
+          python-pywal,
           qbittorrent,
           ripgrep,
           rocm-smi-lib,
