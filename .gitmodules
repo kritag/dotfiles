@@ -99,3 +99,6 @@
 [submodule "catppuccin_glamour"]
 	path = catppuccin_glamour
 	url = https://github.com/catppuccin/glamour
+[submodule "catppuccin_qt5ct"]
+	path = catppuccin_qt5ct
+	url = https://github.com/catppuccin/qt5ct

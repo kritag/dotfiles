@@ -20,6 +20,7 @@
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/hypr/hypridle.conf: config/hypridle/hypridle.conf
     ~/.config/rofi/config.rasi: config/rofi/config.rasi
+    ~/.config/qt5ct/colors/Catppuccin-Mocha.conf: catppuccin_qt5ct/themes/Catppuccin-Mocha.conf
     ~/.local/share/rofi/themes/catppuccin-mocha.rasi:
       create: true
       path: config/rofi/catppuccin-mocha.rasi
@@ -27,6 +28,11 @@
       create: true
       glob: true
       path: config/hypr/*
+    ~/.config/waybar/:
+      create: true
+      glob: true
+      path: config/waybar/*
+    ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
 - sudo:
     - link:
         /usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
