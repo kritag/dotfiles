@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+pkill slack
+nohup slack &>/dev/null &
