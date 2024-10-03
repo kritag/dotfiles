@@ -1,0 +1,32 @@
+[2024-10-03 08:55:54.362] [info] Using configuration file /home/e215142/.config/waybar/config
+[2024-10-03 08:55:54.364] [info] Discovered appearance 'dark'
+[2024-10-03 08:55:54.364] [info] Using CSS file /home/e215142/.config/waybar/style.css
+[2024-10-03 08:55:54.367] [info] Hyprland IPC starting
+[2024-10-03 08:55:54.368] [info] Loading persistent workspaces from Hyprland workspace rules
+[2024-10-03 08:55:54.376] [info] Loading persistent workspaces from Hyprland workspace rules
+[2024-10-03 08:55:54.393] [error] Host: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method RegisterStatusNotifierHost is not implemented
+[2024-10-03 08:55:54.393] [error] Host: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Method RegisterStatusNotifierHost is not implemented
+[2024-10-03 08:55:54.396] [info] Bar configured (width: 82, height: 1041) for output: eDP-1
+[2024-10-03 08:55:54.396] [info] Bar configured (width: 82, height: 1401) for output: DP-4
+[2024-10-03 08:55:54.400] [info] Bar configured (width: 82, height: 1401) for output: DP-4
+sh: line 1: powermenu: command not found
+sh: line 1: pavucontrol: command not found
+Error loading json: [Errno 2] No such file or directory: '/home/e215142/.local/share/nwg-panel/calendar.json'
+Error loading json: [Errno 2] No such file or directory: '/home/e215142/.local/share/nwg-panel/calendar.json'
+'sway-mode' ignored
+'sway-taskbar' ignored
+Running instance found, PID 450474, sending SIGINT
+Common settings {'restart-on-display': True, 'restart-delay': 500, 'processes-background-only': False, 'processes-own-only': True, 'processes-interval-ms': 2000, 'run-through-compositor': True}
+Dependencies check: {'light': False, 'brightnessctl': True, 'ddcutil': False, 'pamixer': False, 'pactl': True, 'playerctl': True, 'wlr-randr': False, 'hyprctl': True, 'upower': True, 'swaync': True, 'python-requests': True}
+Running on Hyprland
+left box created
+center box created
+right box created
+Panel 'panel-top': output: eDP-1, position: top, layer: bottom, width: 1920, height: 30
+left box created
+center box created
+right box created
+Panel 'panel-bottom': output: eDP-1, position: bottom, layer: bottom, width: 1920, height: 30
+Terminated with SIGTERM
+usage: nwg-panel [-h] [-c CONFIG] [-s STYLE] [-sigdwl SIGDWL] [-r] [-v]
+nwg-panel: error: argument -c/--config: expected one argument
