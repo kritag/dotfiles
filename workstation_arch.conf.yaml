@@ -1,28 +1,36 @@
 - yay:
     - argocd
+    - aylurs-gtk-shell-git
     - catppuccin-cursors-mocha
     - catppuccin-gtk-theme-mocha
     - cava
     - extension-manager
     - flux-bin
+    - gpu-screen-recorder
+    - grimblast-git
+    - hyprpicker
     - k9s-sbanka-bin
     - krew
     - kubecolor
     - microsoft-edge-stable-bin
     - openshift-client-bin
     - papirus-folders-catppuccin-git
+    - pulsecontrol-git
     - spicetify-cli
     - spicetify-marketplace-bin
     - slack-desktop
     - yp-tools
 - omnipkg:
-    - install:
-        [
+    - install: [
           archlinux-contrib,
           bat,
+          bluez,
+          bluez-utils,
+          brightnessctl,
           btop,
           chafa,
           cpio,
+          dart-sass.
           docker,
           docker-compose,
           duf,
@@ -36,6 +44,7 @@
           git,
           github-cli,
           glow,
+          gnome-bluetooth-3.0,
           gnome-shell-extension-appindicator,
           gnome-shell-extension-arc-menu,
           gnome-shell-extension-dash-to-panel,
@@ -45,7 +54,6 @@
           hypridle,
           hyprland,
           hyprlock,
-          hyprpaper,
           jq,
           keepassxc,
           keybase-gui,
@@ -60,8 +68,10 @@
           make,
           man-db,
           minikube,
+          networkmanager,
           nodejs,
           npm,
+          nwg-look,
           pacman-contrib,
           papirus-icon-theme,
           perl-image-exiftool,
@@ -72,6 +82,8 @@
           python-pip,
           python-pywal,
           qbittorrent,
+          qt5ct,
+          qt6ct,
           remmina,
           ripgrep,
           rust,
@@ -83,6 +95,7 @@
           sshpass,
           sshuttle,
           stern,
+          swww,
           systemd-resolvconf,
           tealdeer,
           ttf-meslo-nerd-font-powerlevel10k,
