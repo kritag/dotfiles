@@ -22,13 +22,13 @@ return {
         [""] = "rainbow-delimiters",
       },
       highlight = {
-        "RainbowDelimiterRed",
+        "RainbowDelimiterCyan",
         "RainbowDelimiterYellow",
-        "RainbowDelimiterOrange",
+        "RainbowDelimiterViolet",
         "RainbowDelimiterGreen",
         "RainbowDelimiterBlue",
-        "RainbowDelimiterCyan",
-        "RainbowDelimiterViolet",
+        "RainbowDelimiterRed",
+        "RainbowDelimiterOrange",
       },
     }
   end,
