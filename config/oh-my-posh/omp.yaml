@@ -10,7 +10,8 @@ blocks:
         trailing_diamond: 
         leading_diamond: 
         style: diamond
-        template: "{{ if .Writable }}{{else}}{{end}}<b>{{ .Path }}</b>"
+        #template: "{{ if .Writable }}{{else}}{{end}}<b>{{ .Path }}</b>"
+        template: "<b>{{ .Path }}</b>"
         properties:
           style: full
           folder_format: "%s"

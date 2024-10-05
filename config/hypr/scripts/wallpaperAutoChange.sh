@@ -4,7 +4,17 @@
 #
 # NOTE: this script uses bash (not POSIX shell) for the RANDOM variable
 
-focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+lid_state=$(cat /proc/acpi/button/lid/*/state | awk '{print $2}')
+#focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+
+if [[ "$lid_state" == "closed" ]]; then
+  focused_monitor=$(hyprctl monitors | awk '/^Monitor/ {name=$2} /focused: yes/ && name != "e-DP1" {print name}')
+  # Add logic for when the lid is closed
+else
+  focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+
+  # Add logic for when the lid is open
+fi
 
 if [[ $# -lt 1 ]] || [[ ! -d $1 ]]; then
   echo "Usage:
