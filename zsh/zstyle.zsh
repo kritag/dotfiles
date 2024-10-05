@@ -5,7 +5,7 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 zstyle ':completion:*' accept-exact false
 zstyle ':completion:*' menu no
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s%p
 # cache to proxy list of results
 zstyle ':completion:*' use-cache on
