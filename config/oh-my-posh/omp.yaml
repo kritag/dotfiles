@@ -50,6 +50,31 @@ blocks:
     background: p:sapphire
     foreground: p:base
   - type: prompt
+    alignment: right
+    #newline: true
+    segments:
+      - type: kubectl
+        background: "p:mauve"
+        foreground: "p:crust"
+        leading_diamond: 
+        trailing_diamond: 
+        style: diamond
+        template: '{{ $context := splitList "/" .Context }}{{ index $context 0 }}'
+      - type: kubectl
+        background: "p:sky"
+        foreground: "p:crust"
+        leading_diamond: 
+        trailing_diamond: 
+        style: diamond
+        template: '<b>{{ $context := splitList "/" .Context }} {{$cluster:=regexReplaceAll "^api-os-" .Cluster "" }}{{ $leftMost := regexReplaceAll "-[^-]+-[^-]+:.*" $cluster "" }}{{ $leftMost }} </b>'
+      - type: kubectl
+        background: p:yellow
+        foreground: p:crust
+        leading_diamond: 
+        style: diamond
+        template: "{{ .Namespace }}"
+        trailing_diamond: 
+  - type: prompt
     alignment: left
     newline: true
     segments:
@@ -60,30 +85,16 @@ blocks:
         style: plain
         template: ❯
         type: text
-  - type: rprompt
-    alignment: right
-    segments:
-      - type: kubectl
-        background: "p:lavender"
-        foreground: "p:crust"
-        leading_diamond: 
-        trailing_diamond: 
-        style: diamond
-        template: '{{ $context := splitList "/" .Context }}{{ index $context 0 }}'
-      - type: kubectl
-        background: "p:peach"
-        foreground: "p:crust"
-        leading_diamond: 
-        trailing_diamond: 
-        style: diamond
-        template: '{{ $context := splitList "/" .Context }} {{$cluster:=regexReplaceAll "^api-os-" .Cluster "" }}{{ $leftMost := regexReplaceAll "-[^-]+-[^-]+:.*" $cluster "" }}{{ $leftMost }} '
-      - type: kubectl
-        background: p:mauve
-        foreground: p:crust
-        leading_diamond: 
-        style: diamond
-        template: "{{ .Namespace }}"
-        trailing_diamond: 
+transient_prompt:
+  foreground_templates:
+    - "{{if gt .Code 0}}p:red{{end}}"
+    - "{{if eq .Code 0}}p:green{{end}}"
+  background: transparent
+  template: "❯ "
+secondary_prompt:
+  foreground: p:mauve
+  background: transparent
+  template: "❯❯ "
 palette:
   base: "#1e1e2e"
   blue: "#89b4fa"
@@ -105,13 +116,3 @@ palette:
   text: "#cdd6f4"
   wight: "#FFFFFF"
   yellow: "#f9e2af"
-transient_prompt:
-  foreground_templates:
-    - "{{if gt .Code 0}}p:red{{end}}"
-    - "{{if eq .Code 0}}p:green{{end}}"
-  background: transparent
-  template: "❯ "
-secondary_prompt:
-  foreground: p:mauve
-  background: transparent
-  template: "❯❯ "
