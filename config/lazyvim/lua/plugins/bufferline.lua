@@ -17,13 +17,13 @@ return {
     },
     opts = {
       options = {
-        highlights = require("catppuccin.groups.integrations.bufferline").get(),
-        themable = true,
         separator_style = "slant",
-      -- stylua: ignore
-      close_command = function(n) LazyVim.ui.bufremove(n) end,
-      -- stylua: ignore
-      right_mouse_command = function(n) LazyVim.ui.bufremove(n) end,
+        close_command = function(n)
+          LazyVim.ui.bufremove(n)
+        end,
+        right_mouse_command = function(n)
+          LazyVim.ui.bufremove(n)
+        end,
         diagnostics = "nvim_lsp",
         always_show_bufferline = false,
         diagnostics_indicator = function(_, _, diag)
@@ -48,15 +48,16 @@ return {
     },
     after = "catppuccin",
     config = function(_, opts)
+      -- Setup bufferline with Catppuccin highlights
       require("bufferline").setup({
         highlights = require("catppuccin.groups.integrations.bufferline").get(),
+        options = opts.options, -- Pass your options
       })
-      require("bufferline").setup(opts)
       -- Fix bufferline when restoring a session
       vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
         callback = function()
           vim.schedule(function()
-            pcall(nvim_bufferline)
+            pcall(require, "bufferline")
           end)
         end,
       })

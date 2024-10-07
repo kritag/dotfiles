@@ -1,3 +1,4 @@
+$schema: "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
 final_space: true
 version: 2
 blocks:
@@ -60,6 +61,7 @@ blocks:
         template: ❯
         type: text
   - type: rprompt
+    alignment: right
     segments:
       - type: kubectl
         background: "p:lavender"

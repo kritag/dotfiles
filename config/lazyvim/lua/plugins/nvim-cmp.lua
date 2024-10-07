@@ -17,7 +17,9 @@ return {
     --   auto_brackets = { "python" }
     -- }
     -- ```
-    opts = function()
+
+    opts = function(_, opts)
+      table.insert(opts.sources, { name = "lazydev", group_index = 0 })
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
@@ -48,6 +50,7 @@ return {
             zindex = 1001,
           },
         },
+
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -98,5 +101,47 @@ return {
       }
     end,
     main = "lazyvim.util.cmp",
+  },
+  {
+    "nvim-cmp",
+    dependencies = {
+      {
+        "garymjr/nvim-snippets",
+        opts = {
+          friendly_snippets = true,
+        },
+        dependencies = { "rafamadriz/friendly-snippets" },
+      },
+    },
+    opts = function(_, opts)
+      opts.snippet = {
+        expand = function(item)
+          return LazyVim.cmp.expand(item.body)
+        end,
+      }
+      if LazyVim.has("nvim-snippets") then
+        table.insert(opts.sources, { name = "snippets" })
+      end
+    end,
+    keys = {
+      {
+        "<Tab>",
+        function()
+          return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
+        end,
+        expr = true,
+        silent = true,
+        mode = { "i", "s" },
+      },
+      {
+        "<S-Tab>",
+        function()
+          return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
+        end,
+        expr = true,
+        silent = true,
+        mode = { "i", "s" },
+      },
+    },
   },
 }
