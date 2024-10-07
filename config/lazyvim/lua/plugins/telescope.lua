@@ -169,6 +169,9 @@ return {
 
       return {
         defaults = {
+          layout_config = {
+            horizontal = { preview_width = 0.65 },
+          },
           prompt_prefix = " ",
           selection_caret = " ",
           path_display = nil,
