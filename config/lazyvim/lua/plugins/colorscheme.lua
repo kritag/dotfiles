@@ -52,7 +52,10 @@ return {
         notify = true,
         rainbow_delimiters = true,
         semantic_tokens = true,
-        telescope = true,
+        telescope = {
+          enabled = true,
+          -- style = "nvchad",
+        },
         treesitter = true,
         treesitter_context = true,
         which_key = true,
