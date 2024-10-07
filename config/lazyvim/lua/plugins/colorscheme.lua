@@ -6,12 +6,6 @@ return {
     priority = 1000,
     opts = {
       transparent_background = true,
-      custom_highlights = function(colors)
-        return {
-          --IblIndent = { fg = colors.surface0 },
-          NavicText = { fg = colors.text },
-        }
-      end,
       flavour = "mocha",
       term_colors = true,
       integrations = {
@@ -58,6 +52,13 @@ return {
         treesitter = true,
         treesitter_context = true,
         which_key = true,
+      },
+      highlight_overrides = {
+        all = function(colors)
+          return {
+            NormalFloat = { bg = colors.mantle },
+          }
+        end,
       },
     },
   },
