@@ -45,7 +45,6 @@ return {
             information = { "undercurl" },
           },
         },
-        navic = { enabled = true, custom_bg = "NONE" },
         neotest = true,
         neotree = true,
         noice = true,
