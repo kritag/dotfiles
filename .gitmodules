@@ -102,3 +102,6 @@
 [submodule "catppuccin_qt5ct"]
 	path = catppuccin_qt5ct
 	url = https://github.com/catppuccin/qt5ct
+[submodule "catppuccin_spicetify"]
+	path = catppuccin_spicetify
+	url = https://github.com/catppuccin/spicetify
