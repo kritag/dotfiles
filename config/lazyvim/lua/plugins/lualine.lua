@@ -1,46 +1,65 @@
+local colors = require("catppuccin.palettes").get_palette()
+local function getLspName()
+  local buf_clients = vim.lsp.get_clients()
+  local buf_ft = vim.bo.filetype
+  if next(buf_clients) == nil then
+    return "  No servers"
+  end
+  local buf_client_names = {}
+
+  for _, client in pairs(buf_clients) do
+    if client.name ~= "null-ls" then
+      table.insert(buf_client_names, client.name)
+    end
+  end
+
+  local lint_s, lint = pcall(require, "lint")
+  if lint_s then
+    for ft_k, ft_v in pairs(lint.linters_by_ft) do
+      if type(ft_v) == "table" then
+        for _, linter in ipairs(ft_v) do
+          if buf_ft == ft_k then
+            table.insert(buf_client_names, linter)
+          end
+        end
+      elseif type(ft_v) == "string" then
+        if buf_ft == ft_k then
+          table.insert(buf_client_names, ft_v)
+        end
+      end
+    end
+  end
+
+  local ok, conform = pcall(require, "conform")
+  local formatters = table.concat(conform.formatters_by_ft[vim.bo.filetype], " ")
+  if ok then
+    for formatter in formatters:gmatch("%w+") do
+      if formatter then
+        table.insert(buf_client_names, formatter)
+      end
+    end
+  end
+
+  local hash = {}
+  local unique_client_names = {}
+
+  for _, v in ipairs(buf_client_names) do
+    if not hash[v] then
+      unique_client_names[#unique_client_names + 1] = v
+      hash[v] = true
+    end
+  end
+  local language_servers = table.concat(unique_client_names, ", ")
+
+  return "" .. language_servers
+end
+
 local lsp = {
   function()
-    local buf_clients = LazyVim.lsp.get_clients({ bufnr = 0 })
-    if #buf_clients == 0 then
-      return "LSP Inactive"
-    end
-
-    local buf_ft = vim.bo.filetype
-    local buf_client_names = {}
-    -- local copilot_active = false
-
-    -- add client
-    for _, client in pairs(buf_clients) do
-      if client.name ~= "null-ls" and client.name ~= "copilot" then
-        table.insert(buf_client_names, client.name)
-      end
-
-      -- if client.name == "copilot" then
-      --   copilot_active = true
-      -- end
-    end
-
-    -- add formatter
-    -- local formatters = require("lvim.lsp.null-ls.formatters")
-    -- local supported_formatters = formatters.list_registered(buf_ft)
-    -- vim.list_extend(buf_client_names, supported_formatters)
-
-    -- add linter
-    -- local linters = require("lvim.lsp.null-ls.linters")
-    -- local supported_linters = linters.list_registered(buf_ft)
-    -- vim.list_extend(buf_client_names, supported_linters)
-
-    local unique_client_names = table.concat(buf_client_names, ", ")
-    local language_servers = string.format("[%s]", unique_client_names)
-
-    -- if copilot_active then
-    --   language_servers = language_servers .. "%#SLCopilot#" .. " " .. lvim.icons.git.Octoface .. "%*"
-    -- end
-
-    return language_servers
+    return getLspName()
   end,
-  color = { gui = "bold" },
-  -- cond = conditions.hide_in_width,
+  separator = { left = "" },
+  color = { bg = colors.mauve, fg = colors.surface0, gui = "bold" },
 }
 
 return {
@@ -75,7 +94,21 @@ return {
         },
         sections = {
           lualine_a = { { "mode", separator = { left = "", right = "" }, right_padding = 2 } },
-          lualine_b = { "branch" },
+          lualine_b = {
+            {
+              function()
+                return " "
+              end,
+              color = { --bg = colors.crust,
+                fg = colors.blue,
+              },
+            },
+            {
+              "branch",
+              color = { bg = colors.green, fg = colors.surface0, gui = "bold" },
+              separator = { left = "", right = "" },
+            },
+          },
           lualine_c = {
             LazyVim.lualine.root_dir(),
             {
@@ -86,6 +119,14 @@ return {
                 info = icons.diagnostics.Info,
                 hint = icons.diagnostics.Hint,
               },
+              diagnostics_color = {
+                error = { fg = colors.red },
+                warn = { fg = colors.orange },
+                info = { fg = colors.sky },
+                hint = { fg = colors.teal },
+              },
+              color = { fg = colors.blue, gui = "bold" },
+              --separator = { left = "" },
             },
           },
           lualine_x = {
@@ -138,20 +179,9 @@ return {
           },
           lualine_z = {
             {
-              function()
-                return " " .. os.date("%R")
-              end,
-              separator = { left = "", right = "" },
-              left_padding = 2,
+              "lsp",
             },
           },
-          --         lualine_z = {
-          --           function()
-          --             return " " .. os.date("%R")
-          --           end,
-          --           separator = { left = "", right = "" },
-          --           right_padding = 2,
-          --         },
         },
         winbar = {
           lualine_c = {
@@ -167,30 +197,21 @@ return {
       if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
         local trouble = require("trouble")
         local symbols = trouble.statusline({
-          mode = "symbols",
+          mode = "lsp_document_symbols",
           groups = {},
           title = false,
           filter = { range = true },
           format = "{kind_icon}{symbol.name:Normal}",
           hl_group = "lualine_c_normal",
         })
-        --table.insert(opts.winbar.lualine_c, {
-        --  symbols and symbols.get,
-        --  cond = function()
-        --    return vim.b.trouble_lualine ~= false and symbols.has()
-        --  end,
-        --})
         table.insert(opts.winbar.lualine_c, {
-          function()
-            return require("nvim-navic").get_location()
-          end,
+          symbols and symbols.get,
           cond = function()
-            return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
+            return vim.b.trouble_lualine ~= false and symbols.has()
           end,
         })
       end
-      table.insert(opts.sections.lualine_x, lsp)
-      table.insert(opts.sections.lualine_x, get_schema)
+      table.insert(opts.sections.lualine_z, lsp)
       return opts
     end,
   },
