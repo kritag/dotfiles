@@ -1,9 +1,10 @@
 #!/bin/sh
 # Set theme in Gnome
-gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin-Mocha-Standard-Mauve-Dark"
+gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.wm.preferences theme "Catppuccin-Mocha-Standard-Mauve-Dark"
 gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
-gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Mocha-Mauve-Cursors"
+gsettings set org.gnome.desktop.interface cursor-theme "catppuccin-mocha-mauve-cursors"
 gsettings set org.gnome.desktop.interface cursor-size 32
 # Set theme for GTK 4.0
 mkdir -p "${HOME}/.config/gtk-4.0"

@@ -1,4 +1,5 @@
 local colors = require("catppuccin.palettes").get_palette()
+
 local function getLspName()
   local buf_clients = vim.lsp.get_clients()
   local buf_ft = vim.bo.filetype
@@ -58,10 +59,14 @@ local lsp = {
   function()
     return getLspName()
   end,
-  separator = { left = "" },
+  separator = { left = "", right = "" },
   color = { bg = colors.mauve, fg = colors.surface0, gui = "bold" },
 }
-
+local space = {
+  function()
+    return " "
+  end,
+}
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -89,30 +94,64 @@ return {
         options = {
           theme = "catppuccin",
           globalstatus = vim.o.laststatus == 3,
-          section_separators = { left = "", right = "" },
+          section_separators = "",
+          --{ left = "", right = "" },
+          component_separators = "",
           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
         },
         sections = {
-          lualine_a = { { "mode", separator = { left = "", right = "" }, right_padding = 2 } },
-          lualine_b = {
+          lualine_a = {
             {
-              function()
-                return " "
-              end,
-              color = { --bg = colors.crust,
-                fg = colors.blue,
-              },
+              "mode",
+              separator = { left = "", right = "" },
             },
+          },
+          lualine_b = { space },
+          lualine_c = {
             {
               "branch",
               color = { bg = colors.green, fg = colors.surface0, gui = "bold" },
               separator = { left = "", right = "" },
             },
-          },
-          lualine_c = {
-            LazyVim.lualine.root_dir(),
+            {
+              "diff",
+              color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
+              separator = { right = "" },
+              symbols = {
+                added = icons.git.added,
+                modified = icons.git.modified,
+                removed = icons.git.removed,
+              },
+              source = function()
+                local gitsigns = vim.b.gitsigns_status_dict
+                if gitsigns then
+                  return {
+                    added = gitsigns.added,
+                    modified = gitsigns.changed,
+                    removed = gitsigns.removed,
+                  }
+                end
+              end,
+            },
+
+            {
+              function()
+                return " "
+              end,
+              color = { bg = colors.transparent_bg, fg = colors.blue },
+            },
+            {
+              function()
+                local component = LazyVim.lualine.root_dir() -- Retrieve the component
+                return component[1]() -- Execute the function part of the component
+              end,
+              separator = { left = "", right = "" }, -- Apply separators
+              color = { fg = colors.crust, bg = colors.pink, gui = "bold" },
+            },
             {
               "diagnostics",
+              color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
+              separator = { right = "" },
               symbols = {
                 error = icons.diagnostics.Error,
                 warn = icons.diagnostics.Warn,
@@ -125,8 +164,6 @@ return {
                 info = { fg = colors.sky },
                 hint = { fg = colors.teal },
               },
-              color = { fg = colors.blue, gui = "bold" },
-              --separator = { left = "" },
             },
           },
           lualine_x = {
@@ -154,28 +191,19 @@ return {
             cond = require("lazy.status").has_updates,
             color = function() return LazyVim.ui.fg("Special") end,
           },
-            {
-              "diff",
-              symbols = {
-                added = icons.git.added,
-                modified = icons.git.modified,
-                removed = icons.git.removed,
-              },
-              source = function()
-                local gitsigns = vim.b.gitsigns_status_dict
-                if gitsigns then
-                  return {
-                    added = gitsigns.added,
-                    modified = gitsigns.changed,
-                    removed = gitsigns.removed,
-                  }
-                end
-              end,
-            },
           },
           lualine_y = {
-            { "progress", separator = " ", padding = { left = 1, right = 0 } },
-            { "location", padding = { left = 0, right = 1 } },
+            {
+              "progress",
+              separator = { left = "", right = "" },
+              padding = { left = 1, right = 1 },
+              color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
+            },
+            {
+              "location",
+              padding = { left = 1, right = 1 },
+              color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
+            },
           },
           lualine_z = {
             {
@@ -191,6 +219,18 @@ return {
         },
         extensions = { "neo-tree", "lazy" },
       }
+      local custom_catppuccin = require("lualine.themes.catppuccin")
+      -- Set pink background for all available modes
+      custom_catppuccin.normal.b.bg = colors.transparent_bg
+      custom_catppuccin.insert.b.bg = colors.transparent_bg
+      custom_catppuccin.terminal.b.bg = colors.transparent_bg
+      custom_catppuccin.replace.b.bg = colors.transparent_bg
+      custom_catppuccin.command.b.bg = colors.transparent_bg
+      custom_catppuccin.inactive.b.bg = colors.transparent_bg
+      custom_catppuccin.visual.b.bg = colors.transparent_bg
+      custom_catppuccin.inactive.b.bg = colors.transparent_bg
+
+      opts.options.theme = custom_catppuccin
 
       -- do not add trouble symbols if aerial is enabled
       -- And allow it to be overriden for some buffer types (see autocmds)
@@ -212,6 +252,7 @@ return {
         })
       end
       table.insert(opts.sections.lualine_z, lsp)
+      --table.insert(opts.sections.lualine_b, space)
       return opts
     end,
   },
