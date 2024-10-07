@@ -190,6 +190,7 @@ return {
         })
       end
       table.insert(opts.sections.lualine_x, lsp)
+      table.insert(opts.sections.lualine_x, get_schema)
       return opts
     end,
   },
