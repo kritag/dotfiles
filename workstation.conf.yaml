@@ -24,6 +24,10 @@
     ~/.local/share/rofi/themes/catppuccin-mocha.rasi:
       create: true
       path: config/rofi/catppuccin-mocha.rasi
+    ~/.config/spicetify/Themes/catppuccin:
+      create: true
+      glob: true
+      path: catppuccin_spicetify/catppuccin/* 
     ~/.config/hypr/:
       create: true
       glob: true
