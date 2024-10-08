@@ -1,8 +1,10 @@
 local colors = require("catppuccin.palettes").get_palette()
 
 local function getLspName()
-  local buf_clients = vim.lsp.get_clients()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local buf_clients = vim.lsp.get_clients({ bufnr = bufnr })
   local buf_ft = vim.bo.filetype
+
   if next(buf_clients) == nil then
     return "  No servers"
   end
@@ -32,11 +34,14 @@ local function getLspName()
   end
 
   local ok, conform = pcall(require, "conform")
-  local formatters = table.concat(conform.formatters_by_ft[vim.bo.filetype], " ")
   if ok then
-    for formatter in formatters:gmatch("%w+") do
-      if formatter then
-        table.insert(buf_client_names, formatter)
+    local formatters_by_ft = conform.formatters_by_ft[buf_ft]
+    if formatters_by_ft then
+      local formatters = table.concat(formatters_by_ft, " ")
+      for formatter in formatters:gmatch("[%w%-]+") do
+        if formatter then
+          table.insert(buf_client_names, formatter)
+        end
       end
     end
   end
@@ -71,6 +76,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
+    --event = { "BufReadPost", "BufNewFile" },
     init = function()
       vim.g.lualine_laststatus = vim.o.laststatus
       if vim.fn.argc(-1) > 0 then
@@ -97,7 +103,10 @@ return {
           section_separators = "",
           --{ left = "", right = "" },
           component_separators = "",
-          disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
+          disabled_filetypes = {
+            statusline = { "dashboard", "alpha", "ministarter" },
+            winbar = { "neo-tree", "dashboard", "alpha", "ministarter" },
+          },
         },
         sections = {
           lualine_a = {
@@ -220,7 +229,6 @@ return {
         extensions = { "neo-tree", "lazy" },
       }
       local custom_catppuccin = require("lualine.themes.catppuccin")
-      -- Set pink background for all available modes
       custom_catppuccin.normal.b.bg = colors.transparent_bg
       custom_catppuccin.insert.b.bg = colors.transparent_bg
       custom_catppuccin.terminal.b.bg = colors.transparent_bg
@@ -252,7 +260,6 @@ return {
         })
       end
       table.insert(opts.sections.lualine_z, lsp)
-      --table.insert(opts.sections.lualine_b, space)
       return opts
     end,
   },
