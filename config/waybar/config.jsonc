@@ -1,13 +1,16 @@
 {
   "layer": "top",
   "position": "top",
+  "height": 10,
+  "gtk-layer-shell": true,
   "modules-left": [
-    "hyprland/workspaces",
-    "wlr/taskbar",
-    "hyprland/window"
+    //"wlr/taskbar",
+    //"hyprland/window"
+    "custom/media",
+    "pulseaudio/slider"
   ],
   "modules-center": [
-    "custom/media"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "pulseaudio",
@@ -19,26 +22,44 @@
     "tray",
     "custom/power"
   ],
-  "wlr/taskbar": {
-    "format": "{icon} {title:.17}",
-    "icon-size": 28,
-    "spacing": 3,
-    "on-click-middle": "close",
-    "tooltip-format": "{title}",
-    "ignore-list": [],
-    "on-click": "activate",
-    "all-outputs": true
-  },
+  // "wlr/taskbar": {
+  //   "format": "{icon} {title:.17}",
+  //   "icon-size": 28,
+  //   "spacing": 3,
+  //   "on-click-middle": "close",
+  //   "tooltip-format": "{title}",
+  //   "ignore-list": [],
+  //   "on-click": "activate",
+  //   "all-outputs": true
+  // },
   "hyprland/workspaces": {
-    "disable-scroll": true,
-    "sort-by-name": true,
-    "format": "{icon}",
-    "format-icons": {
-      "default": ""
-    },
     "active-only": false,
+    //"all-outputs": true,
+    "disable-scroll": true,
+    //"format": "<sub>{icon}</sub>{windows}",
     "on-click": "activate",
-    "all-outputs": true
+    "sort-by-name": true,
+    // "format": "{icon} {windows}",
+    "format": "{name}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
+    },
+    "persistent-workspaces": {
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -46,13 +67,6 @@
       "activated": "",
       "deactivated": ""
     }
-  },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 18,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close"
   },
   "hyprland/window": {
     "rewrite": {
@@ -76,8 +90,9 @@
     },
     "escape": true,
     "return-type": "json",
-    "max-length": 40,
+    // "max-length": 40,
     "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
   },
   "clock": {
@@ -137,10 +152,10 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}",
-    "format-bluetooth": "{icon}  {volume}%",
-    "format-bluetooth-muted": "󰝟 {icon}",
-    "format-muted": "婢 {volume}",
-    "tooltip-format": "{icon} {desc} // {volume}%",
+    "format-bluetooth": "{icon}   {volume}%",
+    "format-bluetooth-muted": "{icon}  󰝟",
+    "format-muted": " 婢 {volume}",
+    "tooltip-format": "{icon} {desc} at {volume}%",
     "scroll-step": 5,
     "format-icons": {
       "headphone": "",
@@ -155,7 +170,12 @@
         ""
       ]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pulsecontrol"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
   },
   "bluetooth": {
     "format": " {status}",
@@ -166,7 +186,7 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "overskride"
+    "on-click": "pkill overskride || overskride"
   },
   "custom/power": {
     "tooltip": false,
