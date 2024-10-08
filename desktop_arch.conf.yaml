@@ -1,19 +1,33 @@
 - yay:
     - btop-gpu-git
-    - cava
+    - aylurs-gtk-shell-git
     - catppuccin-cursors-mocha
+    - catppuccin-gtk-theme-mocha
+    - cava
+    - gpu-screen-recorder
+    - grimblast-git
+    - hyprpicker
+    - oh-my-posh-bin
+    - papirus-folders-catppuccin-git
     - protonup-qt
+    - pulsecontrol-git
     - spicetify-cli
 - omnipkg:
     - install:
         [
           archlinux-contrib,
           bat,
+          bluez,
+          bluez-utils,
+          brightnessctl,
+          btop,
+          chafa,
           cpio,
           duf,
           eza,
           fd,
           ffmpeg,
+          fwupd,
           fzf,
           gamemode,
           gamescope,
@@ -26,6 +40,7 @@
           hyprlock,
           hyprpaper,
           kitty,
+          lazygit,
           less,
           lesspipe,
           lib32-gamemode,
@@ -35,25 +50,29 @@
           man-db,
           mangohud,
           neovim,
-          nodejs,
-          npm,
+          networkmanager,
           pacman-contrib,
+          papirus-icon-theme,
+          perl-image-exiftool,
           playerctl,
+          power-profiles-daemon,
           procs,
           python,
           python-pip,
           python-pywal,
           qbittorrent,
+          qt5ct,
+          qt6ct,
           ripgrep,
           rocm-smi-lib,
-          rust,
           sqlite,
           solaar,
           spotify-launcher,
           steam,
           systemd-resolvconf,
+          swww,
           tealdeer,
-          ttf-meslo-nerd-font-powerlevel10k,
+          ttf-meslo-nerd,
           unzip,
           vivid,
           vlc,
@@ -63,6 +82,4 @@
           zsh,
         ]
 - shell:
-    - [
-        ~/.config/BetterDiscord/themes/mocha.theme.css: catppuccin_discord/themes/mocha.theme.css,
-      ]
+    - []
