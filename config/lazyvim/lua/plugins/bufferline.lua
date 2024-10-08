@@ -17,7 +17,6 @@ return {
     },
     opts = {
       options = {
-        separator_style = "slant",
         close_command = function(n)
           LazyVim.ui.bufremove(n)
         end,
@@ -50,7 +49,7 @@ return {
     config = function(_, opts)
       -- Setup bufferline with Catppuccin highlights
       require("bufferline").setup({
-        highlights = require("catppuccin.groups.integrations.bufferline").get(),
+        -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
         options = opts.options, -- Pass your options
       })
       -- Fix bufferline when restoring a session
