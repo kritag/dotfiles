@@ -81,5 +81,3 @@
           zoxide,
           zsh,
         ]
-- shell:
-    - []
