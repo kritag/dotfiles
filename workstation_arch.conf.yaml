@@ -19,9 +19,9 @@
     - spicetify-cli
     - spicetify-marketplace-bin
     - slack-desktop
-    - yp-tools
 - omnipkg:
-    - install: [
+    - install:
+        [
           archlinux-contrib,
           bat,
           bluez,
@@ -30,14 +30,13 @@
           btop,
           chafa,
           cpio,
-          dart-sass.
+          dart-sass,
           docker,
           docker-compose,
           duf,
           eza,
           fd,
           ffmpeg,
-          foot,
           freerdp,
           fzf,
           fwupd,
@@ -57,6 +56,7 @@
           jq,
           keepassxc,
           keybase-gui,
+          kitty,
           kubectl,
           kubectx,
           kubeseal,
@@ -64,14 +64,10 @@
           less,
           lesspipe,
           libreoffice-fresh,
-          lsd,
           make,
           man-db,
           minikube,
           networkmanager,
-          nodejs,
-          npm,
-          nwg-look,
           pacman-contrib,
           papirus-icon-theme,
           perl-image-exiftool,
@@ -86,7 +82,6 @@
           qt6ct,
           remmina,
           ripgrep,
-          rust,
           seahorse,
           solaar,
           sops,
@@ -98,7 +93,7 @@
           swww,
           systemd-resolvconf,
           tealdeer,
-          ttf-meslo-nerd-font-powerlevel10k,
+          ttf-meslo-nerd,
           vivid,
           vlc,
           wl-clipboard,

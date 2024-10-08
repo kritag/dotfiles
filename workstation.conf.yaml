@@ -4,30 +4,31 @@
       create: true
 
 - link:
+    ~/.config/cava/config: config/cava/config
+    ~/.config/hypr/hypridle.conf: config/hypridle/hypridle.conf
+    ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-gdm.conf
+    ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
+    ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
+    ~/.config/k9s/config.yaml: config/k9s/config.yaml
+    ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
+    ~/.config/lazygit/mauve.yml: catppuccin_lazygit/themes-mergable/mocha/mauve.yml
+    ~/.config/qt5ct/colors/Catppuccin-Mocha.conf: catppuccin_qt5ct/themes/Catppuccin-Mocha.conf
+    ~/.config/rofi/config.rasi: config/rofi/config.rasi
+    ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
+    ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
-    ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/k9s/skins/catppuccin-mocha-transparent.yaml:
       create: true
       path: catppuccin_k9s/dist/catppuccin-mocha-transparent.yaml
-    ~/.config/k9s/config.yaml: config/k9s/config.yaml
-    ~/.config/lazygit/mauve.yml: catppuccin_lazygit/themes-mergable/mocha/mauve.yml
-    ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
-    ~/.config/cava/config: config/cava/config
-    ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-gdm.conf
-    ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
-    ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
-    ~/.config/hypr/hypridle.conf: config/hypridle/hypridle.conf
-    ~/.config/rofi/config.rasi: config/rofi/config.rasi
-    ~/.config/qt5ct/colors/Catppuccin-Mocha.conf: catppuccin_qt5ct/themes/Catppuccin-Mocha.conf
     ~/.local/share/rofi/themes/catppuccin-mocha.rasi:
       create: true
       path: config/rofi/catppuccin-mocha.rasi
     ~/.config/spicetify/Themes/catppuccin:
       create: true
       glob: true
-      path: catppuccin_spicetify/catppuccin/* 
+      path: catppuccin_spicetify/catppuccin/*
     ~/.config/hypr/:
       create: true
       glob: true
@@ -36,19 +37,18 @@
       create: true
       glob: true
       path: config/waybar/*
-    ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
 - sudo:
     - link:
         /usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
+        /bin/powermenu: scripts/powermenu.sh
     - shell:
         - [cp services/*.service /etc/systemd/system/]
         - [
             systemctl enable paccache.timer --now,
             Enable deletion of cached pacman packages,
           ]
-
 - shell:
     - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
     - [

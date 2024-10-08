@@ -12,3 +12,6 @@
 [include]
   path = ~/.dotfiles/catppuccin_delta/catppuccin.gitconfig
   path = ~/.gitconfig.local
+[user]
+	email = github.condiment714@slmails.com
+	name = kritag
