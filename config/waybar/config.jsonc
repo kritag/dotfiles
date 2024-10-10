@@ -273,10 +273,10 @@
     "interval": 3600
   },
   "custom/notifications": {
-    // "exec":"swaync-client -c",
+    "exec": "swaync-client -c",
     "interval": 1,
     "format": " {}",
-    // "on-click":"swaync-client -t",
+    "on-click": "swaync-client -t",
     "tooltip-format": "You have {} notifications"
   }
 }

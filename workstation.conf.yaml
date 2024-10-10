@@ -16,6 +16,10 @@
     ~/.config/rofi/config.rasi: config/rofi/config.rasi
     ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
     ~/.functions_k8s: zsh/functions_k8s.zsh
+    ~/.config/swaync:
+      create: true
+      glob: true
+      path: config/swaync/*
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
