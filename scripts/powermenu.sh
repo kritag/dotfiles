@@ -12,29 +12,21 @@ $logout
 $sleep
 $hibernate
 $reboot
-$shutdown" | rofi -dmenu\
-                  -i\
-                  -p "Power")
+$shutdown" | rofi -dmenu -i -p "Power")
 # Do something based on selected option
-if [ "$selected_option" == "$lock" ]
-then
-    swaylock
-elif [ "$selected_option" == "$logout" ]
-then
-    #loginctl terminate-user "$(whoami)" && 
-    hyprctl dispatch exit
-elif [ "$selected_option" == "$shutdown" ]
-then
-    systemctl poweroff
-elif [ "$selected_option" == "$reboot" ]
-then
-    systemctl reboot
-elif [ "$selected_option" == "$sleep" ]
-then
-    systemctl suspend
-elif [ "$selected_option" == "$hibernate" ]
-then
-    systemctl hibernate
+if [ "$selected_option" == "$lock" ]; then
+  $HOME/.config/hypr/scripts/hyprlock.sh
+elif [ "$selected_option" == "$logout" ]; then
+  #loginctl terminate-user "$(whoami)" &&
+  hyprctl dispatch exit
+elif [ "$selected_option" == "$shutdown" ]; then
+  systemctl poweroff
+elif [ "$selected_option" == "$reboot" ]; then
+  systemctl reboot
+elif [ "$selected_option" == "$sleep" ]; then
+  systemctl suspend
+elif [ "$selected_option" == "$hibernate" ]; then
+  systemctl hibernate
 else
-    echo "No match"
+  echo "No match"
 fi
