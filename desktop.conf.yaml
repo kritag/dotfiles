@@ -4,7 +4,7 @@
       create: true
 
 - link:
-    ~/.config/cava/config: config/cava/config
+    ~/.config/cava/cava.conf: config/cava/config
     ~/.config/hypr/hypridle.conf: config/hypridle/hypridle.conf
     ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-gdm.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
