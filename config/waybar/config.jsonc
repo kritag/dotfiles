@@ -1,27 +1,45 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 10,
-  "gtk-layer-shell": true,
+  "height": 25,
+  "margin": "10px",
+  "spacing": 15,
   "modules-left": [
     //"wlr/taskbar",
-    //"hyprland/window"
-    "custom/media",
-    "pulseaudio/slider"
+    "group/powermenu",
+    "mpris",
+    "hyprland/window"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
   "modules-right": [
     "pulseaudio",
-    "network",
-    "bluetooth",
-    "backlight",
-    "battery",
+    "group/net",
+    "group/batt",
+    "hyprland/language",
     "clock",
+    "custom/weather",
     "tray",
-    "custom/power"
+    "custom/notifications"
   ],
+  "mpris": {
+    "format": "{player_icon} {status_icon} {artist} - {title}",
+    "player-icons": {
+      "spotify": ""
+    },
+    "status-icons": {
+      "paused": "",
+      "playing": "",
+      "stopped": ""
+    }
+  },
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "en",
+    "format-no": "no",
+    "keyboard-name": "at-translated-set-2-keyboard"
+  },
   // "wlr/taskbar": {
   //   "format": "{icon} {title:.17}",
   //   "icon-size": 28,
@@ -34,17 +52,23 @@
   // },
   "hyprland/workspaces": {
     "active-only": false,
-    //"all-outputs": true,
+    "all-outputs": true,
     "disable-scroll": true,
-    //"format": "<sub>{icon}</sub>{windows}",
+    "format": "{icon} {windows}",
+    "format-window-separator": " ",
     "on-click": "activate",
-    "sort-by-name": true,
-    // "format": "{icon} {windows}",
-    "format": "{name}",
+    "show-special": true,
     "format-icons": {
-      "active": "",
-      "default": "",
-      "empty": ""
+      "special": "󰠱"
+    },
+    "sort-by-name": true,
+    "window-rewrite-default": "",
+    "window-rewrite": {
+      // "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+      "class<firefox>": "", // Windows whose classes are "firefox"
+      // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+      "kitty": "", // Windows that contain "kitty" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+      "code": "󰨞"
     },
     "persistent-workspaces": {
       "*": [
@@ -76,33 +100,50 @@
       "(.*) - Outlook": "$1",
       "(.*) Microsoft Teams": "$1"
     },
-    "separate-outputs": true
+    "separate-outputs": true,
+    "format": "{class}"
   },
   "tray": {
     "icon-size": 21,
-    "spacing": 10
-  },
-  "custom/media": {
-    "format": "{icon} {0}",
-    "format-icons": {
-      "spotify": "",
-      "default": " "
-    },
-    "escape": true,
-    "return-type": "json",
-    // "max-length": 40,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+    "spacing": 10,
+    "show-passive-items": true
   },
   "clock": {
     "timezone": "Europe/Oslo",
+    "format": " {:%A %d. %b  %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#eeeeee'><b>{}</b></span>",
+        "days": "<span color='#eeeeee'><b>{}</b></span>",
+        "weeks": "<span color='#eeeeee'><b>{}</b></span>",
+        "weekdays": "<span color='#eeeeee'><b>{}</b></span>",
+        "today": "<span color='#175b70'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "power-profiles-daemon": {
+    "format-icons": {
+      "power-saver": "",
+      "balanced": "",
+      "performance": ""
+    }
+  },
+  "group/batt": {
+    "orientation": "horizontal",
+    "modules": [
+      "backlight",
+      "battery",
+      "power-profiles-daemon"
+    ]
   },
   "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}{0}",
     "format-icons": [
       "",
       "",
@@ -120,22 +161,15 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}",
+    "format": "{icon} {capacity}%",
     "format-charging": "",
     "format-plugged": "",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
     "tooltip": "true",
     "tooltip-format": "{capacity}%"
@@ -158,29 +192,31 @@
     "tooltip-format": "{icon} {desc} at {volume}%",
     "scroll-step": 5,
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
+      // "headphone": "",
+      // "hands-free": "",
+      // "headset": "",
+      // "phone": "",
+      // "portable": "",
+      // "car": "",
       "default": [
-        "",
         "",
+        "󰕾",
         ""
       ]
     },
     "on-click": "pulsecontrol"
   },
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "horizontal"
+  "group/net": {
+    "orientation": "horizontal",
+    "modules": [
+      "bluetooth",
+      "network"
+    ]
   },
   "bluetooth": {
-    "format": " {status}",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "format": "  {status}",
+    "format-connected": "  {device_alias}",
+    "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
     // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -188,9 +224,59 @@
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "pkill overskride || overskride"
   },
-  "custom/power": {
-    "tooltip": false,
-    "on-click": "powermenu",
-    "format": "襤"
+  "group/powermenu": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      // "children-class": "launcher,",
+      "transition-left-to-right": true,
+      // "click-to-reveal": true
+    },
+    "modules": [
+      "custom/powerbutton",
+      "custom/restartbutton",
+      "custom/sleepbutton",
+      "custom/lockbutton",
+      "custom/exitbutton"
+    ]
+  },
+  "custom/powerbutton": {
+    "format": " ",
+    "tooltip-format": "Power",
+    "on-click": "foo"
+  },
+  "custom/restartbutton": {
+    "format": " ",
+    "tooltip-format": "Restart",
+    "on-click": "systemctl reboot"
+  },
+  "custom/sleepbutton": {
+    "format": "󰤄",
+    "tooltip-format": "Sleep",
+    "on-click": "systemctl suspend"
+  },
+  "custom/lockbutton": {
+    "format": " ",
+    "tooltip-format": "Lock",
+    "on-click": "$HOME/.config/hypr/scripts/hyprlock.sh"
+  },
+  "custom/exitbutton": {
+    "format": "󰈆",
+    "tooltip-format": "Exit Hyprland",
+    "on-click": "hyprctl dispatch exit"
+  },
+  "custom/weather": {
+    "exec": "wttrbar --date-format %d/%m --location Oslo",
+    "return-type": "json",
+    "format": "{0}",
+    "tooltip": true,
+    "interval": 3600
+  },
+  "custom/notifications": {
+    // "exec":"swaync-client -c",
+    "interval": 1,
+    "format": " {}",
+    // "on-click":"swaync-client -t",
+    "tooltip-format": "You have {} notifications"
   }
 }
