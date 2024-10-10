@@ -37,3 +37,6 @@ vim.keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Go to Right Window" })
 
 -- Kubectl
 vim.keymap.set("n", "<leader>k", '<cmd>lua require("kubectl").toggle()<cr>', { noremap = true, silent = true })
+
+-- Sort css
+vim.keymap.set("n", "<F7>", "<cmd>g#\\({\\n\\)\\@<=#.,/}/sort<cr>", { noremap = true, silent = true })
