@@ -29,13 +29,13 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "widgets": [
+    "title",
+    "notifications",
     "dnd",
     "mpris",
     "buttons-grid",
     "volume",
-    "backlight",
-    "title",
-    "notifications"
+    "backlight"
   ],
   "widget-config": {
     "title": {
@@ -63,16 +63,8 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "",
-          "command": "hyprctl dispatch exit"
-        },
-        {
           "label": "󰕾",
           "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-        },
-        {
-          "label": "󰌾",
-          "command": "~/.config/hypr/scripts/LockScreen.sh"
         },
         {
           "label": "󰂯",

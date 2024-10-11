@@ -14,7 +14,7 @@
     ~/.config/lazygit/mauve.yml: catppuccin_lazygit/themes-mergable/mocha/mauve.yml
     ~/.config/qt5ct/colors/Catppuccin-Mocha.conf: catppuccin_qt5ct/themes/Catppuccin-Mocha.conf
     ~/.config/rofi/config.rasi: config/rofi/config.rasi
-    ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
+    # ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
     ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/swaync:
       create: true
@@ -53,6 +53,7 @@
             systemctl enable paccache.timer --now,
             Enable deletion of cached pacman packages,
           ]
+        - [sudo usermod -a -G video $USER]
 - shell:
     - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
     - [
