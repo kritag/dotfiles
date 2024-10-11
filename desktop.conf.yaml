@@ -12,7 +12,7 @@
     ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
     ~/.config/lazygit/mauve.yml: catppuccin_lazygit/themes-mergable/mocha/mauve.yml
     ~/.config/qt5ct/colors/Catppuccin-Mocha.conf: catppuccin_qt5ct/themes/Catppuccin-Mocha.conf
-    ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
+    # ~/.config/waybar/mocha.css: catppuccin_waybar/themes/mocha.css
     ~/.config/rofi/config.rasi: config/rofi/config.rasi
     ~/.config/hypr/:
       create: true
