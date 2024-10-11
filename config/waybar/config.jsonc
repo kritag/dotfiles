@@ -3,28 +3,33 @@
   "position": "top",
   "height": 25,
   "margin": "10px",
-  "spacing": 15,
+  "spacing": 10,
+  "reload_style_on_change": true,
   "modules-left": [
     //"wlr/taskbar",
     "group/powermenu",
-    "mpris",
-    "hyprland/window"
+    "mpris"
+    // "hyprland/window"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "pulseaudio",
-    "group/net",
-    "group/batt",
-    "hyprland/language",
-    "clock",
-    "custom/weather",
+    "group/one",
     "tray",
     "custom/notifications"
   ],
+  "group/one": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "clock",
+      "custom/weather",
+      "group/batt"
+    ]
+  },
   "mpris": {
-    "format": "{player_icon} {status_icon} {artist} - {title}",
+    "format": "{player_icon} | {status_icon} {artist} - {title}",
     "player-icons": {
       "spotify": ""
     },
@@ -33,12 +38,6 @@
       "playing": "",
       "stopped": ""
     }
-  },
-  "hyprland/language": {
-    "format": " {}",
-    "format-en": "en",
-    "format-no": "no",
-    "keyboard-name": "at-translated-set-2-keyboard"
   },
   // "wlr/taskbar": {
   //   "format": "{icon} {title:.17}",
@@ -54,7 +53,7 @@
     "active-only": false,
     "all-outputs": true,
     "disable-scroll": true,
-    "format": "{icon} {windows}",
+    "format": "{name} {windows}",
     "format-window-separator": " ",
     "on-click": "activate",
     "show-special": true,
@@ -65,10 +64,14 @@
     "window-rewrite-default": "",
     "window-rewrite": {
       // "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-      "class<firefox>": "", // Windows whose classes are "firefox"
+      "class<firefox>": "", // Windows whose classes are "firefox"
       // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-      "kitty": "", // Windows that contain "kitty" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-      "code": "󰨞"
+      "kitty": "", // Windows that contain "kitty" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+      "spotify": "",
+      "slack": "󰒱",
+      "edge": "󰇩",
+      "class<msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default>": "󰊻",
+      "class<msedge-_faolnafnngnfdaknnbpnkhgohbobgegn-Default>": "󰴢"
     },
     "persistent-workspaces": {
       "*": [
@@ -92,17 +95,17 @@
       "deactivated": ""
     }
   },
-  "hyprland/window": {
-    "rewrite": {
-      "(.*) - Brave": "$1",
-      "(.*) - Chromium": "$1",
-      "(.*) - Brave Search": "$1",
-      "(.*) - Outlook": "$1",
-      "(.*) Microsoft Teams": "$1"
-    },
-    "separate-outputs": true,
-    "format": "{class}"
-  },
+  // "hyprland/window": {
+  //   "rewrite": {
+  //     "(.*) - Brave": "$1",
+  //     "(.*) - Chromium": "$1",
+  //     "(.*) - Brave Search": "$1",
+  //     "(.*) - Outlook": "$1",
+  //     "(.*) Microsoft Teams": "$1"
+  //   },
+  //   "separate-outputs": true,
+  //   "format": "{class}"
+  // },
   "tray": {
     "icon-size": 21,
     "spacing": 10,
@@ -110,7 +113,8 @@
   },
   "clock": {
     "timezone": "Europe/Oslo",
-    "format": " {:%A %d. %b  %H:%M}",
+    "format": " {:%H:%M}",
+    "format-alt": " {:%A %d. %b}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
@@ -127,6 +131,7 @@
     }
   },
   "power-profiles-daemon": {
+    // "icon-size": 20,
     "format-icons": {
       "power-saver": "",
       "balanced": "",
@@ -135,9 +140,15 @@
   },
   "group/batt": {
     "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      // "children-class": "launcher,",
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
     "modules": [
-      "backlight",
       "battery",
+      "backlight",
       "power-profiles-daemon"
     ]
   },
@@ -161,9 +172,10 @@
       "warning": 30,
       "critical": 15
     },
+    "interval": 60,
     "format": "{icon} {capacity}%",
-    "format-charging": "",
-    "format-plugged": "",
+    "format-charging": "󱐋{icon} {capacity}%",
+    "format-plugged": "󱐋{icon} {capacity}%",
     "format-icons": [
       "",
       "",
@@ -174,21 +186,13 @@
     "tooltip": "true",
     "tooltip-format": "{capacity}%"
   },
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "󰤨 {essid}",
-    "format-ethernet": "󱘖 hardwired",
-    "tooltip-format": "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-linked": "󱘖 {ifname} (No IP)",
-    "format-disconnected": " Disconnected",
-    "format-alt": "󰤨 {signalStrength}%",
-    "interval": 5
-  },
   "pulseaudio": {
-    "format": "{icon} {volume}",
-    "format-bluetooth": "{icon}   {volume}%",
-    "format-bluetooth-muted": "{icon}  󰝟",
-    "format-muted": " 婢 {volume}",
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{icon}  {volume}% | {format_source}",
+    "format-bluetooth-muted": "{icon}  󰝟 | {format_source}",
+    "format-muted": "婢 {volume} | {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
     "tooltip-format": "{icon} {desc} at {volume}%",
     "scroll-step": 5,
     "format-icons": {
@@ -206,30 +210,12 @@
     },
     "on-click": "pulsecontrol"
   },
-  "group/net": {
-    "orientation": "horizontal",
-    "modules": [
-      "bluetooth",
-      "network"
-    ]
-  },
-  "bluetooth": {
-    "format": "  {status}",
-    "format-connected": "  {device_alias}",
-    "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
-    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    "on-click": "pkill overskride || overskride"
-  },
   "group/powermenu": {
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 500,
       // "children-class": "launcher,",
-      "transition-left-to-right": true,
+      "transition-left-to-right": true
       // "click-to-reveal": true
     },
     "modules": [
@@ -241,12 +227,12 @@
     ]
   },
   "custom/powerbutton": {
-    "format": " ",
+    "format": "",
     "tooltip-format": "Power",
     "on-click": "foo"
   },
   "custom/restartbutton": {
-    "format": " ",
+    "format": "",
     "tooltip-format": "Restart",
     "on-click": "systemctl reboot"
   },
@@ -256,12 +242,12 @@
     "on-click": "systemctl suspend"
   },
   "custom/lockbutton": {
-    "format": " ",
+    "format": "",
     "tooltip-format": "Lock",
     "on-click": "$HOME/.config/hypr/scripts/hyprlock.sh"
   },
   "custom/exitbutton": {
-    "format": "󰈆",
+    "format": "󰈆 ",
     "tooltip-format": "Exit Hyprland",
     "on-click": "hyprctl dispatch exit"
   },
@@ -275,8 +261,8 @@
   "custom/notifications": {
     "exec": "swaync-client -c",
     "interval": 1,
-    "format": " {}",
-    "on-click": "swaync-client -t",
+    "format": "  {}",
+    "on-click": "pkill swaync-client || swaync-client -t",
     "tooltip-format": "You have {} notifications"
   }
 }
