@@ -7,7 +7,7 @@ ext=${1##*.}
 if [ -d "$1" ]; then
   eza -l --git --color=always --icons --group-directories-first "$1"
 elif [[ "$1" == *.md ]]; then
-  glow -p -s $HOME/.config/glow/catppuccin-mocha.json "$1"
+  glow -p -s $HOME/.cache/wal/colors-glow.json "$1"
 elif [ "$category" = image ]; then
   fzf-preview.sh "$1"
   exiftool "$1" | bat --color=always -plyaml

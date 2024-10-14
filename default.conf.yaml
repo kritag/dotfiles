@@ -27,14 +27,7 @@
     ~/.lessfilter: config/lessfilter
     ~/.gitconfig: config/gitconfig
     ~/.config/bat/config: config/bat/config
-    ~/.config/bat/themes/Catppuccin Mocha.tmTheme:
-      create: true
-      path: catppuccin_bat/themes/Catppuccin Mocha.tmTheme
-    ~/.config/btop/themes/catppuccin_mocha.theme: catppuccin_btop/themes/catppuccin_mocha.theme
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
-    ~/.config/fsh/catppuccin-mocha.ini:
-      create: true
-      path: catppuccin_zsh-fsh/themes/catppuccin-mocha.ini
     ~/.config/lvim/config.lua: config/lvim/config.lua
     ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc
     ~/.config/lazygit/config.yml: config/lazygit/config.yml
