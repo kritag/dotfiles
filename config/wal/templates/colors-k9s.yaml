@@ -1,0 +1,121 @@
+lightMagenta: &lightMagenta "{color13}"
+lightRed: &lightRed "{color9}"
+magenta: &magenta "{color5}"
+lightBlue: &lightBlue "{color12}"
+red: &red "{color1}"
+lightYellow: &lightYellow "{color11}"
+yellow: &yellow "{color3}"
+green: &green "{color2}"
+lightGreen: &lightGreen "{color10}"
+cyan: &cyan "{color6}"
+lightCyan: &lightCyan "{color14}"
+blue: &blue "{color8}"
+default: &default "{color4}"
+
+foreground: &foreground "{foreground}"
+cursor: &cursor "{cursor}"
+background: &background "{background}"
+black: &black "{color0}"
+white: &white "{color15}"
+
+k9s:
+    body:
+        fgColor: *foreground
+        bgColor: default
+        logoColor: *magenta
+    prompt:
+        fgColor: *foreground
+        bgColor: default
+        suggestColor: *lightBlue
+    help:
+        fgColor: *foreground
+        bgColor: default
+        sectionColor: *green
+        keyColor: *lightBlue
+        numKeyColor: *lightRed
+    frame:
+        title:
+            fgColor: *lightGreen
+            bgColor: default
+            highlightColor: *magenta
+            counterColor: *lightYellow
+            filterColor: *green
+        border:
+            fgColor: *magenta
+            focusColor: *default
+        menu:
+            fgColor: *foreground
+            keyColor: *lightBlue
+            numKeyColor: *lightRed
+        crumbs:
+            fgColor: *background
+            bgColor: default
+            activeColor: *lightRed
+        status:
+            newColor: *lightBlue
+            modifyColor: *default
+            addColor: *green
+            pendingColor: *lightYellow
+            errorColor: *red
+            highlightColor: *cyan
+            killColor: *magenta
+            completedColor: "#6c7086"
+    info:
+        fgColor: *lightYellow
+        sectionColor: *foreground
+    views:
+        table:
+            fgColor: *foreground
+            bgColor: default
+            cursorFgColor: "#313244"
+            cursorBgColor: "#45475a"
+            markColor: *lightMagenta
+            header:
+                fgColor: *red
+                bgColor: default
+                sorterColor: *cyan
+        xray:
+            fgColor: *foreground
+            bgColor: default
+            cursorColor: "#45475a"
+            cursorTextColor: *background
+            graphicColor: *magenta
+        charts:
+            bgColor: default
+            chartBgColor: default
+            dialBgColor: default
+            defaultDialColors:
+                - *green
+                - *red
+            defaultChartColors:
+                - *green
+                - *red
+            resourceColors:
+                cpu:
+                    - *magenta
+                    - *lightBlue
+                mem:
+                    - *lightYellow
+                    - *lightYellow
+        yaml:
+            keyColor: *lightBlue
+            valueColor: *foreground
+            colonColor: *cursor
+        logs:
+            fgColor: *foreground
+            bgColor: default
+            indicator:
+                fgColor: *default
+                bgColor: default
+                toggleOnColor: *green
+                toggleOffColor: *cursor
+    dialog:
+        fgColor: *lightYellow
+        bgColor: default
+        buttonFgColor: *background
+        buttonBgColor: default
+        buttonFocusFgColor: *background
+        buttonFocusBgColor: *magenta
+        labelFgColor: *lightMagenta
+        fieldFgColor: *foreground
+
