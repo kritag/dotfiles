@@ -1,18 +1,21 @@
-/* config - Launcher */
+/* config - Waybar Style */
 
 /* ---- Configuration ---- */
-
 configuration {
-    modi:                       "drun,run,filebrowser,window";
-    show-icons:                 true;
-    display-calc:               "Calc";
-    display-drun:               "Apps";
-    display-run:                "Run";
-    display-filebrowser:        "Files";
-    display-window:             "Windows";
-	  drun-display-format:        "{name}";
-	  window-format:              "{w} · {c} · {t}";
+    modi:                       "drun,run";
     font:                       "JetBrainsMono Nerd Font 10";
+    show-icons:                 true;
+    display-drun:               "";
+	display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+    hover-select:               true;
+    me-select-entry:            "MouseSecondary";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+	dpi:						1;
+    
 }
 
 /* ---- Load pywal colors ---- */
@@ -45,8 +48,8 @@ window {
     anchor:                     center;
 
     // Style Values
-    width:                      25%;
-    background-color:           #00000020;
+    width:                      55%;
+    background-color:           #00000088;
 }
 
 /* ----- Main Box ----- */
@@ -57,31 +60,32 @@ mainbox {
     background-color:            transparent;
 }
 
-
 /* ---- Inputbar ---- */
 inputbar {
-    enabled:                     true;
-    padding:                     80px 60px;
-    margin:                      20px;
-    background-color:            transparent;
-    border-radius:               25px;
-    orientation:                 horizontal;
-    children:                    ["entry", "dummy", "mode-switcher" ];
-    background-image:            url("~/.config/rofi/.current_wallpaper", width);
+    enabled:                    true;
+    padding:                    80px 60px;
+    margin:                     20px;
+    border-radius:              30px;
+	background-color:			transparent;
+    children:                   [ "entry" ];
+    background-image:           url("~/.config/rofi/.current_wallpaper", width);
 }
 
-/* ---- Entry input ---- */
 entry {
-    enabled:                     true;
-    expand:                      false;
-    width:                       300px;
-    padding:                     12px 16px;
-    border-radius:               10px;
-    background-color:            @background-alt;
-    text-color:                  @background-color;
-    cursor:                      text;
-    placeholder:                 "  Search"; // << Search symbol
-    placeholder-color:           inherit;
+    enabled:                    true;
+    padding:                    12px 16px;
+    border-radius:              10px;
+    background-color:           @background-alt;
+    text-color:                 inherit;
+    cursor:                     text;
+    placeholder:                " 󰮫  Choose Waybar Style";
+    placeholder-color:          inherit;
+}
+
+/* ---- Imagebox ---- */
+imagebox {
+    background-color:      		transparent;
+    orientation:                vertical;
 }
 
 /* ---- Listbox ---- */
@@ -96,7 +100,7 @@ listbox {
 /* ---- Listview ---- */
 listview {
     enabled:                     true;
-    columns:                     1;
+    columns:                     2;
     lines:                       8;
     cycle:                       true;
     dynamic:                     true;
@@ -109,33 +113,14 @@ listview {
     spacing:                     10px;
     background-color:            transparent;
 
-//  Adapt rofi theme
+    // Adapt rofi theme
     border:                      0px;
 }
 
 /* ---- Dummy ---- */
 dummy {
     expand:                      true;
-    background-color:            transparent;
-}
-
-/* ---- Mode Switcher ---- */
-mode-switcher{
-    enabled:                     true;
-    spacing:                     10px;
-    background-color:            transparent;
-}
-button {
-    width:                       80px;
-    padding:                     12px;
-    border-radius:               12px;
-    background-color:            @background-alt;
-    text-color:                  @background;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            @selected;
-    text-color:                  @text-selected;
+    background-color:           transparent;
 }
 
 
@@ -149,7 +134,6 @@ element {
     cursor:                      pointer;
 }
 
-
 element normal.normal {
     background-color:            inherit;
     text-color:                  inherit;
@@ -162,7 +146,6 @@ element normal.active {
     background-color:            @active;
     text-color:                  @foreground;
 }
-
 element selected.normal {
     background-color:            @selected;
     text-color:                  @text-selected;
@@ -200,19 +183,17 @@ element-text {
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
-
 }
 
 /* ---- Message ---- */
 message {
     background-color:            transparent;
-    border:                      0px;
 }
 textbox {
     padding:                     12px;
     border-radius:               10px;
     background-color:            @background-alt;
-    text-color:                  @background;
+    text-color:                  @foreground;
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }

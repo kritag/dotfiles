@@ -23,6 +23,9 @@ return {
         },
         config = {
           header = vim.split(logo, "\n"),
+          week_header = {
+            enable = true,
+          },
         -- stylua: ignore
         center = {
           { action = 'lua LazyVim.pick("files", {follow = false})()',  desc = " Find File",       icon = " ", key = "f" },
