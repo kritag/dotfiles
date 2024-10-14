@@ -2,6 +2,7 @@
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias cat='bat --paging=never'
+alias cava=cava -p $XDG_CONFIG_HOME/cava/config
 alias cd='z'
 alias diff='batdiff --paging=never'
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
