@@ -4,6 +4,7 @@
       create: true
 
 - link:
+    ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/cava/config:
       path: ~/.cache/wal/colors-cava.conf
       force: true
@@ -16,6 +17,10 @@
     ~/.config/lazygit/mauve.yml: catppuccin_lazygit/themes-mergable/mocha/mauve.yml
     ~/.config/qt5ct/colors/Catppuccin-Mocha.conf: catppuccin_qt5ct/themes/Catppuccin-Mocha.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
+    ~/.config/wlogout:
+      create: true
+      glob: true
+      path: config/wlogout/*
     ~/.config/swaync:
       create: true
       glob: true
@@ -38,6 +43,10 @@
       create: true
       glob: true
       path: config/hypr/*
+    ~/.config/wal/:
+      create: true
+      glob: true
+      path: config/wal/*
     ~/.config/waybar/:
       create: true
       glob: true
