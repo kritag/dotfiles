@@ -4,6 +4,10 @@
   "height": 25,
   "margin": "10px",
   "spacing": 10,
+  // "output": [
+  //   "!DP-4",
+  //   "*"
+  // ],
   "reload_style_on_change": true,
   "modules-left": [
     //"wlr/taskbar",
@@ -34,8 +38,8 @@
       "spotify": ""
     },
     "status-icons": {
-      "paused": "",
-      "playing": "",
+      "playing": "",
+      "paused": "",
       "stopped": ""
     }
   },

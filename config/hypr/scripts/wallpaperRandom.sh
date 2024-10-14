@@ -1,17 +1,25 @@
 #!/bin/bash
-wallDIR="$HOME/.dotfiles/wallpapers"
-#scriptsDir="$HOME/.config/hypr/scripts"
 
-focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
-
-PICS=($(find ${wallDIR} -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" \)))
+WALLDIR=~/.dotfiles/wallpapers
+PICS=($(\ls ${WALLDIR}))
 RANDOMPICS=${PICS[$RANDOM % ${#PICS[@]}]}
 
-# Transition config
-FPS=60
-TYPE="random"
-DURATION=1
-BEZIER=".43,1.19,1,.4"
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION --transition-bezier $BEZIER"
+OUTPUT_LIST=""
+for OUTPUT in $(hyprctl monitors all | grep "Monitor" | awk '{print $2}'); do
+  OUTPUT_LIST+="$OUTPUT,"
+done
 
-swww query || swww-daemon --format xrgb && swww img -o $focused_monitor ${RANDOMPICS} $SWWW_PARAMS
+# Remove trailing comma
+OUTPUT_LIST="${OUTPUT_LIST%,}"
+echo $OUTPUT_LIST
+
+#change-wallpaper using swww
+swww img ${WALLDIR}/${RANDOMPICS} --outputs="$OUTPUT_LIST" --transition-fps 60 --transition-type any --transition-duration 2
+
+# wal -i ~/.config/rofi/.current_wallpaper
+
+~/.config/hypr/scripts/pywalCurrentWallpaper.sh
+
+sleep 1
+swaync-client -rs &
+swaync-client -R
