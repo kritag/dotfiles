@@ -1,11 +1,11 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 mime=$(file -Lbs --mime-type "$1")
 category=${mime%%/*}
 kind=${mime##*/}
 type=$(echo "$1" | grep -o '\.[^.]*$' | cut -d. -f2-)
 ext=${1##*.}
 if [ -d "$1" ]; then
-  eza -l --git --color=always --icons --group-directories-first "$1"
+  eza -l --no-time --git --color=always --icons --group-directories-first "$1"
 elif [[ "$1" == *.md ]]; then
   glow -p -s $HOME/.cache/wal/colors-glow.json "$1"
 elif [ "$category" = image ]; then
@@ -20,5 +20,6 @@ elif [ "$ext" = lua ]; then
 elif [ "$category" = text ]; then
   bat --color=always "$1"
 else
-  lesspipe.sh "$1" | bat --color=always
+  # lesspipe.sh "$1" | bat --color=always
+  bat --color=always "$1"
 fi
