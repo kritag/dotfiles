@@ -19,6 +19,7 @@ export MANPAGER="nvim +Man!"
 export MOZ_USE_XINPUT2=1
 export MOZ_ENABLE_WAYLAND=1
 #export MYVIMRC="${XDG_CONFIG_HOME}/nvim/init.vim"
+export NIX_REMOTE=daemon
 export NVIM_APPNAME='lazyvim'
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export SAVEHIST=10000
