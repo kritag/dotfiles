@@ -84,16 +84,16 @@ zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=do
 # read
 zstyle ':fzf-tab:complete:(\\|)read:argument-1' fzf-preview 'echo ${(P)word}'
 
-_FZF_TAB_FZF_FLAGS=(
-    '--height=80%' \
-    '--layout=reverse' \
-    '--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8' \
-    '--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc' \
-    '--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8' \
-    '--color=selected-bg:#45475a,border:#94e2d5' \
-    '--pointer=❯' \
-    '--multi' \
-)
+# _FZF_TAB_FZF_FLAGS=(
+#     '--height=80%' \
+#     '--layout=reverse' \
+#     '--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8' \
+#     '--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc' \
+#     '--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8' \
+#     '--color=selected-bg:#45475a,border:#94e2d5' \
+#     '--pointer=❯' \
+#     '--multi' \
+# )
 
 #zstyle ':fzf-tab:complete:*' fzf-preview '([[ -f $realpath ]] && bat --color=always "$realpath") || ([[ -d $realpath ]] && (eza --long --git --group-directories-first --icons --color=always "$realpath"))'
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'lesspipe.sh ${(Q)realpath}'

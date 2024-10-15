@@ -1,3 +1,4 @@
+#!/usr/bin/zsh
 #zmodload zsh/zprof
 source $HOME/.aliases.zsh
 source $HOME/.env
@@ -33,6 +34,7 @@ bindkey '^[OB' history-substring-search-down
 # fzf stuff
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+source $HOME/.cache/wal/colors-fzf.sh
 
 # Make autocomplete work with sshpass aliases
 compdef _ssh_hosts sshpass s sr
@@ -57,10 +59,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# bun completions
-[ -s "/home/e215142/.bun/_bun" ] && source "/home/e215142/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 #zprof
