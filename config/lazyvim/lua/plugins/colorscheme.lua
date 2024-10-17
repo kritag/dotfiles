@@ -63,9 +63,40 @@ return {
     },
   },
   {
+    "ellisonleao/gruvbox.nvim",
+    name = "gruvbox",
+    opts = {
+      transparent_mode = true,
+      contrast = "hard",
+    },
+  },
+  {
+    "neanias/everforest-nvim",
+    name = "everforest",
+    opts = {
+      background = "hard",
+      transparent_background_level = 2,
+    },
+  },
+  {
+    "Mofiqul/dracula.nvim",
+    name = "dracula",
+    opts = {
+      background = "hard",
+      transparent_bg = true,
+    },
+  },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      background = "hard",
+      transparent_bg = true,
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "gruvbox",
     },
   },
 }
