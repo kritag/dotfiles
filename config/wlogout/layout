@@ -18,4 +18,3 @@
     "action" : "systemctl poweroff",
     "keybind" : "s"
 }
-

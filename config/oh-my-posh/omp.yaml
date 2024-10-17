@@ -51,7 +51,7 @@ blocks:
     foreground: black
   - type: prompt
     alignment: right
-    #newline: true
+    # newline: true
     segments:
       - type: kubectl
         background: lightBlue

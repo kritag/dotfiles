@@ -1,4 +1,4 @@
-local colors = require("catppuccin.palettes").get_palette()
+-- local colors = require("catppuccin.palettes").get_palette()
 
 local function getLspName()
   local bufnr = vim.api.nvim_get_current_buf()
@@ -64,8 +64,8 @@ local lsp = {
   function()
     return getLspName()
   end,
-  separator = { left = "", right = "" },
-  color = { bg = colors.mauve, fg = colors.surface0, gui = "bold" },
+  separator = { left = "" },
+  -- color = { bg = colors.mauve, fg = colors.surface0, gui = "bold" },
 }
 local space = {
   function()
@@ -98,7 +98,7 @@ return {
 
       local opts = {
         options = {
-          theme = "catppuccin",
+          theme = "auto",
           globalstatus = vim.o.laststatus == 3,
           section_separators = "",
           --{ left = "", right = "" },
@@ -112,19 +112,20 @@ return {
           lualine_a = {
             {
               "mode",
-              separator = { left = "", right = "" },
+              separator = { right = "" },
+              -- color = { bg = "transparent_bg" },
             },
           },
           lualine_b = { space },
           lualine_c = {
             {
               "branch",
-              color = { bg = colors.green, fg = colors.surface0, gui = "bold" },
+              -- color = { bg = colors.green, fg = colors.surface0, gui = "bold" },
               separator = { left = "", right = "" },
             },
             {
               "diff",
-              color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
+              -- color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
               separator = { right = "" },
               symbols = {
                 added = icons.git.added,
@@ -147,7 +148,7 @@ return {
               function()
                 return " "
               end,
-              color = { bg = colors.transparent_bg, fg = colors.blue },
+              -- color = { bg = colors.transparent_bg, fg = colors.blue },
             },
             {
               function()
@@ -155,11 +156,11 @@ return {
                 return component[1]() -- Execute the function part of the component
               end,
               separator = { left = "", right = "" }, -- Apply separators
-              color = { fg = colors.crust, bg = colors.pink, gui = "bold" },
+              -- color = { fg = colors.crust, bg = colors.pink, gui = "bold" },
             },
             {
               "diagnostics",
-              color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
+              -- color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
               separator = { right = "" },
               symbols = {
                 error = icons.diagnostics.Error,
@@ -168,10 +169,10 @@ return {
                 hint = icons.diagnostics.Hint,
               },
               diagnostics_color = {
-                error = { fg = colors.red },
-                warn = { fg = colors.orange },
-                info = { fg = colors.sky },
-                hint = { fg = colors.teal },
+                -- error = { fg = colors.red },
+                -- warn = { fg = colors.orange },
+                -- info = { fg = colors.sky },
+                -- hint = { fg = colors.teal },
               },
             },
           },
@@ -206,12 +207,12 @@ return {
               "progress",
               separator = { left = "", right = "" },
               padding = { left = 1, right = 1 },
-              color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
+              -- color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
             },
             {
               "location",
               padding = { left = 1, right = 1 },
-              color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
+              -- color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
             },
           },
           lualine_z = {
@@ -228,17 +229,17 @@ return {
         },
         extensions = { "neo-tree", "lazy" },
       }
-      local custom_catppuccin = require("lualine.themes.catppuccin")
-      custom_catppuccin.normal.b.bg = colors.transparent_bg
-      custom_catppuccin.insert.b.bg = colors.transparent_bg
-      custom_catppuccin.terminal.b.bg = colors.transparent_bg
-      custom_catppuccin.replace.b.bg = colors.transparent_bg
-      custom_catppuccin.command.b.bg = colors.transparent_bg
-      custom_catppuccin.inactive.b.bg = colors.transparent_bg
-      custom_catppuccin.visual.b.bg = colors.transparent_bg
-      custom_catppuccin.inactive.b.bg = colors.transparent_bg
-
-      opts.options.theme = custom_catppuccin
+      -- local custom_catppuccin = require("lualine.themes.catppuccin")
+      -- custom_catppuccin.normal.b.bg = colors.transparent_bg
+      -- custom_catppuccin.insert.b.bg = colors.transparent_bg
+      -- custom_catppuccin.terminal.b.bg = colors.transparent_bg
+      -- custom_catppuccin.replace.b.bg = colors.transparent_bg
+      -- custom_catppuccin.command.b.bg = colors.transparent_bg
+      -- custom_catppuccin.inactive.b.bg = colors.transparent_bg
+      -- custom_catppuccin.visual.b.bg = colors.transparent_bg
+      -- custom_catppuccin.inactive.b.bg = colors.transparent_bg
+      --
+      -- opts.options.theme = custom_catppuccin
 
       -- do not add trouble symbols if aerial is enabled
       -- And allow it to be overriden for some buffer types (see autocmds)

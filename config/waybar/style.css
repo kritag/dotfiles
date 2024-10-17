@@ -1,8 +1,8 @@
 @import "theme.css";
 * {
-  font-family: JetBrainsMono Nerd Font;
+  font-family: Lexend Nerd Font;
   font-size: 16;
-  font-weight: bold;
+  /* font-weight: bold; */
   min-height: 0;
 }
 #one {
@@ -26,40 +26,12 @@ tooltip {
   background: @background;
   border: 1px solid @color0;
 }
-#powermenu {
-  background-color: @background;
-  border-radius: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-#powermenuout {
-  padding-left: 10px;
-  padding-right: 10px;
-}
 #custom-powerbutton {
   color: @color1;
   padding-left: 10px;
-  padding-right: 10px;
-}
-#custom-restartbutton {
-  color: @color6;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-#custom-sleepbutton {
-  color: @color7;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-#custom-lockbutton {
-  color: @color8;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-#custom-exitbutton {
-  color: @color9;
-  padding-left: 10px;
-  padding-right: 10px;
+  background-color: @background;
+  border-radius: 10px;
+  padding-right: 15px;
 }
 #mpris {
   color: @color2;
@@ -87,30 +59,27 @@ tooltip {
   color: #f38ba8;
 }
 #pulseaudio {
-  color: @color3;
+  color: @color5;
   background-color: @background;
   padding-right: 10px;
 }
 #clock {
   background-color: @background;
-  /* border-radius: 5em; */
   padding-right: 10px;
   padding-left: 10px;
-  color: @color4;
+  color: @color5;
 }
 #custom-weather {
-  color: @text;
+  color: @color5;
   background-color: @background;
-  /* border-radius: 5em; */
   padding-right: 10px;
   padding-left: 10px;
 }
 #backlight {
-  color: @color15;
+  color: @color5;
 }
 #battery {
   color: @color5;
-  /* font-size: 14; */
 }
 #battery.charging {
   color: #a6e3a1;

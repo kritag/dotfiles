@@ -1,11 +1,3 @@
-/*   _ _ _ __    _____ _____ _____ _____ _____ 
-    | | | |  |  |     |   __|     |  |  |_   _|
-    | | | |  |__|  |  |  |  |  |  |  |  | | |  
-    |_____|_____|_____|_____|_____|_____| |_|   STYLE  
-                                           
-    by Bina 
-*/
-
 /* pywal colors */
 @import "../../.cache/wal/colors-waybar.css";
 
@@ -26,7 +18,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 20%;
-  border: solid 3px @color7;
+  border: none;
   border-radius: 10px;
   outline-style: none;
 }
