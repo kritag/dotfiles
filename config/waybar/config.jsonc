@@ -11,7 +11,7 @@
   "reload_style_on_change": true,
   "modules-left": [
     //"wlr/taskbar",
-    "group/powermenu",
+    "custom/powerbutton",
     "mpris"
     // "hyprland/window"
   ],
@@ -214,51 +214,15 @@
     },
     "on-click": "pulsecontrol"
   },
-  "group/powermenu": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 500,
-      // "children-class": "launcher,",
-      "transition-left-to-right": true
-      // "click-to-reveal": true
-    },
-    "modules": [
-      "custom/powerbutton",
-      "custom/restartbutton",
-      "custom/sleepbutton",
-      "custom/lockbutton",
-      "custom/exitbutton"
-    ]
-  },
   "custom/powerbutton": {
     "format": "",
     "tooltip-format": "Power",
-    "on-click": "foo"
-  },
-  "custom/restartbutton": {
-    "format": "",
-    "tooltip-format": "Restart",
-    "on-click": "systemctl reboot"
-  },
-  "custom/sleepbutton": {
-    "format": "󰤄",
-    "tooltip-format": "Sleep",
-    "on-click": "systemctl suspend"
-  },
-  "custom/lockbutton": {
-    "format": "",
-    "tooltip-format": "Lock",
-    "on-click": "$HOME/.config/hypr/scripts/hyprlock.sh"
-  },
-  "custom/exitbutton": {
-    "format": "󰈆 ",
-    "tooltip-format": "Exit Hyprland",
-    "on-click": "hyprctl dispatch exit"
+    "on-click": "wlogout -b 2"
   },
   "custom/weather": {
     "exec": "wttrbar --date-format %d/%m --location Oslo",
     "return-type": "json",
-    "format": "{0}",
+    "format": "{}°",
     "tooltip": true,
     "interval": 3600
   },

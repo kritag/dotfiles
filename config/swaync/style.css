@@ -1,7 +1,7 @@
 @import "../../.cache/wal/colors-waybar.css";
 
 * {
-  font-family: JetBrainsMono Nerd Font;
+  font-family: Lexend Nerd Font;
   font-weight: bold;
   all: unset;
   background: transparent;
@@ -32,7 +32,7 @@ slider {
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
   opacity: 1;
-  background: alpha(@color0, 0.5);
+  background: alpha(@color3, 0.5);
   /* background: transparent; */
 }
 
@@ -90,7 +90,7 @@ slider {
 .notification-default-action:hover,
 .notification-action:hover {
   color: @color0;
-  background: @color0;
+  background: @color1;
 }
 
 .notification-default-action {

@@ -12,7 +12,8 @@ configuration {
     display-window:             "Windows";
 	  drun-display-format:        "{name}";
 	  window-format:              "{w} · {c} · {t}";
-    font:                       "JetBrainsMono Nerd Font 10";
+    //font:                       "JetBrainsMono Nerd Font 10";
+    font:                       "Lexend Nerd Font 10";
 }
 
 /* ---- Load pywal colors ---- */
@@ -40,7 +41,7 @@ window {
     cursor:                     "default";
     spacing:                    0px;
     border:                     2px;
-    border-radius:              30px;
+    border-radius:              10px;
     location:                   center;
     anchor:                     center;
 
@@ -64,7 +65,7 @@ inputbar {
     padding:                     80px 60px;
     margin:                      20px;
     background-color:            transparent;
-    border-radius:               25px;
+    border-radius:               10px;
     orientation:                 horizontal;
     children:                    ["entry", "dummy", "mode-switcher" ];
     background-image:            url("~/.config/rofi/.current_wallpaper", width);
@@ -96,7 +97,7 @@ listbox {
 /* ---- Listview ---- */
 listview {
     enabled:                     true;
-    columns:                     1;
+    columns:                     2;
     lines:                       8;
     cycle:                       true;
     dynamic:                     true;
@@ -127,8 +128,10 @@ mode-switcher{
 }
 button {
     width:                       80px;
-    padding:                     12px;
-    border-radius:               12px;
+    //padding:                     12px;
+    padding-left:                30px;
+    padding-right:               30px;
+    border-radius:               10px;
     background-color:            @background-alt;
     text-color:                  @background;
     cursor:                      pointer;
@@ -218,7 +221,7 @@ textbox {
 }
 error-message {
     padding:                     12px;
-    border-radius:               20px;
+    border-radius:               10px;
     background-color:            @background-alt;
     text-color:                  @foreground;
 }
