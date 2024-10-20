@@ -1,0 +1,112 @@
+
+colors:
+  # Base16 theme
+
+  lightMagenta: "{color13.strip}"
+  lightRed: "{color9.strip}"
+  magenta: "{color5.strip}"
+  lightBlue: "{color12.strip}"
+  red: "{color1.strip}"
+  lightYellow: "{color11.strip}"
+  yellow: "{color3.strip}"
+  green: "{color2.strip}"
+  lightGreen: "{color10.strip}"
+  cyan: "{color6.strip}"
+  lightCyan: "{color14.strip}"
+  blue: "{color8.strip}"
+  default: "{color4.strip}"
+
+  foreground: "{foreground.strip}"
+  cursor: "{cursor.strip}"
+  background: "1d2021"
+  black: "{color0.strip}"
+  white: "{color15.strip}"
+
+core:
+  normal_text: 
+  reset_to_normal: 
+
+  fifo:
+    foreground: black
+    background: blue
+
+  socket:
+    foreground: black
+    background: magenta
+
+  door:
+    foreground: black
+    background: magenta
+
+  block_device:
+    foreground: lightCyan
+    background: white
+
+  character_device:
+    foreground: magenta
+    background: white
+
+  broken_symlink:
+    foreground: black
+    background: red
+
+  missing_symlink_target:
+    foreground: black
+    background: red
+
+  setuid: 
+
+  file_with_capability: 
+
+  other_writable: 
+
+  executable_file:
+    foreground: red
+    font-style: bold
+
+text:
+  special:
+    foreground: background
+    background: yellow
+
+  todo:
+    font-style: bold
+
+  licenses:
+    foreground: cursor
+
+  configuration:
+    foreground: yellow
+
+  other:
+    foreground: yellow
+
+markup:
+  foreground: yellow
+
+programming:
+  source:
+    foreground: green
+
+  tooling:
+    foreground: lightGreen
+
+    continuous-integration:
+      foreground: green
+
+media:
+  foreground: lightRed
+
+office:
+  foreground: red
+
+archives:
+  foreground: lightCyan
+  font-style: underline
+
+executable:
+  foreground: red
+  font-style: bold
+
+unimportant:
+  foreground: cursor

@@ -34,7 +34,8 @@ bindkey '^[OB' history-substring-search-down
 # fzf stuff
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-source $HOME/.cache/wal/colors-fzf.sh
+#source $HOME/.cache/wal/colors-fzf.sh
+source $HOME/.config/flavours/fzf.sh
 
 # Make autocomplete work with sshpass aliases
 compdef _ssh_hosts sshpass s sr
@@ -50,6 +51,7 @@ compdef _journalctl jctl
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml)"
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
+(cat $HOME/.config/flavours/tty &)
 
 # pnpm
 export PNPM_HOME="/home/kristian/.local/share/pnpm"
