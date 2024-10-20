@@ -1,5 +1,4 @@
 -- local colors = require("catppuccin.palettes").get_palette()
-
 local function getLspName()
   local bufnr = vim.api.nvim_get_current_buf()
   local buf_clients = vim.lsp.get_clients({ bufnr = bufnr })
@@ -223,12 +222,20 @@ return {
         },
         winbar = {
           lualine_c = {
-            { "filetype", icon_only = true, cond = nil, separator = "", padding = { left = 0, right = 0 } },
-            { LazyVim.lualine.pretty_path() },
+            {
+              "filetype",
+              icon_only = true,
+              cond = nil,
+              separator = "",
+              padding = { left = 0, right = 0 },
+              color = { bg = "None" },
+            },
+            { LazyVim.lualine.pretty_path(), color = { bg = "None" } },
           },
         },
         extensions = { "neo-tree", "lazy" },
       }
+
       -- local custom_catppuccin = require("lualine.themes.catppuccin")
       -- custom_catppuccin.normal.b.bg = colors.transparent_bg
       -- custom_catppuccin.insert.b.bg = colors.transparent_bg
@@ -251,7 +258,7 @@ return {
           title = false,
           filter = { range = true },
           format = "{kind_icon}{symbol.name:Normal}",
-          hl_group = "lualine_c_normal",
+          hl_group = "lualine_c_20_normal",
         })
         table.insert(opts.winbar.lualine_c, {
           symbols and symbols.get,

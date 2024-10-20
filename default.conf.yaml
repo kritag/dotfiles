@@ -3,9 +3,9 @@
       relink: true
       create: true
 
-- create:
-    #- "~/.local/share/nvim/site/autoload"
-    - "~/.config/bat/themes"
+# - create:
+#     - "~/.local/share/nvim/site/autoload"
+#     - "~/.config/bat/themes"
 
 - clean:
     - "~"
@@ -26,7 +26,14 @@
     ~/.ripgreprc: config/ripgreprc
     ~/.lessfilter: config/lessfilter
     ~/.gitconfig: config/gitconfig
-    ~/.config/bat/config: config/bat/config
+    ~/.config/vivid:
+      path: config/vivid/*
+      create: true
+      glob: true
+    ~/.config/bat:
+      path: config/bat/*
+      create: true
+      glob: true
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.config/lvim/config.lua: config/lvim/config.lua
     ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc

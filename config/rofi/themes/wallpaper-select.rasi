@@ -17,7 +17,8 @@ configuration {
 }
 
 /* ---- Load pywal colors ---- */
-@theme "~/.cache/wal/colors-rofi.rasi"
+/*@theme "~/.cache/wal/colors-rofi.rasi"*/
+@theme "~/.config/rofi/colors.rasi"
 
 /* ---- Global Properties ---- */
 * {
@@ -96,7 +97,7 @@ element {
 
 element normal.normal {
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @background;
 }
 element normal.urgent {
     background-color:            @urgent;
@@ -128,19 +129,28 @@ element alternate.active {
 element-icon {
     size:                        30%;
     cursor:                      inherit;
-    expand: false;
+    expand:                      false;
     padding:                     0px;
     background-color:            inherit;
 }
-element-text {
+element-text selected.normal{
     vertical-align:              0.5;
     horizontal-align:            0.5;
     cursor:                      inherit;
     background-color:            transparent;
+    text-color:                  @background;
+}
+
+element-text normal.normal{
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  @foreground;
 }
 
 // Adapt rofi theme
 element.alternate.normal {
     background-color:            inherit;
-    text-color:                  inherit;
+    text-color:                  @foreground;
 }
