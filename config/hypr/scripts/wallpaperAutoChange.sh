@@ -4,17 +4,22 @@
 #
 # NOTE: this script uses bash (not POSIX shell) for the RANDOM variable
 
-lid_state=$(cat /proc/acpi/button/lid/*/state | awk '{print $2}')
+# lid_state=$(cat /proc/acpi/button/lid/*/state | awk '{print $2}')
 #focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
 
-if [[ "$lid_state" == "closed" ]]; then
-  focused_monitor=$(hyprctl monitors | awk '/^Monitor/ {name=$2} /focused: yes/ && name != "e-DP1" {print name}')
-  # Add logic for when the lid is closed
-else
-  focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+# if [[ "$lid_state" == "closed" ]]; then
+#   focused_monitor=$(hyprctl monitors | awk '/^Monitor/ {name=$2} /focused: yes/ && name != "e-DP1" {print name}')
+#   # Add logic for when the lid is closed
+# else
+#   focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+#
+#   # Add logic for when the lid is open
+# fi
 
-  # Add logic for when the lid is open
-fi
+OUTPUT_LIST=""
+for OUTPUT in $(hyprctl monitors all | grep "Monitor" | awk '{print $2}'); do
+  OUTPUT_LIST+="$OUTPUT,"
+done
 
 if [[ $# -lt 1 ]] || [[ ! -d $1 ]]; then
   echo "Usage:
@@ -36,7 +41,12 @@ while true; do
     done |
     sort -n | cut -d':' -f2- |
     while read -r img; do
-      swww img -o $focused_monitor "$img"
+      swww --clear-cache
+      swww img --outputs="$OUTPUT_LIST" "$img" --resize=fit
+      ~/.config/hypr/scripts/pywalCurrentWallpaper.sh
+      sleep 1
+      swaync-client -rs &
+      swaync-client -R
       sleep $INTERVAL
 
     done

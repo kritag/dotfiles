@@ -1,4 +1,4 @@
-@import "theme.css";
+@import "colors.css";
 * {
   font-family: Lexend Nerd Font;
   font-size: 16;
@@ -6,7 +6,7 @@
   min-height: 0;
 }
 #one {
-  background-color: @background;
+  background-color: @base00;
   border-radius: 10px;
   padding-right: 15px;
   padding-left: 15px;
@@ -23,34 +23,34 @@ tooltip label {
   color: @foreground;
 }
 tooltip {
-  background: @background;
+  background: @base00;
   border: 1px solid @color0;
 }
 #custom-powerbutton {
-  color: @color1;
+  color: @base08;
   padding-left: 10px;
-  background-color: @background;
+  background-color: @base00;
   border-radius: 10px;
   padding-right: 15px;
 }
 #mpris {
-  color: @color2;
+  color: @base09;
   border-radius: 10px;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: @background;
+  background-color: @base00;
 }
 #workspaces {
-  background-color: @background;
+  background-color: @base00;
   border-radius: 10px;
 }
 #workspaces button {
   border-radius: 10px;
-  color: @color8;
+  color: @base0B;
 }
 #workspaces button.active {
-  background-color: @color8;
-  color: @background;
+  background-color: @base0B;
+  color: @base00;
 }
 #workspaces button.special {
   color: @color14;
@@ -59,27 +59,27 @@ tooltip {
   color: #f38ba8;
 }
 #pulseaudio {
-  color: @color5;
-  background-color: @background;
+  color: @base0C;
+  background-color: @base00;
   padding-right: 10px;
 }
 #clock {
-  background-color: @background;
+  background-color: @base00;
   padding-right: 10px;
   padding-left: 10px;
-  color: @color5;
+  color: @base0C;
 }
 #custom-weather {
-  color: @color5;
-  background-color: @background;
+  color: @base0C;
+  background-color: @base00;
   padding-right: 10px;
   padding-left: 10px;
 }
 #backlight {
-  color: @color5;
+  color: @base0C;
 }
 #battery {
-  color: @color5;
+  color: @base0C;
 }
 #battery.charging {
   color: #a6e3a1;
@@ -102,15 +102,15 @@ tooltip {
   color: #a6e3a1;
 }
 #tray {
-  background-color: @background;
+  background-color: @base00;
   border-radius: 10px;
   padding-right: 15px;
   padding-left: 15px;
 }
 #custom-notifications {
-  background-color: @background;
+  background-color: @base00;
   border-radius: 10px;
   padding-right: 15px;
   padding-left: 15px;
-  color: @color6;
+  color: @base0D;
 }

@@ -13,8 +13,8 @@ export HISTSIZE=50000
 export KUBECTL_COMMAND=oc
 export LESS="-IRs"
 export LESSOPEN='|/usr/bin/lesspipe.sh %s'
-export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.cache/wal/colors-lazygit.yml"
-export LS_COLORS="$(vivid generate ~/.cache/wal/colors-vivid.yml)"
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/colors.yml"
+# export LS_COLORS="$(vivid generate ~/.cache/wal/colors-vivid.yml)"
 export MANPAGER="nvim +Man!"
 export MOZ_USE_XINPUT2=1
 export MOZ_ENABLE_WAYLAND=1
@@ -42,3 +42,9 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
+export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
+export LS_COLORS="$(vivid generate tokyonight-moon)"
+export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
+export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
+export LS_COLORS="$(vivid generate gruvbox-dark-hard)"

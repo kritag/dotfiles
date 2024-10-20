@@ -1,7 +1,7 @@
 #!/bin/env bash
-wallpaper=$(swww query | grep DP | grep --invert-match eDP | awk '{print $8}')
+wallpaper=$(swww query | grep DP | awk '{print $8}')
 # Step 2: Define the Hyprlock config file path
-config_file="$HOME/.dotfiles/config/hyprlock/hyprlock.conf"
+config_file="$HOME/.config/hypr/hyprlock.conf"
 
 # Step 3: Use sed to update the wallpaper path in the config file
 sed -i "s|path = .*|path = $wallpaper|g" "$config_file"

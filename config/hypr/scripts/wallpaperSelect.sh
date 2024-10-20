@@ -42,6 +42,7 @@ main() {
 
   # Random CHOICE case
   if [ "$CHOICE" = "$RANDOM_PIC_NAME" ]; then
+    swww --clear-cache
     swww img "${WALLDIR}/${RANDOM_PIC}" $SWWW_PARAMS
     exit 0
   fi
@@ -57,6 +58,7 @@ main() {
   done
 
   if [[ $PIC_INDEX -ne -1 ]]; then
+    swww --clear-cache
     swww img "${WALLDIR}/${PICS[$PIC_INDEX]}" $SWWW_PARAMS
   else
     echo "Image not found."

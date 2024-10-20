@@ -13,8 +13,9 @@ done
 OUTPUT_LIST="${OUTPUT_LIST%,}"
 echo $OUTPUT_LIST
 
+swww --clear-cache
 #change-wallpaper using swww
-swww img ${WALLDIR}/${RANDOMPICS} --outputs="$OUTPUT_LIST" --transition-fps 60 --transition-type any --transition-duration 2
+swww img ${WALLDIR}/${RANDOMPICS} --outputs="$OUTPUT_LIST" --transition-fps 60 --transition-type any --transition-duration 2 --resize=fit
 
 # wal -i ~/.config/rofi/.current_wallpaper
 

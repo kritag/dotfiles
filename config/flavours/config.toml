@@ -1,0 +1,64 @@
+shell = "bash -c '{}'"
+
+[[items]]
+file = "~/.config/waybar/colors.css"
+template = "waybar"
+rewrite = true
+
+[[items]]
+file = "~/.config/kitty/colors.conf"
+template = "kitty"
+subtemplate = "default-256"
+rewrite = true
+
+[[items]]
+file = "~/.config/k9s/skins/colors.yaml"
+template = "k9s"
+rewrite = true
+
+[[items]]
+file = "~/.config/flavours/fzf.sh"
+template = "fzf"
+subtemplate = "base24-default"
+rewrite = true
+
+[[items]]
+file = "~/.config/rofi/colors.rasi"
+template = "rofi"
+subtemplate = "colors"
+rewrite = true
+
+[[items]]
+file = "~/.config/cava/config"
+template = "cava"
+rewrite = true
+
+[[items]]
+file = "~/.config/glow/colors.json"
+template = "glow"
+rewrite = true
+
+[[items]]
+file = "~/.config/hypr/colors.conf"
+template = "hypr"
+rewrite = true
+
+[[items]]
+file = "~/.config/lazygit/colors.yml"
+template = "lazygit"
+rewrite = true
+
+[[items]]
+file = "~/.config/spicetify/Themes/flavours/color.ini"
+template = "spicetify"
+rewrite = true
+
+[[items]]
+file = "~/.config/flavours/slack"
+template = "slack"
+rewrite = true
+
+[[items]]
+file = "~/.config/flavours/tty"
+template = "tty"
+rewrite = true

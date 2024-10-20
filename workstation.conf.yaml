@@ -6,9 +6,9 @@
 
 - link:
     ~/.config/btop/btop.conf: config/btop/btop.conf
-    ~/.config/cava/config:
-      path: ~/.cache/wal/colors-cava.conf
-      force: true
+    # ~/.config/cava/config:
+    #   path: ~/.cache/wal/colors-cava.conf
+    #   force: true
     ~/.config/k9s/skins/colors-k9s.yaml: ~/.cache/wal/colors-k9s.yaml
     ~/.config/Kvantum/kvantum.kvconfig: config/Kvantum/kvantum.kvconfig
     ~/.config/Kvantum/pywal/pywal.kvconfig:
@@ -20,7 +20,6 @@
     ~/.config/hypr/hypridle.conf: config/hypridle/hypridle.conf
     ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-gdm.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
-    ~/.config/hypr/mocha.conf: catppuccin_hyprland/themes/mocha.conf
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
     ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
     ~/.config/qt5ct/qt5ct.conf: config/qt5ct/qt5ct.conf
@@ -57,6 +56,10 @@
       create: true
       glob: true
       path: config/waybar/*
+    ~/.config/flavours/:
+      create: true
+      glob: true
+      path: config/flavours/*
 - sudo:
     - link:
         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
@@ -68,9 +71,9 @@
             Enable deletion of cached pacman packages,
           ]
         - [sudo usermod -a -G video $USER]
-- shell:
-    - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
-    - [
-        scripts/fix_cursor_theme.sh,
-        Fixes the cursor theme for non-GTK applications,
-      ]
+# - shell:
+#     - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
+#     - [
+#         scripts/fix_cursor_theme.sh,
+#         Fixes the cursor theme for non-GTK applications,
+#       ]
