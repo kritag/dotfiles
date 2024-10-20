@@ -12,7 +12,7 @@ k9s:
     crumbsless: false
     noIcons: false
     reactive: false
-    skin: colors-k9s
+    skin: colors
     defaultsToFullScreen: false
   noIcons: false
   skipLatestRevCheck: false
@@ -30,4 +30,3 @@ k9s:
       cpu: 100m
       memory: 100Mi
     tty: true
-

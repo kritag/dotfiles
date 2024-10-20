@@ -23,8 +23,12 @@
 #   Example 2: Use ".gitignore"-style highlighting for ".ignore" files
 #--map-syntax "*.ino:C++"
 #--map-syntax ".ignore:Git Ignore"
---theme="base16"
 --paging=never
 --color=always
 --style="plain"
 --tabs=2
+--theme="gruvbox-dark"
+--theme="tokyonight-moon"
+--theme="gruvbox-dark"
+--theme="gruvbox-dark"
+--theme="gruvbox-dark"
