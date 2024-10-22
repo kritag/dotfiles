@@ -1,6 +1,5 @@
 [delta]
-  syntax-theme = Catppuccin Mocha
-  features = catppuccin-mocha
+  features = delta-theme
   side-by-side = true
 
 [core]
@@ -10,5 +9,5 @@
   diffFilter = delta --color-only --features=interactive
 
 [include]
-  path = ~/.dotfiles/catppuccin_delta/catppuccin.gitconfig
+  path = ~/.theme.gitconfig
   path = ~/.gitconfig.local
