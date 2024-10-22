@@ -30,6 +30,10 @@
       path: config/vivid/*
       create: true
       glob: true
+    ~/.config/fsh:
+      path: config/fsh/*
+      create: true
+      glob: true
     ~/.config/bat:
       path: config/bat/*
       create: true
