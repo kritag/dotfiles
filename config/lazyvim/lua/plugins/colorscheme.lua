@@ -94,6 +94,23 @@ return {
     },
   },
   {
+    "gbprod/nord.nvim",
+    name = "nord",
+    opts = {
+      transparent = true,
+    },
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      variant = "moon",
+      styles = {
+        transparency = true,
+      },
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox",
