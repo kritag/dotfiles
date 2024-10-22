@@ -88,9 +88,10 @@ return {
   },
   {
     "folke/tokyonight.nvim",
+    name = "tokyonight",
     opts = {
-      background = "hard",
-      transparent_bg = true,
+      -- background = "hard",
+      transparent = true,
     },
   },
   {
@@ -113,7 +114,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "tokyonight",
     },
   },
 }
