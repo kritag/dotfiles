@@ -14,16 +14,14 @@ export KUBECTL_COMMAND=oc
 export LESS="-IRs"
 export LESSOPEN='|/usr/bin/lesspipe.sh %s'
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/colors.yml"
-# export LS_COLORS="$(vivid generate ~/.cache/wal/colors-vivid.yml)"
+export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
 export MANPAGER="nvim +Man!"
 export MOZ_USE_XINPUT2=1
 export MOZ_ENABLE_WAYLAND=1
-#export MYVIMRC="${XDG_CONFIG_HOME}/nvim/init.vim"
 export NIX_REMOTE=daemon
 export NVIM_APPNAME='lazyvim'
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export SAVEHIST=10000
-#export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
 export SYSTEMD_EDITOR=nvim
 export WORDCHARS='*?[]~&;!#$%^(){}<>'
 export XDG_CONFIG_HOME=$HOME/.config
@@ -42,9 +40,3 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
-export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
-export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
-export LS_COLORS="$(vivid generate tokyonight-moon)"
-export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
-export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
-export LS_COLORS="$(vivid generate gruvbox-dark-hard)"

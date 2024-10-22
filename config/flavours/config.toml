@@ -5,11 +5,11 @@ file = "~/.config/waybar/colors.css"
 template = "waybar"
 rewrite = true
 
-[[items]]
-file = "~/.config/kitty/colors.conf"
-template = "kitty"
-subtemplate = "default-256"
-rewrite = true
+# [[items]]
+# file = "~/.config/kitty/colors.conf"
+# template = "kitty"
+# subtemplate = "default-256"
+# rewrite = true
 
 [[items]]
 file = "~/.config/k9s/skins/colors.yaml"
@@ -59,6 +59,11 @@ template = "slack"
 rewrite = true
 
 [[items]]
-file = "~/.config/flavours/tty"
-template = "tty"
+file = "~/.theme.gitconfig"
+template = "delta"
 rewrite = true
+
+# [[items]]
+# file = "~/.config/flavours/tty"
+# template = "tty"
+# rewrite = true
