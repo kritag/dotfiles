@@ -8,6 +8,7 @@ if [ "$1" == "gruvbox" ]; then
   flavours apply gruvbox-dark-hard
   echo 'export LS_COLORS="$(vivid generate gruvbox-dark-hard)"' >>~/.zshenv.zsh
   echo '--theme="gruvbox-dark"' >>~/.config/bat/config
+  fast-theme ~/.config/fsh/gruvbox.ini
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Gruvbox'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -19,6 +20,7 @@ elif [ "$1" == "catppuccin-mocha" ]; then
   flavours apply catppuccin-mocha
   echo 'export LS_COLORS="$(vivid generate catppuccin-mocha)"' >>~/.zshenv.zsh
   echo '--theme="catppuccin-mocha"' >>~/.config/bat/config
+  fast-theme ~/.config/fsh/catppuccin-mocha.ini
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Catppuccin'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -30,6 +32,7 @@ elif [ "$1" == "dracula" ]; then
   flavours apply dracula
   echo 'export LS_COLORS="$(vivid generate dracula)"' >>~/.zshenv.zsh
   echo '--theme="dracula"' >>~/.config/bat/config
+  fast-theme ~/.config/fsh/dracula.ini
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Dracula'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -40,6 +43,7 @@ elif [ "$1" == "everforest" ]; then
   wal --theme ~/.config/wal/colorschemes/dark/everforest.json
   echo 'export LS_COLORS="$(vivid generate ~/.config/vivid/themes/everforest.yaml)"' >>~/.zshenv.zsh
   echo '--theme="everforest-dark"' >>~/.config/bat/config
+  fast-theme ~/.config/fsh/everforest.ini
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Everforest'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -51,6 +55,7 @@ elif [ "$1" == "nord" ]; then
   flavours apply nord
   echo 'export LS_COLORS="$(vivid generate nord)"' >>~/.zshenv.zsh
   echo '--theme="nord"' >>~/.config/bat/config
+  fast-theme ~/.config/fsh/nord.ini
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Nord'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -62,6 +67,7 @@ elif [ "$1" == "rose-pine" ]; then
   flavours apply rose-pine
   echo 'export LS_COLORS="$(vivid generate rose-pine)"' >>~/.zshenv.zsh
   echo '--theme="rose-pine"' >>~/.config/bat/config
+  fast-theme ~/.config/fsh/rose-pine.ini
   dconf write /org/gnome/desktop/interface/gtk-theme "'rose-pine-gtk'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -73,6 +79,7 @@ elif [ "$1" == "tokyo-night" ]; then
   flavours apply tokyo-night-moon
   echo 'export LS_COLORS="$(vivid generate tokyonight-moon)"' >>~/.zshenv.zsh
   echo '--theme="tokyonight-moon"' >>~/.config/bat/config
+  fast-theme ~/.config/fsh/tokyo-night-moon.ini
   dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
