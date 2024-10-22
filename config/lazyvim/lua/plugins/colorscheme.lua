@@ -90,8 +90,9 @@ return {
     "folke/tokyonight.nvim",
     name = "tokyonight",
     opts = {
-      -- background = "hard",
       transparent = true,
+      style = "night",
+      lualine_bold = true,
     },
   },
   {
