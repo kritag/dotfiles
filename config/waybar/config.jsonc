@@ -160,7 +160,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "{percent}% {icon}{0}",
+    "format": "{percent}% {icon}",
     "format-icons": [
       "",
       "",
@@ -180,8 +180,8 @@
     },
     "interval": 60,
     "format": "{icon} {capacity}%",
-    "format-charging": "󱐋{icon} {capacity}%",
-    "format-plugged": "󱐋{icon} {capacity}%",
+    "format-charging": "󱐋 {icon} {capacity}%",
+    "format-plugged": "󱐋 {icon} {capacity}%",
     "format-icons": [
       "",
       "",
