@@ -102,12 +102,12 @@ elif [ "$1" == "tokyo-night" ]; then
   sed -i 's/\(colorscheme = "\)[^"]*\(",\)/\1tokyonight\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
   fast-theme ~/.config/fsh/tokyo-night-moon.ini
   kitten themes Tokyo Night
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark'"
+  dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Tokyonight-Dark/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  ln -sf /usr/share/themes/Tokyonight-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
 fi
 
 bat cache --build
