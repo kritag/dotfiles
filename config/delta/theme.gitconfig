@@ -1,16 +1,16 @@
 [delta "delta-theme"]
-	blame-palette = "#222436 #1e2030 #11111b #2d3f76 #636da6"
+	blame-palette = "#16161e #1a1b26 #11111b #2f3549 #444b6a"
 	commit-decoration-style = box ul
 	dark = true
-	file-decoration-style = "#3b4261"
-	file-style = "#3b4261"
+	file-decoration-style = "#c0caf5"
+	file-style = "#c0caf5"
 	hunk-header-decoration-style = box ul
 	hunk-header-file-style = bold
 	hunk-header-line-number-style = bold "#a6adc8"
 	hunk-header-style = file line-number syntax
 	line-numbers-left-style = "#6c7086"
-	line-numbers-minus-style = bold "#ff757f"
-	line-numbers-plus-style = bold "#c3e88d"
+	line-numbers-minus-style = bold "#f7768e"
+	line-numbers-plus-style = bold "#9ece6a"
 	line-numbers-right-style = "#6c7086"
 	line-numbers-zero-style = "#6c7086"
 	minus-emph-style = bold syntax "#53394c"
