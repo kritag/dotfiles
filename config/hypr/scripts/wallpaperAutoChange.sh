@@ -41,7 +41,7 @@ while true; do
     done |
     sort -n | cut -d':' -f2- |
     while read -r img; do
-      swww --clear-cache
+      swww clear-cache
       swww img --outputs="$OUTPUT_LIST" "$img" --resize=fit
       ~/.config/hypr/scripts/pywalCurrentWallpaper.sh
       sleep 1
