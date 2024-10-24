@@ -6,9 +6,6 @@
 
 - link:
     ~/.config/btop/btop.conf: config/btop/btop.conf
-    # ~/.config/cava/config:
-    #   path: ~/.cache/wal/colors-cava.conf
-    #   force: true
     ~/.config/k9s/skins/colors-k9s.yaml: ~/.cache/wal/colors-k9s.yaml
     ~/.config/Kvantum/kvantum.kvconfig: config/Kvantum/kvantum.kvconfig
     ~/.config/Kvantum/pywal/pywal.kvconfig:

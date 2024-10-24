@@ -1,24 +1,24 @@
-# -Tokyo night dark
-# Scheme author: Michaël Ball
+# -Catppuccin Mocha
+# Scheme author: https://github.com/catppuccin/catppuccin
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
 export FZF_DEFAULT_OPTS=" \
   --history=$HOME/.fzfhistory \
   --layout=reverse \
-  --color=bg:#16161e,fg:#c0caf5,hl:#ff9e64\
-  --color=bg+:#2f3549,fg+:#c0caf5,hl+:#7dcfff\
-  --color=info:#73daca,border:#7aa2f7,prompt:#9ece6a\
-  --color=pointer:#16161e,marker:#9ece6a,spinner:#bb9af7,header:#f7768e \
+  --color=bg:#1e1e2e,fg:#cdd6f4,hl:#fab387\
+  --color=bg+:#313244,fg+:#cdd6f4,hl+:#94e2d5\
+  --color=info:#f2cdcd,border:#89b4fa,prompt:#a6e3a1\
+  --color=pointer:#1e1e2e,marker:#a6e3a1,spinner:#cba6f7,header:#f38ba8 \
 --pointer=❯ \
 --multi"
 
 _FZF_TAB_FZF_FLAGS=(
   '--height=80%'
   '--layout=reverse'
-  '--color=bg:#16161e,fg:#c0caf5,hl:#ff9e64'
-  '--color=bg+:#2f3549,fg+:#c0caf5,hl+:#7dcfff'
-  '--color=info:#73daca,border:#7aa2f7,prompt:#9ece6a'
-  '--color=pointer:#16161e,marker:#9ece6a,spinner:#bb9af7,header:#f7768e'
+  '--color=bg:#1e1e2e,fg:#cdd6f4,hl:#fab387'
+  '--color=bg+:#313244,fg+:#cdd6f4,hl+:#94e2d5'
+  '--color=info:#f2cdcd,border:#89b4fa,prompt:#a6e3a1'
+  '--color=pointer:#1e1e2e,marker:#a6e3a1,spinner:#cba6f7,header:#f38ba8'
   '--pointer=❯'
   '--multi'
 )
