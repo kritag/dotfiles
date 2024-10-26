@@ -5,14 +5,14 @@ configuration {
     modi:                        "drun";
     show-icons:                  true;
     drun-display-format:         "{name}";
-    font:                        "JetBrainsMono Nerd Font 10";
+    font:                        "Rubik 10";
 	  drun-display-format:         "{name}";
     hover-select:                true;
     me-select-entry:             "MouseSecondary";
     me-accept-entry:             "MousePrimary";
     window-format:               "{w} · {c} · {t}";
 	  dpi:	            					 1;
-    font:                        "JetBrainsMono Nerd Font 10";
+    font:                        "Rubik 10";
 
 }
 

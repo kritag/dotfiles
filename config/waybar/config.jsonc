@@ -119,7 +119,7 @@
   },
   "clock": {
     "timezone": "Europe/Oslo",
-    "format": " {:%H:%M}",
+    "format": "  {:%H:%M}",
     "format-alt": " {:%A %d. %b}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -179,9 +179,9 @@
       "critical": 15
     },
     "interval": 60,
-    "format": "{icon} {capacity}%",
-    "format-charging": "󱐋 {icon} {capacity}%",
-    "format-plugged": "󱐋 {icon} {capacity}%",
+    "format": "{icon} ",
+    "format-charging": "󱐋 {icon} ",
+    "format-plugged": "󱐋 {icon} ",
     "format-icons": [
       "",
       "",
