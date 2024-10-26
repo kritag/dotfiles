@@ -13,7 +13,7 @@ configuration {
 	  drun-display-format:        "{name}";
 	  window-format:              "{w} · {c} · {t}";
     //font:                       "JetBrainsMono Nerd Font 10";
-    font:                       "Lexend Nerd Font 10";
+    font:                       "Rubik 10";
 }
 
 /* ---- Load pywal colors ---- */
