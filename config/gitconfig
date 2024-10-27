@@ -11,3 +11,5 @@
 [include]
   path = ~/.theme.gitconfig
   path = ~/.gitconfig.local
+[credential]
+	helper = libsecret
