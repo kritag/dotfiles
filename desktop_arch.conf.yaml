@@ -72,6 +72,8 @@
           systemd-resolvconf,
           swww,
           tealdeer,
+          timeshift,
+          timeshift-autosnap,
           ttf-nerd-fonts-symbols,
           unzip,
           vivid,
