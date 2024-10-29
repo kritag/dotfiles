@@ -88,6 +88,8 @@
           swww,
           systemd-resolvconf,
           tealdeer,
+          timeshift,
+          timeshift-autosnap,
           ttf-nerd-fonts-symbols,
           vivid,
           vlc,
