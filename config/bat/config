@@ -4,7 +4,7 @@
 
 # Specify desired highlighting theme (e.g. "TwoDark"). Run `bat --list-themes`
 # for a list of all available themes
-#--theme="tokyonight-moon"
+#--theme="everforest-dark"
 
 # Enable this to use italic text on the terminal. This is not supported on all
 # terminal emulators (like tmux, by default):
@@ -25,6 +25,7 @@
 #--map-syntax ".ignore:Git Ignore"
 --paging=never
 --color=always
+--italic-text=always
 --style="plain"
 --tabs=2
---theme="tokyonight-moon"
+--theme="everforest-dark"

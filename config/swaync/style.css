@@ -1,11 +1,11 @@
-@import "../../.cache/wal/colors-waybar.css";
+@import "../../.config/waybar/colors.css";
 
-@define-color noti-border-color @color4;
+@define-color noti-border-color @base0D;
 @define-color noti-bg rgba(0, 0, 0, 0.8);
-@define-color noti-bg-alt #111111;
-@define-color noti-bg-hover @color9;
-@define-color text-color @foreground;
-@define-color text-color-alt @foreground;
+@define-color noti-bg-alt @base00;
+@define-color noti-bg-hover @base0B;
+@define-color text-color @base04;
+@define-color text-color-alt @base04;
 @define-color text-color-disabled rgba(150, 150, 150, 0.8);
 * {
   font-family: "Rubik";
@@ -69,7 +69,7 @@
 .notification-default-action:hover,
 .notification-action:hover {
   color: @text-color;
-  background: @color1;
+  background: @base0E;
 }
 
 .notification-default-action {

@@ -51,7 +51,7 @@ blocks:
     template: " {{ if .SSHSession }}{{ end }}{{ .UserName }} "
     background: lightCyan
     foreground: black
-  - type: rprompt
+  - type: prompt
     alignment: right
     # newline: true
     segments:
