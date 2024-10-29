@@ -10,7 +10,9 @@ elif [[ "$1" == *.md ]]; then
   glow -p -s $HOME/.cache/wal/colors-glow.json "$1"
 elif [ "$category" = image ]; then
   fzf-preview.sh "$1"
-  exiftool "$1" | bat --color=always -plyaml
+  # exiftool "$1" | bat --color=always -plyaml
+# elif [ "$category" = image ]; then
+#   chafa "$1"
 elif [ "$kind" = json ]; then
   bat --color=always -l json "$1"
 elif [ "$kind" = javascript ]; then

@@ -1,7 +1,8 @@
 # Uses bat to colorize help switches
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
-alias cat='bat --paging=never'
+# alias cat='bat --paging=never'
+alias batless='bat --paging always -l yaml'
 alias cava=cava -p $XDG_CONFIG_HOME/cava/config
 alias cd='z'
 alias diff='batdiff --paging=never'

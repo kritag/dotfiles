@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
 DOCFONT="'Rubik 11'"
 MONOFONT="'Meslo LG S 10'"
 FONT="'Rubik 11'"
@@ -38,6 +38,7 @@ case "$selected_theme" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Colloid-Dark-Compact-Gruvbox"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/gruvbox.ini
   kitten themes Gruvbox Dark Hard
+  papirus-folders -C palebrown --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Gruvbox'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -55,6 +56,7 @@ case "$selected_theme" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Colloid-Dark-Compact-Catppuccin"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/catppuccin-mocha.ini
   kitten themes Catppuccin-Mocha
+  papirus-folders -C magenta --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Catppuccin'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -72,6 +74,7 @@ case "$selected_theme" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Colloid-Dark-Compact-Dracula"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/dracula.ini
   kitten themes dracula
+  papirus-folders -C violet --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Dracula'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -89,6 +92,7 @@ case "$selected_theme" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Colloid-Dark-Compact-Everforest"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/everforest.ini
   kitten themes Everforest Dark Hard
+  papirus-folders -C green --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Everforest'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -107,6 +111,7 @@ case "$selected_theme" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Colloid-Dark-Compact-Nord"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/nord.ini
   kitten themes nord
+  papirus-folders -C nordic --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Nord'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -124,6 +129,7 @@ case "$selected_theme" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"rose-pine-gtk"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/rose-pine.ini
   kitten themes Rosé Pine
+  papirus-folders -C teal --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'rose-pine-gtk'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
@@ -141,6 +147,7 @@ case "$selected_theme" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Tokyonight-Dark-Compact"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/tokyo-night-moon.ini
   kitten themes Tokyo Night
+  papirus-folders -C indigo --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
