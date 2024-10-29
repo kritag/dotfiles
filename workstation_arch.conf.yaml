@@ -1,12 +1,8 @@
 - yay:
     - argocd
-    - aylurs-gtk-shell-git
-    - catppuccin-cursors-mocha
-    - catppuccin-gtk-theme-mocha
+    - bibata-cursor-theme-bin
     - cava
-    - extension-manager
     - flux-bin
-    - gpu-screen-recorder
     - grimblast-git
     - hyprpicker
     - k9s-sbanka-bin
@@ -14,11 +10,12 @@
     - kubecolor
     - microsoft-edge-stable-bin
     - openshift-client-bin
-    - papirus-folders-catppuccin-git
+    - papirus-folders
     - pulsecontrol-git
+    - python-pywal16
     - spicetify-cli
-    - spicetify-marketplace-bin
     - slack-desktop
+    - syshud
 - omnipkg:
     - install:
         [
@@ -30,7 +27,6 @@
           btop,
           chafa,
           cpio,
-          dart-sass,
           docker,
           docker-compose,
           duf,
@@ -41,13 +37,9 @@
           fzf,
           fwupd,
           git,
+          git-delta,
           github-cli,
           glow,
-          gnome-bluetooth-3.0,
-          gnome-shell-extension-appindicator,
-          gnome-shell-extension-arc-menu,
-          gnome-shell-extension-dash-to-panel,
-          gnome-tweaks,
           go-yq,
           helm,
           hypridle,
@@ -66,17 +58,19 @@
           libreoffice-fresh,
           make,
           man-db,
+          mangohud,
           minikube,
+          neovim,
           networkmanager,
+          noto-fonts-emoji,
+          otf-font-awesome,
           pacman-contrib,
           papirus-icon-theme,
-          perl-image-exiftool,
           playerctl,
           power-profiles-daemon,
           procs,
           python,
           python-pip,
-          python-pywal,
           qbittorrent,
           qt5ct,
           qt6ct,
@@ -87,16 +81,19 @@
           sops,
           spotify-launcher,
           sqlite,
+          sshfs,
           sshpass,
           sshuttle,
           stern,
           swww,
           systemd-resolvconf,
           tealdeer,
-          ttf-meslo-nerd,
+          ttf-nerd-fonts-symbols,
           vivid,
           vlc,
           wl-clipboard,
+          zathura,
+          zathura-pdf-mupdf,
           zoxide,
           zsh,
         ]
@@ -105,7 +102,7 @@
         xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search,
         Set Nautilus as default file manager,
       ]
-    - [
-        papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
-        setting Catpuccin Mocha icons,
-      ]
+    # - [
+    #     papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
+    #     setting Catpuccin Mocha icons,
+    #   ]
