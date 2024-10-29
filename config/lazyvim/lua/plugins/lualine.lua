@@ -119,8 +119,8 @@ return {
           lualine_c = {
             {
               "branch",
-              -- color = { bg = colors.green, fg = colors.surface0, gui = "bold" },
               separator = { left = "", right = "" },
+              -- color = { bg = "None", gui = "bold" },
             },
             {
               "diff",
