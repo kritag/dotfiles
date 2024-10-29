@@ -1,17 +1,17 @@
 - yay:
     - btop-gpu-git
-    - aylurs-gtk-shell-git
-    - catppuccin-cursors-mocha
-    - catppuccin-gtk-theme-mocha
     - cava
+    - bibata-cursor-theme-bin
     - gpu-screen-recorder
     - grimblast-git
     - hyprpicker
     - oh-my-posh-bin
-    - papirus-folders-catppuccin-git
+    - papirus-folders
     - protonup-qt
+    - python-pywal16
     - pulsecontrol-git
     - spicetify-cli
+    - syshud
 - omnipkg:
     - install:
         [
@@ -38,7 +38,6 @@
           hypridle,
           hyprland,
           hyprlock,
-          hyprpaper,
           kitty,
           lazygit,
           less,
@@ -51,9 +50,10 @@
           mangohud,
           neovim,
           networkmanager,
+          noto-fonts-emoji,
+          otf-font-awesome,
           pacman-contrib,
           papirus-icon-theme,
-          perl-image-exiftool,
           playerctl,
           power-profiles-daemon,
           procs,
@@ -72,11 +72,13 @@
           systemd-resolvconf,
           swww,
           tealdeer,
-          ttf-meslo-nerd,
+          ttf-nerd-fonts-symbols,
           unzip,
           vivid,
           vlc,
           wl-clipboard,
+          zathura,
+          zathura-pdf-mupdf,
           zip,
           zoxide,
           zsh,
