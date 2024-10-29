@@ -79,6 +79,14 @@ return {
     },
   },
   {
+    "neanias/everforest-nvim",
+    name = "everforest",
+    opts = {
+      background = "hard",
+      transparent_background_level = 2,
+    },
+  },
+  {
     "Mofiqul/dracula.nvim",
     name = "dracula",
     opts = {
@@ -118,7 +126,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "everforest",
     },
   },
 }
