@@ -33,4 +33,14 @@ return {
     },
   },
   vim.treesitter.language.register("bash", "zsh"),
+  vim.filetype.add({
+    extension = { rasi = "rasi", rofi = "rasi" },
+    filename = {},
+    pattern = {
+      [".*/waybar/config"] = "jsonc",
+      [".*/kitty/.+%.conf"] = "bash",
+      [".*/hypr/.+%.conf"] = "hyprlang",
+      ["%.env%.[%w_.-]+"] = "sh",
+    },
+  }),
 }
