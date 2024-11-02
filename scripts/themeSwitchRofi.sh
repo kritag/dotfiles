@@ -98,7 +98,7 @@ case "$selected_theme" in
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  dconf write /org/gnome/desktop/interface/icon-theme "'oomox-Everforest-Dark'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"
   ln -sf /usr/share/themes/Colloid-Dark-Compact-Everforest/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ;;
 
