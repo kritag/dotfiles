@@ -26,6 +26,7 @@
     ~/.ripgreprc: config/ripgreprc
     ~/.lessfilter: config/lessfilter
     ~/.gitconfig: config/gitconfig
+    ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
     ~/.theme.gitconfig: config/delta/theme.gitconfig
     ~/.config/vivid:
       path: config/vivid/*

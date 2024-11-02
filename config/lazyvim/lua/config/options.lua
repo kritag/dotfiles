@@ -27,3 +27,4 @@ vim.filetype.add({
     [".zshenv"] = "sh",
   },
 })
+-- vim.g.root_spec = { "cwd" }

@@ -83,7 +83,7 @@ return {
     name = "everforest",
     opts = {
       background = "hard",
-      transparent_background_level = 2,
+      transparent_background_level = 1,
     },
   },
   {

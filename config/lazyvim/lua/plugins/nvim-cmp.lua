@@ -7,6 +7,12 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
+      {
+        "Exafunction/codeium.nvim",
+        cmd = "Codeium",
+        build = ":Codeium Auth",
+        opts = {},
+      },
     },
     -- Not all LSP servers add brackets when completing a function.
     -- To better deal with this, LazyVim adds a custom option to cmp,
@@ -21,6 +27,11 @@ return {
     opts = function(_, opts)
       table.insert(opts.sources, { name = "lazydev", group_index = 0 })
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+      table.insert(opts.sources, 1, {
+        name = "codeium",
+        group_index = 1,
+        priority = 100,
+      })
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
       local auto_select = true
@@ -66,6 +77,7 @@ return {
           end,
         }),
         sources = cmp.config.sources({
+          { name = "codeium" },
           { name = "nvim_lsp" },
           { name = "path" },
         }, {
