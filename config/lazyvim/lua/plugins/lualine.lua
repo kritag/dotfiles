@@ -1,4 +1,3 @@
--- local colors = require("catppuccin.palettes").get_palette()
 local function getLspName()
   local bufnr = vim.api.nvim_get_current_buf()
   local buf_clients = vim.lsp.get_clients({ bufnr = bufnr })
@@ -64,12 +63,12 @@ local lsp = {
     return getLspName()
   end,
   separator = { left = "" },
-  -- color = { bg = colors.mauve, fg = colors.surface0, gui = "bold" },
 }
 local space = {
   function()
     return " "
   end,
+  separator = { right = "" },
 }
 return {
   {
@@ -86,7 +85,7 @@ return {
         vim.o.laststatus = 0
       end
     end,
-    opts = function()
+    opts = function(_, opts)
       -- PERF: we don't need this lualine require madness 🤷
       local lualine_require = require("lualine_require")
       lualine_require.require = require
@@ -95,12 +94,15 @@ return {
 
       vim.o.laststatus = vim.g.lualine_laststatus
 
+      table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("codeium"))
+
       local opts = {
         options = {
           theme = "auto",
           globalstatus = vim.o.laststatus == 3,
-          section_separators = "",
+          -- section_separators = "",
           --{ left = "", right = "" },
+          always_divide_middle = true,
           component_separators = "",
           disabled_filetypes = {
             statusline = { "dashboard", "alpha", "ministarter" },
@@ -120,11 +122,9 @@ return {
             {
               "branch",
               separator = { left = "", right = "" },
-              -- color = { bg = "None", gui = "bold" },
             },
             {
               "diff",
-              -- color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
               separator = { right = "" },
               symbols = {
                 added = icons.git.added,
@@ -167,12 +167,12 @@ return {
                 info = icons.diagnostics.Info,
                 hint = icons.diagnostics.Hint,
               },
-              diagnostics_color = {
-                -- error = { fg = colors.red },
-                -- warn = { fg = colors.orange },
-                -- info = { fg = colors.sky },
-                -- hint = { fg = colors.teal },
-              },
+              -- diagnostics_color = {
+              --   -- error = { fg = colors.red },
+              --   -- warn = { fg = colors.orange },
+              --   -- info = { fg = colors.sky },
+              --   -- hint = { fg = colors.teal },
+              -- },
             },
           },
           lualine_x = {
@@ -230,24 +230,14 @@ return {
               padding = { left = 0, right = 0 },
               color = { bg = "None" },
             },
-            { LazyVim.lualine.pretty_path(), color = { bg = "None" } },
+            {
+              LazyVim.lualine.pretty_path(),
+              color = { bg = "None" },
+            },
           },
         },
         extensions = { "neo-tree", "lazy" },
       }
-
-      -- local custom_catppuccin = require("lualine.themes.catppuccin")
-      -- custom_catppuccin.normal.b.bg = colors.transparent_bg
-      -- custom_catppuccin.insert.b.bg = colors.transparent_bg
-      -- custom_catppuccin.terminal.b.bg = colors.transparent_bg
-      -- custom_catppuccin.replace.b.bg = colors.transparent_bg
-      -- custom_catppuccin.command.b.bg = colors.transparent_bg
-      -- custom_catppuccin.inactive.b.bg = colors.transparent_bg
-      -- custom_catppuccin.visual.b.bg = colors.transparent_bg
-      -- custom_catppuccin.inactive.b.bg = colors.transparent_bg
-      --
-      -- opts.options.theme = custom_catppuccin
-
       -- do not add trouble symbols if aerial is enabled
       -- And allow it to be overriden for some buffer types (see autocmds)
       if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
