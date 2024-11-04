@@ -8,7 +8,7 @@ export FZF_DEFAULT_OPTS=" \
   --color=fg:#d3c6aa,hl:#e69875\
   --color=fg+:#d3c6aa,hl+:#83c092\
   --color=info:#9da9a0,border:#7fbbb3,prompt:#a7c080\
-  --color=pointer:#2b3339,marker:#a7c080,spinner:#d699b6,header:#e67e80 \
+  --color=pointer:#dbbc7f,marker:#a7c080,spinner:#d699b6,header:#e67e80 \
 --pointer=❯ \
 --multi"
 
@@ -18,7 +18,7 @@ _FZF_TAB_FZF_FLAGS=(
   '--color=fg:#d3c6aa,hl:#e69875'
   '--color=fg+:#d3c6aa,hl+:#83c092'
   '--color=info:#9da9a0,border:#7fbbb3,prompt:#a7c080'
-  '--color=pointer:#2b3339,marker:#a7c080,spinner:#d699b6,header:#e67e80'
+  '--color=pointer:#dbbc7f,marker:#a7c080,spinner:#d699b6,header:#e67e80'
   '--pointer=❯'
   '--multi'
 )
