@@ -1,3 +1,4 @@
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
 export BAT_PAGER="less -R"
 export CLICOLOR_FORCE=1
 export COLORTERM=truecolor
