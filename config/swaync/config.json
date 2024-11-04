@@ -46,7 +46,10 @@
     },
     "mpris": {
       "image-size": 96,
-      "image-radius": 7
+      "image-radius": 7,
+      "blacklist": [
+        "spotify"
+      ]
     },
     "volume": {
       "label": "󰕾",
@@ -76,15 +79,15 @@
         },
         {
           "label": "󰕾",
-          "command": "swayosd-client --output-volume mute-toggle"
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         },
         {
           "label": "󰍬",
-          "command": "swayosd-client --input-volume mute-toggle"
+          "command": "wpctl set-mute @DEFAULT_SOURCE@ toggle"
         },
         {
           "label": "󰖩",
-          "command": "$HOME/.local/bin/shved/rofi-menus/wifi-menu.sh"
+          "command": ""
         },
         {
           "label": "󰂯",

@@ -155,6 +155,8 @@ return {
             "!.kube/cache",
             "-g",
             "!.local/share/steam",
+            "-g",
+            "!./steam",
           }
         elseif 1 == vim.fn.executable("fd") then
           return { "fd", "--type", "f", "--color", "never", "-E", ".git" }
@@ -198,6 +200,8 @@ return {
               ["<C-Up>"] = actions.cycle_history_prev,
               ["<C-f>"] = actions.preview_scrolling_down,
               ["<C-b>"] = actions.preview_scrolling_up,
+              ["<C-k>"] = "move_selection_next",
+              ["<C-j>"] = "move_selection_previous",
             },
             n = {
               ["q"] = actions.close,
