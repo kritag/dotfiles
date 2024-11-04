@@ -5,7 +5,7 @@ export COLORTERM=truecolor
 export DOTFILES="${HOME}/.dotfiles"
 export EDITOR=nvim
 export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
-export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.node_modules,bulid,dist,vender,mnt} --type f --type l --hidden $FD_OPTIONS"
+export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.node_modules,bulid,dist,vender,mnt,.steam} --type f --type l --hidden $FD_OPTIONS"
 export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 export HISTFILE=$HOME/.zsh_history
