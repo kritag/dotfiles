@@ -41,6 +41,18 @@ tooltip {
   padding-left: 10px;
   background-color: @base00;
 }
+#taskbar {
+  background-color: @base00;
+  border-radius: 10px;
+}
+#taskbar button {
+  border-radius: 10px;
+  color: @base09;
+}
+#taskbar button.active {
+  background-color: @base09;
+  color: @base00;
+}
 #workspaces {
   background-color: @base00;
   border-radius: 10px;
