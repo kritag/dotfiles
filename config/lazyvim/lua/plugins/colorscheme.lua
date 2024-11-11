@@ -65,6 +65,7 @@ return {
   {
     "ellisonleao/gruvbox.nvim",
     name = "gruvbox",
+    lazy = true,
     opts = {
       transparent_mode = true,
       contrast = "hard",
@@ -73,14 +74,7 @@ return {
   {
     "neanias/everforest-nvim",
     name = "everforest",
-    opts = {
-      background = "hard",
-      transparent_background_level = 2,
-    },
-  },
-  {
-    "neanias/everforest-nvim",
-    name = "everforest",
+    lazy = true,
     opts = {
       background = "hard",
       transparent_background_level = 1,
@@ -89,6 +83,7 @@ return {
   {
     "Mofiqul/dracula.nvim",
     name = "dracula",
+    lazy = true,
     opts = {
       background = "hard",
       transparent_bg = true,
@@ -109,6 +104,7 @@ return {
   {
     "gbprod/nord.nvim",
     name = "nord",
+    lazy = true,
     opts = {
       transparent = true,
     },
@@ -116,6 +112,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+    lazy = true,
     opts = {
       variant = "moon",
       styles = {
