@@ -10,7 +10,7 @@ vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Cycle buf
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Cycle buffers left" })
 -- floating terminal
 local lazyterm = function()
-  LazyVim.terminal(nil, { cwd = LazyVim.root() })
+  Snacks.terminal(nil, { cwd = LazyVim.root() })
 end
 vim.keymap.set("n", "<c-\\>", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("t", "<c-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
