@@ -183,12 +183,24 @@
     "format-charging": "󱐋 {icon} ",
     "format-plugged": "󱐋 {icon} ",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
     ],
+    // "format-icons": [
+    //   "",
+    //   "",
+    //   "",
+    //   "",
+    //   ""
+    // ],
     "tooltip": "true",
     "tooltip-format": "{capacity}%"
   },
