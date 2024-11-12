@@ -56,6 +56,7 @@ return {
           fish = { "fish_indent" },
           sh = { "shfmt" },
           css = { "prettierd" },
+          yaml = { "yamlfix" },
           -- json = { "prettierd" },
           -- jsonc = { "prettierd" },
         },
