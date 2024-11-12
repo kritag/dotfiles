@@ -6,7 +6,7 @@
 --follow
 #-g '!{/*}'o
 #--color=always 
---line-number 
+#--line-number 
 #--no-heading 
 --smart-case 
 --after-context=0
