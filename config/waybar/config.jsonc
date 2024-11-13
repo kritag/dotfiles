@@ -238,7 +238,7 @@
     "return-type": "json",
     "format": "{}°",
     "tooltip": true,
-    "interval": 3600
+    "interval": 600
   },
   "custom/notifications": {
     "exec": "swaync-client -c",
