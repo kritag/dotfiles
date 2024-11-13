@@ -15,14 +15,14 @@ end
 vim.keymap.set("n", "<c-\\>", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("t", "<c-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 -- Remove default keymaps for navigating windows
-vim.keymap.del("n", "<C-h>")
-vim.keymap.del("n", "<C-j>")
-vim.keymap.del("n", "<C-k>")
-vim.keymap.del("n", "<C-l>")
-vim.keymap.del("n", "<C-Up>")
-vim.keymap.del("n", "<C-Down>")
-vim.keymap.del("n", "<C-Left>")
-vim.keymap.del("n", "<C-Right>")
+-- vim.keymap.del("n", "<C-h>")
+-- vim.keymap.del("n", "<C-j>")
+-- vim.keymap.del("n", "<C-k>")
+-- vim.keymap.del("n", "<C-l>")
+-- vim.keymap.del("n", "<C-Up>")
+-- vim.keymap.del("n", "<C-Down>")
+-- vim.keymap.del("n", "<C-Left>")
+-- vim.keymap.del("n", "<C-Right>")
 
 -- -- Move to window using the <ctrl> arrow keys
 -- vim.keymap.set("n", "<C-h>", "<cmd>vertical resize -2<cr>", { desc = "Go to Left Window", remap = true })
