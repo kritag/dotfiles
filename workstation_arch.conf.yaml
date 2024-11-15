@@ -1,7 +1,9 @@
+---
 - yay:
     - argocd
     - bibata-cursor-theme-bin
     - cava
+    - downgrade
     - flux-bin
     - grimblast-git
     - hyprpicker
@@ -18,92 +20,88 @@
     - syshud
 - omnipkg:
     - install:
-        [
-          archlinux-contrib,
-          bat,
-          bluez,
-          bluez-utils,
-          brightnessctl,
-          btop,
-          chafa,
-          cpio,
-          docker,
-          docker-compose,
-          duf,
-          eza,
-          fd,
-          ffmpeg,
-          freerdp,
-          fzf,
-          fwupd,
-          git,
-          git-delta,
-          github-cli,
-          glow,
-          go-yq,
-          helm,
-          hypridle,
-          hyprland,
-          hyprlock,
-          jq,
-          keepassxc,
-          keybase-gui,
-          kitty,
-          kubectl,
-          kubectx,
-          kubeseal,
-          lazygit,
-          less,
-          lesspipe,
-          libreoffice-fresh,
-          make,
-          man-db,
-          mangohud,
-          minikube,
-          neovim,
-          networkmanager,
-          noto-fonts-emoji,
-          otf-font-awesome,
-          pacman-contrib,
-          papirus-icon-theme,
-          playerctl,
-          power-profiles-daemon,
-          procs,
-          python,
-          python-pip,
-          qbittorrent,
-          qt5ct,
-          qt6ct,
-          remmina,
-          ripgrep,
-          seahorse,
-          solaar,
-          sops,
-          spotify-launcher,
-          sqlite,
-          sshfs,
-          sshpass,
-          sshuttle,
-          stern,
-          swww,
-          systemd-resolvconf,
-          tealdeer,
-          timeshift,
-          timeshift-autosnap,
-          ttf-nerd-fonts-symbols,
-          vivid,
-          vlc,
-          wl-clipboard,
-          zathura,
-          zathura-pdf-mupdf,
-          zoxide,
-          zsh,
-        ]
+        - archlinux-contrib
+        - bat
+        - bluez
+        - bluez-utils
+        - brightnessctl
+        - btop
+        - chafa
+        - cpio
+        - docker
+        - docker-compose
+        - duf
+        - eza
+        - fd
+        - ffmpeg
+        - freerdp
+        - fzf
+        - fwupd
+        - git
+        - git-delta
+        - github-cli
+        - glow
+        - go-yq
+        - helm
+        - hypridle
+        - hyprland
+        - hyprlock
+        - jq
+        - keepassxc
+        - keybase-gui
+        - kitty
+        - kubectl
+        - kubectx
+        - kubeseal
+        - lazygit
+        - less
+        - lesspipe
+        - libreoffice-fresh
+        - make
+        - man-db
+        - mangohud
+        - minikube
+        - neovim
+        - networkmanager
+        - noto-fonts-emoji
+        - otf-font-awesome
+        - pacman-contrib
+        - papirus-icon-theme
+        - playerctl
+        - power-profiles-daemon
+        - procs
+        - python
+        - python-pip
+        - qbittorrent
+        - qt5ct
+        - qt6ct
+        - remmina
+        - ripgrep
+        - seahorse
+        - solaar
+        - sops
+        - spotify-launcher
+        - sqlite
+        - sshfs
+        - sshpass
+        - sshuttle
+        - stern
+        - swww
+        - systemd-resolvconf
+        - tealdeer
+        - timeshift
+        - timeshift-autosnap
+        - ttf-nerd-fonts-symbols
+        - vivid
+        - vlc
+        - wl-clipboard
+        - zathura
+        - zathura-pdf-mupdf
+        - zoxide
+        - zsh
 - shell:
-    - [
-        xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search,
-        Set Nautilus as default file manager,
-      ]
+    - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search,
+      Set Nautilus as default file manager]
     # - [
     #     papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
     #     setting Catpuccin Mocha icons,
