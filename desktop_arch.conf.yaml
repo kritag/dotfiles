@@ -1,7 +1,9 @@
+---
 - yay:
     - btop-gpu-git
     - cava
     - bibata-cursor-theme-bin
+    - downgrade
     - gpu-screen-recorder
     - grimblast-git
     - hyprpicker
@@ -14,74 +16,72 @@
     - syshud
 - omnipkg:
     - install:
-        [
-          archlinux-contrib,
-          bat,
-          bluez,
-          bluez-utils,
-          brightnessctl,
-          btop,
-          chafa,
-          cpio,
-          duf,
-          eza,
-          fd,
-          ffmpeg,
-          fwupd,
-          fzf,
-          gamemode,
-          gamescope,
-          git,
-          git-delta,
-          github-cli,
-          glow,
-          hypridle,
-          hyprland,
-          hyprlock,
-          kitty,
-          lazygit,
-          less,
-          lesspipe,
-          lib32-gamemode,
-          libreoffice-fresh,
-          lutris,
-          make,
-          man-db,
-          mangohud,
-          neovim,
-          networkmanager,
-          noto-fonts-emoji,
-          otf-font-awesome,
-          pacman-contrib,
-          papirus-icon-theme,
-          playerctl,
-          power-profiles-daemon,
-          procs,
-          python,
-          python-pip,
-          python-pywal,
-          qbittorrent,
-          qt5ct,
-          qt6ct,
-          ripgrep,
-          rocm-smi-lib,
-          sqlite,
-          solaar,
-          spotify-launcher,
-          steam,
-          systemd-resolvconf,
-          swww,
-          tealdeer,
-          timeshift,
-          timeshift-autosnap,
-          ttf-nerd-fonts-symbols,
-          unzip,
-          vivid,
-          vlc,
-          wl-clipboard,
-          zathura,
-          zathura-pdf-mupdf,
-          zip,
-          zoxide,
-          zsh,
-        ]
+        - archlinux-contrib
+        - bat
+        - bluez
+        - bluez-utils
+        - brightnessctl
+        - btop
+        - chafa
+        - cpio
+        - duf
+        - eza
+        - fd
+        - ffmpeg
+        - fwupd
+        - fzf
+        - gamemode
+        - gamescope
+        - git
+        - git-delta
+        - github-cli
+        - glow
+        - hypridle
+        - hyprland
+        - hyprlock
+        - kitty
+        - lazygit
+        - less
+        - lesspipe
+        - lib32-gamemode
+        - libreoffice-fresh
+        - lutris
+        - make
+        - man-db
+        - mangohud
+        - neovim
+        - networkmanager
+        - noto-fonts-emoji
+        - otf-font-awesome
+        - pacman-contrib
+        - papirus-icon-theme
+        - playerctl
+        - power-profiles-daemon
+        - procs
+        - python
+        - python-pip
+        - python-pywal
+        - qbittorrent
+        - qt5ct
+        - qt6ct
+        - ripgrep
+        - rocm-smi-lib
+        - sqlite
+        - solaar
+        - spotify-launcher
+        - steam
+        - systemd-resolvconf
+        - swww
+        - tealdeer
+        - timeshift
+        - timeshift-autosnap
+        - ttf-nerd-fonts-symbols
+        - unzip
+        - vivid
+        - vlc
+        - wl-clipboard
+        - zathura
+        - zathura-pdf-mupdf
+        - zip
+        - zoxide
+        - zsh
