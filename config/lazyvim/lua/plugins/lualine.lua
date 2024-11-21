@@ -238,6 +238,7 @@ return {
         },
         extensions = { "neo-tree", "lazy" },
       }
+      --
       -- do not add trouble symbols if aerial is enabled
       -- And allow it to be overriden for some buffer types (see autocmds)
       if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
@@ -258,6 +259,17 @@ return {
         })
       end
       table.insert(opts.sections.lualine_z, lsp)
+      table.insert(
+        opts.sections.lualine_x,
+        2,
+        LazyVim.lualine.status(LazyVim.config.icons.kinds.Copilot, function()
+          local clients = package.loaded["copilot"] and LazyVim.lsp.get_clients({ name = "copilot", bufnr = 0 }) or {}
+          if #clients > 0 then
+            local status = require("copilot.api").status.data.status
+            return (status == "InProgress" and "pending") or (status == "Warning" and "error") or "ok"
+          end
+        end)
+      )
       return opts
     end,
   },

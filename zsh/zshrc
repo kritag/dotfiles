@@ -19,13 +19,9 @@ znap source ajeetdsouza/zoxide
 znap source Aloxaf/fzf-tab
 znap install zsh-users/zsh-completions
 znap source zsh-users/zsh-autosuggestions
-znap source zdharma-continuum/fast-syntax-highlighting
 znap source zsh-users/zsh-history-substring-search
 znap source jeffreytse/zsh-vi-mode
-
-# Ensure up and down arrow works for searching history
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+znap source zdharma-continuum/fast-syntax-highlighting
 
 # fzf stuff
 source /usr/share/fzf/key-bindings.zsh
@@ -47,6 +43,10 @@ compdef _journalctl jctl
 znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml'
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
+
+# Ensure up and down arrow works for searching history
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
