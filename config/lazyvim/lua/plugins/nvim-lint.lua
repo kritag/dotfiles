@@ -14,7 +14,7 @@ return {
       python = { "pylint" },
       bash = { "shellcheck" },
       yaml = { "yamllint" },
-      lua = { "selene" },
+      -- lua = { "selene" },
     },
     -- LazyVim extension to easily override linter options
     -- or add custom linters.
