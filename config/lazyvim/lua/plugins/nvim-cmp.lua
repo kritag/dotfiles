@@ -7,6 +7,13 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     {
+      "garymjr/nvim-snippets",
+      opts = {
+        friendly_snippets = true,
+      },
+      dependencies = { "rafamadriz/friendly-snippets" },
+    },
+    {
       "zbirenbaum/copilot-cmp",
       enabled = vim.g.ai_cmp, -- only enable if wanted
       opts = {},
@@ -50,6 +57,15 @@ return {
     local defaults = require("cmp.config.default")()
     local auto_select = true
     local width
+    opts.snippet = {
+      expand = function(item)
+        return LazyVim.cmp.expand(item.body)
+      end,
+    }
+    if LazyVim.has("nvim-snippets") then
+      table.insert(opts.sources, { name = "snippets" })
+    end
+    table.insert(opts.sources, { name = "lazydev", group_index = 0 })
     table.insert(opts.sources, 1, {
       name = "copilot",
       group_index = 1,
@@ -83,6 +99,7 @@ return {
       sources = cmp.config.sources({
         { name = "copilot" },
         { name = "nvim_lsp" },
+        { name = "snippets" },
         { name = "path" },
       }, {
         { name = "buffer" },
