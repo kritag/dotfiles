@@ -71,9 +71,18 @@ tooltip {
 #workspaces button.urgent {
   color: #f38ba8;
 }
+#language {
+  color: @base0C;
+  background-color: @base00;
+  padding-left: 10px;
+  border-radius: 10px;
+  padding-right: 10px;
+}
 #pulseaudio {
   color: @base0C;
   background-color: @base00;
+  padding-left: 10px;
+  border-radius: 10px;
   padding-right: 10px;
 }
 #clock {
@@ -81,12 +90,21 @@ tooltip {
   padding-right: 10px;
   padding-left: 10px;
   color: @base0C;
+  border-radius: 10px;
 }
 #custom-weather {
   color: @base0C;
   background-color: @base00;
   padding-right: 10px;
   padding-left: 10px;
+  border-radius: 10px;
+}
+#batt{
+  color: @base0C;
+  background-color: @base00;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
 }
 #backlight {
   color: @base0C;

@@ -19,7 +19,12 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "group/one",
+    // "group/one",
+    "hyprland/language",
+    "pulseaudio",
+    "clock",
+    "custom/weather",
+    "group/batt",
     "tray",
     "custom/notifications"
   ],
@@ -78,7 +83,9 @@
       "loupe": "",
       "org.gnome.TextEditor": "󰷈",
       "class<msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default>": "󰊻",
-      "class<msedge-_faolnafnngnfdaknnbpnkhgohbobgegn-Default>": "󰴢"
+      "class<msedge-_faolnafnngnfdaknnbpnkhgohbobgegn-Default>": "󰴢",
+      "teams-for-linux": "󰊻",
+      "outlook-for-linux": "󰴢"
     },
     "persistent-workspaces": {
       "*": [
@@ -94,6 +101,11 @@
         10
       ]
     }
+  },
+  "hyprland/language": {
+    "format": " {}",
+    // "format-no": "no",
+    // "format-intl": "us"
   },
   "idle_inhibitor": {
     "format": "{icon}",
