@@ -20,6 +20,10 @@ bindkey -M vicmd '^[[1;5C' forward-word
 bindkey -M emacs '^[[1;5D' backward-word
 bindkey -M viins '^[[1;5D' backward-word
 bindkey -M vicmd '^[[1;5D' backward-word
+# [Ctrl-W] - delete backward one word
+bindkey -M emacs '^W' backward-delete-word
+bindkey -M viins '^W' backward-delete-word
+bindkey -M vicmd '^W' backward-delete-word
 # [Home] - Go to beginning of line
 if [[ -n "${terminfo[khome]}" ]]; then
   bindkey -M emacs "${terminfo[khome]}" beginning-of-line
@@ -42,7 +46,6 @@ fi
 bindkey -M emacs "^[[3~" delete-char
 bindkey -M viins "^[[3~" delete-char
 bindkey -M vicmd "^[[3~" delete-char
-# Edit the current command line in $EDITOR
 # Autosuggest accept suggestion
 bindkey -M emacs '^ ' autosuggest-accept
 bindkey -M viins '^ ' autosuggest-accept
@@ -53,3 +56,4 @@ function zvm_after_init() {
   zvm_bindkey viins "^[OA" history-substring-search-up
   zvm_bindkey viins "^[OB" history-substring-search-down
 }
+bindkey -v
