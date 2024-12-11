@@ -379,5 +379,5 @@ augroup END
 if v:version < 802
     packadd! dracula
 endif
-colorscheme dracula
+" colorscheme dracula
 hi Normal guibg=NONE ctermbg=NONE
