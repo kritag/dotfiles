@@ -1,15 +1,14 @@
 #!/usr/bin/zsh
-#zmodload zsh/zprof
+##zmodload zsh/zprof
 source $HOME/.aliases.zsh
 source $HOME/.env
-source $HOME/.zshkeybindings.zsh
-
+source $HOME/.zshkeybindings.zsh #
 PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin:$HOME/.nix-profile/bin"
 export PATH
-
-# [[ -r ~/git/znap/znap/znap.zsh ]] ||
-#     git clone --depth 1 -- \
-#         https://github.com/marlonrichert/zsh-snap.git ~/git/znap/znap
+#
+## [[ -r ~/git/znap/znap/znap.zsh ]] ||
+##     git clone --depth 1 -- \
+##         https://github.com/marlonrichert/zsh-snap.git ~/git/znap/znap
 source ~/git/znap/znap/znap.zsh # Start Znap
 znap source ohmyzsh/ohmyzsh plugins/{dirhistory,gitfast}
 #znap source romkatv/powerlevel10k
@@ -20,8 +19,8 @@ znap source Aloxaf/fzf-tab
 znap install zsh-users/zsh-completions
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-history-substring-search
-znap source jeffreytse/zsh-vi-mode
 znap source zdharma-continuum/fast-syntax-highlighting
+#znap source jeffreytse/zsh-vi-mode
 
 # fzf stuff
 source /usr/share/fzf/key-bindings.zsh
@@ -32,7 +31,7 @@ source $HOME/.config/flavours/fzf.sh
 # Make autocomplete work with sshpass aliases
 compdef _ssh_hosts sshpass s sr
 compdef _kubectl kubecolor
-# Make autocomplete work for the jctl() function
+# # Make autocomplete work for the jctl() function
 compdef _journalctl jctl
 # Sourcing k8s related stuff if using k8s
 #if command -v kubectl &> /dev/null
@@ -41,34 +40,67 @@ compdef _journalctl jctl
 #fi
 
 znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml'
+#eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml)"
+# eval "$(oh-my-posh init zsh)"
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
-
-# Ensure up and down arrow works for searching history
+#
+## Ensure up and down arrow works for searching history
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
-
-# Change cursor shape for different vi modes.
-# function zle-keymap-select {
-#   if [[ ${KEYMAP} == vicmd ]] ||
-#     [[ $1 = 'block' ]]; then
-#     echo -ne '\e[1 q'
-#   elif [[ ${KEYMAP} == main ]] ||
-#     [[ ${KEYMAP} == viins ]] ||
-#     [[ ${KEYMAP} = '' ]] ||
-#     [[ $1 = 'beam' ]]; then
-#     echo -ne '\e[5 q'
-#   fi
-# }
-# zle -N zle-keymap-select
-# zle-line-init() {
-#   zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-#   echo -ne "\e[5 q"
-# }
-# zle -N zle-line-init
-# echo -ne '\e[5 q'                # Use beam shape cursor on startup.
-# preexec() { echo -ne '\e[5 q'; } # Use beam shape cursor for each new prompt.
 #
+## Change cursor shape for different vi modes.
+## function zle-keymap-select {
+##   if [[ ${KEYMAP} == vicmd ]] ||
+##     [[ $1 = 'block' ]]; then
+##     echo -ne '\e[1 q'
+##   elif [[ ${KEYMAP} == main ]] ||
+##     [[ ${KEYMAP} == viins ]] ||
+##     [[ ${KEYMAP} = '' ]] ||
+##     [[ $1 = 'beam' ]]; then
+##     echo -ne '\e[5 q'
+##   fi
+## }
+## zle -N zle-keymap-select
+## zle-line-init() {
+##   zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+##   echo -ne "\e[5 q"
+## }
+## zle -N zle-line-init
+## echo -ne '\e[5 q'                # Use beam shape cursor on startup.
+## preexec() { echo -ne '\e[5 q'; } # Use beam shape cursor for each new prompt.
+##
+# OMP zsh-vi-mode integration
+_omp_redraw-prompt() {
+  local precmd
+  for precmd in "${precmd_functions[@]}"; do
+    "$precmd"
+  done
+  zle && zle reset-prompt
+}
+
+export POSH_VI_MODE="$(printf '\u276F')"
+
+function zvm_after_select_vi_mode() {
+  case $ZVM_MODE in
+  $ZVM_MODE_NORMAL)
+    POSH_VI_MODE="$(printf '\u276E')"
+    ;;
+  $ZVM_MODE_INSERT)
+    POSH_VI_MODE="$(printf '\u276F')"
+    ;;
+  $ZVM_MODE_VISUAL)
+    POSH_VI_MODE="$(printf '\u2164')"
+    ;;
+  $ZVM_MODE_VISUAL_LINE)
+    POSH_VI_MODE="$(printf '\u2164')"
+    ;;
+  $ZVM_MODE_REPLACE)
+    POSH_VI_MODE="$(printf '\u25B6')"
+    ;;
+  esac
+  _omp_redraw-prompt
+}
 znap prompt
-# pnpm end
-#zprof
+## pnpm end
+##zprof
