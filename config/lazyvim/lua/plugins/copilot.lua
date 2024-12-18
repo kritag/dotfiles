@@ -17,8 +17,8 @@ return {
         auto_trigger = true,
         keymap = {
           accept = false, -- handled by nvim-cmp / blink.cmp
-          next = "<M-l>",
-          prev = "<M-h>",
+          next = "<M-]>",
+          prev = "<M-[>",
         },
       },
       panel = { enabled = false },
