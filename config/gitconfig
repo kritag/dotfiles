@@ -13,6 +13,3 @@
   path = ~/.gitconfig.local
 [credential]
 	helper = libsecret
-[maintenance]
-	repo = /home/e215142/git/znap/jeffreytse/zsh-vi-mode
-	repo = /home/e215142/git/znap/loiccoyle/zsh-github-copilot
