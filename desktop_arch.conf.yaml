@@ -14,6 +14,7 @@
     - pulsecontrol-git
     - spicetify-cli
     - syshud
+    - wttrbar
 - omnipkg:
     - install:
         - archlinux-contrib
