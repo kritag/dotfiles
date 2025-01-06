@@ -52,7 +52,7 @@ return {
           lsp_format = "fallback", -- not recommended to change
         },
         formatters_by_ft = {
-          lua = { "stylua" },
+          -- lua = { "stylua" },
           fish = { "fish_indent" },
           sh = { "shfmt" },
           css = { "prettierd" },
