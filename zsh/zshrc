@@ -58,6 +58,8 @@ _omp_redraw-prompt() {
   zle .reset-prompt
 }
 
+zstyle ':znap:*:*' git-maintenance off
+
 export POSH_VI_MODE="I"
 
 function zvm_after_select_vi_mode() {
