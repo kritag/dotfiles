@@ -11,8 +11,8 @@
   "reload_style_on_change": true,
   "modules-left": [
     "custom/powerbutton",
-    "mpris",
-    "wlr/taskbar"
+    "mpris"
+    // "wlr/taskbar"
     // "hyprland/window"
   ],
   "modules-center": [
@@ -72,10 +72,8 @@
     "sort-by-name": true,
     "window-rewrite-default": "",
     "window-rewrite": {
-      // "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-      "class<firefox>": "", // Windows whose classes are "firefox"
-      // "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-      "kitty": "", // Windows that contain "kitty" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+      "class<firefox>": "",
+      "kitty": "",
       "spotify": "",
       "slack": "󰒱",
       "edge": "󰇩",
@@ -85,26 +83,27 @@
       "class<msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default>": "󰊻",
       "class<msedge-_faolnafnngnfdaknnbpnkhgohbobgegn-Default>": "󰴢",
       "teams-for-linux": "󰊻",
-      "outlook-for-linux": "󰴢"
-    },
-    "persistent-workspaces": {
-      "*": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-      ]
+      "outlook-for-linux": "󰴢",
+      "org.gnome.Calculator": "󱖦"
     }
+    // "persistent-workspaces": {
+    //   "*": [
+    //     1,
+    //     2,
+    //     3,
+    //     4,
+    //     5,
+    //     6,
+    //     7,
+    //     8,
+    //     9,
+    //     10
+    //   ]
+    // }
   },
   "hyprland/language": {
     "format": " {}",
-    // "format-no": "no",
+    "format-no": "no"
     // "format-intl": "us"
   },
   "idle_inhibitor": {
