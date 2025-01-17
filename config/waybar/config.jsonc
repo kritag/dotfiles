@@ -22,9 +22,9 @@
     // "group/one",
     "hyprland/language",
     "pulseaudio",
-    "clock",
     "custom/weather",
     "group/batt",
+    "clock",
     "tray",
     "custom/notifications"
   ],
@@ -104,7 +104,7 @@
   "hyprland/language": {
     "format": " {}",
     "format-no": "no"
-    // "format-intl": "us"
+    // "format-us-altgr-intl": "us"
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -246,7 +246,8 @@
     "on-click": "wlogout -b 2"
   },
   "custom/weather": {
-    "exec": "wttrbar --date-format %d/%m --location Oslo",
+    "exec": "wttrbar --nerd --date-format %d/%m --location Oslo --custom-indicator '{ICON}  {FeelsLikeC}/{temp_C}°C'",
+    // "exec": "curl -X GET \"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=59.9078&lon=10.7965\" -H \"User-Agent: YourAppName/1.0 (your.email@example.com)\"| jq --unbuffered --compact-output",
     "return-type": "json",
     "format": "{}°",
     "tooltip": true,
