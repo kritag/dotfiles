@@ -3,12 +3,9 @@
 -- Add any additional options here
 
 local options = {
-  linebreak = true,
-  pumblend = 0,
-  relativenumber = true,
+  -- pumblend = 0,
   showmatch = true,
-  smartindent = true,
-  wrap = true,
+  wrap = false,
 }
 
 for k, v in pairs(options) do
