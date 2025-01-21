@@ -19,7 +19,7 @@
 	url = https://github.com/code-maniac/dotbot-omnipkg
 [submodule "dotbot-sudo"]
 	path = dotbot-sudo
-	url = https://github.com/DrDynamic/dotbot-sudo.git
+	url = https://github.com/DrDynamic/dotbot-sudo
 [submodule "zsh/antidote"]
 	path = zsh/antidote
 	url = https://github.com/mattmc3/antidote
