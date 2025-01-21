@@ -13,7 +13,7 @@ return {
       svelte = { "eslint_d" },
       python = { "pylint" },
       bash = { "shellcheck" },
-      yaml = { "yamllint" },
+      -- yaml = { "yamllint" },
       -- lua = { "selene" },
     },
     -- LazyVim extension to easily override linter options
