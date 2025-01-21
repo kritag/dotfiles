@@ -55,19 +55,19 @@
       glob: true
       path: config/flavours/*
 
-- sudo:
-    - link:
-        #/usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
-        /usr/local/bin/killsteam.sh: scripts/killsteam.sh
-        /bin/powermenu: scripts/powermenu.sh
-        /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
-    - shell:
-        - [
-            systemctl enable paccache.timer --now,
-            Enable deletion of cached pacman packages,
-          ]
-        - [sudo usermod -a -G video $USER]
-
+# - sudo:
+#     - link:
+#         #/usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
+#         /usr/local/bin/killsteam.sh: scripts/killsteam.sh
+#         /bin/powermenu: scripts/powermenu.sh
+#         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
+#     - shell:
+#         - [
+#             systemctl enable paccache.timer --now,
+#             Enable deletion of cached pacman packages,
+#           ]
+#         - [sudo usermod -a -G video $USER]
+#
 - shell:
     - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
     - [
