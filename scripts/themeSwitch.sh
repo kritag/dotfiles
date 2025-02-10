@@ -56,7 +56,7 @@ case "$1" in
   ;;
 
 "everforest")
-  flavours apply dracula
+  flavours apply everforest-dark-hard
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1~\/.config\/vivid\/themes\/everforest.yaml/' ~/.zshenv.zsh
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="everforest-dark"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1everforest-dark/' ~/.theme.gitconfig
