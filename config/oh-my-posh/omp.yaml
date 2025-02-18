@@ -7,11 +7,9 @@ blocks:
     alignment: left
     segments:
       - type: session
-        style: diamond
-        foreground: "#ffffff"
-        background: "#c386f1"
-        leading_diamond: 
-        trailing_diamond: 
+        style: plain
+        foreground: purple
+        background: transparent
         template: "{{ if .SSHSession }} {{ end }}"
       - properties:
           folder_format: "%s"
