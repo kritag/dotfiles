@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+# - create:
+#     - "~/.local/share/nvim/site/autoload"
+#     - "~/.config/bat/themes"
+
+- clean:
+    - "~"
+    - "~/.config"
+
+- link:
+  ~/.config/flavours/:
+    create: true
+    glob: true
+    path: config/flavours/*
