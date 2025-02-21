@@ -12,7 +12,7 @@
     - "~/.config"
 
 - link:
-  ~/.config/flavours/:
-    create: true
-    glob: true
-    path: config/flavours/*
+    ~/.config/flavours/:
+      create: true
+      glob: true
+      path: config/flavours/*
