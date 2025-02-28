@@ -5,7 +5,7 @@
 local options = {
   -- pumblend = 0,
   showmatch = true,
-  wrap = false,
+  wrap = true,
 }
 
 for k, v in pairs(options) do
