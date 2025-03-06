@@ -20,6 +20,7 @@ znap install zsh-users/zsh-completions
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-history-substring-search
 znap source zdharma-continuum/fast-syntax-highlighting
+#znap source RobSis/zsh-completion-generator
 #znap source jeffreytse/zsh-vi-mode
 
 # fzf stuff
