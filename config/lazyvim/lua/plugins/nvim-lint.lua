@@ -13,6 +13,7 @@ return {
       svelte = { "eslint_d" },
       python = { "pylint" },
       bash = { "shellcheck" },
+      markdown = { "markdownlint-cli2" },
       -- yaml = { "yamllint" },
       -- lua = { "selene" },
     },
