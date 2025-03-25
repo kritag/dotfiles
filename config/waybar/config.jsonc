@@ -260,12 +260,17 @@
   //   "tooltip": true,
   //   "interval": 600
   // },
+  // "custom/weather": {
+  //   "exec": "python ~/.config/waybar/scripts/weather.py",
+  //   "restart-interval": 300,
+  //   "return-type": "json",
+  //   "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/$(location_id)"
+  //   // "format-alt": "{alt}",
+  // },
   "custom/weather": {
-    "exec": "python ~/.config/waybar/scripts/weather.py",
-    "restart-interval": 300,
-    "return-type": "json",
-    "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/$(location_id)"
-    // "format-alt": "{alt}",
+    "exec": "~/.config/waybar/scripts/yr.sh",
+    "interval": 300,
+    "tooltip": false
   },
   "custom/notifications": {
     "exec": "swaync-client -c",
