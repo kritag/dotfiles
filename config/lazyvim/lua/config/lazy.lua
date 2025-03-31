@@ -23,6 +23,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ai.copilot" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
+    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
     -- import/override with your plugins
     { import = "plugins" },
   },
