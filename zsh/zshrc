@@ -3,7 +3,7 @@
 source $HOME/.aliases.zsh
 source $HOME/.env
 source $HOME/.zshkeybindings.zsh #
-PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin:$HOME/.nix-profile/bin"
+PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"
 export PATH
 #
 ## [[ -r ~/git/znap/znap/znap.zsh ]] ||
