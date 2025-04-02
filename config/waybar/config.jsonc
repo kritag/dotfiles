@@ -46,7 +46,11 @@
       "playing": "",
       "paused": "",
       "stopped": ""
-    }
+    },
+    "ignored-players": [
+      "firefox",
+      "msedge"
+    ]
   },
   "wlr/taskbar": {
     "format": "{icon}",
