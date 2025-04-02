@@ -8,7 +8,7 @@ blocks:
     segments:
       - type: session
         style: plain
-        foreground: purple
+        foreground: magenta
         background: transparent
         template: "{{ if .SSHSession }} {{ end }}"
       - properties:
@@ -82,7 +82,6 @@ blocks:
     segments:
       - style: plain
         template: ❯
-        # foreground: ""
         background: transparent
         type: text
         foreground_templates:
