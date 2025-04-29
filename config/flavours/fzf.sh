@@ -1,24 +1,24 @@
-# -Everforest dark, hard
-# Scheme author: Sainnhe Park (sainnhe@gmail.com)
+# -Nord
+# Scheme author: arcticicestudio
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
 export FZF_DEFAULT_OPTS=" \
   --history=$HOME/.fzfhistory \
   --layout=reverse \
-  --color=fg:#d3c6aa,hl:#e69875\
-  --color=fg+:#d3c6aa,hl+:#83c092\
-  --color=info:#9da9a0,border:#7fbbb3,prompt:#a7c080\
-  --color=pointer:#dbbc7f,marker:#a7c080,spinner:#d699b6,header:#e67e80 \
+  --color=fg:#e5e9f0,hl:#d08770\
+  --color=fg+:#e5e9f0,hl+:#88c0d0\
+  --color=info:#5e81ac,border:#81a1c1,prompt:#a3be8c\
+  --color=pointer:#ebcb8b,marker:#a3be8c,spinner:#b48ead,header:#bf616a \
 --pointer=❯ \
 --multi"
 
 _FZF_TAB_FZF_FLAGS=(
   '--height=80%'
   '--layout=reverse'
-  '--color=fg:#d3c6aa,hl:#e69875'
-  '--color=fg+:#d3c6aa,hl+:#83c092'
-  '--color=info:#9da9a0,border:#7fbbb3,prompt:#a7c080'
-  '--color=pointer:#dbbc7f,marker:#a7c080,spinner:#d699b6,header:#e67e80'
+  '--color=fg:#e5e9f0,hl:#d08770'
+  '--color=fg+:#e5e9f0,hl+:#88c0d0'
+  '--color=info:#5e81ac,border:#81a1c1,prompt:#a3be8c'
+  '--color=pointer:#ebcb8b,marker:#a3be8c,spinner:#b48ead,header:#bf616a'
   '--pointer=❯'
   '--multi'
 )
