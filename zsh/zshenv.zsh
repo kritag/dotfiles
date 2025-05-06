@@ -27,7 +27,8 @@ export WORDCHARS='*?[]~&;!#$%^(){}<>'
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH="${HOME}/.dotfiles/zsh"
 export ZSH_CACHE_DIR="$HOME/.cache"
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#414868"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#414868"
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
