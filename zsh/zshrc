@@ -1,5 +1,5 @@
 #!/usr/bin/zsh
-##zmodload zsh/zprof
+# zmodload zsh/zprof
 source $HOME/.aliases.zsh
 source $HOME/.env
 source $HOME/.zshkeybindings.zsh #
@@ -45,44 +45,43 @@ znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.
 #eval "$(oh-my-posh init zsh)"
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
-#
 ## Ensure up and down arrow works for searching history
 bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
-# OMP zsh-vi-mode integration
-_omp_redraw-prompt() {
-  local precmd
-  for precmd in "${precmd_functions[@]}"; do
-    "$precmd"
-  done
-
-  zle .reset-prompt
-}
-
 zstyle ':znap:*:*' git-maintenance off
-
-export POSH_VI_MODE="I"
-
-function zvm_after_select_vi_mode() {
-  case $ZVM_MODE in
-  $ZVM_MODE_NORMAL)
-    POSH_VI_MODE="N"
-    ;;
-  $ZVM_MODE_INSERT)
-    POSH_VI_MODE="I"
-    ;;
-  $ZVM_MODE_VISUAL)
-    POSH_VI_MODE="V"
-    ;;
-  $ZVM_MODE_VISUAL_LINE)
-    POSH_VI_MODE="V-L"
-    ;;
-  $ZVM_MODE_REPLACE)
-    POSH_VI_MODE="R"
-    ;;
-  esac
-  _omp_redraw-prompt
-}
+# # OMP zsh-vi-mode integration
+# _omp_redraw-prompt() {
+#   local precmd
+#   for precmd in "${precmd_functions[@]}"; do
+#     "$precmd"
+#   done
+#
+#   zle .reset-prompt
+# }
+#
+#
+# export POSH_VI_MODE="I"
+#
+# function zvm_after_select_vi_mode() {
+#   case $ZVM_MODE in
+#   $ZVM_MODE_NORMAL)
+#     POSH_VI_MODE="N"
+#     ;;
+#   $ZVM_MODE_INSERT)
+#     POSH_VI_MODE="I"
+#     ;;
+#   $ZVM_MODE_VISUAL)
+#     POSH_VI_MODE="V"
+#     ;;
+#   $ZVM_MODE_VISUAL_LINE)
+#     POSH_VI_MODE="V-L"
+#     ;;
+#   $ZVM_MODE_REPLACE)
+#     POSH_VI_MODE="R"
+#     ;;
+#   esac
+#   _omp_redraw-prompt
+# }
 # Fix a bug when you C-c in CMD mode, you'd be prompted with CMD mode indicator
 # while in fact you would be in INS mode.
 # Fixed by catching SIGINT (C-c), set mode to INS and repropagate the SIGINT,
@@ -93,4 +92,4 @@ function zvm_after_select_vi_mode() {
 # }
 znap prompt
 ## pnpm end
-##zprof
+# zprof

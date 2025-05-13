@@ -1,6 +1,11 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    explorer = {
+      hidden = true,
+      ignored = true,
+      exclude = { "node_modules", ".git" },
+    },
     picker = {
       formatters = {
         file = {

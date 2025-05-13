@@ -1,15 +1,15 @@
 # Make sure that the terminal is in application mode when zle is active, since
 # only then values from $terminfo are valid
-if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-  function zle-line-init() {
-    echoti smkx
-  }
-  function zle-line-finish() {
-    echoti rmkx
-  }
-  zle -N zle-line-init
-  zle -N zle-line-finish
-fi
+# if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+#   function zle-line-init() {
+#     echoti smkx
+#   }
+#   function zle-line-finish() {
+#     echoti rmkx
+#   }
+#   zle -N zle-line-init
+#   zle -N zle-line-finish
+# fi
 # Use emacs key bindings
 #bindkey -e
 # [Ctrl-RightArrow] - move forward one word
@@ -32,9 +32,9 @@ if [[ -n "${terminfo[khome]}" ]]; then
 fi
 # [End] - Go to end of line
 if [[ -n "${terminfo[kend]}" ]]; then
-  bindkey -M emacs "${terminfo[kend]}"  end-of-line
-  bindkey -M viins "${terminfo[kend]}"  end-of-line
-  bindkey -M vicmd "${terminfo[kend]}"  end-of-line
+  bindkey -M emacs "${terminfo[kend]}" end-of-line
+  bindkey -M viins "${terminfo[kend]}" end-of-line
+  bindkey -M vicmd "${terminfo[kend]}" end-of-line
 fi
 # [Shift-Tab] - move through the completion menu backwards
 if [[ -n "${terminfo[kcbt]}" ]]; then
