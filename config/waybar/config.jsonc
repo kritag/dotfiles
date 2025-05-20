@@ -49,6 +49,7 @@
     },
     "ignored-players": [
       "firefox",
+      "plasma-browser-integration",
       "msedge"
     ]
   },
