@@ -1,5 +1,5 @@
 #!/bin/env bash
-/usr/bin/slack -s --enable-features=UseOzonePlatform --ozone-platform=wayland --force-device-scale-factor %U &
+/usr/bin/slack --disable-gpu-compositing --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime --enable-features=WebRTCPipeWireCapturer --enable-features=WaylandWindowDecorations -s %U &
 while ! hyprctl clients | grep -q "Slack"; do
   sleep 0.2
 done
