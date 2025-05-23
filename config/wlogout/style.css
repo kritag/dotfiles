@@ -1,5 +1,5 @@
 /* pywal colors */
-@import "../../.cache/wal/colors-waybar.css";
+@import "../waybar/colors.css";
 
 /* general */
 * {
@@ -25,28 +25,28 @@ button {
 
 /* options */
 #lock {
-  background-color: @color1;
+  background-color: @base07;
   background-image: image(url("icons/lock.png"));
   border-radius: 5px 0px 0px 0px;
   margin: 100px 0px 0px 550px;
 }
 
 #reboot {
-  background-color: @color2;
+  background-color: @base09;
   background-image: image(url("icons/reboot.png"));
   border-radius: 0px 0px 0px 5px;
   margin: 0px 0px 100px 550px;
 }
 
 #logout {
-  background-color: @color3;
+  background-color: @base0B;
   background-image: image(url("icons/logout.png"));
   border-radius: 0px 5px 0px 0px;
   margin: 100px 550px 0px 0px;
 }
 
 #shutdown {
-  background-color: @color4;
+  background-color: @base0C;
   background-image: image(url("icons/shutdown.png"));
   border-radius: 0px 0px 5px 0px;
   margin: 0px 550px 100px 0px;
