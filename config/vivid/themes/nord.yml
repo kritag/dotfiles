@@ -148,6 +148,9 @@ media:
 office:
   foreground: nord14
 
+configuration:
+  foreground: nord12
+
 programming:
   source:
     foreground: nord7
@@ -156,6 +159,8 @@ programming:
 
 text:
   foreground: nord4
+  configuration:
+    foreground: nord12
 
 unimportant:
   foreground: nord4
