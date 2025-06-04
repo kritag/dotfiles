@@ -13,3 +13,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     vim.g.terminal_color_0 = "#414b50"
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.diagnostic.enable(false)
+  end,
+})
