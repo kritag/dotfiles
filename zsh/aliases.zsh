@@ -17,6 +17,7 @@ alias la='ls -lA'
 alias lat='ls -lArs age'
 alias ls='eza --icons --group-directories-first'
 alias lt='ls -lrs age'
+alias lr='ls -lR'
 alias mk='minikube'
 # Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
 alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
