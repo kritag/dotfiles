@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 
 from pyquery import PyQuery  # install using `pip install pyquery`
