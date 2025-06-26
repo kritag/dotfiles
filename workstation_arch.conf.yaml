@@ -10,6 +10,7 @@
     - k9s-sbanka-bin
     - krew
     - kubecolor
+    - kubectl-view-secret-bin
     - microsoft-edge-stable-bin
     - openshift-client-bin
     - papirus-folders

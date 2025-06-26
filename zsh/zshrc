@@ -40,6 +40,7 @@ compdef _journalctl jctl
 #    source $HOME/.functions_k8s
 #fi
 
+eval "$(_SPYGHETTI_COMPLETE=zsh_source spyghetti)"
 znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml'
 #eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml)"
 #eval "$(oh-my-posh init zsh)"

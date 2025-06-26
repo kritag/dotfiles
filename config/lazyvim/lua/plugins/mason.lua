@@ -6,6 +6,7 @@ return {
         "shellcheck",
         "hyprls",
         "eslint_d",
+        "pylint",
         "css-lsp"
       },
       ui = {
