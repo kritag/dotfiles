@@ -1,6 +1,6 @@
 #!/bin/env bash
-/opt/outlook-for-linux/outlook-for-linux --ozone-platform-hint=auto &
+/opt/Prospect\ Mail/prospect-mail &
 while ! hyprctl clients | grep -q "Outlook for Linux"; do
   sleep 0.2
 done
-hyprctl dispatch movetoworkspacesilent 3,outlook-for-linux
+hyprctl dispatch movetoworkspacesilent 3,Prospect

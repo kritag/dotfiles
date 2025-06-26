@@ -7,6 +7,7 @@
 @define-color text-color @base04;
 @define-color text-color-alt @base04;
 @define-color text-color-disabled rgba(150, 150, 150, 0.8);
+
 * {
   font-family: "Rubik";
   font-weight: bold;
@@ -186,7 +187,7 @@
   border-radius: 10px;
 }
 
-.widget-title > button {
+.widget-title>button {
   font-size: 0.75rem;
   color: @text-color;
   border-radius: 10px;
@@ -194,7 +195,7 @@
   border: 0.5px solid @noti-border-color;
 }
 
-.widget-title > button:hover {
+.widget-title>button:hover {
   background: #f7768e;
   color: @noti-border-color;
 }
@@ -208,23 +209,23 @@
   color: @noti-border-color;
 }
 
-.widget-dnd > switch {
+.widget-dnd>switch {
   border-radius: 10px;
   /* border: 1px solid #7aa2f7; */
   background: @noti-border-color;
 }
 
-.widget-dnd > switch:checked {
+.widget-dnd>switch:checked {
   background: #f7768e;
   border: 1px solid #f7768e;
 }
 
-.widget-dnd > switch slider {
+.widget-dnd>switch slider {
   background: @noti-bg;
   border-radius: 10px;
 }
 
-.widget-dnd > switch:checked slider {
+.widget-dnd>switch:checked slider {
   background: @noti-bg;
   border-radius: 10px;
 }
@@ -233,7 +234,7 @@
   margin: 5px;
 }
 
-.widget-label > label {
+.widget-label>label {
   font-size: 1rem;
   color: @text-color;
 }
@@ -246,7 +247,7 @@
   border-radius: 10px;
 }
 
-.widget-mpris > box > button {
+.widget-mpris>box>button {
   border-radius: 10px;
 }
 
@@ -273,24 +274,24 @@
   background: @noti-bg-alt;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
+.widget-buttons-grid>flowbox>flowboxchild>button {
   margin: 1px;
   background: @noti-bg;
   border-radius: 10px;
   color: @text-color;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
   background: @noti-border-color;
   color: @noti-bg-hover;
 }
 
-.widget-menubar > box > .menu-button-bar > button {
+.widget-menubar>box>.menu-button-bar>button {
   border: none;
   background: transparent;
 }
 
-.topbar-buttons > button {
+.topbar-buttons>button {
   border: none;
   background: transparent;
 }
@@ -304,7 +305,7 @@
   color: @text-color;
 }
 
-.widget-volume > box > button {
+.widget-volume>box>button {
   background: @noti-border-color;
   border: none;
 }

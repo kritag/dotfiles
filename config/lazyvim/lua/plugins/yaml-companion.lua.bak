@@ -27,32 +27,32 @@ return {
         },
       },
 
-      -- Pass any additional options that will be merged in the final LSP config
+      --      Pass any additional options that will be merged in the final LSP config
       lspconfig = {
-        flags = {
-          debounce_text_changes = 150,
-        },
-        settings = {
-          redhat = { telemetry = { enabled = false } },
-          yaml = {
-            validate = true,
-            format = { enable = true },
-            hover = true,
-            schemaStore = {
-              enable = false,
-              url = "",
-            },
-            schemaDownload = { enable = true },
-            schemas = {},
-            trace = { server = "debug" },
-          },
-        },
+        -- flags = {
+        --   debounce_text_changes = 150,
+        -- },
+        -- settings = {
+        --   redhat = { telemetry = { enabled = false } },
+        --   yaml = {
+        --     validate = true,
+        --     format = { enable = true },
+        --     hover = true,
+        --     schemaStore = {
+        --       enable = false,
+        --       url = "",
+        --     },
+        --     schemaDownload = { enable = true },
+        --     -- schemas = {},
+        --     trace = { server = "debug" },
+        --   },
+        -- },
       },
     },
 
     config = function(_, opts)
       local cfg = require("yaml-companion").setup(opts)
-      require("lspconfig")["yamlls"].setup(cfg)
+      -- require("lspconfig")["yamlls"].setup(cfg)
       require("telescope").load_extension("yaml_schema")
     end,
   },
