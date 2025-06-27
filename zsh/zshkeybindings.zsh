@@ -3,6 +3,7 @@
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() {
     echoti smkx
+    printf '\e[?12h\e[?25h'  # enable blinking + show cursor
   }
   function zle-line-finish() {
     echoti rmkx
