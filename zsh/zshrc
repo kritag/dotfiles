@@ -47,8 +47,10 @@ znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.
 source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
 ## Ensure up and down arrow works for searching history
-bindkey '^[OA' history-substring-search-up
-bindkey '^[OB' history-substring-search-down
+bindkey '^[0A' history-substring-search-up
+bindkey '^[0B' history-substring-search-down
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
 zstyle ':znap:*:*' git-maintenance off
 # # OMP zsh-vi-mode integration
 # _omp_redraw-prompt() {
@@ -90,6 +92,9 @@ zstyle ':znap:*:*' git-maintenance off
 # TRAPINT() {
 #   export POSH_VI_MODE="insert"
 #   return $((128 + $1))
+# }
+# precmd() {
+#   echo -ne '\e[?12h\e[?25h'
 # }
 znap prompt
 ## pnpm end
