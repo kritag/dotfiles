@@ -1,16 +1,32 @@
 # Make sure that the terminal is in application mode when zle is active, since
 # only then values from $terminfo are valid
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+  function setup_keybindings() {
+    echoti smkx
+    printf '\e[?12h\e[?25h'
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[OA' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+    bindkey '^[OB' history-substring-search-down
+    zle -N zle-line-init
+    zle -N zle-line-finish
+
+    # Remove precmd hook after first run to avoid repeating
+    precmd_functions=(${precmd_functions:#setup_keybindings})
+  }
+
+  # Run the setup once before the first prompt is drawn
+  precmd_functions+=(setup_keybindings)
+
   function zle-line-init() {
     echoti smkx
-    printf '\e[?12h\e[?25h'  # enable blinking + show cursor
+    printf '\e[?12h\e[?25h'
   }
   function zle-line-finish() {
     echoti rmkx
   }
-  zle -N zle-line-init
-  zle -N zle-line-finish
 fi
+
 # Use emacs key bindings
 #bindkey -e
 # [Ctrl-RightArrow] - move forward one word
@@ -54,7 +70,9 @@ bindkey -M vicmd '^ ' autosuggest-accept
 # Make the zsh-vi plugin not overwrite fzf-history-widget in insert mode
 function zvm_after_init() {
   zvm_bindkey viins "^R" fzf-history-widget
-  zvm_bindkey viins "^[OA" history-substring-search-up
-  zvm_bindkey viins "^[OB" history-substring-search-down
+  # zvm_bindkey viins "^[OA" history-substring-search-up
+  # zvm_bindkey viins "^[OB" history-substring-search-down
+  # zvm_bindkey viins "^[[A" history-substring-search-up
+  # zvm_bindkey viins "^[[B" history-substring-search-down
 }
 bindkey -v
