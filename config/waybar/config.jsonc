@@ -279,10 +279,24 @@
     "tooltip": false
   },
   "custom/notifications": {
-    "exec": "swaync-client -c",
-    "interval": 1,
-    "format": "  {}",
-    "on-click": "pkill swaync-client || swaync-client -t",
-    "tooltip-format": "You have {} notifications"
+    "tooltip": false,
+    "format": "{}  {icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-released": "swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
   }
 }
