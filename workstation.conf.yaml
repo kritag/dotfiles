@@ -14,7 +14,7 @@
     ~/.config/Kvantum/pywal/pywal.svg:
       path: ~/.cache/wal/pywal.svg
       force: true
-    ~/.config/hypr/hypridle.conf: config/hypridle/hypridle.conf
+    ~/.config/hypr/hypridle.conf: config/hypr-workstation/hypridle-workstation.conf
     ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-gdm.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
