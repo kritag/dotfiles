@@ -296,7 +296,7 @@
     "exec": "swaync-client -swb",
     "on-click": "sleep 0.1 && swaync-client -t -sw",
     "on-click-released": "swaync-client -t -sw",
-    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "on-click-right": "swaync-client -d -sw",
     "escape": true
   }
 }
