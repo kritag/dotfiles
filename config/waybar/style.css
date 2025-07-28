@@ -1,17 +1,21 @@
 @import "colors.css";
+
 * {
   font-family: Rubik;
   /* Font Awesome; */
   font-size: 16px;
   /* font-weight: bold; */
   min-height: 0;
+  /* all: initial; */
 }
+
 #one {
   background-color: @base00;
   border-radius: 10px;
   padding-right: 15px;
   padding-left: 15px;
 }
+
 window#waybar {
   background-color: rgba(0, 0, 0, 0);
   /* font-family: Fira Sans; */
@@ -20,13 +24,16 @@ window#waybar {
   /* transition-duration: 0.5s; */
   /* transition-property: background-color; */
 }
+
 tooltip label {
   color: @foreground;
 }
+
 tooltip {
   background: @base00;
   border: 1px solid @color0;
 }
+
 #custom-powerbutton {
   color: @base08;
   padding-left: 10px;
@@ -34,6 +41,7 @@ tooltip {
   border-radius: 10px;
   padding-right: 10px;
 }
+
 #mpris {
   color: @base09;
   border-radius: 10px;
@@ -41,36 +49,51 @@ tooltip {
   padding-left: 10px;
   background-color: @base00;
 }
+
 #taskbar {
   background-color: @base00;
   border-radius: 10px;
 }
+
 #taskbar button {
   border-radius: 10px;
   color: @base09;
 }
+
 #taskbar button.active {
   background-color: @base09;
   color: @base00;
 }
+
 #workspaces {
   background-color: @base00;
   border-radius: 10px;
 }
+
 #workspaces button {
   border-radius: 10px;
+  /* padding: 0 6px; */
+  padding-left: 10px;
+  padding-right: 10px;
   color: @base0B;
 }
+
 #workspaces button.active {
+  padding-right: 10px;
+  padding-left: 10px;
+  /* padding: 0 6px; */
   background-color: @base0B;
   color: @base00;
 }
+
 #workspaces button.special {
-  color: @color14;
+  color: @base0F;
 }
+
 #workspaces button.urgent {
   color: #f38ba8;
 }
+
 #language {
   color: @base0C;
   background-color: @base00;
@@ -78,6 +101,7 @@ tooltip {
   border-radius: 10px;
   padding-right: 10px;
 }
+
 #pulseaudio {
   color: @base0C;
   background-color: @base00;
@@ -85,6 +109,7 @@ tooltip {
   border-radius: 10px;
   padding-right: 10px;
 }
+
 #clock {
   background-color: @base00;
   padding-right: 10px;
@@ -92,6 +117,7 @@ tooltip {
   color: @base0C;
   border-radius: 10px;
 }
+
 #custom-weather {
   color: @base0C;
   background-color: @base00;
@@ -99,45 +125,56 @@ tooltip {
   padding-left: 10px;
   border-radius: 10px;
 }
-#batt{
+
+#batt {
   color: @base0C;
   background-color: @base00;
   padding-right: 10px;
   padding-left: 10px;
   border-radius: 10px;
 }
+
 #backlight {
   color: @base0C;
 }
+
 #battery {
   color: @base0C;
 }
+
 #battery.charging {
   color: #a6e3a1;
 }
+
 #battery.warning:not(.charging) {
   color: #f38ba8;
 }
+
 #power-profiles-daemon {
   padding-left: 15px;
   padding-right: 15px;
   /* font-size: 24; */
 }
+
 #power-profiles-daemon.performance {
   color: #eba0ac;
 }
+
 #power-profiles-daemon.balanced {
   color: #74c7ec;
 }
+
 #power-profiles-daemon.power-saver {
   color: #a6e3a1;
 }
+
 #tray {
   background-color: @base00;
   border-radius: 10px;
   padding-right: 15px;
   padding-left: 15px;
 }
+
 #custom-notifications {
   background-color: @base00;
   border-radius: 10px;

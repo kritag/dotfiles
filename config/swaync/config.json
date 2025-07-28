@@ -2,97 +2,103 @@
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "top",
-  "layer": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
   "layer-shell": true,
-  "cssPriority": "application",
-  "control-center-width": 350,
+  "cssPriority": "user",
   "control-center-margin-top": 20,
   "control-center-margin-bottom": 8,
   "control-center-margin-right": 20,
   "control-center-margin-left": 8,
   "notification-2fa-action": true,
   "notification-inline-replies": true,
-  "notification-window-width": 350,
-  "notification-icon-size": 60,
-  "notification-body-image-height": 180,
-  "notification-body-image-width": 180,
-  "timeout": 12,
-  "timeout-low": 6,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 160,
+  "notification-body-image-width": 200,
+  "notification-window-width": 440,
+  "timeout": 6,
+  "timeout-low": 3,
   "timeout-critical": 1,
   "fit-to-screen": false,
+  "control-center-width": 400,
+  "control-center-height": 1000,
   "keyboard-shortcuts": true,
-  "image-visibility": "when available",
+  "image-visibility": "when-available",
   "transition-time": 200,
-  "hide-on-clear": false,
+  "hide-on-clear": true,
   "hide-on-action": true,
   "script-fail-notify": true,
   "widgets": [
+    "dnd",
+    "buttons-grid",
     "mpris",
-    "title",
-    "notifications",
     "volume",
     "backlight",
-    "buttons-grid"
+    "title",
+    "notifications"
   ],
   "widget-config": {
     "title": {
-      "text": "Notification Center",
+      "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "󰆴"
+      "button-text": ""
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
     },
     "label": {
       "max-lines": 1,
-      "text": "Notification Center!"
+      "text": "Notification"
     },
     "mpris": {
-      "image-size": 80,
+      "image-size": 50,
       "image-radius": 0,
       "blacklist": [
         "spotify"
       ]
     },
     "volume": {
-      "label": "󰕾 "
+      "label": ""
     },
     "backlight": {
-      "label": "󰃟 "
+      "label": "󰃠"
     },
     "buttons-grid": {
       "actions": [
         {
-          "label": "󰝟",
-          "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+          "label": "",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
           "type": "toggle"
         },
         {
-          "label": "󰍭",
-          "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+          "label": "",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
           "type": "toggle"
         },
         {
-          "label": "",
+          "label": "󰤨",
           "command": "nm-connection-editor"
         },
         {
-          "label": "",
+          "label": "󰂯",
           "command": "blueman-manager"
         },
         {
-          "label": "󰤄",
-          "command": "swaync-client -d",
+          "label": "󱡽",
+          "command": "bash -c $HOME/.config/hypr/scripts/airplaneMode.sh",
           "type": "toggle"
+        },
+        {
+          "label": "",
+          "command": "systemctl poweroff"
         },
         {
           "label": "",
           "command": "hyprlock"
         },
         {
-          "label": "",
-          "command": "reboot"
-        },
-        {
-          "label": "",
-          "command": "shutdown now"
+          "label": "",
+          "command": "~/.config/hypr/scripts/wlogout.sh"
         }
       ]
     }
