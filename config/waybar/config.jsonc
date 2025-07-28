@@ -233,9 +233,9 @@
     "format": "{icon} {volume}% {format_source}",
     "format-bluetooth": "{icon}  {volume}% | {format_source}",
     "format-bluetooth-muted": "{icon}  󰝟 | {format_source}",
-    "format-muted": "婢 {volume} | {format_source}",
+    "format-muted": "󰖁{volume}% | {format_source}",
     "format-source": "",
-    "format-source-muted": "",
+    "format-source-muted": "󰍭",
     "tooltip-format": "{icon} {desc} at {volume}%",
     "scroll-step": 5,
     "format-icons": {
@@ -246,9 +246,9 @@
       // "portable": "",
       // "car": "",
       "default": [
-        "",
-        "󰕾",
-        ""
+        "󰕿",
+        "󰖀",
+        "󰕾"
       ]
     },
     "on-click": "pulsecontrol"
@@ -296,7 +296,7 @@
     "exec": "swaync-client -swb",
     "on-click": "sleep 0.1 && swaync-client -t -sw",
     "on-click-released": "swaync-client -t -sw",
-    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "on-click-right": "swaync-client -d -sw",
     "escape": true
   }
 }
