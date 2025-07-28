@@ -16,7 +16,7 @@ znap source MichaelAquilina/zsh-you-should-use
 znap source ajeetdsouza/zoxide
 #znap source Freed-Wu/fzf-tab-source
 znap source Aloxaf/fzf-tab
-znap install zsh-users/zsh-completions
+# znap install zsh-users/zsh-completions
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-history-substring-search
 znap source zdharma-continuum/fast-syntax-highlighting
