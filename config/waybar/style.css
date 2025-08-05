@@ -50,6 +50,18 @@ tooltip {
   background-color: @base00;
 }
 
+
+#cava {
+  font-family: monospace;
+  /* letter-spacing: 2px; */
+  /* Adds space between characters */
+  background-color: @base00;
+  color: @base07;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 #taskbar {
   background-color: @base00;
   border-radius: 10px;
