@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 25,
+  "height": 30,
   "margin": "10px",
   "spacing": 10,
   // "output": [
@@ -11,7 +11,8 @@
   "reload_style_on_change": true,
   "modules-left": [
     "custom/powerbutton",
-    "mpris"
+    "mpris",
+    "cava"
     // "wlr/taskbar"
     // "hyprland/window"
   ],
@@ -52,6 +53,38 @@
       "plasma-browser-integration",
       "msedge"
     ]
+  },
+  "cava": {
+    // "cava_config": "$XDG_CONFIG_HOME/cava/config",
+    "framerate": 30,
+    "autosens": 2,
+    // "sensitivity": 100,
+    "bars": 14,
+    "hide_on_silence": true,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "method": "pipewire",
+    "source": "auto",
+    "stereo": true,
+    "reverse": false,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "actions": {
+      "on-click-right": "mode"
+    },
   },
   "wlr/taskbar": {
     "format": "{icon}",
