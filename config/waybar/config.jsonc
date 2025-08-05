@@ -65,7 +65,7 @@
     "higher_cutoff_freq": 10000,
     "method": "pipewire",
     "source": "auto",
-    "stereo": true,
+    "stereo": false,
     "reverse": false,
     "bar_delimiter": 0,
     "monstercat": false,
