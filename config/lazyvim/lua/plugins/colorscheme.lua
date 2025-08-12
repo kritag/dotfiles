@@ -1,3 +1,12 @@
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyDone",
+  group = vim.api.nvim_create_augroup("override_picker_hl", { clear = true }),
+  callback = function()
+    vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "SnacksPickerAuGroup" })
+    vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { link = "SnacksPickerIconField" })
+    vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { link = "Text" })
+  end,
+})
 return {
   {
     "catppuccin/nvim",
@@ -101,9 +110,17 @@ return {
       end,
     },
   },
+  -- {
+  --   "gbprod/nord.nvim",
+  --   name = "nord",
+  --   lazy = true,
+  --   opts = {
+  --     transparent = true,
+  --   },
+  -- },
   {
-    "gbprod/nord.nvim",
-    name = "nord",
+    "dupeiran001/nord.nvim",
+    -- name = "nord",
     lazy = true,
     opts = {
       transparent = true,
@@ -123,7 +140,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nord",
+      colorscheme = "nord-dark",
     },
   },
 }
