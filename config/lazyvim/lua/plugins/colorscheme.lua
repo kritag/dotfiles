@@ -127,6 +127,15 @@ return {
     },
   },
   {
+    "EdenEast/nightfox.nvim",
+    -- name = "nord",
+    lazy = true,
+    opts = {
+      transparent = true,
+      colorscheme = "nordfox",
+    },
+  },
+  {
     "rose-pine/neovim",
     name = "rose-pine",
     lazy = true,
@@ -140,7 +149,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nord-dark",
+      colorscheme = "nordfox",
     },
   },
 }
