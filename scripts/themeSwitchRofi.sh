@@ -105,7 +105,7 @@ case "$selected_theme" in
 "nord")
   flavours apply nord
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1nord/' ~/.zshenv.zsh
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="nord"/' ~/.config/bat/config
+  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="Nord"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1Nord/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1nord\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Colloid-Dark-Compact-Nord"/' ~/.config/hypr/env.conf

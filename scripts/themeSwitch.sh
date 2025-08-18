@@ -81,6 +81,7 @@ case "$1" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Colloid-Dark-Compact-Nord"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/nord.ini
   kitten themes nord
+  papirus-folders -C nordic --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Colloid-Dark-Compact-Nord'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
