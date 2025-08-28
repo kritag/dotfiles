@@ -1,4 +1,9 @@
 #!/usr/bin/zsh
+if [[ "$KITTY_BENCHMARK" == "1" ]]; then
+  echo "Benchmarking Kitty with full Zshrc..."
+  sleep 0.5
+  exit
+fi
 # zmodload zsh/zprof
 source $HOME/.aliases.zsh
 source $HOME/.env
