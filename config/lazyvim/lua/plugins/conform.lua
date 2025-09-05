@@ -47,8 +47,8 @@ return {
       local opts = {
         default_format_opts = {
           timeout_ms = 3000,
-          async = false,           -- not recommended to change
-          quiet = false,           -- not recommended to change
+          async = false, -- not recommended to change
+          quiet = false, -- not recommended to change
           lsp_format = "fallback", -- not recommended to change
         },
         formatters_by_ft = {
@@ -69,7 +69,14 @@ return {
         ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
         formatters = {
           prettier = {
-            prepend_args = { "--prose-wrap", "always" },
+            prepend_args = {
+              "--prose-wrap",
+              "always",
+              "--tab-width",
+              "2",
+              "--print-width",
+              "80",
+            },
           },
           injected = { options = { ignore_errors = true } },
           -- # Example of using dprint only when a dprint.json file is present
