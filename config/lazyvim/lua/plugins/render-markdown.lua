@@ -41,6 +41,16 @@ return {
             conceal = false,
           },
         },
+        pipe_table = {
+          enabled = true,
+          style = "full", -- ensures top and bottom borders are drawn properly
+          cell = "padded", -- better visual structure
+          padding = 1,
+          min_width = 0,
+          -- additional tweaks:
+          -- cell = 'trimmed'  -- if you want narrower cells that cut extra padding
+          -- or try `cell = 'overlay'` if you're okay with losing conceal behavior
+        },
         heading = {
           enabled = true,
           border = true,
