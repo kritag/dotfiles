@@ -94,6 +94,7 @@
         - tealdeer
         - timeshift
         - timeshift-autosnap
+        - tree-sitter-cli
         - ttf-nerd-fonts-symbols
         - vivid
         - vlc
