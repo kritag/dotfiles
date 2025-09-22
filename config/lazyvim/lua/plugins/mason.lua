@@ -1,13 +1,13 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "shellcheck",
         "hyprls",
         "eslint_d",
         "pylint",
-        "css-lsp"
+        "css-lsp",
       },
       ui = {
         border = "rounded",

@@ -3,59 +3,50 @@ local function getLspName()
   local buf_clients = vim.lsp.get_clients({ bufnr = bufnr })
   local buf_ft = vim.bo.filetype
 
-  if next(buf_clients) == nil then
+  if not buf_clients or vim.tbl_isempty(buf_clients) then
     return "  No servers"
   end
-  local buf_client_names = {}
 
+  local buf_client_names = {}
   for _, client in pairs(buf_clients) do
     if client.name ~= "null-ls" then
       table.insert(buf_client_names, client.name)
     end
   end
 
-  local lint_s, lint = pcall(require, "lint")
-  if lint_s then
+  -- lint integration
+  local ok_lint, lint = pcall(require, "lint")
+  if ok_lint then
     for ft_k, ft_v in pairs(lint.linters_by_ft) do
-      if type(ft_v) == "table" then
-        for _, linter in ipairs(ft_v) do
-          if buf_ft == ft_k then
-            table.insert(buf_client_names, linter)
-          end
-        end
-      elseif type(ft_v) == "string" then
-        if buf_ft == ft_k then
+      if buf_ft == ft_k then
+        if type(ft_v) == "table" then
+          vim.list_extend(buf_client_names, ft_v)
+        else
           table.insert(buf_client_names, ft_v)
         end
       end
     end
   end
 
-  local ok, conform = pcall(require, "conform")
-  if ok then
+  -- conform integration
+  local ok_conf, conform = pcall(require, "conform")
+  if ok_conf then
     local formatters_by_ft = conform.formatters_by_ft[buf_ft]
     if formatters_by_ft then
-      local formatters = table.concat(formatters_by_ft, " ")
-      for formatter in formatters:gmatch("[%w%-]+") do
-        if formatter then
-          table.insert(buf_client_names, formatter)
-        end
-      end
+      vim.list_extend(buf_client_names, formatters_by_ft)
     end
   end
 
-  local hash = {}
-  local unique_client_names = {}
-
+  -- dedupe
+  local hash, unique = {}, {}
   for _, v in ipairs(buf_client_names) do
     if not hash[v] then
-      unique_client_names[#unique_client_names + 1] = v
+      table.insert(unique, v)
       hash[v] = true
     end
   end
-  local language_servers = table.concat(unique_client_names, ", ")
 
-  return "" .. language_servers
+  return table.concat(unique, ", ")
 end
 
 local lsp = {
@@ -263,9 +254,9 @@ return {
         opts.sections.lualine_x,
         2,
         LazyVim.lualine.status(LazyVim.config.icons.kinds.Copilot, function()
-          local clients = package.loaded["copilot"] and LazyVim.lsp.get_clients({ name = "copilot", bufnr = 0 }) or {}
+          local clients = package.loaded["copilot"] and vim.lsp.get_clients({ name = "copilot", bufnr = 0 }) or {}
           if #clients > 0 then
-            local status = require("copilot.api").status.data.status
+            local status = require("copilot.status").data.status
             return (status == "InProgress" and "pending") or (status == "Warning" and "error") or "ok"
           end
         end)
