@@ -99,7 +99,7 @@ case "$1" in
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"rose-pine-gtk"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/rose-pine.ini
   kitten themes Rosé Pine Moon
-  dconf write /org/gnome/desktop/interface/gtk-theme "'rose-pine-gtk'"
+  dconf write /org/gnome/desktop/interface/gtk-theme "'rose-pine-moon-gtk'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
