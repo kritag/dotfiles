@@ -132,7 +132,7 @@ return {
     lazy = true,
     opts = {
       transparent = true,
-      colorscheme = "nordfox",
+      colorscheme = "rose-pine",
     },
   },
   {
@@ -149,7 +149,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nordfox",
+      colorscheme = "rose-pine",
     },
   },
 }
