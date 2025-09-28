@@ -4,7 +4,6 @@
       create: true
 
 - link:
-    ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/Kvantum/kvantum.kvconfig: config/Kvantum/kvantum.kvconfig
     ~/.config/Kvantum/pywal/pywal.kvconfig:
       path: ~/.cache/wal/colors-kvantum.kvconfig
@@ -19,6 +18,10 @@
     ~/.config/kitty/font-nerd-symbols.conf: config/kitty/font-nerd-symbols.conf
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.config/hypr/env.conf: config/hypr-desktop/env-desktop.conf
+    ~/.config/btop:
+      create: true
+      glob: true
+      path: config/btop/*
     ~/.config/wlogout:
       create: true
       glob: true
@@ -54,7 +57,6 @@
       create: true
       glob: true
       path: config/flavours/*
-
 # - sudo:
 #     - link:
 #         #/usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
@@ -68,13 +70,13 @@
 #           ]
 #         - [sudo usermod -a -G video $USER]
 #
-- shell:
-    - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
-    - [
-        scripts/fix_cursor_theme.sh,
-        Fixes the cursor theme for non-GTK applications,
-      ]
+# - shell:
+#     - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
+#     - [
+#         scripts/fix_cursor_theme.sh,
+#         Fixes the cursor theme for non-GTK applications,
+#       ]
 
-  #- [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
-  #- [scripts/fix_cursor_theme.sh, Fixes the cursor theme for non-GTK applications]
-  #- [dconf load / < config/dump.dconf, Load Gnome settings]
+#- [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
+#- [scripts/fix_cursor_theme.sh, Fixes the cursor theme for non-GTK applications]
+#- [dconf load / < config/dump.dconf, Load Gnome settings]
