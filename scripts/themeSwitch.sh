@@ -98,7 +98,7 @@ case "$1" in
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1rose-pine\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"rose-pine-gtk"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/rose-pine.ini
-  kitten themes Rosé Pine
+  kitten themes Rosé Pine Moon
   dconf write /org/gnome/desktop/interface/gtk-theme "'rose-pine-gtk'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"

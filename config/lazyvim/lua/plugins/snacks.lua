@@ -1,6 +1,7 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    scope = { enabled = true },
     explorer = {
       hidden = true,
       ignored = true,
