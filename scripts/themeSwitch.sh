@@ -100,11 +100,11 @@ case "$1" in
   fast-theme ~/.config/fsh/rose-pine.ini
   kitten themes Rosé Pine Moon
   dconf write /org/gnome/desktop/interface/gtk-theme "'rose-pine-moon-gtk'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/rose-pine-gtk/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  ln -sf /usr/share/themes/rose-pine-moon-gtk/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ;;
 
 "tokyo-night")
