@@ -8,6 +8,9 @@ return {
         "eslint_d",
         "pylint",
         "css-lsp",
+        "prettier",
+        "prettierd",
+        "yamlfix",
       },
       ui = {
         border = "rounded",
