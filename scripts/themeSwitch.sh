@@ -96,11 +96,11 @@ case "$1" in
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="rose-pine"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1rose-pine/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1rose-pine\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"rose-pine-gtk"/' ~/.config/hypr/env.conf
+  sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Rosepine-Dark-Compact-Moon"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/rose-pine.ini
   kitten themes Rosé Pine Moon
-  dconf write /org/gnome/desktop/interface/gtk-theme "'rose-pine-moon-gtk'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+  dconf write /org/gnome/desktop/interface/gtk-theme "'Rosepine-Dark-Compact-Moon'"
+  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"

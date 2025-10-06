@@ -7,4 +7,4 @@ config_file="$HOME/.config/hypr/hyprlock.conf"
 sed -i "s|path = .*|path = $wallpaper|g" "$config_file"
 
 # Step 4: Run Hyprlock with the updated config
-hyprlock
+gtklock -d -c ~/.config/gtklock/config.ini -s ~/.config/gtklock/styles.css
