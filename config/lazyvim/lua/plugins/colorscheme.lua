@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd("User", {
     vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { link = "Text" })
   end,
 })
+
 return {
   {
     "catppuccin/nvim",
@@ -128,11 +129,10 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    -- name = "nord",
+    name = "nord",
     lazy = true,
     opts = {
       transparent = true,
-      colorscheme = "rose-pine",
     },
   },
   {
