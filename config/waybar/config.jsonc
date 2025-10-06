@@ -149,8 +149,8 @@
   },
   "hyprland/language": {
     "format": " {}",
-    "format-no": "no"
-    // "format-us-altgr-intl": "us"
+    "format-no": "no",
+    "format-en": "us"
   },
   "idle_inhibitor": {
     "format": "{icon}",

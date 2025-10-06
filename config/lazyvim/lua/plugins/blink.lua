@@ -18,7 +18,7 @@ return {
         version = not vim.g.lazyvim_blink_main and "*",
       },
     },
-    event = "InsertEnter",
+    event = { "InsertEnter", "CmdlineEnter" },
 
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -28,6 +28,7 @@ return {
           return LazyVim.cmp.expand(snippet)
         end,
       },
+
       appearance = {
         -- sets the fallback highlight groups to nvim-cmp's highlight groups
         -- useful for when your theme doesn't support blink.cmp
@@ -48,13 +49,13 @@ return {
           draw = {
             treesitter = { "lsp" },
           },
-          border = 'rounded',
+          border = "rounded",
         },
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 200,
           window = {
-            border = 'rounded',
+            border = "rounded",
           },
         },
 
@@ -74,16 +75,26 @@ return {
       },
 
       cmdline = {
-        enabled = false,
+        enabled = true,
+        keymap = { preset = "cmdline" },
+        completion = {
+          list = { selection = { preselect = false } },
+          menu = {
+            auto_show = function(ctx)
+              return vim.fn.getcmdtype() == ":"
+            end,
+          },
+          ghost_text = { enabled = true },
+        },
       },
 
       keymap = {
         preset = "enter",
         ["<C-y>"] = { "select_and_accept" },
-        ["<Tab>"] = { "select_next", "fallback" },
-        ["<S-Tab>"] = { "select_prev", "fallback" },
-        ["<Down>"] = { "select_next", "fallback" },
-        ["<Up>"] = { "select_prev", "fallback" },
+        -- ["<Tab>"] = { "select_next", "fallback" },
+        -- ["<S-Tab>"] = { "select_prev", "fallback" },
+        -- ["<Down>"] = { "select_next", "fallback" },
+        -- ["<Up>"] = { "select_prev", "fallback" },
       },
     },
     ---@param opts blink.cmp.Config | { sources: { compat: string[] } }
@@ -139,6 +150,7 @@ return {
             items = transform_items and transform_items(ctx, items) or items
             for _, item in ipairs(items) do
               item.kind = kind_idx or item.kind
+              item.kind_icon = LazyVim.config.icons.kinds[item.kind_name] or item.kind_icon or nil
             end
             return items
           end
@@ -150,5 +162,5 @@ return {
 
       require("blink.cmp").setup(opts)
     end,
-  }
+  },
 }

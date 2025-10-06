@@ -15,7 +15,7 @@ $reboot
 $shutdown" | rofi -dmenu -i -p "Power")
 # Do something based on selected option
 if [ "$selected_option" == "$lock" ]; then
-  $HOME/.config/hypr/scripts/hyprlock.sh
+  $HOME/.config/hypr/scripts/lock.sh
 elif [ "$selected_option" == "$logout" ]; then
   #loginctl terminate-user "$(whoami)" &&
   hyprctl dispatch exit
