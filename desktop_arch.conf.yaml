@@ -37,6 +37,7 @@
         - git-delta
         - github-cli
         - glow
+        - gtklock
         - hypridle
         - hyprland
         - hyprlock
