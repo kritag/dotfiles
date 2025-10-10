@@ -31,9 +31,10 @@ local function getLspName()
   -- conform integration
   local ok_conf, conform = pcall(require, "conform")
   if ok_conf then
-    local formatters_by_ft = conform.formatters_by_ft[buf_ft]
-    if formatters_by_ft then
-      vim.list_extend(buf_client_names, formatters_by_ft)
+    local entry = conform.formatters_by_ft[buf_ft]
+    local formatters = type(entry) == "function" and entry(bufnr) or entry
+    if type(formatters) == "table" then
+      vim.list_extend(buf_client_names, formatters)
     end
   end
 
@@ -85,8 +86,6 @@ return {
 
       vim.o.laststatus = vim.g.lualine_laststatus
 
-      table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("codeium"))
-
       local opts = {
         options = {
           theme = "auto",
@@ -96,8 +95,8 @@ return {
           always_divide_middle = true,
           component_separators = "",
           disabled_filetypes = {
-            statusline = { "dashboard", "alpha", "ministarter" },
-            winbar = { "neo-tree", "dashboard", "alpha", "ministarter" },
+            statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" },
+            winbar = { "neo-tree", "dashboard", "alpha", "ministarter", "snacks_dashboard" },
           },
         },
         sections = {
@@ -158,15 +157,10 @@ return {
                 info = icons.diagnostics.Info,
                 hint = icons.diagnostics.Hint,
               },
-              -- diagnostics_color = {
-              --   -- error = { fg = colors.red },
-              --   -- warn = { fg = colors.orange },
-              --   -- info = { fg = colors.sky },
-              --   -- hint = { fg = colors.teal },
-              -- },
             },
           },
           lualine_x = {
+            Snacks.profiler.status(),
           -- stylua: ignore
           {
             function() return require("noice").api.status.command.get() end,
