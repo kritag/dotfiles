@@ -91,10 +91,10 @@ return {
       keymap = {
         preset = "enter",
         ["<C-y>"] = { "select_and_accept" },
-        -- ["<Tab>"] = { "select_next", "fallback" },
-        -- ["<S-Tab>"] = { "select_prev", "fallback" },
-        -- ["<Down>"] = { "select_next", "fallback" },
-        -- ["<Up>"] = { "select_prev", "fallback" },
+        ["<Tab>"] = { "select_next", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<Up>"] = { "select_prev", "fallback" },
       },
     },
     ---@param opts blink.cmp.Config | { sources: { compat: string[] } }
