@@ -45,6 +45,7 @@
         - github-cli
         - glow
         - go-yq
+        - gtklock
         - helm
         - hypridle
         - hyprland
@@ -104,10 +105,8 @@
         - zoxide
         - zsh
 - shell:
-    - [
-        xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search,
-        Set Nautilus as default file manager,
-      ]
+    - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search,
+      Set Nautilus as default file manager]
     # - [
     #     papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
     #     setting Catpuccin Mocha icons,
