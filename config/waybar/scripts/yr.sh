@@ -45,21 +45,21 @@ WEATHER_CODE=$(echo "$LATEST_ENTRY" | jq -r '
 # Map weather codes to icons
 
 case "$WEATHER_CODE" in
-"clearsky_day") ICON=" " ;;       # Clear sky (day)
-"clearsky_night") ICON="" ;;      # Clear sky (night)
+"clearsky_day") ICON="󰖙" ;;       # Clear sky (day)
+"clearsky_night") ICON="󰖔" ;;      # Clear sky (night)
 "fair_day") ICON=" " ;;           # Fair weather (day)
 "fair_night") ICON=" " ;;         # Fair weather (night)
-"partlycloudy_day") ICON="󰖕 " ;;   # Partly cloudy (day)
-"partlycloudy_night") ICON=" " ;; # Partly cloudy (night)
+"partlycloudy_day") ICON="󰖕" ;;   # Partly cloudy (day)
+"partlycloudy_night") ICON="󰼱" ;; # Partly cloudy (night)
 "cloudy") ICON="󰖐 " ;;             # Cloudy
-"lightrain") ICON="🌦" ;;           # Light rain
-"rain") ICON=" " ;;               # Rain
-"heavyrain") ICON="  " ;;        # Heavy rain
-"lightsnow") ICON="🌨" ;;           # Light snow
-"snow") ICON="󰖘 " ;;               # Snow
-"heavysnow") ICON="󰼶 " ;;          # Heavy snow
-"fog") ICON=" " ;;                # Fog
-"thunderstorm") ICON=" " ;;       # Thunderstorm
+"lightrain") ICON="󰼳" ;;           # Light rain
+"rain") ICON="󰖗" ;;               # Rain
+"heavyrain") ICON="󰖗󰖗" ;;        # Heavy rain
+"lightsnow") ICON="󰼴" ;;           # Light snow
+"snow") ICON="󰖘" ;;               # Snow
+"heavysnow") ICON="󰼶" ;;          # Heavy snow
+"fog") ICON="󰖑" ;;                # Fog
+"thunderstorm") ICON="󰙾" ;;       # Thunderstorm
 *) ICON="🌍" ;;                     # Default (unknown weather)
 esac
 # Output to Waybar
