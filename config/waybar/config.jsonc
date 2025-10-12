@@ -41,12 +41,12 @@
   "mpris": {
     "format": "{player_icon} | {status_icon} {artist} - {title}",
     "player-icons": {
-      "spotify": ""
+      "spotify": "󰓇"
     },
     "status-icons": {
-      "playing": "",
-      "paused": "",
-      "stopped": ""
+      "playing": "󰏤",
+      "paused": "󰐊",
+      "stopped": "󰓛"
     },
     "ignored-players": [
       "firefox",
@@ -84,7 +84,7 @@
     ],
     "actions": {
       "on-click-right": "mode"
-    },
+    }
   },
   "wlr/taskbar": {
     "format": "{icon}",
@@ -108,29 +108,29 @@
       "special": "󰠱"
     },
     "sort-by-name": true,
-    "window-rewrite-default": "",
+    "window-rewrite-default": "󰼇",
     "window-rewrite": {
-      "class<firefox>": "",
-      "class<steam>": "",
-      "class<legcord>": " ",
+      "class<firefox>": "󰈹",
+      "class<steam>": "󰓓",
+      "class<legcord>": "󰙯",
       "class<evince>": "󰈦",
-      "class<virt-manager>": "",
-      "class<net.lutris.Lutris>": " ",
-      "kitty": "",
-      "spotify": "",
+      "class<virt-manager>": "󰇅",
+      "class<net.lutris.Lutris>": "󰊗 ",
+      "kitty": "󰅬",
+      "spotify": "󰓇",
       "slack": "󰒱",
       "edge": "󰇩",
       "nautilus": "󰪶",
       "dolphin": "󰪶",
-      "loupe": "",
+      "loupe": "󰋩",
       "org.gnome.TextEditor": "󰷈",
-      "org.gnome.Calendar": "",
+      "org.gnome.Calendar": "󰃭",
       "class<msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default>": "󰊻",
       "class<msedge-_faolnafnngnfdaknnbpnkhgohbobgegn-Default>": "󰴢",
       "teams-for-linux": "󰊻",
       "outlook-for-linux": "󰴢",
       "Prospect": "󰴢",
-      "org.gnome.Calculator": "󱖦"
+      "org.gnome.Calculator": "󰃬"
     }
     // "persistent-workspaces": {
     //   "*": [
@@ -148,15 +148,15 @@
     // }
   },
   "hyprland/language": {
-    "format": " {}",
+    "format": "󰌌 {}",
     "format-no": "no",
     "format-en": "us"
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": "󰈈",
+      "deactivated": "󰈉"
     }
   },
   // "hyprland/window": {
@@ -177,8 +177,8 @@
   },
   "clock": {
     "timezone": "Europe/Oslo",
-    "format": "  {:%H:%M}",
-    "format-alt": " {:%A %d. %b}",
+    "format": "󰥔 {:%H:%M}",
+    "format-alt": "󰃭 {:%A %d. %b}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
@@ -197,23 +197,22 @@
   "power-profiles-daemon": {
     // "icon-size": 20,
     "format-icons": {
-      "power-saver": "",
-      "balanced": "",
-      "performance": ""
+      "power-saver": "󰌪",
+      "balanced": "󰗑",
+      "performance": "󱐋"
     }
   },
   "group/batt": {
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 500,
-      // "children-class": "launcher,",
       "transition-left-to-right": false,
       "click-to-reveal": true
     },
     "modules": [
+      "power-profiles-daemon",
       "battery",
-      "backlight",
-      "power-profiles-daemon"
+      "backlight"
     ]
   },
   "backlight": {
@@ -236,7 +235,7 @@
       "warning": 30,
       "critical": 15
     },
-    "interval": 60,
+    "interval": 30,
     "format": "{icon} ",
     "format-charging": "󱐋 {icon} ",
     "format-plugged": "󱐋 {icon} ",
@@ -263,11 +262,11 @@
     "tooltip-format": "{capacity}%"
   },
   "pulseaudio": {
-    "format": "{icon} {volume}% {format_source}",
-    "format-bluetooth": "{icon}  {volume}% | {format_source}",
-    "format-bluetooth-muted": "{icon}  󰝟 | {format_source}",
-    "format-muted": "󰖁{volume}% | {format_source}",
-    "format-source": "",
+    "format": "{icon} {volume}% | {format_source}",
+    "format-bluetooth": "{icon} 󰂯 {volume}% | {format_source}",
+    "format-bluetooth-muted": "󰖁 󰂯 {volume}% | {format_source}",
+    "format-muted": "󰖁 {volume}% | {format_source}",
+    "format-source": "󰍬",
     "format-source-muted": "󰍭",
     "tooltip-format": "{icon} {desc} at {volume}%",
     "scroll-step": 5,
@@ -278,34 +277,15 @@
       // "phone": "",
       // "portable": "",
       // "car": "",
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
+      "default": [ "󰕿", "󰖀", "󰕾" ]
     },
     "on-click": "pulsecontrol"
   },
   "custom/powerbutton": {
-    "format": "",
+    "format": "󰐥",
     "tooltip-format": "Power",
     "on-click": "wlogout -b 2"
   },
-  // "custom/weather": {
-  //   "exec": "wttrbar --nerd --date-format %d/%m --location Oslo --custom-indicator '{ICON}  {FeelsLikeC}/{temp_C}°C'",
-  //   // "exec": "curl -X GET \"https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=59.9078&lon=10.7965\" -H \"User-Agent: YourAppName/1.0 (your.email@example.com)\"| jq --unbuffered --compact-output",
-  //   "return-type": "json",
-  //   "format": "{}°",
-  //   "tooltip": true,
-  //   "interval": 600
-  // },
-  // "custom/weather": {
-  //   "exec": "python ~/.config/waybar/scripts/weather.py",
-  //   "restart-interval": 300,
-  //   "return-type": "json",
-  //   "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/$(location_id)"
-  //   // "format-alt": "{alt}",
-  // },
   "custom/weather": {
     "exec": "~/.config/waybar/scripts/yr.sh",
     "interval": 300,
@@ -316,13 +296,13 @@
     "format": "{}  {icon}",
     "format-icons": {
       "notification": "󱅫",
-      "none": "",
+      "none": "󰂜",
       "dnd-notification": "󰂛",
       "dnd-none": "󰂛",
-      "inhibited-notification": "",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "",
-      "dnd-inhibited-none": ""
+      "inhibited-notification": "󰂜",
+      "inhibited-none": "󰂜",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰂛"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
