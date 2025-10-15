@@ -1,8 +1,8 @@
+---
 - defaults:
     link:
       relink: true
       create: true
-
 - link:
     ~/.config/Kvantum/kvantum.kvconfig: config/Kvantum/kvantum.kvconfig
     ~/.config/Kvantum/pywal/pywal.kvconfig:
@@ -22,6 +22,10 @@
       create: true
       glob: true
       path: config/btop/*
+    ~/.config/gtklock:
+      create: true
+      glob: true
+      path: config/gtklock/*
     ~/.config/wlogout:
       create: true
       glob: true
