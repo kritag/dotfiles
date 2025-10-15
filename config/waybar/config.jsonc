@@ -284,7 +284,15 @@
   "custom/powerbutton": {
     "format": "󰐥",
     "tooltip-format": "Power",
-    "on-click": "wlogout -b 2"
+    "on-click": "wlogout -b 2",
+    "menu": "on-click-right",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+    }
   },
   "custom/weather": {
     "exec": "~/.config/waybar/scripts/yr.sh",
