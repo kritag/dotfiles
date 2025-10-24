@@ -1,3 +1,5 @@
+---
+#
 - defaults:
     link:
       relink: true
@@ -6,11 +8,7 @@
 # - create:
 #     - "~/.local/share/nvim/site/autoload"
 #     - "~/.config/bat/themes"
-
-- clean:
-    - "~"
-    - "~/.config"
-
+- clean: ['~', ~/.config]
 - link:
     ~/.vimrc: config/vimrc
     ~/.zshrc: zsh/zshrc
