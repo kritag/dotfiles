@@ -18,7 +18,7 @@ for output in "${monitor_outputs[@]}"; do
   # Check if the cache file exists for the current monitor output
   if [ -f "$cache_file" ]; then
     # Get the wallpaper path from the cache file
-    wallpaper_path=$(swww query | \grep -oE '/.*\.(jpg|jpeg|png|gif|webp)')
+    read -r wallpaper_path < <(swww query | grep -oE '/.*\.(jpg|jpeg|png|gif|webp)' | head -n 1)
 
     # Copy the wallpaper to the location Rofi can access
     if ln -sf "$wallpaper_path" "$HOME/.config/rofi/.current_wallpaper"; then
