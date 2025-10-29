@@ -1,44 +1,53 @@
 local function getLspName()
   local bufnr = vim.api.nvim_get_current_buf()
-  local buf_clients = vim.lsp.get_clients({ bufnr = bufnr })
-  local buf_ft = vim.bo.filetype
-
-  if not buf_clients or vim.tbl_isempty(buf_clients) then
-    return "  No servers"
-  end
+  local buf_ft = vim.bo[bufnr].filetype
 
   local buf_client_names = {}
-  for _, client in pairs(buf_clients) do
-    if client.name ~= "null-ls" then
-      table.insert(buf_client_names, client.name)
+
+  -- 1️⃣ LSP clients
+  local buf_clients = vim.lsp.get_clients({ bufnr = bufnr })
+  if buf_clients and not vim.tbl_isempty(buf_clients) then
+    for _, client in pairs(buf_clients) do
+      if client.name ~= "null-ls" then
+        table.insert(buf_client_names, client.name)
+      end
     end
   end
 
-  -- lint integration
+  -- 2️⃣ nvim-lint linters (only if condition passes)
   local ok_lint, lint = pcall(require, "lint")
   if ok_lint then
-    for ft_k, ft_v in pairs(lint.linters_by_ft) do
-      if buf_ft == ft_k then
-        if type(ft_v) == "table" then
-          vim.list_extend(buf_client_names, ft_v)
-        else
-          table.insert(buf_client_names, ft_v)
+    local ft_linters = lint.linters_by_ft[buf_ft]
+    if ft_linters then
+      for _, linter_name in ipairs(ft_linters) do
+        local linter = lint.linters[linter_name]
+        if linter then
+          local run = true
+          if type(linter.condition) == "function" then
+            local ok, result = pcall(linter.condition, { filename = vim.api.nvim_buf_get_name(bufnr) })
+            run = ok and result
+          end
+          if run then
+            table.insert(buf_client_names, linter_name)
+          end
         end
       end
     end
   end
 
-  -- conform integration
+  -- 3️⃣ conform.nvim formatters
   local ok_conf, conform = pcall(require, "conform")
   if ok_conf then
     local entry = conform.formatters_by_ft[buf_ft]
     local formatters = type(entry) == "function" and entry(bufnr) or entry
     if type(formatters) == "table" then
       vim.list_extend(buf_client_names, formatters)
+    elseif type(formatters) == "string" then
+      table.insert(buf_client_names, formatters)
     end
   end
 
-  -- dedupe
+  -- 4️⃣ Deduplicate
   local hash, unique = {}, {}
   for _, v in ipairs(buf_client_names) do
     if not hash[v] then
@@ -47,7 +56,8 @@ local function getLspName()
     end
   end
 
-  return table.concat(unique, ", ")
+  -- 5️⃣ Return comma-separated string
+  return #unique > 0 and table.concat(unique, ", ") or "  No servers"
 end
 
 local lsp = {

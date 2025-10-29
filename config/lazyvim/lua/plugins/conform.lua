@@ -7,7 +7,7 @@ return {
           lua = { "stylua" },
           sh = { "shfmt" },
           css = { "prettierd" },
-          yaml = { "yamlfix" },
+          yaml = { "yamlfmt" },
           -- ["markdown"] = { "markdownlint-cli2" },
           -- ["markdown.mdx"] = { "markdownlint-cli2" },
           ["markdown"] = { "prettier", "markdownlint-cli2", "markdown-toc" },

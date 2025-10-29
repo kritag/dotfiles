@@ -5,12 +5,15 @@ return {
       ensure_installed = {
         "css-lsp",
         "eslint_d",
+        "gh-actions-language-server",
         "hyprls",
+        "kube-linter",
         "prettier",
         "prettierd",
         "pylint",
         "shellcheck",
-        "yamlfix",
+        "yamlfmt",
+        "yamllint",
       },
       ui = {
         border = "rounded",

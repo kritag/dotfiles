@@ -13,23 +13,45 @@ return {
       python = { "pylint" },
       bash = { "shellcheck" },
       markdown = { "markdownlint-cli2" },
-      -- yaml = { "yamllint" },
+      yaml = { "yamllint", "kube-linter" },
       -- lua = { "selene" },
     },
-    -- LazyVim extension to easily override linter options
-    -- or add custom linters.
-    ---@type table<string,table>
     linters = {
-      -- -- Example of using selene only when a selene.toml file is present
-      -- selene = {
-      --   -- `condition` is another LazyVim extension that allows you to
-      --   -- dynamically enable/disable linters based on the context.
-      --   condition = function(ctx)
-      --     return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
-      --   end,
-      -- },
       yamllint = {
-        args = { "-d", "relaxed" },
+        args = { "-d", "relaxed", "--format", "parsable", "-" },
+      },
+      ["kube-linter"] = {
+        cmd = "kube-linter",
+        stdin = false,
+        append_fname = true,
+        args = { "lint" },
+        ignore_exitcode = true,
+        parser = function(output)
+          local diagnostics = {}
+          for line in vim.gsplit(output, "\n", true) do
+            local filename, message = line:match("^([^:]+): (.+)")
+            if message then
+              table.insert(diagnostics, {
+                lnum = 0,
+                col = 0,
+                severity = vim.diagnostic.severity.WARN,
+                source = "kube-linter",
+                message = message,
+              })
+            end
+          end
+          return diagnostics
+        end,
+        condition = function(ctx)
+          -- Only enable kube-linter if the file *appears* to be a K8s manifest
+          local lines = vim.api.nvim_buf_get_lines(0, 0, 20, false)
+          for _, l in ipairs(lines) do
+            if l:match("^%s*apiVersion:") or l:match("^%s*kind:") then
+              return true
+            end
+          end
+          return false
+        end,
       },
     },
   },
@@ -82,12 +104,34 @@ return {
       -- Filter out linters that don't exist or don't match the condition.
       local ctx = { filename = vim.api.nvim_buf_get_name(0) }
       ctx.dirname = vim.fn.fnamemodify(ctx.filename, ":h")
+      -- names = vim.tbl_filter(function(name)
+      --   local linter = lint.linters[name]
+      --   if not linter then
+      --     LazyVim.warn("Linter not found: " .. name, { title = "nvim-lint" })
+      --   end
+      --   return linter and not (type(linter) == "table" and linter.condition and not linter.condition(ctx))
+      -- end, names)
+
       names = vim.tbl_filter(function(name)
         local linter = lint.linters[name]
         if not linter then
           LazyVim.warn("Linter not found: " .. name, { title = "nvim-lint" })
+          return false
         end
-        return linter and not (type(linter) == "table" and linter.condition and not linter.condition(ctx))
+        if type(linter) == "table" and type(linter.condition) == "function" then
+          local ok, result = pcall(linter.condition, ctx)
+          if not ok then
+            LazyVim.warn("Error in condition for " .. name .. ": " .. result, { title = "nvim-lint" })
+            return false
+          end
+          if not result then
+            -- vim.schedule(function()
+            --   vim.notify("Skipping " .. name .. " (condition not met)", vim.log.levels.TRACE)
+            -- end)
+            return false
+          end
+        end
+        return true
       end, names)
 
       -- Run linters.

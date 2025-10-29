@@ -63,6 +63,16 @@ return {
               },
             },
           },
+          -- New on_attach to skip GH Actions YAML files
+          on_attach = function(client, bufnr)
+            local filepath = vim.api.nvim_buf_get_name(bufnr)
+            if filepath:match(".github/workflows/.*%.yml$") or filepath:match(".github/workflows/.*%.yaml$") then
+              client.stop()
+              return
+            end
+
+            -- Optional: add your own buffer-local keymaps here if needed
+          end,
         },
       },
     },
