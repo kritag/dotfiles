@@ -13,12 +13,40 @@ return {
       python = { "pylint" },
       bash = { "shellcheck" },
       markdown = { "markdownlint-cli2" },
-      yaml = { "yamllint", "kube-linter" },
+      yaml = { "yamllint", "kube-linter", "actionlint" },
       -- lua = { "selene" },
     },
     linters = {
       yamllint = {
         args = { "-d", "relaxed", "--format", "parsable", "-" },
+      },
+      actionlint = {
+        cmd = "actionlint",
+        stdin = true,
+        ignore_exitcode = true,
+        parser = function(output)
+          local diagnostics = {}
+          for line in output:gmatch("[^\r\n]+") do
+            local file, lnum, col, msg = line:match("^([^:]+):(%d+):(%d+): (.+)$")
+            if file and lnum and col and msg then
+              table.insert(diagnostics, {
+                lnum = tonumber(lnum) - 1,
+                col = tonumber(col) - 1,
+                severity = vim.diagnostic.severity.ERROR,
+                source = "actionlint",
+                message = msg,
+              })
+            end
+          end
+          return diagnostics
+        end,
+        condition = function(ctx)
+          -- Only run actionlint for files inside GitHub workflows
+          if ctx.filename:match("/%.github/workflows/") then
+            return true
+          end
+          return false
+        end,
       },
       ["kube-linter"] = {
         cmd = "kube-linter",
@@ -34,7 +62,7 @@ return {
               table.insert(diagnostics, {
                 lnum = 0,
                 col = 0,
-                severity = vim.diagnostic.severity.WARN,
+                -- severity = vim.diagnostic.severity.WARN,
                 source = "kube-linter",
                 message = message,
               })
@@ -71,6 +99,15 @@ return {
       end
     end
     lint.linters_by_ft = opts.linters_by_ft
+
+    -- Disable yamllint and kube-linter on GitHub workflow files
+    lint.linters.yamllint.condition = function(ctx)
+      return not ctx.filename:match("/%.github/workflows/")
+    end
+
+    lint.linters["kube-linter"].condition = function(ctx)
+      return not ctx.filename:match("/%.github/workflows/")
+    end
 
     function M.debounce(ms, fn)
       local timer = vim.uv.new_timer()

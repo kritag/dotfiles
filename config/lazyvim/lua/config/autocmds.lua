@@ -149,3 +149,12 @@ end
 vim.keymap.set("n", "<leader>mt", function()
   update_markdown_toc("## Contents", "### Table of contents")
 end, { desc = "[P]Insert/update Markdown TOC" })
+
+vim.api.nvim_create_user_command("LintDiagnostics", function()
+  local bufnr = 0
+  for _, client in ipairs(vim.lsp.get_clients({ bufnr = bufnr })) do
+    for _, d in ipairs(vim.diagnostic.get(bufnr, { namespace = vim.lsp.diagnostic.get_namespace(client.id) })) do
+      print(client.name, d.message)
+    end
+  end
+end, {})
