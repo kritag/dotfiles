@@ -1,5 +1,5 @@
 #!/bin/env bash
-/usr/bin/firefox %u &
+/usr/bin/firefox &
 while ! hyprctl clients | grep -q "Firefox"; do
   sleep 0.2
 done
