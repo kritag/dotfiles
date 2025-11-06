@@ -7,6 +7,14 @@ return {
           lua = { "stylua" },
           sh = { "shfmt" },
           css = { "prettierd" },
+          python = {
+            -- To fix auto-fixable lint errors.
+            "ruff_fix",
+            -- To run the Ruff formatter.
+            "ruff_format",
+            -- To organize the imports.
+            "ruff_organize_imports",
+          },
           yaml = { "yamlfmt" },
           -- ["markdown"] = { "markdownlint-cli2" },
           -- ["markdown.mdx"] = { "markdownlint-cli2" },
