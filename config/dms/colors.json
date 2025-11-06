@@ -1,0 +1,20 @@
+{
+    "name": "Tokyo night dark",
+    "primary": "#7aa2f7",
+    "primaryText": "#16161e",
+    "primaryContainer": "#7dcfff",
+    "secondary": "#bb9af7",
+    "surface": "#1a1b26",
+    "surfaceText": "#73daca",
+    "surfaceVariant": "#2f3549",
+    "surfaceVariantText": "#cbccd1",
+    "surfaceTint": "#7aa2f7",
+    "background": "#16161e",
+    "backgroundText": "#d5d6db",
+    "outline": "#787c99",
+    "surfaceContainer": "#2f3549",
+    "surfaceContainerHigh": "#444b6a",
+    "error": "#f7768e",
+    "warning": "#ff9e64",
+    "info": "#7dcfff"
+}

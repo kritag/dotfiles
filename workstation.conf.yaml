@@ -1,4 +1,3 @@
----
 - defaults:
     link:
       relink: true
@@ -61,10 +60,15 @@
       create: true
       glob: true
       path: config/waybar/*
+    ~/.config/DankMaterialShell/:
+      create: true
+      glob: true
+      path: config/dms/*
     ~/.config/flavours/:
       create: true
       glob: true
       path: config/flavours/*
+
 # - sudo:
 #     - link:
 #         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
