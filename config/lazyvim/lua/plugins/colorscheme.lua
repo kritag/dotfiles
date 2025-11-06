@@ -104,7 +104,7 @@ return {
     name = "tokyonight",
     opts = {
       transparent = true,
-      style = "night",
+      style = "moon",
       lualine_bold = true,
       on_colors = function(colors)
         colors.bg_statusline = "None"
@@ -149,7 +149,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "tokyonight",
     },
   },
 }
