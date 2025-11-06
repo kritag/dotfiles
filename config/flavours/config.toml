@@ -63,6 +63,11 @@ file = "~/.theme.gitconfig"
 template = "delta"
 rewrite = true
 
+[[items]]
+file = "~/.config/DankMaterialShell/colors.json"
+template = "dms"
+rewrite = true
+
 # [[items]]
 # file = "~/.config/flavours/tty"
 # template = "tty"
