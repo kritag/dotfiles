@@ -115,7 +115,7 @@ case "$1" in
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1tokyonight\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
   sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Tokyonight-Dark-Compact"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/tokyo-night-moon.ini
-  kitten themes Tokyo Night
+  kitten themes Tokyo Night Moon
   dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
