@@ -1,24 +1,24 @@
-# -Rosé Pine
-# Scheme author: Emilia Dunfelt &lt;edun@dunfelt.se&gt;
+# -Tokyo night dark
+# Scheme author: Michaël Ball
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
 export FZF_DEFAULT_OPTS=" \
   --history=$HOME/.fzfhistory \
   --layout=reverse \
-  --color=fg:#e0def4,hl:#f6c177\
-  --color=fg+:#e0def4,hl+:#9ccfd8\
-  --color=info:#524f67,border:#c4a7e7,prompt:#31748f\
-  --color=pointer:#ebbcba,marker:#31748f,spinner:#f6c177,header:#eb6f92 \
+  --color=fg:#c0caf5,hl:#ff9e64\
+  --color=fg+:#c0caf5,hl+:#7dcfff\
+  --color=info:#73daca,border:#7aa2f7,prompt:#9ece6a\
+  --color=pointer:#e0af68,marker:#9ece6a,spinner:#bb9af7,header:#f7768e \
 --pointer=❯ \
 --multi"
 
 _FZF_TAB_FZF_FLAGS=(
   '--height=80%'
   '--layout=reverse'
-  '--color=fg:#e0def4,hl:#f6c177'
-  '--color=fg+:#e0def4,hl+:#9ccfd8'
-  '--color=info:#524f67,border:#c4a7e7,prompt:#31748f'
-  '--color=pointer:#ebbcba,marker:#31748f,spinner:#f6c177,header:#eb6f92'
+  '--color=fg:#c0caf5,hl:#ff9e64'
+  '--color=fg+:#c0caf5,hl+:#7dcfff'
+  '--color=info:#73daca,border:#7aa2f7,prompt:#9ece6a'
+  '--color=pointer:#e0af68,marker:#9ece6a,spinner:#bb9af7,header:#f7768e'
   '--pointer=❯'
   '--multi'
 )
