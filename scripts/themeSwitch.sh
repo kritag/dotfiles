@@ -113,15 +113,15 @@ case "$1" in
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="tokyonight-moon"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1tokyonight-moon/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1tokyonight\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Tokyonight-Dark-Compact"/' ~/.config/hypr/env.conf
+  sed -i --follow-symlinks 's/^\($THEME\s*=\s*\).*$/\1"Tokyonight-Dark-Compact-Moon"/' ~/.config/hypr/env.conf
   fast-theme ~/.config/fsh/tokyo-night-moon.ini
   kitten themes Tokyo Night Moon
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact'"
+  dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact-Moon'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Tokyonight-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  ln -sf ~/.themes/Tokyonight-Dark-Compact-Moon/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ;;
 
 *)
