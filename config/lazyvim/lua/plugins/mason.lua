@@ -13,6 +13,8 @@ return {
         "prettierd",
         "pylint",
         "shellcheck",
+        "vale",
+        "vale-ls",
         "yamlfmt",
         "yamllint",
       },
