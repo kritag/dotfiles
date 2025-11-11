@@ -1,8 +1,9 @@
----
 - yay:
+    - bibata-cursor-theme-bin
     - btop-gpu-git
     - cava
-    - bibata-cursor-theme-bin
+    - dgop-bin
+    - dms-shell-bin
     - downgrade
     - gpu-screen-recorder
     - grimblast-git
@@ -10,8 +11,8 @@
     - oh-my-posh-bin
     - papirus-folders
     - protonup-qt
-    - python-pywal16
     - pulsecontrol-git
+    - python-pywal16
     - spicetify-cli
     - syshud
     - waybar-cava
