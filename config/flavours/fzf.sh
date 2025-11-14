@@ -1,4 +1,4 @@
-# -Tokyo night dark
+# -Tokyo Night night
 # Scheme author: Michaël Ball
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
@@ -22,3 +22,4 @@ _FZF_TAB_FZF_FLAGS=(
   '--pointer=❯'
   '--multi'
 )
+
