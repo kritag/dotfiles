@@ -9,6 +9,7 @@ return {
         "gh-actions-language-server",
         "hyprls",
         "kube-linter",
+        "mdformat",
         "prettier",
         "prettierd",
         "pylint",
