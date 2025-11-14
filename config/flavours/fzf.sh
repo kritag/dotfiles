@@ -22,4 +22,3 @@ _FZF_TAB_FZF_FLAGS=(
   '--pointer=❯'
   '--multi'
 )
-
