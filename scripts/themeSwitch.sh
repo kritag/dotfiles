@@ -108,7 +108,7 @@ case "$1" in
   ;;
 
 "tokyo-night")
-  flavours apply tokyo-night-moon
+  flavours apply tokyo-night-night
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1tokyonight-moon/' ~/.zshenv.zsh
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="tokyonight-moon"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1tokyonight-moon/' ~/.theme.gitconfig
