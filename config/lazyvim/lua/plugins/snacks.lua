@@ -19,6 +19,21 @@ return {
         grep = { hidden = true },
         explorer = { hidden = true },
       },
+      actions = {
+        sidekick_send = function(...)
+          return require("sidekick.cli.picker.snacks").send(...)
+        end,
+      },
+      win = {
+        input = {
+          keys = {
+            ["<a-a>"] = {
+              "sidekick_send",
+              mode = { "n", "i" },
+            },
+          },
+        },
+      },
     },
     -- Folke pointed me to the snacks docs
     -- https://github.com/LazyVim/LazyVim/discussions/4251#discussioncomment-11198069
