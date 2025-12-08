@@ -6,6 +6,7 @@ return {
         formatters_by_ft = {
           lua = { "stylua" },
           sh = { "shfmt" },
+          kdl = { "kdlfmt" },
           css = { "prettierd" },
           python = {
             -- To fix auto-fixable lint errors.

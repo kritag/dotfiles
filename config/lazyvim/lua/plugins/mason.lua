@@ -8,6 +8,7 @@ return {
         "eslint_d",
         "gh-actions-language-server",
         "hyprls",
+        "kdlfmt",
         "kube-linter",
         "mdformat",
         "prettier",
