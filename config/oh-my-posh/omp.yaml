@@ -32,6 +32,9 @@ blocks:
         background: green
         type: git
         style: powerline
+        options:
+          fetch_status: true
+          fetch_upstream_icon: true
         foreground_templates:
           - '{{ if or (.Working.Changed) (.Staging.Changed) }}black{{ end }}'
           - '{{ if and (gt .Ahead 0) (gt .Behind 0) }}black{{ end }}'
