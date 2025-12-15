@@ -1,9 +1,7 @@
----
 - defaults:
     link:
       relink: true
       create: true
-
 # - create:
 #     - "~/.local/share/nvim/site/autoload"
 #     - "~/.config/bat/themes"
@@ -26,6 +24,7 @@
     ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
     ~/.theme.gitconfig: config/delta/theme.gitconfig
     ~/.markdownlint.yaml: config/markdownlint.yaml
+    ~/.config/uwsm/env: config/hypr/uwsm-env
     ~/.config/vivid:
       path: config/vivid/*
       create: true
@@ -58,7 +57,6 @@
       create: true
       path: config/lazyvim
       glob: true
-
 # - sudo:
 #     - shell:
 #         - [
