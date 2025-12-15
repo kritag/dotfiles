@@ -2,15 +2,16 @@
     - argocd
     - bibata-cursor-theme-bin
     - cava
+    - dms-shell-bin
     - downgrade
     - flux-bin
     - grimblast-git
-    - hyprpicker
     - k9s-sbanka-bin
     - krew
     - kubecolor
     - kubectl-view-secret-bin
     - microsoft-edge-stable-bin
+    - oh-my-posh-bin
     - openshift-client-bin
     - papirus-folders
     - pulsecontrol-git
@@ -18,8 +19,6 @@
     - python-pywal16
     - spicetify-cli
     - slack-desktop
-    - syshud
-    - waybar-cava
 - omnipkg:
     - install:
         - archlinux-contrib
@@ -46,9 +45,7 @@
         - go-yq
         - gtklock
         - helm
-        - hypridle
         - hyprland
-        - hyprlock
         - jq
         - keepassxc
         - keybase-gui
@@ -90,7 +87,6 @@
         - sshpass
         - sshuttle
         - stern
-        - swww
         - systemd-resolvconf
         - tealdeer
         - timeshift
