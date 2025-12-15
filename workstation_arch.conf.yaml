@@ -1,4 +1,3 @@
----
 - yay:
     - argocd
     - bibata-cursor-theme-bin
@@ -60,6 +59,7 @@
         - lazygit
         - less
         - lesspipe
+        - libnewt
         - libreoffice-fresh
         - make
         - man-db
@@ -97,6 +97,7 @@
         - timeshift-autosnap
         - tree-sitter-cli
         - ttf-nerd-fonts-symbols
+        - uwsm
         - vivid
         - vlc
         - wl-clipboard
@@ -105,8 +106,7 @@
         - zoxide
         - zsh
 - shell:
-    - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search,
-      Set Nautilus as default file manager]
+    - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager]
     # - [
     #     papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
     #     setting Catpuccin Mocha icons,
