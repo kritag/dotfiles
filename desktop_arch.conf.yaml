@@ -47,6 +47,7 @@
         - less
         - lesspipe
         - lib32-gamemode
+        - libnewt
         - libreoffice-fresh
         - lutris
         - make
@@ -81,6 +82,7 @@
         - tree-sitter-cli
         - ttf-nerd-fonts-symbols
         - unzip
+        - uwsm
         - vivid
         - vlc
         - wl-clipboard
