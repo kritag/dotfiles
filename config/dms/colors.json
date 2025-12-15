@@ -1,5 +1,5 @@
 {
-    "name": "Tokyo night dark",
+    "name": "Tokyo Night night",
     "primary": "#7aa2f7",
     "primaryText": "#16161e",
     "primaryContainer": "#7dcfff",
@@ -16,5 +16,6 @@
     "surfaceContainerHigh": "#444b6a",
     "error": "#f7768e",
     "warning": "#ff9e64",
-    "info": "#7dcfff"
+    "info": "#7dcfff",
+    "matugen_type": "tonal-spot"
 }
