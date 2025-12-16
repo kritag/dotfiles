@@ -37,10 +37,11 @@ return {
             },
           },
           mdformat = {
+            command = "mdformat",
             prepend_args = {
               "--wrap",
               "80",
-              "--align-semantic-breaks-in-list",
+              "--align-semantic-breaks-in-lists",
             },
           },
           injected = { options = { ignore_errors = true } },

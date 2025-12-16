@@ -10,7 +10,7 @@ return {
         "hyprls",
         "kdlfmt",
         "kube-linter",
-        "mdformat",
+        -- "mdformat",
         "prettier",
         "prettierd",
         "pylint",
