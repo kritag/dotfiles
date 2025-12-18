@@ -17,6 +17,7 @@
     - pulsecontrol-git
     - prospect-mail-bin
     - python-pywal16
+    - quickshell-git
     - spicetify-cli
     - slack-desktop
 - omnipkg:
@@ -29,6 +30,7 @@
         - btop
         - chafa
         - cpio
+        - dmidecode
         - docker
         - docker-compose
         - duf
