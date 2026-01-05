@@ -10,6 +10,7 @@
     - krew
     - kubecolor
     - kubectl-view-secret-bin
+    - mdatp-bin
     - microsoft-edge-stable-bin
     - oh-my-posh-bin
     - openshift-client-bin
