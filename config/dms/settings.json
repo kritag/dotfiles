@@ -1,10 +1,10 @@
 {
   "currentThemeName": "custom",
-  "customThemeFile": "",
+  "customThemeFile": "/home/e215142/.config/DankMaterialShell/colors.json",
   "matugenScheme": "scheme-content",
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
-  "popupTransparency": 1,
+  "popupTransparency": 0.95,
   "dockTransparency": 1,
   "widgetBackgroundColor": "s",
   "widgetColorMode": "default",
