@@ -37,7 +37,6 @@
         - eza
         - fd
         - ffmpeg
-        - freerdp
         - fzf
         - fwupd
         - git
@@ -45,7 +44,6 @@
         - github-cli
         - glow
         - go-yq
-        - gtklock
         - helm
         - hyprland
         - jq
@@ -64,6 +62,7 @@
         - man-db
         - mangohud
         - minikube
+        - mokutil
         - neovim
         - networkmanager
         - noto-fonts-emoji
@@ -78,9 +77,9 @@
         - qbittorrent
         - qt5ct
         - qt6ct
-        - remmina
         - ripgrep
         - seahorse
+        - sbctl
         - solaar
         - sops
         - spotify-launcher
