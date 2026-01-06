@@ -25,6 +25,7 @@
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/hypr/env.conf: config/hypr-workstation/env-workstation.conf
+    ~/.face: ./config/face
     ~/.config/wlogout:
       create: true
       glob: true
@@ -60,10 +61,6 @@
       create: true
       glob: true
       path: config/waybar/*
-    ~/.config/DankMaterialShell/:
-      create: true
-      glob: true
-      path: config/dms/*
     ~/.config/flavours/:
       create: true
       glob: true
