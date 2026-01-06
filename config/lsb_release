@@ -1,5 +1,8 @@
-
-DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=20.04
-DISTRIB_CODENAME=focal
-DISTRIB_DESCRIPTION="Ubuntu 20.04.6 LTS"
+#!/bin/bash
+if [[ "$1" == "-is" ]]; then
+  echo "Ubuntu"
+elif [[ "$1" == "-rs" ]]; then
+  echo "22.04"
+else
+  /usr/bin/lsb_release.real "$@"
+fi

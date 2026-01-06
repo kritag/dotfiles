@@ -1,4 +1,3 @@
----
 - defaults:
     link:
       relink: true
@@ -18,6 +17,7 @@
     ~/.config/kitty/font-nerd-symbols.conf: config/kitty/font-nerd-symbols.conf
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.config/hypr/env.conf: config/hypr-desktop/env-desktop.conf
+    ~/.face: ./config/face
     ~/.config/btop:
       create: true
       glob: true
@@ -61,6 +61,7 @@
       create: true
       glob: true
       path: config/flavours/*
+
 # - sudo:
 #     - link:
 #         #/usr/share/gnome-text-editor/styles/catppuccin-mocha.xml: catppuccin_gedit/themes/catppuccin-mocha.xml
@@ -80,7 +81,3 @@
 #         scripts/fix_cursor_theme.sh,
 #         Fixes the cursor theme for non-GTK applications,
 #       ]
-
-#- [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
-#- [scripts/fix_cursor_theme.sh, Fixes the cursor theme for non-GTK applications]
-#- [dconf load / < config/dump.dconf, Load Gnome settings]

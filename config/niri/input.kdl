@@ -1,0 +1,22 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,no"
+            variant "altgr-intl"
+            options "caps:escape_shifted_capslock"
+        }
+        repeat-delay 200
+        repeat-rate 30
+    }
+    mouse {
+        accel-profile "flat"
+        accel-speed 0.0
+    }
+    touchpad {
+        accel-profile "flat"
+        accel-speed 0.0
+        tap
+    }
+    focus-follows-mouse
+}
+
