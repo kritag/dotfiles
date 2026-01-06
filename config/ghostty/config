@@ -1,0 +1,12 @@
+theme = nord
+font-family = "Iosevka Comfy Wide"
+font-family-bold ="Iosevka Comfy Wide, Bold"
+font-family-italic = "Iosevka Comfy Wide, Regular Italic"
+font-family-bold-italic="Iosevka Comfy Wide, Bold Italic"
+font-size = 12
+
+background-opacity = 0.9
+confirm-close-surface = false
+copy-on-select = clipboard
+window-decoration = false
+window-padding-y = 10,10

@@ -1,0 +1,77 @@
+// ~/.config/niri/config.kdl
+// Niri-compatible skeleton, converted from Hyprland config
+// Unsupported sections are commented out
+include "input.kdl"
+include "output.kdl"
+include "window-rule.kdl"
+include "binds.kdl"
+include "layout.kdl"
+hotkey-overlay {
+    skip-at-startup
+}
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    GDK_BACKEND "wayland"
+    HYPRCURSOR_SIZE "16"
+    HYPRCURSOR_THEME "Bibata-Modern-Classic"
+    MOZ_ENABLE_WAYLAND "1"
+    QT_AUTO_SCREEN_SCALE_FACTOR "1"
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "gtk3"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    XCURSOR_SIZE "16"
+    XCURSOR_THEME "Bibata-Modern-Classic"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+}
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 16
+}
+spawn-sh-at-startup "systemctl --user import-environment --all"
+spawn-sh-at-startup "dbus-update-activation-environment --all"
+spawn-sh-at-startup "sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+spawn-sh-at-startup "dconf write /org/gnome/desktop/interface/gtk-theme \"'Tokyonight-Dark-Compact'\""
+spawn-sh-at-startup "dconf write /org/gnome/desktop/interface/document-font-name \"'Rubik 11'\""
+spawn-sh-at-startup "dconf write /org/gnome/desktop/interface/font-name \"'Rubik 11'\""
+spawn-sh-at-startup "dconf write /org/gnome/desktop/interface/monospace-font-name \"'Meslo LG S 10'\""
+spawn-sh-at-startup "solaar -w hide"
+spawn-sh-at-startup "run_keybase"
+spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store &"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store &"
+spawn-sh-at-startup "env KEYBASE_AUTOSTART=1 run_keybase &"
+spawn-sh-at-startup "gsettings set org.gnome.desktop.interface cursor-size 16 || true"
+spawn-sh-at-startup "kitty"
+spawn-sh-at-startup "firefox"
+spawn-sh-at-startup "slack"
+spawn-sh-at-startup "microsoft-edge-stable"
+spawn-sh-at-startup "teams-for-linux"
+spawn-sh-at-startup "outlook-for-linux"
+prefer-no-csd
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
+}
+// --------------------------- UNSUPPORTED / COMMENTED ---------------------------
+// colors {
+//     ... original colors ...
+// }
+// animations {
+//     ... original animations ...
+// }
+// window-rule { ... }
+// layerrule { ... }
+// misc { ... }
+// include "dms/binds.kdl"
+include "dms/alttab.kdl"
+include "dms/wpblur.kdl"
+

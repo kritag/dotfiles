@@ -1,0 +1,243 @@
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+    tiled-state true
+    draw-border-with-background false
+}
+window-rule {
+    match at-startup=true app-id="^kitty$"
+    open-on-workspace "1"
+}
+window-rule {
+    match at-startup=true app-id="^firefox$"
+    open-on-workspace "1"
+}
+window-rule {
+    match at-startup=true app-id="^slack$"
+    open-on-workspace "2"
+}
+window-rule {
+    match at-startup=true app-id="^microsoft-edge$"
+    open-on-workspace "2"
+}
+window-rule {
+    match at-startup=true app-id="^outlook-for-linux$"
+    open-on-workspace "3"
+}
+window-rule {
+    match at-startup=true app-id="^teams-for-linux$"
+    open-on-workspace "3"
+}
+window-rule {
+    match at-startup=true app-id="^spotify$"
+    open-on-workspace "4"
+}
+window-rule {
+    match app-id="^kitty-floating$"
+    open-floating true
+    default-column-width {
+        fixed 1024
+    }
+    default-window-height {
+        fixed 600
+    }
+}
+// xwaylandvideobridge
+window-rule {
+    match app-id="^xwaylandvideobridge$"
+    opacity 0.0
+    open-floating true
+}
+// PulseControl
+window-rule {
+    match app-id="^org\\.test\\.pulsecontrol$"
+    open-floating true
+    default-column-width {
+        fixed 1024
+    }
+    default-window-height {
+        fixed 600
+    }
+    default-floating-position x=50 y=50 relative-to="top-right"
+}
+// Blueman
+window-rule {
+    match app-id="^blueman-manager$"
+    open-floating true
+    default-column-width {
+        fixed 530
+    }
+    default-window-height {
+        fixed 230
+    }
+    default-floating-position x=50 y=50 relative-to="top-right"
+}
+// Spotify
+window-rule {
+    match app-id="^spotify$"
+    open-floating true
+    opacity 0.8
+    default-column-width {
+        fixed 1500
+    }
+    default-window-height {
+        fixed 1000
+    }
+}
+// GNOME Calculator
+window-rule {
+    match app-id="^org\\.gnome\\.Calculator$"
+    open-floating true
+    opacity 0.8
+    default-column-width {
+        fixed 360
+    }
+    default-window-height {
+        fixed 616
+    }
+}
+// Microsoft Edge PWA / Teams
+window-rule {
+    match app-id="Microsoft-edge" title="(PWA)|((Teams))"
+    open-maximized true
+    opacity 0.9
+}
+// Slack
+window-rule {
+    match app-id="^Slack$"
+    opacity 0.95
+}
+// Firefox PIP
+window-rule {
+    match app-id="firefox" title="^Picture-in-Picture$"
+    open-floating true
+    default-column-width {
+        fixed 480
+    }
+    default-window-height {
+        fixed 270
+    }
+}
+// Firefox extensions
+window-rule {
+    match app-id="firefox" title=".*Extension.*"
+    open-floating true
+}
+// Firefox
+window-rule {
+    match app-id="firefox"
+    opacity 0.9
+}
+// Microsoft Edge general
+window-rule {
+    match app-id="^microsoft-edge$"
+    opacity 0.9
+}
+// Teams variants
+window-rule {
+    match app-id="^msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default$"
+    opacity 0.9
+}
+window-rule {
+    match app-id="^teams-for-linux$"
+    opacity 0.9
+}
+// Outlook variants
+window-rule {
+    match app-id="^msedge-_faolnafnngnfdaknnbpnkhgohbobgegn-Default$"
+    opacity 0.9
+}
+window-rule {
+    match app-id="^outlook-for-linux$"
+    opacity 0.9
+}
+// Nautilus
+window-rule {
+    match app-id="^org\\.gnome\\.Nautilus$"
+    open-floating true
+    opacity 0.8
+}
+// Dolphin
+window-rule {
+    match app-id="^org\\.kde\\.dolphin$"
+    open-floating true
+    opacity 0.8
+}
+// Quickshell / DMS
+window-rule {
+    match app-id="^org\\.quickshell$"
+    open-floating true
+}
+// Steam
+window-rule {
+    match app-id="^steam$"
+    open-floating true
+    opacity 0.8
+    open-on-workspace "2"
+}
+// Discord (Legcord)
+window-rule {
+    match app-id="^legcord$"
+    open-floating true
+    opacity 0.8
+    open-on-workspace "3"
+}
+// Lutris
+window-rule {
+    match app-id="^net\\.lutris\\.Lutris$"
+    open-floating true
+    opacity 0.8
+    open-on-workspace "2"
+}
+// Rofi
+window-rule {
+    match app-id="^Rofi$"
+    open-floating true
+    opacity 0.8
+}
+// GNOME Text Editor
+window-rule {
+    match app-id="^org\\.gnome\\.TextEditor$"
+    open-floating true
+}
+// GNOME Loupe
+window-rule {
+    match app-id="^org\\.gnome\\.Loupe$"
+    open-floating true
+}
+// ShowMeTheKey
+window-rule {
+    match app-id="^one\\.alynx\\.showmethekey$|^showmethekey-gtk$"
+    open-floating true
+}
+// GNOME Font Viewer
+window-rule {
+    match app-id="^org\\.gnome\\.font-viewer$"
+    open-floating true
+}
+// GNOME Calendar
+window-rule {
+    match app-id="^org\\.gnome\\.Calendar$"
+    open-floating true
+    opacity 0.8
+}
+// Keybase
+window-rule {
+    match app-id="^Keybase$"
+    open-floating true
+}
+// Common file dialogs
+window-rule {
+    match title="^(Open|Choose Files|Save As|Confirm to replace files|File Operation Progress)$"
+    open-floating true
+}
+// System monitors
+window-rule {
+    match app-id="^(gnome-system-monitor|org\\.gnome\\.SystemMonitor|io\\.missioncenter\\.MissionCenter|xdg-desktop-portal-gtk)$"
+    default-column-width {
+        proportion 0.7
+    }
+    default-window-height {
+        proportion 0.7
+    }
+}
