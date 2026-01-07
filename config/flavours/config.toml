@@ -1,9 +1,9 @@
 shell = "bash -c '{}'"
 
-[[items]]
-file = "~/.config/waybar/colors.css"
-template = "waybar"
-rewrite = true
+# [[items]]
+# file = "~/.config/waybar/colors.css"
+# template = "waybar"
+# rewrite = true
 
 # [[items]]
 # file = "~/.config/kitty/colors.conf"
@@ -22,11 +22,11 @@ template = "fzf"
 subtemplate = "base24-default"
 rewrite = true
 
-[[items]]
-file = "~/.config/rofi/colors.rasi"
-template = "rofi"
-subtemplate = "colors"
-rewrite = true
+# [[items]]
+# file = "~/.config/rofi/colors.rasi"
+# template = "rofi"
+# subtemplate = "colors"
+# rewrite = true
 
 [[items]]
 file = "~/.config/cava/config"
