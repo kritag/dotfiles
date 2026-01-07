@@ -1,26 +1,26 @@
-- yay:
-    - argocd
-    - bibata-cursor-theme-bin
-    - cava
-    - dms-shell-bin
-    - downgrade
-    - flux-bin
-    - grimblast-git
-    - k9s-sbanka-bin
-    - krew
-    - kubecolor
-    - kubectl-view-secret-bin
-    - mdatp-bin
-    - microsoft-edge-stable-bin
-    - oh-my-posh-bin
-    - openshift-client-bin
-    - papirus-folders
-    - pulsecontrol-git
-    - prospect-mail-bin
-    - python-pywal16
-    - quickshell-git
-    - spicetify-cli
-    - slack-desktop
+#- yay:
+#    - argocd
+#    - bibata-cursor-theme-bin
+#    - cava
+#    - dms-shell-bin
+#    - downgrade
+#    - flux-bin
+#    - grimblast-git
+#    - k9s-sbanka-bin
+#    - krew
+#    - kubecolor
+#    - kubectl-view-secret-bin
+#    - mdatp-bin
+#    - microsoft-edge-stable-bin
+#    - oh-my-posh-bin
+#    - openshift-client-bin
+#    - papirus-folders
+#    - pulsecontrol-git
+#    - prospect-mail-bin
+#    - python-pywal16
+#    - quickshell-git
+#    - spicetify-cli
+#    - slack-desktop
 - omnipkg:
     - install:
         - archlinux-contrib
@@ -91,8 +91,6 @@
         - stern
         - systemd-resolvconf
         - tealdeer
-        - timeshift
-        - timeshift-autosnap
         - tree-sitter-cli
         - ttf-nerd-fonts-symbols
         - uwsm
@@ -103,8 +101,8 @@
         - zathura-pdf-mupdf
         - zoxide
         - zsh
-- shell:
-    - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager]
+#J- shell:
+ #   - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager]
     # - [
     #     papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
     #     setting Catpuccin Mocha icons,
