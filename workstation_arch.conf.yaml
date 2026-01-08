@@ -6,6 +6,7 @@
 #    - downgrade
 #    - flux-bin
 #    - grimblast-git
+#    - hyprland-preview-share-picker
 #    - k9s-sbanka-bin
 #    - krew
 #    - kubecolor
@@ -20,7 +21,7 @@
 #    - python-pywal16
 #    - quickshell-git
 #    - spicetify-cli
-#    - slack-desktop
+#    - slack-desktop-wayland
 - omnipkg:
     - install:
         - archlinux-contrib
@@ -81,6 +82,7 @@
         - ripgrep
         - seahorse
         - sbctl
+        - socat
         - solaar
         - sops
         - spotify-launcher
@@ -101,9 +103,9 @@
         - zathura-pdf-mupdf
         - zoxide
         - zsh
-#J- shell:
- #   - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager]
-    # - [
-    #     papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
-    #     setting Catpuccin Mocha icons,
-    #   ]
+        #J- shell:
+  #   - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager]
+  # - [
+  #     papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
+  #     setting Catpuccin Mocha icons,
+  #   ]
