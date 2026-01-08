@@ -102,6 +102,7 @@
         - systemd-resolvconf
         - tealdeer
         - tree-sitter-cli
+        - unzip
         - uwsm
         - vivid
         - wl-clipboard
