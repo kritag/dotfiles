@@ -13,6 +13,7 @@
 #    - kubectl-view-secret-bin
 #    - mdatp-bin
 #    - microsoft-edge-stable-bin
+#    - obsidian-bin
 #    - oh-my-posh-bin
 #    - openshift-client-bin
 #    - papirus-folders
@@ -60,6 +61,7 @@
         - lesspipe
         - libnewt
         - libreoffice-fresh
+        - libva-intel-driver
         - make
         - man-db
         - mangohud
@@ -68,6 +70,7 @@
         - neovim
         - networkmanager
         - noto-fonts-emoji
+        - obs-studio
         - otf-font-awesome
         - pacman-contrib
         - papirus-icon-theme
@@ -80,6 +83,7 @@
         - qbittorrent
         - qt5ct
         - qt6ct
+        - qt6-wayland
         - ripgrep
         - seahorse
         - sbctl
