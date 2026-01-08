@@ -5,14 +5,6 @@
       force: true
 - link:
     ~/.config/btop/btop.conf: config/btop/btop.conf
-    ~/.config/k9s/skins/colors-k9s.yaml: ~/.cache/wal/colors-k9s.yaml
-    ~/.config/Kvantum/kvantum.kvconfig: config/Kvantum/kvantum.kvconfig
-    ~/.config/Kvantum/pywal/pywal.kvconfig:
-      path: ~/.cache/wal/colors-kvantum.kvconfig
-      force: true
-    ~/.config/Kvantum/pywal/pywal.svg:
-      path: ~/.cache/wal/pywal.svg
-      force: true
     ~/.config/hypr/hypridle.conf: config/hypr-workstation/hypridle-workstation.conf
     ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-gdm.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
@@ -45,10 +37,10 @@
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
-    ~/.config/spicetify/Themes/Pywal/:
+    ~/.config/spicetify/Themes:
       glob: true
       force: true
-      path: config/spicetify/Themes/Pywal/*
+      path: config/spicetify/Themes/*
     ~/.config/hypr/:
       create: true
       glob: true
