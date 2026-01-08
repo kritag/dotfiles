@@ -16,7 +16,6 @@
     ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.config/oh-my-posh/omp.yaml: config/oh-my-posh/omp.yaml
-    ~/.zsh_plugins.txt: zsh/zsh_plugins.txt
     ~/.zshenv.zsh: zsh/zshenv.zsh
     ~/.ripgreprc: config/ripgreprc
     ~/.lessfilter: config/lessfilter
@@ -38,20 +37,11 @@
       create: true
       glob: true
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
-    ~/.config/lvim/config.lua: config/lvim/config.lua
     ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc
     ~/.config/lazygit/config.yml: config/lazygit/config.yml
     ~/.config/glow:
       create: true
       path: config/glow/*
-      glob: true
-    ~/.config/lvim/lua:
-      create: true
-      path: config/lvim/lua/*
-      glob: true
-    ~/.antidote:
-      create: true
-      path: zsh/antidote/*
       glob: true
     ~/.config/lazyvim:
       create: true
@@ -65,11 +55,8 @@
 #           ]
 #         - [scripts/add_sudoers.sh, Adding USER to sudoers]
 #           #  - [scripts/changeshell.sh, Change shell to zsh]
-#           #    - [scripts/npm_lunarvim_fix.sh, Fix lunarvim npm install]
 #         - [rm -f /usr/lib/python*/EXTERNALLY-MANAGED, remove to fix lunarvim]
 #           #- [scripts/bat_cache.sh, make theme available for bat]
-#           #    - [fast-theme XDG:catppuccin-mocha, set catppuccin-mocha theme for fast syntax highlighting]
-#
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [touch ~/.env, Creating the .env file if it does not exist]

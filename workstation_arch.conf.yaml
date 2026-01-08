@@ -39,6 +39,7 @@
         - docker-compose
         - duf
         - eza
+        - fastfetch
         - fd
         - ffmpeg
         - fzf
@@ -52,6 +53,7 @@
         - gvfs-smb
         - helm
         - hyprland
+        - hyprlock
         - jq
         - keepassxc
         - keybase-gui
@@ -102,6 +104,7 @@
         - systemd-resolvconf
         - tealdeer
         - tree-sitter-cli
+        - ttf-nerd-fonts-symbols
         - unzip
         - uwsm
         - vivid
