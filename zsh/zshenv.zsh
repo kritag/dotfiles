@@ -25,6 +25,7 @@ export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export SAVEHIST=10000
 # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export SYSTEMD_EDITOR=nvim
+export SYSTEMD_PAGER=
 export WORDCHARS='*?[]~&;!#$%^(){}<>'
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH="${HOME}/.dotfiles/zsh"
