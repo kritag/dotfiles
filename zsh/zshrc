@@ -6,9 +6,9 @@ source $HOME/.zshkeybindings.zsh
 PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"
 export PATH
 #
-[[ -r ~/git/znap/znap/znap.zsh ]] ||
-	git clone --depth 1 -- \
-		https://github.com/marlonrichert/zsh-snap.git ~/git/znap/znap
+# [[ -r ~/git/znap/znap/znap.zsh ]] ||
+#   git clone --depth 1 -- \
+#     https://github.com/marlonrichert/zsh-snap.git ~/git/znap/znap
 source ~/git/znap/znap/znap.zsh # Start Znap
 znap source ohmyzsh/ohmyzsh plugins/{dirhistory,gitfast}
 #znap source romkatv/powerlevel10k
