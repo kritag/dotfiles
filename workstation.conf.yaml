@@ -22,10 +22,6 @@
       create: true
       glob: true
       path: config/wlogout/*
-    ~/.config/gtklock:
-      create: true
-      glob: true
-      path: config/gtklock/*
     ~/.config/swaync:
       create: true
       glob: true
