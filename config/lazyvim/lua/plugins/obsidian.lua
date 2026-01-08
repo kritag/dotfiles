@@ -7,7 +7,7 @@ return {
     workspaces = {
       {
         name = "Obsidian Vault",
-        path = "~/Documents/Obsidian Vault",
+        path = "~/Documents/obsidian-notes/",
       },
     },
     picker = {

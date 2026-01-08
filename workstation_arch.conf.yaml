@@ -76,6 +76,7 @@
         - procs
         - python
         - python-pip
+        - python-pipx
         - qbittorrent
         - qt5ct
         - qt6ct
@@ -99,8 +100,6 @@
         - vivid
         - vlc
         - wl-clipboard
-        - zathura
-        - zathura-pdf-mupdf
         - zoxide
         - zsh
         #J- shell:
