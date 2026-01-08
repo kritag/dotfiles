@@ -5,31 +5,19 @@
       force: true
 - link:
     ~/.config/btop/btop.conf: config/btop/btop.conf
-    ~/.config/hypr/hypridle.conf: config/hypr-workstation/hypridle-workstation.conf
-    ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-gdm.conf
+    ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-workstation.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
-    ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
-    ~/.config/kitty/font-nerd-symbols.conf: config/kitty/font-nerd-symbols.conf
-    ~/.config/kitty/pager.sh: config/kitty/pager.sh
     ~/.config/qt5ct/qt5ct.conf: config/qt5ct/qt5ct.conf
     ~/.config/qt6ct/qt6ct.conf: config/qt6ct/qt6ct.conf
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/hypr/env.conf: config/hypr-workstation/env-workstation.conf
     ~/.face: ./config/face
-    ~/.config/wlogout:
-      create: true
+    ~/.config/kitty:
       glob: true
-      path: config/wlogout/*
-    ~/.config/swaync:
-      create: true
-      glob: true
-      path: config/swaync/*
-    ~/.config/rofi:
-      create: true
-      glob: true
-      path: config/rofi/*
+      force: true
+      path: config/kitty/*
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
@@ -41,14 +29,6 @@
       create: true
       glob: true
       path: config/hypr/*
-    ~/.config/wal/:
-      create: true
-      glob: true
-      path: config/wal/*
-    ~/.config/waybar/:
-      create: true
-      glob: true
-      path: config/waybar/*
     ~/.config/flavours/:
       create: true
       glob: true
@@ -58,6 +38,7 @@
 #     - link:
 #         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
 #         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
+#
 #     - shell:
 #         - [cp services/*.service /etc/systemd/system/]
 #         - [
@@ -66,9 +47,3 @@
 #             packages,
 #           ]
 #         - [sudo usermod -a -G video $USER]
-# - shell:
-#     - [scripts/set_catppuccin_theme.sh, Setting the Catppuccin theme]
-#     - [
-#         scripts/fix_cursor_theme.sh,
-#         Fixes the cursor theme for non-GTK applications,
-#       ]
