@@ -15,6 +15,7 @@ return {
         "prettierd",
         "pylint",
         "shellcheck",
+        "tombi",
         "vale",
         "vale-ls",
         "yamlfmt",

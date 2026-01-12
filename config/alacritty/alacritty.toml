@@ -1,0 +1,66 @@
+[general]
+import = [
+  "~/.config/alacritty/themes/tokyonight_moon.toml",
+]
+live_config_reload = true
+
+[env]
+EDITOR = "nvim"
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.9
+# decorations = "None"
+dynamic_title = false
+title = ""
+padding = { x = 5, y = 3 }
+dynamic_padding = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "Iosevka Comfy Wide"
+style = "Regular"
+
+[font.bold]
+style = "Bold"
+
+[font.italic]
+style = "Italic"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 500
+blink_timeout = 0
+thickness = 0.15
+unfocused_hollow = true
+vi_mode_style = { shape = "Block", blinking = "On" }
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = "@-./_~?&=%+#,|`:\"'(){}[]<>"
+
+[terminal]
+osc52 = "CopyPaste"
+
+[keyboard]
+bindings = [
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Key0", mods = "Control", action = "ResetFontSize" },
+  { key = "PageUp", mods = "Control", action = "ScrollPageUp" },
+  { key = "PageDown", mods = "Control", action = "ScrollPageDown" },
+  { key = "Home", mods = "Control", action = "ScrollToTop" },
+  { key = "End", mods = "Control", action = "ScrollToBottom" },
+  { key = "Space", mods = "Control", action = "ToggleViMode" },
+]

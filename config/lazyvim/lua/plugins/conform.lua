@@ -8,6 +8,7 @@ return {
           sh = { "shfmt" },
           kdl = { "kdlfmt" },
           css = { "prettierd" },
+          toml = { "tombi" },
           python = {
             -- To fix auto-fixable lint errors.
             "ruff_fix",
