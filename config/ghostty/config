@@ -1,12 +1,50 @@
-theme = nord
 font-family = "Iosevka Comfy Wide"
-font-family-bold ="Iosevka Comfy Wide, Bold"
-font-family-italic = "Iosevka Comfy Wide, Regular Italic"
-font-family-bold-italic="Iosevka Comfy Wide, Bold Italic"
 font-size = 12
 
-background-opacity = 0.9
-confirm-close-surface = false
+cursor-style = bar
+cursor-style-blink = true
+adjust-cursor-thickness = 1
+
+scrollback-limit = 10000000
+mouse-scroll-multiplier = 0.5
+
 copy-on-select = clipboard
-window-decoration = false
-window-padding-y = 10,10
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+
+background-opacity = 0.9
+background-blur = false
+
+window-decoration = none
+window-padding-x = 5
+window-padding-y = 5
+window-padding-balance = true
+
+title = " "
+window-subtitle = false
+
+mouse-hide-while-typing = true
+
+term = xterm-ghostty
+
+async-backend = auto
+
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+-=decrease_font_size:1
+keybind = ctrl++=increase_font_size:1
+keybind = ctrl+0=reset_font_size
+keybind = ctrl+page_up=scroll_page_up
+keybind = ctrl+page_down=scroll_page_down
+keybind = ctrl+home=scroll_to_top
+keybind = ctrl+end=scroll_to_bottom
+
+env = EDITOR=nvim
+
+shell-integration = detect
+shell-integration-features = no-title,ssh-env
+theme = dark:tokyonight_moon,light:tokyonight_dawn
+
+quit-after-last-window-closed = false
