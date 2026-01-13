@@ -71,7 +71,8 @@ blocks:
   - type: prompt
     alignment: left
     segments:
-      - template: ❯
+      # - template: ❯
+      - template: '{{ .Env.SHELL_PROMPT }}'
         background: transparent
         type: text
         style: plain
