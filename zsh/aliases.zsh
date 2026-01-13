@@ -1,16 +1,13 @@
 # Uses bat to colorize help switches
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
-# alias cat='bat --paging=never'
 alias batless='bat --paging always -l yaml'
-alias cava=cava -p $XDG_CONFIG_HOME/cava/config
 alias cd='z'
 alias diff='batdiff --paging=never'
 alias fzf='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 alias ggrep="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git --no-pager grep"
 alias ggrepless="git branch -a | cut -c3- | cut -d' ' -f 1 | xargs git grep"
 alias gitformatpatch='XXX_PATCH=~/git/forks/patch/patch-$(date +%Y%m%d%H%M%S)-$(git rev-parse --abbrev-ref HEAD | tr / -).patch ; cd $(git rev-parse --show-toplevel) ; git format-patch  master --stdout > $XXX_PATCH ; cd - ; echo Patchfile created: $XXX_PATCH'
-alias grep='rg --max-depth=1'
 alias grepr='rg --max-depth=99'
 alias l='ls -l'
 alias la='ls -lA'
@@ -29,9 +26,11 @@ alias tree='ls --tree'
 alias vim='nvim'
 # To get bat coloring on journalctl
 jctl(){
-   journalctl $@ | bat -l syslog -p}
+   journalctl "$@" | bat -l syslog -p}
 tailbat(){
-    \tail -f $@ | bat --paging=never -l log}
+    \tail -f "$@" | bat --paging=never -l log}
+grep() {
+  rg --max-depth=1 "$@"}
 
 # Git
 alias g='git'
