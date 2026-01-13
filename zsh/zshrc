@@ -23,16 +23,14 @@ znap source zdharma-continuum/fast-syntax-highlighting
 #znap source RobSis/zsh-completion-generator
 #znap source jeffreytse/zsh-vi-mode
 
-# fzf stuff
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-#source $HOME/.cache/wal/colors-fzf.sh
 source $HOME/.config/flavours/fzf.sh
 
 # Make autocomplete work with sshpass aliases
 compdef _ssh_hosts sshpass s sr
 compdef _kubectl kubecolor
-# # Make autocomplete work for the jctl() function
+# Make autocomplete work for the jctl() function
 compdef _journalctl jctl
 # Sourcing k8s related stuff if using k8s
 #if command -v kubectl &> /dev/null
@@ -41,16 +39,34 @@ compdef _journalctl jctl
 #fi
 
 znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml'
-#eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml)"
-#eval "$(oh-my-posh init zsh)"
-source $HOME/.zshenv.zsh
 source $HOME/.zstyle.zsh
-## Ensure up and down arrow works for searching history
+# Ensure up and down arrow works for searching history
 bindkey '^[0A' history-substring-search-up
 bindkey '^[0B' history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 zstyle ':znap:*:*' git-maintenance off
+# Prompt char based on viins and vicmd
+export SHELL_PROMPT='❯'
+_omp_redraw-prompt() {
+  local precmd
+  for precmd in "${precmd_functions[@]}"; do
+    "$precmd"
+  done
+
+  zle .reset-prompt
+}
+function zle-line-init zle-keymap-select {
+    case ${KEYMAP} in
+       (vicmd)       SHELL_PROMPT='❮' ;;
+       (main|viins)  SHELL_PROMPT='❯' ;;
+       (*)           SHELL_PROMPT='❮' ;;
+    esac
+    _omp_redraw-prompt
+}
+
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 znap prompt
-## pnpm end
 # zprof
