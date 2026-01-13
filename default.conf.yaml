@@ -16,7 +16,7 @@
     ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.config/oh-my-posh/omp.yaml: config/oh-my-posh/omp.yaml
-    ~/.zshenv.zsh: zsh/zshenv.zsh
+    ~/.zshenv: zsh/zshenv
     ~/.ripgreprc: config/ripgreprc
     ~/.lessfilter: config/lessfilter
     ~/.gitconfig: config/gitconfig
