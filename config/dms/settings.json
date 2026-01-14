@@ -1,6 +1,7 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "registry",
+  "customThemeFile": "/home/e215142/.config/DankMaterialShell/themes/tokyoNight/theme.json",
   "registryThemeVariants": {
     "everforest": "hard",
     "gruvboxMaterial": "hard"
@@ -127,7 +128,7 @@
   "workspaceScrolling": false,
   "showWorkspaceApps": true,
   "maxWorkspaceIcons": 10,
-  "groupWorkspaceApps": true,
+  "groupWorkspaceApps": false,
   "workspaceFollowFocus": false,
   "showOccupiedWorkspacesOnly": false,
   "reverseScrolling": false,
@@ -151,21 +152,6 @@
   "runningAppsGroupByApp": true,
   "appIdSubstitutions": [
     {
-      "pattern": "Spotify",
-      "replacement": "spotify",
-      "type": "exact"
-    },
-    {
-      "pattern": "beepertexts",
-      "replacement": "beeper",
-      "type": "exact"
-    },
-    {
-      "pattern": "home assistant desktop",
-      "replacement": "homeassistant-desktop",
-      "type": "exact"
-    },
-    {
       "pattern": "com.transmissionbt.transmission",
       "replacement": "transmission-gtk",
       "type": "contains"
@@ -174,9 +160,19 @@
       "pattern": "^steam_app_(\\d+)$",
       "replacement": "steam_icon_$1",
       "type": "regex"
+    },
+    {
+      "pattern": "msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default",
+      "replacement": "teams",
+      "type": "exact"
+    },
+    {
+      "pattern": "msedge-_pkooggnaalmfkidjmlhoelhdllpphaga-Default",
+      "replacement": "ms-outlook",
+      "type": "exact"
     }
   ],
-  "centeringMode": "index",
+  "centeringMode": "geometric",
   "clockDateFormat": "",
   "lockDateFormat": "",
   "mediaSize": 2,
@@ -186,14 +182,14 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "niriOverviewOverlayEnabled": true,
-  "useAutoLocation": false,
+  "useAutoLocation": true,
   "weatherEnabled": true,
   "networkPreference": "wifi",
   "vpnLastConnected": "39125ed5-d426-4dad-8d88-401cf6a2f6c2",
   "iconTheme": "Papirus-Dark",
   "cursorSettings": {
-    "theme": "System Default",
-    "size": 24,
+    "theme": "Bibata-Modern-Classic",
+    "size": 16,
     "niri": {
       "hideWhenTyping": false,
       "hideAfterInactiveMs": 0
@@ -246,7 +242,7 @@
   "fadeToLockGracePeriod": 5,
   "fadeToDpmsEnabled": true,
   "fadeToDpmsGracePeriod": 5,
-  "launchPrefix": "",
+  "launchPrefix": "uwsm-app --",
   "brightnessDevicePins": {},
   "wifiNetworkPins": {},
   "bluetoothDevicePins": {},
@@ -295,7 +291,7 @@
   "dockBorderThickness": 1,
   "dockIsolateDisplays": false,
   "notificationOverlayEnabled": false,
-  "modalDarkenBackground": true,
+  "modalDarkenBackground": false,
   "lockScreenShowPowerActions": true,
   "lockScreenShowSystemIcons": true,
   "lockScreenShowTime": true,
@@ -386,7 +382,7 @@
         {
           "id": "music",
           "enabled": true,
-          "mediaSize": 1
+          "mediaSize": 2
         },
         {
           "id": "kubernetes",
@@ -402,7 +398,8 @@
       "rightWidgets": [
         {
           "id": "keyboard_layout_name",
-          "enabled": true
+          "enabled": true,
+          "keyboardLayoutNameCompactMode": true
         },
         {
           "id": "weather",
@@ -414,7 +411,8 @@
         },
         {
           "id": "clock",
-          "enabled": true
+          "enabled": true,
+          "clockCompactMode": true
         },
         {
           "id": "systemTray",
@@ -445,7 +443,8 @@
       "openOnOverview": false,
       "visible": true,
       "popupGapsAuto": true,
-      "popupGapsManual": 42
+      "popupGapsManual": 42,
+      "widgetOutlineEnabled": false
     }
   ],
   "desktopClockEnabled": false,
@@ -519,6 +518,10 @@
   "desktopWidgetGridSettings": {},
   "desktopWidgetInstances": [],
   "desktopWidgetGroups": [],
-  "builtInPluginSettings": {},
+  "builtInPluginSettings": {
+    "dms_settings_search": {
+      "trigger": "?"
+    }
+  },
   "configVersion": 5
 }
