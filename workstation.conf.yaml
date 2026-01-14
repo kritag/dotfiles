@@ -13,6 +13,8 @@
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/hypr/env.conf: config/hypr-workstation/env-workstation.conf
+    ~/.config/uwsm/env: config/uwsm/env
+    ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.face: ./config/face
     ~/.config/kitty:
       glob: true
