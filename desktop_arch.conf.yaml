@@ -1,19 +1,20 @@
 - yay:
     - bibata-cursor-theme-bin
-    - btop-gpu-git
     - cava
+    - dms-shell-bin
     - dgop-bin
     - dms-shell-bin
     - downgrade
-    - gpu-screen-recorder
+    - gpu-screen-recorder-gtk
     - grimblast-git
+    - obsidian-bin
     - oh-my-posh-bin
     - papirus-folders
     - protonup-qt
     - pulsecontrol-git
     - python-pywal16
+    - quickshell-git
     - spicetify-cli
-    - waybar-cava
 - omnipkg:
     - install:
         - archlinux-contrib
@@ -26,6 +27,7 @@
         - cpio
         - duf
         - eza
+        - fastfetch
         - fd
         - ffmpeg
         - fwupd
@@ -36,7 +38,11 @@
         - git-delta
         - github-cli
         - glow
+        - go-yq
+        - gvfs-smb
         - hyprland
+        - hyprlock
+        - jq
         - kitty
         - lazygit
         - less
@@ -48,10 +54,11 @@
         - make
         - man-db
         - mangohud
+        - mpv
         - neovim
         - networkmanager
         - noto-fonts-emoji
-        - otf-font-awesome
+        - obs-studio
         - pacman-contrib
         - papirus-icon-theme
         - playerctl
@@ -67,20 +74,16 @@
         - sqlite
         - solaar
         - spotify-launcher
+        - sqlite
         - steam
         - systemd-resolvconf
         - tealdeer
-        - timeshift
-        - timeshift-autosnap
         - tree-sitter-cli
         - ttf-nerd-fonts-symbols
         - unzip
         - uwsm
         - vivid
-        - vlc
         - wl-clipboard
-        - zathura
-        - zathura-pdf-mupdf
         - zip
         - zoxide
         - zsh
