@@ -29,11 +29,11 @@
       create: true
       glob: true
       path: config/flavours/*
+- sudo:
+    - link:
+        /usr/local/bin/killsteam.sh: scripts/killsteam.sh
+        /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
 
-# - sudo:
-#     - link:
-#         /usr/local/bin/killsteam.sh: scripts/killsteam.sh
-#         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
 #     - shell:
 #         - [
 #             systemctl enable paccache.timer --now,
