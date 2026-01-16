@@ -1,35 +1,35 @@
-#- yay:
-#    - argocd
-#    - bibata-cursor-theme-bin
-#    - cava
-#    - dms-shell-bin
-#    - downgrade
-#    - flux-bin
-#    - gpu-screen-recorder-gtk
-#    - grimblast-git
-#    - hyprland-preview-share-picker
-#    - k9s-sbanka-bin
-#    - krew
-#    - kubecolor
-#    - kubectl-view-secret-bin
-#    - mdatp-bin
-#    - microsoft-edge-stable-bin
-#    - obsidian-bin
-#    - oh-my-posh-bin
-#    - openshift-client-bin
-#    - papirus-folders
-#    - pulsecontrol-git
-#    - quickshell-git
-#    - spicetify-cli
-#    - slack-desktop-wayland
+- yay:
+    - bibata-cursor-theme-bin
+    - dms-shell-bin
+    - downgrade
+    - flux-bin
+    - gpu-screen-recorder-gtk
+    - grimblast-git
+    - hyprland-preview-share-picker-git
+    - k9s-sbanka-bin
+    - keybase-gui
+    - kubecolor
+    - kubectl-view-secret-bin
+    - mdatp-bin
+    - microsoft-edge-stable-bin
+    - obsidian-bin
+    - oh-my-posh-bin
+    - openshift-client-bin
+    - papirus-folders
+    - pulsecontrol-git
+    - quickshell-git
+    - spicetify-cli
+    - slack-desktop-wayland
 - omnipkg:
     - install:
         - archlinux-contrib
+        - argocd
         - bat
         - bluez
         - bluez-utils
         - brightnessctl
         - btop
+        - cava
         - chafa
         - cpio
         - dmidecode
@@ -56,6 +56,7 @@
         - keepassxc
         - keybase-gui
         - kitty
+        - krew
         - kubectl
         - kubectx
         - kubeseal
@@ -111,7 +112,3 @@
         - zsh
         #J- shell:
   #   - [xdg-mime default org.gnome.Nautilus.desktop inode/directory application/x-gnome-saved-search, Set Nautilus as default file manager]
-  # - [
-  #     papirus-folders -C cat-mocha-mauve --theme Papirus-Dark,
-  #     setting Catpuccin Mocha icons,
-  #   ]
