@@ -35,12 +35,11 @@
       create: true
       glob: true
       path: config/flavours/*
+- sudo:
+    - link:
+        /usr/local/bin/pwquality.sh: scripts/pwquality.sh
+        /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
 
-# - sudo:
-#     - link:
-#         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
-#         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
-#
 #     - shell:
 #         - [cp services/*.service /etc/systemd/system/]
 #         - [
