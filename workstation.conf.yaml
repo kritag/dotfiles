@@ -39,12 +39,5 @@
     - link:
         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
-
-#     - shell:
-#         - [cp services/*.service /etc/systemd/system/]
-#         - [
-#             systemctl enable paccache.timer --now,
-#             Enable deletion of cached pacman
-#             packages,
-#           ]
-#         - [sudo usermod -a -G video $USER]
+    - shell:
+        - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
