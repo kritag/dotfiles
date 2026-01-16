@@ -15,6 +15,7 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 
 for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
+    -vv \
     -d "${BASEDIR}" \
     --plugin-dir dotbot-sudo \
     --plugin-dir dotbot-omnipkg \
