@@ -102,3 +102,6 @@
 [submodule "catppuccin_spicetify"]
 	path = catppuccin_spicetify
 	url = https://github.com/catppuccin/spicetify
+[submodule "dotbot-sudo"]
+	path = dotbot-sudo
+	url = https://github.com/johnlettman/dotbot-sudo.git
