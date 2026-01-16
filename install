@@ -14,12 +14,12 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 #git submodule update --init --recursive "${DOTBOT_DIR}"
 
 for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
-    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
     -d "${BASEDIR}" \
-    -p dotbot-sudo/sudo.py \
-    -p dotbot-omnipkg/omnipkg.py \
-    -p dotbot-yum/yum.py \
-    -p dotbot-yay/yay.py \
+    --plugin-dir dotbot-sudo \
+    --plugin-dir dotbot-omnipkg \
+    --plugin-dir dotbot-yum \
+    --plugin-dir dotbot-yay \
     --plugin-dir dotbot-brew \
-    -c "${conf}${CONFIG_SUFFIX}" 
+    -c "${conf}${CONFIG_SUFFIX}"
 done
