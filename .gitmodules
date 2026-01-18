@@ -17,9 +17,6 @@
 [submodule "dotbot-omnipkg"]
 	path = dotbot-omnipkg
 	url = https://github.com/code-maniac/dotbot-omnipkg
-[submodule "dotbot-sudo"]
-	path = dotbot-sudo
-	url = https://github.com/DrDynamic/dotbot-sudo
 [submodule "zsh/antidote"]
 	path = zsh/antidote
 	url = https://github.com/mattmc3/antidote
@@ -105,3 +102,6 @@
 [submodule "catppuccin_spicetify"]
 	path = catppuccin_spicetify
 	url = https://github.com/catppuccin/spicetify
+[submodule "dotbot-sudo"]
+	path = dotbot-sudo
+	url = https://github.com/kritag/dotbot-sudo.git
