@@ -1,6 +1,5 @@
 - yay:
     - bibata-cursor-theme-bin
-    - cava
     - dms-shell-bin
     - dgop-bin
     - dms-shell-bin
@@ -12,7 +11,6 @@
     - papirus-folders
     - protonup-qt
     - pulsecontrol-git
-    - python-pywal16
     - quickshell-git
     - spicetify-cli
 - omnipkg:
@@ -23,6 +21,7 @@
         - bluez-utils
         - brightnessctl
         - btop
+        - cava
         - chafa
         - cpio
         - duf
