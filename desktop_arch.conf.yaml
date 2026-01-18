@@ -1,8 +1,6 @@
 - yay:
     - bibata-cursor-theme-bin
     - dms-shell-bin
-    - dgop-bin
-    - dms-shell-bin
     - downgrade
     - gpu-screen-recorder-gtk
     - grimblast-git
