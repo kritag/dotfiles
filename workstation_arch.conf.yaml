@@ -24,6 +24,7 @@
         - archlinux-contrib
         - argocd
         - bat
+        - bat-extras
         - bluez
         - bluez-utils
         - brightnessctl
