@@ -34,3 +34,10 @@
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
     - shell:
         - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
+        - [install -d -m 0755 /etc/systemd/journald.conf.d && install -m 0644 services/10-journald-retention.conf /etc/systemd/journald.conf.d/10-journald-retention.conf, "Configure systemd-journald log rotation"]
+        - ["sed -i 's/^#\\?\\s*deny\\s*=.*/deny = 0/' /etc/security/faillock.conf", "Set faillock deny = 0"]
+        - [install -D -m 0644 services/reflector.conf /etc/xdg/reflector/reflector.conf && systemctl enable reflector.timer --now, "Configure reflector and schedule mirror refresh"]
+        - ["sed -i -e 's/^#\\s*LogFile/LogFile/' -e 's/^#\\s*Color/Color/' -e 's/^#\\s*ParallelDownloads/ParallelDownloads/' -e 's/^#\\s*ILoveCandy/ILoveCandy/' -e '/^#\\s*\\[multilib\\]/,/^#\\s*Include/s/^#\\s*//' /etc/pacman.conf", "Configure pacman defaults and enable multilib"]
+        - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
+        - [systemctl enable fstrim.timer --now]
+        - [systemctl enable systemd-oomd --now]
