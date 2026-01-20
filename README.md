@@ -25,11 +25,5 @@ makepkg -si
 ```
 - Run ./install (machine)_arch.conf.yaml (machine).conf.yaml
 
-- Uncomment PowerKey etc. in `/etc/systemd/logind.conf` 
-- Set MaxFileSec=1week in `/etc/systemd/journald.conf` 
-- Set `deny = 0` in `/etc/security/faillock.conf`
-- Set servers in `/etc/pacman.d/mirrorlist`
-- Uncomment LogFile, Color, ParallelDownloads and ILoveCandy in `/etc/pacman.conf`
-  - Include multilib
 - Configure timeshift autosnap
-- Run `fc-cache -fv`
+- Configure Plymouth with its config and mkinitcpio.conf
