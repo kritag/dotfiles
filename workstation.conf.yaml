@@ -35,8 +35,9 @@
       create: true
       glob: true
       path: config/flavours/*
-# - shell:
-#     - [fc-cache -fv]
+- shell:
+    - [systemctl --user enable gcr-ssh-agent.socket]
+    #     - [fc-cache -fv]
 - sudo:
     - link:
         /usr/local/bin/pwquality.sh: scripts/pwquality.sh
@@ -51,3 +52,6 @@
         - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
         - [systemctl enable fstrim.timer --now]
         - [systemctl enable systemd-oomd --now]
+        - [systemctl enable --now btrfs-scrub@mnt-storage.timer]
+        - [systemctl enable --now btrfs-scrub@-.timer]
+        - [systemctl enable --now grub-btrfsd.service]
