@@ -33,6 +33,10 @@
       create: true
       glob: true
       path: config/flavours/*
+    ~/.config/spicetify/Themes:
+      glob: true
+      force: true
+      path: config/spicetify/Themes/*
 - sudo:
     - link:
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
