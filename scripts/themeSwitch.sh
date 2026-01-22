@@ -6,7 +6,7 @@ FONT="'Rubik 11'"
 case "$1" in
 "gruvbox")
   flavours apply gruvbox-dark-hard
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1gruvbox-dark-hard/' ~/.zshenv.zsh
+  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1gruvbox-dark-hard/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="gruvbox-dark"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1gruvbox-dark/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1gruvbox\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
@@ -23,7 +23,7 @@ case "$1" in
 
 "catppuccin-mocha")
   flavours apply catppuccin-mocha
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1catppuccin-mocha/' ~/.zshenv.zsh
+  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1catppuccin-mocha/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="catppuccin-mocha"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1catppuccin-mocha/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1catppuccin\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
@@ -40,7 +40,7 @@ case "$1" in
 
 "dracula")
   flavours apply dracula
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1dracula/' ~/.zshenv.zsh
+  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1dracula/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="dracula"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1Dracula/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1dracula\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
@@ -57,7 +57,7 @@ case "$1" in
 
 "everforest")
   flavours apply everforest-dark-hard
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1~\/.config\/vivid\/themes\/everforest.yaml/' ~/.zshenv.zsh
+  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1~\/.config\/vivid\/themes\/everforest.yaml/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="everforest-dark"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1everforest-dark/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1everforest\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
@@ -74,7 +74,7 @@ case "$1" in
 
 "nord")
   flavours apply nord
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1nord/' ~/.zshenv.zsh
+  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1nord/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="Nord"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1Nord/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1nord\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
@@ -92,7 +92,7 @@ case "$1" in
 
 "rose-pine")
   flavours apply rose-pine
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1rose-pine/' ~/.zshenv.zsh
+  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1rose-pine/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="rose-pine"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1rose-pine/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1rose-pine\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
@@ -109,7 +109,7 @@ case "$1" in
 
 "tokyo-night")
   flavours apply tokyo-night-night
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1tokyonight-moon/' ~/.zshenv.zsh
+  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1tokyonight-moon/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="tokyonight-moon"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/\(syntax-theme = \)[^ ]*/\1tokyonight-moon/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1tokyonight\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
