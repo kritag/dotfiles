@@ -37,6 +37,8 @@
       glob: true
       force: true
       path: config/spicetify/Themes/*
+- shell:
+    - [systemctl --user enable gcr-ssh-agent.socket]
 - sudo:
     - link:
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
@@ -49,3 +51,7 @@
         - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
         - [systemctl enable fstrim.timer --now]
         - [systemctl enable systemd-oomd --now]
+        - [systemctl enable lactd --now]
+        - [systemctl enable --now btrfs-scrub@mnt-storage.timer]
+        - [systemctl enable --now btrfs-scrub@-.timer]
+        - [systemctl enable --now grub-btrfsd.service]

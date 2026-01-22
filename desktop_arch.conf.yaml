@@ -49,6 +49,7 @@
         - inotify-tools
         - jq
         - kitty
+        - lact
         - lazygit
         - legcord
         - less
@@ -68,6 +69,7 @@
         - noto-fonts-emoji
         - npm
         - obs-studio
+        - os-prober
         - pacman-contrib
         - papirus-icon-theme
         - playerctl
@@ -84,6 +86,7 @@
         - rocm-smi-lib
         - seahorse
         - snapper
+        - socat
         - sqlite
         - solaar
         - spotify-launcher
@@ -98,6 +101,7 @@
         - ttf-nerd-fonts-symbols
         - unzip
         - uwsm
+        - vim
         - vivid
         - vulkan-radeon
         - vulkan-tools

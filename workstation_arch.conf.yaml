@@ -3,6 +3,7 @@
     - dms-shell-bin
     - downgrade
     - flux-bin
+    - flavours
     - gpu-screen-recorder-gtk
     - grimblast-git
     - k9s-sbanka-bin
@@ -54,6 +55,7 @@
         - helm
         - hyprland
         - hyprlock
+        - inotify-tools
         - jq
         - keepassxc
         - keybase-gui
@@ -82,6 +84,8 @@
         - pacman-contrib
         - papirus-icon-theme
         - playerctl
+        - plymouth
+        - plymouth-theme-archlinux
         - power-profiles-daemon
         - procs
         - python
@@ -94,6 +98,7 @@
         - ripgrep
         - seahorse
         - sbctl
+        - snapper
         - socat
         - solaar
         - sops
@@ -109,6 +114,7 @@
         - ttf-nerd-fonts-symbols
         - unzip
         - uwsm
+        - vim
         - vivid
         - wl-clipboard
         - zoxide
