@@ -18,3 +18,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[user]
+	name = kritag
+	email = 3776749+kritag@users.noreply.github.com
