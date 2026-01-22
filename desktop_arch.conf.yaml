@@ -3,11 +3,13 @@
     - dms-shell-bin
     - downgrade
     - evince-no-gnome
+    - flavours
     - gpu-screen-recorder-gtk
     - grimblast-git
     - obsidian-bin
     - oh-my-posh-bin
     - papirus-folders
+    - protonhax
     - protonup-qt
     - pulsecontrol-git
     - quickshell-git
@@ -19,7 +21,6 @@
         - bat-extras
         - bluez
         - bluez-utils
-        - brightnessctl
         - btop
         - cava
         - chafa
@@ -41,15 +42,19 @@
         - gnome-calculator
         - gnome-keyring
         - go-yq
+        - grub-btrfs
         - gvfs-smb
         - hyprland
         - hyprlock
+        - inotify-tools
         - jq
         - kitty
         - lazygit
+        - legcord
         - less
         - lesspipe
         - lib32-gamemode
+        - lib32-vulkan-radeon
         - libnewt
         - libreoffice-fresh
         - loupe
@@ -66,16 +71,19 @@
         - pacman-contrib
         - papirus-icon-theme
         - playerctl
+        - plymouth
+        - plymouth-theme-archlinux
         - power-profiles-daemon
         - procs
+        - protontricks
         - python
-        - python-pip
         - qbittorrent
         - qt5ct
         - qt6ct
         - ripgrep
         - rocm-smi-lib
         - seahorse
+        - snapper
         - sqlite
         - solaar
         - spotify-launcher
@@ -91,6 +99,9 @@
         - unzip
         - uwsm
         - vivid
+        - vulkan-radeon
+        - vulkan-tools
+        - wireless-regdb
         - wl-clipboard
         - zip
         - zoxide
