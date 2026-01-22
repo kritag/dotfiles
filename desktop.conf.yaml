@@ -14,6 +14,10 @@
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.face: ./config/face
+    ~/.local/share/applications:
+      glob: true
+      force: true
+      path: applications/*
     ~/.config/kitty:
       glob: true
       force: true
