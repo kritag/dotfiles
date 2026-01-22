@@ -103,6 +103,7 @@
         - vulkan-tools
         - wireless-regdb
         - wl-clipboard
+        - yt-dlp
         - zip
         - zoxide
         - zsh
