@@ -13,6 +13,7 @@ case "$1" in
   echo "$HOME/.config/fsh/gruvbox.ini.ini" >~/.config/fsh/current-theme
   kitten themes Gruvbox Dark Hard
   dconf write /org/gnome/desktop/interface/gtk-theme "'Gruvbox-Dark-Compact'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Everforest-Dark'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
@@ -29,6 +30,7 @@ case "$1" in
   echo "$HOME/.config/fsh/catppuccin-mocha.ini" >~/.config/fsh/current-theme
   kitten themes Catppuccin-Mocha
   dconf write /org/gnome/desktop/interface/gtk-theme "'Catppuccin-Dark-Compact'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Catppuccin-Mocha'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
@@ -45,6 +47,7 @@ case "$1" in
   echo "$HOME/.config/fsh/dracula.ini" >~/.config/fsh/current-theme
   kitten themes dracula
   dconf write /org/gnome/desktop/interface/gtk-theme "'Dracula'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Dracula'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
@@ -61,6 +64,7 @@ case "$1" in
   echo "$HOME/.config/fsh/everforest.ini" >~/.config/fsh/current-theme
   kitten themes Everforest Dark Hard
   dconf write /org/gnome/desktop/interface/gtk-theme "'Everforest-Dark-Compact'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Everforest-Dark'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
@@ -78,6 +82,7 @@ case "$1" in
   kitten themes nord
   papirus-folders -C nordic --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Nord-Dark-Compact-Nord'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Nord-Nord-Dark'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
@@ -94,6 +99,7 @@ case "$1" in
   echo "$HOME/.config/fsh/rose-pine.ini" >~/.config/fsh/current-theme
   kitten themes Rosé Pine Moon
   dconf write /org/gnome/desktop/interface/gtk-theme "'Rosepine-Dark-Compact'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Rose-Pine'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
@@ -111,6 +117,7 @@ case "$1" in
   # fast-theme ~/.config/fsh/tokyo-night-moon.ini
   kitten themes Tokyo Night Moon
   dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Tokyonight-Dark'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"

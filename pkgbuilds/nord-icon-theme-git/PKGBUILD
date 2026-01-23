@@ -1,0 +1,40 @@
+pkgname='nord-icon-theme-git'
+_reponame='Colloid-icon-theme'
+pkgver=r0.0000000
+pkgrel=1
+pkgdesc='Nord variant of the Colloid icon theme.'
+arch=('any')
+url="https://github.com/vinceliuice/${_reponame}"
+license=('GPL3')
+
+depends=('gtk-update-icon-cache')
+makedepends=('git')
+
+source=("git+${url}.git")
+sha256sums=('SKIP')
+
+options=(!strip)
+
+pkgver() {
+  cd "${_reponame}"
+  printf "r%s.%s" \
+    "$(git rev-list --count HEAD)" \
+    "$(git rev-parse --short HEAD)"
+}
+
+package() {
+  cd "${_reponame}"
+
+  # docs
+  install -D -m0644 -t "${pkgdir}/usr/share/doc/${pkgname}" README.md
+  install -D -m0644 -t "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+
+  # icons
+  dist="${pkgdir}/usr/share/icons"
+  mkdir -p "${dist}"
+
+  ./install.sh \
+    --dest "${dist}" \
+    --scheme nord \
+    --name Nord
+}
