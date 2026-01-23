@@ -12,7 +12,7 @@
     - oh-my-posh-bin
     - papirus-folders
     - protonhax
-    - protonup-qt
+    - protonplus
     - pulsecontrol-git
     - quickshell-git
     - spicetify-cli
@@ -96,6 +96,7 @@
         - steam
         - systemd-resolvconf
         - tealdeer
+        - terminus-font
         - thunar
         - thunar-archive-plugin
         - thunar-volman

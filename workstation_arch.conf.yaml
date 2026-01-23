@@ -113,6 +113,7 @@
         - stern
         - systemd-resolvconf
         - tealdeer
+        - terminus-font
         - tree-sitter-cli
         - ttf-nerd-fonts-symbols
         - unzip
