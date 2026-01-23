@@ -22,4 +22,4 @@
 		bold blue => syntax "#384361", \
 		bold cyan => syntax "#384d5d", \
 		bold yellow => syntax "#544f4e"
-  syntax-theme = tokyonight-moon
+  syntax-theme =
