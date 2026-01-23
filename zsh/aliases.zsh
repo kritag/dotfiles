@@ -31,6 +31,11 @@ tailbat(){
     \tail -f "$@" | bat --paging=never -l log}
 grep() {
   rg --max-depth=1 "$@"}
+mkpkg() {
+  tmp=$(mktemp -d)
+  cp PKGBUILD "$tmp"
+  (cd "$tmp" && makepkg -si --noconfirm)
+}
 
 # Git
 alias g='git'
