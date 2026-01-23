@@ -110,6 +110,9 @@
         - vulkan-tools
         - wireless-regdb
         - wl-clipboard
+        - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-hyprland
+        - xdg-desktop-portal
         - yt-dlp
         - zip
         - zoxide
