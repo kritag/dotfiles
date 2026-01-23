@@ -1,0 +1,43 @@
+pkgname='colloid-nord-gtk-theme-git'
+_reponame='Colloid-gtk-theme'
+pkgver=r0.0000000
+pkgrel=1
+pkgdesc='Colloid GTK theme with Nord color scheme (compact, libadwaita).'
+arch=('any')
+url="https://github.com/vinceliuice/${_reponame}"
+license=('GPL3')
+
+depends=('gnome-themes-extra')
+makedepends=('git' 'sassc')
+
+source=("git+${url}.git")
+sha256sums=('SKIP')
+
+options=(!strip)
+
+pkgver() {
+  cd "${_reponame}"
+  printf "r%s.%s" \
+    "$(git rev-list --count HEAD)" \
+    "$(git rev-parse --short HEAD)"
+}
+
+package() {
+  cd "${_reponame}"
+
+  # docs
+  install -D -m0644 README.md \
+    "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+  install -D -m0644 LICENSE \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  # themes
+  dist="${pkgdir}/usr/share/themes"
+  mkdir -p "${dist}"
+
+  ./install.sh \
+    --dest "${dist}" \
+    --name Nord \
+    --tweaks nord \
+    --size compact
+}
