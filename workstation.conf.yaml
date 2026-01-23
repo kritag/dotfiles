@@ -37,6 +37,7 @@
       path: config/flavours/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
+    - [~/.dotfiles/pkgbuilds/install-all.sh, "Install all gtk themes and icons"]
     #     - [fc-cache -fv]
 - sudo:
     - link:
