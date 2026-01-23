@@ -45,7 +45,7 @@ case "$1" in
   sed -i --follow-symlinks 's/^ *syntax-theme *=.*/  syntax-theme = Dracula/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1dracula\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
   echo "$HOME/.config/fsh/dracula.ini" >~/.config/fsh/current-theme
-  kitten themes dracula
+  kitten themes Dracula
   dconf write /org/gnome/desktop/interface/gtk-theme "'Dracula'"
   dconf write /org/gnome/desktop/interface/icon-theme "'Dracula'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
@@ -79,7 +79,7 @@ case "$1" in
   sed -i --follow-symlinks 's/^ *syntax-theme *=.*/  syntax-theme = Nord/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1nord\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
   echo "$HOME/.config/fsh/nord.ini" >~/.config/fsh/current-theme
-  kitten themes nord
+  kitten themes Nord
   papirus-folders -C nordic --theme Papirus-Dark
   dconf write /org/gnome/desktop/interface/gtk-theme "'Nord-Dark-Compact-Nord'"
   dconf write /org/gnome/desktop/interface/icon-theme "'Nord-Nord-Dark'"
@@ -114,7 +114,6 @@ case "$1" in
   sed -i --follow-symlinks 's/^ *syntax-theme *=.*/  syntax-theme = tokyonight-moon/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1tokyonight\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
   echo "$HOME/.config/fsh/tokyo-night-moon.ini" >~/.config/fsh/current-theme
-  # fast-theme ~/.config/fsh/tokyo-night-moon.ini
   kitten themes Tokyo Night Moon
   dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact'"
   dconf write /org/gnome/desktop/interface/icon-theme "'Tokyonight-Dark'"
