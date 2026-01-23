@@ -121,6 +121,9 @@
         - vim
         - vivid
         - wl-clipboard
+        - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-hyprland
+        - xdg-desktop-portal
         - zoxide
         - zsh
         #J- shell:
