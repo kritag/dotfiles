@@ -12,7 +12,7 @@ export PATH
 source ~/git/znap/znap/znap.zsh # Start Znap
 znap source ohmyzsh/ohmyzsh plugins/{dirhistory,gitfast}
 #znap source romkatv/powerlevel10k
-znap source MichaelAquilina/zsh-you-should-use
+# znap source MichaelAquilina/zsh-you-should-use
 znap source ajeetdsouza/zoxide
 #znap source Freed-Wu/fzf-tab-source
 znap source Aloxaf/fzf-tab
@@ -27,7 +27,17 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source $HOME/.config/flavours/fzf.sh
 
-# Make autocomplete work with sshpass aliases
+THEME_FILE="$HOME/.config/fsh/current-theme"
+CACHE_FILE="$HOME/.cache/fsh-last-theme"
+
+if [[ -f $THEME_FILE ]]; then
+  theme=$(<"$THEME_FILE")
+
+  if [[ ! -f $CACHE_FILE || $(<"$CACHE_FILE") != "$theme" ]]; then
+    fast-theme "$theme" >/dev/null 2>&1
+    print -r -- "$theme" >| "$CACHE_FILE"
+  fi
+fi
 compdef _ssh_hosts sshpass s sr
 compdef _kubectl kubecolor
 # Make autocomplete work for the jctl() function
