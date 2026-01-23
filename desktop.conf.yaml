@@ -39,7 +39,7 @@
       path: config/spicetify/Themes/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
-    - [~/.dotfiles/pkgbuilds/install-all.sh, "Install all gtk themes and icons"]
+    # - [~/.dotfiles/pkgbuilds/install-all.sh, "Install all gtk themes and icons"]
 - sudo:
     - link:
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
