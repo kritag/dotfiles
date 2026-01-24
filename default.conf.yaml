@@ -2,9 +2,6 @@
     link:
       relink: true
       create: true
-# - create:
-#     - "~/.local/share/nvim/site/autoload"
-#     - "~/.config/bat/themes"
 - clean: ['~', ~/.config]
 - link:
     ~/.vimrc: config/vimrc
@@ -23,6 +20,10 @@
     ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
     ~/.theme.gitconfig: config/delta/theme.gitconfig
     ~/.markdownlint.yaml: config/markdownlint.yaml
+    ~/.config/eza:
+      path: config/eza/*
+      create: true
+      glob: true
     ~/.config/vivid:
       path: config/vivid/*
       create: true

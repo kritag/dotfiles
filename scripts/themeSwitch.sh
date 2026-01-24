@@ -19,6 +19,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Gruvbox-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  ln -sf ~/.config/eza/gruvbox-dark.yml ~/.config/eza/theme.yml
   ;;
 
 "catppuccin-mocha")
@@ -36,6 +37,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Catppuccin-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  ln -sf ~/.config/eza/catppuccin-mocha.yml ~/.config/eza/theme.yml
   ;;
 
 "dracula")
@@ -53,6 +55,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Dracula/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  ln -sf ~/.config/eza/dracula.yml ~/.config/eza/theme.yml
   ;;
 
 "everforest")
@@ -70,6 +73,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Everforest-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  # ln -sf ~/.config/eza/ ~/.config/eza/theme.yml
   ;;
 
 "nord")
@@ -88,6 +92,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Nord-Dark-Compact-Nord/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  # ln -sf ~/.config/eza/catppuccin-mocha.yml ~/.config/eza/theme.yml
   ;;
 
 "rose-pine")
@@ -105,6 +110,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Rosepine-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  ln -sf ~/.config/eza/rose-pine.yml ~/.config/eza/theme.yml
   ;;
 
 "tokyo-night")
@@ -122,6 +128,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Tokyonight-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
+  ln -sf ~/.config/eza/tokyonight.yml ~/.config/eza/theme.yml
   ;;
 
 *)
