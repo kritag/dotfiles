@@ -27,6 +27,7 @@
         - cava
         - chafa
         - cpio
+        - discord
         - duf
         - eza
         - fastfetch
@@ -53,7 +54,6 @@
         - kitty
         - lact
         - lazygit
-        - legcord
         - less
         - lesspipe
         - lib32-gamemode
@@ -89,9 +89,9 @@
         - seahorse
         - snapper
         - socat
-        - sqlite
         - solaar
         - spotify-launcher
+        - sqlite
         - sqlite
         - steam
         - systemd-resolvconf
@@ -110,9 +110,9 @@
         - vulkan-tools
         - wireless-regdb
         - wl-clipboard
+        - xdg-desktop-portal
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-hyprland
-        - xdg-desktop-portal
         - yt-dlp
         - zip
         - zoxide
