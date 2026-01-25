@@ -73,7 +73,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Everforest-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
-  # ln -sf ~/.config/eza/ ~/.config/eza/theme.yml
+  ln -sf ~/.config/eza/everforest.yml ~/.config/eza/theme.yml
   ;;
 
 "nord")
@@ -92,7 +92,7 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
   ln -sf /usr/share/themes/Nord-Dark-Compact-Nord/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
-  # ln -sf ~/.config/eza/catppuccin-mocha.yml ~/.config/eza/theme.yml
+  ln -sf ~/.config/eza/nord.yml ~/.config/eza/theme.yml
   ;;
 
 "rose-pine")
@@ -115,12 +115,12 @@ case "$1" in
 
 "tokyo-night")
   flavours apply tokyo-night-night
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1tokyonight-moon/' ~/.zshenv
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="tokyonight-moon"/' ~/.config/bat/config
-  sed -i --follow-symlinks 's/^ *syntax-theme *=.*/  syntax-theme = tokyonight-moon/' ~/.theme.gitconfig
+  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1tokyonight-night/' ~/.zshenv
+  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="tokyonight-night"/' ~/.config/bat/config
+  sed -i --follow-symlinks 's/^ *syntax-theme *=.*/  syntax-theme = tokyonight-night/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1tokyonight\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  echo "$HOME/.config/fsh/tokyo-night-moon.ini" >~/.config/fsh/current-theme
-  kitten themes Tokyo Night Moon
+  echo "$HOME/.config/fsh/tokyo-night-night.ini" >~/.config/fsh/current-theme
+  kitten themes Tokyo Night
   dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact'"
   dconf write /org/gnome/desktop/interface/icon-theme "'Tokyonight-Dark'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
