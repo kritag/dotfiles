@@ -4,7 +4,6 @@
       create: true
       force: true
 - link:
-    ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-desktop.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/qt5ct/qt5ct.conf: config/qt5ct/qt5ct.conf
@@ -14,6 +13,10 @@
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.face: ./config/face
+    ~/.config/btop:
+      glob: true
+      force: true
+      path: config/btop/*
     ~/.local/share/applications:
       glob: true
       force: true
