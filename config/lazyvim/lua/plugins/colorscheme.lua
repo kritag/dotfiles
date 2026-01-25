@@ -104,7 +104,7 @@ return {
     name = "tokyonight",
     opts = {
       transparent = true,
-      style = "moon",
+      style = "night",
       lualine_bold = true,
       on_colors = function(colors)
         colors.bg_statusline = "None"
