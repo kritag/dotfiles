@@ -4,7 +4,6 @@
       create: true
       force: true
 - link:
-    ~/.config/btop/btop.conf: config/btop/btop.conf
     ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-workstation.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
@@ -16,6 +15,10 @@
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.face: ./config/face
+    ~/.config/btop/*:
+      glob: true
+      force: true
+      path: config/btop/*
     ~/.config/kitty:
       glob: true
       force: true
