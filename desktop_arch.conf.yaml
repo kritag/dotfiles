@@ -6,6 +6,7 @@
     - dracula-icons-theme
     - evince-no-gnome
     - flavours
+    - game-devices-udev
     - gpu-screen-recorder-gtk
     - grimblast-git
     - obsidian-bin
@@ -57,6 +58,7 @@
         - less
         - lesspipe
         - lib32-gamemode
+        - lib32-mesa
         - lib32-vulkan-radeon
         - libnewt
         - libreoffice-fresh
@@ -65,6 +67,7 @@
         - make
         - man-db
         - mangohud
+        - mesa
         - mpv
         - neovim
         - networkmanager
