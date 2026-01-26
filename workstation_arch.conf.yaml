@@ -59,6 +59,7 @@
         - hyprland
         - hyprlock
         - inotify-tools
+        - intel-media-driver
         - jq
         - keepassxc
         - keybase-gui
@@ -73,6 +74,7 @@
         - libnewt
         - libreoffice-fresh
         - libva-intel-driver
+        - libva-utils
         - loupe
         - make
         - man-db
