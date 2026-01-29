@@ -7,8 +7,6 @@
     ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-workstation.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
-    ~/.config/qt5ct/qt5ct.conf: config/qt5ct/qt5ct.conf
-    ~/.config/qt6ct/qt6ct.conf: config/qt6ct/qt6ct.conf
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/hypr/env.conf: config/hypr-workstation/env-workstation.conf
@@ -58,6 +56,7 @@
         - [install -D -m 0644 services/reflector.conf /etc/xdg/reflector/reflector.conf && systemctl enable reflector.timer --now, "Configure reflector and schedule mirror refresh"]
         - ["sed -i -e 's/^#\\s*LogFile/LogFile/' -e 's/^#\\s*Color/Color/' -e 's/^#\\s*ParallelDownloads/ParallelDownloads/' -e 's/^#\\s*ILoveCandy/ILoveCandy/' -e '/^#\\s*\\[multilib\\]/,/^#\\s*Include/s/^#\\s*//' /etc/pacman.conf", "Configure pacman defaults and enable multilib"]
         - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
+        - ["sed -i -e 's/^#\\s*DefaultTimeoutStopSec=.*/DefaultTimeoutStopSec=15s/' -e 's/^DefaultTimeoutStopSec=.*/DefaultTimeoutStopSec=15s/' /etc/systemd/system.conf", "Reduce systemd shutdown timeout to 15 seconds"]
         - [systemctl enable fstrim.timer --now]
         - [systemctl enable systemd-oomd --now]
         - [systemctl enable --now btrfs-scrub@mnt-storage.timer]
