@@ -10,6 +10,7 @@
     ~/.config/hypr/env.conf: config/hypr-desktop/env-desktop.conf
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
+    ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf
     ~/.face: ./config/face
     ~/.config/mpv:
       glob: true
