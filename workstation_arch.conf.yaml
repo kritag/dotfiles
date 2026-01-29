@@ -97,9 +97,6 @@
         - python-pip
         - python-pipx
         - qbittorrent
-        - qt5ct
-        - qt6ct
-        - qt6-wayland
         - ripgrep
         - seahorse
         - sbctl
