@@ -39,18 +39,44 @@ bindkey -M vicmd '^[[1;5D' backward-word
 bindkey -M emacs '^W' backward-delete-word
 bindkey -M viins '^W' backward-delete-word
 bindkey -M vicmd '^W' backward-delete-word
+# [Alt - D] - delete forward one word
+bindkey -M emacs '^[d' delete-word
+bindkey -M viins '^[d' delete-word
+bindkey -M vicmd '^[d' delete-word
+# [Ctrl-U] - delete backward to beginning of line
+bindkey -M emacs '^U' backward-kill-line
+bindkey -M viins '^U' backward-kill-line
+bindkey -M vicmd '^U' backward-kill-line
+# [Ctrl-K] - delete backward to beginning of line
+bindkey -M emacs '^K' kill-line
+bindkey -M viins '^K' kill-line
+bindkey -M vicmd '^K' kill-line
 # [Home] - Go to beginning of line
 if [[ -n "${terminfo[khome]}" ]]; then
   bindkey -M emacs "${terminfo[khome]}" beginning-of-line
   bindkey -M viins "${terminfo[khome]}" beginning-of-line
   bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
 fi
+bindkey -M viins  '^[[H'  beginning-of-line
+bindkey -M viins  '^[[1~' beginning-of-line
+bindkey -M viins  '^[OH'  beginning-of-line
+
+bindkey -M vicmd  '^[[H'  beginning-of-line
+bindkey -M vicmd  '^[[1~' beginning-of-line
+bindkey -M vicmd  '^[OH'  beginning-of-line
 # [End] - Go to end of line
 if [[ -n "${terminfo[kend]}" ]]; then
   bindkey -M emacs "${terminfo[kend]}" end-of-line
   bindkey -M viins "${terminfo[kend]}" end-of-line
   bindkey -M vicmd "${terminfo[kend]}" end-of-line
 fi
+bindkey -M viins  '^[[F'  end-of-line
+bindkey -M viins  '^[[4~' end-of-line
+bindkey -M viins  '^[OF'  end-of-line
+
+bindkey -M vicmd  '^[[F'  end-of-line
+bindkey -M vicmd  '^[[4~' end-of-line
+bindkey -M vicmd  '^[OF'  end-of-line
 # [Shift-Tab] - move through the completion menu backwards
 if [[ -n "${terminfo[kcbt]}" ]]; then
   bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
