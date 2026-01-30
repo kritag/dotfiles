@@ -65,6 +65,7 @@
         - keybase-gui
         - kitty
         - krew
+        - kubeconform
         - kubectl
         - kubectx
         - kubeseal
