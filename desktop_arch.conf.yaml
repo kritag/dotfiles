@@ -115,6 +115,7 @@
         - xdg-desktop-portal
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-hyprland
+        - xdg-user-dirs
         - yt-dlp
         - zip
         - zoxide

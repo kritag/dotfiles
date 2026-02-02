@@ -12,6 +12,7 @@
     ~/.config/hypr/env.conf: config/hypr-workstation/env-workstation.conf
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
+    ~/.config/user-dirs.dirs: config/user-dirs.dirs
     ~/.face: ./config/face
     ~/.config/mpv:
       glob: true
