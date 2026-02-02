@@ -1,7 +1,7 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "registry",
-  "customThemeFile": "/home/e215142/.config/DankMaterialShell/themes/tokyoNight/theme.json",
+  "customThemeFile": "s",
   "registryThemeVariants": {
     "everforest": "hard",
     "gruvboxMaterial": "hard"
@@ -61,6 +61,7 @@
   "controlCenterShowMicPercent": false,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
+  "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -137,7 +138,7 @@
   "workspaceUnfocusedColorMode": "default",
   "workspaceUrgentColorMode": "default",
   "workspaceFocusedBorderEnabled": false,
-  "workspaceFocusedBorderColor": "primary",
+  "workspaceFocusedBorderColor": "surfaceText",
   "workspaceFocusedBorderThickness": 2,
   "workspaceNameIcons": {},
   "waveProgressEnabled": true,
@@ -221,7 +222,7 @@
   "notepadTransparencyOverride": -1,
   "notepadLastCustomTransparency": 0.7,
   "soundsEnabled": true,
-  "useSystemSoundTheme": false,
+  "useSystemSoundTheme": true,
   "soundNewNotification": true,
   "soundVolumeChanged": true,
   "soundPluggedIn": true,
@@ -387,6 +388,10 @@
         {
           "id": "kubernetes",
           "enabled": true
+        },
+        {
+          "id": "idleInhibitor",
+          "enabled": true
         }
       ],
       "centerWidgets": [
@@ -396,11 +401,6 @@
         }
       ],
       "rightWidgets": [
-        {
-          "id": "keyboard_layout_name",
-          "enabled": true,
-          "keyboardLayoutNameCompactMode": true
-        },
         {
           "id": "weather",
           "enabled": true
