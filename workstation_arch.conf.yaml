@@ -54,6 +54,8 @@
         - github-cli
         - glow
         - gnome-calculator
+        - gnome-keyring
+        - gnome-text-editor
         - go-yq
         - gvfs-smb
         - helm
