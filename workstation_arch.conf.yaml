@@ -91,6 +91,7 @@
         - networkmanager
         - noto-fonts-emoji
         - obs-studio
+        - openbsd-netcat
         - pacman-contrib
         - papirus-icon-theme
         - playerctl
