@@ -9,6 +9,7 @@ return {
           kdl = { "kdlfmt" },
           css = { "prettierd" },
           toml = { "tombi" },
+          javascript = { "prettierd" },
           python = {
             -- To fix auto-fixable lint errors.
             "ruff_fix",
