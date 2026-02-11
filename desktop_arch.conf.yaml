@@ -87,6 +87,7 @@
         - protontricks
         - python
         - qbittorrent
+        - qt6-multimedia
         - ripgrep
         - rocm-smi-lib
         - seahorse
