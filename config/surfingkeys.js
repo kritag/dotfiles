@@ -1,12 +1,28 @@
 const { Hints, addSearchAlias, unmap, cmap, mapkey } = api;
+
+removeSearchAlias("b", "s");
+removeSearchAlias("d", "s");
+removeSearchAlias("g", "s");
+removeSearchAlias("h", "s");
+removeSearchAlias("w", "s");
+removeSearchAlias("y", "s");
+removeSearchAlias("s", "s");
+
 addSearchAlias("k", "Kagi", "https://kagi.com/search?q=");
+addSearchAlias(
+  "aur",
+  "aur",
+  "https://aur.archlinux.org/packages/?O=0&SeB=nd&K=",
+  "s",
+);
+
 settings.defaultSearchEngine = "k";
 settings.hintAlign = "left";
 settings.omnibarPosition = "middle";
 settings.focusFirstCandidate = true;
 settings.focusAfterClosed = "last";
 settings.scrollStepSize = 100;
-settings.tabsThreshold = 0;
+// settings.tabsThreshold = 0;
 settings.modeAfterYank = "Normal";
 
 unmap("<ctrl-i>");
