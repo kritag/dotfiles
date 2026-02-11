@@ -103,6 +103,7 @@
         - python-pip
         - python-pipx
         - qbittorrent
+        - qt6-multimedia
         - ripgrep
         - seahorse
         - sbctl
