@@ -4,6 +4,7 @@
     - downgrade
     - dracula-gtk-theme
     - dracula-icons-theme
+    - evince-no-gnome
     - flux-bin
     - flavours
     - github-copilot-cli
@@ -19,15 +20,17 @@
     - oh-my-posh-bin
     - openshift-client-bin
     - papirus-folders
+    - plymouth-theme-archlinux
     - pulsecontrol-git
     - quickshell-git
     - spicetify-cli
     - slack-desktop-wayland
-    - tokyonight-gtk-theme-git
 - omnipkg:
     - install:
         - archlinux-contrib
         - argocd
+        - autoconf
+        - base-devel
         - bat
         - bat-extras
         - bluez
@@ -41,7 +44,6 @@
         - docker
         - docker-compose
         - duf
-        - evince-no-gnome
         - eza
         - fastfetch
         - fd
@@ -65,7 +67,6 @@
         - intel-media-driver
         - jq
         - keepassxc
-        - keybase-gui
         - kitty
         - krew
         - kubeconform
@@ -96,7 +97,6 @@
         - papirus-icon-theme
         - playerctl
         - plymouth
-        - plymouth-theme-archlinux
         - power-profiles-daemon
         - procs
         - python
