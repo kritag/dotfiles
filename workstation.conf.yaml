@@ -65,4 +65,5 @@
         - [systemctl enable systemd-oomd --now]
         - [systemctl enable --now btrfs-scrub@mnt-storage.timer]
         - [systemctl enable --now btrfs-scrub@-.timer]
-        - [systemctl enable --now grub-btrfsd.service]
+        - [systemctl enable --now systemd-resolved.service]
+        # - [systemctl enable --now grub-btrfsd.service]
