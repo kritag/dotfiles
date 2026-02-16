@@ -1,7 +1,6 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "registry",
-  "customThemeFile": "/home/e215142/.config/DankMaterialShell/themes/tokyoNight/theme.json",
   "registryThemeVariants": {
     "everforest": "hard",
     "gruvboxMaterial": "hard"
