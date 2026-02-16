@@ -25,6 +25,10 @@
       glob: true
       force: true
       path: config/btop/*
+    ~/.local/share/applications:
+      glob: true
+      force: true
+      path: applications/*
     ~/.config/kitty:
       glob: true
       force: true
