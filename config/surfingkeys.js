@@ -1,4 +1,4 @@
-const { Hints, addSearchAlias, unmap, cmap, mapkey } = api;
+const { Hints, addSearchAlias, removeSearchAlias, unmap, cmap, mapkey } = api;
 
 removeSearchAlias("b", "s");
 removeSearchAlias("d", "s");
