@@ -1,15 +1,13 @@
-const { Hints, addSearchAlias, removeSearchAlias, unmap, cmap, mapkey } = api;
+api.removeSearchAlias("b", "s");
+api.removeSearchAlias("d", "s");
+api.removeSearchAlias("g", "s");
+api.removeSearchAlias("h", "s");
+api.removeSearchAlias("w", "s");
+api.removeSearchAlias("y", "s");
+api.removeSearchAlias("s", "s");
 
-removeSearchAlias("b", "s");
-removeSearchAlias("d", "s");
-removeSearchAlias("g", "s");
-removeSearchAlias("h", "s");
-removeSearchAlias("w", "s");
-removeSearchAlias("y", "s");
-removeSearchAlias("s", "s");
-
-addSearchAlias("k", "Kagi", "https://kagi.com/search?q=");
-addSearchAlias(
+api.addSearchAlias("k", "Kagi", "https://kagi.com/search?q=");
+api.addSearchAlias(
   "aur",
   "aur",
   "https://aur.archlinux.org/packages/?O=0&SeB=nd&K=",
@@ -25,11 +23,11 @@ settings.scrollStepSize = 100;
 // settings.tabsThreshold = 0;
 settings.modeAfterYank = "Normal";
 
-unmap("<ctrl-i>");
-cmap("<Ctrl-j>", "<Tab>");
-cmap("<Ctrl-k>", "<Shift-Tab>");
+api.unmap("<ctrl-i>");
+api.cmap("<Ctrl-j>", "<Tab>");
+api.cmap("<Ctrl-k>", "<Shift-Tab>");
 
-mapkey("F", "Fullscreen", function () {
+api.mapkey("F", "Fullscreen", function () {
   if (window.fullScreen) {
     document.exitFullscreen();
   } else {
@@ -55,8 +53,8 @@ const palette = {
 
 const hintsCss = `font-size: 13pt; font-family: 'Rubik', 'Iosevka Comfy Wide', sans-serif; border: solid 1px; color: ${palette.fg} !important; background: ${palette.bg}; background-color: ${palette.bg}`;
 
-Hints.style(hintsCss);
-Hints.style(hintsCss, "text");
+api.Hints.style(hintsCss);
+api.Hints.style(hintsCss, "text");
 
 settings.theme = `
   .sk_theme {
@@ -314,7 +312,7 @@ settings.theme = `
     line-height: 10px;
     vertical-align: middle;
     border: solid 1px ${palette.border};
-    border-bottom-lolor: ${palette.border};
+    border-bottom-color: ${palette.border};
     border-radius: 3px;
     box-shadow: inset 0 -1px 0 ${palette.shadow};
   }
