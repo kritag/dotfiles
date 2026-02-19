@@ -2,8 +2,6 @@
 set -euo pipefail
 
 BROWSER="edge"
-
-# Adjust if your binary is different
 EDGE_BIN="${EDGE_BIN:-microsoft-edge-stable}"
 
 DESKTOP_DIR="$HOME/.local/share/applications"
@@ -13,10 +11,28 @@ mkdir -p "$DESKTOP_DIR"
 mkdir -p "$ICON_DIR"
 
 slugify() {
-  echo "$1" \
-    | tr '[:upper:]' '[:lower:]' \
-    | tr -cs 'a-z0-9' '-' \
-    | sed 's/^-*//; s/-*$//'
+  echo "$1" |
+    tr '[:upper:]' '[:lower:]' |
+    tr -cs 'a-z0-9' '-' |
+    sed 's/^-*//; s/-*$//'
+}
+
+fetch_icon() {
+  local DOMAIN="$1"
+  local ICON_PNG="$2"
+  local TMP_ICO="$ICON_PNG.tmp.ico"
+
+  if curl -fsSL \
+    "https://icons.duckduckgo.com/ip3/$DOMAIN.ico" \
+    -o "$TMP_ICO"; then
+
+    # Convert ICO → PNG using ImageMagick v7
+    magick "$TMP_ICO" "$ICON_PNG"
+    rm -f "$TMP_ICO"
+    return 0
+  fi
+
+  return 1
 }
 
 create_webapp() {
@@ -31,25 +47,16 @@ create_webapp() {
 
   echo "→ Creating Edge WebApp: $APP_NAME"
 
-  # Try favicon
   local DOMAIN
   DOMAIN=$(echo "$URL" | awk -F/ '{print $3}')
-  local FAVICON_URL="https://$DOMAIN/favicon.ico"
 
-  if command -v curl >/dev/null; then
-    if curl -fsSL "$FAVICON_URL" -o "$ICON_FILE.tmp"; then
-      if command -v convert >/dev/null; then
-        convert "$ICON_FILE.tmp" "$ICON_FILE" 2>/dev/null || mv "$ICON_FILE.tmp" "$ICON_FILE"
-      else
-        mv "$ICON_FILE.tmp" "$ICON_FILE"
-      fi
-      echo "  Saved icon."
-    else
-      echo "  No favicon found."
-    fi
+  if fetch_icon "$DOMAIN" "$ICON_FILE"; then
+    echo "  Saved icon."
+  else
+    echo "  No icon found."
   fi
 
-  cat > "$DESKTOP_FILE" <<EOF
+  cat >"$DESKTOP_FILE" <<EOF
 [Desktop Entry]
 Name=$APP_NAME (Edge)
 Exec=$EDGE_BIN --app="$URL"
@@ -80,9 +87,9 @@ remove_webapp() {
 
 list_webapps() {
   echo "Edge WebApps:"
-  ls "$DESKTOP_DIR"/webapp-$BROWSER-*.desktop 2>/dev/null \
-    | sed "s#.*/webapp-$BROWSER-##; s/\.desktop//" \
-    || echo "  (none)"
+  ls "$DESKTOP_DIR"/webapp-$BROWSER-*.desktop 2>/dev/null |
+    sed "s#.*/webapp-$BROWSER-##; s/\.desktop//" ||
+    echo "  (none)"
 }
 
 usage() {
@@ -94,18 +101,18 @@ usage() {
 }
 
 case "${1:-}" in
-  create)
-    [[ $# -eq 3 ]] || usage
-    create_webapp "$2" "$3"
-    ;;
-  remove)
-    [[ $# -eq 2 ]] || usage
-    remove_webapp "$2"
-    ;;
-  list)
-    list_webapps
-    ;;
-  *)
-    usage
-    ;;
+create)
+  [[ $# -eq 3 ]] || usage
+  create_webapp "$2" "$3"
+  ;;
+remove)
+  [[ $# -eq 2 ]] || usage
+  remove_webapp "$2"
+  ;;
+list)
+  list_webapps
+  ;;
+*)
+  usage
+  ;;
 esac
