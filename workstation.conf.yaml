@@ -13,6 +13,7 @@
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
+    ~/.local/bin/webapp-firefox: scripts/webapp-firefox
     ~/.local/bin/znap-update: scripts/znap-update
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
@@ -50,6 +51,7 @@
       path: config/flavours/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
+    - [~/.dotfiles/scripts/setup-firefox-webapps.sh]
     # - [~/.dotfiles/pkgbuilds/install-all.sh, "Install all gtk themes and icons"]
     #     - [fc-cache -fv]
 - sudo:
