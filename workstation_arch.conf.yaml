@@ -130,6 +130,7 @@
         - vim
         - vivid
         - vulkan-intel
+        - wget
         - wl-clipboard
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-hyprland

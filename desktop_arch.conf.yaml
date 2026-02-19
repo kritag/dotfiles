@@ -114,6 +114,7 @@
         - vulkan-radeon
         - vulkan-tools
         - wireless-regdb
+        - wget
         - wl-clipboard
         - xdg-desktop-portal
         - xdg-desktop-portal-gtk
