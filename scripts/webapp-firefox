@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROFILE_NAME="WebApps"
+BROWSER="firefox"
+
+DESKTOP_DIR="$HOME/.local/share/applications"
+ICON_DIR="$HOME/.local/share/icons/webapps"
+
+mkdir -p "$DESKTOP_DIR"
+mkdir -p "$ICON_DIR"
+
+slugify() {
+  echo "$1" |
+    tr '[:upper:]' '[:lower:]' |
+    tr -cs 'a-z0-9' '-' |
+    sed 's/^-*//; s/-*$//'
+}
+
+create_webapp() {
+  local APP_NAME="$1"
+  local URL="$2"
+
+  local SLUG
+  SLUG=$(slugify "$APP_NAME")
+
+  local APP_ID="WebApp-$BROWSER-$SLUG"
+  local DESKTOP_FILE="$DESKTOP_DIR/webapp-$BROWSER-$SLUG.desktop"
+  local ICON_FILE="$ICON_DIR/$BROWSER-$SLUG.png"
+
+  echo "→ Creating Firefox WebApp: $APP_NAME"
+
+  # Try favicon
+  local DOMAIN
+  DOMAIN=$(echo "$URL" | awk -F/ '{print $3}')
+  local FAVICON_URL="https://$DOMAIN/favicon.ico"
+
+  if command -v curl >/dev/null; then
+    if curl -fsSL "$FAVICON_URL" -o "$ICON_FILE.tmp"; then
+      if command -v convert >/dev/null; then
+        convert "$ICON_FILE.tmp" "$ICON_FILE" 2>/dev/null || mv "$ICON_FILE.tmp" "$ICON_FILE"
+      else
+        mv "$ICON_FILE.tmp" "$ICON_FILE"
+      fi
+      echo "  Saved icon."
+    else
+      echo "  No favicon found."
+    fi
+  fi
+
+  cat >"$DESKTOP_FILE" <<EOF
+[Desktop Entry]
+Name=$APP_NAME (Firefox)
+Exec=firefox --no-remote -P "$PROFILE_NAME" --new-window --name "$APP_ID" "$URL"
+Terminal=false
+Type=Application
+Categories=Network;WebApp;
+StartupWMClass=$APP_ID
+Icon=$ICON_FILE
+EOF
+
+  echo "✓ Created $DESKTOP_FILE"
+  echo "App ID: $APP_ID"
+}
+
+remove_webapp() {
+  local APP_NAME="$1"
+  local SLUG
+  SLUG=$(slugify "$APP_NAME")
+
+  local DESKTOP_FILE="$DESKTOP_DIR/webapp-$BROWSER-$SLUG.desktop"
+  local ICON_FILE="$ICON_DIR/$BROWSER-$SLUG.png"
+
+  echo "→ Removing Firefox WebApp: $APP_NAME"
+
+  rm -f "$DESKTOP_FILE"
+  rm -f "$ICON_FILE"
+
+  echo "✓ Removed."
+}
+
+list_webapps() {
+  echo "Firefox WebApps:"
+  ls "$DESKTOP_DIR"/webapp-$BROWSER-*.desktop 2>/dev/null |
+    sed "s#.*/webapp-$BROWSER-##; s/\.desktop//" ||
+    echo "  (none)"
+}
+
+usage() {
+  echo "Usage:"
+  echo "  webapp-firefox create \"Name\" https://url"
+  echo "  webapp-firefox remove \"Name\""
+  echo "  webapp-firefox list"
+  exit 1
+}
+
+case "${1:-}" in
+create)
+  [[ $# -eq 3 ]] || usage
+  create_webapp "$2" "$3"
+  ;;
+remove)
+  [[ $# -eq 2 ]] || usage
+  remove_webapp "$2"
+  ;;
+list)
+  list_webapps
+  ;;
+*)
+  usage
+  ;;
+esac
