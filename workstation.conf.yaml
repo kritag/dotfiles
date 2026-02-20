@@ -18,7 +18,8 @@
     ~/.local/bin/znap-update: scripts/znap-update
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
-    ~/.face: ./config/face
+    ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
+    ~/.face: config/face
     ~/.config/mpv:
       glob: true
       force: true
@@ -52,9 +53,8 @@
       path: config/flavours/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
-    - [~/.dotfiles/scripts/setup-firefox-webapps.sh]
     # - [~/.dotfiles/pkgbuilds/install-all.sh, "Install all gtk themes and icons"]
-    #     - [fc-cache -fv]
+    - [fc-cache -fv]
 - sudo:
     - link:
         /usr/local/bin/pwquality.sh: scripts/pwquality.sh

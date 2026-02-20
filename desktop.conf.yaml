@@ -16,7 +16,8 @@
     ~/.local/bin/znap-update: scripts/znap-update
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
-    ~/.face: ./config/face
+    ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
+    ~/.face: config/face
     ~/.config/mpv:
       glob: true
       force: true
@@ -51,6 +52,7 @@
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
     # - [~/.dotfiles/pkgbuilds/install-all.sh, "Install all gtk themes and icons"]
+    - [fc-cache -fv]
 - sudo:
     - link:
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
