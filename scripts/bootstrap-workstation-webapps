@@ -1,3 +1,5 @@
 webapp-edge create "Teams" https://teams.microsoft.com
 webapp-edge create "Outlook" https://outlook.office365.com/mail
 webapp-edge create "ChatGPT" https://chatgpt.com
+webapp-zen create "Discord" https://discord.com/channels/@me
+webapp-zen create "YouTube" https://youtube.com
