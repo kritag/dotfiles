@@ -11,7 +11,7 @@
   "popupTransparency": 0.95,
   "dockTransparency": 1,
   "widgetBackgroundColor": "s",
-  "widgetColorMode": "default",
+  "widgetColorMode": "colorful",
   "controlCenterTileColorMode": "primary",
   "buttonColorMode": "primary",
   "cornerRadius": 8,
@@ -107,27 +107,12 @@
       "width": 50
     },
     {
-      "id": "nightMode",
-      "enabled": true,
-      "width": 50
-    },
-    {
-      "id": "darkMode",
-      "enabled": true,
-      "width": 50
-    },
-    {
       "id": "builtin_vpn",
       "enabled": true,
       "width": 50
     },
     {
       "id": "inputVolumeSlider",
-      "enabled": true,
-      "width": 50
-    },
-    {
-      "id": "idleInhibitor",
       "enabled": true,
       "width": 50
     }
@@ -147,7 +132,7 @@
   "dwlShowAllTags": false,
   "workspaceColorMode": "default",
   "workspaceOccupiedColorMode": "none",
-  "workspaceUnfocusedColorMode": "default",
+  "workspaceUnfocusedColorMode": "sch",
   "workspaceUrgentColorMode": "default",
   "workspaceFocusedBorderEnabled": false,
   "workspaceFocusedBorderColor": "surfaceText",
@@ -157,6 +142,7 @@
   "scrollTitleEnabled": true,
   "audioVisualizerEnabled": true,
   "audioScrollMode": "volume",
+  "audioWheelScrollAmount": 5,
   "clockCompactMode": true,
   "focusedWindowCompactMode": false,
   "runningAppsCompactMode": true,
@@ -175,24 +161,24 @@
   "runningAppsCurrentMonitor": false,
   "appIdSubstitutions": [
     {
-      "pattern": "com.transmissionbt.transmission",
-      "replacement": "transmission-gtk",
-      "type": "contains"
-    },
-    {
       "pattern": "^steam_app_(\\d+)$",
       "replacement": "steam_icon_$1",
       "type": "regex"
     },
     {
-      "pattern": "msedge-_cifhbcnohmdccbgoicgdjpfamggdegmo-Default",
-      "replacement": "teams",
-      "type": "exact"
+      "pattern": "teams",
+      "replacement": "teams-for-linux",
+      "type": "contains"
     },
     {
-      "pattern": "msedge-_pkooggnaalmfkidjmlhoelhdllpphaga-Default",
+      "pattern": "outlook",
       "replacement": "ms-outlook",
-      "type": "exact"
+      "type": "contains"
+    },
+    {
+      "pattern": "youtube",
+      "replacement": "youtube",
+      "type": "contains"
     }
   ],
   "centeringMode": "geometric",
@@ -208,18 +194,21 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
-  "spotlightSectionViewModes": {},
+  "spotlightSectionViewModes": {
+    "plugin_dankHyprlandWindows": "tile"
+  },
   "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
-  "dankLauncherV2Size": "large",
+  "dankLauncherV2Size": "compact",
   "dankLauncherV2BorderEnabled": false,
   "dankLauncherV2BorderThickness": 2,
   "dankLauncherV2BorderColor": "primary",
   "dankLauncherV2ShowFooter": true,
+  "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": true,
   "weatherEnabled": true,
   "networkPreference": "wifi",
-  "iconTheme": "Papirus-Dark",
+  "iconTheme": "Papirus",
   "cursorSettings": {
     "theme": "Bibata-Modern-Classic",
     "size": 16,
@@ -260,18 +249,18 @@
   "soundPluggedIn": true,
   "acMonitorTimeout": 1800,
   "acLockTimeout": 1800,
-  "acSuspendTimeout": 0,
+  "acSuspendTimeout": 7200,
   "acSuspendBehavior": 0,
   "acProfileName": "",
   "batteryMonitorTimeout": 900,
   "batteryLockTimeout": 900,
-  "batterySuspendTimeout": 0,
+  "batterySuspendTimeout": 7200,
   "batterySuspendBehavior": 0,
   "batteryProfileName": "",
   "batteryChargeLimit": 100,
   "lockBeforeSuspend": true,
   "loginctlLockIntegration": true,
-  "fadeToLockEnabled": false,
+  "fadeToLockEnabled": true,
   "fadeToLockGracePeriod": 5,
   "fadeToDpmsEnabled": true,
   "fadeToDpmsGracePeriod": 5,
@@ -336,6 +325,8 @@
   "dockMaxVisibleRunningApps": 0,
   "dockShowOverflowBadge": true,
   "notificationOverlayEnabled": false,
+  "notificationPopupShadowEnabled": true,
+  "notificationPopupPrivacyMode": false,
   "modalDarkenBackground": false,
   "lockScreenShowPowerActions": true,
   "lockScreenShowSystemIcons": true,
@@ -345,7 +336,8 @@
   "lockScreenShowPasswordField": true,
   "lockScreenShowMediaPlayer": true,
   "lockScreenPowerOffMonitorsOnLock": false,
-  "enableFprint": false,
+  "lockAtStartup": false,
+  "enableFprint": true,
   "maxFprintTries": 3,
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
@@ -356,12 +348,15 @@
   "notificationTimeoutCritical": 0,
   "notificationCompactMode": false,
   "notificationPopupPosition": 0,
+  "notificationAnimationSpeed": 1,
+  "notificationCustomAnimationDuration": 400,
   "notificationHistoryEnabled": true,
   "notificationHistoryMaxCount": 50,
   "notificationHistoryMaxAgeDays": 7,
   "notificationHistorySaveLow": true,
   "notificationHistorySaveNormal": true,
   "notificationHistorySaveCritical": true,
+  "notificationRules": [],
   "osdAlwaysShowValue": true,
   "osdPosition": 5,
   "osdVolumeEnabled": true,
@@ -395,7 +390,7 @@
   "updaterUseCustomCommand": false,
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
-  "displayNameMode": "system",
+  "displayNameMode": "model",
   "screenPreferences": {
     "dock": [],
     "systemTray": [
@@ -407,7 +402,15 @@
     "systemTray": true
   },
   "niriOutputSettings": {},
-  "hyprlandOutputSettings": {},
+  "hyprlandOutputSettings": {
+    "eDP-1": {
+      "bitdepth": 10
+    },
+    "DP-1": {
+      "colorManagement": "dcip3",
+      "bitdepth": 10
+    }
+  },
   "displayProfiles": {},
   "activeDisplayProfile": {},
   "displayProfileAutoSelect": false,
@@ -438,7 +441,7 @@
           "mediaSize": 2
         },
         {
-          "id": "kubernetes",
+          "id": "dmsLenovoBatterySettings",
           "enabled": true
         },
         {
@@ -578,6 +581,7 @@
       "enabled": false
     }
   },
+  "clipboardEnterToPaste": false,
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
   "configVersion": 5
