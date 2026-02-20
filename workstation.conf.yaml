@@ -15,6 +15,7 @@
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
     ~/.local/bin/webapp-firefox: scripts/webapp-firefox
     ~/.local/bin/webapp-edge: scripts/webapp-edge
+    ~/.local/bin/webapp-zen: scripts/webapp-zen
     ~/.local/bin/znap-update: scripts/znap-update
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
