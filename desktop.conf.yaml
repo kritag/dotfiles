@@ -4,7 +4,6 @@
       create: true
       force: true
 - link:
-    ~/.config/hypr/hyprland.conf: config/hyprland/hyprland-desktop.conf
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.config/hypr/env.conf: config/hypr-desktop/env-desktop.conf
