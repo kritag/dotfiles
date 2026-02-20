@@ -26,6 +26,7 @@
     - quickshell-git
     - spicetify-cli
     - slack-desktop-wayland
+    - zen-browser-bin
 - omnipkg:
     - install:
         - archlinux-contrib
@@ -50,7 +51,6 @@
         - fd
         - ffmpeg
         - file-roller
-        - firefox
         - fzf
         - fwupd
         - git

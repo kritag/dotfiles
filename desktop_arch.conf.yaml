@@ -18,6 +18,7 @@
     - pulsecontrol-git
     - quickshell-git
     - spicetify-cli
+    - zen-browser-bin
 - omnipkg:
     - install:
         - archlinux-contrib
