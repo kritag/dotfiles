@@ -1,6 +1,7 @@
 # Uses bat to colorize help switches
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias ai='codex exec --sandbox read-only --skip-git-repo-check'
 alias batless='bat --paging always -l yaml'
 alias cd='z'
 alias diff='batdiff --paging=never'
