@@ -2,6 +2,7 @@
 DOCFONT="'Rubik 11'"
 MONOFONT="'Meslo LG S 10'"
 FONT="'Rubik 11'"
+# flavours update all
 
 case "$1" in
 "gruvbox")
