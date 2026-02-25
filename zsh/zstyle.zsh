@@ -96,5 +96,10 @@ zstyle ':fzf-tab:complete:(\\|)read:argument-1' fzf-preview 'echo ${(P)word}'
 # )
 
 #zstyle ':fzf-tab:complete:*' fzf-preview '([[ -f $realpath ]] && bat --color=always "$realpath") || ([[ -d $realpath ]] && (eza --long --git --group-directories-first --icons --color=always "$realpath"))'
-zstyle ':fzf-tab:complete:*:*' fzf-preview 'lesspipe.sh ${(Q)realpath}'
+zstyle ':fzf-tab:complete:*:*' fzf-preview '
+if [ -x /usr/libexec/lesspipe/lesspipe.sh ]; then
+  /usr/libexec/lesspipe/lesspipe.sh ${(Q)realpath}
+else
+  lesspipe.sh ${(Q)realpath}
+fi'
 zstyle ':fzf-tab:complete:*' fzf-flags '--preview-window=50%,border-rounded' $_FZF_TAB_FZF_FLAGS
