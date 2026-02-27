@@ -20,14 +20,18 @@ slugify() {
 fetch_icon() {
   local DOMAIN="$1"
   local ICON_PNG="$2"
-  local TMP_ICO="$ICON_PNG.tmp.ico"
+  local TMP_ICO="${ICON_PNG}.tmp.ico"
+
+  if [[ -f "$ICON_PNG" ]]; then
+    return 0
+  fi
 
   if curl -fsSL \
     "https://icons.duckduckgo.com/ip3/$DOMAIN.ico" \
     -o "$TMP_ICO"; then
 
-    # Convert ICO → PNG using ImageMagick v7
-    magick "$TMP_ICO" "$ICON_PNG"
+    magick "${TMP_ICO}[0]" "$ICON_PNG"
+
     rm -f "$TMP_ICO"
     return 0
   fi
