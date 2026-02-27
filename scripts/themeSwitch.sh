@@ -12,9 +12,9 @@ case "$1" in
   sed -i --follow-symlinks 's/^ *syntax-theme *=.*/  syntax-theme = gruvbox-dark/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1gruvbox\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
   echo "$HOME/.config/fsh/gruvbox.ini.ini" >~/.config/fsh/current-theme
-  kitten themes Gruvbox Dark Hard
+  kitten themes Gruvbox Material Dark Hard
   dconf write /org/gnome/desktop/interface/gtk-theme "'Gruvbox-Dark-Compact'"
-  dconf write /org/gnome/desktop/interface/icon-theme "'Everforest-Dark'"
+  dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"
   dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
