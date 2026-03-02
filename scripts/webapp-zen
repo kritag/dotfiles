@@ -66,7 +66,7 @@ create_webapp() {
   cat >"$DESKTOP_FILE" <<EOF
 [Desktop Entry]
 Name=$APP_NAME (Zen)
-Exec=env MOZ_APP_REMOTINGNAME=$APP_ID $ZEN_BIN --no-remote --new-instance $URL
+Exec=env MOZ_APP_REMOTINGNAME=$APP_ID $ZEN_BIN --no-remote --blank-window $URL
 Terminal=false
 Type=Application
 Categories=Network;WebApp;
