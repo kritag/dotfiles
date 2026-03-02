@@ -51,3 +51,17 @@ Available profiles in this repo:
 - Desktop and workstation profiles are Hyprland-based.
 - Re-run `./install ...` after changes; Dotbot actions are intended to be
   repeatable.
+
+## Zen Browser Profile
+
+Zen prefs are managed as `user.js` in dotfiles and symlinked into the active Zen
+profile.
+
+```bash
+# Link dotfiles user.js into active Zen profile
+scripts/zen-link-userjs
+```
+
+Source file:
+
+- `config/zen/user.js`
