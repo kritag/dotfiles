@@ -15,6 +15,7 @@
     ~/.local/bin/webapp-firefox: scripts/webapp-firefox
     ~/.local/bin/webapp-edge: scripts/webapp-edge
     ~/.local/bin/webapp-zen: scripts/webapp-zen
+    ~/.local/bin/zen-link-userjs: scripts/zen-link-userjs
     ~/.local/bin/znap-update: scripts/znap-update
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
@@ -53,6 +54,7 @@
       path: config/flavours/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
+    - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
     # - [~/.dotfiles/pkgbuilds/install-all.sh, "Install all gtk themes and icons"]
     - [fc-cache -fv]
 - sudo:
