@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 DOCFONT="'Rubik 11'"
 MONOFONT="'Meslo LG S 10'"
 FONT="'Rubik 11'"
@@ -11,7 +11,7 @@ case "$1" in
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="gruvbox-dark"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/^ *syntax-theme *=.*/  syntax-theme = gruvbox-dark/' ~/.theme.gitconfig
   sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1gruvbox\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  echo "$HOME/.config/fsh/gruvbox.ini.ini" >~/.config/fsh/current-theme
+  echo "$HOME/.config/fsh/gruvbox.ini" >~/.config/fsh/current-theme
   kitten themes Gruvbox Material Dark Hard
   dconf write /org/gnome/desktop/interface/gtk-theme "'Gruvbox-Dark-Compact'"
   dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"

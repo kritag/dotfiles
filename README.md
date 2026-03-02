@@ -1,34 +1,53 @@
 # dotfiles
 
-Modified install script to take .conf.yaml files as arguments. Any number of
-arguments may be passed depending on the desired installation:
-`./install workstation` installs the contents of workstation.conf.yaml.
+Personal dotfiles managed with Dotbot and custom plugins.
 
-Both workstation and desktop profiles are hyprland-based.
+## Prerequisites
 
-## Non-arch
+- `git`
+- `bash`
+- `python3`
 
-Install Brew:
+Some profiles also rely on package manager plugins:
 
+- Arch: `yay`
+- Fedora/RHEL: `yum`/`dnf`
+- macOS/Linux (non-Arch): `brew`
+
+## Install
+
+The installer always runs `default.conf.yaml` first, then any profile names you
+pass (without the `.conf.yaml` suffix).
+
+Examples:
+
+```bash
+# Default only
+./install
+
+# Workstation profile
+./install workstation
+
+# Arch workstation + base workstation
+./install workstation_arch workstation
+
+# Fedora workstation + base workstation
+./install workstation_fedora workstation
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
 
-## Arch
+Available profiles in this repo:
 
-- Install yay:
+- `default`
+- `desktop`
+- `desktop_arch`
+- `server`
+- `server_fedora`
+- `workstation`
+- `workstation_arch`
+- `workstation_fedora`
 
-```
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
+## Notes
 
-- Install python `sudo pacman -S python`
-
-- Run ./install (machine)\_arch.conf.yaml (machine).conf.yaml. Run it until it
-  gives no errors.
-
-- Configure timeshift autosnap
-
-- Configure Plymouth with its config and mkinitcpio.conf
+- Desktop and workstation profiles are Hyprland-based.
+- Re-run `./install ...` after changes; Dotbot actions are intended to be
+  repeatable.

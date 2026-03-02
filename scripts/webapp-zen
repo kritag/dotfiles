@@ -83,7 +83,7 @@ remove_webapp() {
   SLUG=$(slugify "$APP_NAME")
 
   local DESKTOP_FILE="$DESKTOP_DIR/webapp-$BROWSER-$SLUG.desktop"
-  local ICON_FILE="$ICON_DIR/$BROWSER-$slUG.png"
+  local ICON_FILE="$ICON_DIR/$BROWSER-$SLUG.png"
 
   echo "→ Removing Zen WebApp: $APP_NAME"
 

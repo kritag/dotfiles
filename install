@@ -13,7 +13,9 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
+configs=("${DEFAULT_CONFIG_PREFIX}" "$@")
+
+for conf in "${configs[@]}"; do
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
     -v \
     -d "${BASEDIR}" \
