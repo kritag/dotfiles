@@ -63,6 +63,7 @@
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
     - shell:
         #        - [systemctl enable paccache.timer --now, "Enable deletion of cached pacman packages"]
+        - ["command -v authselect >/dev/null 2>&1 && authselect opt-out || true; HOSTS_LINE=\"$(grep -E '^hosts:[[:space:]]' config/nsswitch.conf)\"; grep -qE '^hosts:[[:space:]]' /etc/nsswitch.conf && sed -i \"s|^hosts:.*|${HOSTS_LINE}|\" /etc/nsswitch.conf || printf '\n%s\n' \"$HOSTS_LINE\" >> /etc/nsswitch.conf", "Apply nsswitch hosts line from dotfiles (workstation only)"]
         - [install -d -m 0755 /etc/systemd/logind.conf.d && install -m 0644 services/10-lid.conf /etc/systemd/logind.conf.d/10-lid.conf, "Configure systemd-logind lid behavior (ignore lid on external power)"]
         - [install -d -m 0755 /etc/systemd/journald.conf.d && install -m 0644 services/10-journald-retention.conf /etc/systemd/journald.conf.d/10-journald-retention.conf, "Configure systemd-journald log rotation"]
         - ["sed -i 's/^#\\?\\s*deny\\s*=.*/deny = 0/' /etc/security/faillock.conf", "Set faillock deny = 0"]

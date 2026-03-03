@@ -2,7 +2,14 @@
 DOCFONT="'Rubik 11'"
 MONOFONT="'Meslo LG S 10'"
 FONT="'Rubik 11'"
-# flavours update all
+STAMP_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
+STAMP_FILE="$STAMP_DIR/flavours-update.done"
+
+if [[ ! -f "$STAMP_FILE" ]]; then
+  flavours update all
+  mkdir -p "$STAMP_DIR"
+  : >"$STAMP_FILE"
+fi
 
 case "$1" in
 "gruvbox")

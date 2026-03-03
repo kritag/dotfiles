@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+KEYBASE_MOUNT="${KEYBASE_MOUNT:-/run/user/${UID}/keybase/kbfs/private}"
+KEYBASE_IDENTITY="${KEYBASE_IDENTITY:-${USER}}"
+OVERLAY_REL="${OVERLAY_REL:-dotfiles/bootstrap.sh}"
+OVERLAY_PATH="${OVERLAY_PATH:-}"
+
+if [[ "${1:-}" == "--help" ]]; then
+  cat <<EOF
+Usage: bootstrap-private-overlay
+
+Optional environment variables:
+  KEYBASE_MOUNT     (default: /run/user/\$UID/keybase/kbfs/private)
+  KEYBASE_IDENTITY  (default: \$USER)
+  OVERLAY_REL       (default: dotfiles/bootstrap.sh)
+  OVERLAY_PATH      (overrides full path resolution)
+EOF
+  exit 0
+fi
+
+if [[ -z "$OVERLAY_PATH" ]]; then
+  candidate_id="$KEYBASE_IDENTITY"
+  if [[ ! -d "$KEYBASE_MOUNT/$candidate_id" ]]; then
+    mapfile -t identities < <(find "$KEYBASE_MOUNT" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' 2>/dev/null || true)
+    if [[ "${#identities[@]}" -eq 1 ]]; then
+      candidate_id="${identities[0]}"
+    fi
+  fi
+  OVERLAY_PATH="${KEYBASE_MOUNT}/${candidate_id}/${OVERLAY_REL}"
+fi
+
+if [[ ! -x "$OVERLAY_PATH" ]]; then
+  if [[ -e "$OVERLAY_PATH" ]]; then
+    echo "Private overlay exists but is not executable: $OVERLAY_PATH" >&2
+    echo "Run: chmod +x \"$OVERLAY_PATH\"" >&2
+    exit 1
+  fi
+  echo "Private overlay not found, skipping: $OVERLAY_PATH"
+  exit 0
+fi
+
+echo "Running private overlay: $OVERLAY_PATH"
+"$OVERLAY_PATH"
