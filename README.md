@@ -65,3 +65,23 @@ scripts/zen-link-userjs
 Source file:
 
 - `config/zen/user.js`
+
+## Private Overlay
+
+Public dotfiles can invoke a private post-install overlay script (for secrets
+and company-specific steps) without storing those details in this repo.
+
+Dotbot (Fedora workstation profile) runs:
+
+- `scripts/bootstrap-private-overlay`
+
+Default lookup path:
+
+- `/run/user/$UID/keybase/kbfs/private/$USER/dotfiles/bootstrap.sh`
+
+You can override lookup with env vars:
+
+- `KEYBASE_MOUNT`
+- `KEYBASE_IDENTITY`
+- `OVERLAY_REL`
+- `OVERLAY_PATH`
