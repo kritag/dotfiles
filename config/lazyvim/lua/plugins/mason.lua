@@ -15,6 +15,7 @@ return {
         "prettierd",
         "pylint",
         "shellcheck",
+        "tflint",
         "tombi",
         "vale",
         "vale-ls",
