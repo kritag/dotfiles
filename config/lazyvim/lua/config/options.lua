@@ -12,9 +12,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- Ensure Neovim writes its own log under XDG state, not project/dotfiles dirs.
-vim.env.NVIM_LOG_FILE = vim.fn.stdpath("state") .. "/nvim.log"
-
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
   extension = {
