@@ -23,6 +23,7 @@
         - [dnf copr enable brycensranch/gpu-screen-recorder-git -y]
         - [dnf copr enable enmanuelmoreira/mapanare-labs -y]
         - [dnf copr enable shdwchn10/AllTheTools -y]
+        - ['wget -O- https://rpm.releases.hashicorp.com/fedora/hashicorp.repo | sudo tee /etc/yum.repos.d/hashicorp.repo']
         - ['sudo sed -i ''/^excludepkgs=/d'' /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:shdwchn10:AllTheTools.repo && sudo sh -c ''echo "excludepkgs=fzf" >> /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:shdwchn10:AllTheTools.repo''']
         - [dnf copr enable holeprof/fedora-extended -y]
         - ['sudo grep -qxF ''includepkgs=obsidian oh-my-posh'' /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:holeprof:fedora-extended.repo || sudo sh -c ''echo "includepkgs=obsidian oh-my-posh" >> /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:holeprof:fedora-extended.repo''']
@@ -32,6 +33,7 @@
         - [plymouth-set-default-theme spinner -R]
         - [systemctl mask keybase-redirector.service, "Mask keybase-redirector.service"]
         - [rm -f /etc/xdg/autostart/solaar.desktop]
+        - [sudo dnf --releasever=43 install terraform]
     - yum: [alsa-ucm, alsa-lib, alsa-utils, alsa-firmware, alsa-sof-firmware, argocd, bat, bat-extras, bibata-cursor-themes, btop, btrfsmaintenance, dms, dnf-automatic, dnf-plugins-core, dracula-gtk-theme, duf, fastfetch, fd-find, file-roller, flux-dist, fprintd, fprintd-pam, fuse-sshfs, fwupd, fzf, gcr, gh, git, git-delta, github-copilot, glow, gnome-calculator, gnome-keyring, gnome-keyring-pam, gnome-text-editor, google-noto-emoji-fonts, google-noto-color-emoji-fonts, grimblast, gpu-screen-recorder-gtk, gvfs-smb, helm, hyprland, hyprlock, ImageMagick, inotify-tools, intel-media-driver, iwlwifi-mld-firmware, jq, k9s, keepassxc, kind, kitty, krew, kubeconform-dist, kubecolor, kubectl, kubectx, kubeseal, lazygit, less, lesspipe, libreoffice, libva-intel-driver, libva-utils, loupe, lpf-spotify-client, ly, make, man-db, mangohud, mokutil, mpv, neovim, netcat, NetworkManager, NetworkManager-wifi, obs-studio, obsidian, oc, oh-my-posh, papers, papirus-icon-theme, papirus-icon-theme-dark, pipx, playerctl, plymouth, plymouth-system-theme, power-profiles-daemon, procs, python3, python3-pip, qbittorrent, qt6-qtmultimedia, quickshell, ripgrep, seahorse, slack-repo, snapper, socat, solaar, sops, sqlite, sshpass, sshuttle, stern, systemd-resolved, tar, tealdeer, thunar, thunar-archive-plugin, thunar-volman, tree, tree-sitter-cli, unzip, uwsm, vim, vivid, vulkan-tools, wget, wiremix, wl-clipboard, xdg-desktop-portal-gtk, xdg-desktop-portal-hyprland, xdg-desktop-portal, xdg-user-dirs, yq, zen-browser, zoxide, zsh]
 - shell:
     - [krew update && krew install view-secret]
