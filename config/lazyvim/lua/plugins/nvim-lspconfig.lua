@@ -22,6 +22,8 @@ return {
           -- -- to fully override the default_config, change the below
           filetypes = { "html", "css", "javascript", "typescript", "vue", "svelte" },
         },
+        terraformls = {},
+        tofu_ls = {},
         yamlls = {
           -- Have to add this for yamlls to understand that we support line folding
           capabilities = {
