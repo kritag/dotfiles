@@ -10,6 +10,10 @@ return {
           css = { "prettierd" },
           toml = { "tombi" },
           javascript = { "prettierd" },
+          hcl = { "packer_fmt" },
+          terraform = { "terraform_fmt" },
+          tf = { "terraform_fmt" },
+          ["terraform-vars"] = { "terraform_fmt" },
           python = {
             -- To fix auto-fixable lint errors.
             "ruff_fix",
