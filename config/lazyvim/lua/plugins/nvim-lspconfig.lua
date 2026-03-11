@@ -22,6 +22,12 @@ return {
           -- -- to fully override the default_config, change the below
           filetypes = { "html", "css", "javascript", "typescript", "vue", "svelte" },
         },
+        terraformls = {
+          cmd = { "sh", "-c", "terraform-ls serve 2>/tmp/terraform-ls.stderr.log" },
+        },
+        tflint = {
+          cmd = { "sh", "-c", "tflint --langserver 2>/tmp/tflint.stderr.log" },
+        },
         yamlls = {
           -- Have to add this for yamlls to understand that we support line folding
           capabilities = {

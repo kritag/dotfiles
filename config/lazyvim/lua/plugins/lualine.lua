@@ -2,67 +2,89 @@ local function getLspName()
   local bufnr = vim.api.nvim_get_current_buf()
   local buf_ft = vim.bo[bufnr].filetype
 
-  local buf_client_names = {}
+  local names = {}
 
-  -- 1️⃣ LSP clients
-  local buf_clients = vim.lsp.get_clients({ bufnr = bufnr })
-  if buf_clients and not vim.tbl_isempty(buf_clients) then
+  -- 1) LSP clients
+  local ok_clients, buf_clients = pcall(vim.lsp.get_clients, { bufnr = bufnr })
+  if ok_clients and buf_clients and not vim.tbl_isempty(buf_clients) then
     for _, client in pairs(buf_clients) do
       if client.name ~= "null-ls" then
-        table.insert(buf_client_names, client.name)
+        table.insert(names, client.name)
       end
     end
   end
 
-  -- 2️⃣ nvim-lint linters (only if condition passes)
+  -- 2) nvim-lint linters (condition-aware, fail-safe)
   local ok_lint, lint = pcall(require, "lint")
   if ok_lint then
-    local ft_linters = lint.linters_by_ft[buf_ft]
+    local ft_linters = type(lint._resolve_linter_by_ft) == "function" and lint._resolve_linter_by_ft(buf_ft)
+      or lint.linters_by_ft[buf_ft]
     if ft_linters then
+      local filename = vim.api.nvim_buf_get_name(bufnr)
+      local ctx = { filename = filename, dirname = vim.fn.fnamemodify(filename, ":h") }
       for _, linter_name in ipairs(ft_linters) do
         local linter = lint.linters[linter_name]
-        if linter then
+        if type(linter) == "function" then
+          local ok_linter, resolved = pcall(linter)
+          linter = ok_linter and resolved or nil
+        end
+        if type(linter) == "table" then
           local run = true
           if type(linter.condition) == "function" then
-            local ok, result = pcall(linter.condition, { filename = vim.api.nvim_buf_get_name(bufnr) })
-            run = ok and result
+            local ok_cond, result = pcall(linter.condition, ctx)
+            run = ok_cond and result
           end
           if run then
-            table.insert(buf_client_names, linter_name)
+            table.insert(names, linter_name)
           end
         end
       end
     end
   end
 
-  -- 3️⃣ conform.nvim formatters
+  -- 3) conform.nvim formatters (prefer runtime resolver)
   local ok_conf, conform = pcall(require, "conform")
   if ok_conf then
-    local entry = conform.formatters_by_ft[buf_ft]
-    local formatters = type(entry) == "function" and entry(bufnr) or entry
-    if type(formatters) == "table" then
-      vim.list_extend(buf_client_names, formatters)
-    elseif type(formatters) == "string" then
-      table.insert(buf_client_names, formatters)
+    if type(conform.list_formatters_to_run) == "function" then
+      local ok_run, infos, uses_lsp = pcall(conform.list_formatters_to_run, bufnr)
+      if ok_run then
+        for _, info in ipairs(infos or {}) do
+          if info and info.name then
+            table.insert(names, info.name)
+          end
+        end
+        if uses_lsp then
+          table.insert(names, "lsp_format")
+        end
+      end
+    else
+      local entry = conform.formatters_by_ft and conform.formatters_by_ft[buf_ft]
+      local formatters = type(entry) == "function" and entry(bufnr) or entry
+      if type(formatters) == "table" then
+        vim.list_extend(names, formatters)
+      elseif type(formatters) == "string" then
+        table.insert(names, formatters)
+      end
     end
   end
 
-  -- 4️⃣ Deduplicate
+  -- 4) Deduplicate
   local hash, unique = {}, {}
-  for _, v in ipairs(buf_client_names) do
+  for _, v in ipairs(names) do
     if not hash[v] then
       table.insert(unique, v)
       hash[v] = true
     end
   end
 
-  -- 5️⃣ Return comma-separated string
+  -- 5) Return comma-separated string
   return #unique > 0 and table.concat(unique, ", ") or "  No servers"
 end
 
 local lsp = {
   function()
-    return getLspName()
+    local ok, value = pcall(getLspName)
+    return ok and value or "tools: error"
   end,
   separator = { left = "" },
 }
@@ -209,11 +231,7 @@ return {
               -- color = { bg = colors.surface0, fg = colors.blue, gui = "bold" },
             },
           },
-          lualine_z = {
-            {
-              "lsp",
-            },
-          },
+          lualine_z = { lsp },
         },
         winbar = {
           lualine_c = {
@@ -253,7 +271,6 @@ return {
           end,
         })
       end
-      table.insert(opts.sections.lualine_z, lsp)
       table.insert(
         opts.sections.lualine_x,
         2,
