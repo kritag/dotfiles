@@ -14,6 +14,8 @@ return {
       bash = { "shellcheck" },
       markdown = { "markdownlint-cli2" },
       yaml = { "yamllint", "kube-linter", "actionlint" },
+      terraform = { "terraform_validate" },
+      tf = { "terraform_validate" },
       -- lua = { "selene" },
     },
     linters = {
