@@ -3,6 +3,7 @@ set -euo pipefail
 
 BROWSER="edge"
 EDGE_BIN="${EDGE_BIN:-microsoft-edge-stable}"
+EDGE_FLAGS="--ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer,WebRtcPipeWireCapturer,WebRtcPipeWireCamera"
 
 DESKTOP_DIR="$HOME/.local/share/applications"
 ICON_DIR="$HOME/.local/share/icons/webapps"
@@ -63,7 +64,7 @@ create_webapp() {
   cat >"$DESKTOP_FILE" <<EOF
 [Desktop Entry]
 Name=$APP_NAME (Edge)
-Exec=$EDGE_BIN --app="$URL"
+Exec=$EDGE_BIN $EDGE_FLAGS --app="$URL"
 Terminal=false
 Type=Application
 Categories=Network;WebApp;
