@@ -23,6 +23,7 @@
         - [dnf copr enable brycensranch/gpu-screen-recorder-git -y]
         - [dnf copr enable enmanuelmoreira/mapanare-labs -y]
         - [dnf copr enable shdwchn10/AllTheTools -y]
+        - ['dnf config-manager addrepo --from-repofile https://kubecolor.github.io/packages/rpm/kubecolor.repo']
         - ['wget -O- https://rpm.releases.hashicorp.com/fedora/hashicorp.repo | sudo tee /etc/yum.repos.d/hashicorp.repo']
         - ['sudo sed -i ''/^excludepkgs=/d'' /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:shdwchn10:AllTheTools.repo && sudo sh -c ''echo "excludepkgs=fzf" >> /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:shdwchn10:AllTheTools.repo''']
         - [dnf copr enable holeprof/fedora-extended -y]
