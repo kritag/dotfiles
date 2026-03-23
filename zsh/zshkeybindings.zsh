@@ -1,6 +1,6 @@
 # Make sure that the terminal is in application mode when zle is active, since
 # only then values from $terminfo are valid
-if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+if ((${+terminfo[smkx]})) && ((${+terminfo[rmkx]})); then
   function setup_keybindings() {
     echoti smkx
     printf '\e[?12h\e[?25h'
@@ -57,26 +57,26 @@ if [[ -n "${terminfo[khome]}" ]]; then
   bindkey -M viins "${terminfo[khome]}" beginning-of-line
   bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
 fi
-bindkey -M viins  '^[[H'  beginning-of-line
-bindkey -M viins  '^[[1~' beginning-of-line
-bindkey -M viins  '^[OH'  beginning-of-line
+bindkey -M viins '^[[H' beginning-of-line
+bindkey -M viins '^[[1~' beginning-of-line
+bindkey -M viins '^[OH' beginning-of-line
 
-bindkey -M vicmd  '^[[H'  beginning-of-line
-bindkey -M vicmd  '^[[1~' beginning-of-line
-bindkey -M vicmd  '^[OH'  beginning-of-line
+bindkey -M vicmd '^[[H' beginning-of-line
+bindkey -M vicmd '^[[1~' beginning-of-line
+bindkey -M vicmd '^[OH' beginning-of-line
 # [End] - Go to end of line
 if [[ -n "${terminfo[kend]}" ]]; then
   bindkey -M emacs "${terminfo[kend]}" end-of-line
   bindkey -M viins "${terminfo[kend]}" end-of-line
   bindkey -M vicmd "${terminfo[kend]}" end-of-line
 fi
-bindkey -M viins  '^[[F'  end-of-line
-bindkey -M viins  '^[[4~' end-of-line
-bindkey -M viins  '^[OF'  end-of-line
+bindkey -M viins '^[[F' end-of-line
+bindkey -M viins '^[[4~' end-of-line
+bindkey -M viins '^[OF' end-of-line
 
-bindkey -M vicmd  '^[[F'  end-of-line
-bindkey -M vicmd  '^[[4~' end-of-line
-bindkey -M vicmd  '^[OF'  end-of-line
+bindkey -M vicmd '^[[F' end-of-line
+bindkey -M vicmd '^[[4~' end-of-line
+bindkey -M vicmd '^[OF' end-of-line
 # [Shift-Tab] - move through the completion menu backwards
 if [[ -n "${terminfo[kcbt]}" ]]; then
   bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
