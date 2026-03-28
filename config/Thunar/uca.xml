@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1769080925320507-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+  <icon>media-optical</icon>
+  <name>Mount ISO</name>
+  <submenu></submenu>
+  <unique-id>1774726256447137-1</unique-id>
+  <command>sh -c 'dev=$(udisksctl loop-setup -f "%f" | sed -n '\''s#.*\(/dev/loop[0-9]\+\).*#\1#p'\'') &amp;&amp; udisksctl mount -b "$dev"'</command>
+  <description></description>
+  <range>*</range>
+  <patterns>*.iso;*.ISO</patterns>
+  <other-files/>
+</action>
+
+<action>
+  <icon></icon>
+  <name>Unmount ISO</name>
+  <submenu></submenu>
+  <unique-id>1774726288058904-2</unique-id>
+  <command>sh -c 'dev=$(losetup -j "%f" | sed -n '\''s/:.*//p'\'' | head -n1) &amp;&amp; (udisksctl unmount -b "$dev" || true) &amp;&amp; udisksctl loop-delete -b "$dev"'</command>
+  <description></description>
+  <range>*</range>
+  <patterns>*</patterns>
+  <other-files/>
+</action>
+</actions>
