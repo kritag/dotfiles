@@ -30,6 +30,7 @@
         - cava
         - chafa
         - cpio
+        - cups-pk-helper
         - discord
         - dmidecode
         - duf
@@ -56,6 +57,7 @@
         - hyprlock
         - inotify-tools
         - jq
+        - kimageformats
         - kitty
         - lact
         - lazygit
