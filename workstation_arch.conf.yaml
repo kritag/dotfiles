@@ -42,6 +42,7 @@
         - cava
         - chafa
         - cpio
+        - cups-pk-helper
         - dmidecode
         - docker
         - docker-compose
@@ -70,6 +71,7 @@
         - jq
         - keepassxc
         - kitty
+        - kimageformats
         - krew
         - kubeconform
         - kubectl
