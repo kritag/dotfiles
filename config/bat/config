@@ -26,6 +26,6 @@
 --paging=never
 --color=always
 --italic-text=always
---style="plain"
+--style="changes"
 --tabs=2
 --theme="gruvbox-dark"
