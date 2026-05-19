@@ -7,6 +7,7 @@
     ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.config/hypr/env.conf: config/hypr-desktop/env-desktop.conf
+    ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf

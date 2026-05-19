@@ -59,7 +59,14 @@ monitorv2 {
   cm = srgb
 }
 monitorv2 {
-  output = desc: Samsung Electric Company C34H89x HTOJ701358
+  output = desc: Samsung Electric Company C34H89x HTOJ701358s
+  mode = 3440x1440@99.98
+  position = 1920x0
+  scale = 1
+  cm = srgb
+}
+monitorv2 {
+  output = desc: Samsung Electric Company C34H89x HTOJ800480
   mode = 3440x1440@99.98
   position = 1920x0
   scale = 1
