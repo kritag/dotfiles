@@ -3,4 +3,4 @@
 while ! hyprctl clients | grep -q "microsoft-edge"; do
   sleep 0.2
 done
-hyprctl dispatch movetoworkspacesilent 2,microsoft-edge
+hyprctl dispatch 'hl.dsp.window.move({ workspace = "2", follow = false, window = "microsoft-edge" })'

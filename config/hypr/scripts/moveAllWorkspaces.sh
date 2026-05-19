@@ -5,5 +5,5 @@ ACTIVE_MONITOR=$(hyprctl monitors | awk '/Monitor/ {id=$4} /focused: yes/ {print
 
 # Move each workspace to the active monitor
 for workspace in $(hyprctl workspaces | grep -Eo 'ID [0-9]+' | awk '{print $2}'); do
-  hyprctl dispatch moveworkspacetomonitor "$workspace" "$ACTIVE_MONITOR"
+  hyprctl dispatch "hl.dsp.workspace.move({ workspace = \"$workspace\", monitor = \"$ACTIVE_MONITOR\" })"
 done
