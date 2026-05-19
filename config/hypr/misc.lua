@@ -1,24 +1,24 @@
 hl.config({
-    misc = {
-        animate_manual_resizes     = true,
-        disable_hyprland_logo      = true,
-        disable_splash_rendering   = true,
-        enable_swallow             = false,
-        force_default_wallpaper    = 0,
-        initial_workspace_tracking = 1,
-        key_press_enables_dpms     = true,
-        mouse_move_enables_dpms    = false,
-        swallow_regex              = "(foot|kitty|allacritty|Alacritty|thunar)",
-        vrr                        = 2,
-    },
-    ecosystem = {
-        no_donation_nag = true,
-        no_update_news  = true,
-    },
-    render = {
-        direct_scanout = 2,
-    },
-    cursor = {
-        no_break_fs_vrr = 2,
-    },
+	misc = {
+		animate_manual_resizes = true,
+		disable_hyprland_logo = true,
+		disable_splash_rendering = true,
+		enable_swallow = false,
+		force_default_wallpaper = 0,
+		initial_workspace_tracking = 1,
+		key_press_enables_dpms = true,
+		mouse_move_enables_dpms = false,
+		swallow_regex = "(foot|kitty|allacritty|Alacritty|thunar)",
+		vrr = 2,
+	},
+	ecosystem = {
+		no_donation_nag = true,
+		no_update_news = true,
+	},
+	render = {
+		direct_scanout = 2,
+	},
+	cursor = {
+		no_break_fs_vrr = 2,
+	},
 })
