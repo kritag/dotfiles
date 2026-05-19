@@ -13,7 +13,8 @@ require("animations")
 require("input")
 require("layouts")
 require("misc")
-require("xdph")
+-- xdph.conf is read by xdg-desktop-portal-hyprland directly, not Hyprland.
+-- It stays as hyprlang at ~/.config/hypr/xdph.conf.
 require("windowrules")
 require("keybinds")
 

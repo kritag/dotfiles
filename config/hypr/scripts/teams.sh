@@ -3,4 +3,4 @@
 while ! hyprctl clients | grep -q "teams-for-linux"; do
   sleep 0.2
 done
-hyprctl dispatch movetoworkspacesilent 3,teams-for-linux
+hyprctl dispatch 'hl.dsp.window.move({ workspace = "3", follow = false, window = "teams-for-linux" })'
