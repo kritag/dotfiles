@@ -6,6 +6,13 @@ hl.bind("SUPER + M", hl.dsp.exec_cmd("uwsm stop"))
 hl.bind("SUPER + W", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + P", hl.dsp.window.pseudo({ action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + SHIFT + G", function() hl.config({ general = { layout = "manual" } }) end)
+hl.bind("SUPER + SHIFT + D", function() hl.config({ general = { layout = "dwindle" } }) end)
+-- manual layout messages (i3-like)
+hl.bind("SUPER + minus", hl.dsp.layout("splith"))     -- next window splits horizontally
+hl.bind("SUPER + backslash", hl.dsp.layout("splitv")) -- next window splits vertically
+hl.bind("SUPER + SHIFT + j", hl.dsp.layout("swapnext"))
+hl.bind("SUPER + SHIFT + k", hl.dsp.layout("swapprev"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("uwsm-app -- thunar.desktop"))
 hl.bind("SUPER + CTRL + E", hl.dsp.exec_cmd('dms ipc call spotlight openQuery ":e "'))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("uwsm-app -- zen.desktop"))
