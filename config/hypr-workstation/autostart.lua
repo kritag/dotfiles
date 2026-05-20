@@ -1,6 +1,3 @@
--- Workstation autostart. Symlinked to ~/.config/hypr/autostart.lua by dotbot.
--- Ported from env-workstation.conf.
-
 hl.on("hyprland.start", function()
 	local scriptsDir = (os.getenv("HOME") or "") .. "/.config/hypr/scripts"
 

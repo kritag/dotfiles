@@ -8,8 +8,8 @@
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
-    # ~/.config/hypr/env.conf: config/hypr-workstation/env-workstation.conf
     ~/.config/hypr/autostart.lua: config/hypr-workstation/autostart.lua
+    ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.config/user-dirs.dirs: config/user-dirs.dirs

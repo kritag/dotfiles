@@ -1,7 +1,3 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
-  "runtime.version": "Lua 5.4",
-  "workspace.library": ["/usr/share/hypr/stubs"],
-  "workspace.checkThirdParty": false,
-  "diagnostics.disable": ["lowercase-global"]
+  "workspace.library": ["/usr/share/hypr/stubs"]
 }
