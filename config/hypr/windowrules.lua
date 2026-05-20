@@ -1,8 +1,3 @@
--- Window rules ported from windowrules.conf.
--- v0.55.2 lua match keys: class, title, initial_class, initial_title, modal,
--- fullscreen, pin, focus, group, xwayland, workspace, content, xdg_tag, namespace, tag.
--- Bool match values may be passed as bool or string; numbers and bools are coerced to strings.
-
 hl.window_rule({
 	name = "opacity-90",
 	match = {
@@ -207,7 +202,6 @@ hl.window_rule({
 	move = "cursor_x cursor_y",
 })
 
--- Layer rules
 hl.layer_rule({
 	match = {
 		namespace = "^(dms:(bar|tooltip|toast|dock-context-menu|tray-menu-window|control-center|notification-center-popout|dash|system-update|process-list-popout|battery|popout|app-launcher))$",
