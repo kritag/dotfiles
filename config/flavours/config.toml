@@ -39,7 +39,7 @@ template = "glow"
 rewrite = true
 
 [[items]]
-file = "~/.config/hypr/colors.conf"
+file = "~/.config/hypr/colors.lua"
 template = "hypr"
 rewrite = true
 
