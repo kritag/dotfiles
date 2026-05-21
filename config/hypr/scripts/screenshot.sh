@@ -11,8 +11,8 @@ NORMAL="$HOME/.dotfiles/wallpapers/5xcb4pqt1vj61.jpg"
 # keep in sync if those change. Avoids `hyprctl reload`, which re-evaluates the
 # whole config and causes layout recalcs (visible window reshuffle).
 
--- general.* (gaps/border) deliberately omitted: changing them triggers a
--- layout recalc, which in `columns` visibly reshuffles windows.
+# general.* (gaps/border) deliberately omitted: changing them triggers a
+# layout recalc, which in `columns` visibly reshuffles windows.
 SCREENSHOT_MODE='hl.config({
   animations = { enabled = false },
   decoration = { shadow = { enabled = false }, blur = { enabled = false }, rounding = 0 },
