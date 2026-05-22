@@ -189,6 +189,16 @@ hl.window_rule({
 	no_initial_focus = true,
 })
 
+hl.window_rule({
+	match = { content = "game" },
+	workspace = "8 silent",
+	no_blur = true,
+	opacity = "1.0",
+	fullscreen = false,
+	no_anim = true,
+	no_initial_focus = true,
+})
+
 -- XWayland tempfix: empty-class/empty-title float to cursor
 hl.window_rule({
 	match = {
