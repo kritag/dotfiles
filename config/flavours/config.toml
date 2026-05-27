@@ -68,6 +68,11 @@ file = "~/.config/DankMaterialShell/colors.json"
 template = "dms"
 rewrite = true
 
+[[items]]
+file = "~/.config/hyprland-preview-share-picker/colors.css"
+template = "hyprland-preview-share-picker"
+rewrite = true
+
 # [[items]]
 # file = "~/.config/flavours/tty"
 # template = "tty"
