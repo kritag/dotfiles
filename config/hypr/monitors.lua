@@ -28,6 +28,7 @@ local samsung_c34h89x = {
 	"HTOJ701358s",
 	"HTOJ800480",
 	"H1AK500000",
+	"HTOJ701358",
 }
 for _, serial in ipairs(samsung_c34h89x) do
 	hl.monitor({
