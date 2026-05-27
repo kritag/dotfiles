@@ -20,6 +20,7 @@
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
     ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
+    ~/.config/hyprland-preview-share-picker/config.yaml: ./config/hyprland-preview-share-picker/config.yaml
     ~/.face: config/face
     ~/.config/mpv:
       glob: true
