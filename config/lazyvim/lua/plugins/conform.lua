@@ -28,8 +28,8 @@ return {
           -- ["markdown"] = { "mdformat", "prettier", "markdownlint-cli2", "markdown-toc" },
           ["markdown.mdx"] = { "mdformat", "prettier", "markdownlint-cli2", "markdown-toc" },
           markdown = { "mdformat" },
-          -- json = { "prettierd" },
-          -- jsonc = { "prettierd" },
+          json = { "prettierd" },
+          jsonc = { "prettierd" },
         },
         formatters = {
           prettier = {
