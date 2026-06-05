@@ -44,10 +44,6 @@
       create: true
       path: config/glow/*
       glob: true
-    ~/.config/lazyvim:
-      create: true
-      path: config/lazyvim
-      glob: true
 - sudo:
     - shell:
         - [cp config/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
