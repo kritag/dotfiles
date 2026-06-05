@@ -5,7 +5,7 @@
           stdout: False
           stderr: True
     - shell:
-        - ['mkdir -p /usr/local/share/zsh/site-functions; wget -nc -P /usr/local/share/zsh/site-functions https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker', Add docker completion]
+        - [dnf copr enable bonvaffel/cli-tools -y]
         - [scripts/addusertodockergrp.sh]
-    - yum: [bat, btop, cargo, containerd.io, dnf-automatic, dnf-plugins-core, docker-buildx-plugin, docker-ce, docker-ce-cli, docker-compose-plugin, eza, fd-find, fzf, gh, git, lesspipe, lsd, make, neovim, nodejs-npm, python3, python3-pip, ripgrep, sqlite, tealdeer, tree-sitter-cli, yp-tools, zoxide, zsh]
+    - yum: [bat, bat-extras, btop, cargo, containerd.io, dnf-automatic, dnf-plugins-core, docker-compose, duf, eza, fd-find, fzf, gh, git, git-delta, less, lesspipe, make, moby-engine, neovim, nodejs-npm, oh-my-posh, python3, python3-pip, ripgrep, socat, sqlite, tealdeer, tree-sitter-cli, unzip, vim, vivid, wget, yp-tools, yq, zoxide, zsh]
 - shell:
