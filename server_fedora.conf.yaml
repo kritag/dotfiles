@@ -9,4 +9,3 @@
         - [scripts/addusertodockergrp.sh]
     - yum: [bat, btop, cargo, containerd.io, dnf-automatic, dnf-plugins-core, docker-buildx-plugin, docker-ce, docker-ce-cli, docker-compose-plugin, eza, fd-find, fzf, gh, git, lesspipe, lsd, make, neovim, nodejs-npm, python3, python3-pip, ripgrep, sqlite, tealdeer, tree-sitter-cli, yp-tools, zoxide, zsh]
 - shell:
-    - ['[ -d ~/.config/nvim ] || (git clone --depth=1 https://github.com/LazyVim/starter ~/.config/nvim && rm -rf ~/.config/nvim/.git)', "Bootstrap default LazyVim install"]
