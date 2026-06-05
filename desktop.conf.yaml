@@ -53,6 +53,10 @@
       glob: true
       force: true
       path: config/spicetify/Themes/*
+    ~/.config/lazyvim:
+      create: true
+      path: config/lazyvim
+      glob: true
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
