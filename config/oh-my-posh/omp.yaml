@@ -54,6 +54,7 @@ blocks:
         background: lightBlue
         type: kubectl
         style: diamond
+        executable: kubectl
       - leading_diamond: 
         trailing_diamond: 
         template: <b>{{ $known := list "global" "restricted" "pci-global" "pci-restricted" "prod" "pci-prod" "cts" "sandbox" "pilot" "dts-global" "dc1-prod" "dc2-prod" "dc1-pci-prod" "dc2-pci-prod" }}{{ if (has .Context $known) }}{{ .Context }}{{ else }}{{ $cluster := regexReplaceAll "^api-(os-)?" .Cluster "" }}{{ regexReplaceAll "-finods.*" $cluster "" }}{{ end }}</b>
@@ -61,6 +62,7 @@ blocks:
         background: cyan
         type: kubectl
         style: diamond
+        executable: kubectl
       - leading_diamond: 
         trailing_diamond: 
         template: '{{ .Namespace }}'
@@ -68,6 +70,7 @@ blocks:
         background: yellow
         type: kubectl
         style: diamond
+        executable: kubectl
   - type: prompt
     alignment: left
     segments:
