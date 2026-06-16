@@ -8,6 +8,7 @@
         - [dnf copr enable bonvaffel/cli-tools -y]
         - [scripts/addusertodockergrp.sh]
         - [mkdir -p /etc/zshrc.d]
+        - ["grep -q 'zshrc.d' /etc/zshrc || printf '\\nfor f in /etc/zshrc.d/*.zsh; do [ -r \"$f\" ] && source \"$f\"; done\\n' >> /etc/zshrc", "Add zshrc.d sourcing to /etc/zshrc"]
         - ['[ -d /opt/znap/znap ] || git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git /opt/znap/znap', "Bootstrap shared znap"]
         - [chmod -R a+rwX /opt/znap, "Allow all users to use and update shared znap"]
     - link:
