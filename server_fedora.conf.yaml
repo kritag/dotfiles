@@ -10,7 +10,7 @@
         - [mkdir -p /etc/zshrc.d]
         - ["grep -q 'zshrc.d' /etc/zshrc || printf '\\nfor f in /etc/zshrc.d/*.zsh; do [ -r \"$f\" ] && source \"$f\"; done\\n' >> /etc/zshrc", "Add zshrc.d sourcing to /etc/zshrc"]
         - ['[ -d /opt/znap/znap ] || git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git /opt/znap/znap', "Bootstrap shared znap"]
-        - [chmod -R a+rwX /opt/znap, "Allow all users to use and update shared znap"]
+        - [chmod -R 755 /opt/znap, "Make shared znap world-readable"]
     - link:
         /etc/zshrc.d/dotfiles.zsh: zsh/server-global.zsh
     - yum: [bat, bat-extras, btop, cargo, dnf-automatic, dnf-plugins-core, docker-compose, duf, eza, fd-find, flavours, fzf, gh, git, git-delta, less, lesspipe, make, moby-engine, neovim, nodejs-npm, oh-my-posh, python3, python3-pip, ripgrep, socat, sqlite, tealdeer, tree-sitter-cli, unzip, vim, vivid, wget, yp-tools, yq, zoxide, zsh, zsh-autosuggestions, zsh-syntax-highlighting]
