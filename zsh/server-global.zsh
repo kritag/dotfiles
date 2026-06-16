@@ -4,6 +4,7 @@
 _ZSH_DIR=${0:A:h}
 source "$_ZSH_DIR/zshenv"
 source "$_ZSH_DIR/aliases.zsh"
+source "$_ZSH_DIR/zshkeybindings.zsh"
 
 unset NVIM_APPNAME
 unset MOZ_USE_XINPUT2
