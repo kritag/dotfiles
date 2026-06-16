@@ -1,4 +1,4 @@
-# Users with their own dotfiles get full config via ~/.zshrc
+[[ $UID -eq 0 ]] && return
 [[ -L "$HOME/.zshrc" ]] && return
 
 _ZSH_DIR=${0:A:h}
