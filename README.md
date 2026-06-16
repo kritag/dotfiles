@@ -46,6 +46,31 @@ Available profiles in this repo:
 - `workstation_arch`
 - `workstation_fedora`
 
+## Server: zsh for all users
+
+Running `./install server_fedora` installs packages and symlinks
+`zsh/server-global.zsh` into `/etc/zshrc.d/dotfiles.zsh`. Fedora sources
+everything in `/etc/zshrc.d/` for every interactive zsh session, so all users
+on the server get the full config automatically — aliases, env vars, plugins,
+and prompt — without any per-user setup.
+
+`server-global.zsh` sources `zshenv`, `aliases.zsh`, and `zshrc` from the
+dotfiles directory. Paths that use `$HOME` resolve to each user's own home, so
+znap and plugins install per-user on first login.
+
+The system symlink points into the installing user's dotfiles clone, so keep it
+somewhere stable (e.g. `/opt/dotfiles` instead of `~/`):
+
+```bash
+git clone <repo> /opt/dotfiles
+cd /opt/dotfiles
+./install server_fedora
+```
+
+For users who want their own full dotfiles install on top, re-run the installer
+as that user — their `~/.zshrc` takes over and `/etc/zshrc.d/` becomes
+redundant (safe to leave in place, znap handles double-sourcing fine).
+
 ## Notes
 
 - Desktop and workstation profiles are Hyprland-based.

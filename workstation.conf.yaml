@@ -14,6 +14,7 @@
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
     ~/.local/bin/webapp-firefox: scripts/webapp-firefox
+    ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf
     ~/.local/bin/webapp-edge: scripts/webapp-edge
     ~/.local/bin/webapp-zen: scripts/webapp-zen
     ~/.local/bin/zen-link-userjs: scripts/zen-link-userjs
