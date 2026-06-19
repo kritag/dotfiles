@@ -1,9 +1,9 @@
 #!/usr/bin/zsh
 # zmodload zsh/zprof
-[[ -f "$HOME/.aliases.zsh" ]] && source "$HOME/.aliases.zsh"
-[[ -f "$HOME/.env" ]] && source "$HOME/.env"
+source "$HOME/.aliases.zsh"
+source "$HOME/.env"
 source "$HOME/.zshkeybindings.zsh"
-PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin"
+PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin"
 export PATH
 
 ZNAP_DIR="${ZNAP_DIR:-$HOME/git/znap/znap}"
@@ -13,7 +13,7 @@ if [[ ! -r "$ZNAP_DIR/znap.zsh" ]]; then
     https://github.com/marlonrichert/zsh-snap.git "$ZNAP_DIR"
 fi
 
-source "$ZNAP_DIR/znap.zsh" # Start Znap
+source "$ZNAP_DIR/znap.zsh"
 znap source ohmyzsh/ohmyzsh plugins/{dirhistory,gitfast}
 znap source ajeetdsouza/zoxide
 znap source Aloxaf/fzf-tab
