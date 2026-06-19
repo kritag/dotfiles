@@ -96,6 +96,10 @@ if [[ -f /usr/share/fzf/key-bindings.bash ]]; then
 elif [[ -f /usr/share/fzf/shell/key-bindings.bash ]]; then
   source /usr/share/fzf/shell/key-bindings.bash
 fi
-[[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
+if [[ -f /usr/share/fzf/completion.bash ]]; then
+  source /usr/share/fzf/completion.bash
+elif [[ -f /usr/share/fzf/shell/completion.bash ]]; then
+  source /usr/share/fzf/shell/completion.bash
+fi
 
 command -v zoxide &>/dev/null && eval "$(zoxide init bash)" && alias cd='z'
