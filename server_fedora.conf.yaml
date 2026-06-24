@@ -8,6 +8,7 @@
         - [dnf copr enable bonvaffel/cli-tools -y]
         - [scripts/addusertodockergrp.sh]
         - [mkdir -p /etc/zshrc.d]
+        - ['[ -d /opt/fzf-tab-completion ] || git clone --depth 1 https://github.com/lincheney/fzf-tab-completion /opt/fzf-tab-completion', "Install fzf-tab-completion for bash"]
         - ["grep -q 'zshrc.d' /etc/zshrc || printf '\\nfor f in /etc/zshrc.d/*.zsh; do [ -r \"$f\" ] && source \"$f\"; done\\n' >> /etc/zshrc", "Add zshrc.d sourcing to /etc/zshrc"]
     - link:
         /etc/zshrc.d/dotfiles.zsh: zsh/server-global.zsh
