@@ -19,7 +19,7 @@ __build_ps1() {
   local prompt_color=$magenta
   [[ $exit -ne 0 ]] && prompt_color=$red
 
-  PS1="${bold}${blue}\w${reset}${git_info} ${magenta}\u@\h${reset}\n${prompt_color}❯${reset} "
+  PS1="${magenta}\u@\h${reset} ${bold}${blue}\w${reset}${git_info}\n${prompt_color}❯${reset} "
 }
 PROMPT_COMMAND='__build_ps1'
 
