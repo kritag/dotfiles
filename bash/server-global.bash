@@ -96,7 +96,10 @@ if [[ -f /usr/share/fzf/key-bindings.bash ]]; then
 elif [[ -f /usr/share/fzf/shell/key-bindings.bash ]]; then
   source /usr/share/fzf/shell/key-bindings.bash
 fi
-if [[ -f /usr/share/fzf/completion.bash ]]; then
+if [[ -f /opt/fzf-tab-completion/bash/fzf-bash-completion.sh ]]; then
+  source /opt/fzf-tab-completion/bash/fzf-bash-completion.sh
+  bind -x '"\t": fzf_bash_completion'
+elif [[ -f /usr/share/fzf/completion.bash ]]; then
   source /usr/share/fzf/completion.bash
 elif [[ -f /usr/share/fzf/shell/completion.bash ]]; then
   source /usr/share/fzf/shell/completion.bash
