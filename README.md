@@ -46,30 +46,39 @@ Available profiles in this repo:
 - `workstation_arch`
 - `workstation_fedora`
 
-## Server: zsh for all users
+## Server setup
 
 Running `./install server_fedora` installs packages and symlinks
-`zsh/server-global.zsh` into `/etc/zshrc.d/dotfiles.zsh`. Fedora sources
-everything in `/etc/zshrc.d/` for every interactive zsh session, so all users
-on the server get the full config automatically — aliases, env vars, plugins,
-and prompt — without any per-user setup.
+`bash/server-global.bash` into `/etc/profile.d/dotfiles.sh`, which is sourced
+for all bash users automatically. Users get aliases, env vars, fzf history
+search, fzf Tab completion, and a prompt with `user@host cwd` — no per-user
+setup required.
 
-`server-global.zsh` sources `zshenv`, `aliases.zsh`, and `zshrc` from the
-dotfiles directory. Paths that use `$HOME` resolve to each user's own home, so
-znap and plugins install per-user on first login.
-
-The system symlink points into the installing user's dotfiles clone, so keep it
-somewhere stable (e.g. `/opt/dotfiles` instead of `~/`):
+Clone to `/opt/dotfiles` so the system symlink isn't tied to any user's home:
 
 ```bash
-git clone <repo> /opt/dotfiles
+sudo mkdir /opt/dotfiles && sudo chown $USER /opt/dotfiles
+git clone git@github.com:kritag/dotfiles.git /opt/dotfiles
 cd /opt/dotfiles
 ./install server_fedora
 ```
 
-For users who want their own full dotfiles install on top, re-run the installer
-as that user — their `~/.zshrc` takes over and `/etc/zshrc.d/` becomes
-redundant (safe to leave in place, znap handles double-sourcing fine).
+**Updating config** — just pull, changes take effect on next shell start:
+```bash
+cd /opt/dotfiles && git pull
+```
+
+**New packages or symlinks** — pull and re-run the install:
+```bash
+cd /opt/dotfiles && git pull && ./install server_fedora
+```
+
+Root is excluded automatically — the config skips UID 0.
+
+**Migrate zsh history to bash for a user:**
+```bash
+sed 's/^: [0-9]*:[0-9]*;//' ~/.zsh_history | strings >> ~/.bash_history
+```
 
 ## Notes
 
