@@ -28,6 +28,7 @@ export BAT_PAGER="less -R"
 export CLICOLOR_FORCE=1
 export COLORTERM=truecolor
 export EDITOR=nvim
+[[ -d "$HOME/.config/lazyvim" ]] && export NVIM_APPNAME=lazyvim
 export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.node_modules,build,dist,vendor} --type f --type l --hidden $FD_OPTIONS"
 export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
