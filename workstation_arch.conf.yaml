@@ -27,6 +27,7 @@
     - spicetify-cli
     - slack-desktop-wayland
     - zen-browser-bin
+    - zsh-patina-bin
 - omnipkg:
     - install:
         - archlinux-contrib
