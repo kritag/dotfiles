@@ -19,7 +19,8 @@ znap source ajeetdsouza/zoxide
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-history-substring-search
-znap source zdharma-continuum/fast-syntax-highlighting
+# znap source zdharma-continuum/fast-syntax-highlighting
+# znap source michel-kraemer/zsh-patina
 #znap source jeffreytse/zsh-vi-mode
 
 [[ -f "$HOME/.config/flavours/fzf.sh" ]] && source "$HOME/.config/flavours/fzf.sh"
@@ -55,6 +56,7 @@ compdef _journalctl jctl
 #    source $HOME/.functions_k8s
 #fi
 
+znap eval zsh-patina 'zsh-patina activate'
 export SHELL_PROMPT='❯'
 znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml'
 source $HOME/.zstyle.zsh
