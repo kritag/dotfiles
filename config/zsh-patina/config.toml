@@ -1,0 +1,5 @@
+[highlighting]
+theme = "file:~/.config/zsh-patina/themes/gruvbox-dark-hard.toml"
+dynamic = { callables = true, paths = "partial" }
+max_line_length = 20000
+timeout_ms = 500
