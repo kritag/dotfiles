@@ -1,0 +1,111 @@
+# zsh-patina theme -- {{scheme-name}}
+# Scheme author: {{scheme-author}}
+#
+# Written by `flavours apply' from the base16 scheme {{scheme-slug}}.
+# Do not edit: this file is rewritten every time you apply a scheme.
+#
+# Colours come from base16 roles, so they track the active flavours scheme but
+# are NOT identical to the bat-derived themes in this directory (those are
+# translated from .tmTheme scope selectors, which carry far more detail than
+# 16 slots can).
+
+# general foreground colour (also covers text no other scope claims)
+"source" = "#{{base05-hex}}"
+
+# comments
+"comment" = "#{{base03-hex}}"
+"punctuation.definition.comment" = "#{{base03-hex}}"
+
+# strings
+"string" = "#{{base0B-hex}}"
+"punctuation.definition.string" = "#{{base0B-hex}}"
+"string.unquoted.heredoc" = "#{{base0B-hex}}"
+
+# escape characters and regular expressions
+"constant.character.escape" = "#{{base0C-hex}}"
+"keyword.operator.regexp" = "#{{base0C-hex}}"
+"meta.regexp" = "#{{base0C-hex}}"
+
+# constants, numbers, file descriptors
+"constant" = "#{{base09-hex}}"
+"constant.numeric" = "#{{base09-hex}}"
+"punctuation.definition.numeric" = "#{{base09-hex}}"
+"punctuation.terminator.file-descriptor" = "#{{base09-hex}}"
+
+# syntax errors (bad hex escape, spaces after a line continuation, ...)
+"invalid" = { foreground = "#{{base08-hex}}", bold = true }
+"invalid.illegal" = { foreground = "#{{base08-hex}}", bold = true }
+
+# keywords and control flow
+"keyword" = "#{{base0E-hex}}"
+"keyword.control" = "#{{base0E-hex}}"
+"keyword.control.flow" = { foreground = "#{{base0E-hex}}", bold = true }
+"keyword.builtin" = "#{{base0E-hex}}"
+"precommand" = "#{{base0E-hex}}"
+
+# operators
+"keyword.operator" = "#{{base0C-hex}}"
+"keyword.operator.logical" = "#{{base0C-hex}}"
+"keyword.operator.expansion" = "#{{base0C-hex}}"
+"keyword.operator.substitution" = "#{{base0C-hex}}"
+
+# variable assignments and storage modifiers
+"storage" = "#{{base0A-hex}}"
+"storage.modifier" = "#{{base0E-hex}}"
+"storage.type.function" = "#{{base0E-hex}}"
+
+# function definitions and support terms (let, [[ ]], [ ])
+"entity.name.function" = { foreground = "#{{base0D-hex}}", bold = true }
+"entity.name.function.alias" = "#{{base0D-hex}}"
+"support" = "#{{base0D-hex}}"
+"support.function.test" = "#{{base0C-hex}}"
+"support.function.double-brace" = "#{{base0C-hex}}"
+"support.function.let" = "#{{base0C-hex}}"
+
+# commands (static fallback used when dynamic.callables is disabled)
+"variable.function" = "#{{base0D-hex}}"
+
+# variables
+"variable.other" = "#{{base08-hex}}"
+"punctuation.definition.variable" = "#{{base08-hex}}"
+"punctuation.definition.parameter" = "#{{base08-hex}}"
+"variable.language" = "#{{base0E-hex}}"
+"variable.language.tilde" = "#{{base08-hex}}"
+"variable.language.array" = "#{{base0E-hex}}"
+"variable.language.job" = "#{{base09-hex}}"
+
+# arguments and flags
+"variable.parameter" = "#{{base05-hex}}"
+"variable.parameter.switch" = "#{{base0A-hex}}"
+"variable.parameter.option" = "#{{base0A-hex}}"
+
+# punctuation, separators, terminators
+"punctuation.section" = "#{{base04-hex}}"
+"punctuation.separator" = "#{{base04-hex}}"
+"punctuation.terminator" = "#{{base04-hex}}"
+"punctuation.definition.compound" = "#{{base04-hex}}"
+"punctuation.separator.continuation.line" = "#{{base0C-hex}}"
+
+# expansions
+"meta.group.expansion.history" = "#{{base08-hex}}"
+# reset nested command substitutions to the scheme's default foreground
+"meta.group.expansion.command.parens" = { foreground = "#{{base05-hex}}" }
+"meta.group.expansion.command.backticks" = { foreground = "#{{base05-hex}}" }
+
+# Dynamic scopes: resolved at runtime and mixed into the styles above -- fg/bg
+# override, bold/underline are OR-ed in. These need
+#   dynamic = { callables = true, paths = "partial" }
+# in ~/.config/zsh-patina/config.toml, otherwise the *.partial scopes never
+# apply. One base16 accent per kind of callable, so they stay distinguishable.
+"dynamic.callable" = "#{{base0D-hex}}"
+"dynamic.callable.command" = "#{{base0D-hex}}"
+"dynamic.callable.builtin" = "#{{base0E-hex}}"
+"dynamic.callable.function" = { foreground = "#{{base0D-hex}}", bold = true }
+"dynamic.callable.alias" = "#{{base0A-hex}}"
+"dynamic.callable.missing" = { foreground = "#{{base08-hex}}", bold = true }
+
+# underline == the path fully exists; cyan == it is a directory
+"dynamic.path.file.complete" = { underline = true }
+"dynamic.path.file.partial" = "#{{base04-hex}}"
+"dynamic.path.directory.complete" = { foreground = "#{{base0C-hex}}", underline = true }
+"dynamic.path.directory.partial" = "#{{base0C-hex}}"
