@@ -73,15 +73,6 @@ file = "~/.config/hyprland-preview-share-picker/colors.css"
 template = "hyprland-preview-share-picker"
 rewrite = true
 
-# zsh-patina reads its theme once at daemon start, so it needs the hook to pick
-# up a new scheme. This writes current.toml; the other themes in that directory
-# are translated from bat .tmTheme files and are not touched by flavours.
-[[items]]
-file = "~/.config/zsh-patina/themes/current.toml"
-template = "zsh-patina"
-rewrite = true
-hook = "zsh-patina restart || true"
-
 # [[items]]
 # file = "~/.config/flavours/tty"
 # template = "tty"
