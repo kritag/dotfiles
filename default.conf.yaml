@@ -21,6 +21,10 @@
     ~/.theme.gitconfig: config/delta/theme.gitconfig
     ~/.markdownlint.yaml: config/markdownlint.yaml
     ~/.yamlfmt.yaml: config/yamlfmt.yaml
+    ~/.config/zsh-patina":
+      path: config/zsh-patina/*
+      create: true
+      glob: true
     ~/.config/eza:
       path: config/eza/*
       create: true

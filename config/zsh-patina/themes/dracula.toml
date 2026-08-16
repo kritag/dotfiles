@@ -1,0 +1,112 @@
+# zsh-patina theme: Dracula
+# Generated from bat built-in theme, from upstream Dracula.tmTheme
+# Theme author: Zeno Rocha
+#
+# Static scopes are resolved directly against the source theme's own
+# Sublime scope selectors, so they match what bat renders. Italic is
+# dropped (zsh-patina's ZLE backend supports bold/underline only).
+#
+# Derived dynamic colours:
+#   callable.command/function <- variable.function (#50fa7b)
+#   callable.missing       <- nearest readable red in palette (#f83333)
+#   callable.builtin       <- support.function (#8be9fd)
+#   callable.alias         <- constant.numeric (#bd93f9)
+#   path.directory.*       <- nearest readable cyan in palette (#6be5fd)
+#   path.file.partial      <- comment (#6272a4)
+#   variable.parameter.option (flags) <- nearest readable yellow/orange in palette (#e6db74)
+#
+# Regenerate with ~/.config/zsh-patina/generate-themes.py -- edits are lost.
+
+# source
+"source" = "#f8f8f2"
+
+# comment
+"comment" = "#6272a4"
+
+# string
+"string" = "#f1fa8c"
+
+# constant
+"constant.character" = "#ff79c6"
+"constant.numeric" = "#bd93f9"
+
+# invalid
+"invalid" = { foreground = "#f8f8f0", background = "#ff79c6" }
+
+# keyword
+"keyword" = "#ff79c6"
+
+# storage
+"storage.modifier" = "#ff79c6"
+"storage.type" = "#8be9fd"
+
+# entity
+"entity" = "#50fa7b"
+
+# support
+"support" = "#8be9fd"
+
+# variable
+"variable.function" = "#50fa7b"
+"variable.language" = "#bd93f9"
+"variable.other" = "#ffffff"
+"variable.parameter" = "#ffb86c"
+"variable.parameter.option" = "#e6db74"
+
+# punctuation
+"punctuation.definition.comment" = "#6272a4"
+"punctuation.definition.compound" = "#f8f8f2"
+"punctuation.definition.numeric.base" = "#f8f8f2"
+"punctuation.definition.numeric.hexadecimal" = "#bd93f9"
+"punctuation.definition.numeric.octal" = "#f8f8f2"
+"punctuation.definition.parameter" = "#e6db74"
+"punctuation.definition.string.begin" = "#f1fa8c"
+"punctuation.definition.string.end" = "#f1fa8c"
+"punctuation.definition.string.shell" = "#f8f8f2"
+"punctuation.definition.variable.job" = "#f8f8f2"
+"punctuation.definition.variable.shell" = "#f1fa8c"
+"punctuation.section.arithmetic" = "#f8f8f2"
+"punctuation.section.braces" = "#f8f8f2"
+"punctuation.section.brackets" = "#f8f8f2"
+"punctuation.section.expansion.brace" = "#f8f8f2"
+"punctuation.section.expansion.parameter" = "#f1fa8c"
+"punctuation.section.group" = "#f8f8f2"
+"punctuation.section.parens" = "#f1fa8c"
+"punctuation.separator" = "#f8f8f2"
+"punctuation.terminator" = "#f8f8f2"
+
+# meta
+"meta.function" = "#f8f8f2"
+"meta.function-call.arguments" = "#ffb86c"
+"meta.function-call.shell" = "#50fa7b"
+"meta.group.arithmetic" = "#f8f8f2"
+"meta.group.expansion.arithmetic" = "#f1fa8c"
+"meta.group.expansion.brace" = "#f8f8f2"
+"meta.group.expansion.command" = "#f8f8f2"
+"meta.group.expansion.history" = "#f8f8f2"
+"meta.group.expansion.job" = "#f8f8f2"
+"meta.group.expansion.parameter" = "#f1fa8c"
+"meta.group.expansion.tilde" = "#bd93f9"
+"meta.group.for" = "#f8f8f2"
+"meta.group.foreach" = "#f8f8f2"
+"meta.group.parens" = "#f8f8f2"
+"meta.group.select" = "#f8f8f2"
+"meta.post-cmd" = "#f8f8f2"
+"meta.regexp" = "#f8f8f2"
+
+# precommand
+"precommand" = "#f8f8f2"
+
+# dynamic scopes -- resolved at runtime, mixed into the styles above
+# (fg/bg override; bold/underline are OR-ed in). Requires
+# dynamic = { callables = true, paths = "partial" } in config.toml.
+"dynamic.callable" = "#50fa7b"
+"dynamic.callable.command" = "#50fa7b"
+"dynamic.callable.builtin" = "#8be9fd"
+"dynamic.callable.function" = { foreground = "#50fa7b", bold = true }
+"dynamic.callable.alias" = "#bd93f9"
+"dynamic.callable.missing" = { foreground = "#f83333", bold = true }
+"dynamic.path.file.complete" = { underline = true }
+"dynamic.path.file.partial" = "#6272a4"
+"dynamic.path.directory.complete" = { foreground = "#6be5fd", underline = true }
+"dynamic.path.directory.partial" = "#6be5fd"

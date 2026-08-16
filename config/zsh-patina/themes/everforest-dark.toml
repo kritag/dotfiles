@@ -1,0 +1,99 @@
+# zsh-patina theme: Everforest
+# Generated from bat theme everforest-dark.tmTheme
+# Theme author: Arfan Zubi
+#
+# Static scopes are resolved directly against the source theme's own
+# Sublime scope selectors, so they match what bat renders. Italic is
+# dropped (zsh-patina's ZLE backend supports bold/underline only).
+#
+# Derived dynamic colours:
+#   callable.command/function <- variable.function (#d3c6aa)
+#   callable.missing       <- nearest readable red in palette (#e67e80)
+#   callable.builtin       <- support.function (#a7c080)
+#   callable.alias         <- constant.numeric (#d699b6)
+#   path.directory.*       <- nearest readable cyan in palette (#7fbbb3)
+#   path.file.partial      <- comment (#859289)
+#   variable.parameter.option (flags) <- nearest readable yellow/orange in palette (#dbbc7f)
+#
+# Regenerate with ~/.config/zsh-patina/generate-themes.py -- edits are lost.
+
+# source
+"source" = "#d3c6aa"
+
+# comment
+"comment" = "#859289"
+
+# string
+"string" = "#a7c080"
+
+# constant
+"constant.character" = "#a7c080"
+"constant.numeric" = "#d699b6"
+
+# invalid
+"invalid" = { foreground = "#0f0000", background = "#010000" }
+
+# keyword
+"keyword.builtin" = "#e67e80"
+"keyword.control" = "#e67e80"
+"keyword.operator" = "#e69875"
+"keyword.other" = "#e67e80"
+
+# storage
+"storage" = "#e67e80"
+
+# entity
+"entity" = "#a7c080"
+
+# support
+"support" = "#a7c080"
+
+# variable
+"variable" = "#d3c6aa"
+"variable.parameter.option" = "#dbbc7f"
+
+# punctuation
+"punctuation.definition.comment" = "#859289"
+"punctuation.definition.compound" = "#859289"
+"punctuation.definition.numeric" = "#859289"
+"punctuation.definition.parameter" = "#dbbc7f"
+"punctuation.definition.string" = "#7fbbb3"
+"punctuation.definition.variable" = "#7fbbb3"
+"punctuation.section" = "#859289"
+"punctuation.separator" = "#859289"
+"punctuation.terminator" = "#859289"
+
+# meta
+"meta.function" = "#d3c6aa"
+"meta.function-call" = "#d3c6aa"
+"meta.group.arithmetic" = "#d3c6aa"
+"meta.group.expansion.arithmetic" = "#a7c080"
+"meta.group.expansion.brace" = "#d3c6aa"
+"meta.group.expansion.command" = "#d3c6aa"
+"meta.group.expansion.history" = "#d3c6aa"
+"meta.group.expansion.job" = "#d3c6aa"
+"meta.group.expansion.parameter" = "#859289"
+"meta.group.expansion.tilde" = "#d3c6aa"
+"meta.group.for" = "#d3c6aa"
+"meta.group.foreach" = "#d3c6aa"
+"meta.group.parens" = "#d3c6aa"
+"meta.group.select" = "#d3c6aa"
+"meta.post-cmd" = "#d3c6aa"
+"meta.regexp" = "#d3c6aa"
+
+# precommand
+"precommand" = "#d3c6aa"
+
+# dynamic scopes -- resolved at runtime, mixed into the styles above
+# (fg/bg override; bold/underline are OR-ed in). Requires
+# dynamic = { callables = true, paths = "partial" } in config.toml.
+"dynamic.callable" = "#d3c6aa"
+"dynamic.callable.command" = "#d3c6aa"
+"dynamic.callable.builtin" = "#a7c080"
+"dynamic.callable.function" = { foreground = "#d3c6aa", bold = true }
+"dynamic.callable.alias" = "#d699b6"
+"dynamic.callable.missing" = { foreground = "#e67e80", bold = true }
+"dynamic.path.file.complete" = { underline = true }
+"dynamic.path.file.partial" = "#859289"
+"dynamic.path.directory.complete" = { foreground = "#7fbbb3", underline = true }
+"dynamic.path.directory.partial" = "#7fbbb3"
