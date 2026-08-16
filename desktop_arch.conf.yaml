@@ -21,6 +21,7 @@
     - quickshell-git
     - spicetify-cli
     - zen-browser-bin
+    - zsh-patina-bin
 - omnipkg:
     - install:
         - archlinux-contrib
