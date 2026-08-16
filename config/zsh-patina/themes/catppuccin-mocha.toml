@@ -1,0 +1,116 @@
+# zsh-patina theme: Catppuccin Mocha
+# Generated from bat theme catppuccin-mocha.tmTheme
+# Theme author: Catppuccin Org
+#
+# Static scopes are resolved directly against the source theme's own
+# Sublime scope selectors, so they match what bat renders. Italic is
+# dropped (zsh-patina's ZLE backend supports bold/underline only).
+#
+# Derived dynamic colours:
+#   callable.command/function <- variable.function (#89b4fa)
+#   callable.missing       <- global misspelling (#f38ba8)
+#   callable.builtin       <- keyword (#cba6f7)
+#   callable.alias         <- constant.numeric (#fab387)
+#   path.directory.*       <- nearest readable cyan in palette (#89dceb)
+#   path.file.partial      <- comment (#6c7086)
+#   variable.parameter.option (flags) <- nearest readable yellow/orange in palette (#f9e2af)
+#
+# Regenerate with ~/.config/zsh-patina/generate-themes.py -- edits are lost.
+
+# source
+"source" = "#cdd6f4"
+
+# comment
+"comment" = "#6c7086"
+
+# string
+"string" = "#a6e3a1"
+
+# constant
+"constant.character" = "#f5c2e7"
+"constant.numeric" = "#fab387"
+
+# invalid
+"invalid" = "#cdd6f4"
+
+# keyword
+"keyword.builtin" = "#cba6f7"
+"keyword.control" = "#cba6f7"
+"keyword.operator.arithmetic" = "#94e2d5"
+"keyword.operator.assignment" = "#94e2d5"
+"keyword.operator.bitwise" = "#94e2d5"
+"keyword.operator.end-of-options" = "#94e2d5"
+"keyword.operator.expansion" = "#94e2d5"
+"keyword.operator.herestring" = "#94e2d5"
+"keyword.operator.indirection" = "#94e2d5"
+"keyword.operator.logical" = "#94e2d5"
+"keyword.operator.regexp" = "#94e2d5"
+"keyword.operator.substitution" = "#94e2d5"
+"keyword.operator.substring" = "#94e2d5"
+"keyword.operator.ternary" = "#94e2d5"
+"keyword.operator.word" = "#cba6f7"
+"keyword.other" = "#cba6f7"
+
+# storage
+"storage" = "#cba6f7"
+
+# entity
+"entity" = "#89b4fa"
+
+# support
+"support" = "#89b4fa"
+
+# variable
+"variable.function" = "#89b4fa"
+"variable.language" = "#cdd6f4"
+"variable.other" = "#cdd6f4"
+"variable.parameter" = "#eba0ac"
+"variable.parameter.option" = "#f9e2af"
+
+# punctuation
+"punctuation.definition.comment" = "#6c7086"
+"punctuation.definition.compound" = "#9399b2"
+"punctuation.definition.numeric" = "#9399b2"
+"punctuation.definition.parameter" = "#f9e2af"
+"punctuation.definition.string" = "#a6e3a1"
+"punctuation.definition.variable.job" = "#cdd6f4"
+"punctuation.definition.variable.shell" = "#f38ba8"
+"punctuation.section" = "#9399b2"
+"punctuation.separator" = "#9399b2"
+"punctuation.terminator" = "#9399b2"
+
+# meta
+"meta.function" = "#cdd6f4"
+"meta.function-call.arguments" = "#eba0ac"
+"meta.function-call.shell" = "#89b4fa"
+"meta.group.arithmetic" = "#cdd6f4"
+"meta.group.expansion.arithmetic" = "#a6e3a1"
+"meta.group.expansion.brace" = "#cdd6f4"
+"meta.group.expansion.command" = "#cdd6f4"
+"meta.group.expansion.history" = "#cdd6f4"
+"meta.group.expansion.job" = "#cdd6f4"
+"meta.group.expansion.parameter" = "#9399b2"
+"meta.group.expansion.tilde" = "#cdd6f4"
+"meta.group.for" = "#cdd6f4"
+"meta.group.foreach" = "#cdd6f4"
+"meta.group.parens" = "#cdd6f4"
+"meta.group.select" = "#cdd6f4"
+"meta.post-cmd" = "#cdd6f4"
+"meta.regexp" = "#cdd6f4"
+
+# precommand
+"precommand" = "#cdd6f4"
+
+# dynamic scopes -- resolved at runtime, mixed into the styles above
+# (fg/bg override; bold/underline are OR-ed in). Requires
+# dynamic = { callables = true, paths = "partial" } in config.toml.
+"dynamic.callable" = "#89b4fa"
+"dynamic.callable.command" = "#89b4fa"
+"dynamic.callable.builtin" = "#cba6f7"
+"dynamic.callable.function" = { foreground = "#89b4fa", bold = true }
+"dynamic.callable.alias" = "#fab387"
+"dynamic.callable.missing" = { foreground = "#f38ba8", bold = true }
+"dynamic.path.file.complete" = { underline = true }
+"dynamic.path.file.partial" = "#6c7086"
+"dynamic.path.directory.complete" = { foreground = "#89dceb", underline = true }
+"dynamic.path.directory.partial" = "#89dceb"
