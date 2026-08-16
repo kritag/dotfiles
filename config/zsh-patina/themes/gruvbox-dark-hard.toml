@@ -1,0 +1,93 @@
+# zsh-patina theme: gruvbox (Dark) (Hard)
+# Generated from bat built-in theme, from upstream gruvbox (Dark) (Hard).tmTheme
+# Theme author: Brian Reilly (https://github.com/Briles/gruvbox)
+#
+# Static scopes are resolved directly against the source theme's own
+# Sublime scope selectors, so they match what bat renders. Italic is
+# dropped (zsh-patina's ZLE backend supports bold/underline only).
+#
+# Derived dynamic colours:
+#   callable.command/function <- variable.function (#8ec07c)
+#   callable.missing       <- invalid.illegal bg (#fb4934)
+#   callable.builtin       <- support.function (same as command) (#8ec07c)
+#   callable.alias         <- constant.numeric (#d3869b)
+#   path.directory.*       <- nearest readable cyan in palette (#458588)
+#   path.file.partial      <- comment (#928374)
+#   variable.parameter.option (flags) <- nearest readable yellow/orange in palette (#fabd2f)
+#
+# Regenerate with ~/.config/zsh-patina/generate-themes.py -- edits are lost.
+
+# source
+"source" = "#ebdbb2"
+
+# comment
+"comment" = "#928374"
+
+# string
+"string" = "#b8bb26"
+
+# constant
+"constant.character" = "#fb4934"
+"constant.numeric" = "#d3869b"
+
+# invalid
+"invalid" = { foreground = "#f9f5d7", background = "#fb4934" }
+
+# keyword
+"keyword.builtin" = "#fb4934"
+"keyword.control" = "#fb4934"
+"keyword.operator" = "#8ec07c"
+"keyword.other" = "#fb4934"
+
+# storage
+"storage.modifier" = "#fb4934"
+"storage.type" = "#8ec07c"
+
+# entity
+"entity" = "#b8bb26"
+
+# support
+"support" = "#8ec07c"
+
+# variable
+"variable.function" = "#8ec07c"
+"variable.language" = "#d3869b"
+"variable.other" = "#83a598"
+"variable.parameter" = "#f9f5d7"
+"variable.parameter.option" = "#fabd2f"
+
+# punctuation
+"punctuation.definition.comment" = "#928374"
+"punctuation.definition.compound" = "#f9f5d7"
+"punctuation.definition.numeric" = "#f9f5d7"
+"punctuation.definition.parameter" = "#fabd2f"
+"punctuation.definition.string" = "#f9f5d7"
+"punctuation.definition.variable" = "#458588"
+"punctuation.section" = "#f9f5d7"
+"punctuation.separator" = "#f9f5d7"
+"punctuation.terminator" = "#f9f5d7"
+
+# meta
+"meta.function" = "#ebdbb2"
+"meta.function-call.arguments" = "#f9f5d7"
+"meta.function-call.shell" = "#8ec07c"
+"meta.group" = "#f9f5d7"
+"meta.post-cmd" = "#ebdbb2"
+"meta.regexp" = "#ebdbb2"
+
+# precommand
+"precommand" = "#ebdbb2"
+
+# dynamic scopes -- resolved at runtime, mixed into the styles above
+# (fg/bg override; bold/underline are OR-ed in). Requires
+# dynamic = { callables = true, paths = "partial" } in config.toml.
+"dynamic.callable" = "#8ec07c"
+"dynamic.callable.command" = "#8ec07c"
+"dynamic.callable.builtin" = "#8ec07c"
+"dynamic.callable.function" = { foreground = "#8ec07c", bold = true }
+"dynamic.callable.alias" = "#d3869b"
+"dynamic.callable.missing" = { foreground = "#fb4934", bold = true }
+"dynamic.path.file.complete" = { underline = true }
+"dynamic.path.file.partial" = "#928374"
+"dynamic.path.directory.complete" = { foreground = "#458588", underline = true }
+"dynamic.path.directory.partial" = "#458588"

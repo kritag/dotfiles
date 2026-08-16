@@ -1,0 +1,117 @@
+# zsh-patina theme: Nord
+# Generated from bat built-in theme, from upstream Nord.tmTheme
+# Theme author: Arctic Ice Studio
+#
+# Static scopes are resolved directly against the source theme's own
+# Sublime scope selectors, so they match what bat renders. Italic is
+# dropped (zsh-patina's ZLE backend supports bold/underline only).
+#
+# Derived dynamic colours:
+#   callable.command/function <- variable.function (#88c0d0)
+#   callable.missing       <- global misspelling (#bf616a)
+#   callable.builtin       <- storage.type (#81a1c1)
+#   callable.alias         <- constant.numeric (#b48ead)
+#   path.directory.*       <- nearest readable cyan in palette (#8fbcbb)
+#   path.file.partial      <- comment (#616e88)
+#   variable.parameter.option (flags) <- nearest readable yellow/orange in palette (#ebcb8b)
+#
+# Regenerate with ~/.config/zsh-patina/generate-themes.py -- edits are lost.
+
+# source
+"source" = "#d8dee9"
+
+# comment
+"comment" = "#616e88"
+
+# string
+"string" = "#a3be8c"
+
+# constant
+"constant.character" = "#ebcb8b"
+"constant.numeric" = "#b48ead"
+
+# invalid
+"invalid" = { foreground = "#d8dee9", background = "#bf616a" }
+
+# keyword
+"keyword.builtin" = "#d8dee9"
+"keyword.control" = "#81a1c1"
+"keyword.operator" = "#81a1c1"
+"keyword.other" = "#81a1c1"
+
+# storage
+"storage" = "#81a1c1"
+
+# entity
+"entity" = "#88c0d0"
+
+# support
+"support" = "#88c0d0"
+
+# variable
+"variable.function" = "#88c0d0"
+"variable.language" = "#81a1c1"
+"variable.other" = "#d8dee9"
+"variable.parameter" = "#d8dee9"
+"variable.parameter.option" = "#ebcb8b"
+
+# punctuation
+"punctuation.definition.comment" = "#616e88"
+"punctuation.definition.compound" = "#d8dee9"
+"punctuation.definition.numeric.base" = "#d8dee9"
+"punctuation.definition.numeric.hexadecimal" = "#b48ead"
+"punctuation.definition.numeric.octal" = "#d8dee9"
+"punctuation.definition.parameter" = "#ebcb8b"
+"punctuation.definition.string.begin" = "#a3be8c"
+"punctuation.definition.string.end" = "#a3be8c"
+"punctuation.definition.string.shell" = "#d8dee9"
+"punctuation.definition.variable" = "#81a1c1"
+"punctuation.section.arithmetic" = "#d8dee9"
+"punctuation.section.braces" = "#d8dee9"
+"punctuation.section.brackets" = "#d8dee9"
+"punctuation.section.expansion.brace" = "#d8dee9"
+"punctuation.section.expansion.parameter" = "#a3be8c"
+"punctuation.section.group" = "#d8dee9"
+"punctuation.section.parens" = "#a3be8c"
+"punctuation.separator.character-class" = "#eceff4"
+"punctuation.separator.collate" = "#eceff4"
+"punctuation.separator.continuation" = "#81a1c1"
+"punctuation.separator.equivalence-class" = "#eceff4"
+"punctuation.separator.shell" = "#eceff4"
+"punctuation.terminator" = "#eceff4"
+
+# meta
+"meta.function" = "#d8dee9"
+"meta.function-call.arguments" = "#d8dee9"
+"meta.function-call.shell" = "#88c0d0"
+"meta.group.arithmetic" = "#d8dee9"
+"meta.group.expansion.arithmetic" = "#a3be8c"
+"meta.group.expansion.brace" = "#d8dee9"
+"meta.group.expansion.command" = "#d8dee9"
+"meta.group.expansion.history" = "#d8dee9"
+"meta.group.expansion.job" = "#d8dee9"
+"meta.group.expansion.parameter" = "#a3be8c"
+"meta.group.expansion.tilde" = "#81a1c1"
+"meta.group.for" = "#d8dee9"
+"meta.group.foreach" = "#d8dee9"
+"meta.group.parens" = "#d8dee9"
+"meta.group.select" = "#d8dee9"
+"meta.post-cmd" = "#d8dee9"
+"meta.regexp" = "#d8dee9"
+
+# precommand
+"precommand" = "#d8dee9"
+
+# dynamic scopes -- resolved at runtime, mixed into the styles above
+# (fg/bg override; bold/underline are OR-ed in). Requires
+# dynamic = { callables = true, paths = "partial" } in config.toml.
+"dynamic.callable" = "#88c0d0"
+"dynamic.callable.command" = "#88c0d0"
+"dynamic.callable.builtin" = "#81a1c1"
+"dynamic.callable.function" = { foreground = "#88c0d0", bold = true }
+"dynamic.callable.alias" = "#b48ead"
+"dynamic.callable.missing" = { foreground = "#bf616a", bold = true }
+"dynamic.path.file.complete" = { underline = true }
+"dynamic.path.file.partial" = "#616e88"
+"dynamic.path.directory.complete" = { foreground = "#8fbcbb", underline = true }
+"dynamic.path.directory.partial" = "#8fbcbb"

@@ -1,0 +1,129 @@
+# zsh-patina theme: TokyoNight
+# Generated from bat theme tokyonight-moon.tmTheme
+# Theme author: Folke Lemaitre (http://github.com/folke)
+#
+# Static scopes are resolved directly against the source theme's own
+# Sublime scope selectors, so they match what bat renders. Italic is
+# dropped (zsh-patina's ZLE backend supports bold/underline only).
+#
+# Derived dynamic colours:
+#   callable.command/function <- variable.function (#82aaff)
+#   callable.missing       <- invalid.illegal fg (#ff757f)
+#   callable.builtin       <- support.function (#65bcff)
+#   callable.alias         <- constant.numeric (#ff966c)
+#   path.directory.*       <- nearest readable cyan in palette (#b4f9f8)
+#   path.file.partial      <- comment (#636da6)
+#   variable.parameter.option (flags) <- nearest readable yellow/orange in palette (#ffdb69)
+#
+# Regenerate with ~/.config/zsh-patina/generate-themes.py -- edits are lost.
+
+# source
+"source" = "#c8d3f5"
+
+# comment
+"comment" = "#636da6"
+
+# string
+"string" = "#c3e88d"
+
+# constant
+"constant.character" = "#89ddff"
+"constant.numeric" = "#ff966c"
+
+# invalid
+"invalid" = "#ff757f"
+
+# keyword
+"keyword.builtin" = "#c099ff"
+"keyword.control.case" = "#c099ff"
+"keyword.control.do" = "#c099ff"
+"keyword.control.done" = "#c099ff"
+"keyword.control.end" = "#c099ff"
+"keyword.control.flow" = "#c8d3f5"
+"keyword.control.for" = "#c099ff"
+"keyword.control.foreach" = "#c099ff"
+"keyword.control.heredoc-token" = "#c099ff"
+"keyword.control.if" = "#c099ff"
+"keyword.control.in" = "#c099ff"
+"keyword.control.regexp" = "#c099ff"
+"keyword.control.repeat" = "#c099ff"
+"keyword.control.select" = "#c099ff"
+"keyword.control.until" = "#c099ff"
+"keyword.control.while" = "#c099ff"
+"keyword.operator.arithmetic" = "#89ddff"
+"keyword.operator.assignment" = "#89ddff"
+"keyword.operator.bitwise" = "#c099ff"
+"keyword.operator.end-of-options" = "#89ddff"
+"keyword.operator.expansion" = "#89ddff"
+"keyword.operator.herestring" = "#89ddff"
+"keyword.operator.indirection" = "#89ddff"
+"keyword.operator.logical" = "#c099ff"
+"keyword.operator.regexp" = "#89ddff"
+"keyword.operator.substitution" = "#89ddff"
+"keyword.operator.substring" = "#89ddff"
+"keyword.operator.ternary" = "#c099ff"
+"keyword.operator.word" = "#89ddff"
+"keyword.other" = "#89ddff"
+
+# storage
+"storage.modifier" = "#fca7ea"
+"storage.type" = "#c099ff"
+
+# entity
+"entity" = "#82aaff"
+
+# support
+"support" = "#65bcff"
+
+# variable
+"variable.function" = "#82aaff"
+"variable.language" = "#ff757f"
+"variable.other" = "#c8d3f5"
+"variable.parameter" = "#ffc777"
+"variable.parameter.option" = "#ffdb69"
+
+# punctuation
+"punctuation.definition.comment" = "#636da6"
+"punctuation.definition.compound" = "#89ddff"
+"punctuation.definition.numeric" = "#89ddff"
+"punctuation.definition.parameter" = "#ffdb69"
+"punctuation.definition.string" = "#89ddff"
+"punctuation.definition.variable" = "#89ddff"
+"punctuation.section" = "#9abdf5"
+"punctuation.separator" = "#89ddff"
+"punctuation.terminator" = "#89ddff"
+
+# meta
+"meta.function" = "#c8d3f5"
+"meta.function-call" = "#82aaff"
+"meta.group.arithmetic" = "#c8d3f5"
+"meta.group.expansion.arithmetic" = "#c3e88d"
+"meta.group.expansion.brace" = "#c8d3f5"
+"meta.group.expansion.command" = "#c8d3f5"
+"meta.group.expansion.history" = "#c8d3f5"
+"meta.group.expansion.job" = "#c8d3f5"
+"meta.group.expansion.parameter" = "#9abdf5"
+"meta.group.expansion.tilde" = "#ff757f"
+"meta.group.for" = "#c8d3f5"
+"meta.group.foreach" = "#c8d3f5"
+"meta.group.parens" = "#c8d3f5"
+"meta.group.select" = "#c8d3f5"
+"meta.post-cmd" = "#c8d3f5"
+"meta.regexp" = "#c8d3f5"
+
+# precommand
+"precommand" = "#c8d3f5"
+
+# dynamic scopes -- resolved at runtime, mixed into the styles above
+# (fg/bg override; bold/underline are OR-ed in). Requires
+# dynamic = { callables = true, paths = "partial" } in config.toml.
+"dynamic.callable" = "#82aaff"
+"dynamic.callable.command" = "#82aaff"
+"dynamic.callable.builtin" = "#65bcff"
+"dynamic.callable.function" = { foreground = "#82aaff", bold = true }
+"dynamic.callable.alias" = "#ff966c"
+"dynamic.callable.missing" = { foreground = "#ff757f", bold = true }
+"dynamic.path.file.complete" = { underline = true }
+"dynamic.path.file.partial" = "#636da6"
+"dynamic.path.directory.complete" = { foreground = "#b4f9f8", underline = true }
+"dynamic.path.directory.partial" = "#b4f9f8"
