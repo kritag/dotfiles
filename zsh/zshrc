@@ -50,5 +50,5 @@ bindkey '^[0A' history-substring-search-up
 bindkey '^[0B' history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-# znap prompt
+znap prompt
 # zprof
