@@ -14,12 +14,11 @@ if [[ ! -r "$ZNAP_DIR/znap.zsh" ]]; then
 fi
 
 source "$ZNAP_DIR/znap.zsh"
-# zstyle ':znap:*:*' git-maintenance off
-znap source ohmyzsh/ohmyzsh plugins/{dirhistory,gitfast}
-znap source ajeetdsouza/zoxide
-znap source Aloxaf/fzf-tab
-znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-history-substring-search
+znap source ohmyzsh plugins/dirhistory
+znap source zoxide
+znap source fzf-tab
+znap source zsh-autosuggestions
+znap source zsh-history-substring-search
 
 [[ -f "$HOME/.config/flavours/fzf.sh" ]] && source "$HOME/.config/flavours/fzf.sh"
 if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
@@ -72,5 +71,5 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-# znap prompt
+znap prompt
 # zprof
