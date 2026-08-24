@@ -43,7 +43,6 @@ compdef _journalctl jctl
 #fi
 
 eval "$(zsh-patina activate)"
-export SHELL_PROMPT='❯'
 znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml'
 source $HOME/.zstyle.zsh
 # Ensure up and down arrow works for searching history
@@ -51,25 +50,5 @@ bindkey '^[0A' history-substring-search-up
 bindkey '^[0B' history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-# Prompt char based on viins and vicmd
-_omp_redraw-prompt() {
-  local precmd
-  for precmd in "${precmd_functions[@]}"; do
-    "$precmd"
-  done
-
-  zle .reset-prompt
-}
-function zle-line-init zle-keymap-select {
-  case ${KEYMAP} in
-  vicmd) SHELL_PROMPT='❮' ;;
-  main | viins) SHELL_PROMPT='❯' ;;
-  *) SHELL_PROMPT='❮' ;;
-  esac
-  _omp_redraw-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
 znap prompt
 # zprof

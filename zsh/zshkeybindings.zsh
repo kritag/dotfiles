@@ -10,20 +10,33 @@ if ((${+terminfo[smkx]})) && ((${+terminfo[rmkx]})); then
     bindkey '^[OB' history-substring-search-down
     zle -N zle-line-init
     zle -N zle-line-finish
-
-    # Remove precmd hook after first run to avoid repeating
-    precmd_functions=(${precmd_functions:#setup_keybindings})
+    autoload -Uz add-zle-hook-widget
+    zle -N _vi_cursor_shape
+    add-zle-hook-widget keymap-select _vi_cursor_shape
+    precmd_functions=(_vi_reset_mode ${precmd_functions:})
+    precmd_functions=(${precmd_functions:})
   }
 
-  # Run the setup once before the first prompt is drawn
   precmd_functions+=(setup_keybindings)
 
+  function _vi_reset_mode() {
+    export POSH_VI_MODE=main
+  }
+
+  function _vi_cursor_shape() {
+    case ${KEYMAP:-main} in
+    vicmd | visual | viopp) printf '\e[1 q' ;;
+    *) printf '\e[5 q' ;;
+    esac
+  }
   function zle-line-init() {
     echoti smkx
     printf '\e[?12h\e[?25h'
+    _vi_cursor_shape
   }
   function zle-line-finish() {
     echoti rmkx
+    printf '\e[5 q'
   }
 fi
 
