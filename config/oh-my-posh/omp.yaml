@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 var:
   PromptChar: ❯
+  PromptCharCmd: ❮
 secondary_prompt:
   template: '❯❯ '
   foreground: magenta
@@ -75,10 +76,9 @@ blocks:
   - type: prompt
     alignment: left
     segments:
-      # - template: ❯
-      - template: '{{ .Env.SHELL_PROMPT }}'
+      - template: '{{ if eq .Mode "insert" }}{{ .Var.PromptChar }}{{ else }}{{ .Var.PromptCharCmd }}{{ end }}'
         background: transparent
-        type: text
+        type: vimode
         style: plain
         foreground_templates:
           - '{{if gt .Code 0}}red{{end}}'
