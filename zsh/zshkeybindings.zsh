@@ -13,8 +13,8 @@ if ((${+terminfo[smkx]})) && ((${+terminfo[rmkx]})); then
     autoload -Uz add-zle-hook-widget
     zle -N _vi_cursor_shape
     add-zle-hook-widget keymap-select _vi_cursor_shape
-    precmd_functions=(_vi_reset_mode ${precmd_functions:})
-    precmd_functions=(${precmd_functions:})
+    precmd_functions=(_vi_reset_mode ${precmd_functions:#_vi_reset_mode})
+    precmd_functions=(${precmd_functions:#setup_keybindings})
   }
 
   precmd_functions+=(setup_keybindings)
