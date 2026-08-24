@@ -14,6 +14,7 @@ if [[ ! -r "$ZNAP_DIR/znap.zsh" ]]; then
 fi
 
 source "$ZNAP_DIR/znap.zsh"
+# zstyle ':znap:*:*' git-maintenance off
 znap source ohmyzsh/ohmyzsh plugins/{dirhistory,gitfast}
 znap source ajeetdsouza/zoxide
 znap source Aloxaf/fzf-tab
@@ -32,14 +33,6 @@ if [[ -f /usr/share/fzf/completion.zsh ]]; then
   source /usr/share/fzf/completion.zsh
 fi
 
-if [[ -f $THEME_FILE ]]; then
-  theme=$(<"$THEME_FILE")
-
-  if [[ ! -f $CACHE_FILE || $(<"$CACHE_FILE") != "$theme" ]]; then
-    fast-theme "$theme" >/dev/null 2>&1
-    print -r -- "$theme" >|"$CACHE_FILE"
-  fi
-fi
 compdef _ssh_hosts sshpass s sr
 compdef _kubectl kubecolor
 # Make autocomplete work for the jctl() function
@@ -59,7 +52,6 @@ bindkey '^[0A' history-substring-search-up
 bindkey '^[0B' history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-zstyle ':znap:*:*' git-maintenance off
 # Prompt char based on viins and vicmd
 _omp_redraw-prompt() {
   local precmd
@@ -80,5 +72,5 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-znap prompt
+# znap prompt
 # zprof
