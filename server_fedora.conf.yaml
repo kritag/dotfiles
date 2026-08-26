@@ -10,4 +10,4 @@
         - ['[ -d /opt/fzf-tab-completion ] || git clone --depth 1 https://github.com/lincheney/fzf-tab-completion /opt/fzf-tab-completion', "Install fzf-tab-completion for bash"]
     - link:
         /etc/profile.d/dotfiles.sh: bash/server-global.bash
-    - yum: [bash-completion, bat, bat-extras, btop, cargo, dnf-automatic, dnf-plugins-core, docker-compose, duf, eza, fd-find, flavours, fzf, gh, git, git-delta, less, lesspipe, make, moby-engine, neovim, nodejs-npm, oh-my-posh, python3, python3-pip, ripgrep, socat, sqlite, tealdeer, tree-sitter-cli, unzip, vim, vivid, wget, yp-tools, yq, zoxide, zsh]
+    - yum: [bash-completion, bat, bat-extras, btop, cargo, dnf-automatic, dnf-plugins-core, docker-compose, duf, eza, fd-find, flavours, fzf, gh, git, git-delta, gitleaks, less, lesspipe, make, moby-engine, neovim, nodejs-npm, oh-my-posh, python3, python3-pip, rclone, restic, ripgrep, socat, sqlite, tealdeer, tree-sitter-cli, unzip, vim, vivid, wget, yp-tools, yq, zoxide, zsh]
