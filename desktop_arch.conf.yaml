@@ -1,7 +1,7 @@
 - yay:
     - bambustudio-appimage
     - bibata-cursor-theme-bin
-    - dms-shell-bin
+    - dms-shell
     - downgrade
     - dracula-gtk-theme
     - dracula-icons-theme
@@ -10,7 +10,8 @@
     - game-devices-udev
     - gpu-screen-recorder-gtk
     - grimblast-git
-    - hyprland-preview-share-picker
+    - hyprfm-git
+    - hyprland-preview-share-picker-git
     - lucidglyph
     - obsidian-bin
     - oh-my-posh-bin
@@ -56,6 +57,7 @@
         - go-yq
         - grub-btrfs
         - gvfs-smb
+        - gvfs-mtp
         - hyprland
         - hyprlock
         - inotify-tools
