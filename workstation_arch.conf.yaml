@@ -10,6 +10,7 @@
     - github-copilot-cli
     - gpu-screen-recorder-gtk
     - grimblast-git
+    - greetd-dms-greeter-bin
     - k9s-sbanka-bin
     - keybase-gui
     - kubecolor
@@ -45,6 +46,7 @@
         - cpio
         - cups-pk-helper
         - dmidecode
+        - dms-shell-bin
         - docker
         - docker-compose
         - duf
@@ -86,7 +88,6 @@
         - libva-intel-driver
         - libva-utils
         - loupe
-        - ly
         - make
         - man-db
         - mangohud
