@@ -1,7 +1,6 @@
 - yay:
     - bambustudio-appimage
     - bibata-cursor-theme-bin
-    - dms-shell
     - downgrade
     - dracula-gtk-theme
     - dracula-icons-theme
@@ -9,6 +8,7 @@
     - flavours
     - game-devices-udev
     - gpu-screen-recorder-gtk
+    - greetd-dms-greeter-bin
     - grimblast-git
     - hyprfm-git
     - hyprland-preview-share-picker-git
@@ -37,6 +37,7 @@
         - cups-pk-helper
         - discord
         - dmidecode
+        - dms-shell
         - duf
         - eza
         - fastfetch
@@ -75,7 +76,6 @@
         - libreoffice-fresh
         - loupe
         - lutris
-        - ly
         - make
         - man-db
         - mangohud
