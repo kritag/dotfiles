@@ -70,8 +70,8 @@ hl.window_rule({
 hl.window_rule({
 	name = "Thunar-Progress-bar",
 	match = {
-		class = "^(thunar)$",
-		title = "^(File Operation Progress|Confirm to replace files|Create New Folder)$",
+		class = "^(Thunar|thunar|org.gnome.FileRoller)$",
+		title = "^(File Operation Progress|Confirm to replace files|Create New Folder|Extract)$",
 	},
 	float = true,
 	size = "(monitor_w*0.2) (monitor_h*0.1)",
@@ -81,8 +81,8 @@ hl.window_rule({
 hl.window_rule({
 	name = "thunar",
 	match = {
-		class = "^(Thunar|thunar)$",
-		title = "negative:^(File Operation Progress|Confirm to replace files|Create New Folder)$",
+		class = "^(Thunar|thunar|org.gnome.FileRoller)$",
+		title = "negative:^(File Operation Progress|Confirm to replace files|Create New Folder|Extract)$",
 	},
 	center = true,
 	size = "(monitor_w*0.4) (monitor_h*0.7)",
