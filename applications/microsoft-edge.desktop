@@ -167,7 +167,7 @@ Name[uk]=Нове вікно
 Name[vi]=Cửa sổ Mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=/usr/bin/microsoft-edge-stable --ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer,WebRtcPipeWireCapturer,WebRtcPipeWireCamera
+Exec=/usr/bin/microsoft-edge-stable --ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer,WebRtcPipeWireCapturer,WebRtcPipeWireCamera %U
 
 [Desktop Action new-private-window]
 Name=New InPrivate Window
@@ -219,4 +219,4 @@ Name[uk]=Нове вікно InPrivate
 Name[vi]=Cửa Sổ InPrivate Mới
 Name[zh_CN]=新建 InPrivate 窗口
 Name[zh_TW]=新 InPrivate 視窗
-Exec=/usr/bin/microsoft-edge-stable --ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer,WebRtcPipeWireCapturer,WebRtcPipeWireCamera --inprivate
+Exec=/usr/bin/microsoft-edge-stable --ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer,WebRtcPipeWireCapturer,WebRtcPipeWireCamera --inprivate %U
