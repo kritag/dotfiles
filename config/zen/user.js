@@ -11,3 +11,6 @@ user_pref("zen.view.compact.enable-at-startup", true);
 user_pref("zen.view.compact.toolbar-flash-popup", true);
 user_pref("zen.view.experimental-no-window-controls", true);
 user_pref("zen.view.show-newtab-button-top", false);
+
+// Required for chrome/userChrome.css (imports the DMS matugen theme).
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
