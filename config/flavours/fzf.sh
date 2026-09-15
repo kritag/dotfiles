@@ -1,24 +1,24 @@
-# -Gruvbox dark, hard
-# Scheme author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+# -Everforest dark, hard
+# Scheme author: Sainnhe Park (sainnhe@gmail.com)
 # Template author: Tinted Theming (https://github.com/tinted-theming)
 
 export FZF_DEFAULT_OPTS=" \
   --history=$HOME/.fzfhistory \
   --layout=reverse \
-  --color=fg:#d5c4a1,hl:#fe8019\
-  --color=fg+:#d5c4a1,hl+:#8ec07c\
-  --color=info:#d65d0e,border:#83a598,prompt:#b8bb26\
-  --color=pointer:#fabd2f,marker:#b8bb26,spinner:#d3869b,header:#fb4934 \
+  --color=fg:#d3c6aa,hl:#e69875\
+  --color=fg+:#d3c6aa,hl+:#83c092\
+  --color=info:#9da9a0,border:#7fbbb3,prompt:#a7c080\
+  --color=pointer:#dbbc7f,marker:#a7c080,spinner:#d699b6,header:#e67e80 \
 --pointer=❯ \
 --multi"
 
 _FZF_TAB_FZF_FLAGS=(
   '--height=80%'
   '--layout=reverse'
-  '--color=fg:#d5c4a1,hl:#fe8019'
-  '--color=fg+:#d5c4a1,hl+:#8ec07c'
-  '--color=info:#d65d0e,border:#83a598,prompt:#b8bb26'
-  '--color=pointer:#fabd2f,marker:#b8bb26,spinner:#d3869b,header:#fb4934'
+  '--color=fg:#d3c6aa,hl:#e69875'
+  '--color=fg+:#d3c6aa,hl+:#83c092'
+  '--color=info:#9da9a0,border:#7fbbb3,prompt:#a7c080'
+  '--color=pointer:#dbbc7f,marker:#a7c080,spinner:#d699b6,header:#e67e80'
   '--pointer=❯'
   '--multi'
 )
