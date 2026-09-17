@@ -1,0 +1,169 @@
+/* Sidebar / preferences-row label fix for the *-Compact GTK themes
+ */
+
+.sidebar-pane
+  toolbarview
+  > stack
+  > box
+  > widget
+  > widget
+  > scrolledwindow
+  .dim-label,
+.sidebar-pane
+  toolbarview
+  > stack
+  > box
+  > widget
+  > widget
+  > scrolledwindow
+  row
+  label.subtitle,
+row
+  .sidebar-pane
+  toolbarview
+  > stack
+  > box
+  > widget
+  > widget
+  > scrolledwindow
+  label.subtitle,
+.sidebar-pane
+  toolbarview
+  > stack
+  > box
+  > widget
+  > widget
+  > scrolledwindow
+  row.property
+  > box.header
+  > box.title
+  > .title,
+.sidebar-pane
+  toolbarview
+  > stack
+  > box
+  > widget
+  > widget
+  > scrolledwindow
+  row.expander
+  image.expander-row-arrow,
+row.expander
+  .sidebar-pane
+  toolbarview
+  > stack
+  > box
+  > widget
+  > widget
+  > scrolledwindow
+  image.expander-row-arrow {
+  color: alpha(@window_fg_color, 0.7);
+}
+
+.nautilus-window placessidebar > scrolledwindow .dim-label,
+.nautilus-window placessidebar > scrolledwindow row label.subtitle,
+row .nautilus-window placessidebar > scrolledwindow label.subtitle,
+.nautilus-window
+  placessidebar
+  > scrolledwindow
+  row.property
+  > box.header
+  > box.title
+  > .title,
+.nautilus-window
+  placessidebar
+  > scrolledwindow
+  row.expander
+  image.expander-row-arrow,
+row.expander
+  .nautilus-window
+  placessidebar
+  > scrolledwindow
+  image.expander-row-arrow {
+  color: alpha(@window_fg_color, 0.7);
+}
+
+.sidebar-pane .sidebar > scrolledwindow .dim-label,
+.sidebar-pane toolbarview > scrolledwindow .dim-label,
+.sidebar-pane navigation-view-page stack > scrolledwindow .dim-label,
+.sidebar-pane .dim-label,
+filechooser paned > box .dim-label,
+placessidebar > scrolledwindow .dim-label,
+agenda-view list.background .dim-label,
+.tweak-titlebar-left .dim-label,
+leaflet.unfolded > box > scrolledwindow .dim-label,
+leaflet.unfolded .contacts-contact-list > scrolledwindow .dim-label,
+.sidebar-pane row label.subtitle,
+row .sidebar-pane label.subtitle,
+filechooser paned > box row label.subtitle,
+row filechooser paned > box label.subtitle,
+placessidebar > scrolledwindow row label.subtitle,
+row placessidebar > scrolledwindow label.subtitle,
+agenda-view list.background row label.subtitle,
+row agenda-view list.background label.subtitle,
+.tweak-titlebar-left row label.subtitle,
+row .tweak-titlebar-left label.subtitle,
+leaflet.unfolded > box > scrolledwindow row label.subtitle,
+row leaflet.unfolded > box > scrolledwindow label.subtitle,
+leaflet.unfolded .contacts-contact-list > scrolledwindow row label.subtitle,
+row leaflet.unfolded .contacts-contact-list > scrolledwindow label.subtitle,
+.sidebar-pane row.property > box.header > box.title > .title,
+placessidebar > scrolledwindow row.property > box.header > box.title > .title,
+agenda-view list.background row.property > box.header > box.title > .title,
+.tweak-titlebar-left row.property > box.header > box.title > .title,
+leaflet.unfolded
+  > box
+  > scrolledwindow
+  row.property
+  > box.header
+  > box.title
+  > .title,
+leaflet.unfolded
+  .contacts-contact-list
+  > scrolledwindow
+  row.property
+  > box.header
+  > box.title
+  > .title,
+.sidebar-pane row.expander image.expander-row-arrow,
+row.expander .sidebar-pane image.expander-row-arrow,
+filechooser paned > box row.expander image.expander-row-arrow,
+row.expander filechooser paned > box image.expander-row-arrow,
+placessidebar > scrolledwindow row.expander image.expander-row-arrow,
+row.expander placessidebar > scrolledwindow image.expander-row-arrow,
+agenda-view list.background row.expander image.expander-row-arrow,
+row.expander agenda-view list.background image.expander-row-arrow,
+.tweak-titlebar-left row.expander image.expander-row-arrow,
+row.expander .tweak-titlebar-left image.expander-row-arrow,
+leaflet.unfolded > box > scrolledwindow row.expander image.expander-row-arrow,
+row.expander leaflet.unfolded > box > scrolledwindow image.expander-row-arrow,
+leaflet.unfolded
+  .contacts-contact-list
+  > scrolledwindow
+  row.expander
+  image.expander-row-arrow,
+row.expander
+  leaflet.unfolded
+  .contacts-contact-list
+  > scrolledwindow
+  image.expander-row-arrow {
+  color: alpha(@window_fg_color, 0.7);
+}
+
+placessidebar list.navigation-sidebar > row,
+leaflet.unfolded
+  .contacts-contact-list
+  > scrolledwindow
+  > viewport
+  > .navigation-sidebar
+  > row,
+.sidebar-pane
+  toolbarview
+  > stack
+  > box
+  > widget
+  > widget
+  > scrolledwindow
+  > .navigation-sidebar
+  > row {
+  color: alpha(@window_fg_color, 0.7);
+}
