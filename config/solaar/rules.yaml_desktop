@@ -1,0 +1,89 @@
+# Workaround for G915 TKL F-keys dead in host mode (pwr-Solaar/Solaar#3266).
+#
+# In host mode (Onboard Profiles = Disabled) the G915 TKL's F-row is delivered
+# as G-keys instead of standard F1-F12 HID. These rules reconstruct the F-keys
+# in software, the same way LGHUB handles them.
+#
+# Setup:
+#   1. Give Solaar access to /dev/uinput (one-time):
+#        sudo setfacl -m u:$USER:rw /dev/uinput
+#      (see https://pwr-solaar.github.io/Solaar/rules for the persistent udev rule)
+#   2. In Solaar, enable "Divert G and M Keys" on the keyboard.
+#   3. Append this file's contents to ~/.config/solaar/rules.yaml
+#      (or recreate the rules in Solaar's Rule Editor).
+#
+# Each F-key gets a pressed->depress and released->release pair so key hold
+# and auto-repeat work. Solaar must be running for the F-keys to function.
+%YAML 1.3
+---
+- Key: [G1, pressed]
+- KeyPress: [F1, depress]
+---
+- Key: [G1, released]
+- KeyPress: [F1, release]
+---
+- Key: [G2, pressed]
+- KeyPress: [F2, depress]
+---
+- Key: [G2, released]
+- KeyPress: [F2, release]
+---
+- Key: [G3, pressed]
+- KeyPress: [F3, depress]
+---
+- Key: [G3, released]
+- KeyPress: [F3, release]
+---
+- Key: [G4, pressed]
+- KeyPress: [F4, depress]
+---
+- Key: [G4, released]
+- KeyPress: [F4, release]
+---
+- Key: [G5, pressed]
+- KeyPress: [F5, depress]
+---
+- Key: [G5, released]
+- KeyPress: [F5, release]
+---
+- Key: [G6, pressed]
+- KeyPress: [F6, depress]
+---
+- Key: [G6, released]
+- KeyPress: [F6, release]
+---
+- Key: [G7, pressed]
+- KeyPress: [F7, depress]
+---
+- Key: [G7, released]
+- KeyPress: [F7, release]
+---
+- Key: [G8, pressed]
+- KeyPress: [F8, depress]
+---
+- Key: [G8, released]
+- KeyPress: [F8, release]
+---
+- Key: [G9, pressed]
+- KeyPress: [F9, depress]
+---
+- Key: [G9, released]
+- KeyPress: [F9, release]
+---
+- Key: [G10, pressed]
+- KeyPress: [F10, depress]
+---
+- Key: [G10, released]
+- KeyPress: [F10, release]
+---
+- Key: [G11, pressed]
+- KeyPress: [F11, depress]
+---
+- Key: [G11, released]
+- KeyPress: [F11, release]
+---
+- Key: [G12, pressed]
+- KeyPress: [F12, depress]
+---
+- Key: [G12, released]
+- KeyPress: [F12, release]
