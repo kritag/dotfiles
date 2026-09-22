@@ -26,7 +26,6 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Gruvbox-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ln -sf ~/.config/eza/gruvbox-dark.yml ~/.config/eza/theme.yml
   ;;
 
@@ -44,7 +43,6 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Catppuccin-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ln -sf ~/.config/eza/catppuccin-mocha.yml ~/.config/eza/theme.yml
   ;;
 
@@ -62,7 +60,6 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Dracula/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ln -sf ~/.config/eza/dracula.yml ~/.config/eza/theme.yml
   ;;
 
@@ -80,7 +77,6 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Everforest-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ln -sf ~/.config/eza/everforest.yml ~/.config/eza/theme.yml
   ;;
 
@@ -99,7 +95,6 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Nord-Dark-Compact-Nord/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ln -sf ~/.config/eza/nord.yml ~/.config/eza/theme.yml
   ;;
 
@@ -117,7 +112,6 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Rosepine-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ln -sf ~/.config/eza/rose-pine.yml ~/.config/eza/theme.yml
   ;;
 
@@ -135,7 +129,6 @@ case "$1" in
   dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
   dconf write /org/gnome/desktop/interface/font-name "$FONT"
   dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf /usr/share/themes/Tokyonight-Dark-Compact/gtk-4.0/{assets,gtk.css,gtk-dark.css} ~/.config/gtk-4.0/
   ln -sf ~/.config/eza/tokyonight.yml ~/.config/eza/theme.yml
   ;;
 
@@ -143,6 +136,23 @@ case "$1" in
   echo "Invalid theme specified."
   ;;
 esac
+
+# GTK4/libadwaita ignores the gtk-theme gsetting: the theme is whatever
+# ~/.config/gtk-4.0/gtk.css imports. Run this after the case, so the theme is
+# already set — gtk4-theme reads it back, regenerates gtk.css (theme sheet, then
+# sidebar-label-fix.css, which repairs the sidebar labels the *-Compact themes
+# paint in the background colour) and relinks assets/gtk-dark.css.
+GTK4_THEME="$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")/gtk4-theme"
+GTK_THEME_NAME="$(dconf read /org/gnome/desktop/interface/gtk-theme | tr -d "'")"
+
+if [[ ! -x "$GTK4_THEME" ]]; then
+  echo "themeSwitch: $GTK4_THEME not executable; GTK4 apps keep the old theme" >&2
+elif [[ -z "$GTK_THEME_NAME" ]]; then
+  echo "themeSwitch: no gtk-theme set; skipping the GTK4 sidebar fix" >&2
+else
+  "$GTK4_THEME" --no-gsettings "$GTK_THEME_NAME" ||
+    echo "themeSwitch: GTK4 theme '$GTK_THEME_NAME' not applied" >&2
+fi
 
 bat cache --build
 zsh-patina restart
