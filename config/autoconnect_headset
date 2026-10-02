@@ -1,0 +1,1 @@
+bluetoothctl connect 50:C2:75:2B:95:0E && wpctl set-default $(wpctl status | rg 'Jabra Elite 10.*\[vol' | rg -oP '\d+' | head -1)
