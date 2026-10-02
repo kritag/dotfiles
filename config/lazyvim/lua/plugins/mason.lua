@@ -6,6 +6,7 @@ return {
         "actionlint",
         "css-lsp",
         "eslint_d",
+        "fixjson",
         "gh-actions-language-server",
         "hyprls",
         "jsonlint",
