@@ -101,16 +101,25 @@ hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Mouse drag/resize
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
+-- (SUPER + mouse:272/273 live in grid_mouse.lua)
 hl.bind("SUPER + ALT_L", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER + Control_L", hl.dsp.window.drag(), { mouse = true })
 
--- Resize active (repeating)
-hl.bind("SUPER + right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
-hl.bind("SUPER + left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-hl.bind("SUPER + up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
-hl.bind("SUPER + down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+-- Resize active (repeating). The grid layout resizes through layout messages.
+local function resize(x, y)
+	return function()
+		local ws = hl.get_active_workspace()
+		if ws and ws.tiled_layout == "lua:grid" then
+			hl.dispatch(hl.dsp.layout("resize " .. x .. " " .. y))
+		else
+			hl.dispatch(hl.dsp.window.resize({ x = 10 * x, y = 10 * y, relative = true }))
+		end
+	end
+end
+hl.bind("SUPER + right", resize(1, 0), { repeating = true })
+hl.bind("SUPER + left", resize(-1, 0), { repeating = true })
+hl.bind("SUPER + up", resize(0, -1), { repeating = true })
+hl.bind("SUPER + down", resize(0, 1), { repeating = true })
 
 -- Power
 hl.bind("XF86PowerOff", hl.dsp.exec_cmd("systemctl suspend"))
