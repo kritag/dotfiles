@@ -1,5 +1,7 @@
 -- Mouse move/resize for the grid layout (Hyprland's own drag/resize don't drive
--- lua layouts). Both fall back to the native dispatchers outside the grid.
+-- lua layouts). In the grid these binds replace the native ones, floating
+-- windows included; in other layouts the native binds are active instead
+-- (scripts/layout.sh calls grid_mouse_sync() on every layout change).
 --   SUPER + left drag:  window floats and follows the cursor; on release it
 --                       joins the column of the window it was dropped on
 --   SUPER + right drag: resize; grabbing the left/right (top/bottom) half of a
@@ -26,13 +28,26 @@ local function window_at(pos, skip)
 	end
 end
 
+local function floating_at(pos)
+	local ws = hl.get_active_workspace()
+	for _, w in ipairs(hl.get_windows()) do
+		if w.mapped and w.floating and w.workspace and w.workspace.id == ws.id then
+			local x, y = coord(w.at, "x", 1), coord(w.at, "y", 2)
+			local width, height = coord(w.size, "x", 1), coord(w.size, "y", 2)
+			if pos.x >= x and pos.x < x + width and pos.y >= y and pos.y < y + height then
+				return w
+			end
+		end
+	end
+end
+
 local function layout_msg(msg)
 	hl.dispatch(hl.dsp.layout(msg))
 end
 
 -- one timer drives both gestures
 local mode, id, last, edge, timer
-local drag_win, drag_off -- move: the floated window and the cursor offset in it
+local drag_win, drag_off, drag_tiled -- move: the dragged window, cursor offset in it, was it tiled
 
 local function float(w, enable)
 	hl.dispatch(hl.dsp.window.float({ action = enable and "enable" or "disable", window = "address:" .. w.address }))
@@ -41,7 +56,13 @@ end
 local function tick()
 	local cur = hl.get_cursor_pos()
 	if not (mode and cur) then return end
-	if mode == "resize" then
+	if mode == "fresize" then
+		local dx, dy = math.floor(cur.x - last.x), math.floor(cur.y - last.y)
+		if dx ~= 0 or dy ~= 0 then
+			last = { x = last.x + dx, y = last.y + dy }
+			hl.dispatch(hl.dsp.window.resize({ x = dx, y = dy, relative = true, window = "address:" .. drag_win.address }))
+		end
+	elseif mode == "resize" then
 		local dx, dy = math.floor(cur.x - last.x), math.floor(cur.y - last.y)
 		if dx ~= 0 or dy ~= 0 then
 			last = { x = last.x + dx, y = last.y + dy }
@@ -64,9 +85,9 @@ end
 
 local function stop()
 	if timer then timer:set_enabled(false) end
-	local was, w = mode, drag_win
+	local was, w, tiled = mode, drag_win, drag_tiled
 	mode, drag_win = nil, nil
-	if was ~= "move" then return end
+	if was ~= "move" or not tiled then return end
 	-- drop: re-tile the window, then slot it next to whatever it was released on
 	local cur = hl.get_cursor_pos()
 	local target, px, py
@@ -79,33 +100,50 @@ local function stop()
 	end
 end
 
-hl.bind("SUPER + mouse:272", function()
+local grid_binds = {}
+grid_binds[1] = hl.bind("SUPER + mouse:272", function()
 	local pos = hl.get_cursor_pos()
-	local w = in_grid() and pos and window_at(pos)
-	if w then
-		drag_win = w
-		drag_off = { x = pos.x - coord(w.at, "x", 1), y = pos.y - coord(w.at, "y", 2) }
+	if not pos then return end
+	local f = floating_at(pos)
+	local w = f or window_at(pos)
+	if not w then return end
+	drag_win, drag_tiled = w, not f
+	drag_off = { x = pos.x - coord(w.at, "x", 1), y = pos.y - coord(w.at, "y", 2) }
+	if not f then
 		float(w, true)
 		layout_msg("detach " .. w.stable_id)
-		start("move", w.stable_id)
-	else
-		hl.dispatch(hl.dsp.window.drag())
 	end
+	start("move", w.stable_id)
 end, { mouse = true })
 
-hl.bind("SUPER + mouse:273", function()
+grid_binds[2] = hl.bind("SUPER + mouse:273", function()
 	local pos = hl.get_cursor_pos()
-	local w, px, py
-	if in_grid() and pos then
-		w, px, py = window_at(pos)
+	if not pos then return end
+	local f = floating_at(pos)
+	if f then
+		drag_win, last = f, pos
+		start("fresize", f.stable_id)
+		return
 	end
+	local w, px, py = window_at(pos)
 	if w then
 		last, edge = pos, { px < 50 and "l" or "r", py < 50 and "t" or "b" }
 		start("resize", w.stable_id)
-	else
-		hl.dispatch(hl.dsp.window.resize())
 	end
 end, { mouse = true })
 
 hl.bind("SUPER + mouse:272", stop, { release = true, ignore_mods = true, non_consuming = true })
 hl.bind("SUPER + mouse:273", stop, { release = true, ignore_mods = true, non_consuming = true })
+
+-- native drag/resize for every other layout
+local native_binds = {
+	hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true }),
+	hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true }),
+}
+
+function grid_mouse_sync()
+	local grid = hl.get_config("general.layout") == "lua:grid"
+	for _, b in ipairs(grid_binds) do b:set_enabled(grid) end
+	for _, b in ipairs(native_binds) do b:set_enabled(not grid) end
+end
+grid_mouse_sync()
