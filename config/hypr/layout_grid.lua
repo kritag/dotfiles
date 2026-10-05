@@ -67,8 +67,10 @@ end
 local function ws_state(ctx)
     local id = ws_id_from_ctx(ctx)
     if not id then return nil end
-    state.workspaces[tostring(id)] = state.workspaces[tostring(id)] or { columns = {} }
-    return state.workspaces[tostring(id)]
+    local ws = state.workspaces[tostring(id)] or { columns = {} }
+    state.workspaces[tostring(id)] = ws
+    ws.weights = ws.weights or {}
+    return ws
 end
 
 local function active_id(ctx)
@@ -105,58 +107,64 @@ local function build_targets(ctx)
     return targets
 end
 
--- Place a column's windows vertically inside its box.
-local function place_column(ctx, col_box, targets, ids)
-    local n = #ids
-    if n == 0 then return end
-
-    local remaining = col_box
-    for i = 1, n - 1 do
-        local fraction = 1 / (n - i + 1)
-        local row = ctx:split(remaining, "top", fraction)
-        if targets[ids[i]] then targets[ids[i]]:place(row) end
-        remaining = ctx:split(remaining, "bottom", 1 - fraction)
-    end
-    if targets[ids[n]] then targets[ids[n]]:place(remaining) end
+local function weight(ws, id)
+    return ws.weights[id] or 1
 end
 
--- Flatten ws.columns into a left-to-right, top-to-bottom id list.
-local function flatten(ws)
+-- Split `box` into len(weights) pieces sized proportionally, along `first`/`rest` sides.
+local function split_weighted(ctx, box, weights, first, rest)
     local out = {}
-    for _, col in ipairs(ws.columns) do
-        for _, id in ipairs(col) do out[#out + 1] = id end
+    local remaining = box
+    local total = 0
+    for _, w in ipairs(weights) do total = total + w end
+    for i = 1, #weights - 1 do
+        local fraction = weights[i] / total
+        out[i] = ctx:split(remaining, first, fraction)
+        remaining = ctx:split(remaining, rest, 1 - fraction)
+        total = total - weights[i]
     end
+    out[#weights] = remaining
     return out
 end
 
--- Detect external reorder (e.g. mouse drag → Hyprland's swapTargets reorders
--- the C++ target list). If ctx.targets order doesn't match our ws.columns
--- flattened order, reshape ws.columns using ctx.targets while preserving the
--- per-column count.
-local function sync_external_order(ctx, ws)
-    local ctx_ids = {}
-    for _, t in ipairs(ctx.targets) do ctx_ids[#ctx_ids + 1] = target_id(t) end
-
-    local flat = flatten(ws)
-    if #ctx_ids ~= #flat then return false end
-    local same = true
-    for i = 1, #ctx_ids do
-        if ctx_ids[i] ~= flat[i] then same = false; break end
+-- Place a column's windows inside its box: stacked vertically, or side by side if col.h.
+local function place_column(ctx, ws, col_box, targets, ids, horizontal)
+    if #ids == 0 then return end
+    local weights = {}
+    for i, id in ipairs(ids) do weights[i] = weight(ws, id) end
+    local first, rest = "top", "bottom"
+    if horizontal then first, rest = "left", "right" end
+    for i, cell in ipairs(split_weighted(ctx, col_box, weights, first, rest)) do
+        if targets[ids[i]] then targets[ids[i]]:place(cell) end
     end
-    if same then return false end
+end
 
-    local shape = {}
-    for _, col in ipairs(ws.columns) do shape[#shape + 1] = #col end
+-- Detect external reorder (e.g. mouse drag -> Hyprland swaps two entries in
+-- the C++ target list). ws.columns is our own source of truth and is allowed to
+-- differ from ctx.targets order (move-left etc. never touch the C++ list), so
+-- compare against the previously seen ctx order, not against ws.columns.
+local last_order = {}
 
-    ws.columns = {}
-    local idx = 1
-    for col_i = 1, #shape do
-        local col = {}
-        for _ = 1, shape[col_i] do
-            if ctx_ids[idx] then col[#col + 1] = ctx_ids[idx]; idx = idx + 1 end
-        end
-        if #col > 0 then ws.columns[#ws.columns + 1] = col end
+local function sync_external_order(ctx, ws, ws_key)
+    local cur = {}
+    for _, t in ipairs(ctx.targets) do cur[#cur + 1] = target_id(t) end
+
+    local prev = last_order[ws_key]
+    last_order[ws_key] = cur
+    if not prev or #prev ~= #cur then return false end
+
+    local diff = {}
+    for i = 1, #cur do
+        if prev[i] ~= cur[i] then diff[#diff + 1] = i end
     end
+    if #diff ~= 2 then return false end
+
+    -- two entries traded places: trade them in ws.columns too
+    local a, b = prev[diff[1]], prev[diff[2]]
+    local ca, ra = find_window(ws, a)
+    local cb, rb = find_window(ws, b)
+    if not (ca and cb) then return false end
+    ws.columns[ca][ra], ws.columns[cb][rb] = b, a
     save_state()
     return true
 end
@@ -169,7 +177,8 @@ local function sync_new(ctx, ws)
 
     for _, t in ipairs(ctx.targets) do
         local id = target_id(t)
-        if not tracked[id] then
+        local floating = t.window and t.window.floating
+        if not tracked[id] and not floating then
             if #ws.columns < max_columns then
                 table.insert(ws.columns, { id })
             else
@@ -208,22 +217,88 @@ hl.layout.register("grid", {
         local ws = ws_state(ctx)
         if not ws then return end
 
+        sync_external_order(ctx, ws, tostring(ws_id_from_ctx(ctx)))
         sync_new(ctx, ws)
-        sync_external_order(ctx, ws)
         local targets = build_targets(ctx)
 
         local n_cols = #ws.columns
         if n_cols == 0 then return end
 
-        for col_i = 1, n_cols do
-            local col_box = ctx:column(col_i, n_cols)
-            place_column(ctx, col_box, targets, ws.columns[col_i])
+        local col_weights = {}
+        for i, col in ipairs(ws.columns) do col_weights[i] = col.w or 1 end
+        local boxes = split_weighted(ctx, ctx:column(1, 1), col_weights, "left", "right")
+        for col_i, box in ipairs(boxes) do
+            local col = ws.columns[col_i]
+            place_column(ctx, ws, box, targets, col, col.h)
         end
     end,
 
     layout_msg = function(ctx, msg)
         local ws = ws_state(ctx)
         if not ws then return true end
+
+        local mouse_cmd = msg:match("^(%S+)")
+
+        if mouse_cmd == "detach" then
+            -- "detach <id>": window is being dragged (floated); free its slot
+            if remove_id(ws, msg:match("^%S+%s+(%d+)")) then save_state() end
+            return true
+        elseif mouse_cmd == "drop" then
+            -- "drop <id> <target> <px> <py>": dragged window released over
+            -- `target`; px/py is the cursor position inside it, 0-100. The
+            -- window joins the target's column on the side the cursor is on.
+            local id, target, px, py = msg:match("^%S+%s+(%d+)%s+(%d+)%s+(%d+)%s+(%d+)")
+            remove_id(ws, id)
+            local dc, dr = find_window(ws, target)
+            if not dc then return true end
+            local dest = ws.columns[dc]
+            local after = (dest.h and tonumber(px) or tonumber(py)) > 50
+            table.insert(dest, dr + (after and 1 or 0), id)
+            ws.weights[id] = nil
+            save_state()
+            return true
+        elseif mouse_cmd == "mresize" then
+            -- "mresize <id> <dx> <dy> <l|r> <t|b>": pixel deltas from a mouse
+            -- drag, grabbed on the given side of the window. Only the boundary
+            -- on that side moves (the neighbour gives or takes the space).
+            local id, dx, dy, ex, ey = msg:match("^%S+%s+(%d+)%s+(-?%d+)%s+(-?%d+)%s+(%a)%s+(%a)")
+            local ci, ri = find_window(ws, id)
+            if not ci then return true end
+            dx, dy = tonumber(dx), tonumber(dy)
+            local area = ctx.area
+            local c = ws.columns[ci]
+
+            -- move the boundary between item i and its neighbour by dpx pixels
+            local function shift(n, get, set, i, side, dpx, extent)
+                if n < 2 or extent <= 0 then return end
+                if not (i + side >= 1 and i + side <= n) then side = -side end
+                local j = i + side
+                local total = 0
+                for k = 1, n do total = total + get(k) end
+                local dw = side * dpx / extent * total
+                local wi, wj = get(i), get(j)
+                dw = math.max(0.2 - wi, math.min(wj - 0.2, dw))
+                set(i, wi + dw)
+                set(j, wj - dw)
+            end
+            local function col_get(k) return ws.columns[k].w or 1 end
+            local function col_set(k, v) ws.columns[k].w = v end
+            local function win_get(k) return weight(ws, c[k]) end
+            local function win_set(k, v) ws.weights[c[k]] = v end
+
+            local xside = ex == "l" and -1 or 1
+            local yside = ey == "t" and -1 or 1
+            if c.h then
+                local cols_total = 0
+                for k = 1, #ws.columns do cols_total = cols_total + col_get(k) end
+                shift(#c, win_get, win_set, ri, xside, dx, area.w * col_get(ci) / cols_total)
+            else
+                shift(#ws.columns, col_get, col_set, ci, xside, dx, area.w)
+                shift(#c, win_get, win_set, ri, yside, dy, area.h)
+            end
+            save_state()
+            return true
+        end
 
         local focused = active_id(ctx)
         if not focused then return true end
@@ -232,48 +307,70 @@ hl.layout.register("grid", {
         if not col_i then return true end
 
         local command = msg:match("^(%S+)")
+        local col = ws.columns[col_i]
 
-        if command == "move-left" then
-            if col_i > 1 then
-                table.remove(ws.columns[col_i], row_i)
-                table.insert(ws.columns[col_i - 1], focused)
-                if #ws.columns[col_i] == 0 then table.remove(ws.columns, col_i) end
-                save_state()
+        -- move focused window to the neighbouring column (keeps its row position)
+        local function cross(dir)
+            local dest_i = col_i + dir
+            local dest = ws.columns[dest_i]
+            table.remove(col, row_i)
+            if dest then
+                table.insert(dest, math.min(row_i, #dest + 1), focused)
+            elseif #ws.columns < max_columns then
+                -- extract into a new outermost column
+                dest_i = dir < 0 and 1 or #ws.columns + 1
+                table.insert(ws.columns, dest_i, { focused })
+            else
+                table.insert(col, row_i, focused)
+                return
             end
-        elseif command == "move-right" then
-            if col_i < #ws.columns then
-                table.remove(ws.columns[col_i], row_i)
-                table.insert(ws.columns[col_i + 1], focused)
-                if #ws.columns[col_i] == 0 then table.remove(ws.columns, col_i) end
-                save_state()
-            elseif #ws.columns[col_i] > 1 and #ws.columns < max_columns then
-                -- extract into a new rightmost column
-                table.remove(ws.columns[col_i], row_i)
-                table.insert(ws.columns, { focused })
-                save_state()
+            if #col == 0 then table.remove(ws.columns, col_i) end
+            save_state()
+        end
+
+        local function swap_in_column(dir)
+            local j = row_i + dir
+            if j < 1 or j > #col then return false end
+            col[row_i], col[j] = col[j], col[row_i]
+            save_state()
+            return true
+        end
+
+        if command == "togglesplit" then
+            -- flip only the focused column: stacked <-> side by side
+            col.h = (not col.h) or nil
+            save_state()
+        elseif command == "move-left" or command == "move-right" then
+            local dir = command == "move-left" and -1 or 1
+            if col.h and swap_in_column(dir) then return true end
+            -- at the edge of a lone window there is nowhere new to go
+            local dest = ws.columns[col_i + dir]
+            if dest or #col > 1 then cross(dir) end
+        elseif command == "move-up" or command == "move-down" then
+            if not col.h then swap_in_column(command == "move-up" and -1 or 1) end
+        elseif command == "swap-col-left" and col_i > 1 then
+            ws.columns[col_i], ws.columns[col_i - 1] = ws.columns[col_i - 1], ws.columns[col_i]
+            save_state()
+        elseif command == "swap-col-right" and col_i < #ws.columns then
+            ws.columns[col_i], ws.columns[col_i + 1] = ws.columns[col_i + 1], ws.columns[col_i]
+            save_state()
+        elseif command == "resize" then
+            -- "resize <dx> <dy>": grow (+) or shrink (-) the focused window along that axis
+            local dx, dy = msg:match("^%S+%s+(-?%d+)%s+(-?%d+)")
+            dx, dy = tonumber(dx) or 0, tonumber(dy) or 0
+            local step = 0.1
+            local function bump(old, d) return math.max(0.2, old + step * d) end
+            if dx ~= 0 then
+                if col.h then
+                    ws.weights[focused] = bump(weight(ws, focused), dx)
+                else
+                    col.w = bump(col.w or 1, dx)
+                end
             end
-        elseif command == "move-up" then
-            if row_i > 1 then
-                local col = ws.columns[col_i]
-                col[row_i], col[row_i - 1] = col[row_i - 1], col[row_i]
-                save_state()
+            if dy ~= 0 and not col.h then
+                ws.weights[focused] = bump(weight(ws, focused), dy)
             end
-        elseif command == "move-down" then
-            local col = ws.columns[col_i]
-            if row_i < #col then
-                col[row_i], col[row_i + 1] = col[row_i + 1], col[row_i]
-                save_state()
-            end
-        elseif command == "swap-col-left" then
-            if col_i > 1 then
-                ws.columns[col_i], ws.columns[col_i - 1] = ws.columns[col_i - 1], ws.columns[col_i]
-                save_state()
-            end
-        elseif command == "swap-col-right" then
-            if col_i < #ws.columns then
-                ws.columns[col_i], ws.columns[col_i + 1] = ws.columns[col_i + 1], ws.columns[col_i]
-                save_state()
-            end
+            save_state()
         end
 
         return true
