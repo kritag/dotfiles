@@ -11,7 +11,7 @@ current=$(hyprctl getoption general:layout -j | jq -r .str)
 apply() {
     mkdir -p "$(dirname "$state")"
     echo "$1" >"$state"
-    hyprctl eval "hl.config({ general = { layout = \"$1\" } })" >/dev/null
+    hyprctl eval "hl.config({ general = { layout = \"$1\" } }); grid_mouse_sync()" >/dev/null
 }
 
 case ${1:-} in
