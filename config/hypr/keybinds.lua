@@ -3,7 +3,11 @@ local scriptsDir = (os.getenv("HOME") or "") .. "/.config/hypr/scripts"
 -- Apps / actions
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + M", hl.dsp.exec_cmd("uwsm stop"))
-hl.bind("SUPER + W", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + W", function()
+	hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+	-- custom layouts don't recalculate on a float toggle; nudge the grid
+	hl.dispatch(hl.dsp.layout("refresh"))
+end)
 hl.bind("SUPER + P", hl.dsp.window.pseudo({ action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.layout("togglesplit"))
 hl.bind("SUPER + SHIFT + G", hl.dsp.exec_cmd(scriptsDir .. "/layout.sh set lua:grid"))
