@@ -51,7 +51,7 @@ const palette = {
   orange: "#ff9e64",
 };
 
-const hintsCss = `font-size: 13pt; font-family: 'Rubik', 'Iosevka Comfy Wide', sans-serif; border: solid 1px; color: ${palette.fg} !important; background: ${palette.bg}; background-color: ${palette.bg}`;
+const hintsCss = `font-size: 13pt; font-family: 'Poppins', 'Iosevka Comfy Wide', sans-serif; border: solid 1px; color: ${palette.fg} !important; background: ${palette.bg}; background-color: ${palette.bg}`;
 
 api.Hints.style(hintsCss);
 api.Hints.style(hintsCss, "text");
@@ -101,7 +101,7 @@ settings.theme = `
   body {
     margin: 0;
 
-    font-family: "Rubik", "Iosevka Comfy Wide", sans-serif;
+    font-family: "Poppins", "Iosevka Comfy Wide", sans-serif;
     font-size: 12px;
   }
   #sk_omnibar {
@@ -308,7 +308,7 @@ settings.theme = `
     white-space: nowrap;
     display: inline-block;
     padding: 3px 5px;
-    font: 11px "Rubik", "Iosevka Comfy Wide", sans-serif;
+    font: 11px "Poppins", "Iosevka Comfy Wide", sans-serif;
     line-height: 10px;
     vertical-align: middle;
     border: solid 1px ${palette.border};

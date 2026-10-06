@@ -1,7 +1,7 @@
 #!/bin/bash
-DOCFONT="'Rubik 11'"
+DOCFONT="'Poppins 11'"
 MONOFONT="'Meslo LG S 10'"
-FONT="'Rubik 11'"
+FONT="'Poppins 11'"
 
 declare -A themes
 themes=(
