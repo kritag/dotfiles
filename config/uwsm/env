@@ -13,6 +13,6 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export XCURSOR_SIZE=16
 export XCURSOR_THEME=Bibata-Modern-Classic
 export XDG_CURRENT_DESKTOP=Hyprland
-export XDG_MENU_PREFIX=arch-
+[ -f /etc/xdg/menus/arch-applications.menu ] && export XDG_MENU_PREFIX=arch-
 export XDG_SESSION_DESKTOP=Hyprland
 export XDG_SESSION_TYPE=wayland

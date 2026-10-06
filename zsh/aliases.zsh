@@ -45,16 +45,13 @@ gr() {
   }
   z "$root"
 }
-zr() {
-  local dir
-  dir=$(zoxide query -l |
-    while read -r d; do [[ -e $d/.git ]] && print -r -- "$d"$'\t'"${d/#$HOME/~}/"; done |
-    command fzf $_FZF_TAB_FZF_FLAGS \
-      --delimiter=$'\t' --with-nth=2 \
-      --query="$*" --select-1 --exit-0 \
-      --preview-window=50%,border-rounded \
-      --preview='if [ -x /usr/libexec/lesspipe/lesspipe.sh ]; then /usr/libexec/lesspipe/lesspipe.sh {1}; else lesspipe.sh {1}; fi' |
-    cut -f1) && [[ -n $dir ]] && z "$dir"
+# zr <Tab>: jump to a git repo zoxide knows about (completion menu via fzf-tab)
+zr() { z "$@"; }
+_zr() {
+  local -a expl repos=(${(M)${(f)"$(zoxide query -l)"}:#$HOME/*})
+  repos=(${^repos}(N/e:'[[ -d $REPLY/.git ]]':))
+  _wanted -V repos expl 'git repo' compadd -f -Q -W ~/ -p '~/' -- ${repos#$HOME/}
+  compstate[insert]=menu # open the menu directly instead of inserting the shared ~/ first
 }
 
 # Git
