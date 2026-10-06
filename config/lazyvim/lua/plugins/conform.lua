@@ -5,7 +5,9 @@ return {
       local opts = {
         formatters_by_ft = {
           lua = { "stylua" },
-          sh = { "shfmt" },
+          sh = { "shuck" },
+          bash = { "shuck" },
+          zsh = { "shuck" },
           kdl = { "kdlfmt" },
           css = { "prettierd" },
           toml = { "tombi" },
@@ -49,6 +51,10 @@ return {
               "80",
               "--align-semantic-breaks-in-lists",
             },
+          },
+          shuck = {
+            command = "shuck",
+            args = { "format", "--stdin-filename", "$FILENAME", "-" },
           },
           injected = { options = { ignore_errors = true } },
         },

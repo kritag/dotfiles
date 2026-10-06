@@ -15,12 +15,8 @@ end
 vim.filetype.add({
   pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
   extension = {
-    zsh = "sh",
-    sh = "sh", -- force sh-files with zsh-shebang to still get sh as filetype
+    -- zsh = "sh",
+    -- sh = "sh", -- force sh-files with zsh-shebang to still get sh as filetype
     rasi = "rasi",
-  },
-  filename = {
-    [".zshrc"] = "sh",
-    [".zshenv"] = "sh",
   },
 })

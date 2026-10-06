@@ -18,26 +18,43 @@ alias ls='eza --icons --group-directories-first --git'
 alias lt='ls -lrs age'
 alias lr='ls -lR'
 alias mk='minikube'
-# Using sshpass to manage passwords to servers when SSH-key is not used. Stored in 600 'pass' and 'passe' files. Remember to set $SSHUSER in .env
-# alias s='sshpass -f $HOME/passe ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
-# alias sr='sshpass -f $HOME/pass ssh -l root -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias s='SSHPASS="$SSH_PASSWORD" sshpass -e ssh -l $SSHUSER -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
-
 alias sr='SSHPASS="$SSH_ROOT_PASSWORD" sshpass -e ssh -l root -o PreferredAuthentications=password -o PubkeyAuthentication=no -o StrictHostKeyChecking=no'
 alias sudo='sudo '
 alias systemctl='systemctl -l'
 alias tail='tailbat'
 alias tree='ls --tree'
 alias vim='nvim'
-# To get bat coloring on journalctl
-jctl(){
-   journalctl "$@" | bat -l syslog -p}
-tailbat(){
-    \tail -f "$@" | bat --paging=never -l log}
+# `bat` coloring on journalctl
+jctl() {
+  journalctl "$@" | bat -l syslog -p
+}
+tailbat() {
+  \tail -f "$@" | bat --paging=never -l log
+}
 mkpkg() {
   tmp=$(mktemp -d)
   cp PKGBUILD "$tmp"
   (cd "$tmp" && makepkg -si --noconfirm)
+}
+gr() {
+  local root
+  root=$(git rev-parse --show-toplevel 2>/dev/null) || {
+    echo "not in a git repo" >&2
+    return 1
+  }
+  z "$root"
+}
+zr() {
+  local dir
+  dir=$(zoxide query -l |
+    while read -r d; do [[ -e $d/.git ]] && print -r -- "$d"$'\t'"${d/#$HOME/~}/"; done |
+    command fzf $_FZF_TAB_FZF_FLAGS \
+      --delimiter=$'\t' --with-nth=2 \
+      --query="$*" --select-1 --exit-0 \
+      --preview-window=50%,border-rounded \
+      --preview='if [ -x /usr/libexec/lesspipe/lesspipe.sh ]; then /usr/libexec/lesspipe/lesspipe.sh {1}; else lesspipe.sh {1}; fi' |
+    cut -f1) && [[ -n $dir ]] && z "$dir"
 }
 
 # Git
@@ -58,7 +75,6 @@ alias gm='git merge'
 alias gl='git pull'
 alias gp='git push'
 alias grb='git rebase'
-alias gr='git remote'
 alias grh='git reset'
 alias grs='git restore'
 alias grev='git revert'

@@ -4,6 +4,7 @@ return {
     opts = {
       ensure_installed = {
         "actionlint",
+        "bash-language-server",
         "css-lsp",
         "eslint_d",
         "fixjson",
@@ -12,11 +13,11 @@ return {
         "jsonlint",
         "kdlfmt",
         "kube-linter",
-        -- "mdformat",
         "prettier",
         "prettierd",
         "pylint",
         "shellcheck",
+        "shuck",
         "tflint",
         "tombi",
         "vale",
