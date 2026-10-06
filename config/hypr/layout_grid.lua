@@ -218,6 +218,17 @@ hl.layout.register("grid", {
         if not ws then return end
 
         sync_external_order(ctx, ws, tostring(ws_id_from_ctx(ctx)))
+        -- floated (or otherwise gone) windows give up their slot
+        local live = {}
+        for _, t in ipairs(ctx.targets) do
+            if not (t.window and t.window.floating) then live[target_id(t)] = true end
+        end
+        local purged = false
+        for id in pairs(tracked_set(ws)) do
+            if not live[id] and remove_id(ws, id) then purged = true end
+        end
+        if purged then save_state() end
+
         sync_new(ctx, ws)
         local targets = build_targets(ctx)
 
