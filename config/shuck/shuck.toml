@@ -1,0 +1,11 @@
+[per-file-shell]
+"**/*.zsh" = "zsh"
+"**/.zsh*" = "zsh"
+"**/.aliases" = "zsh"
+
+[lint]
+ignore = ["C003", "C005"]
+
+[format]
+indent-style = "space"
+indent-width = 2

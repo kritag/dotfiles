@@ -17,7 +17,7 @@ zstyle ':completion:*:descriptions' format "[%d]"
 zstyle ':fzf-tab:complete:*' extra-opts --preview-window=:hidden
 zstyle ':fzf-tab:*' show-group full
 #zstyle ':fzf-tab:*' fzf-min-height '1000'
-zstyle ':fzf-tab:complete:*:options' fzf-preview 
+zstyle ':fzf-tab:complete:*:options' fzf-preview
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:complete:*:*' query-string input
@@ -30,7 +30,7 @@ zstyle ':fzf-tab:complete:((-parameter-|unset):|(export|typeset|declare|local):a
 # -equal
 zstyle ':fzf-tab:complete:(-equal-:|(\\|*/|)(sudo|proxychains|strace):argument-1|pudb:option--pre-run-1)' fzf-preview 'less =$word'
 # -command-
- zstyle ':fzf-tab:complete:-command-:*' fzf-preview '(out=$(tldr --color always "$word") 2>/dev/null && echo $out) || (out=$(MANWIDTH=$FZF_PREVIEW_COLUMNS man "$word") 2>/dev/null && echo $out) || (out=$(which "$word") && echo $out) || echo "${(P)word}"'
+zstyle ':fzf-tab:complete:-command-:*' fzf-preview '(out=$(tldr --color always "$word") 2>/dev/null && echo $out) || (out=$(MANWIDTH=$FZF_PREVIEW_COLUMNS man "$word") 2>/dev/null && echo $out) || (out=$(which "$word") && echo $out) || echo "${(P)word}"'
 zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*'fzf-preview 'echo ${(P)word}'
 # has
 zstyle ':fzf-tab:complete:(\\|*/|)has:argument-rest' fzf-preview 'case $group in
@@ -60,15 +60,15 @@ zstyle ':fzf-tab:complete:(\\|)bindkey:option-M-1' fzf-preview 'bindkey -M$word 
 zstyle ':fzf-tab:complete:gh:' fzf-preview 'gh help $word | bat -lhelp'
 # git
 zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview 'git diff $word | delta'
-zstyle ':fzf-tab:complete:git-log:*' fzf-preview	'git log --color=always $word'
-zstyle ':fzf-tab:complete:git-help:*' fzf-preview	'git help $word | bat -plman --color=always'
+zstyle ':fzf-tab:complete:git-log:*' fzf-preview 'git log --color=always $word'
+zstyle ':fzf-tab:complete:git-help:*' fzf-preview 'git help $word | bat -plman --color=always'
 zstyle ':fzf-tab:complete:git-show:*' fzf-preview \
-	'case "$group" in
+  'case "$group" in
 	"commit tag") git show --color=always $word ;;
 	*) git show --color=always $word | delta ;;
 	esac'
 zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
-	'case "$group" in
+  'case "$group" in
 	"modified file") git diff $word | delta ;;
 	"recent commit object name") git show --color=always $word | delta ;;
 	*) git log --color=always $word ;;
