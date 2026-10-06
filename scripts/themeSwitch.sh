@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-DOCFONT="'Rubik 11'"
+DOCFONT="'Poppins 11'"
 MONOFONT="'Meslo LG S 10'"
-FONT="'Rubik 11'"
+FONT="'Poppins 11'"
 STAMP_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
 STAMP_FILE="$STAMP_DIR/flavours-update.done"
 
