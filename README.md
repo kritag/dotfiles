@@ -105,6 +105,7 @@ Source file:
 ```bash
 sudo usermod -aG tss $USER                   # re-login after
 mkdir -p ~/.config/Yubico && pamu2fcfg -u $USER > ~/.config/Yubico/u2f_keys
+pamu2fcfg -n >> ~/.config/Yubico/u2f_keys    # backup key: only it plugged in; joins the same line
 ykman config usb --disable OTP               # stops OTP typing on touch
 ~/.config/hypr/scripts/sealKeyring.sh        # keyring helper; redo after a keyring password change
 ```
