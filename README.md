@@ -100,6 +100,25 @@ Source file:
 
 - `config/zen/user.js`
 
+## Login (fingerprint / YubiKey)
+
+```bash
+sudo usermod -aG tss $USER                   # re-login after
+mkdir -p ~/.config/Yubico && pamu2fcfg -u $USER > ~/.config/Yubico/u2f_keys
+ykman config usb --disable OTP               # stops OTP typing on touch
+~/.config/hypr/scripts/sealKeyring.sh        # keyring helper; redo after a keyring password change
+```
+
+- Keyring helper: `scripts/unlockKeyring.sh`, first line of `autostart.lua`.
+- DMS: Lock Screen → security key, Alternative. UI refuses Space, so set
+  `lockScreenSecurityKeyShortcut` to `Ctrl+space` in `settings.json`.
+- Greeter: Settings → Greeter → security key; offered after the fingerprint step (~10 s).
+- Lock on unplug, `/etc/udev/rules.d/90-yubikey-lock.rules`:
+
+```
+ACTION=="remove", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ENV{PRODUCT}=="1050/*", RUN+="/usr/bin/loginctl lock-sessions"
+```
+
 ## Private Overlay
 
 Public dotfiles can invoke a private post-install overlay script (for secrets
