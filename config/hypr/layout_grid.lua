@@ -227,16 +227,28 @@ hl.layout.register("grid", {
         if not ws then return end
 
         sync_external_order(ctx, ws, tostring(ws_id_from_ctx(ctx)))
-        -- floated (or otherwise gone) windows give up their slot
-        local live = {}
-        for _, t in ipairs(ctx.targets) do
-            if not (t.window and t.window.floating) then live[target_id(t)] = true end
+        -- Windows that floated, left this workspace, or are gone give up their
+        -- slot. Judge by the window itself, not by ctx.targets: on a config
+        -- reload Hyprland re-adds targets one at a time, and a partial list
+        -- must not wipe the saved columns.
+        local wsid = ws_id_from_ctx(ctx)
+        local alive, tiled_here = {}, 0
+        for _, w in ipairs(hl.get_windows()) do
+            local here = w.mapped and w.workspace and w.workspace.id == wsid
+            if here and not w.floating then
+                alive[tostring(w.stable_id)] = true
+                tiled_here = tiled_here + 1
+            end
         end
         local purged = false
         for id in pairs(tracked_set(ws)) do
-            if not live[id] and remove_id(ws, id) then purged = true end
+            if not alive[id] and remove_id(ws, id) then purged = true end
         end
         if purged then save_state() end
+
+        -- Mid-rebuild (fewer targets than tiled windows): hold off placing, or
+        -- every client gets a burst of transient sizes and can end up stale.
+        if #ctx.targets < tiled_here then return end
 
         sync_new(ctx, ws)
         local targets = build_targets(ctx)
