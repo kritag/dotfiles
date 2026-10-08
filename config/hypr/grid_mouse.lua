@@ -6,17 +6,18 @@
 --                       joins the column of the window it was dropped on
 --   SUPER + right drag: resize; grabbing the left/right (top/bottom) half of a
 --                       window moves the boundary on that side
-local function in_grid()
-	local ws = hl.get_active_workspace()
-	return ws and ws.tiled_layout == "lua:grid"
-end
-
 local function coord(v, k, i)
 	return v[k] or v[i]
 end
 
+-- the special workspace (Super+S) when it's showing, else the active one
+local function current_workspace()
+	local m = hl.get_active_monitor()
+	return (m and m.active_special_workspace) or hl.get_active_workspace()
+end
+
 local function window_at(pos, skip)
-	local ws = hl.get_active_workspace()
+	local ws = current_workspace()
 	for _, w in ipairs(hl.get_windows()) do
 		if w.mapped and not w.floating and w.workspace and w.workspace.id == ws.id and w.stable_id ~= skip then
 			local x, y = coord(w.at, "x", 1), coord(w.at, "y", 2)
@@ -28,17 +29,23 @@ local function window_at(pos, skip)
 	end
 end
 
+-- topmost floating window under the cursor: of the overlapping ones, the most
+-- recently focused (lowest focus_history_id) is in front
 local function floating_at(pos)
-	local ws = hl.get_active_workspace()
+	local ws = current_workspace()
+	local best
 	for _, w in ipairs(hl.get_windows()) do
 		if w.mapped and w.floating and w.workspace and w.workspace.id == ws.id then
 			local x, y = coord(w.at, "x", 1), coord(w.at, "y", 2)
 			local width, height = coord(w.size, "x", 1), coord(w.size, "y", 2)
 			if pos.x >= x and pos.x < x + width and pos.y >= y and pos.y < y + height then
-				return w
+				if not best or w.focus_history_id < best.focus_history_id then
+					best = w
+				end
 			end
 		end
 	end
+	return best
 end
 
 local function layout_msg(msg)
