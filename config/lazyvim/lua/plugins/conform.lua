@@ -30,10 +30,24 @@ return {
           -- ["markdown"] = { "mdformat", "prettier", "markdownlint-cli2", "markdown-toc" },
           ["markdown.mdx"] = { "mdformat", "prettier", "markdownlint-cli2", "markdown-toc" },
           markdown = { "mdformat" },
-          json = { "fixjson" },
-          jsonc = { "fixjson" },
+          json = { "fixjson", "prettier_json" },
+          jsonc = { "fixjson", "prettier_json" },
         },
         formatters = {
+          fixjson = { prepend_args = { "-i", "2" } },
+          -- Separate from "prettier" above, which is tuned for markdown.
+          -- ~/.prettierrc.json sets tabWidth 4; CLI flags override it.
+          prettier_json = {
+            command = "prettier",
+            args = {
+              "--stdin-filepath",
+              "$FILENAME",
+              "--tab-width",
+              "2",
+              "--print-width",
+              "100",
+            },
+          },
           prettier = {
             prepend_args = {
               "--prose-wrap",
