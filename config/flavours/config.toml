@@ -44,7 +44,7 @@ template = "hypr"
 rewrite = true
 
 [[items]]
-file = "~/.config/lazygit/colors.yml"
+file = "~/.config/lazygit/colors.yaml"
 template = "lazygit"
 rewrite = true
 

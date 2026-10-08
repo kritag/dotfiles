@@ -43,7 +43,7 @@
       glob: true
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc
-    ~/.config/lazygit/config.yml: config/lazygit/config.yml
+    ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
     ~/.config/glow:
       create: true
       path: config/glow/*
