@@ -130,21 +130,21 @@ end
 -- Weighted splits produce fractional pixels; clients end up with a surface that
 -- doesn't match the window box. Snap to whole pixels from the edges so that
 -- neighbouring cells still meet exactly.
-local function snap(b)
+local function snap(b, inset)
     local x0, y0 = math.floor(b.x + 0.5), math.floor(b.y + 0.5)
     local x1, y1 = math.floor(b.x + b.w + 0.5), math.floor(b.y + b.h + 0.5)
-    return { x = x0, y = y0, w = x1 - x0, h = y1 - y0 }
+    return { x = x0, y = y0, w = x1 - x0 - inset, h = y1 - y0 - inset }
 end
 
 -- Place a column's windows inside its box: stacked vertically, or side by side if col.h.
-local function place_column(ctx, ws, col_box, targets, ids, horizontal)
+local function place_column(ctx, ws, col_box, targets, ids, horizontal, inset)
     if #ids == 0 then return end
     local weights = {}
     for i, id in ipairs(ids) do weights[i] = weight(ws, id) end
     local first, rest = "top", "bottom"
     if horizontal then first, rest = "left", "right" end
     for i, cell in ipairs(split_weighted(ctx, col_box, weights, first, rest)) do
-        if targets[ids[i]] then targets[ids[i]]:place(snap(cell)) end
+        if targets[ids[i]] then targets[ids[i]]:place(snap(cell, inset)) end
     end
 end
 
@@ -221,6 +221,8 @@ local function remove_id(ws, id)
     return changed
 end
 
+local settling = false -- true for a moment after a config reload
+
 hl.layout.register("grid", {
     recalculate = function(ctx)
         local ws = ws_state(ctx)
@@ -232,6 +234,7 @@ hl.layout.register("grid", {
         -- reload Hyprland re-adds targets one at a time, and a partial list
         -- must not wipe the saved columns.
         local wsid = ws_id_from_ctx(ctx)
+
         local alive, tiled_here = {}, 0
         for _, w in ipairs(hl.get_windows()) do
             local here = w.mapped and w.workspace and w.workspace.id == wsid
@@ -250,6 +253,14 @@ hl.layout.register("grid", {
         -- every client gets a burst of transient sizes and can end up stale.
         if #ctx.targets < tiled_here then return end
 
+        -- Just after a config reload Hyprland has re-added every window and
+        -- handed each client a throwaway size, and it skips sending the real
+        -- one when it equals the size it already had on record, so the client
+        -- stays at the throwaway size. Hold the layout 1px smaller until the
+        -- reload handler's timer fires (so the client really receives that
+        -- size), then place the true size.
+        local inset = settling and 1 or 0
+
         sync_new(ctx, ws)
         local targets = build_targets(ctx)
 
@@ -261,7 +272,7 @@ hl.layout.register("grid", {
         local boxes = split_weighted(ctx, ctx:column(1, 1), col_weights, "left", "right")
         for col_i, box in ipairs(boxes) do
             local col = ws.columns[col_i]
-            place_column(ctx, ws, box, targets, col, col.h)
+            place_column(ctx, ws, box, targets, col, col.h, inset)
         end
     end,
 
@@ -408,6 +419,16 @@ hl.layout.register("grid", {
         return true
     end,
 })
+
+hl.on("config.reloaded", function()
+    settling = true
+    hl.timer(function()
+        settling = false
+        if hl.get_config("general.layout") == "lua:grid" then
+            hl.dispatch(hl.dsp.layout("refresh"))
+        end
+    end, { timeout = 100, type = "oneshot" })
+end)
 
 hl.on("window.close", function(window)
     local id = window and tostring(window.stable_id)

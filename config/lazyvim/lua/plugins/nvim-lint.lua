@@ -21,7 +21,7 @@ return {
     },
     linters = {
       yamllint = {
-        args = { "-d", "relaxed", "--format", "parsable", "-" },
+        args = { "-d", "{extends: relaxed, rules: {line-length: disable}}", "--format", "parsable", "-" },
       },
       actionlint = {
         cmd = "actionlint",
