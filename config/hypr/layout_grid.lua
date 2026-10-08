@@ -127,6 +127,15 @@ local function split_weighted(ctx, box, weights, first, rest)
     return out
 end
 
+-- Weighted splits produce fractional pixels; clients end up with a surface that
+-- doesn't match the window box. Snap to whole pixels from the edges so that
+-- neighbouring cells still meet exactly.
+local function snap(b)
+    local x0, y0 = math.floor(b.x + 0.5), math.floor(b.y + 0.5)
+    local x1, y1 = math.floor(b.x + b.w + 0.5), math.floor(b.y + b.h + 0.5)
+    return { x = x0, y = y0, w = x1 - x0, h = y1 - y0 }
+end
+
 -- Place a column's windows inside its box: stacked vertically, or side by side if col.h.
 local function place_column(ctx, ws, col_box, targets, ids, horizontal)
     if #ids == 0 then return end
@@ -135,7 +144,7 @@ local function place_column(ctx, ws, col_box, targets, ids, horizontal)
     local first, rest = "top", "bottom"
     if horizontal then first, rest = "left", "right" end
     for i, cell in ipairs(split_weighted(ctx, col_box, weights, first, rest)) do
-        if targets[ids[i]] then targets[ids[i]]:place(cell) end
+        if targets[ids[i]] then targets[ids[i]]:place(snap(cell)) end
     end
 end
 

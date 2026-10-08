@@ -6,7 +6,9 @@ hl.bind("SUPER + M", hl.dsp.exec_cmd("uwsm stop"))
 hl.bind("SUPER + W", function()
 	hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
 	-- custom layouts don't recalculate on a float toggle; nudge the grid
-	hl.dispatch(hl.dsp.layout("refresh"))
+	if hl.get_config("general.layout") == "lua:grid" then
+		hl.dispatch(hl.dsp.layout("refresh"))
+	end
 end)
 hl.bind("SUPER + P", hl.dsp.window.pseudo({ action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.layout("togglesplit"))
