@@ -21,4 +21,4 @@ text = re.sub(
 )
 
 with open(PATH, "w") as f:
-    f.write(text)
+    f.write(text.rstrip("\n") + "\n")
