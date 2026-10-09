@@ -2,6 +2,9 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- gh emits ANSI colors under CLICOLOR_FORCE, which breaks snacks.gh JSON parsing
+vim.env.CLICOLOR_FORCE = nil
+
 local options = {
   -- pumblend = 0,
   showmatch = true,
