@@ -62,6 +62,7 @@ rewrite = true
 file = "~/.theme.gitconfig"
 template = "delta"
 rewrite = true
+hook = "python3 ~/.dotfiles/scripts/delta-tint.py"
 
 [[items]]
 file = "~/.config/DankMaterialShell/colors.json"
