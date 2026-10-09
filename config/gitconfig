@@ -1,5 +1,5 @@
 [delta]
-  features = delta-theme side-by-side
+  features = side-by-side delta-theme
 
 [delta "side-by-side"]
   side-by-side = true
