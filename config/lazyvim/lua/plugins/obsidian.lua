@@ -12,7 +12,7 @@ return {
       },
     },
     picker = {
-      name = "snacks",
+      name = "snacks.picker",
     },
     templates = {
       folder = "templates",
