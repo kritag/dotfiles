@@ -1,0 +1,13 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+[Desktop Entry]
+Name=Microsoft Single Sign-In for Linux
+Comment=Microsoft Identity Linux Broker
+Exec=/bin/false
+Icon=microsoft-identity-broker
+Terminal=false
+Type=Application
+NoDisplay=true
+StartupWMClass=microsoft-identity-broker
+Categories=Utility;

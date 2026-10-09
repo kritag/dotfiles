@@ -221,6 +221,7 @@ local function remove_id(ws, id)
     return changed
 end
 
+local retry_pending = false
 local settling = false -- true for a moment after a config reload
 
 hl.layout.register("grid", {
@@ -251,7 +252,20 @@ hl.layout.register("grid", {
 
         -- Mid-rebuild (fewer targets than tiled windows): hold off placing, or
         -- every client gets a burst of transient sizes and can end up stale.
-        if #ctx.targets < tiled_here then return end
+        if #ctx.targets < tiled_here then
+            -- A closing window is still mapped here while already gone from
+            -- the targets; re-run shortly so the survivors fill its slot.
+            if not retry_pending then
+                retry_pending = true
+                hl.timer(function()
+                    retry_pending = false
+                    if hl.get_config("general.layout") == "lua:grid" then
+                        hl.dispatch(hl.dsp.layout("refresh"))
+                    end
+                end, { timeout = 50, type = "oneshot" })
+            end
+            return
+        end
 
         -- Just after a config reload Hyprland has re-added every window and
         -- handed each client a throwaway size, and it skips sending the real
