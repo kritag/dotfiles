@@ -15,7 +15,7 @@ gui:
 git:
   diffRenderers:
     - colorArg: always
-      command: delta --dark --paging=never --width={{width}} {{if gt .width 160}}--side-by-side{{else}}--no-side-by-side{{end}}
+      command: delta --dark --paging=never --width={{width}} {{if le .width 60}}--features=delta-theme{{end}}
 keybinding:
   universal:
     redo: <c-z>
