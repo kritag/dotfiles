@@ -7,11 +7,27 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
+-- Use kitty's ANSI palette (color0-15) for :terminal buffers so they follow the
+-- terminal theme instead of the colorscheme's terminal_color_* overrides.
+local function kitty_terminal_colors()
+  local f = io.open(vim.fn.expand("~/.config/kitty/current-theme.conf"))
+  if not f then
+    return
+  end
+  for line in f:lines() do
+    local n, hex = line:match("^color(%d+)%s+(#%x%x%x%x%x%x)")
+    if n and tonumber(n) <= 15 then
+      vim.g["terminal_color_" .. n] = hex
+    end
+  end
+  f:close()
+end
+
+-- This file loads on VeryLazy, after the initial colorscheme, so apply once now
+kitty_terminal_colors()
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
-  callback = function()
-    vim.g.terminal_color_0 = "#414b50"
-  end,
+  callback = kitty_terminal_colors,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
