@@ -1,0 +1,76 @@
+{
+  "dankGifSearch": {
+    "enabled": true,
+    "preferredFormat": "gif"
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "dankActions": {
+    "enabled": true,
+    "variants": [
+      {
+        "icon": "terminal",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "bluetoothctl connect 50:C2:75:2B:95:0E && wpctl set-default $(wpctl status | rg 'Jabra Elite 10.*\\[vol' | rg -oP '\\d+' | head -1)",
+        "middleClickCommand": "",
+        "rightClickCommand": "",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_1790860800934",
+        "name": "Earbuds"
+      },
+      {
+        "icon": "grid_view",
+        "displayText": "",
+        "displayCommand": "~/.config/hypr/scripts/layout.sh",
+        "clickCommand": "~/.config/hypr/scripts/layout.sh cycle",
+        "middleClickCommand": "",
+        "rightClickCommand": "",
+        "updateInterval": 2,
+        "showIcon": true,
+        "showText": true,
+        "visibilityCommand": "",
+        "visibilityInterval": 0,
+        "id": "variant_hyprlayout",
+        "name": "Hypr layout"
+      }
+    ]
+  },
+  "bongoCat": {
+    "enabled": true,
+    "catColorMode": "classic",
+    "catSizePercent": 200,
+    "waitingTimeout": 2
+  },
+  "enderPulse": {
+    "enabled": true,
+    "variants": [
+      {
+        "id": "builtin_output",
+        "name": "System output",
+        "audioTarget": "system",
+        "audioBackend": "auto",
+        "customAudioSource": "",
+        "icon": "volume_up",
+        "description": "EnderPulse audio source: System output"
+      },
+      {
+        "id": "builtin_microphone",
+        "name": "Microphone input",
+        "audioTarget": "microphone",
+        "audioBackend": "auto",
+        "customAudioSource": "",
+        "icon": "mic",
+        "description": "EnderPulse audio source: Microphone input"
+      }
+    ],
+    "bandCount": 64,
+    "sensitivity": 155
+  }
+}
