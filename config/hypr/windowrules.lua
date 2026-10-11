@@ -15,7 +15,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "float-apps",
 	match = {
-		class = "^(org.gnome.Calculator|org.gnome.TextEditor|org.gnome.Loupe|org.gnome.font-viewer|org.gnome.Calendar|org.kde.dolphin|org.gnome.Nautilus|Thunar|thunar|Keybase|Rofi|org.quickshell|one.alynx.showmethekey|showmethekey-gtk|com.vysp3r.ProtonPlus|xdg-desktop-portal-gtk)$",
+		class = "^(org.gnome.Calculator|org.gnome.TextEditor|org.gnome.Loupe|org.gnome.font-viewer|org.gnome.Calendar|org.kde.dolphin|org.gnome.Nautilus|Keybase|Rofi|org.quickshell|one.alynx.showmethekey|showmethekey-gtk|com.vysp3r.ProtonPlus|xdg-desktop-portal-gtk)$",
 	},
 	float = true,
 	center = true,
