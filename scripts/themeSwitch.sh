@@ -3,17 +3,20 @@ DOCFONT="'Poppins 11'"
 MONOFONT="'Meslo LG S 10'"
 FONT="'Poppins 11'"
 STAMP_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
-STAMP_FILE="$STAMP_DIR/flavours-update.done"
+STAMP_FILE="$STAMP_DIR/tinty-sync.done"
 
 if [[ ! -f "$STAMP_FILE" ]]; then
-  flavours update all
+  tinty sync
   mkdir -p "$STAMP_DIR"
   : >"$STAMP_FILE"
 fi
 
+# Templates are built into gitignored output dirs, so rebuild before applying.
+tinty build --quiet
+
 case "$1" in
 "gruvbox")
-  flavours apply gruvbox-dark-hard
+  tinty apply base24-gruvbox-dark-hard
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1gruvbox-dark-hard/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="gruvbox-dark"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = gruvbox-dark/' ~/.theme.gitconfig
@@ -30,7 +33,7 @@ case "$1" in
   ;;
 
 "catppuccin-mocha")
-  flavours apply catppuccin-mocha
+  tinty apply base24-catppuccin-mocha
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1catppuccin-mocha/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="catppuccin-mocha"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = catppuccin-mocha/' ~/.theme.gitconfig
@@ -47,7 +50,7 @@ case "$1" in
   ;;
 
 "dracula")
-  flavours apply dracula
+  tinty apply base24-dracula
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1dracula/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="Dracula"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = Dracula/' ~/.theme.gitconfig
@@ -64,7 +67,7 @@ case "$1" in
   ;;
 
 "everforest")
-  flavours apply everforest-dark-hard
+  tinty apply base24-everforest-dark-hard
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1~\/.config\/vivid\/themes\/everforest.yaml/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="everforest-dark"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = everforest-dark/' ~/.theme.gitconfig
@@ -81,7 +84,7 @@ case "$1" in
   ;;
 
 "nord")
-  flavours apply nord
+  tinty apply base24-nord
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1nord/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="Nord"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = Nord/' ~/.theme.gitconfig
@@ -99,7 +102,7 @@ case "$1" in
   ;;
 
 "rose-pine")
-  flavours apply rose-pine
+  tinty apply base24-rose-pine
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1rose-pine/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="rose-pine"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = rose-pine/' ~/.theme.gitconfig
@@ -116,7 +119,7 @@ case "$1" in
   ;;
 
 "tokyo-night")
-  flavours apply tokyo-night-night
+  tinty apply base24-tokyo-night-night
   sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1tokyonight-night/' ~/.zshenv
   sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="tokyonight-night"/' ~/.config/bat/config
   sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = tokyonight-night/' ~/.theme.gitconfig

@@ -1,0 +1,37 @@
+# base00-0F: unchanged from the old flavours scheme (parity).
+# base10-11: darker backgrounds. base12-17: ANSI brights, derived from the kitty theme:
+#   base12=kitty color9
+#   base13=kitty color11
+#   base14=kitty color10
+#   base15=kitty color14
+#   base16=kitty color12
+#   base17=kitty color13
+system: "base24"
+name: "Dracula"
+author: "Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)"
+variant: "dark"
+palette:
+  base00: "#282a36"
+  base01: "#3a3c4e"
+  base02: "#44475a"
+  base03: "#6272a4"
+  base04: "#62d6e8"
+  base05: "#f8f8f2"
+  base06: "#f1f2f8"
+  base07: "#f7f7fb"
+  base08: "#ff5555"
+  base09: "#ffb86c"
+  base0A: "#f1fa8c"
+  base0B: "#50fa7b"
+  base0C: "#8be9fd"
+  base0D: "#bd93f9"
+  base0E: "#ff79c6"
+  base0F: "#00f769"
+  base10: "#1e2029"
+  base11: "#16171d"
+  base12: "#ff6e6e"
+  base13: "#ffffa5"
+  base14: "#69ff94"
+  base15: "#a4ffff"
+  base16: "#d6acff"
+  base17: "#ff92df"

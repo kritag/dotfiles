@@ -1,0 +1,90 @@
+shell = "bash -c '{}'"
+default-scheme = "base24-everforest-dark-hard"
+
+[schemes]
+path = "~/.config/tinted-theming/tinty/schemes"
+
+# Brights only; include after the kitty theme in kitty.conf
+[[items]]
+name = "kitty"
+path = "~/.config/tinted-theming/tinty/templates/kitty"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/kitty && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/kitty/tinty-colors.conf"
+
+[[items]]
+name = "k9s"
+path = "~/.config/tinted-theming/tinty/templates/k9s"
+themes-dir = "themes"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/k9s/skins && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/k9s/skins/colors.yaml"
+
+[[items]]
+name = "fzf"
+path = "~/.config/tinted-theming/tinty/templates/fzf"
+themes-dir = "sh"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/tinted-theming/generated && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/tinted-theming/generated/fzf.sh"
+
+[[items]]
+name = "cava"
+path = "~/.config/tinted-theming/tinty/templates/cava"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/cava && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/cava/config"
+
+[[items]]
+name = "glow"
+path = "~/.config/tinted-theming/tinty/templates/glow"
+themes-dir = "themes"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/glow && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/glow/colors.json"
+
+[[items]]
+name = "hypr"
+path = "~/.config/tinted-theming/tinty/templates/hypr"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/hypr && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/hypr/colors.lua"
+
+[[items]]
+name = "lazygit"
+path = "~/.config/tinted-theming/tinty/templates/lazygit"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/lazygit && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/lazygit/colors.yaml"
+
+[[items]]
+name = "spicetify"
+path = "~/.config/tinted-theming/tinty/templates/spicetify"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/spicetify/Themes/flavours && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/spicetify/Themes/flavours/color.ini"
+
+[[items]]
+name = "slack"
+path = "~/.config/tinted-theming/tinty/templates/slack"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/tinted-theming/generated && tr -d \"\\n\" < \"$TINTY_THEME_FILE_PATH\" > ~/.config/tinted-theming/generated/slack"
+
+[[items]]
+name = "delta"
+path = "~/.config/tinted-theming/tinty/templates/delta"
+themes-dir = "theme"
+supported-systems = ["base24"]
+hook = "cp -f \"$TINTY_THEME_FILE_PATH\" ~/.theme.gitconfig && python3 ~/.dotfiles/scripts/delta-tint.py"
+
+[[items]]
+name = "dms"
+path = "~/.config/tinted-theming/tinty/templates/dms"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/DankMaterialShell && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/DankMaterialShell/colors.json"
+
+[[items]]
+name = "hyprland-preview-share-picker"
+path = "~/.config/tinted-theming/tinty/templates/hyprland-preview-share-picker"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/hyprland-preview-share-picker && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/hyprland-preview-share-picker/colors.css"
