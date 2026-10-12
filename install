@@ -24,6 +24,5 @@ for conf in "${configs[@]}"; do
     --plugin-dir dotbot-omnipkg \
     --plugin-dir dotbot-yum \
     --plugin-dir dotbot-yay \
-    --plugin-dir dotbot-brew \
     -c "${conf}${CONFIG_SUFFIX}"
 done

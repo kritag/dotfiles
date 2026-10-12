@@ -12,7 +12,6 @@ Some profiles also rely on package manager plugins:
 
 - Arch: `yay`
 - Fedora/RHEL: `yum`/`dnf`
-- macOS/Linux (non-Arch): `brew`
 
 ## Install
 
