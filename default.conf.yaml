@@ -9,7 +9,6 @@
     ~/.aliases.zsh: zsh/aliases.zsh
     ~/.zstyle.zsh: zsh/zstyle.zsh
     ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
-    ~/.p10k.zsh: zsh/p10k.zsh
     ~/.config/oh-my-posh/omp.yaml: config/oh-my-posh/omp.yaml
     ~/.zshenv: zsh/zshenv
     ~/.ripgreprc: config/ripgreprc
