@@ -12,12 +12,12 @@
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
-    ~/.local/bin/webapp-firefox: scripts/webapp-firefox
+    ~/.local/bin/webapp-firefox: scripts/webapp-firefox.sh
     ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf
-    ~/.local/bin/webapp-edge: scripts/webapp-edge
-    ~/.local/bin/webapp-zen: scripts/webapp-zen
-    ~/.local/bin/zen-link-userjs: scripts/zen-link-userjs
-    ~/.local/bin/znap-update: scripts/znap-update
+    ~/.local/bin/webapp-edge: scripts/webapp-edge.sh
+    ~/.local/bin/webapp-zen: scripts/webapp-zen.sh
+    ~/.local/bin/zen-link-userjs: scripts/zen-link-userjs.sh
+    ~/.local/bin/znap-update: scripts/znap-update.zsh
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
     ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
@@ -66,7 +66,6 @@
     - [fc-cache -fv]
 - sudo:
     - link:
-        /usr/local/bin/pwquality.sh: scripts/pwquality.sh
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
         /usr/share/zsh/site-functions/:
           create: true

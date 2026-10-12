@@ -1,2 +1,2 @@
 #!/bin/sh
-chsh -s /bin/zsh $SUDO_USER
+chsh -s "$(command -v zsh)" "${SUDO_USER:-$USER}"

@@ -19,10 +19,9 @@ mkdir -p "${dropin_dir}"
 tmp_file="$(mktemp)"
 trap 'rm -f "${tmp_file}"' EXIT
 
-printf '%s\n' "${entry}" > "${tmp_file}"
+printf '%s\n' "${entry}" >"${tmp_file}"
 chmod 0440 "${tmp_file}"
 
-# Validate sudoers syntax before installing.
 visudo -cf "${tmp_file}" >/dev/null
 
 install -m 0440 "${tmp_file}" "${dropin_file}"
