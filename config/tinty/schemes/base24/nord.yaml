@@ -1,0 +1,37 @@
+# base00-0F: unchanged from the old flavours scheme (parity).
+# base10-11: darker backgrounds. base12-17: ANSI brights, derived from the kitty theme:
+#   base12=lightened kitty color1
+#   base13=lightened kitty color3
+#   base14=lightened kitty color2
+#   base15=lightened kitty color6
+#   base16=lightened kitty color4
+#   base17=lightened kitty color5
+system: "base24"
+name: "Nord"
+author: "arcticicestudio"
+variant: "dark"
+palette:
+  base00: "#2e3440"
+  base01: "#3b4252"
+  base02: "#434c5e"
+  base03: "#4c566a"
+  base04: "#d8dee9"
+  base05: "#e5e9f0"
+  base06: "#eceff4"
+  base07: "#8fbcbb"
+  base08: "#bf616a"
+  base09: "#d08770"
+  base0A: "#ebcb8b"
+  base0B: "#a3be8c"
+  base0C: "#88c0d0"
+  base0D: "#81a1c1"
+  base0E: "#b48ead"
+  base0F: "#5e81ac"
+  base10: "#272c36"
+  base11: "#20242d"
+  base12: "#c6737b"
+  base13: "#efd5a1"
+  base14: "#b0c79c"
+  base15: "#9acad7"
+  base16: "#92aec9"
+  base17: "#be9db8"
