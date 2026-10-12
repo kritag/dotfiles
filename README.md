@@ -93,7 +93,7 @@ profile.
 
 ```bash
 # Link dotfiles user.js into active Zen profile
-scripts/zen-link-userjs
+scripts/zen-link-userjs.sh
 ```
 
 Source file:
@@ -127,7 +127,7 @@ and company-specific steps) without storing those details in this repo.
 
 Dotbot (Fedora workstation profile) runs:
 
-- `scripts/bootstrap-private-overlay`
+- `scripts/bootstrap-private-overlay.sh`
 
 Default lookup path:
 

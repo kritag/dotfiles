@@ -5,6 +5,27 @@ FONT="'Poppins 11'"
 STAMP_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
 STAMP_FILE="$STAMP_DIR/tinty-sync.done"
 
+# name|tinty scheme|vivid|bat+delta|nvim colorscheme|zsh-patina|kitty theme|gtk theme|eza
+THEMES='
+gruvbox|gruvbox-dark-hard|gruvbox-dark-hard|gruvbox-dark|gruvbox|gruvbox-dark-hard|Gruvbox Material Dark Hard|Gruvbox-Dark-Compact|gruvbox-dark
+catppuccin-mocha|catppuccin-mocha|catppuccin-mocha|catppuccin-mocha|catppuccin|catppuccin-mocha|Catppuccin-Mocha|Catppuccin-Dark-Compact|catppuccin-mocha
+dracula|dracula|dracula|Dracula|dracula|dracula|Dracula|Dracula|dracula
+everforest|everforest-dark-hard|~/.config/vivid/themes/everforest.yaml|everforest-dark|everforest|everforest-dark|Everforest Dark Hard|Everforest-Dark-Compact|everforest
+nord|nord|nord|Nord|nord|nord|Nord|Nord-Dark-Compact-Nord|nord
+rose-pine|rose-pine|rose-pine|rose-pine|rose-pine|rose-pine|Rosé Pine Moon|Rosepine-Dark-Compact|rose-pine
+tokyo-night|tokyo-night-night|tokyonight-night|tokyonight-night|tokyonight|tokyonight-night|Tokyo Night|Tokyonight-Dark-Compact|tokyonight
+'
+
+found=
+while IFS='|' read -r name tinty vivid bat nvim patina kitty gtk eza; do
+  [[ -n "$name" && "$name" == "$1" ]] && found=1 && break
+done <<<"$THEMES"
+
+if [[ -z "$found" ]]; then
+  echo "Invalid theme specified. Choose from: $(cut -d'|' -f1 <<<"${THEMES#$'\n'}" | paste -sd' ')" >&2
+  exit 1
+fi
+
 if [[ ! -f "$STAMP_FILE" ]]; then
   tinty sync
   mkdir -p "$STAMP_DIR"
@@ -13,139 +34,33 @@ fi
 
 # Templates are built into gitignored output dirs, so rebuild before applying.
 tinty build --quiet
+tinty apply "base24-$tinty"
 
-case "$1" in
-"gruvbox")
-  tinty apply base24-gruvbox-dark-hard
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1gruvbox-dark-hard/' ~/.zshenv
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="gruvbox-dark"/' ~/.config/bat/config
-  sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = gruvbox-dark/' ~/.theme.gitconfig
-  sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1gruvbox\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's|^theme = "file:.*"|theme = "file:~/.config/zsh-patina/themes/gruvbox-dark-hard.toml"|' ~/.config/zsh-patina/config.toml
-  kitten themes Gruvbox Material Dark Hard
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Gruvbox-Dark-Compact'"
-  dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-  dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
-  dconf write /org/gnome/desktop/interface/font-name "$FONT"
-  dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf ~/.config/eza/gruvbox-dark.yaml ~/.config/eza/theme.yml
-  ;;
+sed -i --follow-symlinks "s|\(vivid generate \)[^)]*|\1$vivid|" ~/.zshenv
+sed -i --follow-symlinks "s/--theme=\"[^\"]*\"/--theme=\"$bat\"/" ~/.config/bat/config
+sed -i --follow-symlinks "s/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = $bat/" ~/.theme.gitconfig
+sed -i --follow-symlinks "s/\(colorscheme = \"\)[^\"]*\(\",\)/\1$nvim\2/" ~/.config/lazyvim/lua/plugins/colorscheme.lua
+sed -i --follow-symlinks "s|^theme = \"file:.*\"|theme = \"file:~/.config/zsh-patina/themes/$patina.toml\"|" ~/.config/zsh-patina/config.toml
 
-"catppuccin-mocha")
-  tinty apply base24-catppuccin-mocha
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1catppuccin-mocha/' ~/.zshenv
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="catppuccin-mocha"/' ~/.config/bat/config
-  sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = catppuccin-mocha/' ~/.theme.gitconfig
-  sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1catppuccin\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's|^theme = "file:.*"|theme = "file:~/.config/zsh-patina/themes/catppuccin-mocha.toml"|' ~/.config/zsh-patina/config.toml
-  kitten themes Catppuccin-Mocha
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Catppuccin-Dark-Compact'"
-  dconf write /org/gnome/desktop/interface/icon-theme "'Catppuccin-Mocha'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-  dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
-  dconf write /org/gnome/desktop/interface/font-name "$FONT"
-  dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf ~/.config/eza/catppuccin-mocha.yaml ~/.config/eza/theme.yml
-  ;;
+read -ra kitty_args <<<"$kitty"
+kitten themes "${kitty_args[@]}"
 
-"dracula")
-  tinty apply base24-dracula
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1dracula/' ~/.zshenv
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="Dracula"/' ~/.config/bat/config
-  sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = Dracula/' ~/.theme.gitconfig
-  sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1dracula\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's|^theme = "file:.*"|theme = "file:~/.config/zsh-patina/themes/dracula.toml"|' ~/.config/zsh-patina/config.toml
-  kitten themes Dracula
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Dracula'"
-  dconf write /org/gnome/desktop/interface/icon-theme "'Dracula'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-  dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
-  dconf write /org/gnome/desktop/interface/font-name "$FONT"
-  dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf ~/.config/eza/dracula.yaml ~/.config/eza/theme.yml
-  ;;
+[[ "$1" == nord ]] && papirus-folders -C nordic --theme Papirus-Dark
 
-"everforest")
-  tinty apply base24-everforest-dark-hard
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1~\/.config\/vivid\/themes\/everforest.yaml/' ~/.zshenv
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="everforest-dark"/' ~/.config/bat/config
-  sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = everforest-dark/' ~/.theme.gitconfig
-  sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1everforest\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's|^theme = "file:.*"|theme = "file:~/.config/zsh-patina/themes/everforest-dark.toml"|' ~/.config/zsh-patina/config.toml
-  kitten themes Everforest Dark Hard
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Everforest-Dark-Compact'"
-  dconf write /org/gnome/desktop/interface/icon-theme "'Everforest-Dark'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-  dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
-  dconf write /org/gnome/desktop/interface/font-name "$FONT"
-  dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf ~/.config/eza/everforest.yaml ~/.config/eza/theme.yml
-  ;;
-
-"nord")
-  tinty apply base24-nord
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1nord/' ~/.zshenv
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="Nord"/' ~/.config/bat/config
-  sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = Nord/' ~/.theme.gitconfig
-  sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1nord\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's|^theme = "file:.*"|theme = "file:~/.config/zsh-patina/themes/nord.toml"|' ~/.config/zsh-patina/config.toml
-  kitten themes Nord
-  papirus-folders -C nordic --theme Papirus-Dark
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Nord-Dark-Compact-Nord'"
-  dconf write /org/gnome/desktop/interface/icon-theme "'Nord-Nord-Dark'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-  dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
-  dconf write /org/gnome/desktop/interface/font-name "$FONT"
-  dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf ~/.config/eza/nord.yaml ~/.config/eza/theme.yml
-  ;;
-
-"rose-pine")
-  tinty apply base24-rose-pine
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1rose-pine/' ~/.zshenv
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="rose-pine"/' ~/.config/bat/config
-  sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = rose-pine/' ~/.theme.gitconfig
-  sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1rose-pine\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's|^theme = "file:.*"|theme = "file:~/.config/zsh-patina/themes/rose-pine.toml"|' ~/.config/zsh-patina/config.toml
-  kitten themes Rosé Pine Moon
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Rosepine-Dark-Compact'"
-  dconf write /org/gnome/desktop/interface/icon-theme "'Rose-Pine'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-  dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
-  dconf write /org/gnome/desktop/interface/font-name "$FONT"
-  dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf ~/.config/eza/rose-pine.yaml ~/.config/eza/theme.yml
-  ;;
-
-"tokyo-night")
-  tinty apply base24-tokyo-night-night
-  sed -i --follow-symlinks 's/\(vivid generate \)[^)]*/\1tokyonight-night/' ~/.zshenv
-  sed -i --follow-symlinks 's/--theme="[^"]*"/--theme="tokyonight-night"/' ~/.config/bat/config
-  sed -i --follow-symlinks 's/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = tokyonight-night/' ~/.theme.gitconfig
-  sed -i --follow-symlinks 's/\(colorscheme = "\)[^"]*\(",\)/\1tokyonight\2/' ~/.config/lazyvim/lua/plugins/colorscheme.lua
-  sed -i --follow-symlinks 's|^theme = "file:.*"|theme = "file:~/.config/zsh-patina/themes/tokyonight-night.toml"|' ~/.config/zsh-patina/config.toml
-  kitten themes Tokyo Night
-  dconf write /org/gnome/desktop/interface/gtk-theme "'Tokyonight-Dark-Compact'"
-  dconf write /org/gnome/desktop/interface/icon-theme "'Tokyonight-Dark'"
-  dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-  dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
-  dconf write /org/gnome/desktop/interface/font-name "$FONT"
-  dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
-  ln -sf ~/.config/eza/tokyonight.yaml ~/.config/eza/theme.yml
-  ;;
-
-*)
-  echo "Invalid theme specified."
-  ;;
-esac
+dconf write /org/gnome/desktop/interface/gtk-theme "'$gtk'"
+dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"
+dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
+dconf write /org/gnome/desktop/interface/font-name "$FONT"
+dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
+ln -sf ~/.config/eza/"$eza".yaml ~/.config/eza/theme.yml
 
 # GTK4/libadwaita ignores the gtk-theme gsetting: the theme is whatever
-# ~/.config/gtk-4.0/gtk.css imports. Run this after the case, so the theme is
-# already set — gtk4-theme reads it back, regenerates gtk.css (theme sheet, then
+# ~/.config/gtk-4.0/gtk.css imports. Run this after the theme is set —
+# gtk4-theme.sh reads it back, regenerates gtk.css (theme sheet, then
 # sidebar-label-fix.css, which repairs the sidebar labels the *-Compact themes
 # paint in the background colour) and relinks assets/gtk-dark.css.
-GTK4_THEME="$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")/gtk4-theme"
+GTK4_THEME="$(dirname -- "$(readlink -f -- "${BASH_SOURCE[0]}")")/gtk4-theme.sh"
 GTK_THEME_NAME="$(dconf read /org/gnome/desktop/interface/gtk-theme | tr -d "'")"
 
 if [[ ! -x "$GTK4_THEME" ]]; then
