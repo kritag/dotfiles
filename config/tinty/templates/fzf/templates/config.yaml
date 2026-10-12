@@ -1,0 +1,23 @@
+legacy:
+  filename: "bash/{{ scheme-system }}-{{ scheme-slug }}.config"
+
+base16-default:
+  filename: "sh/{{ scheme-system }}-{{ scheme-slug }}.sh"
+
+base24-default:
+  filename: "sh/{{ scheme-system }}-{{ scheme-slug }}.sh"
+  supported-systems: [base24]
+
+base16-fish:
+  filename: "fish/{{ scheme-system }}-{{ scheme-slug }}.fish"
+
+base24-fish:
+  filename: "fish/{{ scheme-system }}-{{ scheme-slug }}.fish"
+  supported-systems: [base24]
+
+base16-powershell:
+  filename: "powershell/{{ scheme-system }}-{{ scheme-slug }}.ps1"
+
+base24-powershell:
+  filename: "powershell/{{ scheme-system }}-{{ scheme-slug }}.ps1"
+  supported-systems: [base24]

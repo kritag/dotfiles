@@ -1,0 +1,3 @@
+default:
+  filename: "colors/{{ scheme-system }}-{{ scheme-slug }}.ini"
+  supported-systems: [base16, base24]

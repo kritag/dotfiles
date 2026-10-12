@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Flavours hook: replace @mix:<bg>:<fg>:<pct>@ tokens in the delta theme with blended hex colors."""
+"""Tinty hook: replace @mix:<bg>:<fg>:<pct>@ tokens in the delta theme with blended hex colors."""
+
 import os
 import re
 

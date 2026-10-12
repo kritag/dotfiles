@@ -50,6 +50,10 @@
       create: true
       glob: true
       path: config/flavours/*
+    ~/.config/tinted-theming/tinty/:
+      create: true
+      glob: true
+      path: config/tinty/*
     ~/.config/spicetify/Themes:
       glob: true
       force: true

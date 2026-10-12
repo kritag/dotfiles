@@ -20,7 +20,7 @@ znap source fzf-tab
 znap source zsh-autosuggestions
 znap source zsh-history-substring-search
 
-[[ -f "$HOME/.config/flavours/fzf.sh" ]] && source "$HOME/.config/flavours/fzf.sh"
+[[ -f "$HOME/.config/tinted-theming/generated/fzf.sh" ]] && source "$HOME/.config/tinted-theming/generated/fzf.sh"
 if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
   source /usr/share/fzf/key-bindings.zsh
 elif [[ -f /usr/share/fzf/shell/key-bindings.zsh ]]; then

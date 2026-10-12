@@ -1,0 +1,7 @@
+templates/*/colors/
+templates/*/themes/
+templates/*/theme/
+templates/*/sh/
+templates/*/bash/
+templates/*/fish/
+templates/*/powershell/
