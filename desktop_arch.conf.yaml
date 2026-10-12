@@ -5,7 +5,6 @@
     - dracula-gtk-theme
     - dracula-icons-theme
     - evince-no-gnome
-    - flavours
     - game-devices-udev
     - gpu-screen-recorder-gtk
     - greetd-dms-greeter-bin
@@ -21,6 +20,7 @@
     - pulsecontrol-git
     - quickshell-git
     - spicetify-cli
+    - tinty-git
     - zen-browser-bin
     - zsh-patina-bin
 - omnipkg:
