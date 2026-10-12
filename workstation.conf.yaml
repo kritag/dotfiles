@@ -4,7 +4,6 @@
       create: true
       force: true
 - link:
-    ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
@@ -24,7 +23,7 @@
     ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
     ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
-    ~/.face: config/face
+    ~/.face: logos/Fedora-linux-logo.png
     ~/.config/mpv:
       glob: true
       force: true

@@ -22,7 +22,7 @@
     ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
     ~/.config/hyprland-preview-share-picker/config.yaml: ./config/hyprland-preview-share-picker/config.yaml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
-    ~/.face: config/face
+    ~/.face: logos/Arch-linux-logo.png
     ~/.config/mpv:
       glob: true
       force: true
