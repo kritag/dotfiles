@@ -8,7 +8,7 @@ OVERLAY_PATH="${OVERLAY_PATH:-}"
 
 if [[ "${1:-}" == "--help" ]]; then
   cat <<EOF
-Usage: bootstrap-private-overlay
+Usage: bootstrap-private-overlay.sh
 
 Optional environment variables:
   KEYBASE_MOUNT     (default: /run/user/\$UID/keybase/kbfs/private)
