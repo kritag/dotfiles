@@ -1,7 +1,10 @@
+- plugins:
+    - dotbot-sudo
 - defaults:
     link:
       relink: true
       create: true
+      backup: true
       force: true
 - link:
     ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf

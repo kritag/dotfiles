@@ -1,3 +1,6 @@
+- plugins:
+    - dotbot-sudo
+    - dotbot-yum
 - sudo:
     - defaults:
         yum:

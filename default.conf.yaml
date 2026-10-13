@@ -1,8 +1,14 @@
+- plugins:
+    - dotbot-sudo
 - defaults:
     link:
       relink: true
       create: true
-- clean: ['~', ~/.config]
+      backup: true
+- clean:
+    '~':
+    '~/.config':
+      recursive: true
 - link:
     ~/.aliases.zsh: zsh/aliases.zsh
     ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc

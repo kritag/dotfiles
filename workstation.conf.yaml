@@ -1,7 +1,10 @@
+- plugins:
+    - dotbot-sudo
 - defaults:
     link:
       relink: true
       create: true
+      backup: true
       force: true
 - link:
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
