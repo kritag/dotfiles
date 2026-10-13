@@ -1,16 +1,4 @@
 colourful: true
-# yellow #F1FA8C
-# red    #FF5555
-# purple #BD93F9
-# pink   #FF79C6
-# orange #FFB86C
-# green  #50FA7B
-# cyan   #8BE9FD
-# others:
-# dark-blue    #6272A4
-# foreground   #F8F8F2
-# current_line #44475A
-
 filekinds:
   normal: {foreground: "#F8F8F2"}
   directory: {foreground: "#8BE9FD"}
@@ -18,7 +6,7 @@ filekinds:
   pipe: {foreground: "#6272A4"}
   block_device: {foreground: "#FF5555"}
   char_device: {foreground: "#FF5555"}
-  socket: {foreground: "#44475A"}
+  socket: {foreground: "#6e7391"}
   special: {foreground: "#FF79C6"}
   executable: {foreground: "#50FA7B"}
   mount_point: {foreground: "#FFB86C"}

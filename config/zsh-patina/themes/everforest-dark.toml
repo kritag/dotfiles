@@ -7,15 +7,13 @@
 # dropped (zsh-patina's ZLE backend supports bold/underline only).
 #
 # Derived dynamic colours:
-#   callable.command/function <- variable.function (#d3c6aa)
+#   callable.command/function <- green (#a7c080), builtin <- aqua (#83c092)
 #   callable.missing       <- nearest readable red in palette (#e67e80)
-#   callable.builtin       <- support.function (#a7c080)
 #   callable.alias         <- constant.numeric (#d699b6)
 #   path.directory.*       <- nearest readable cyan in palette (#7fbbb3)
-#   path.file.partial      <- comment (#859289)
+#   path.file.*            <- same as path.directory.* (files and dirs look alike)
 #   variable.parameter.option (flags) <- nearest readable yellow/orange in palette (#dbbc7f)
 #
-# Regenerate with ~/.config/zsh-patina/generate-themes.py -- edits are lost.
 
 # source
 "source" = "#d3c6aa"
@@ -87,13 +85,13 @@
 # dynamic scopes -- resolved at runtime, mixed into the styles above
 # (fg/bg override; bold/underline are OR-ed in). Requires
 # dynamic = { callables = true, paths = "partial" } in config.toml.
-"dynamic.callable" = "#d3c6aa"
-"dynamic.callable.command" = "#d3c6aa"
-"dynamic.callable.builtin" = "#a7c080"
-"dynamic.callable.function" = { foreground = "#d3c6aa", bold = true }
+"dynamic.callable" = "#a7c080"
+"dynamic.callable.command" = "#a7c080"
+"dynamic.callable.builtin" = "#83c092"
+"dynamic.callable.function" = { foreground = "#a7c080", bold = true }
 "dynamic.callable.alias" = "#d699b6"
 "dynamic.callable.missing" = { foreground = "#e67e80", bold = true }
-"dynamic.path.file.complete" = { underline = true }
-"dynamic.path.file.partial" = "#859289"
+"dynamic.path.file.complete" = { foreground = "#7fbbb3", underline = true }
+"dynamic.path.file.partial" = "#7fbbb3"
 "dynamic.path.directory.complete" = { foreground = "#7fbbb3", underline = true }
 "dynamic.path.directory.partial" = "#7fbbb3"

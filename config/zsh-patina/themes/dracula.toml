@@ -12,10 +12,9 @@
 #   callable.builtin       <- support.function (#8be9fd)
 #   callable.alias         <- constant.numeric (#bd93f9)
 #   path.directory.*       <- nearest readable cyan in palette (#6be5fd)
-#   path.file.partial      <- comment (#6272a4)
+#   path.file.*            <- same as path.directory.* (files and dirs look alike)
 #   variable.parameter.option (flags) <- nearest readable yellow/orange in palette (#e6db74)
 #
-# Regenerate with ~/.config/zsh-patina/generate-themes.py -- edits are lost.
 
 # source
 "source" = "#f8f8f2"
@@ -106,7 +105,7 @@
 "dynamic.callable.function" = { foreground = "#50fa7b", bold = true }
 "dynamic.callable.alias" = "#bd93f9"
 "dynamic.callable.missing" = { foreground = "#f83333", bold = true }
-"dynamic.path.file.complete" = { underline = true }
-"dynamic.path.file.partial" = "#6272a4"
+"dynamic.path.file.complete" = { foreground = "#6be5fd", underline = true }
+"dynamic.path.file.partial" = "#6be5fd"
 "dynamic.path.directory.complete" = { foreground = "#6be5fd", underline = true }
 "dynamic.path.directory.partial" = "#6be5fd"
