@@ -2,9 +2,11 @@
     link:
       relink: true
       create: true
+      backup: true
 - clean:
-    - "~"
-    - "~/.config"
+    '~':
+    '~/.config':
+      recursive: true
 - link:
     ~/.config/tinted-theming/tinty/:
       glob: true
