@@ -1,3 +1,6 @@
+- plugins:
+    - dotbot-yay
+    - dotbot-omnipkg
 - yay:
     - bambustudio-appimage
     - bibata-cursor-theme-bin

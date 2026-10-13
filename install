@@ -20,9 +20,5 @@ for conf in "${configs[@]}"; do
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
     -v \
     -d "${BASEDIR}" \
-    --plugin-dir dotbot-sudo \
-    --plugin-dir dotbot-omnipkg \
-    --plugin-dir dotbot-yum \
-    --plugin-dir dotbot-yay \
     -c "${conf}${CONFIG_SUFFIX}"
 done
