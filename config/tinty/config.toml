@@ -59,7 +59,7 @@ name = "spicetify"
 path = "~/.config/tinted-theming/tinty/templates/spicetify"
 themes-dir = "colors"
 supported-systems = ["base24"]
-hook = "mkdir -p ~/.config/spicetify/Themes/flavours && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/spicetify/Themes/flavours/color.ini"
+hook = "mkdir -p ~/.config/spicetify/Themes/tinty && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/spicetify/Themes/tinty/color.ini"
 
 [[items]]
 name = "slack"
