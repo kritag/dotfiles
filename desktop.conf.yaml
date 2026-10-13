@@ -4,60 +4,48 @@
       create: true
       force: true
 - link:
-    ~/.config/hypr/hyprlock.conf: config/hyprlock/hyprlock.conf
-    ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
-    ~/.config/hypr/env.conf: config/hypr-desktop/env-desktop.conf
-    ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
-    ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
-    ~/.config/uwsm/env: config/uwsm/env
-    ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf
+    ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
+    ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
+    ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
+    ~/.config/hypr/env.conf: config/hypr-desktop/env-desktop.conf
+    ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
+    ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
+    ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
+    ~/.config/systemd/user/znap-update.service: services/znap-update.service
+    ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
+    ~/.config/uwsm/default-id: config/uwsm/default-id
+    ~/.config/uwsm/env: config/uwsm/env
+    ~/.face: logos/Arch-linux-logo.png
     ~/.local/bin/webapp-firefox: scripts/webapp-firefox.sh
     ~/.local/bin/webapp-zen: scripts/webapp-zen.sh
     ~/.local/bin/zen-link-userjs: scripts/zen-link-userjs.sh
     ~/.local/bin/znap-update: scripts/znap-update.zsh
-    ~/.config/systemd/user/znap-update.service: services/znap-update.service
-    ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
-    ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
-    ~/.config/hyprland-preview-share-picker/config.yaml: ./config/hyprland-preview-share-picker/config.yaml
-    ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
-    ~/.face: logos/Arch-linux-logo.png
-    ~/.config/mpv:
-      glob: true
-      force: true
-      path: config/mpv/*
     ~/.config/btop:
       glob: true
-      force: true
       path: config/btop/*
-    ~/.local/share/applications:
+    ~/.config/hypr/:
       glob: true
-      force: true
-      path: applications/*
+      path: config/hypr/*
     ~/.config/kitty:
       glob: true
-      force: true
       path: config/kitty/*
+    ~/.config/mpv:
+      glob: true
+      path: config/mpv/*
+    ~/.config/spicetify/Themes:
+      glob: true
+      path: config/spicetify/Themes/*
+    ~/.config/tinted-theming/tinty/:
+      glob: true
+      path: config/tinty/*
+    ~/.local/share/applications:
+      glob: true
+      path: applications/*
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
-    ~/.config/hypr/:
-      create: true
-      glob: true
-      path: config/hypr/*
-    ~/.config/flavours/:
-      create: true
-      glob: true
-      path: config/flavours/*
-    ~/.config/tinted-theming/tinty/:
-      create: true
-      glob: true
-      path: config/tinty/*
-    ~/.config/spicetify/Themes:
-      glob: true
-      force: true
-      path: config/spicetify/Themes/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]

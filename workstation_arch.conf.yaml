@@ -6,7 +6,6 @@
     - dracula-icons-theme
     - evince-no-gnome
     - flux-bin
-    - flavours
     - github-copilot-cli
     - gpu-screen-recorder-gtk
     - grimblast-git
@@ -27,6 +26,7 @@
     - quickshell-git
     - spicetify-cli
     - slack-desktop-wayland
+    - tinty-git
     - zen-browser-bin
     - zsh-patina-bin
 - omnipkg:
@@ -46,7 +46,6 @@
         - cpio
         - cups-pk-helper
         - dmidecode
-        - dms-shell-bin
         - docker
         - docker-compose
         - duf
