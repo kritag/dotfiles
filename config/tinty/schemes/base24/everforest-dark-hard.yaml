@@ -1,4 +1,4 @@
-# base00-0F: unchanged from the old flavours scheme (parity).
+# base00-0F: kept identical to the previous theme setup.
 # base10-11: darker backgrounds. base12-17: ANSI brights, derived from the kitty theme:
 #   base12=lightened kitty color1
 #   base13=lightened kitty color3
