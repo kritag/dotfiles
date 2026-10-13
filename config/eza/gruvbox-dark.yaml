@@ -6,7 +6,7 @@ filekinds:
   pipe: {foreground: "#928374"}
   block_device: {foreground: "#fb4934"}
   char_device: {foreground: "#fb4934"}
-  socket: {foreground: "#665c54"}
+  socket: {foreground: "#746960"}
   special: {foreground: "#d3869b"}
   executable: {foreground: "#b8bb26"}
   mount_point: {foreground: "#fe8019"}
@@ -54,7 +54,7 @@ git:
   renamed: {foreground: "#8ec07c"}
   typechange: {foreground: "#d3869b"}
   ignored: {foreground: "#928374"}
-  conflicted: {foreground: "#cc241d"}
+  conflicted: {foreground: "#ce241d"}
 git_repo:
   branch_main: {foreground: "#ebdbb2"}
   branch_other: {foreground: "#d3869b"}
@@ -64,7 +64,7 @@ security_context:
   colon: {foreground: "#928374"}
   user: {foreground: "#ebdbb2"}
   role: {foreground: "#d3869b"}
-  typ: {foreground: "#665c54"}
+  typ: {foreground: "#746960"}
   range: {foreground: "#d3869b"}
 file_type:
   image: {foreground: "#fabd2f"}
@@ -74,7 +74,7 @@ file_type:
   crypto: {foreground: "#928374"}
   document: {foreground: "#ebdbb2"}
   compressed: {foreground: "#d3869b"}
-  temp: {foreground: "#cc241d"}
+  temp: {foreground: "#ce241d"}
   compiled: {foreground: "#83a598"}
   build: {foreground: "#928374"}
   source: {foreground: "#83a598"}
