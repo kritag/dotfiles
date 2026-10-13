@@ -4,56 +4,43 @@
       create: true
 - clean: ['~', ~/.config]
 - link:
-    ~/.vimrc: config/vimrc
-    ~/.zshrc: zsh/zshrc
     ~/.aliases.zsh: zsh/aliases.zsh
-    ~/.zstyle.zsh: zsh/zstyle.zsh
-    ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
+    ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc
+    ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
     ~/.config/oh-my-posh/omp.yaml: config/oh-my-posh/omp.yaml
-    ~/.zshenv: zsh/zshenv
-    ~/.ripgreprc: config/ripgreprc
-    ~/.lessfilter: config/lessfilter
+    ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.gitconfig: config/gitconfig
-    ~/.theme.gitconfig: config/delta/theme.gitconfig
+    ~/.lessfilter: config/lessfilter
     ~/.markdownlint.yaml: config/markdownlint.yaml
+    ~/.ripgreprc: config/ripgreprc
+    ~/.theme.gitconfig: config/delta/theme.gitconfig
+    ~/.vimrc: config/vimrc
     ~/.yamlfmt.yaml: config/yamlfmt.yaml
+    ~/.zshenv: zsh/zshenv
+    ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
+    ~/.zshrc: zsh/zshrc
+    ~/.zstyle.zsh: zsh/zstyle.zsh
     ~/.config/zsh-patina:
       path: config/zsh-patina/*
-      create: true
       glob: true
     ~/.config/eza:
       path: config/eza/*
-      create: true
       glob: true
     ~/.config/vivid:
       path: config/vivid/*
-      create: true
-      glob: true
-    ~/.config/fsh:
-      path: config/fsh/*
-      create: true
       glob: true
     ~/.config/bat:
       path: config/bat/*
-      create: true
       glob: true
-    ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
-    ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc
-    ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
     ~/.config/glow:
-      create: true
       path: config/glow/*
       glob: true
     ~/.config/lazyvim:
-      create: true
       path: config/lazyvim
-      glob: true
 - sudo:
     - shell:
         - [cp config/wifi-powersave-off.conf /etc/NetworkManager/conf.d, Disables WiFi powersaving]
         - [scripts/add_sudoers.sh, Adding USER to sudoers]
-        #  - [scripts/changeshell.sh, Change shell to zsh]
-        #- [scripts/bat_cache.sh, make theme available for bat]
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [touch ~/.env, Creating the .env file if it does not exist]

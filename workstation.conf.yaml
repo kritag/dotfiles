@@ -24,41 +24,30 @@
     ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
     ~/.face: logos/Fedora-linux-logo.png
-    ~/.config/mpv:
-      glob: true
-      force: true
-      path: config/mpv/*
     ~/.config/btop:
       glob: true
-      force: true
       path: config/btop/*
-    ~/.local/share/applications:
+    ~/.config/hypr/:
       glob: true
-      force: true
-      path: applications/*
+      path: config/hypr/*
     ~/.config/kitty:
       glob: true
-      force: true
       path: config/kitty/*
+    ~/.config/mpv:
+      glob: true
+      path: config/mpv/*
+    ~/.config/spicetify/Themes:
+      glob: true
+      path: config/spicetify/Themes/*
+    ~/.config/tinted-theming/tinty/:
+      glob: true
+      path: config/tinty/*
+    ~/.local/share/applications:
+      glob: true
+      path: applications/*
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
-    ~/.config/spicetify/Themes:
-      glob: true
-      force: true
-      path: config/spicetify/Themes/*
-    ~/.config/hypr/:
-      create: true
-      glob: true
-      path: config/hypr/*
-    ~/.config/flavours/:
-      create: true
-      glob: true
-      path: config/flavours/*
-    ~/.config/tinted-theming/tinty/:
-      create: true
-      glob: true
-      path: config/tinty/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
@@ -73,18 +62,13 @@
           force: true
           path: zsh/completions/*
     - shell:
-        #        - [systemctl enable paccache.timer --now, "Enable deletion of cached pacman packages"]
         - ["command -v authselect >/dev/null 2>&1 && authselect opt-out || true; HOSTS_LINE=\"$(grep -E '^hosts:[[:space:]]' config/nsswitch.conf)\"; grep -qE '^hosts:[[:space:]]' /etc/nsswitch.conf && sed -i \"s|^hosts:.*|${HOSTS_LINE}|\" /etc/nsswitch.conf || printf '\n%s\n' \"$HOSTS_LINE\" >> /etc/nsswitch.conf", "Apply nsswitch hosts line from dotfiles (workstation only)"]
         - [install -d -m 0755 /etc/systemd/logind.conf.d && install -m 0644 services/10-lid.conf /etc/systemd/logind.conf.d/10-lid.conf, "Configure systemd-logind lid behavior (ignore lid on external power)"]
         - [install -d -m 0755 /etc/systemd/journald.conf.d && install -m 0644 services/10-journald-retention.conf /etc/systemd/journald.conf.d/10-journald-retention.conf, "Configure systemd-journald log rotation"]
         - ["sed -i 's/^#\\?\\s*deny\\s*=.*/deny = 0/' /etc/security/faillock.conf", "Set faillock deny = 0"]
         - [test -e /usr/lib/systemd/system/btrfs-scrub@.service || test -e /etc/systemd/system/btrfs-scrub@.service || install -m 0644 services/btrfs-scrub@.service /etc/systemd/system/btrfs-scrub@.service; test -e /usr/lib/systemd/system/btrfs-scrub@.timer || test -e /etc/systemd/system/btrfs-scrub@.timer || install -m 0644 services/btrfs-scrub@.timer /etc/systemd/system/btrfs-scrub@.timer; systemctl daemon-reload]
-        #        - [install -D -m 0644 services/reflector.conf /etc/xdg/reflector/reflector.conf && systemctl enable reflector.timer --now, "Configure reflector and schedule mirror refresh"]
-        # - ["sed -i -e 's/^#\\s*LogFile/LogFile/' -e 's/^#\\s*Color/Color/' -e 's/^#\\s*ParallelDownloads/ParallelDownloads/' -e 's/^#\\s*ILoveCandy/ILoveCandy/' -e '/^#\\s*\\[multilib\\]/,/^#\\s*Include/s/^#\\s*//' /etc/pacman.conf", "Configure pacman defaults and enable multilib"]
-        #        - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
         - ["sed -i -e 's/^#\\?\\s*DefaultTimeoutStopSec=.*/DefaultTimeoutStopSec=15s/' \"$( [ -f /etc/systemd/system.conf ] && echo /etc/systemd/system.conf || echo /usr/lib/systemd/system.conf )\""]
         - [systemctl enable fstrim.timer --now]
         - [systemctl enable systemd-oomd --now]
         - [systemctl enable --now btrfs-scrub@-.timer]
         - [systemctl enable --now systemd-resolved.service]
-        # - [systemctl enable --now grub-btrfsd.service]
