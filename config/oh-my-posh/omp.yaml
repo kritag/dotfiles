@@ -25,6 +25,7 @@ blocks:
         foreground: blue
         background: transparent
         type: path
+        style: plain
         options:
           style: full
       - template: ' {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} '
@@ -34,9 +35,8 @@ blocks:
         type: git
         style: powerline
         options:
-          fetch_status: true
-          fetch_upstream_icon: true
           ignore_submodules: {"*": "all"}
+          native_status: true
         foreground_templates:
           - '{{ if or (.Working.Changed) (.Staging.Changed) }}black{{ end }}'
           - '{{ if and (gt .Ahead 0) (gt .Behind 0) }}black{{ end }}'
@@ -50,21 +50,17 @@ blocks:
     alignment: right
     segments:
       - leading_diamond: 
-        trailing_diamond: 
-        template: '<b>{{ $context := splitList "/" .Context }} {{$cluster:=regexReplaceAll "^api-(os-)?" .Cluster "" }}{{ $leftMost := regexReplaceAll "-[^-]+-[^-]+:.*" $cluster "" }}{{ $leftMost }} </b>'
+        template: '<b>{{ $cluster := regexReplaceAll "^api-(os-)?" .Cluster "" }}{{ regexReplaceAll "-[^-]+-[^-]+:.*" $cluster "" }}</b>'
         foreground: black
         background: cyan
         type: kubectl
         style: diamond
-        executable: kubectl
-      - leading_diamond: 
-        trailing_diamond: 
-        template: '{{ .Namespace }}'
+      - template: '{{ .Namespace }}'
         foreground: black
         background: magenta
         type: kubectl
-        style: diamond
-        executable: kubectl
+        style: powerline
+        powerline_symbol: 
   - type: prompt
     alignment: left
     segments:
