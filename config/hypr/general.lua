@@ -14,13 +14,13 @@ end
 hl.config({
 	general = {
 		allow_tearing = true,
-		border_size = 2,
+		border_size = 3,
 		gaps_in = 5,
 		gaps_out = 10,
 		layout = saved_layout(),
 		resize_on_border = false,
 		col = {
-			active_border = { colors = { colors.base0F, colors.base0C }, angle = 45 },
+			active_border = { colors = { colors.base0D, colors.base0B }, angle = 45 },
 			inactive_border = { colors = { colors.base02, colors.base01 }, angle = 75 },
 		},
 		snap = {
