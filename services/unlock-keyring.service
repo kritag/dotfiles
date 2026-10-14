@@ -1,0 +1,11 @@
+[Unit]
+Description=Unlock login keyring before other secret-service clients
+Before=keybase.service
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/sleep 1
+ExecStart=%h/.config/hypr/scripts/unlockKeyring.sh
+
+[Install]
+WantedBy=default.target

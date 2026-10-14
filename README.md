@@ -109,7 +109,7 @@ ykman config usb --disable OTP               # stops OTP typing on touch
 ~/.config/hypr/scripts/sealKeyring.sh        # keyring helper; redo after a keyring password change
 ```
 
-- Keyring helper: `scripts/unlockKeyring.sh`, first line of `autostart.lua`.
+- Keyring helper: `scripts/unlockKeyring.sh`, run by `services/unlock-keyring.service` (before keybase) and `autostart.lua`.
 - DMS: Lock Screen → security key, Alternative. UI refuses Space, so set
   `lockScreenSecurityKeyShortcut` to `Ctrl+space` in `settings.json`.
 - Greeter: Settings → Greeter → security key; offered after the fingerprint step (~10 s).
