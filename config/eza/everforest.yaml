@@ -11,15 +11,15 @@ filekinds:
   executable: {foreground: "#a7c080"}
   mount_point: {foreground: "#687881"}
 perms:
-  user_read: {foreground: "#859289"}
-  user_write: {foreground: "#687881"}
+  user_read: {foreground: "#d3c6aa"}
+  user_write: {foreground: "#dbbc7f"}
   user_execute_file: {foreground: "#a7c080"}
   user_execute_other: {foreground: "#a7c080"}
-  group_read: {foreground: "#859289"}
-  group_write: {foreground: "#687881"}
+  group_read: {foreground: "#d3c6aa"}
+  group_write: {foreground: "#dbbc7f"}
   group_execute: {foreground: "#a7c080"}
   other_read: {foreground: "#859289"}
-  other_write: {foreground: "#687881"}
+  other_write: {foreground: "#dbbc7f"}
   other_execute: {foreground: "#a7c080"}
   special_user_file: {foreground: "#d699b6"}
   special_other: {foreground: "#687881"}
