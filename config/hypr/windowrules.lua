@@ -218,3 +218,32 @@ hl.layer_rule({
 	},
 	ignore_alpha = 0.0,
 })
+
+-- Firefox/Zen extension popups (Bitwarden etc.) open as separate windows titled
+-- "Extension: (<name>) ...". The title is only set after the window maps, so a
+-- window_rule can't match it; float it from the title event instead. Only windows
+-- opened in the last 2s qualify, so a tab on an extension page in a normal
+-- browser window doesn't float the whole window.
+local opened = {}
+
+hl.on("window.open", function(w)
+	opened[w.address] = os.time()
+end)
+
+hl.on("window.close", function(w)
+	opened[w.address] = nil
+end)
+
+hl.on("window.title", function(w)
+	local t = opened[w.address]
+	if w.floating or not t or os.time() - t > 2 or not w.title:find("^Extension: %(") then
+		return
+	end
+	local sel = "address:" .. w.address
+	local mon = w.monitor
+	hl.dispatch(hl.dsp.window.float({ action = "enable", window = sel }))
+	if mon then
+		hl.dispatch(hl.dsp.window.resize({ x = mon.width * 0.2, y = mon.height * 0.5, window = sel }))
+	end
+	hl.dispatch(hl.dsp.window.center({ window = sel }))
+end)
