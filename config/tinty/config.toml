@@ -88,3 +88,19 @@ path = "~/.config/tinted-theming/tinty/templates/hyprland-preview-share-picker"
 themes-dir = "colors"
 supported-systems = ["base24"]
 hook = "mkdir -p ~/.config/hyprland-preview-share-picker && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/hyprland-preview-share-picker/colors.css"
+
+# Paste the result into Kagi settings > custom CSS. Dark only.
+[[items]]
+name = "kagi"
+path = "~/.config/tinted-theming/tinty/templates/kagi"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/tinted-theming/generated && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/tinted-theming/generated/kagi.css"
+
+# Load in SurfingKeys: Advanced settings > Load settings from the generated file
+[[items]]
+name = "surfingkeys"
+path = "~/.config/tinted-theming/tinty/templates/surfingkeys"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/tinted-theming/generated && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/tinted-theming/generated/surfingkeys.js"
