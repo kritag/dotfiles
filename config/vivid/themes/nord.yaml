@@ -32,10 +32,7 @@ core:
   normal_text:
     foreground: dim-foreground
 
-  reset_to_normal:
-    background: nord0
-    foreground: nord4
-    font-style: regular
+  reset_to_normal: {}
 
   # File Types
 

@@ -34,11 +34,9 @@ colors:
 core:
   normal_text:
     foreground: fg
-    background: bg
 
   regular_file:
     foreground: fg
-    background: bg
 
   reset_to_normal: {}
 

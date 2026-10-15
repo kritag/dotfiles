@@ -36,7 +36,8 @@ fi
 tinty build --quiet
 tinty apply "base24-$tinty"
 
-sed -i --follow-symlinks "s|\(vivid generate \)[^)]*|\1$vivid|" ~/.zshenv
+sed -i --follow-symlinks "s|\(vivid generate \)[^ ]*|\1$vivid|" ~/.zshenv
+rm -f "${XDG_CACHE_HOME:-$HOME/.cache}/ls_colors" # zshenv rebuilds it in new shells
 sed -i --follow-symlinks "s/--theme=\"[^\"]*\"/--theme=\"$bat\"/" ~/.config/bat/config
 sed -i --follow-symlinks "s/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = $bat/" ~/.theme.gitconfig
 sed -i --follow-symlinks "s/\(colorscheme = \"\)[^\"]*\(\",\)/\1$nvim\2/" ~/.config/lazyvim/lua/plugins/colorscheme.lua
