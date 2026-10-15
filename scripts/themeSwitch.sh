@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 DOCFONT="'Lexend 11'"
-MONOFONT="'Meslo LG S 10'"
+MONOFONT="'Nordwand Mono 11'"
 FONT="'Lexend 11'"
 STAMP_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
 STAMP_FILE="$STAMP_DIR/tinty-sync.done"
