@@ -4,6 +4,7 @@ MONOFONT="'Nordwand Mono 11'"
 FONT="'Lexend 11'"
 # Family name only (no size), for templates that set font-family; read by tinty hooks.
 export TINTY_FONT="$(tr -d "'" <<<"$FONT" | sed -E 's/ [0-9.]+$//')"
+export TINTY_MONOFONT="$(tr -d "'" <<<"$MONOFONT" | sed -E 's/ [0-9.]+$//')"
 STAMP_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
 STAMP_FILE="$STAMP_DIR/tinty-sync.done"
 
@@ -45,8 +46,13 @@ sed -i --follow-symlinks "s/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-th
 sed -i --follow-symlinks "s/\(colorscheme = \"\)[^\"]*\(\",\)/\1$nvim\2/" ~/.config/lazyvim/lua/plugins/colorscheme.lua
 sed -i --follow-symlinks "s|^theme = \"file:.*\"|theme = \"file:~/.config/zsh-patina/themes/$patina.toml\"|" ~/.config/zsh-patina/config.toml
 
+# Fonts: kitty (nvim follows it) and fontconfig's sans-serif/monospace aliases.
+sed -i --follow-symlinks "s|^font_family .*|font_family      family=\"$TINTY_MONOFONT\"|" ~/.config/kitty/kitty.conf
+perl -0pi -e "s|(<family>sans-serif</family>\s*<prefer>\s*<family>)[^<]*|\${1}$TINTY_FONT|; s|(<family>monospace</family>\s*<prefer>\s*<family>)[^<]*|\${1}$TINTY_MONOFONT|" "$(readlink -f ~/.config/fontconfig/fonts.conf)"
+
 read -ra kitty_args <<<"$kitty"
 kitten themes "${kitty_args[@]}"
+pkill -USR1 -x kitty || true # reload config, picks up the font
 
 [[ "$1" == nord ]] && papirus-folders -C nordic --theme Papirus-Dark
 

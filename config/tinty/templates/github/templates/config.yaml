@@ -1,0 +1,3 @@
+default:
+  filename: "colors/{{ scheme-system }}-{{ scheme-slug }}.css"
+  supported-systems: [base16, base24]

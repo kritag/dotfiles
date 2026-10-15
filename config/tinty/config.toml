@@ -104,3 +104,11 @@ path = "~/.config/tinted-theming/tinty/templates/surfingkeys"
 themes-dir = "colors"
 supported-systems = ["base24"]
 hook = "mkdir -p ~/.config/tinted-theming/generated && sed \"s/@@FONT@@/${TINTY_FONT:-Lexend}/g\" \"$TINTY_THEME_FILE_PATH\" > ~/.config/tinted-theming/generated/surfingkeys.js"
+
+# Font only, no colors. Stylus: @import url("http://127.0.0.1:8731/github.css") on github.com
+[[items]]
+name = "github"
+path = "~/.config/tinted-theming/tinty/templates/github"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/tinted-theming/generated && sed \"s/@@MONOFONT@@/${TINTY_MONOFONT:-Nordwand Mono}/g\" \"$TINTY_THEME_FILE_PATH\" > ~/.config/tinted-theming/generated/github.css"
