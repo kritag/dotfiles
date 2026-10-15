@@ -2,6 +2,8 @@
 DOCFONT="'Lexend 11'"
 MONOFONT="'Nordwand Mono 11'"
 FONT="'Lexend 11'"
+# Family name only (no size), for templates that set font-family; read by tinty hooks.
+export TINTY_FONT="$(tr -d "'" <<<"$FONT" | sed -E 's/ [0-9.]+$//')"
 STAMP_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
 STAMP_FILE="$STAMP_DIR/tinty-sync.done"
 
