@@ -5,7 +5,6 @@ return {
       ensure_installed = {
         "actionlint",
         "bash-language-server",
-        "css-lsp",
         "eslint_d",
         "fixjson",
         "gh-actions-language-server",
@@ -16,9 +15,7 @@ return {
         "prettier",
         "prettierd",
         "pylint",
-        "shellcheck",
         "shuck",
-        "tflint",
         "tombi",
         "vale",
         "vale-ls",
