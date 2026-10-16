@@ -19,22 +19,10 @@ return {
       flavour = "mocha",
       term_colors = true,
       integrations = {
-        aerial = true,
-        alpha = true,
-        cmp = true,
-        dashboard = true,
-        flash = true,
-        grug_far = true,
-        gitsigns = true,
-        headlines = true,
-        illuminate = true,
         indent_blankline = {
           enabled = true,
           colored_indent_levels = true,
         },
-        leap = true,
-        lsp_trouble = true,
-        mason = true,
         markdown = true,
         mini = {
           enabled = true,
@@ -49,19 +37,9 @@ return {
             information = { "undercurl" },
           },
         },
-        neotest = true,
-        neotree = true,
-        noice = true,
-        notify = true,
         rainbow_delimiters = true,
         semantic_tokens = true,
-        telescope = {
-          enabled = true,
-          -- style = "nvchad",
-        },
         treesitter = true,
-        treesitter_context = true,
-        which_key = true,
       },
       highlight_overrides = {
         all = function(colors)

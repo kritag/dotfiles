@@ -10,7 +10,7 @@ end
 
 local admonition_titled = function(type)
   return s(type .. "t", {
-    t('!!! ' .. type .. ' "'),
+    t("!!! " .. type .. ' "'),
     i(1, "Title"),
     t({ '"', "    " }),
     i(0),
