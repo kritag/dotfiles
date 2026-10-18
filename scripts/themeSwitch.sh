@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-DOCFONT="'Lexend 11'"
-MONOFONT="'Nordwand Mono 11'"
-FONT="'Lexend 11'"
+DOCFONT="'Geist 11'"
+MONOFONT="'Geist Mono 11'"
+FONT="'Geist 11'"
 # Family name only (no size), for templates that set font-family; read by tinty hooks.
 export TINTY_FONT="$(tr -d "'" <<<"$FONT" | sed -E 's/ [0-9.]+$//')"
 export TINTY_MONOFONT="$(tr -d "'" <<<"$MONOFONT" | sed -E 's/ [0-9.]+$//')"
