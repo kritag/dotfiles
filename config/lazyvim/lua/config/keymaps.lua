@@ -6,14 +6,14 @@ vim.keymap.set("n", "<leader><cr>", ":noh<cr>", { desc = "<leader>+Enter to clea
 vim.keymap.set("n", "x", '"_x', { desc = "Don't yank on x" })
 vim.keymap.set("n", "D", '"_D', { desc = "Don't yank on D" })
 vim.keymap.set("n", "C", '"_C', { desc = "Don't yank on C" })
+vim.keymap.set({ "n", "v" }, "d", '"_d', { desc = "Don't yank on d" })
+vim.keymap.set({ "n", "v" }, "<leader>d", "d", { desc = "Cut (delete and yank)" })
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Cycle buffers right" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Cycle buffers left" })
--- floating terminal
-local lazyterm = function()
-  Snacks.terminal(nil, { cwd = LazyVim.root() })
-end
-vim.keymap.set("n", "<c-\\>", lazyterm, { desc = "Terminal (Root Dir)" })
-vim.keymap.set("t", "<c-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+-- Find files in ~ (replaces the near-duplicate "Find Files (cwd)")
+vim.keymap.set("n", "<leader>fF", function()
+  Snacks.picker.files({ cwd = vim.fn.expand("~") })
+end, { desc = "Find Files (~)" })
 
 -- Kubectl
 vim.keymap.set("n", "<leader>k", '<cmd>lua require("kubectl").toggle()<cr>', { noremap = true, silent = true })
