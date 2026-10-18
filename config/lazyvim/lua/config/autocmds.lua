@@ -37,28 +37,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "yaml",
---   callback = function(args)
---     local bufnr = args.buf
---     local clients = vim.lsp.get_clients({ name = "yamlls", bufnr = bufnr })
---
---     if #clients > 0 then
---       require("config.yaml_k8s_crds").init(bufnr)
---     else
---       vim.api.nvim_create_autocmd("LspAttach", {
---         once = true,
---         buffer = bufnr,
---         callback = function(lsp_args)
---           local client = vim.lsp.get_client_by_id(lsp_args.data.client_id)
---           if client and client.name == "yamlls" then
---             require("config.yaml_k8s_crds").init(bufnr)
---           end
---         end,
---       })
---     end
---   end,
--- })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
@@ -137,24 +115,6 @@ local function update_markdown_toc(heading2, heading3)
   vim.cmd("edit!") -- Reloads the file to reflect the changes made by markdown-toc
   vim.cmd("silent write") -- Silently save the file
   vim.notify("TOC updated and file saved", vim.log.levels.INFO)
-  -- -- In case a cleanup is needed, leaving this old code here as a reference
-  -- -- I used this code before I implemented the frontmatter check
-  -- -- Moves the cursor to the top of the file
-  -- vim.api.nvim_win_set_cursor(bufnr, { 1, 0 })
-  -- -- Deletes leading blank lines from the top of the file
-  -- while true do
-  --   -- Retrieves the first line of the buffer
-  --   local line = vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]
-  --   -- Checks if the line is empty
-  --   if line == "" then
-  --     -- Deletes the line if it's empty
-  --     vim.api.nvim_buf_set_lines(bufnr, 0, 1, false, {})
-  --   else
-  --     -- Breaks the loop if the line is not empty, indicating content or TOC marker
-  --     break
-  --   end
-  -- end
-  -- Restore the saved view (including folds)
   vim.cmd("loadview")
 end
 
