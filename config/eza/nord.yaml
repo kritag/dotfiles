@@ -89,3 +89,8 @@ symlink_path: {foreground: "#81A1C1"}
 control_char: {foreground: "#88C0D0"}
 broken_symlink: {foreground: "#BF616A"}
 broken_path_overlay: {foreground: "#6f7d98"}
+filenames:
+  documents: {icon: {glyph: "󰲂"}}
+  downloads: {icon: {glyph: "󰉍"}}
+  pictures: {icon: {glyph: "󰉏"}}
+  videos: {icon: {glyph: ""}}
