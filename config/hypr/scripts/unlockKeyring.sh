@@ -29,16 +29,17 @@ pw=$(tpm2_unseal -c "$tmp/seal.ctx" 2>/dev/null) || { say "unseal failed"; exit 
 printf %s "$pw" | gnome-keyring-daemon --replace --daemonize --unlock >/dev/null
 rc=$?
 
-# --daemonize returns before the daemon owns org.freedesktop.secrets. A client asking in
-# that gap makes D-Bus activate a second, locked daemon that takes over. Wait (max 5s,
-# normally well under a second) until the owner is the daemon we just unlocked.
-secrets_owner_unlocked() {
-  local pid
-  pid=$(busctl --user status org.freedesktop.secrets 2>/dev/null | sed -n 's/^PID=//p')
-  [[ -n $pid && $(tr '\0' ' ' < "/proc/$pid/cmdline" 2>/dev/null) == *--unlock* ]]
-}
-for _ in $(seq 100); do
-  secrets_owner_unlocked && [[ $(locked_state) == "b false" ]] && break
+# --replace leaves org.freedesktop.secrets ownerless for a moment. A client asking then makes
+# D-Bus activate a second, locked daemon (no control socket, so it cannot be unlocked in place)
+# that wins the name while ours queues behind it. Evict it so ours takes over. Max ~3s.
+for _ in $(seq 60); do
+  owner=$(busctl --user status org.freedesktop.secrets 2>/dev/null | sed -n 's/^PID=//p')
+  cmd=$(tr '\0' ' ' < "/proc/${owner:-0}/cmdline" 2>/dev/null)
+  [[ $cmd == *--unlock* ]] && break
+  if [[ -n $owner && $cmd == *--components=secrets* ]] && pgrep -f 'gnome-keyring-daemon --replace --daemonize --unlock' >/dev/null; then
+    say "evicting locked activated daemon pid $owner"
+    kill "$owner"
+  fi
   sleep 0.05
 done
 say "unlock exit=$rc took=${SECONDS}s now: $(locked_state)"
