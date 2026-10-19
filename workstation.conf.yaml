@@ -24,6 +24,7 @@
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
     ~/.config/systemd/user/unlock-keyring.service: services/unlock-keyring.service
+    ~/.local/share/dbus-1/services/org.freedesktop.secrets.service: services/org.freedesktop.secrets.service
     ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
     ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml

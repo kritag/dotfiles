@@ -109,7 +109,7 @@ ykman config usb --disable OTP               # stops OTP typing on touch
 ~/.config/hypr/scripts/sealKeyring.sh        # keyring helper; redo after a keyring password change
 ```
 
-- Keyring helper: `scripts/unlockKeyring.sh`, run once at login by `services/unlock-keyring.service` (before keybase). Not in `autostart.lua`: a second run restarts the keyring daemon mid-boot.
+- Keyring: the D-Bus override `services/org.freedesktop.secrets.service` makes activation run `scripts/secretsDaemon.sh`, which starts `gnome-keyring-daemon` already unlocked from the TPM-sealed password (falls back to the stock locked daemon if unsealing fails). `services/unlock-keyring.service` (before keybase) runs `scripts/unlockKeyring.sh` once at login to activate it early. Not in `autostart.lua`, and not `--replace`: replacing the daemon lets D-Bus activate a second, locked one that takes the name. Undo: remove the symlink in `~/.local/share/dbus-1/services/`.
 - DMS: Lock Screen → security key, Alternative. UI refuses Space, so set
   `lockScreenSecurityKeyShortcut` to `Ctrl+space` in `settings.json`.
 - Greeter: Settings → Greeter → security key; offered after the fingerprint step (~10 s).
