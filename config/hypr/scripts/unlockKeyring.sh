@@ -27,4 +27,18 @@ pw=$(tpm2_unseal -c "$tmp/seal.ctx" 2>/dev/null) || { say "unseal failed"; exit 
 [[ -n $pw ]] || { say "empty password"; exit 1; }
 
 printf %s "$pw" | gnome-keyring-daemon --replace --daemonize --unlock >/dev/null
-say "unlock exit=$? now: $(locked_state)"
+rc=$?
+
+# --daemonize returns before the daemon owns org.freedesktop.secrets. A client asking in
+# that gap makes D-Bus activate a second, locked daemon that takes over. Wait (max 5s,
+# normally well under a second) until the owner is the daemon we just unlocked.
+secrets_owner_unlocked() {
+  local pid
+  pid=$(busctl --user status org.freedesktop.secrets 2>/dev/null | sed -n 's/^PID=//p')
+  [[ -n $pid && $(tr '\0' ' ' < "/proc/$pid/cmdline" 2>/dev/null) == *--unlock* ]]
+}
+for _ in $(seq 100); do
+  secrets_owner_unlocked && [[ $(locked_state) == "b false" ]] && break
+  sleep 0.05
+done
+say "unlock exit=$rc took=${SECONDS}s now: $(locked_state)"
