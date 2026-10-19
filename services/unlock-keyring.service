@@ -4,7 +4,6 @@ Before=keybase.service
 
 [Service]
 Type=oneshot
-ExecStartPre=/usr/bin/sleep 1
 ExecStart=%h/.config/hypr/scripts/unlockKeyring.sh
 
 [Install]
