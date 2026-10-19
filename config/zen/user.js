@@ -14,6 +14,3 @@ user_pref("zen.view.show-newtab-button-top", false);
 
 // Required for chrome/userChrome.css (imports the DMS matugen theme).
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-
-// Crisp text at scale 1 (ultrawide): snap glyphs to whole pixels instead of subpixel positions.
-user_pref("gfx.text.subpixel-position.force-disabled", true);
