@@ -54,6 +54,7 @@
       path: fonts/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
+    - [systemctl --user enable unlock-keyring.service]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
     # - [~/.dotfiles/pkgbuilds/install-all.sh, "Install all gtk themes and icons"]
     - [fc-cache -fv]
