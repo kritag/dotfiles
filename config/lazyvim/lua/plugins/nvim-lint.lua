@@ -10,7 +10,6 @@ return {
       javascriptreact = { "eslint_d" },
       json = { "jsonlint" },
       markdown = { "markdownlint-cli2" },
-      python = { "pylint" },
       svelte = { "eslint_d" },
       terraform = { "terraform_validate" },
       tf = { "terraform_validate" },
