@@ -21,14 +21,14 @@ blocks:
         background: transparent
         type: session
         style: plain
-      - template: '<b>{{ .Path }}</b> '
+      - template: '<b>{{ path .Path .Location }}</b> '
         foreground: blue
         background: transparent
         type: path
         style: plain
         options:
           style: full
-      - template: "{{ url .UpstreamIcon .UpstreamURL }} {{ .HEAD }}{{ if .UpstreamGone }} \U000F01B4{{ end }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
+      - template: "{{ url .UpstreamIcon .UpstreamURL }} {{ .HEAD }}{{ if .UpstreamGone }}  {{ end }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
         foreground: black
         leading_diamond: 
         trailing_diamond: 
@@ -36,6 +36,7 @@ blocks:
         type: git
         style: diamond
         options:
+          branch_icon: ' '
           ignore_submodules: {"*": "all"}
           native_status: true
         foreground_templates:
