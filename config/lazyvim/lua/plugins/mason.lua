@@ -14,7 +14,6 @@ return {
         "kube-linter",
         "prettier",
         "prettierd",
-        "pylint",
         "shuck",
         "tombi",
         "vale",

@@ -13,7 +13,6 @@
     ~/.aliases.zsh: zsh/aliases.zsh
     ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc
     ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
-    ~/.config/oh-my-posh/omp.yaml: config/oh-my-posh/omp.yaml
     ~/.config/tealdeer/config.toml: config/tealdeer/config.toml
     ~/.gitconfig: config/gitconfig
     ~/.lessfilter: config/lessfilter
@@ -28,6 +27,9 @@
     ~/.zstyle.zsh: zsh/zstyle.zsh
     ~/.config/zsh-patina:
       path: config/zsh-patina/*
+      glob: true
+    ~/.config/oh-my-posh/:
+      path: config/oh-my-posh/*
       glob: true
     ~/.config/eza:
       path: config/eza/*

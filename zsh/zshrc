@@ -3,7 +3,7 @@
 source "$HOME/.aliases.zsh"
 source "$HOME/.env"
 source "$HOME/.zshkeybindings.zsh"
-PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin/"
+PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin/:$HOME/.fluxcd/plugins/"
 export PATH
 
 ZNAP_DIR="${ZNAP_DIR:-$HOME/git/znap/znap}"
@@ -50,7 +50,7 @@ znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.
 # Its right-aligned segments are padded to the width at render time, so without
 # this they stay where they were. $? is saved so the prompt colour survives.
 typeset -g _omp_winch_status=0
-_omp_save_status() { _omp_winch_status=$? }
+_omp_save_status() { _omp_winch_status=$?; }
 precmd_functions=(_omp_save_status ${precmd_functions:#_omp_save_status})
 TRAPWINCH() {
   zle || return 0
