@@ -47,6 +47,16 @@ return {
     local diagnostics = default.lualine_c[2]
     local diff = default.lualine_x[#default.lualine_x]
 
+    local schema = {
+      function()
+        return require("k8s-yaml-schemas.select").status()
+      end,
+      icon = "",
+      cond = function()
+        return vim.bo.filetype == "yaml" and vim.b.yaml_schema ~= nil
+      end,
+    }
+
     opts.options = vim.tbl_deep_extend("force", opts.options, {
       section_separators = "",
       component_separators = "",
@@ -77,7 +87,18 @@ return {
           separator = "",
         },
       },
-      lualine_c = { root, diagnostics },
+      -- a second `%=` (lualine already puts one before section x) centers the schema between left and right
+      lualine_c = {
+        root,
+        diagnostics,
+        {
+          function()
+            return "%="
+          end,
+          cond = schema.cond,
+        },
+        schema,
+      },
       lualine_x = vim.list_slice(default.lualine_x, 1, #default.lualine_x - 1),
       lualine_y = {
         { "progress", separator = { left = L }, padding = { left = 1, right = 0 } },

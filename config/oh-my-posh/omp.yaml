@@ -21,7 +21,7 @@ blocks:
         background: transparent
         type: session
         style: plain
-      - template: '<b>{{ path .Path .Location }}</b> '
+      - template: '<b>{{ .Path }}</b> '
         foreground: blue
         background: transparent
         type: path
