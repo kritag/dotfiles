@@ -48,9 +48,10 @@ gr() {
 # zr <Tab>: jump to a git repo zoxide knows about (completion menu via fzf-tab)
 zr() { z "$@"; }
 _zr() {
-  local -a expl repos=(${(M)${(f)"$(zoxide query -l)"}:#$HOME/*})
+  local -a expl disp repos=(${(M)${(f)"$(zoxide query -l)"}:#$HOME/*})
   repos=(${^repos}(N/e:'[[ -d $REPLY/.git ]]':))
-  _wanted -V repos expl 'git repo' compadd -f -Q -W ~/ -p '~/' -- ${repos#$HOME/}
+  disp=(${repos/#$HOME\//\~/}) # fzf-tab hides the -p prefix, so put ~/ in the display text
+  _wanted -V repos expl 'git repo' compadd -f -Q -W ~/ -p '~/' -d disp -- ${repos#$HOME/}
   compstate[insert]=menu # open the menu directly instead of inserting the shared ~/ first
 }
 

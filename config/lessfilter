@@ -4,7 +4,7 @@ category=${mime%%/*}
 kind=${mime##*/}
 ext=${1##*.}
 if [ -d "$1" ]; then
-  eza -l --no-time --git --icons --group-directories-first "$1"
+  eza -l --color=always --no-time --git --icons --group-directories-first "$1"
 elif [[ "$1" == *.md ]]; then
   glow -p -s $HOME/.config/glow/colors.json "$1"
 elif [ "$category" = image ]; then
