@@ -1,12 +1,9 @@
 zstyle -e ':completion:*' hosts 'reply=($(< ~/.ssh/ssh_hosts))'
-#zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 zstyle ':completion:*' accept-exact false
 zstyle ':completion:*' menu no
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s%p
 # cache to proxy list of results
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
@@ -16,22 +13,18 @@ zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*:descriptions' format "[%d]"
 zstyle ':fzf-tab:complete:*' extra-opts --preview-window=:hidden
 zstyle ':fzf-tab:*' show-group full
-#zstyle ':fzf-tab:*' fzf-min-height '1000'
 zstyle ':fzf-tab:complete:*:options' fzf-preview
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:complete:*:*' query-string input
-# --complete
-#zstyle ':fzf-tab:complete:*' fzf-preview 'less ${realpath#--*=}'
 # --user-expand
 zstyle ':fzf-tab:user-expand::' fzf-preview 'less $word'
 # -parameter
-zstyle ':fzf-tab:complete:((-parameter-|unset):|(export|typeset|declare|local):argument-rest)' fzf-preview 'echo ${(P)word}'
+zstyle ':fzf-tab:complete:(-parameter-|-brace-parameter-|unset|export|typeset|declare|local|read|expand):*' fzf-preview 'echo ${(P)word}'
 # -equal
 zstyle ':fzf-tab:complete:(-equal-:|(\\|*/|)(sudo|proxychains|strace):argument-1|pudb:option--pre-run-1)' fzf-preview 'less =$word'
 # -command-
 zstyle ':fzf-tab:complete:-command-:*' fzf-preview '(out=$(tldr --color always "$word") 2>/dev/null && echo $out) || (out=$(MANWIDTH=$FZF_PREVIEW_COLUMNS man "$word") 2>/dev/null && echo $out) || (out=$(which "$word") && echo $out) || echo "${(P)word}"'
-zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*'fzf-preview 'echo ${(P)word}'
 # has
 zstyle ':fzf-tab:complete:(\\|*/|)has:argument-rest' fzf-preview 'case $group in
 "external command")
@@ -43,7 +36,6 @@ zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl
 zstyle ':fzf-tab:complete:systemctl:*' fzf-flags --preview-window=down:0:wrap
 # TLDR
 zstyle ':fzf-tab:complete:tldr:*' fzf-preview 'tldr --color always $word'
-zstyle ':fzf-tab:complete:tldr:argument-1' fzf-preview 'tldr --color always $word'
 # Man
 zstyle ':fzf-tab:complete:(\\|*/|)man:' fzf-preview 'man $word | bat -lman'
 zstyle ':fzf-tab:complete:(\\|*/|)bat:argument-rest' fzf-preview 'case $group in
@@ -81,21 +73,7 @@ zstyle ':fzf-tab:complete:(\\|*/|)(pkill:o-argument-rest|killall:argument-1)' fz
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview 'ps -p$word -wocmd --no-headers | bat -lsh'
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
-# read
-zstyle ':fzf-tab:complete:(\\|)read:argument-1' fzf-preview 'echo ${(P)word}'
 
-# _FZF_TAB_FZF_FLAGS=(
-#     '--height=80%' \
-#     '--layout=reverse' \
-#     '--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8' \
-#     '--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc' \
-#     '--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8' \
-#     '--color=selected-bg:#45475a,border:#94e2d5' \
-#     '--pointer=❯' \
-#     '--multi' \
-# )
-
-#zstyle ':fzf-tab:complete:*' fzf-preview '([[ -f $realpath ]] && bat --color=always "$realpath") || ([[ -d $realpath ]] && (eza --long --git --group-directories-first --icons --color=always "$realpath"))'
 zstyle ':fzf-tab:complete:*:*' fzf-preview '
 if [ -x /usr/libexec/lesspipe/lesspipe.sh ]; then
   /usr/libexec/lesspipe/lesspipe.sh ${(Q)realpath}
