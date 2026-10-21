@@ -1,6 +1,5 @@
 return {
   "kritag/k8s-yaml-schemas.nvim",
-  dev = true,
   event = "FileType yaml",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
