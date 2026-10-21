@@ -63,8 +63,8 @@ hl.bind("CTRL + ALT + SUPER + SHIFT + comma", hl.dsp.workspace.move({ monitor = 
 hl.bind("CTRL + ALT + SUPER + SHIFT + period", hl.dsp.workspace.move({ monitor = "r" }))
 
 -- Special workspace
-hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("special"))
+hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:special" }))
 
 -- 1-9 + 0 → workspace and move-to-workspace (silent variant on CTRL)
 for i = 1, 9 do
