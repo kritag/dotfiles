@@ -10,10 +10,10 @@ blocks:
         foreground: blue
         background: transparent
         template: '<b>{{ base .Workspace.ProjectDir }}</b> '
-      - template: '{{ url .UpstreamIcon .UpstreamURL }} {{ .HEAD }}{{ if .UpstreamGone }} {{ end }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}'
+      - type: git
+        template: '{{ url .UpstreamIcon .UpstreamURL }} {{ .HEAD }}{{ if .UpstreamGone }} {{ end }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}'
         foreground: black
         background: green
-        type: git
         style: diamond
         options:
           branch_icon: ' '
