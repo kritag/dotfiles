@@ -43,6 +43,7 @@ require("lazy").setup({
     version = false,
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
+  dev = { path = "~/git", fallback = true }, -- specs with `dev = true` load from ~/git when present
   checker = {
     enabled = true,
     notify = false,
