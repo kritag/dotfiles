@@ -2,17 +2,15 @@ _pkgname="instawow"
 pkgname="${_pkgname}-bin"
 pkgver=7.2.4
 pkgrel=1
-epoch=
 pkgdesc="A CLI add-on manager for World of Warcraft."
 arch=('x86_64')
 url="https://github.com/layday/${_pkgname}"
-license=('GPL')
+license=('GPL-3.0-only')
 depends=()
 makedepends=("unzip")
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
-options=()
-changelog=
+options=('!strip')
 source=(
   "${_pkgname}-${pkgver}-LICENSE.md::https://raw.githubusercontent.com/layday/${_pkgname}/refs/tags/v${pkgver}/COPYING"
 )
@@ -22,8 +20,8 @@ source_x86_64=(
 noextract=(
   "${_pkgname}-${pkgver}-${CARCH}.zip"
 )
-sha256sums=('SKIP')
-sha256sums_x86_64=('6850abf948ebaf022c3c3cba337103cf2e2e8dc0a0377ba715564fc4b835dc9f')
+sha256sums=('8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903')
+sha256sums_x86_64=('d8bba256ae6f6055dbb005f231f11299a1aeb3ca66d77f0a58fc378106a59a5c')
 
 prepare() {
   cd "${srcdir}"
