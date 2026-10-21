@@ -1,0 +1,54 @@
+_pkgname="instawow"
+pkgname="${_pkgname}-gui"
+pkgver=7.2.4
+pkgrel=1
+pkgdesc="GUI for the World of Warcraft add-on manager instawow, built from source."
+arch=('x86_64')
+url="https://github.com/layday/${_pkgname}"
+license=('GPL-3.0-or-later')
+depends=('python' 'python-gobject' 'python-cairo' 'gtk3' 'webkit2gtk-4.1' 'libcanberra')
+makedepends=('git' 'npm' 'python-build' 'python-installer')
+# the git checkout is needed: both wheels derive their version from tags
+source=("git+${url}.git#tag=v${pkgver}")
+sha256sums=('SKIP')
+options=('!strip')
+
+build() {
+  cd "${_pkgname}"
+
+  (cd instawow-gui/frontend && npm ci && npm run build)
+
+  python -m build --wheel --outdir "${srcdir}/dist" .
+  python -m build --wheel --outdir "${srcdir}/dist" instawow-gui
+}
+
+package() {
+  local _venv=/opt/${pkgname}
+
+  # Not every dependency is packaged for Arch, so ship a venv with the system
+  # PyGObject/pycairo reused (they are what GTK needs at runtime).
+  python -m venv --system-site-packages "${pkgdir}${_venv}"
+  "${pkgdir}${_venv}/bin/python" -m pip install --no-warn-script-location \
+    "${srcdir}"/dist/instawow-*.whl "${srcdir}"/dist/instawow_gui-*.whl toga-gtk
+
+  # make the venv relocatable out of ${pkgdir}
+  grep -rlI "${pkgdir}" "${pkgdir}${_venv}" | xargs -r sed -i "s|${pkgdir}||g"
+
+  install -Dm755 /dev/stdin "${pkgdir}/usr/bin/${pkgname}" <<LAUNCHER
+#!/bin/sh
+exec ${_venv}/bin/instawow plugins gui "\$@"
+LAUNCHER
+
+  install -Dm644 /dev/stdin "${pkgdir}/usr/share/applications/${pkgname}.desktop" <<DESKTOP
+[Desktop Entry]
+Type=Application
+Name=instawow
+Comment=${pkgdesc}
+Exec=${_venv}/bin/instawow plugins gui
+Icon=${pkgname}
+Categories=Game;Utility;
+DESKTOP
+  install -Dm644 "${_pkgname}/instawow-gui/src/instawow_gui/_resources/instawow_gui.png" \
+    "${pkgdir}/usr/share/icons/hicolor/1024x1024/apps/${pkgname}.png"
+  install -Dm644 "${_pkgname}/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
