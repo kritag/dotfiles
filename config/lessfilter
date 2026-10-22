@@ -7,8 +7,8 @@ if [ -d "$1" ]; then
   eza -l --color=always --no-time --git --icons --group-directories-first "$1"
 elif [[ "$1" == *.zip ]]; then # lesspipe misses zips that `file` calls octet-stream
   unzip -l "$1"
-elif [[ "$1" == *.md ]]; then
-  glow -p -s $HOME/.config/glow/colors.json "$1"
+elif [[ "$1" == *.md ]]; then # glow ignores $GLOW_STYLE in a pipe, so pass it with -s
+  glow -s "$GLOW_STYLE" ${FZF_PREVIEW_COLUMNS:+-w "$FZF_PREVIEW_COLUMNS"} "$1" </dev/null
 elif [ "$kind" = pdf ]; then
   pdftotext -q "$1" - | sed $'s/\f/──────────\\n/g'
 elif [ "$kind" = vnd.sqlite3 ]; then
