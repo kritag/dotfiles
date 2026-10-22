@@ -562,13 +562,24 @@
             </dict>
             <dict>
                 <key>name</key>
-                <string>Function calls (nvim @function.call)</string>
+                <string>Builtin functions (nvim @function.builtin)</string>
                 <key>scope</key>
-                <string>variable.function, meta.function-call variable.function, support.function.builtin</string>
+                <string>support.function.builtin</string>
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
                     <string>#A7C080</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Function calls (plain in nvim)</string>
+                <key>scope</key>
+                <string>variable.function</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#D3C6AA</string>
                 </dict>
             </dict>
             <dict>
