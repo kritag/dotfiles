@@ -43,6 +43,7 @@ export MANPAGER="nvim +Man!"
 export MOZ_USE_XINPUT2=1
 export MOZ_ENABLE_WAYLAND=1
 export NVIM_APPNAME='lazyvim'
+export RAPIDFUZZ_IMPLEMENTATION=python
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export SAVEHIST=50000
 export SYSTEMD_EDITOR=nvim
