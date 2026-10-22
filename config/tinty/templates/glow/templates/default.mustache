@@ -1,8 +1,11 @@
+{{! Colours outside chroma are ANSI slots, not hex: in a pipe (fzf-tab previews) glow only emits the
+    16 ANSI colours and mangles hex ones. Slots follow the terminal theme. base05 (null) = terminal fg.
+    chroma must stay hex. }}
 {
   "document": {
     "block_prefix": "\n",
     "block_suffix": "\n",
-    "color": "#{{base05-hex}}",
+    "color": null,
     "margin": 2
   },
   "block_quote": {
@@ -15,34 +18,34 @@
   },
   "heading": {
     "block_suffix": "\n",
-    "color": "#{{base05-hex}}",
+    "color": null,
     "bold": true
   },
   "h1": {
     "prefix": "▓▓▓ ",
     "suffix": " ",
-    "color": "#{{base08-hex}}",
+    "color": "1",
     "bold": true
   },
   "h2": {
     "prefix": "▓▓▓▓ ",
-    "color": "#{{base0A-hex}}"
+    "color": "3"
   },
   "h3": {
     "prefix": "▓▓▓▓▓ ",
-    "color": "#{{base09-hex}}"
+    "color": "3"
   },
   "h4": {
     "prefix": "▓▓▓▓▓▓ ",
-    "color": "#{{base0B-hex}}"
+    "color": "2"
   },
   "h5": {
     "prefix": "▓▓▓▓▓▓▓ ",
-    "color": "#{{base0C-hex}}"
+    "color": "6"
   },
   "h6": {
     "prefix": "▓▓▓▓▓▓▓▓ ",
-    "color": "#{{base0D-hex}}"
+    "color": "4"
   },
   "text": { },
   "strikethrough": {
@@ -55,7 +58,7 @@
     "bold": true
   },
   "hr": {
-    "color": "#{{base0D-hex}}",
+    "color": "4",
     "format": "\n--------\n"
   },
   "item": {
@@ -69,29 +72,29 @@
     "unticked": "[ ] "
   },
   "link": {
-    "color": "#{{base0D-hex}}",
+    "color": "4",
     "underline": true
   },
   "link_text": {
-    "color": "#{{base0E-hex}}",
+    "color": "5",
     "bold": true
   },
   "image": {
-    "color": "#{{base0D-hex}}",
+    "color": "4",
     "underline": true
   },
   "image_text": {
-    "color": "#{{base0E-hex}}",
+    "color": "5",
     "format": "Image: {.text} →"
   },
   "code": {
     "prefix": " ",
     "suffix": " ",
-    "color": "#{{base03-hex}}",
-    "background_color": "#{{base00-hex}}"
+    "color": "7",
+    "background_color": "0"
   },
   "code_block": {
-    "color": "#{{base00-hex}}",
+    "color": "0",
     "margin": 2,
     "chroma": {
       "text": {

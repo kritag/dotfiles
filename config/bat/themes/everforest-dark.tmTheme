@@ -143,7 +143,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#E69875</string>
+                    <string>#DBBC7F</string>
                 </dict>
             </dict>
             <dict>
@@ -154,7 +154,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#E69875</string>
+                    <string>#DBBC7F</string>
                 </dict>
             </dict>
             <dict>
@@ -198,7 +198,7 @@
                 <key>settings</key>
                 <dict>
                     <key>foreground</key>
-                    <string>#A7C080</string>
+                    <string>#83C092</string>
                 </dict>
             </dict>
             <dict>
@@ -547,6 +547,50 @@
                     <string>#08000000</string>
                     <key>foreground</key>
                     <string>#0f000000</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Properties (nvim @property)</string>
+                <key>scope</key>
+                <string>variable.other.property, variable.other.member, variable.other.object.property, support.variable.property, meta.property, string.unquoted.key, meta.mapping.key</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#7FBBB3</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Function calls (nvim @function.call)</string>
+                <key>scope</key>
+                <string>variable.function, meta.function-call variable.function, support.function.builtin</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#A7C080</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Builtin constants / self (nvim @constant.builtin)</string>
+                <key>scope</key>
+                <string>constant.language, variable.language</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#D699B6</string>
+                </dict>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Types (nvim @type)</string>
+                <key>scope</key>
+                <string>support.type, entity.name.type, storage.type.class</string>
+                <key>settings</key>
+                <dict>
+                    <key>foreground</key>
+                    <string>#DBBC7F</string>
                 </dict>
             </dict>
         </array>
