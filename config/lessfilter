@@ -5,8 +5,14 @@ kind=${mime##*/}
 ext=${1##*.}
 if [ -d "$1" ]; then
   eza -l --color=always --no-time --git --icons --group-directories-first "$1"
+elif [[ "$1" == *.zip ]]; then # lesspipe misses zips that `file` calls octet-stream
+  unzip -l "$1"
 elif [[ "$1" == *.md ]]; then
   glow -p -s $HOME/.config/glow/colors.json "$1"
+elif [ "$kind" = pdf ]; then
+  pdftotext -q "$1" - | sed $'s/\f/──────────\\n/g'
+elif [ "$kind" = vnd.sqlite3 ]; then
+  sqlite3 -readonly "$1" .schema | bat --style="changes" --color=always -l sql
 elif [ "$category" = image ]; then
   fzf-preview.sh "$1"
 elif [ "$kind" = json ]; then
@@ -18,5 +24,5 @@ elif [ "$ext" = lua ]; then
 elif [ "$category" = text ]; then
   bat --style="changes" --color=always "$1"
 else
-  bat --style="changes" --color=always "$1"
+  exit 1 # not handled here: lesspipe falls back to its own handlers (archives etc.)
 fi
