@@ -42,12 +42,18 @@ esac
 tinty build --quiet
 tinty apply "base24-$tinty"
 
-sed -i --follow-symlinks "s|\(vivid generate \)[^ ]*|\1$vivid|" ~/.zshenv
+# sub FILE WANTED SED_EXPR: run sed, then warn if WANTED is missing (the pattern stopped matching).
+sub() {
+  sed -i --follow-symlinks "$3" "$1"
+  grep -qF -- "$2" "$1" || echo "themeSwitch: $1 not updated, sed pattern no longer matches" >&2
+}
+
+sub ~/.zshenv "vivid generate $vivid" "s|\(vivid generate \)[^ ]*|\1$vivid|"
 rm -f "${XDG_CACHE_HOME:-$HOME/.cache}/ls_colors" # zshenv rebuilds it in new shells
-sed -i --follow-symlinks "s/--theme=\"[^\"]*\"/--theme=\"$bat\"/" ~/.config/bat/config
-sed -i --follow-symlinks "s/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = $bat/" ~/.theme.gitconfig
-sed -i --follow-symlinks "s/\(colorscheme = \"\)[^\"]*\(\",\)/\1$nvim\2/" ~/.config/lazyvim/lua/plugins/colorscheme.lua
-sed -i --follow-symlinks "s|^theme = \"file:.*\"|theme = \"file:~/.config/zsh-patina/themes/$patina.toml\"|" ~/.config/zsh-patina/config.toml
+sub ~/.config/bat/config "--theme=\"$bat\"" "s/--theme=\"[^\"]*\"/--theme=\"$bat\"/"
+sub ~/.theme.gitconfig "syntax-theme = $bat" "s/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = $bat/"
+sub ~/.config/lazyvim/lua/plugins/colorscheme.lua "colorscheme = \"$nvim\"" "s/\(colorscheme = \"\)[^\"]*\(\",\)/\1$nvim\2/"
+sub ~/.config/zsh-patina/config.toml "themes/$patina.toml" "s|^theme = \"file:.*\"|theme = \"file:~/.config/zsh-patina/themes/$patina.toml\"|"
 
 # Fonts: kitty (nvim follows it) and fontconfig's sans-serif/monospace aliases.
 sed -i --follow-symlinks "s|^font_family .*|font_family      family=\"$TINTY_MONOFONT\"|" ~/.config/kitty/kitty.conf
