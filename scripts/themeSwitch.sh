@@ -5,35 +5,38 @@ FONT="'Geist 11'"
 # Family name only (no size), for templates that set font-family; read by tinty hooks.
 export TINTY_FONT="$(tr -d "'" <<<"$FONT" | sed -E 's/ [0-9.]+$//')"
 export TINTY_MONOFONT="$(tr -d "'" <<<"$MONOFONT" | sed -E 's/ [0-9.]+$//')"
-STAMP_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles"
-STAMP_FILE="$STAMP_DIR/tinty-sync.done"
+TINTY_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/tinted-theming/tinty"
 
-# name|tinty scheme|vivid|bat+delta|nvim colorscheme|zsh-patina|kitty theme|gtk theme|eza
-THEMES='
-gruvbox|gruvbox-dark-hard|gruvbox-dark-hard|gruvbox-dark|gruvbox|gruvbox-dark-hard|Gruvbox Material Dark Hard|Gruvbox-Dark-Compact|gruvbox-dark
-catppuccin-mocha|catppuccin-mocha|catppuccin-mocha|catppuccin-mocha|catppuccin|catppuccin-mocha|Catppuccin-Mocha|Catppuccin-Dark-Compact|catppuccin-mocha
-dracula|dracula|dracula|Dracula|dracula|dracula|Dracula|Dracula|dracula
-everforest|everforest-dark-hard|~/.config/vivid/themes/everforest.yaml|everforest-dark|everforest|everforest-dark|Everforest Dark Hard|Everforest-Dark-Compact|everforest
-nord|nord|nord|Nord|nord|nord|Nord|Nord-Dark-Compact-Nord|nord
-rose-pine|rose-pine|rose-pine|rose-pine|rose-pine|rose-pine|Rosé Pine Moon|Rosepine-Dark-Compact|rose-pine
-tokyo-night|tokyo-night-night|tokyonight-night|tokyonight-night|tokyonight|tokyonight-night|Tokyo Night|Tokyonight-Dark-Compact|tokyonight
-'
+# Per theme: tinty scheme, vivid, bat+delta, nvim, zsh-patina, kitty, gtk, eza
+case "$1" in
+gruvbox)
+  tinty=gruvbox-dark-hard vivid=gruvbox-dark-hard bat=gruvbox-dark nvim=gruvbox patina=gruvbox-dark-hard
+  kitty="Gruvbox Material Dark Hard" gtk=Gruvbox-Dark-Compact eza=gruvbox-dark ;;
+catppuccin-mocha)
+  tinty=catppuccin-mocha vivid=catppuccin-mocha bat=catppuccin-mocha nvim=catppuccin patina=catppuccin-mocha
+  kitty=Catppuccin-Mocha gtk=Catppuccin-Dark-Compact eza=catppuccin-mocha ;;
+dracula)
+  tinty=dracula vivid=dracula bat=Dracula nvim=dracula patina=dracula
+  kitty=Dracula gtk=Dracula eza=dracula ;;
+everforest)
+  tinty=everforest-dark-hard vivid='~/.config/vivid/themes/everforest.yaml' bat=everforest-dark nvim=everforest patina=everforest-dark
+  kitty="Everforest Dark Hard" gtk=Everforest-Dark-Compact eza=everforest ;;
+nord)
+  tinty=nord vivid=nord bat=Nord nvim=nord patina=nord
+  kitty=Nord gtk=Nord-Dark-Compact-Nord eza=nord ;;
+rose-pine)
+  tinty=rose-pine vivid=rose-pine bat=rose-pine nvim=rose-pine patina=rose-pine
+  kitty="Rosé Pine Moon" gtk=Rosepine-Dark-Compact eza=rose-pine ;;
+tokyo-night)
+  tinty=tokyo-night-night vivid=tokyonight-night bat=tokyonight-night nvim=tokyonight patina=tokyonight-night
+  kitty="Tokyo Night" gtk=Tokyonight-Dark-Compact eza=tokyonight ;;
+*)
+  echo "Invalid theme specified. Choose from: gruvbox catppuccin-mocha dracula everforest nord rose-pine tokyo-night" >&2
+  exit 1 ;;
+esac
 
-found=
-while IFS='|' read -r name tinty vivid bat nvim patina kitty gtk eza; do
-  [[ -n "$name" && "$name" == "$1" ]] && found=1 && break
-done <<<"$THEMES"
-
-if [[ -z "$found" ]]; then
-  echo "Invalid theme specified. Choose from: $(cut -d'|' -f1 <<<"${THEMES#$'\n'}" | paste -sd' ')" >&2
-  exit 1
-fi
-
-if [[ ! -f "$STAMP_FILE" ]]; then
-  tinty sync
-  mkdir -p "$STAMP_DIR"
-  : >"$STAMP_FILE"
-fi
+# First run on a machine: fetch the scheme and template repos.
+[[ -d "$TINTY_DATA/scheme-repos" ]] || tinty sync
 
 # Templates are built into gitignored output dirs, so rebuild before applying.
 tinty build --quiet
@@ -53,8 +56,6 @@ perl -0pi -e "s|(<family>sans-serif</family>\s*<prefer>\s*<family>)[^<]*|\${1}$T
 read -ra kitty_args <<<"$kitty"
 kitten themes "${kitty_args[@]}"
 pkill -USR1 -x kitty || true # reload config, picks up the font
-
-[[ "$1" == nord ]] && papirus-folders -C nordic --theme Papirus-Dark
 
 dconf write /org/gnome/desktop/interface/gtk-theme "'$gtk'"
 dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"
