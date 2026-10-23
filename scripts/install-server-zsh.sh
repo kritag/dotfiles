@@ -41,6 +41,11 @@ tinty_server sync >/dev/null
 tinty_server build --quiet
 tinty_server apply "$(sed -n 's/^default-scheme *= *"\(.*\)"/\1/p' "$gen/tinty.toml")" >/dev/null
 
+# shared nvim data (plugins, Mason, parsers), written only by the repo owner; XDG_CONFIG_HOME points at the repo config
+install -d -o "$owner" /opt/nvim-data
+as_owner env XDG_DATA_HOME=/opt/nvim-data XDG_CONFIG_HOME="$repo/config" NVIM_APPNAME=lazyvim \
+  nvim --headless "+Lazy! sync" +qa </dev/null || echo "nvim plugin sync failed, rerun this script" >&2
+
 # sudo drops SSH_CONNECTION, which the prompt reads to show the SSH icon and user name
 tmp=$(mktemp)
 trap 'rm -f "$tmp"' EXIT
