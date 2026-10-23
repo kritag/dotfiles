@@ -1,140 +1,137 @@
 - plugins:
     - dotbot-yay
-    - dotbot-omnipkg
 - yay:
+    - archlinux-contrib
     - bambustudio-appimage
+    - bat
+    - bat-extras
     - bibata-cursor-theme-bin
+    - bluez
+    - bluez-utils
+    - btop
+    - cava
+    - chafa
+    - cpio
+    - cups-pk-helper
+    - discord
+    - dmidecode
+    - dms-shell
     - downgrade
     - dracula-gtk-theme
     - dracula-icons-theme
+    - duf
     - evince-no-gnome
+    - eza
+    - fastfetch
+    - fd
+    - ffmpeg
+    - file-roller
+    - fwupd
+    - fzf
     - game-devices-udev
+    - gamemode
+    - gamescope
+    - git
+    - git-delta
+    - github-cli
+    - glow
+    - gnome-calculator
+    - gnome-keyring
+    - gnome-text-editor
+    - go-yq
     - gpu-screen-recorder-gtk
     - greetd-dms-greeter-bin
     - grimblast-git
+    - grub-btrfs
+    - gvfs-mtp
+    - gvfs-smb
     - hyprfm-git
+    - hyprland
     - hyprland-preview-share-picker-git
+    - hyprlock
+    - inotify-tools
+    - jq
+    - kimageformats
+    - kitty
+    - lact
+    - lazygit
+    - less
+    - lesspipe
+    - lib32-gamemode
+    - lib32-mesa
+    - lib32-vulkan-radeon
+    - libinput
+    - libinput-tools
+    - libnewt
+    - libreoffice-fresh
+    - loupe
     - lucidglyph
+    - lutris
+    - make
+    - man-db
+    - mangohud
+    - mesa
+    - mpv
+    - neovim
+    - networkmanager
+    - noto-fonts-cjk
+    - noto-fonts-emoji
+    - npm
+    - obs-studio
     - obsidian-bin
     - oh-my-posh-bin
+    - os-prober
+    - pacman-contrib
     - papirus-folders
+    - papirus-icon-theme
+    - playerctl
+    - plymouth
+    - plymouth-theme-archlinux
+    - power-profiles-daemon
+    - procs
     - protonhax
     - protonplus
+    - protontricks
     - pulsecontrol-git
+    - python
+    - qbittorrent
+    - qt6-multimedia
     - quickshell-git
+    - ripgrep
+    - rocm-smi-lib
+    - seahorse
+    - snapper
+    - socat
+    - solaar
     - spicetify-cli
+    - spotify-launcher
+    - sqlite
+    - steam
+    - systemd-resolvconf
+    - tealdeer
+    - terminus-font
+    - thunar
+    - thunar-archive-plugin
+    - thunar-volman
     - tinty-git
+    - tree-sitter-cli
+    - ttf-nerd-fonts-symbols
+    - unzip
+    - uwsm
+    - vim
+    - vivid
+    - vulkan-radeon
+    - vulkan-tools
+    - wget
+    - wireless-regdb
+    - wl-clipboard
+    - xdg-desktop-portal
+    - xdg-desktop-portal-gtk
+    - xdg-desktop-portal-hyprland
+    - xdg-user-dirs
+    - yt-dlp
     - zen-browser-bin
+    - zip
+    - zoxide
+    - zsh
     - zsh-patina-bin
-- omnipkg:
-    - install:
-        - archlinux-contrib
-        - bat
-        - bat-extras
-        - bluez
-        - bluez-utils
-        - btop
-        - cava
-        - chafa
-        - cpio
-        - cups-pk-helper
-        - discord
-        - dmidecode
-        - dms-shell
-        - duf
-        - eza
-        - fastfetch
-        - fd
-        - ffmpeg
-        - file-roller
-        - fwupd
-        - fzf
-        - gamemode
-        - gamescope
-        - git
-        - git-delta
-        - github-cli
-        - glow
-        - gnome-calculator
-        - gnome-keyring
-        - gnome-text-editor
-        - go-yq
-        - grub-btrfs
-        - gvfs-smb
-        - gvfs-mtp
-        - hyprland
-        - hyprlock
-        - inotify-tools
-        - jq
-        - kimageformats
-        - kitty
-        - lact
-        - lazygit
-        - less
-        - lesspipe
-        - lib32-gamemode
-        - lib32-mesa
-        - lib32-vulkan-radeon
-        - libinput
-        - libinput-tools
-        - libnewt
-        - libreoffice-fresh
-        - loupe
-        - lutris
-        - make
-        - man-db
-        - mangohud
-        - mesa
-        - mpv
-        - neovim
-        - networkmanager
-        - noto-fonts-cjk
-        - noto-fonts-emoji
-        - npm
-        - obs-studio
-        - os-prober
-        - pacman-contrib
-        - papirus-icon-theme
-        - playerctl
-        - plymouth
-        - plymouth-theme-archlinux
-        - power-profiles-daemon
-        - procs
-        - protontricks
-        - python
-        - qbittorrent
-        - qt6-multimedia
-        - ripgrep
-        - rocm-smi-lib
-        - seahorse
-        - snapper
-        - socat
-        - solaar
-        - spotify-launcher
-        - sqlite
-        - steam
-        - systemd-resolvconf
-        - tealdeer
-        - terminus-font
-        - thunar
-        - thunar-archive-plugin
-        - thunar-volman
-        - tree-sitter-cli
-        - ttf-nerd-fonts-symbols
-        - unzip
-        - uwsm
-        - vim
-        - vivid
-        - vulkan-radeon
-        - vulkan-tools
-        - wireless-regdb
-        - wget
-        - wl-clipboard
-        - xdg-desktop-portal
-        - xdg-desktop-portal-gtk
-        - xdg-desktop-portal-hyprland
-        - xdg-user-dirs
-        - yt-dlp
-        - zip
-        - zoxide
-        - zsh
