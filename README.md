@@ -55,6 +55,12 @@ per user. Plugins without a Fedora package live in `/opt/zsh-plugins`, pinned to
 a tag in `scripts/install-server-zsh.sh`. Users with their own symlinked
 `~/.zshrc` (a full dotfiles install) and root keep their own setup.
 
+On a user's first shell, `scripts/bootstrap-server-user.sh` links the shared
+eza, bat, btop, fastfetch, lazyvim and zsh-patina config into their `~/.config`
+(`server_user.conf.yaml`), using Dotbot. It re-runs by itself after a `git pull`
+that changes that file. `sudo` keeps `SSH_CONNECTION`, so a `sudo -u` shell shows
+the SSH icon and user name in the prompt.
+
 Users still log in with bash until you switch them: `sudo chsh -s /usr/bin/zsh <user>`.
 Service users with a `nologin` shell need nothing.
 

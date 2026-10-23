@@ -22,6 +22,7 @@
         - docker-compose
         - duf
         - eza
+        - fastfetch
         - fd-find
         - fzf
         - gh
