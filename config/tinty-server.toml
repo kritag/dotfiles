@@ -3,7 +3,6 @@
 # @REPO@ becomes the clone path in scripts/install-server-zsh.sh, because tinty does not
 # expand variables in paths.
 shell = "bash -c '{}'"
-default-scheme = "base24-everforest-dark-hard"
 
 [schemes]
 path = "@REPO@/config/tinty/schemes"

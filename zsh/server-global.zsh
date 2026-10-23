@@ -37,7 +37,7 @@ for _f in /usr/libexec/lesspipe/lesspipe.sh /usr/bin/lesspipe.sh; do
     break
   }
 done
-command -v vivid >/dev/null && export LS_COLORS="$(vivid generate ${_ZSH_DIR:h}/config/vivid/themes/everforest.yaml)"
+[[ -r ${_ZSH_DIR:h}/.server-generated/theme.zsh ]] && source ${_ZSH_DIR:h}/.server-generated/theme.zsh # BAT_THEME, LS_COLORS, EZA_CONFIG_DIR
 
 setopt APPEND_HISTORY EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_FIND_NO_DUPS \
   HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS HIST_VERIFY SHARE_HISTORY
