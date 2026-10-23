@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Tinty hook: replace @mix:<bg>:<fg>:<pct>@ tokens in the delta theme with blended hex colors."""
+"""Tinty hook: replace @mix:<bg>:<fg>:<pct>@ tokens in the delta theme (default ~/.theme.gitconfig, or the path given) with blended hex colors."""
 
 import os
 import re
+import sys
 
-PATH = os.path.realpath(os.path.expanduser("~/.theme.gitconfig"))
+PATH = os.path.realpath(os.path.expanduser(sys.argv[1] if len(sys.argv) > 1 else "~/.theme.gitconfig"))
 
 
 def mix(bg, fg, pct):
