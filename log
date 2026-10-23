@@ -1,0 +1,116 @@
+❯ ./install desktop_arch
+Submodule path 'dotbot-yay': checked out '45384b2d428139a5ccba270a4e5a2a590a4326c4'
+Submodule path 'vim-plug': checked out '7e5aae5e1187842cb0b1d8def986e48d481c4410'
+Link /home/kristian/.steampath -> /home/kristian/.steam/sdk32/steam not removed.
+Link /home/kristian/.config/systemd/user/sockets.target.wants/monado.socket -> /usr/lib/systemd/user/monado.socket not removed.
+Link /home/kristian/.config/mozilla/firefox/hkv2yl06.default-release/lock -> /home/kristian/.config/mozilla/firefox/hkv2yl06.default-release/192.168.0.204:+91343 not removed.
+Link /home/kristian/.config/discord/SingletonLock -> /home/kristian/.config/discord/desktop-1755 not removed.
+Link /home/kristian/.config/discord/SingletonCookie -> /home/kristian/.config/discord/17617798126821394391 not removed.
+Link /home/kristian/.config/zen/xp2r7ja6.Default (release)/lock -> /home/kristian/.config/zen/xp2r7ja6.Default (release)/192.168.0.204:+1076 not removed.
+All targets have been cleaned
+Link exists ~/.aliases.zsh -> /home/kristian/.dotfiles/zsh/aliases.zsh
+Link exists ~/.config/fastfetch/config.jsonc -> /home/kristian/.dotfiles/config/fastfetch/config.jsonc
+Link exists ~/.config/lazygit/config.yaml -> /home/kristian/.dotfiles/config/lazygit/config.yaml
+Link exists ~/.config/tealdeer/config.toml -> /home/kristian/.dotfiles/config/tealdeer/config.toml
+Link exists ~/.gitconfig -> /home/kristian/.dotfiles/config/gitconfig
+Link exists ~/.lessfilter -> /home/kristian/.dotfiles/config/lessfilter
+Link exists ~/.markdownlint.yaml -> /home/kristian/.dotfiles/config/markdownlint.yaml
+Link exists ~/.ripgreprc -> /home/kristian/.dotfiles/config/ripgreprc
+Link exists ~/.theme.gitconfig -> /home/kristian/.dotfiles/config/delta/theme.gitconfig
+Link exists ~/.vimrc -> /home/kristian/.dotfiles/config/vimrc
+Link exists ~/.yamlfmt.yaml -> /home/kristian/.dotfiles/config/yamlfmt.yaml
+Link exists ~/.zshenv -> /home/kristian/.dotfiles/zsh/zshenv
+Link exists ~/.zshkeybindings.zsh -> /home/kristian/.dotfiles/zsh/zshkeybindings.zsh
+Link exists ~/.zshrc -> /home/kristian/.dotfiles/zsh/zshrc
+Link exists ~/.zstyle.zsh -> /home/kristian/.dotfiles/zsh/zstyle.zsh
+Link exists ~/.config/zsh-patina/themes -> /home/kristian/.dotfiles/config/zsh-patina/themes
+Link exists ~/.config/zsh-patina/config.toml -> /home/kristian/.dotfiles/config/zsh-patina/config.toml
+Link exists ~/.config/oh-my-posh/omp.yaml -> /home/kristian/.dotfiles/config/oh-my-posh/omp.yaml
+Link exists ~/.config/oh-my-posh/claude.yaml -> /home/kristian/.dotfiles/config/oh-my-posh/claude.yaml
+Link exists ~/.config/eza/tokyonight.yaml -> /home/kristian/.dotfiles/config/eza/tokyonight.yaml
+Link exists ~/.config/eza/nord.yaml -> /home/kristian/.dotfiles/config/eza/nord.yaml
+Link exists ~/.config/eza/catppuccin-mocha.yaml -> /home/kristian/.dotfiles/config/eza/catppuccin-mocha.yaml
+Link exists ~/.config/eza/dracula.yaml -> /home/kristian/.dotfiles/config/eza/dracula.yaml
+Link exists ~/.config/eza/gruvbox-dark.yaml -> /home/kristian/.dotfiles/config/eza/gruvbox-dark.yaml
+Link exists ~/.config/eza/rose-pine.yaml -> /home/kristian/.dotfiles/config/eza/rose-pine.yaml
+Link exists ~/.config/eza/everforest.yaml -> /home/kristian/.dotfiles/config/eza/everforest.yaml
+Link exists ~/.config/vivid/themes -> /home/kristian/.dotfiles/config/vivid/themes
+Link exists ~/.config/vivid/colors.yaml -> /home/kristian/.dotfiles/config/vivid/colors.yaml
+Link exists ~/.config/bat/config -> /home/kristian/.dotfiles/config/bat/config
+Link exists ~/.config/bat/themes -> /home/kristian/.dotfiles/config/bat/themes
+Link exists ~/.config/glow/glow.yaml -> /home/kristian/.dotfiles/config/glow/glow.yaml
+Link exists ~/.config/lazyvim -> /home/kristian/.dotfiles/config/lazyvim
+All links have been set up
+sudo: begin subprocess
+Disables WiFi powersaving [cp config/wifi-powersave-off.conf /etc/NetworkManager/conf.d]
+sudo: end subprocess
+Installing submodules [git submodule update --init --recursive]
+Creating the .env file if it does not exist [touch ~/.env]
+All commands have been executed
+All tasks executed successfully
+Installing 3 packages. Please wait...
+Sync Explicit (1): dms-shell-1.6.3-2
+AUR Explicit (2): lucidglyph-0.16.0-2, greetd-dms-greeter-bin-2.0.0-1
+:: PKGBUILD up to date, skipping download: greetd-dms-greeter-bin
+:: PKGBUILD up to date, skipping download: lucidglyph
+  2 greetd-dms-greeter-bin           (Build Files Exist)
+  1 lucidglyph                       (Build Files Exist)
+==> Packages to cleanBuild?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==>
+  2 lucidglyph                       (Build Files Exist)
+  1 greetd-dms-greeter-bin           (Build Files Exist)
+==> Diffs to show?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==>
+==> Making package: greetd-dms-greeter-bin 2.0.0-1 (Fri Oct 23 20:43:31 2026)
+==> Retrieving sources...
+  -> Found LICENSE-2.0.0
+  -> Found README-2.0.0.md
+  -> Found tmpfiles-dms-greeter-2.0.0.conf
+  -> Found dms-niri-2.0.0.kdl
+  -> Found dms-hypr-2.0.0.lua
+  -> Found dms-greeter-completions-2.0.0.tar.gz
+  -> Found dms-greeter-x86_64-2.0.0.gz
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha256sums...
+    LICENSE-2.0.0 ... Passed
+    README-2.0.0.md ... Passed
+    tmpfiles-dms-greeter-2.0.0.conf ... Passed
+    dms-niri-2.0.0.kdl ... Passed
+    dms-hypr-2.0.0.lua ... Passed
+    dms-greeter-completions-2.0.0.tar.gz ... Passed
+==> Validating source_x86_64 files with sha256sums...
+    dms-greeter-x86_64-2.0.0.gz ... Passed
+==> Making package: lucidglyph 0.16.0-2 (Fri Oct 23 20:43:32 2026)
+==> Retrieving sources...
+  -> Found lucidglyph-0.16.0.zip
+  -> Found 59-curated-defaults.conf
+==> WARNING: Skipping verification of source file PGP signatures.
+==> Validating source files with sha512sums...
+    lucidglyph-0.16.0.zip ... Passed
+    59-curated-defaults.conf ... Passed
+:: (1/2) Parsing SRCINFO: greetd-dms-greeter-bin
+:: (2/2) Parsing SRCINFO: lucidglyph
+pub   ed25519 2026-10-01 [SC]
+      265281061734E45F2BF0489803E9CD3D5C5D378E
+uid           [ unknown] Victor Crist�v�o Queiroz Galv�o <victorcqueirozg@gmail.com>
+sub   cv25519 2026-10-01 [E]
+
+resolving dependencies...
+looking for conflicting packages...
+:: dms-shell-1.6.3-2 and dux-shell-2.0.0-1 are in conflict. Remove dux-shell? [y/N]
+error: unresolvable package conflicts detected
+error: failed to prepare transaction (conflicting dependencies)
+:: dms-shell-1.6.3-2 and dux-shell-2.0.0-1 are in conflict
+ -> error installing repo packages
+Installing "dms-shell". Please wait...
+Could not determine what happened with package dms-shell
+Could not install package 'dms-shell'
+Installing "greetd-dms-greeter-bin". Please wait...
+Could not determine what happened with package greetd-dms-greeter-bin
+Could not install package 'greetd-dms-greeter-bin'
+Installing "lucidglyph". Please wait...
+An error was encountered while executing action yay
+Action yay not handled
+Some tasks were not executed successfully
