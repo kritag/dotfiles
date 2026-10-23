@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# themeSwitch.sh <theme>           workstation/desktop: every tool in $HOME, GTK and kitty included
+# themeSwitch.sh --server <theme>  server, run as the repo owner: writes only .server-generated/, shared by all users
 DOCFONT="'Geist 11'"
 MONOFONT="'Geist Mono 11'"
 FONT="'Geist 11'"
@@ -6,6 +8,8 @@ FONT="'Geist 11'"
 export TINTY_FONT="$(tr -d "'" <<<"$FONT" | sed -E 's/ [0-9.]+$//')"
 export TINTY_MONOFONT="$(tr -d "'" <<<"$MONOFONT" | sed -E 's/ [0-9.]+$//')"
 TINTY_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/tinted-theming/tinty"
+
+server=; [[ ${1:-} == --server ]] && { server=1; shift; }
 
 # Per theme: tinty scheme, vivid, bat+delta, nvim, zsh-patina, kitty, gtk, eza
 case "$1" in
@@ -34,6 +38,27 @@ tokyo-night)
   echo "Invalid theme specified. Choose from: gruvbox catppuccin-mocha dracula everforest nord rose-pine tokyo-night" >&2
   exit 1 ;;
 esac
+
+if [[ $server ]]; then
+  set -euo pipefail
+  repo="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
+  gen="$repo/.server-generated"
+  mkdir -p "$gen/eza"
+  sed "s|@REPO@|$repo|g" "$repo/config/tinty-server.toml" >"$gen/tinty.toml"
+  tinty_server() { tinty --config "$gen/tinty.toml" --data-dir "$gen/tinty-data" "$@" </dev/null; }
+  [[ -d $gen/tinty-data/scheme-repos ]] || tinty_server sync >/dev/null
+  tinty_server build --quiet
+  tinty_server apply "base24-$tinty" >/dev/null
+
+  ln -sfn "$repo/config/eza/$eza.yaml" "$gen/eza/theme.yml"
+  cat >"$gen/theme.zsh" <<EOF
+export BAT_THEME="$bat" EZA_CONFIG_DIR="$gen/eza"
+export LS_COLORS="\$(vivid generate ${vivid/#\~\/.config\/vivid/$repo/config/vivid})"
+EOF
+  echo "$1" >"$gen/theme"
+  echo "server theme: $1"
+  exit
+fi
 
 # First run on a machine: fetch the scheme and template repos.
 [[ -d "$TINTY_DATA/scheme-repos" ]] || tinty sync

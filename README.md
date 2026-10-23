@@ -40,7 +40,6 @@ Available profiles in this repo:
 - `default`
 - `desktop`
 - `desktop_arch`
-- `server`
 - `server_fedora`
 - `workstation`
 - `workstation_arch`

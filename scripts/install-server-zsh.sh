@@ -3,7 +3,7 @@
 #  - clones the plugins that have no Fedora package into /opt/zsh-plugins, pinned to a tag
 #  - hooks zsh/server-global.zsh into /etc/zshrc (zsh reads it for every interactive shell)
 #  - removes the old bash hook
-#  - builds the fzf colours with tinty into .server-generated/, shared by all users
+#  - builds the shared theme (tinty colours, bat, eza, LS_COLORS) into .server-generated/
 #  - keeps the SSH_* variables through sudo
 set -euo pipefail
 
@@ -30,16 +30,12 @@ printf '# >>> dotfiles >>>\n[[ -r %q ]] && source %q\n# <<< dotfiles <<<\n' "$ho
 
 rm -f /etc/profile.d/dotfiles.sh
 
-# tinty runs as the repo owner so the generated files do not end up root-owned in the repo
-gen="$repo/.server-generated"
+# runs as the repo owner so the generated files do not end up root-owned in the repo;
+# the theme is the one last chosen with themeSwitch.sh --server, everforest on the first run
 owner=$(stat -c %U "$repo")
 as_owner() { sudo -H -u "$owner" "$@"; }
-as_owner mkdir -p "$gen"
-sed "s|@REPO@|$repo|g" "$repo/config/tinty-server.toml" | as_owner tee "$gen/tinty.toml" >/dev/null
-tinty_server() { as_owner tinty --config "$gen/tinty.toml" --data-dir "$gen/tinty-data" "$@" </dev/null; }
-tinty_server sync >/dev/null
-tinty_server build --quiet
-tinty_server apply "$(sed -n 's/^default-scheme *= *"\(.*\)"/\1/p' "$gen/tinty.toml")" >/dev/null
+theme=$(cat "$repo/.server-generated/theme" 2>/dev/null || echo everforest)
+as_owner "$repo/scripts/themeSwitch.sh" --server "$theme"
 
 # shared nvim data (plugins, Mason, parsers), written only by the repo owner; XDG_CONFIG_HOME points at the repo config
 install -d -o "$owner" /opt/nvim-data
