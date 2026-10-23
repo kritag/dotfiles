@@ -10,8 +10,8 @@ _PLUGINS=/opt/zsh-plugins
 
 # First shell for a user (and after server_user.conf.yaml changes or a re-run of the install): link the shared tool configs.
 _stamp=${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles-server-user
-[[ -w $HOME && ( ! -e $_stamp || ${_ZSH_DIR:h}/server_user.conf.yaml -nt $_stamp ||
-  ${_ZSH_DIR:h}/.server-generated/tinty.toml -nt $_stamp ) ]] &&
+[[ -w $HOME && (! -e $_stamp || ${_ZSH_DIR:h}/server_user.conf.yaml -nt $_stamp ||
+  ${_ZSH_DIR:h}/.server-generated/tinty.toml -nt $_stamp) ]] &&
   ${_ZSH_DIR:h}/scripts/bootstrap-server-user.sh >/dev/null 2>&1
 unset _stamp
 
@@ -30,8 +30,12 @@ export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 export ZSH_CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}
 export HISTFILE=$HOME/.zsh_history HISTSIZE=50000 SAVEHIST=50000
-[[ -d $HOME/.config/lazyvim ]] && export NVIM_APPNAME=lazyvimfor _f in /usr/libexec/lesspipe/lesspipe.sh /usr/bin/lesspipe.sh; do
-  [[ -x $_f ]] && { export LESSOPEN="|$_f %s"; break; }
+[[ -d $HOME/.config/lazyvim ]] && export NVIM_APPNAME=lazyvim
+for _f in /usr/libexec/lesspipe/lesspipe.sh /usr/bin/lesspipe.sh; do
+  [[ -x $_f ]] && {
+    export LESSOPEN="|$_f %s"
+    break
+  }
 done
 command -v vivid >/dev/null && export LS_COLORS="$(vivid generate ${_ZSH_DIR:h}/config/vivid/themes/everforest.yaml)"
 
@@ -42,7 +46,7 @@ source $_ZSH_DIR/aliases.zsh
 
 # Completion: the dump lives in the user's cache; fall back to no dump when $HOME is read-only.
 autoload -Uz compinit
-{ mkdir -p $ZSH_CACHE_DIR && compinit -d $ZSH_CACHE_DIR/zcompdump } 2>/dev/null || compinit -D
+{ mkdir -p $ZSH_CACHE_DIR && compinit -d $ZSH_CACHE_DIR/zcompdump; } 2>/dev/null || compinit -D
 
 [[ -f $_PLUGINS/fzf-tab/fzf-tab.plugin.zsh ]] && source $_PLUGINS/fzf-tab/fzf-tab.plugin.zsh
 [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] &&
@@ -51,7 +55,10 @@ autoload -Uz compinit
   source $_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 for _f in /usr/share/fzf/key-bindings.zsh /usr/share/fzf/shell/key-bindings.zsh; do
-  [[ -f $_f ]] && { source $_f; break; }
+  [[ -f $_f ]] && {
+    source $_f
+    break
+  }
 done
 
 [[ -r ${_ZSH_DIR:h}/.server-generated/fzf.sh ]] && source ${_ZSH_DIR:h}/.server-generated/fzf.sh
