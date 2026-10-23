@@ -10,9 +10,7 @@
     - shell:
         - [dnf copr enable bonvaffel/cli-tools -y]
         - [scripts/addusertodockergrp.sh]
-        - ['[ -d /opt/fzf-tab-completion ] || git clone --depth 1 https://github.com/lincheney/fzf-tab-completion /opt/fzf-tab-completion', "Install fzf-tab-completion for bash"]
-    - link:
-        /etc/profile.d/dotfiles.sh: bash/server-global.bash
+        - [scripts/install-server-zsh.sh, "Install shared zsh setup for all users"]
     - yum:
         - bash-completion
         - bat
@@ -55,3 +53,5 @@
         - yq
         - zoxide
         - zsh
+        - zsh-autosuggestions
+        - zsh-patina

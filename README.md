@@ -47,13 +47,18 @@ Available profiles in this repo:
 
 ## Server setup
 
-Running `./install server_fedora` installs packages and symlinks
-`bash/server-global.bash` into `/etc/profile.d/dotfiles.sh`, which is sourced
-for all bash users automatically. Users get aliases, env vars, fzf history
-search, fzf Tab completion, and a prompt with `user@host cwd` — no per-user
-setup required.
+Running `./install server_fedora` installs packages and sets up one shared zsh
+for every user: `zsh/server-global.zsh` is hooked into `/etc/zshrc`, so any
+interactive zsh (a login shell or `sudo -u immich zsh`) gets the aliases,
+keybindings, completion, plugins and the oh-my-posh prompt. Nothing is cloned
+per user. Plugins without a Fedora package live in `/opt/zsh-plugins`, pinned to
+a tag in `scripts/install-server-zsh.sh`. Users with their own symlinked
+`~/.zshrc` (a full dotfiles install) and root keep their own setup.
 
-Clone to `/opt/dotfiles` so the system symlink isn't tied to any user's home:
+Users still log in with bash until you switch them: `sudo chsh -s /usr/bin/zsh <user>`.
+Service users with a `nologin` shell need nothing.
+
+Clone to `/opt/dotfiles` so the `/etc/zshrc` hook isn't tied to any user's home:
 
 ```bash
 sudo mkdir /opt/dotfiles && sudo chown $USER /opt/dotfiles
@@ -73,11 +78,6 @@ cd /opt/dotfiles && git pull && ./install server_fedora
 ```
 
 Root is excluded automatically — the config skips UID 0.
-
-**Migrate zsh history to bash for a user:**
-```bash
-sed 's/^: [0-9]*:[0-9]*;//' ~/.zsh_history | strings >> ~/.bash_history
-```
 
 ## Notes
 

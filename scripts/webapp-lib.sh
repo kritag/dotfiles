@@ -31,12 +31,13 @@ fetch_icon() {
 
   [[ -f "$icon_png" ]] && return 0
 
-  if curl -fsSL "https://icons.duckduckgo.com/ip3/${domain}.ico" -o "$tmp_ico"; then
-    magick "${tmp_ico}[0]" "$icon_png"
+  if curl -fsSL "https://icons.duckduckgo.com/ip3/${domain}.ico" -o "$tmp_ico" &&
+    magick "${tmp_ico}[0]" "$icon_png"; then
     rm -f "$tmp_ico"
     return 0
   fi
 
+  rm -f "$tmp_ico"
   return 1
 }
 
