@@ -8,6 +8,12 @@
 _ZSH_DIR=${0:A:h}
 _PLUGINS=/opt/zsh-plugins
 
+# First shell for a user (and after server_user.conf.yaml changes): link the shared tool configs.
+_stamp=${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles-server-user
+[[ -w $HOME && ( ! -e $_stamp || ${_ZSH_DIR:h}/server_user.conf.yaml -nt $_stamp ) ]] &&
+  ${_ZSH_DIR:h}/scripts/bootstrap-server-user.sh >/dev/null 2>&1
+unset _stamp
+
 export EDITOR=nvim MANPAGER="nvim +Man!" SYSTEMD_EDITOR=nvim SYSTEMD_PAGER=
 export BAT_PAGER="less -R" LESS="-IRs" COLORTERM=truecolor
 export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
