@@ -58,6 +58,7 @@
     - [systemctl --user enable unlock-keyring.service]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
     - [fc-cache -fv]
+    - [scripts/bootstrap-workstation-webapps.sh, "Create webapp launchers"]
 - sudo:
     - link:
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
