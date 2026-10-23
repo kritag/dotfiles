@@ -1,13 +1,12 @@
 - plugins:
     - dotbot-yay
-- yay:
+- pacman:
     - archlinux-contrib
     - argocd
     - autoconf
     - base-devel
     - bat
     - bat-extras
-    - bibata-cursor-theme-bin
     - bluez
     - bluez-utils
     - brightnessctl
@@ -17,34 +16,24 @@
     - cpio
     - cups-pk-helper
     - dmidecode
-    - dms-shell-bin
     - docker
     - docker-compose
-    - downgrade
-    - dracula-gtk-theme
-    - dracula-icons-theme
     - duf
-    - evince-no-gnome
     - eza
     - fastfetch
     - fd
     - ffmpeg
     - file-roller
-    - flux-bin
-    - fwupd
     - fzf
+    - fwupd
     - git
     - git-delta
     - github-cli
-    - github-copilot-cli
     - glow
     - gnome-calculator
     - gnome-keyring
     - gnome-text-editor
     - go-yq
-    - gpu-screen-recorder-gtk
-    - greetd-dms-greeter-bin
-    - grimblast-git
     - gvfs-smb
     - helm
     - hyprland
@@ -52,16 +41,12 @@
     - inotify-tools
     - intel-media-driver
     - jq
-    - k9s-sbanka-bin
     - keepassxc
-    - keybase-gui
-    - kimageformats
     - kitty
+    - kimageformats
     - krew
-    - kubecolor
     - kubeconform
     - kubectl
-    - kubectl-view-secret-bin
     - kubectx
     - kubeseal
     - lazygit
@@ -72,12 +57,9 @@
     - libva-intel-driver
     - libva-utils
     - loupe
-    - lucidglyph
     - make
     - man-db
     - mangohud
-    - mdatp-bin
-    - microsoft-edge-stable-bin
     - minikube
     - mokutil
     - mpv
@@ -85,35 +67,26 @@
     - networkmanager
     - noto-fonts-emoji
     - obs-studio
-    - obsidian-bin
-    - oh-my-posh-bin
     - openbsd-netcat
-    - openshift-client-bin
     - pacman-contrib
-    - papirus-folders
     - papirus-icon-theme
     - playerctl
     - plymouth
-    - plymouth-theme-archlinux
     - power-profiles-daemon
     - procs
-    - pulsecontrol-git
     - python
     - python-pip
     - python-pipx
     - qbittorrent
     - qt6-multimedia
-    - quickshell-git
     - reflector
     - ripgrep
-    - sbctl
     - seahorse
-    - slack-desktop-wayland
+    - sbctl
     - snapper
     - socat
     - solaar
     - sops
-    - spicetify-cli
     - spotify-launcher
     - sqlite
     - sshfs
@@ -126,7 +99,6 @@
     - thunar
     - thunar-archive-plugin
     - thunar-volman
-    - tinty-git
     - tree-sitter-cli
     - ttf-nerd-fonts-symbols
     - unzip
@@ -136,11 +108,40 @@
     - vulkan-intel
     - wget
     - wl-clipboard
-    - xdg-desktop-portal
     - xdg-desktop-portal-gtk
     - xdg-desktop-portal-hyprland
+    - xdg-desktop-portal
     - xdg-user-dirs
-    - zen-browser-bin
     - zoxide
     - zsh
+- yay:
+    - bibata-cursor-theme-bin
+    - dms-shell-bin
+    - downgrade
+    - dracula-gtk-theme
+    - dracula-icons-theme
+    - evince-no-gnome
+    - flux-bin
+    - github-copilot-cli
+    - gpu-screen-recorder-gtk
+    - grimblast-git
+    - greetd-dms-greeter-bin
+    - k9s-sbanka-bin
+    - keybase-gui
+    - kubecolor
+    - kubectl-view-secret-bin
+    - lucidglyph
+    - mdatp-bin
+    - microsoft-edge-stable-bin
+    - obsidian-bin
+    - oh-my-posh-bin
+    - openshift-client-bin
+    - papirus-folders
+    - plymouth-theme-archlinux
+    - pulsecontrol-git
+    - quickshell-git
+    - spicetify-cli
+    - slack-desktop-wayland
+    - tinty-git
+    - zen-browser-bin
     - zsh-patina-bin

@@ -1,11 +1,9 @@
 - plugins:
     - dotbot-yay
-- yay:
+- pacman:
     - archlinux-contrib
-    - bambustudio-appimage
     - bat
     - bat-extras
-    - bibata-cursor-theme-bin
     - bluez
     - bluez-utils
     - btop
@@ -15,12 +13,8 @@
     - cups-pk-helper
     - discord
     - dmidecode
-    - dms-shell
-    - downgrade
-    - dracula-gtk-theme
-    - dracula-icons-theme
+    - dux-shell
     - duf
-    - evince-no-gnome
     - eza
     - fastfetch
     - fd
@@ -28,7 +22,6 @@
     - file-roller
     - fwupd
     - fzf
-    - game-devices-udev
     - gamemode
     - gamescope
     - git
@@ -39,15 +32,10 @@
     - gnome-keyring
     - gnome-text-editor
     - go-yq
-    - gpu-screen-recorder-gtk
-    - greetd-dms-greeter-bin
-    - grimblast-git
     - grub-btrfs
-    - gvfs-mtp
     - gvfs-smb
-    - hyprfm-git
+    - gvfs-mtp
     - hyprland
-    - hyprland-preview-share-picker-git
     - hyprlock
     - inotify-tools
     - jq
@@ -65,7 +53,6 @@
     - libnewt
     - libreoffice-fresh
     - loupe
-    - lucidglyph
     - lutris
     - make
     - man-db
@@ -78,32 +65,24 @@
     - noto-fonts-emoji
     - npm
     - obs-studio
-    - obsidian-bin
-    - oh-my-posh-bin
     - os-prober
     - pacman-contrib
-    - papirus-folders
     - papirus-icon-theme
     - playerctl
     - plymouth
     - plymouth-theme-archlinux
     - power-profiles-daemon
     - procs
-    - protonhax
-    - protonplus
     - protontricks
-    - pulsecontrol-git
     - python
     - qbittorrent
     - qt6-multimedia
-    - quickshell-git
     - ripgrep
     - rocm-smi-lib
     - seahorse
     - snapper
     - socat
     - solaar
-    - spicetify-cli
     - spotify-launcher
     - sqlite
     - steam
@@ -113,7 +92,6 @@
     - thunar
     - thunar-archive-plugin
     - thunar-volman
-    - tinty-git
     - tree-sitter-cli
     - ttf-nerd-fonts-symbols
     - unzip
@@ -122,16 +100,39 @@
     - vivid
     - vulkan-radeon
     - vulkan-tools
-    - wget
     - wireless-regdb
+    - wget
     - wl-clipboard
     - xdg-desktop-portal
     - xdg-desktop-portal-gtk
     - xdg-desktop-portal-hyprland
     - xdg-user-dirs
     - yt-dlp
-    - zen-browser-bin
     - zip
     - zoxide
     - zsh
+- yay:
+    - bambustudio-appimage
+    - bibata-cursor-theme-bin
+    - downgrade
+    - dracula-gtk-theme
+    - dracula-icons-theme
+    - evince-no-gnome
+    - game-devices-udev
+    - gpu-screen-recorder-gtk
+    - greetd-dms-greeter-bin
+    - grimblast-git
+    - hyprfm-git
+    - hyprland-preview-share-picker-git
+    - lucidglyph
+    - obsidian-bin
+    - oh-my-posh-bin
+    - papirus-folders
+    - protonhax
+    - protonplus
+    - pulsecontrol-git
+    - quickshell-git
+    - spicetify-cli
+    - tinty-git
+    - zen-browser-bin
     - zsh-patina-bin
