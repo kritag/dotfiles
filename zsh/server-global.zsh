@@ -8,13 +8,16 @@
 _ZSH_DIR=${0:A:h}
 _PLUGINS=/opt/zsh-plugins
 
-# First shell for a user (and after server_user.conf.yaml changes): link the shared tool configs.
+# First shell for a user (and after server_user.conf.yaml changes or a re-run of the install): link the shared tool configs.
 _stamp=${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles-server-user
-[[ -w $HOME && ( ! -e $_stamp || ${_ZSH_DIR:h}/server_user.conf.yaml -nt $_stamp ) ]] &&
+[[ -w $HOME && ( ! -e $_stamp || ${_ZSH_DIR:h}/server_user.conf.yaml -nt $_stamp ||
+  ${_ZSH_DIR:h}/.server-generated/tinty.toml -nt $_stamp ) ]] &&
   ${_ZSH_DIR:h}/scripts/bootstrap-server-user.sh >/dev/null 2>&1
 unset _stamp
 
 export EDITOR=nvim MANPAGER="nvim +Man!" SYSTEMD_EDITOR=nvim SYSTEMD_PAGER=
+export GLOW_STYLE=$HOME/.config/glow/colors.json
+export LG_CONFIG_FILE=$HOME/.config/lazygit/config.yaml,$HOME/.config/lazygit/colors.yaml
 export BAT_PAGER="less -R" LESS="-IRs" COLORTERM=truecolor
 export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,node_modules,build,dist,vendor} --type f --type l --hidden $FD_OPTIONS"
@@ -47,6 +50,7 @@ for _f in /usr/share/fzf/key-bindings.zsh /usr/share/fzf/shell/key-bindings.zsh;
   [[ -f $_f ]] && { source $_f; break; }
 done
 
+[[ -r ${_ZSH_DIR:h}/.server-generated/fzf.sh ]] && source ${_ZSH_DIR:h}/.server-generated/fzf.sh
 source $_ZSH_DIR/zshkeybindings.zsh
 source $_ZSH_DIR/zstyle.zsh
 bindkey '^[[A' history-substring-search-up

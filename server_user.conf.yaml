@@ -1,10 +1,10 @@
 # Per-user links on a server, run as that user by scripts/bootstrap-server-user.sh.
 # Files are linked one by one, so each tool keeps a writable directory in $HOME.
+# No backup/force: a file a user already has (a gitconfig with their identity) is left alone.
 - defaults:
     link:
       relink: true
       create: true
-      backup: true
 - link:
     ~/.config/bat:
       path: config/bat/*
@@ -22,6 +22,13 @@
     ~/.config/zsh-patina:
       path: config/zsh-patina/*
       glob: true
+    ~/.lessfilter: config/lessfilter
+    ~/.gitconfig: config/gitconfig
+    ~/.theme.gitconfig: .server-generated/delta.gitconfig
+    ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
+    ~/.config/lazygit/colors.yaml: .server-generated/lazygit-colors.yaml
+    ~/.config/glow/glow.yaml: config/glow/glow.yaml
+    ~/.config/glow/colors.json: .server-generated/glow-colors.json
 - shell:
     - [ln -sfn everforest.yaml ~/.config/eza/theme.yml, Set the eza theme]
     - [bat cache --build, Index the bat themes]
