@@ -117,10 +117,10 @@
     - downgrade
     - dracula-gtk-theme
     - dracula-icons-theme
+    - dux-greeter-bin
     - evince-no-gnome
     - game-devices-udev
     - gpu-screen-recorder-gtk
-    - greetd-dms-greeter-bin
     - grimblast-git
     - hyprfm-git
     - hyprland-preview-share-picker-git
