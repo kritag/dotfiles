@@ -1,6 +1,7 @@
 return {
   "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
+  enabled = vim.uv.fs_stat(vim.fn.expand("~/documents/obsidian-notes")) ~= nil, -- no vault on servers
   lazy = true,
   ft = "markdown",
   opts = {
