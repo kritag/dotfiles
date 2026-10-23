@@ -3,6 +3,7 @@
 #  - clones the plugins that have no Fedora package into /opt/zsh-plugins, pinned to a tag
 #  - hooks zsh/server-global.zsh into /etc/zshrc (zsh reads it for every interactive shell)
 #  - removes the old bash hook
+#  - keeps the SSH_* variables through sudo
 set -euo pipefail
 
 repo="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
@@ -27,3 +28,10 @@ sed -i '/^# >>> dotfiles >>>$/,/^# <<< dotfiles <<<$/d' /etc/zshrc
 printf '# >>> dotfiles >>>\n[[ -r %q ]] && source %q\n# <<< dotfiles <<<\n' "$hook" "$hook" >>/etc/zshrc
 
 rm -f /etc/profile.d/dotfiles.sh
+
+# sudo drops SSH_CONNECTION, which the prompt reads to show the SSH icon and user name
+tmp=$(mktemp)
+trap 'rm -f "$tmp"' EXIT
+echo 'Defaults env_keep += "SSH_CONNECTION SSH_CLIENT SSH_TTY"' >"$tmp"
+visudo -cf "$tmp" >/dev/null
+install -m 0440 "$tmp" /etc/sudoers.d/90-dotfiles-ssh-env

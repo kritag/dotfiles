@@ -1,0 +1,27 @@
+# Per-user links on a server, run as that user by scripts/bootstrap-server-user.sh.
+# Files are linked one by one, so each tool keeps a writable directory in $HOME.
+- defaults:
+    link:
+      relink: true
+      create: true
+      backup: true
+- link:
+    ~/.config/bat:
+      path: config/bat/*
+      glob: true
+    ~/.config/btop:
+      path: config/btop/*
+      glob: true
+    ~/.config/eza:
+      path: config/eza/*
+      glob: true
+    ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc
+    ~/.config/lazyvim:
+      path: config/lazyvim/*
+      glob: true
+    ~/.config/zsh-patina:
+      path: config/zsh-patina/*
+      glob: true
+- shell:
+    - [ln -sfn everforest.yaml ~/.config/eza/theme.yml, Set the eza theme]
+    - [bat cache --build, Index the bat themes]
