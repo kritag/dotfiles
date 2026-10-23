@@ -56,6 +56,10 @@ source $_ZSH_DIR/zstyle.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
+compdef _ssh_hosts sshpass s sr
+compdef _journalctl jctl
+compdef _zr zr
 command -v zsh-patina >/dev/null && eval "$(zsh-patina activate)"
 command -v oh-my-posh >/dev/null && eval "$(oh-my-posh init zsh --config ${_ZSH_DIR:h}/config/oh-my-posh/omp.yaml)"
 unset _f
