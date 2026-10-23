@@ -3,6 +3,7 @@
 #  - clones the plugins that have no Fedora package into /opt/zsh-plugins, pinned to a tag
 #  - hooks zsh/server-global.zsh into /etc/zshrc (zsh reads it for every interactive shell)
 #  - removes the old bash hook
+#  - builds the fzf colours with tinty into .server-generated/, shared by all users
 #  - keeps the SSH_* variables through sudo
 set -euo pipefail
 
@@ -28,6 +29,17 @@ sed -i '/^# >>> dotfiles >>>$/,/^# <<< dotfiles <<<$/d' /etc/zshrc
 printf '# >>> dotfiles >>>\n[[ -r %q ]] && source %q\n# <<< dotfiles <<<\n' "$hook" "$hook" >>/etc/zshrc
 
 rm -f /etc/profile.d/dotfiles.sh
+
+# tinty runs as the repo owner so the generated files do not end up root-owned in the repo
+gen="$repo/.server-generated"
+owner=$(stat -c %U "$repo")
+as_owner() { sudo -H -u "$owner" "$@"; }
+as_owner mkdir -p "$gen"
+sed "s|@REPO@|$repo|g" "$repo/config/tinty-server.toml" | as_owner tee "$gen/tinty.toml" >/dev/null
+tinty_server() { as_owner tinty --config "$gen/tinty.toml" --data-dir "$gen/tinty-data" "$@" </dev/null; }
+tinty_server sync >/dev/null
+tinty_server build --quiet
+tinty_server apply "$(sed -n 's/^default-scheme *= *"\(.*\)"/\1/p' "$gen/tinty.toml")" >/dev/null
 
 # sudo drops SSH_CONNECTION, which the prompt reads to show the SSH icon and user name
 tmp=$(mktemp)

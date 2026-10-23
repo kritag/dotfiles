@@ -29,6 +29,8 @@
         - git
         - git-delta
         - gitleaks
+        - glow
+        - lazygit
         - less
         - lesspipe
         - make

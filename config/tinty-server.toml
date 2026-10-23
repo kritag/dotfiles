@@ -1,0 +1,37 @@
+# tinty config for the server profile: one shared build instead of one per user.
+# Each hook writes into .server-generated/, which server_user.conf.yaml links into every home.
+# @REPO@ becomes the clone path in scripts/install-server-zsh.sh, because tinty does not
+# expand variables in paths.
+shell = "bash -c '{}'"
+default-scheme = "base24-everforest-dark-hard"
+
+[schemes]
+path = "@REPO@/config/tinty/schemes"
+
+[[items]]
+name = "fzf"
+path = "@REPO@/config/tinty/templates/fzf"
+themes-dir = "sh"
+supported-systems = ["base24"]
+hook = "cp -f \"$TINTY_THEME_FILE_PATH\" @REPO@/.server-generated/fzf.sh"
+
+[[items]]
+name = "glow"
+path = "@REPO@/config/tinty/templates/glow"
+themes-dir = "themes"
+supported-systems = ["base24"]
+hook = "cp -f \"$TINTY_THEME_FILE_PATH\" @REPO@/.server-generated/glow-colors.json"
+
+[[items]]
+name = "lazygit"
+path = "@REPO@/config/tinty/templates/lazygit"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "cp -f \"$TINTY_THEME_FILE_PATH\" @REPO@/.server-generated/lazygit-colors.yaml"
+
+[[items]]
+name = "delta"
+path = "@REPO@/config/tinty/templates/delta"
+themes-dir = "theme"
+supported-systems = ["base24"]
+hook = "cp -f \"$TINTY_THEME_FILE_PATH\" @REPO@/.server-generated/delta.gitconfig && python3 @REPO@/scripts/delta-tint.py @REPO@/.server-generated/delta.gitconfig"
