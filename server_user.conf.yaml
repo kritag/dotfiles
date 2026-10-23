@@ -12,9 +12,6 @@
     ~/.config/btop:
       path: config/btop/*
       glob: true
-    ~/.config/eza:
-      path: config/eza/*
-      glob: true
     ~/.config/fastfetch/config.jsonc: config/fastfetch/config.jsonc
     ~/.config/lazyvim:
       path: config/lazyvim/*
@@ -31,5 +28,4 @@
     ~/.config/glow/colors.json: .server-generated/glow-colors.json
 - shell:
     - ["[ -e ~/.zshenv ] || [ -e ~/.zprofile ] || [ -e ~/.zshrc ] || [ -e ~/.zlogin ] || echo '# shared config: /etc/zshrc -> zsh/server-global.zsh' > ~/.zshrc", Stop the zsh new-user wizard]
-    - [ln -sfn everforest.yaml ~/.config/eza/theme.yml, Set the eza theme]
     - [bat cache --build, Index the bat themes]
