@@ -10,7 +10,6 @@
     - shell:
         - [dnf copr enable bonvaffel/cli-tools -y]
         - [scripts/addusertodockergrp.sh]
-        - [scripts/install-server-zsh.sh, "Install shared zsh setup for all users"]
     - yum:
         - bash-completion
         - bat
@@ -58,3 +57,5 @@
         - zsh
         - zsh-autosuggestions
         - zsh-patina
+    - shell:
+        - [scripts/install-server-zsh.sh, "Install shared zsh setup for all users"]
