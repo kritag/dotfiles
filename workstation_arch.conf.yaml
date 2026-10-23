@@ -1,149 +1,146 @@
 - plugins:
     - dotbot-yay
-    - dotbot-omnipkg
 - yay:
+    - archlinux-contrib
+    - argocd
+    - autoconf
+    - base-devel
+    - bat
+    - bat-extras
     - bibata-cursor-theme-bin
+    - bluez
+    - bluez-utils
+    - brightnessctl
+    - btop
+    - cava
+    - chafa
+    - cpio
+    - cups-pk-helper
+    - dmidecode
     - dms-shell-bin
+    - docker
+    - docker-compose
     - downgrade
     - dracula-gtk-theme
     - dracula-icons-theme
+    - duf
     - evince-no-gnome
+    - eza
+    - fastfetch
+    - fd
+    - ffmpeg
+    - file-roller
     - flux-bin
+    - fwupd
+    - fzf
+    - git
+    - git-delta
+    - github-cli
     - github-copilot-cli
+    - glow
+    - gnome-calculator
+    - gnome-keyring
+    - gnome-text-editor
+    - go-yq
     - gpu-screen-recorder-gtk
-    - grimblast-git
     - greetd-dms-greeter-bin
+    - grimblast-git
+    - gvfs-smb
+    - helm
+    - hyprland
+    - hyprlock
+    - inotify-tools
+    - intel-media-driver
+    - jq
     - k9s-sbanka-bin
+    - keepassxc
     - keybase-gui
+    - kimageformats
+    - kitty
+    - krew
     - kubecolor
+    - kubeconform
+    - kubectl
     - kubectl-view-secret-bin
+    - kubectx
+    - kubeseal
+    - lazygit
+    - less
+    - lesspipe
+    - libnewt
+    - libreoffice-fresh
+    - libva-intel-driver
+    - libva-utils
+    - loupe
     - lucidglyph
+    - make
+    - man-db
+    - mangohud
     - mdatp-bin
     - microsoft-edge-stable-bin
+    - minikube
+    - mokutil
+    - mpv
+    - neovim
+    - networkmanager
+    - noto-fonts-emoji
+    - obs-studio
     - obsidian-bin
     - oh-my-posh-bin
+    - openbsd-netcat
     - openshift-client-bin
+    - pacman-contrib
     - papirus-folders
+    - papirus-icon-theme
+    - playerctl
+    - plymouth
     - plymouth-theme-archlinux
+    - power-profiles-daemon
+    - procs
     - pulsecontrol-git
+    - python
+    - python-pip
+    - python-pipx
+    - qbittorrent
+    - qt6-multimedia
     - quickshell-git
-    - spicetify-cli
+    - reflector
+    - ripgrep
+    - sbctl
+    - seahorse
     - slack-desktop-wayland
+    - snapper
+    - socat
+    - solaar
+    - sops
+    - spicetify-cli
+    - spotify-launcher
+    - sqlite
+    - sshfs
+    - sshpass
+    - sshuttle
+    - stern
+    - systemd-resolvconf
+    - tealdeer
+    - terminus-font
+    - thunar
+    - thunar-archive-plugin
+    - thunar-volman
     - tinty-git
+    - tree-sitter-cli
+    - ttf-nerd-fonts-symbols
+    - unzip
+    - uwsm
+    - vim
+    - vivid
+    - vulkan-intel
+    - wget
+    - wl-clipboard
+    - xdg-desktop-portal
+    - xdg-desktop-portal-gtk
+    - xdg-desktop-portal-hyprland
+    - xdg-user-dirs
     - zen-browser-bin
+    - zoxide
+    - zsh
     - zsh-patina-bin
-- omnipkg:
-    - install:
-        - archlinux-contrib
-        - argocd
-        - autoconf
-        - base-devel
-        - bat
-        - bat-extras
-        - bluez
-        - bluez-utils
-        - brightnessctl
-        - btop
-        - cava
-        - chafa
-        - cpio
-        - cups-pk-helper
-        - dmidecode
-        - docker
-        - docker-compose
-        - duf
-        - eza
-        - fastfetch
-        - fd
-        - ffmpeg
-        - file-roller
-        - fzf
-        - fwupd
-        - git
-        - git-delta
-        - github-cli
-        - glow
-        - gnome-calculator
-        - gnome-keyring
-        - gnome-text-editor
-        - go-yq
-        - gvfs-smb
-        - helm
-        - hyprland
-        - hyprlock
-        - inotify-tools
-        - intel-media-driver
-        - jq
-        - keepassxc
-        - kitty
-        - kimageformats
-        - krew
-        - kubeconform
-        - kubectl
-        - kubectx
-        - kubeseal
-        - lazygit
-        - less
-        - lesspipe
-        - libnewt
-        - libreoffice-fresh
-        - libva-intel-driver
-        - libva-utils
-        - loupe
-        - make
-        - man-db
-        - mangohud
-        - minikube
-        - mokutil
-        - mpv
-        - neovim
-        - networkmanager
-        - noto-fonts-emoji
-        - obs-studio
-        - openbsd-netcat
-        - pacman-contrib
-        - papirus-icon-theme
-        - playerctl
-        - plymouth
-        - power-profiles-daemon
-        - procs
-        - python
-        - python-pip
-        - python-pipx
-        - qbittorrent
-        - qt6-multimedia
-        - reflector
-        - ripgrep
-        - seahorse
-        - sbctl
-        - snapper
-        - socat
-        - solaar
-        - sops
-        - spotify-launcher
-        - sqlite
-        - sshfs
-        - sshpass
-        - sshuttle
-        - stern
-        - systemd-resolvconf
-        - tealdeer
-        - terminus-font
-        - thunar
-        - thunar-archive-plugin
-        - thunar-volman
-        - tree-sitter-cli
-        - ttf-nerd-fonts-symbols
-        - unzip
-        - uwsm
-        - vim
-        - vivid
-        - vulkan-intel
-        - wget
-        - wl-clipboard
-        - xdg-desktop-portal-gtk
-        - xdg-desktop-portal-hyprland
-        - xdg-desktop-portal
-        - xdg-user-dirs
-        - zoxide
-        - zsh
