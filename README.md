@@ -15,8 +15,9 @@ Some profiles also rely on package manager plugins:
 
 ## Install
 
-The installer always runs `default.conf.yaml` first, then any profile names you
-pass (without the `.conf.yaml` suffix).
+The installer runs `default.conf.yaml` first, then any profile names you pass
+(without the `.conf.yaml` suffix). Server profiles (names starting with `server`)
+skip `default`: servers use the shared setup below, with no workstation zsh links.
 
 Examples:
 

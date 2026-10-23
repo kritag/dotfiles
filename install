@@ -14,7 +14,12 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive # dotbot plugins must exist before any config loads
 
-configs=("${DEFAULT_CONFIG_PREFIX}" "$@")
+# default.conf.yaml is the workstation shell setup; server profiles use the shared server one instead.
+if [[ "${1:-}" == server* ]]; then
+  configs=("$@")
+else
+  configs=("${DEFAULT_CONFIG_PREFIX}" "$@")
+fi
 
 for conf in "${configs[@]}"; do
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \

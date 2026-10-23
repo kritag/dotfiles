@@ -15,6 +15,11 @@ _stamp=${XDG_STATE_HOME:-$HOME/.local/state}/dotfiles-server-user
   ${_ZSH_DIR:h}/scripts/bootstrap-server-user.sh >/dev/null 2>&1
 unset _stamp
 
+for _f in $HOME/.local/bin $HOME/bin $HOME/.cargo/bin; do
+  [[ -d $_f && ${path[(Ie)$_f]} -eq 0 ]] && path=($_f $path)
+done
+[[ -r $HOME/.env ]] && source $HOME/.env # s/sr aliases read SSH_PASSWORD from here
+
 export EDITOR=nvim MANPAGER="nvim +Man!" SYSTEMD_EDITOR=nvim SYSTEMD_PAGER=
 export GLOW_STYLE=$HOME/.config/glow/colors.json
 export LG_CONFIG_FILE=$HOME/.config/lazygit/config.yaml,$HOME/.config/lazygit/colors.yaml
