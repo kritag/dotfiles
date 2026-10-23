@@ -31,6 +31,8 @@ export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 export ZSH_CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}
 export HISTFILE=$HOME/.zsh_history HISTSIZE=50000 SAVEHIST=50000
 [[ -d $HOME/.config/lazyvim ]] && export NVIM_APPNAME=lazyvim
+# plugins, Mason tools and parsers are installed once by scripts/install-server-zsh.sh
+[[ -d /opt/nvim-data ]] && alias nvim='XDG_DATA_HOME=/opt/nvim-data nvim'
 for _f in /usr/libexec/lesspipe/lesspipe.sh /usr/bin/lesspipe.sh; do
   [[ -x $_f ]] && { export LESSOPEN="|$_f %s"; break; }
 done
