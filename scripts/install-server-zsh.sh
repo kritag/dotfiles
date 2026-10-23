@@ -43,6 +43,9 @@ tinty_server apply "$(sed -n 's/^default-scheme *= *"\(.*\)"/\1/p' "$gen/tinty.t
 
 # shared nvim data (plugins, Mason, parsers), written only by the repo owner; XDG_CONFIG_HOME points at the repo config
 install -d -o "$owner" /opt/nvim-data
+# a wrapper, not an alias: $EDITOR, git and sudoedit skip aliases and would fill ~/.local/share
+printf '#!/bin/sh\nXDG_DATA_HOME=/opt/nvim-data exec /usr/bin/nvim "$@"\n' >/usr/local/bin/nvim
+chmod 0755 /usr/local/bin/nvim
 as_owner env XDG_DATA_HOME=/opt/nvim-data XDG_CONFIG_HOME="$repo/config" NVIM_APPNAME=lazyvim \
   nvim --headless "+Lazy! sync" +qa </dev/null || echo "nvim plugin sync failed, rerun this script" >&2
 
