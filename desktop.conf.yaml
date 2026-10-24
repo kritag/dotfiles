@@ -11,6 +11,9 @@
     ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
     ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
     ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
+    ~/.config/dms/settings.json: config/dms/settings.json
+    ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json
+    ~/.config/dms/themes/everforest/theme.json: config/dms/themes/everforest/theme.json
     ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf

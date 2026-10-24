@@ -11,6 +11,9 @@
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/hypr/autostart.lua: config/hypr-workstation/autostart.lua
+    ~/.config/dms/settings.json: config/dms/settings.json
+    ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json
+    ~/.config/dms/themes/everforest/theme.json: config/dms/themes/everforest/theme.json
     ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
