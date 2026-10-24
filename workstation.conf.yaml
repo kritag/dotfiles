@@ -13,7 +13,6 @@
     ~/.config/hypr/autostart.lua: config/hypr-workstation/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings.json
     ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json
-    ~/.config/dms/themes/everforest/theme.json: config/dms/themes/everforest/theme.json
     ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
@@ -62,6 +61,7 @@
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
     - [fc-cache -fv]
     - [scripts/bootstrap-workstation-webapps.sh, "Create webapp launchers"]
+    - [scripts/bootstrap-dms-themes.sh, "Install DMS themes"]
 - sudo:
     - link:
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
