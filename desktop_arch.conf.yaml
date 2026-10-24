@@ -1,5 +1,5 @@
 - plugins:
-    - dotbot-yay
+    - plugins/yay.py
 - pacman:
     - archlinux-contrib
     - bat
