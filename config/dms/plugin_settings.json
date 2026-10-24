@@ -11,7 +11,7 @@
     "enabled": true,
     "variants": [
       {
-        "icon": "terminal",
+        "icon": "bluetooth_audio",
         "displayText": "",
         "displayCommand": "",
         "clickCommand": "bluetoothctl connect 50:C2:75:2B:95:0E && wpctl set-default $(wpctl status | rg 'Jabra Elite 10.*\\[vol' | rg -oP '\\d+' | head -1)",
@@ -72,5 +72,26 @@
     ],
     "bandCount": 64,
     "sensitivity": 155
+  },
+  "lyricsOnPanel": {
+    "enabled": true
+  },
+  "liveLyrics": {
+    "enabled": true,
+    "musixmatchToken": "00000000000000000000000000000000000000000000000000000000"
+  },
+  "amdGpuMonitor": {
+    "enabled": true,
+    "variants": [
+      {
+        "gpuPci": "0000:2f:00.0",
+        "gpuType": "dGPU",
+        "originalName": "AMD Radeon RX 7800 XT",
+        "description": "Monitor your discrete AMD Radeon RX 7800 XT",
+        "icon": "memory",
+        "id": "variant_1791660342937",
+        "name": "AMD Radeon RX 7800 XT"
+      }
+    ]
   }
 }
