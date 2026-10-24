@@ -4,7 +4,8 @@
   "customThemeFile": "~/.config/dms/themes/everforest/theme.json",
   "registryThemeVariants": {
     "everforest": "hard",
-    "gruvboxMaterial": "hard"
+    "gruvboxMaterial": "hard",
+    "rosePine": "moon"
   },
   "matugenScheme": "scheme-content",
   "popupTransparency": 0.95,
@@ -744,5 +745,6 @@
     }
   },
   "m3ElevationEnabled": true,
-  "bluetoothMprisEnabled": true
+  "bluetoothMprisEnabled": true,
+  "displayFontFamily": "Geist"
 }
