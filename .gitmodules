@@ -5,13 +5,3 @@
 [submodule "vim-plug"]
 	path = vim-plug
 	url = https://github.com/junegunn/vim-plug
-[submodule "dotbot-yum"]
-	path = dotbot-yum
-	url = https://gitlab.com/flyingchipmunk/dotbot-yum.git
-	ignore = all
-[submodule "dotbot-yay"]
-	path = dotbot-yay
-	url = https://github.com/kritag/dotbot-yay
-[submodule "dotbot-sudo"]
-	path = dotbot-sudo
-	url = https://github.com/kritag/dotbot-sudo.git
