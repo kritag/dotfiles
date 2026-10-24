@@ -1,0 +1,21 @@
+{
+    "name": "Everforest dark, hard",
+    "primary": "#7fbbb3",
+    "primaryText": "#2b3339",
+    "primaryContainer": "#83c092",
+    "secondary": "#d699b6",
+    "surface": "#323c41",
+    "surfaceText": "#9da9a0",
+    "surfaceVariant": "#503946",
+    "surfaceVariantText": "#edeada",
+    "surfaceTint": "#7fbbb3",
+    "background": "#2b3339",
+    "backgroundText": "#fffbef",
+    "outline": "#9da9a0",
+    "surfaceContainer": "#503946",
+    "surfaceContainerHigh": "#859289",
+    "error": "#e67e80",
+    "warning": "#e69875",
+    "info": "#83c092",
+    "matugen_type": "tonal-spot"
+}

@@ -1,0 +1,23 @@
+{
+  "lockfileVersion": 1,
+  "plugins": {
+    "amdGpuMonitor": {
+      "repo": "https://github.com/navidagz/dms-amd-gpu-monitor",
+      "commit": "c93a377456c8d69ee2777c306c215d5ceeff9f20"
+    },
+    "calculator": {
+      "repo": "https://github.com/rochacbruno/DankCalculator",
+      "commit": "c9fbbe921e9afeb92f4e92390e9fc05f006f0373"
+    },
+    "dankActions": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankActions",
+      "commit": "e774a9756f2a50499c37a5513f28bee4ebe81d73"
+    },
+    "dankGifSearch": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankGifSearch",
+      "commit": "e774a9756f2a50499c37a5513f28bee4ebe81d73"
+    }
+  }
+}
