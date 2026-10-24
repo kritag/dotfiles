@@ -11,29 +11,29 @@ TINTY_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/tinted-theming/tinty"
 
 server=; [[ ${1:-} == --server ]] && { server=1; shift; }
 
-# Per theme: tinty scheme, vivid, bat+delta, nvim, zsh-patina, kitty, gtk, eza
+# Per theme: tinty scheme, vivid, bat+delta, nvim, zsh-patina, kitty, gtk, eza, dms (theme id, installed by bootstrap-dms-themes.sh)
 case "$1" in
 gruvbox)
   tinty=gruvbox-dark-hard vivid=gruvbox-dark-hard bat=gruvbox-dark nvim=gruvbox patina=gruvbox-dark-hard
-  kitty="Gruvbox Material Dark Hard" gtk=Gruvbox-Dark-Compact eza=gruvbox-dark ;;
+  kitty="Gruvbox Material Dark Hard" gtk=Gruvbox-Dark-Compact eza=gruvbox-dark dms=gruvboxMaterial ;;
 catppuccin-mocha)
   tinty=catppuccin-mocha vivid=catppuccin-mocha bat=catppuccin-mocha nvim=catppuccin patina=catppuccin-mocha
-  kitty=Catppuccin-Mocha gtk=Catppuccin-Dark-Compact eza=catppuccin-mocha ;;
+  kitty=Catppuccin-Mocha gtk=Catppuccin-Dark-Compact eza=catppuccin-mocha dms=catppuccin ;;
 dracula)
   tinty=dracula vivid=dracula bat=Dracula nvim=dracula patina=dracula
-  kitty=Dracula gtk=Dracula eza=dracula ;;
+  kitty=Dracula gtk=Dracula eza=dracula dms=dracula ;;
 everforest)
   tinty=everforest-dark-hard vivid='~/.config/vivid/themes/everforest.yaml' bat=everforest-dark nvim=everforest patina=everforest-dark
-  kitty="Everforest Dark Hard" gtk=Everforest-Dark-Compact eza=everforest ;;
+  kitty="Everforest Dark Hard" gtk=Everforest-Dark-Compact eza=everforest dms=everforest ;;
 nord)
   tinty=nord vivid=nord bat=Nord nvim=nord patina=nord
-  kitty=Nord gtk=Nord-Dark-Compact-Nord eza=nord ;;
+  kitty=Nord gtk=Nord-Dark-Compact-Nord eza=nord dms=nord ;;
 rose-pine)
   tinty=rose-pine vivid=rose-pine bat=rose-pine nvim=rose-pine patina=rose-pine
-  kitty="Rosé Pine Moon" gtk=Rosepine-Dark-Compact eza=rose-pine ;;
+  kitty="Rosé Pine Moon" gtk=Rosepine-Dark-Compact eza=rose-pine dms=rosePine ;;
 tokyo-night)
   tinty=tokyo-night-night vivid=tokyonight-night bat=tokyonight-night nvim=tokyonight patina=tokyonight-night
-  kitty="Tokyo Night" gtk=Tokyonight-Dark-Compact eza=tokyonight ;;
+  kitty="Tokyo Night" gtk=Tokyonight-Dark-Compact eza=tokyonight dms=tokyoNight ;;
 *)
   echo "Invalid theme specified. Choose from: gruvbox catppuccin-mocha dracula everforest nord rose-pine tokyo-night" >&2
   exit 1 ;;
@@ -79,6 +79,10 @@ sub ~/.config/bat/config "--theme=\"$bat\"" "s/--theme=\"[^\"]*\"/--theme=\"$bat
 sub ~/.theme.gitconfig "syntax-theme = $bat" "s/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = $bat/"
 sub ~/.config/lazyvim/lua/plugins/colorscheme.lua "colorscheme = \"$nvim\"" "s/\(colorscheme = \"\)[^\"]*\(\",\)/\1$nvim\2/"
 sub ~/.config/zsh-patina/config.toml "themes/$patina.toml" "s|^theme = \"file:.*\"|theme = \"file:~/.config/zsh-patina/themes/$patina.toml\"|"
+sub ~/.config/dms/settings.json "themes/$dms/theme.json" "s|\"customThemeFile\": \"[^\"]*\"|\"customThemeFile\": \"~/.config/dms/themes/$dms/theme.json\"|"
+# DMS fonts: top-level keys sit at 2-space indent; the nested fontFamily keys are the lock screen/greeter clocks (mono).
+sub ~/.config/dms/settings.json "\"fontFamily\": \"$TINTY_FONT\"" "s#^\(  \"\(fontFamily\|displayFontFamily\|lockScreenFontFamily\)\": \"\)[^\"]*#\1$TINTY_FONT#"
+sub ~/.config/dms/settings.json "\"monoFontFamily\": \"$TINTY_MONOFONT\"" "s|^\(  \"monoFontFamily\": \"\)[^\"]*|\1$TINTY_MONOFONT|; s|^\(   \+\"fontFamily\": \"\)[^\"]*|\1$TINTY_MONOFONT|"
 
 # Fonts: kitty (nvim follows it) and fontconfig's sans-serif/monospace aliases.
 sed -i --follow-symlinks "s|^font_family .*|font_family      family=\"$TINTY_MONOFONT\"|" ~/.config/kitty/kitty.conf
@@ -95,6 +99,7 @@ dconf write /org/gnome/desktop/interface/document-font-name "$DOCFONT"
 dconf write /org/gnome/desktop/interface/font-name "$FONT"
 dconf write /org/gnome/desktop/interface/monospace-font-name "$MONOFONT"
 ln -sf ~/.config/eza/"$eza".yaml ~/.config/eza/theme.yml
+
 
 # GTK4/libadwaita ignores the gtk-theme gsetting: the theme is whatever
 # ~/.config/gtk-4.0/gtk.css imports. Run this after the theme is set —

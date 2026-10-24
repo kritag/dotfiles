@@ -13,7 +13,6 @@
     ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings.json
     ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json
-    ~/.config/dms/themes/everforest/theme.json: config/dms/themes/everforest/theme.json
     ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
@@ -56,6 +55,7 @@
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
     - [fc-cache -fv]
     - [scripts/bootstrap-desktop-webapps.sh, "Create webapp launchers"]
+    - [scripts/bootstrap-dms-themes.sh, "Install DMS themes"]
 - sudo:
     - link:
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
