@@ -120,4 +120,5 @@ fi
 
 bat cache --build
 zsh-patina restart
-exec zsh
+# DOTFILES_BOOTSTRAP: called from ./install, where there is no terminal to replace
+if [[ -z ${DOTFILES_BOOTSTRAP:-} ]]; then exec zsh; fi
