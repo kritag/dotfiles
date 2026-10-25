@@ -57,6 +57,7 @@
     - [fc-cache -fv]
     - [scripts/bootstrap-desktop-webapps.sh, "Create webapp launchers"]
     - [scripts/bootstrap-dms-themes.sh, "Install DMS themes"]
+    - [scripts/bootstrap-dms-plugins.sh calculator dankActions dankGifSearch amdGpuMonitor, "Install DMS plugins"]
     - [scripts/bootstrap-gtk-themes.sh, "Install the Everforest GTK theme"]
     - ["[ -e ~/.config/kitty/current-theme.conf ] || DOTFILES_BOOTSTRAP=1 dbus-run-session -- scripts/themeSwitch.sh everforest", "Apply the first theme"]
 - sudo:

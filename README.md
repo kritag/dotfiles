@@ -110,10 +110,26 @@ Source file:
 - `config/dms/settings.json`: shared, linked on both hosts. Keep it free of usernames (use `~`).
 - One bar for both hosts. Plugin widgets render only where the plugin is installed (`~/.config/dms/plugins/`, not in dotfiles),
   so amdgpu shows on the desktop only.
-- Need a real per-host setting: `~/.config/dms/config.d/<host>.json` overrides whole top-level keys (undocumented; `dms restart` once).
+- Plugins: per-host id list on the `bootstrap-dms-plugins.sh` line in `desktop.conf.yaml` / `workstation.conf.yaml`.
 - Themes: `scripts/bootstrap-dms-themes.sh` (run by install) downloads them; `themeSwitch.sh` sets theme + fonts.
-- Desktop autologin: `scripts/greetd-autologin.sh` (sudo step) writes greetd `[initial_session]`.
-  Not DMS's toggle, since the greeter reads the shared `settings.json`. `dms-greeter sync` wipes it: re-run `./install desktop`.
+- Need a real per-host setting: `~/.config/dms/config.d/<host>.json` overrides whole top-level keys (undocumented; `dms restart` once).
+
+### Greeter / login
+
+The greeter (login screen) runs as its own user before you log in. It reads only
+`/var/cache/dms-greeter/settings.json`, a symlink to the shared `settings.json` (made by `dms-greeter sync`).
+So greeter settings are the same on both hosts, and `config.d` can't change them (the greeter ignores it).
+
+- Laptop: greeter shown, fingerprint or YubiKey (Settings → Greeter). Harmless on the desktop: no reader, nothing offered.
+- Desktop: autologin. Not DMS's "auto login" toggle: that is `greeterAutoLogin` in the shared file, so it would hit the laptop too.
+  Instead `scripts/greetd-autologin.sh` (sudo step in `desktop.conf.yaml`) adds to `/etc/greetd/config.toml`:
+  ```toml
+  [initial_session]          # greetd runs this once at boot, skipping the greeter
+  user = "<you>"
+  command = "uwsm start hyprland-uwsm.desktop"
+  ```
+  Log out and the greeter appears as normal (the lock screen is DMS in your session, unaffected).
+- `dms-greeter sync` rewrites `[initial_session]` from the (off) toggle, removing autologin: re-run `./install desktop`.
 
 ## Login (fingerprint / YubiKey)
 
