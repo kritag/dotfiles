@@ -13,6 +13,7 @@
     ~/.config/hypr/autostart.lua: config/hypr-workstation/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings.json
     ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json
+    ~/.config/dms/config.d/workstation.json: config/dms/config.d/workstation.json
     ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
     ~/.config/uwsm/env: config/uwsm/env
     ~/.config/uwsm/default-id: config/uwsm/default-id
