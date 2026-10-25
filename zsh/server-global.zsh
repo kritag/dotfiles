@@ -29,6 +29,9 @@ export FZF_DEFAULT_COMMAND="fd --exclude={.git,node_modules,build,dist,vendor} -
 export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
 export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 export ZSH_CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}
+export WORDCHARS='*?[]~&;!#$%^(){}<>'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export HISTFILE=$HOME/.zsh_history HISTSIZE=50000 SAVEHIST=50000
 [[ -d $HOME/.config/lazyvim ]] && export NVIM_APPNAME=lazyvim
 for _f in /usr/libexec/lesspipe/lesspipe.sh /usr/bin/lesspipe.sh; do
