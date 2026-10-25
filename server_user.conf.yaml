@@ -20,6 +20,7 @@
       path: config/zsh-patina/*
       glob: true
     ~/.lessfilter: config/lessfilter
+    ~/.ripgreprc: config/ripgreprc
     ~/.gitconfig: config/gitconfig
     ~/.theme.gitconfig: .server-generated/delta.gitconfig
     ~/.config/lazygit/config.yaml: config/lazygit/config.yaml
