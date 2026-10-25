@@ -8,6 +8,7 @@
           stdout: False
           stderr: True
     - shell:
+        - ["grep -q ^max_parallel_downloads /etc/dnf/dnf.conf || echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf", "Allow 10 parallel dnf downloads"]
         - ["grubby --info=ALL | grep -q 'selinux=0' || grubby --update-kernel ALL --args selinux=0", "Set kernel arg selinux=0"]
         - ["[ -f /etc/selinux/config ] && sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/selinux/config", "Set SELINUX=disabled in /etc/selinux/config"]
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:brycensranch:gpu-screen-recorder-git.repo ] || dnf copr enable brycensranch/gpu-screen-recorder-git -y", "Enable copr brycensranch/gpu-screen-recorder-git"]
