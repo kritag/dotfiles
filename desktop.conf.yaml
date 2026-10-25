@@ -12,7 +12,7 @@
     ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
     ~/.config/gtk-4.0/sidebar-label-fix.css: config/gtk-4.0/sidebar-label-fix.css
     ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
-    ~/.config/dms/settings.json: config/dms/settings.json
+    ~/.config/dms/settings.json: config/dms/settings-desktop.json
     ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json
     ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
@@ -65,7 +65,6 @@
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
     - shell:
         - [scripts/add_sudoers.sh, Adding USER to sudoers]
-        - [scripts/greetd-autologin.sh, "Autologin to Hyprland via greetd"]
         - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
         - [install -d -m 0755 /etc/systemd/journald.conf.d && install -m 0644 services/10-journald-retention.conf /etc/systemd/journald.conf.d/10-journald-retention.conf, "Configure systemd-journald log rotation"]
         - ["sed -i 's/^#\\?\\s*deny\\s*=.*/deny = 0/' /etc/security/faillock.conf", "Set faillock deny = 0"]
