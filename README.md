@@ -108,9 +108,9 @@ Source file:
 ## DMS
 
 - `config/dms/settings.json`: shared, linked on both hosts. Keep it free of usernames (use `~`).
-- `config/dms/config.d/{desktop,workstation}.json`: per-host overrides (bar with/without amdgpu).
-  Undocumented DMS feature: top-level keys override `settings.json` wholesale, GUI saves go to the file owning the key.
-  DMS only sees `config.d` if it existed at start: `dms restart` once after first install.
+- One bar for both hosts. Plugin widgets render only where the plugin is installed (`~/.config/dms/plugins/`, not in dotfiles),
+  so amdgpu shows on the desktop only.
+- Need a real per-host setting: `~/.config/dms/config.d/<host>.json` overrides whole top-level keys (undocumented; `dms restart` once).
 - Themes: `scripts/bootstrap-dms-themes.sh` (run by install) downloads them; `themeSwitch.sh` sets theme + fonts.
 - Desktop autologin: `scripts/greetd-autologin.sh` (sudo step) writes greetd `[initial_session]`.
   Not DMS's toggle, since the greeter reads the shared `settings.json`. `dms-greeter sync` wipes it: re-run `./install desktop`.
