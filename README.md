@@ -107,29 +107,27 @@ Source file:
 
 ## DMS
 
-- `config/dms/settings.json`: shared, linked on both hosts. Keep it free of usernames (use `~`).
-- One bar for both hosts. Plugin widgets render only where the plugin is installed (`~/.config/dms/plugins/`, not in dotfiles),
-  so amdgpu shows on the desktop only.
-- Plugins: per-host id list on the `bootstrap-dms-plugins.sh` line in `desktop.conf.yaml` / `workstation.conf.yaml`.
-- Themes: `scripts/bootstrap-dms-themes.sh` (run by install) downloads them; `themeSwitch.sh` sets theme + fonts.
-- Need a real per-host setting: `~/.config/dms/config.d/<host>.json` overrides whole top-level keys (undocumented; `dms restart` once).
+- One settings file per host: `config/dms/settings-{desktop,workstation}.json`, linked to `~/.config/dms/settings.json`.
+  GUI changes land in that host's file. Keep usernames out (use `~`).
+- After changing settings on one host, copy them to the other, then commit both:
+  ```bash
+  scripts/dms-sync.sh desktop workstation   # <from> <to>; shows a delta diff, asks before writing
+  ```
+  Host-only keys (`host_keys` in the script, now `greeterAutoLogin`) are never copied.
+  Sync before changing things on the other host, or the sync overwrites them (git still has them).
+- Plugins aren't in dotfiles: per-host id list on the `bootstrap-dms-plugins.sh` line in each host yaml.
+  Plugin widgets only render where installed, so the bar can be identical (amdgpu shows on the desktop only).
+- Themes: `scripts/bootstrap-dms-themes.sh` (run by install) downloads them; `themeSwitch.sh` sets theme + fonts
+  in the current host's file (sync to carry it over).
 
 ### Greeter / login
 
-The greeter (login screen) runs as its own user before you log in. It reads only
-`/var/cache/dms-greeter/settings.json`, a symlink to the shared `settings.json` (made by `dms-greeter sync`).
-So greeter settings are the same on both hosts, and `config.d` can't change them (the greeter ignores it).
+The greeter (login screen) reads `/var/cache/dms-greeter/settings.json`, a symlink (made by `dms-greeter sync`)
+to `~/.config/dms/settings.json`, i.e. the host's own file. So greeter settings are per host.
 
-- Laptop: greeter shown, fingerprint or YubiKey (Settings → Greeter). Harmless on the desktop: no reader, nothing offered.
-- Desktop: autologin. Not DMS's "auto login" toggle: that is `greeterAutoLogin` in the shared file, so it would hit the laptop too.
-  Instead `scripts/greetd-autologin.sh` (sudo step in `desktop.conf.yaml`) adds to `/etc/greetd/config.toml`:
-  ```toml
-  [initial_session]          # greetd runs this once at boot, skipping the greeter
-  user = "<you>"
-  command = "uwsm start hyprland-uwsm.desktop"
-  ```
-  Log out and the greeter appears as normal (the lock screen is DMS in your session, unaffected).
-- `dms-greeter sync` rewrites `[initial_session]` from the (off) toggle, removing autologin: re-run `./install desktop`.
+- Desktop: autologin, DMS Settings → Greeter → auto login (`greeterAutoLogin: true` in `settings-desktop.json`).
+  DMS writes `[initial_session]` into `/etc/greetd/config.toml`; log out and the greeter shows as normal.
+- Laptop: no autologin; greeter with fingerprint or YubiKey (see below).
 
 ## Login (fingerprint / YubiKey)
 
