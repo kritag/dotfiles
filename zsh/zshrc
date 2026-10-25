@@ -14,11 +14,11 @@ if [[ ! -r "$ZNAP_DIR/znap.zsh" ]]; then
 fi
 
 source "$ZNAP_DIR/znap.zsh"
-znap source ohmyzsh plugins/dirhistory
-znap source zoxide
-znap source fzf-tab
-znap source zsh-autosuggestions
-znap source zsh-history-substring-search
+znap source ohmyzsh/ohmyzsh plugins/dirhistory
+znap source ajeetdsouza/zoxide
+znap source Aloxaf/fzf-tab
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-history-substring-search
 
 [[ -f "$HOME/.config/tinted-theming/generated/fzf.sh" ]] && source "$HOME/.config/tinted-theming/generated/fzf.sh"
 if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
