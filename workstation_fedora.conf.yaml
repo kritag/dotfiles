@@ -23,6 +23,7 @@
         - ImageMagick
         - NetworkManager
         - NetworkManager-wifi
+        - accountsservice
         - alsa-firmware
         - alsa-lib
         - alsa-sof-firmware
@@ -34,9 +35,11 @@
         - bibata-cursor-theme
         - btop
         - btrfsmaintenance
+        - danksearch
         - dbus-daemon
         - ddcutil
         - dms
+        - dms-greeter
         - dnf-automatic
         - dnf-plugins-core
         - duf
@@ -67,6 +70,7 @@
         - gvfs-smb
         - helm
         - hyprland
+        - hyprland-guiutils
         - hyprlock
         - i2c-tools
         - inotify-tools
@@ -96,6 +100,7 @@
         - make
         - man-db
         - mangohud
+        - matugen
         - mokutil
         - mpv
         - neovim

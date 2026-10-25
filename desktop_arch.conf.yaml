@@ -1,6 +1,7 @@
 - plugins:
     - plugins/yay.py
 - pacman:
+    - accountsservice
     - archlinux-contrib
     - bat
     - bat-extras
@@ -36,6 +37,7 @@
     - gvfs-smb
     - gvfs-mtp
     - hyprland
+    - hyprland-guiutils
     - hyprlock
     - inotify-tools
     - jq
@@ -57,6 +59,7 @@
     - make
     - man-db
     - mangohud
+    - matugen
     - mesa
     - mpv
     - neovim
@@ -118,6 +121,7 @@
     - dracula-gtk-theme
     - dracula-icons-theme
     - dux-greeter-bin
+    - dux-search-bin
     - evince-no-gnome
     - game-devices-udev
     - gpu-screen-recorder-gtk
