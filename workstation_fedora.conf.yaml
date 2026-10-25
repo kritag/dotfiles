@@ -43,6 +43,7 @@
         - dnf-automatic
         - dnf-plugins-core
         - duf
+        - eza
         - fastfetch
         - fd-find
         - file-roller
