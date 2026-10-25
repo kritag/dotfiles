@@ -53,6 +53,7 @@
       path: fonts/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
+    - [systemctl --user enable dms, "Start the DMS shell with the graphical session"]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
     - [fc-cache -fv]
     - [scripts/bootstrap-desktop-webapps.sh, "Create webapp launchers"]
@@ -60,11 +61,13 @@
     - [scripts/bootstrap-dms-plugins.sh calculator dankActions dankGifSearch amdGpuMonitor, "Install DMS plugins"]
     - [scripts/bootstrap-gtk-themes.sh, "Install the Everforest GTK theme"]
     - ["[ -e ~/.config/kitty/current-theme.conf ] || DOTFILES_BOOTSTRAP=1 dbus-run-session -- scripts/themeSwitch.sh everforest", "Apply the first theme"]
+    - ["systemctl is-enabled greetd >/dev/null 2>&1 || DMS_PRIVESC=sudo dms-greeter enable -y", "Enable the DMS greeter (greetd)"]
 - sudo:
     - link:
         /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
     - shell:
         - [scripts/add_sudoers.sh, Adding USER to sudoers]
+        - [scripts/changeshell.sh, "Set zsh as the login shell"]
         - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
         - [install -d -m 0755 /etc/systemd/journald.conf.d && install -m 0644 services/10-journald-retention.conf /etc/systemd/journald.conf.d/10-journald-retention.conf, "Configure systemd-journald log rotation"]
         - ["sed -i 's/^#\\?\\s*deny\\s*=.*/deny = 0/' /etc/security/faillock.conf", "Set faillock deny = 0"]
