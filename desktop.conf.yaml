@@ -20,8 +20,6 @@
     - shell:
         - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
         - [install -D -m 0644 services/reflector.conf /etc/xdg/reflector/reflector.conf && systemctl enable reflector.timer --now, "Configure reflector and schedule mirror refresh"]
-        - ["sed -i -e 's/^#\\s*LogFile/LogFile/' -e 's/^#\\s*Color/Color/' -e 's/^#\\s*ParallelDownloads/ParallelDownloads/' -e 's/^#\\s*ILoveCandy/ILoveCandy/' -e '/^#\\s*\\[multilib\\]/,/^#\\s*Include/s/^#\\s*//' /etc/pacman.conf", "Configure pacman defaults and enable multilib"]
-        - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
         - [systemctl enable lactd --now]
         - [systemctl enable --now btrfs-scrub@mnt-storage.timer]
         - [systemctl enable --now grub-btrfsd.service]
