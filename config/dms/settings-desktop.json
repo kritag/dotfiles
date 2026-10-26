@@ -139,8 +139,8 @@
     }
   ],
   "centeringMode": "geometric",
-  "greeterEnableFprint": true,
-  "greeterEnableU2f": true,
+  "greeterEnableFprint": false,
+  "greeterEnableU2f": false,
   "spotlightSectionViewModes": {
     "plugin_dankHyprlandWindows": "tile"
   },
