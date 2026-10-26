@@ -138,7 +138,6 @@
         - solaar
         - sops
         - sqlite
-        - sshpass
         - sshuttle
         - stern
         - systemd-resolved

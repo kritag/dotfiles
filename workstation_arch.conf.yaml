@@ -90,7 +90,6 @@
     - spotify-launcher
     - sqlite
     - sshfs
-    - sshpass
     - sshuttle
     - stern
     - systemd-resolvconf

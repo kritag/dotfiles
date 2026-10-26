@@ -18,7 +18,6 @@ unset _stamp
 for _f in $HOME/.local/bin $HOME/bin $HOME/.cargo/bin; do
   [[ -d $_f && ${path[(Ie)$_f]} -eq 0 ]] && path=($_f $path)
 done
-[[ -r $HOME/.env ]] && source $HOME/.env # s/sr aliases read SSH_PASSWORD from here
 
 source $_ZSH_DIR/zshenv-common.zsh
 [[ -r ${_ZSH_DIR:h}/.server-generated/theme.zsh ]] && source ${_ZSH_DIR:h}/.server-generated/theme.zsh # BAT_THEME, LS_COLORS, EZA_CONFIG_DIR
@@ -52,7 +51,6 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
-compdef _ssh_hosts sshpass s sr
 compdef _journalctl jctl
 compdef _zr zr
 command -v zsh-patina >/dev/null && eval "$(zsh-patina activate)"
