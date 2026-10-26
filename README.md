@@ -10,13 +10,17 @@ Needs: `git`, `bash`, `python3`. Arch: `yay`. Fedora: `dnf`.
 `.conf.yaml`). Profiles starting with `server` skip `default`.
 
 ```bash
-./install                                  # default only
-./install workstation_fedora workstation   # Fedora workstation
-./install workstation_arch workstation     # Arch workstation
+./install                                            # default only
+./install workstation_fedora graphical workstation   # Fedora workstation
+./install workstation_arch graphical workstation     # Arch workstation
+./install desktop_arch graphical desktop             # Arch desktop
 ```
 
-Profiles: `default` `desktop` `desktop_arch` `server_fedora` `workstation`
-`workstation_arch` `workstation_fedora`
+Profiles: `default` `graphical` `desktop` `desktop_arch` `server_fedora`
+`workstation` `workstation_arch` `workstation_fedora`
+
+`graphical` is shared by `desktop` and `workstation`: run it right before the
+host profile.
 
 ## Server
 
