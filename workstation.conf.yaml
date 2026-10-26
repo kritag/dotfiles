@@ -22,6 +22,7 @@
     - [scripts/bootstrap-dms-plugins.sh calculator dankActions dankGifSearch, "Install DMS plugins"]
     - ["[ -e ~/.config/kitty/current-theme.conf ] || DOTFILES_BOOTSTRAP=1 dbus-run-session -- scripts/themeSwitch.sh everforest", "Apply the first theme"]
     - ["systemctl is-enabled greetd >/dev/null 2>&1 || DMS_PRIVESC=sudo dms-greeter enable -y", "Enable the DMS greeter (greetd)"]
+    - ["DMS_PRIVESC=sudo dms-greeter sync -y", "Sync the DMS theme and settings to the greeter"]
 - sudo:
     - link:
         /usr/share/zsh/site-functions/:
