@@ -53,6 +53,7 @@
       path: fonts/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
+    - ["[ -e ~/.config/DankMaterialShell ] || ln -s dms ~/.config/DankMaterialShell", "Let DMS 1.x find its config in ~/.config/dms"]
     - [systemctl --user enable dms, "Start the DMS shell with the graphical session"]
     - [systemctl --user enable --now znap-update.timer, "Pull zsh plugins weekly"]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
