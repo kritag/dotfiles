@@ -20,26 +20,7 @@ for _f in $HOME/.local/bin $HOME/bin $HOME/.cargo/bin; do
 done
 [[ -r $HOME/.env ]] && source $HOME/.env # s/sr aliases read SSH_PASSWORD from here
 
-export EDITOR=nvim MANPAGER="nvim +Man!" SYSTEMD_EDITOR=nvim SYSTEMD_PAGER=
-export GLOW_STYLE=$HOME/.config/glow/colors.json
-export LG_CONFIG_FILE=$HOME/.config/lazygit/config.yaml,$HOME/.config/lazygit/colors.yaml
-export BAT_PAGER="less -R" LESS="-IRs" COLORTERM=truecolor
-export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
-export FZF_DEFAULT_COMMAND="fd --exclude={.git,node_modules,build,dist,vendor} --type f --type l --hidden $FD_OPTIONS"
-export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
-export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
-export ZSH_CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}
-export WORDCHARS='*?[]~&;!#$%^(){}<>'
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"
-export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
-export HISTFILE=$HOME/.zsh_history HISTSIZE=50000 SAVEHIST=50000
-[[ -d $HOME/.config/lazyvim ]] && export NVIM_APPNAME=lazyvim
-for _f in /usr/libexec/lesspipe/lesspipe.sh /usr/bin/lesspipe.sh; do
-  [[ -x $_f ]] && {
-    export LESSOPEN="|$_f %s"
-    break
-  }
-done
+source $_ZSH_DIR/zshenv-common.zsh
 [[ -r ${_ZSH_DIR:h}/.server-generated/theme.zsh ]] && source ${_ZSH_DIR:h}/.server-generated/theme.zsh # BAT_THEME, LS_COLORS, EZA_CONFIG_DIR
 
 setopt APPEND_HISTORY EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_FIND_NO_DUPS \
