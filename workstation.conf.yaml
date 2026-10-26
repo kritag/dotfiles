@@ -13,6 +13,7 @@
     ~/.config/hypr/autostart.lua: config/hypr-workstation/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings-workstation.json
     ~/.local/bin/webapp-edge: scripts/webapp-edge.sh
+    ~/.local/share/applications/microsoft-edge.desktop: applications/microsoft-edge.desktop
     ~/.config/systemd/user/unlock-keyring.service: services/unlock-keyring.service
     ~/.local/share/dbus-1/services/org.freedesktop.secrets.service: services/org.freedesktop.secrets.service
     ~/.face: logos/Fedora-linux-logo.png
