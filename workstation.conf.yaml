@@ -1,3 +1,4 @@
+# Run after graphical.conf.yaml (see there).
 - plugins:
     - plugins/sudo.py
 - defaults:
@@ -8,85 +9,27 @@
       force: true
 - link:
     ~/.config/k9s/config.yaml: config/k9s/config.yaml
-    ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/hypr/autostart.lua: config/hypr-workstation/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings-workstation.json
-    ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json
-    ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
-    ~/.config/gtk-4.0/sidebar-label-fix.css: config/gtk-4.0/sidebar-label-fix.css
-    ~/.config/uwsm/env: config/uwsm/env
-    ~/.config/uwsm/default-id: config/uwsm/default-id
-    ~/.config/user-dirs.dirs: config/user-dirs.dirs
-    ~/.local/bin/webapp-firefox: scripts/webapp-firefox.sh
-    ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf
     ~/.local/bin/webapp-edge: scripts/webapp-edge.sh
-    ~/.local/bin/webapp-zen: scripts/webapp-zen.sh
-    ~/.local/bin/zen-link-userjs: scripts/zen-link-userjs.sh
-    ~/.local/bin/znap-update: scripts/znap-update.zsh
-    ~/.config/systemd/user/znap-update.service: services/znap-update.service
-    ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
     ~/.config/systemd/user/unlock-keyring.service: services/unlock-keyring.service
     ~/.local/share/dbus-1/services/org.freedesktop.secrets.service: services/org.freedesktop.secrets.service
-    ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
-    ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
-    ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
     ~/.face: logos/Fedora-linux-logo.png
-    ~/.config/btop:
-      glob: true
-      path: config/btop/*
-    ~/.config/hypr/:
-      glob: true
-      path: config/hypr/*
-    ~/.config/kitty:
-      glob: true
-      path: config/kitty/*
-    ~/.config/mpv:
-      glob: true
-      path: config/mpv/*
-    ~/.config/spicetify/Themes:
-      glob: true
-      path: config/spicetify/Themes/*
-    ~/.config/tinted-theming/tinty/:
-      glob: true
-      path: config/tinty/*
-    ~/.local/share/applications:
-      glob: true
-      path: applications/*
-    ~/.local/share/fonts:
-      glob: true
-      path: fonts/*
 - shell:
-    - [systemctl --user enable gcr-ssh-agent.socket]
-    - [systemctl --user enable dms, "Start the DMS shell with the graphical session"]
-    - [systemctl --user enable --now znap-update.timer, "Pull zsh plugins weekly"]
     - [systemctl --user enable unlock-keyring.service]
-    - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
-    - [fc-cache -fv]
     - [scripts/bootstrap-workstation-webapps.sh, "Create webapp launchers"]
-    - [scripts/bootstrap-dms-themes.sh, "Install DMS themes"]
     - [scripts/bootstrap-dms-plugins.sh calculator dankActions dankGifSearch, "Install DMS plugins"]
-    - [scripts/bootstrap-gtk-themes.sh, "Install the Everforest GTK theme"]
     - ["[ -e ~/.config/kitty/current-theme.conf ] || DOTFILES_BOOTSTRAP=1 dbus-run-session -- scripts/themeSwitch.sh everforest", "Apply the first theme"]
     - ["systemctl is-enabled greetd >/dev/null 2>&1 || DMS_PRIVESC=sudo dms-greeter enable -y", "Enable the DMS greeter (greetd)"]
 - sudo:
     - link:
-        /usr/local/bin/fzf-preview.sh: scripts/fzf-preview.sh
         /usr/share/zsh/site-functions/:
           create: true
           glob: true
           force: true
           path: zsh/completions/*
     - shell:
-        - [scripts/add_sudoers.sh, Adding USER to sudoers]
-        - [scripts/changeshell.sh, "Set zsh as the login shell"]
         - [scripts/apply-nsswitch.sh, "Apply nsswitch hosts line from dotfiles"]
         - [install -d -m 0755 /etc/systemd/logind.conf.d && install -m 0644 services/10-lid.conf /etc/systemd/logind.conf.d/10-lid.conf, "Configure systemd-logind lid behavior (ignore lid on external power)"]
-        - [install -d -m 0755 /etc/systemd/journald.conf.d && install -m 0644 services/10-journald-retention.conf /etc/systemd/journald.conf.d/10-journald-retention.conf, "Configure systemd-journald log rotation"]
-        - ["sed -i 's/^#\\?\\s*deny\\s*=.*/deny = 0/' /etc/security/faillock.conf", "Set faillock deny = 0"]
-        - [test -e /usr/lib/systemd/system/btrfs-scrub@.service || test -e /etc/systemd/system/btrfs-scrub@.service || install -m 0644 services/btrfs-scrub@.service /etc/systemd/system/btrfs-scrub@.service; test -e /usr/lib/systemd/system/btrfs-scrub@.timer || test -e /etc/systemd/system/btrfs-scrub@.timer || install -m 0644 services/btrfs-scrub@.timer /etc/systemd/system/btrfs-scrub@.timer; systemctl daemon-reload]
-        - [install -d -m 0755 /etc/systemd/system.conf.d && install -m 0644 services/10-shutdown-timeout.conf /etc/systemd/system.conf.d/10-shutdown-timeout.conf, "Reduce systemd shutdown timeout to 15 seconds"]
-        - [systemctl enable fstrim.timer --now]
-        - [systemctl enable systemd-oomd --now]
-        - [systemctl enable --now btrfs-scrub@-.timer]
         - [systemctl enable --now systemd-resolved.service]
