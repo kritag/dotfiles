@@ -1,4 +1,5 @@
 - plugins:
+    - plugins/sudo.py
     - plugins/yay.py
 - shell:
     - command: scripts/bootstrap-yay.sh
@@ -6,6 +7,10 @@
       stdin: true
       stdout: true
       stderr: true
+- sudo:
+    - shell:
+        - ["grep -q '^\\[multilib\\]' /etc/pacman.conf || { sed -i -e 's/^#\\s*LogFile/LogFile/' -e 's/^#\\s*Color/Color/' -e 's/^#\\s*ParallelDownloads/ParallelDownloads/' -e 's/^#\\s*ILoveCandy/ILoveCandy/' -e '/^#\\s*\\[multilib\\]/,/^#\\s*Include/s/^#\\s*//' /etc/pacman.conf && pacman -Syu --noconfirm; }", "Configure pacman defaults, enable multilib and sync"]
+        - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
 - pacman:
     - accountsservice
     - archlinux-contrib
@@ -79,7 +84,6 @@
     - papirus-icon-theme
     - playerctl
     - plymouth
-    - plymouth-theme-archlinux
     - power-profiles-daemon
     - procs
     - protontricks
@@ -141,8 +145,8 @@
     - papirus-folders
     - protonhax
     - protonplus
+    - plymouth-theme-archlinux
     - pulsecontrol-git
-    - quickshell-git
     - spicetify-cli
     - tinty-git
     - zen-browser-bin
