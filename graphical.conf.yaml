@@ -47,6 +47,7 @@
     ~/.local/share/applications:
       glob: true
       path: applications/*
+      exclude: [applications/microsoft-edge.desktop]
     ~/.local/share/fonts:
       glob: true
       path: fonts/*
