@@ -1,9 +1,9 @@
 - plugins:
     - plugins/sudo.py
-    - plugins/yum.py
+    - plugins/dnf.py
 - sudo:
     - defaults:
-        yum:
+        dnf:
           options: "-y"
           stdout: False
           stderr: True
@@ -11,7 +11,7 @@
         - ["grep -q ^max_parallel_downloads /etc/dnf/dnf.conf || echo max_parallel_downloads=10 >> /etc/dnf/dnf.conf", "Allow 10 parallel dnf downloads"]
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:bonvaffel:cli-tools.repo ] || dnf copr enable bonvaffel/cli-tools -y", "Enable copr bonvaffel/cli-tools"]
         - [scripts/addusertodockergrp.sh]
-    - yum:
+    - dnf:
         - bash-completion
         - bat
         - bat-extras

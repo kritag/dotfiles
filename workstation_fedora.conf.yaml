@@ -1,9 +1,9 @@
 - plugins:
     - plugins/sudo.py
-    - plugins/yum.py
+    - plugins/dnf.py
 - sudo:
     - defaults:
-        yum:
+        dnf:
           options: "-y"
           stdout: False
           stderr: True
@@ -20,7 +20,7 @@
         - ["rpm -q rpmfusion-free-release || dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm", "Enable RPM Fusion free"]
         - ["grep -rqs yumrepos/edge /etc/yum.repos.d || dnf config-manager addrepo --from-repofile=https://packages.microsoft.com/yumrepos/edge/config.repo --overwrite --save-filename=/etc/yum.repos.d/microsoft-edge.repo", "Enable the Microsoft Edge repo"]
         - ["rpm -q rpmfusion-nonfree-release || dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm", "Enable RPM Fusion nonfree"]
-    - yum:
+    - dnf:
         - ImageMagick
         - NetworkManager
         - NetworkManager-wifi
