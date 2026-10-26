@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Server profile: shared zsh for every user. Run as root.
-#  - clones the plugins that have no Fedora package into /opt/zsh-plugins, pinned to a tag
 #  - hooks zsh/server-global.zsh into /etc/zshrc (zsh reads it for every interactive shell)
 #  - removes the old bash hook
 #  - builds the shared theme (tinty colours, bat, eza, LS_COLORS) into .server-generated/
