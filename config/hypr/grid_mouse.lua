@@ -62,12 +62,16 @@ end
 
 local function tick()
 	local cur = hl.get_cursor_pos()
-	if not (mode and cur) then return end
+	if not (mode and cur) then
+		return
+	end
 	if mode == "fresize" then
 		local dx, dy = math.floor(cur.x - last.x), math.floor(cur.y - last.y)
 		if dx ~= 0 or dy ~= 0 then
 			last = { x = last.x + dx, y = last.y + dy }
-			hl.dispatch(hl.dsp.window.resize({ x = dx, y = dy, relative = true, window = "address:" .. drag_win.address }))
+			hl.dispatch(
+				hl.dsp.window.resize({ x = dx, y = dy, relative = true, window = "address:" .. drag_win.address })
+			)
 		end
 	elseif mode == "resize" then
 		local dx, dy = math.floor(cur.x - last.x), math.floor(cur.y - last.y)
@@ -91,10 +95,14 @@ local function start(m, win_id)
 end
 
 local function stop()
-	if timer then timer:set_enabled(false) end
+	if timer then
+		timer:set_enabled(false)
+	end
 	local was, w, tiled = mode, drag_win, drag_tiled
 	mode, drag_win = nil, nil
-	if was ~= "move" or not tiled then return end
+	if was ~= "move" or not tiled then
+		return
+	end
 	-- drop: re-tile the window, then slot it next to whatever it was released on
 	local cur = hl.get_cursor_pos()
 	local target, px, py
@@ -110,10 +118,14 @@ end
 local grid_binds = {}
 grid_binds[1] = hl.bind("SUPER + mouse:272", function()
 	local pos = hl.get_cursor_pos()
-	if not pos then return end
+	if not pos then
+		return
+	end
 	local f = floating_at(pos)
 	local w = f or window_at(pos)
-	if not w then return end
+	if not w then
+		return
+	end
 	drag_win, drag_tiled = w, not f
 	drag_off = { x = pos.x - coord(w.at, "x", 1), y = pos.y - coord(w.at, "y", 2) }
 	if not f then
@@ -125,7 +137,9 @@ end, { mouse = true })
 
 grid_binds[2] = hl.bind("SUPER + mouse:273", function()
 	local pos = hl.get_cursor_pos()
-	if not pos then return end
+	if not pos then
+		return
+	end
 	local f = floating_at(pos)
 	if f then
 		drag_win, last = f, pos
@@ -150,7 +164,11 @@ local native_binds = {
 
 function grid_mouse_sync()
 	local grid = hl.get_config("general.layout") == "lua:grid"
-	for _, b in ipairs(grid_binds) do b:set_enabled(grid) end
-	for _, b in ipairs(native_binds) do b:set_enabled(not grid) end
+	for _, b in ipairs(grid_binds) do
+		b:set_enabled(grid)
+	end
+	for _, b in ipairs(native_binds) do
+		b:set_enabled(not grid)
+	end
 end
 grid_mouse_sync()

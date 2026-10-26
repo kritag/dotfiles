@@ -11,7 +11,9 @@
 # Every launch is detached: uwsm-app evals its systemd-run command in the
 # foreground, so a first-instance Edge blocks the caller for the whole session.
 
-launch() { setsid uwsm-app -- "$1" >/dev/null 2>&1 & }
+launch() {
+  setsid uwsm-app -- "$1" >/dev/null 2>&1 &
+}
 
 waitfor() { # $1 = window class regex; give up after 20s
   local _

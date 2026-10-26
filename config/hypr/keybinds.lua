@@ -1,11 +1,9 @@
 local scriptsDir = (os.getenv("HOME") or "") .. "/.config/hypr/scripts"
 
--- Apps / actions
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + M", hl.dsp.exec_cmd("uwsm stop"))
 hl.bind("SUPER + W", function()
 	hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
-	-- custom layouts don't recalculate on a float toggle; nudge the grid
 	if hl.get_config("general.layout") == "lua:grid" then
 		hl.dispatch(hl.dsp.layout("refresh"))
 	end
@@ -15,15 +13,10 @@ hl.bind("SUPER + G", hl.dsp.layout("togglesplit"))
 hl.bind("SUPER + SHIFT + G", hl.dsp.exec_cmd(scriptsDir .. "/layout.sh set lua:grid"))
 hl.bind("SUPER + SHIFT + M", hl.dsp.exec_cmd(scriptsDir .. "/layout.sh set lua:manual"))
 hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd(scriptsDir .. "/layout.sh set dwindle"))
--- manual layout messages (i3-like)
-hl.bind("SUPER + minus", hl.dsp.layout("splith")) -- next window splits horizontally
-hl.bind("SUPER + backslash", hl.dsp.layout("splitv")) -- next window splits vertically
--- Move focused window within the layout (grid: across/within columns)
 hl.bind("SUPER + SHIFT + h", hl.dsp.layout("move-left"))
 hl.bind("SUPER + SHIFT + j", hl.dsp.layout("move-down"))
 hl.bind("SUPER + SHIFT + k", hl.dsp.layout("move-up"))
 hl.bind("SUPER + SHIFT + l", hl.dsp.layout("move-right"))
--- Swap entire focused column with neighbor column
 hl.bind("SUPER + CTRL + h", hl.dsp.layout("swap-col-left"))
 hl.bind("SUPER + CTRL + l", hl.dsp.layout("swap-col-right"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("uwsm-app -- thunar.desktop"))
