@@ -1,5 +1,3 @@
-# Env shared by the workstation (zshenv.zsh) and the server (server-global.zsh).
-# Interactive tool settings only: anything machine-specific stays in the caller.
 export EDITOR=nvim MANPAGER="nvim +Man!" SYSTEMD_EDITOR=nvim SYSTEMD_PAGER=
 export GLOW_STYLE=$HOME/.config/glow/colors.json
 export LG_CONFIG_FILE=$HOME/.config/lazygit/config.yaml,$HOME/.config/lazygit/colors.yaml
