@@ -50,6 +50,7 @@
     - hyprland
     - hyprland-guiutils
     - hyprlock
+    - i2c-tools
     - imagemagick
     - inotify-tools
     - jq
@@ -91,6 +92,7 @@
     - python
     - qbittorrent
     - qt6-multimedia
+    - realtime-privileges
     - reflector
     - ripgrep
     - sassc

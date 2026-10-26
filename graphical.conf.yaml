@@ -64,6 +64,7 @@
     - shell:
         - [scripts/add_sudoers.sh, Adding USER to sudoers]
         - [scripts/changeshell.sh, "Set zsh as the login shell"]
+        - ["for g in audio video input tss i2c realtime; do if getent group $g >/dev/null; then usermod -aG $g ${SUDO_USER:-$USER}; fi; done", "Add the user to the hardware and TPM groups that exist"]
         - [install -d -m 0755 /etc/systemd/journald.conf.d && install -m 0644 services/10-journald-retention.conf /etc/systemd/journald.conf.d/10-journald-retention.conf, "Configure systemd-journald log rotation"]
         - ["sed -i 's/^#\\?\\s*deny\\s*=.*/deny = 0/' /etc/security/faillock.conf", "Set faillock deny = 0"]
         - [install -d -m 0755 /etc/systemd/system.conf.d && install -m 0644 services/10-shutdown-timeout.conf /etc/systemd/system.conf.d/10-shutdown-timeout.conf, "Reduce systemd shutdown timeout to 15 seconds"]
