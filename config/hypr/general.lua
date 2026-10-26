@@ -1,6 +1,5 @@
 local colors = require("colors")
 
--- Layout chosen at runtime (scripts/layout.sh) survives reloads and restarts.
 local function saved_layout()
 	local f = io.open((os.getenv("XDG_STATE_HOME") or (os.getenv("HOME") .. "/.local/state")) .. "/hypr-layout")
 	if not f then

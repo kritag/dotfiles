@@ -9,18 +9,18 @@ state=${XDG_STATE_HOME:-$HOME/.local/state}/hypr-layout
 current=$(hyprctl getoption general:layout -j | jq -r .str)
 
 apply() {
-    mkdir -p "$(dirname "$state")"
-    echo "$1" >"$state"
-    hyprctl eval "hl.config({ general = { layout = \"$1\" } }); grid_mouse_sync()" >/dev/null
+  mkdir -p "$(dirname "$state")"
+  echo "$1" >"$state"
+  hyprctl eval "hl.config({ general = { layout = \"$1\" } }); grid_mouse_sync()" >/dev/null
 }
 
 case ${1:-} in
 cycle)
-    for i in "${!layouts[@]}"; do
-        [[ ${layouts[i]} == "$current" ]] && next=${layouts[(i + 1) % ${#layouts[@]}]}
-    done
-    apply "${next:-dwindle}"
-    ;;
+  for i in "${!layouts[@]}"; do
+    [[ ${layouts[i]} == "$current" ]] && next=${layouts[(i + 1) % ${#layouts[@]}]}
+  done
+  apply "${next:-dwindle}"
+  ;;
 set) apply "$2" ;;
 *) echo "${current#lua:}" ;;
 esac

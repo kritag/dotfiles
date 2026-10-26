@@ -1,6 +1,3 @@
--- Ported from monitors.conf. v0.55.2 unifies monitor/monitorv2 into hl.monitor.
--- desc: matching is supported via the "desc:" prefix on output.
-
 hl.monitor({
 	output = "eDP-1",
 	mode = "2880x1800@120",
