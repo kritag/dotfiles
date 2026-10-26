@@ -11,7 +11,7 @@ export SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
 export STEAM_FRAME_FORCE_CLOSE=1
 
-[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh" && alias sshpass="TERM=xterm-256color sshpass"
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
 export CLICOLOR_FORCE=1
 export DOTFILES="${HOME}/.dotfiles"
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,node_modules,build,dist,vendor,mnt,.steam} --type f --type l --hidden $FD_OPTIONS"

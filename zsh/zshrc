@@ -44,7 +44,6 @@ if [[ -f /usr/share/fzf/completion.zsh ]]; then
   source /usr/share/fzf/completion.zsh
 fi
 
-compdef _ssh_hosts sshpass s sr
 compdef _kubectl kubecolor
 # Make autocomplete work for the jctl() function
 compdef _journalctl jctl
