@@ -81,6 +81,7 @@
     - qbittorrent
     - qt6-multimedia
     - ripgrep
+    - sassc
     - rocm-smi-lib
     - seahorse
     - snapper
