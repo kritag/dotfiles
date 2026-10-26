@@ -54,6 +54,7 @@
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
     - [systemctl --user enable dms, "Start the DMS shell with the graphical session"]
+    - [systemctl --user enable --now znap-update.timer, "Pull zsh plugins weekly"]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
     - [fc-cache -fv]
     - [scripts/bootstrap-desktop-webapps.sh, "Create webapp launchers"]

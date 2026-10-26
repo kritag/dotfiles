@@ -7,13 +7,15 @@ LABEL="Zen"
 ZEN_BIN="${ZEN_BIN:-$(command -v zen-browser || true)}"
 
 webapp_preflight() {
-  [[ -n "$ZEN_BIN" ]] || { echo "Error: zen-browser not found in PATH." >&2; exit 1; }
+  [[ -n "$ZEN_BIN" ]] || {
+    echo "Error: zen-browser not found in PATH." >&2
+    exit 1
+  }
 }
 
 webapp_desktop_entry() {
   local name="$1" url="$2" icon="$3"
   local app_id="WebApp-$BROWSER-$(slugify "$name")"
-  # env sets MOZ_APP_REMOTINGNAME so the Wayland app_id is correct
   cat <<DESKTOP
 [Desktop Entry]
 Name=$name (Zen)

@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Install the GTK theme themeSwitch.sh uses for everforest (Everforest-Dark-Compact) into ~/.local/share/themes,
-# from the same source as pkgbuilds/everforest-gtk-theme-git. Skipped when any theme dir already has it
-# (Arch installs it system-wide from the pkgbuild). Needs git and sassc.
 set -euo pipefail
 
 name=Everforest-Dark-Compact
