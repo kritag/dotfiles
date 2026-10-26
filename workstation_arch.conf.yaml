@@ -1,6 +1,7 @@
 - plugins:
     - plugins/yay.py
 - pacman:
+    - accountsservice
     - archlinux-contrib
     - argocd
     - autoconf
@@ -16,6 +17,7 @@
     - cpio
     - cups-pk-helper
     - dmidecode
+    - dms-shell
     - docker
     - docker-compose
     - duf
@@ -37,6 +39,7 @@
     - gvfs-smb
     - helm
     - hyprland
+    - hyprland-guiutils
     - hyprlock
     - inotify-tools
     - intel-media-driver
@@ -58,6 +61,7 @@
     - libva-utils
     - loupe
     - make
+    - matugen
     - man-db
     - mangohud
     - minikube
@@ -116,8 +120,9 @@
     - zsh
 - yay:
     - bibata-cursor-theme-bin
-    - dms-shell-bin
     - downgrade
+    - dux-greeter-bin
+    - dux-search-bin
     - dracula-gtk-theme
     - dracula-icons-theme
     - evince-no-gnome
@@ -125,7 +130,6 @@
     - github-copilot-cli
     - gpu-screen-recorder-gtk
     - grimblast-git
-    - greetd-dms-greeter-bin
     - k9s-sbanka-bin
     - keybase-gui
     - kubecolor
