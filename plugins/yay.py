@@ -13,9 +13,9 @@ class Yay(dotbot.Plugin):
         return self._process(data)
 
     def _install(self, *pkgs):
-        # LANG keeps the installer's own messages in English
+        # LC_MESSAGES keeps the installer's own messages in English without touching the other locale categories
         cmd = [*self._cmd, '--needed', '--noconfirm', '-S', *pkgs]
-        return subprocess.run(cmd, env=dict(os.environ, LANG='en_US')).returncode == 0
+        return subprocess.run(cmd, env=dict(os.environ, LC_MESSAGES='C')).returncode == 0
 
     def _process(self, packages):
         # One pacman query instead of one install per package. Groups and provides names are
