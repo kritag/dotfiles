@@ -50,6 +50,7 @@
     - hyprland
     - hyprland-guiutils
     - hyprlock
+    - imagemagick
     - inotify-tools
     - jq
     - kimageformats
@@ -90,6 +91,7 @@
     - python
     - qbittorrent
     - qt6-multimedia
+    - reflector
     - ripgrep
     - sassc
     - rocm-smi-lib

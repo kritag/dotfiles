@@ -47,6 +47,7 @@
     - hyprland
     - hyprland-guiutils
     - hyprlock
+    - imagemagick
     - inotify-tools
     - intel-media-driver
     - jq
