@@ -6,6 +6,18 @@ source "$HOME/.zshkeybindings.zsh"
 PATH="${PATH}:$HOME/bin:$HOME/.local/bin:$HOME/.krew/bin:$HOME/.npm-global/bin/:$HOME/.fluxcd/plugins/"
 export PATH
 
+setopt APPEND_HISTORY EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_FIND_NO_DUPS \
+  HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS HIST_VERIFY SHARE_HISTORY
+
+# LS_COLORS from vivid, cached. Rebuilt when the theme file is newer; themeSwitch.sh edits the path and deletes the cache.
+_vivid_theme=~/.config/vivid/themes/everforest.yaml
+_ls_colors_cache="$ZSH_CACHE_DIR/ls_colors"
+if [[ ! -s $_ls_colors_cache || $_vivid_theme -nt $_ls_colors_cache ]]; then
+  vivid generate $_vivid_theme >$_ls_colors_cache.tmp && mv $_ls_colors_cache.tmp $_ls_colors_cache || rm -f $_ls_colors_cache.tmp
+fi
+[[ -s $_ls_colors_cache ]] && export LS_COLORS="$(<$_ls_colors_cache)"
+unset _vivid_theme _ls_colors_cache
+
 ZNAP_DIR="${ZNAP_DIR:-$HOME/git/znap/znap}"
 if [[ ! -r "$ZNAP_DIR/znap.zsh" ]]; then
   mkdir -p "${ZNAP_DIR:h}"

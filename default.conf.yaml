@@ -21,7 +21,7 @@
     ~/.theme.gitconfig: config/delta/theme.gitconfig
     ~/.vimrc: config/vimrc
     ~/.yamlfmt.yaml: config/yamlfmt.yaml
-    ~/.zshenv: zsh/zshenv
+    ~/.zshenv: zsh/zshenv.zsh
     ~/.zshkeybindings.zsh: zsh/zshkeybindings.zsh
     ~/.zshrc: zsh/zshrc
     ~/.zstyle.zsh: zsh/zstyle.zsh

@@ -73,8 +73,8 @@ sub() {
   grep -qF -- "$2" "$1" || echo "themeSwitch: $1 not updated, sed pattern no longer matches" >&2
 }
 
-sub ~/.zshenv "vivid generate $vivid" "s|\(vivid generate \)[^ ]*|\1$vivid|"
-rm -f "${XDG_CACHE_HOME:-$HOME/.cache}/ls_colors" # zshenv rebuilds it in new shells
+sub ~/.zshrc "_vivid_theme=$vivid" "s|^\(_vivid_theme=\).*|\1$vivid|"
+rm -f "${XDG_CACHE_HOME:-$HOME/.cache}/ls_colors" # zshrc rebuilds it in new shells
 sub ~/.config/bat/config "--theme=\"$bat\"" "s/--theme=\"[^\"]*\"/--theme=\"$bat\"/"
 sub ~/.theme.gitconfig "syntax-theme = $bat" "s/^[[:space:]]*syntax-theme[[:space:]]*=.*/  syntax-theme = $bat/"
 sub ~/.config/lazyvim/lua/plugins/colorscheme.lua "colorscheme = \"$nvim\"" "s/\(colorscheme = \"\)[^\"]*\(\",\)/\1$nvim\2/"
