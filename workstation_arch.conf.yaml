@@ -1,5 +1,11 @@
 - plugins:
     - plugins/yay.py
+- shell:
+    - command: scripts/bootstrap-yay.sh
+      description: Install yay
+      stdin: true
+      stdout: true
+      stderr: true
 - pacman:
     - accountsservice
     - archlinux-contrib
