@@ -82,6 +82,7 @@
     - reflector
     - ripgrep
     - seahorse
+    - sassc
     - sbctl
     - snapper
     - socat
