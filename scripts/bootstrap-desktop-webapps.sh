@@ -1,3 +1,4 @@
 #!/bin/sh
-webapp-zen create "ChatGPT" https://chatgpt.com
-"$(dirname "$(readlink -f "$0")")/bootstrap-webapps-common.sh"
+d=$(dirname "$(readlink -f "$0")")
+"$d/webapp-zen.sh" create "ChatGPT" https://chatgpt.com
+"$d/bootstrap-webapps-common.sh"

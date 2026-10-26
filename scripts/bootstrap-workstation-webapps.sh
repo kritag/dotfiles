@@ -1,5 +1,6 @@
 #!/bin/sh
-webapp-edge create "Teams" https://teams.microsoft.com
-webapp-edge create "Outlook" https://outlook.cloud.microsoft/mail
-webapp-edge create "Claude" https://claude.ai
-"$(dirname "$(readlink -f "$0")")/bootstrap-webapps-common.sh"
+d=$(dirname "$(readlink -f "$0")")
+"$d/webapp-edge.sh" create "Teams" https://teams.microsoft.com
+"$d/webapp-edge.sh" create "Outlook" https://outlook.cloud.microsoft/mail
+"$d/webapp-edge.sh" create "Claude" https://claude.ai
+"$d/bootstrap-webapps-common.sh"
