@@ -54,6 +54,7 @@
     - gnome-text-editor
     - go-yq
     - goverlay
+    - greetd
     - gst-libav
     - gst-plugin-pipewire
     - gvfs-mtp
