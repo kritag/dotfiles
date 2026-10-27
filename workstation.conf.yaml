@@ -17,6 +17,7 @@
     ~/.config/systemd/user/unlock-keyring.service: services/unlock-keyring.service
     ~/.local/share/dbus-1/services/org.freedesktop.secrets.service: services/org.freedesktop.secrets.service
     ~/.face: logos/Fedora-linux-logo.png
+    ~/.config/mimeapps.list: config/mimeapps-workstation.list
 - shell:
     - [systemctl --user enable unlock-keyring.service]
     - [scripts/bootstrap-workstation-webapps.sh, "Create webapp launchers"]

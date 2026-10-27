@@ -11,6 +11,7 @@
     ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings-desktop.json
     ~/.face: logos/Arch-linux-logo.png
+    ~/.config/mimeapps.list: config/mimeapps-desktop.list
 - shell:
     - [scripts/bootstrap-desktop-webapps.sh, "Create webapp launchers"]
     - [scripts/bootstrap-empty-keyring.sh, "Create the default keyring without a password"]
