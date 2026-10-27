@@ -8,11 +8,16 @@
 # The two webapps SHARE the apps profile, so they must not race each other for
 # its singleton: start Teams, wait for it, then let Outlook hand off to it.
 #
-# Every launch is detached: uwsm-app evals its systemd-run command in the
-# foreground, so a first-instance Edge blocks the caller for the whole session.
+# Every launch is detached: runapp -o runs the command in the foreground, so a
+# first-instance Edge blocks the caller for the whole session.
+
+# Keep in sync with webapp-edge-*.desktop
+edge_flags=(--ozone-platform-hint=auto
+  --enable-features=WebRTCPipeWireCapturer,WebRtcPipeWireCapturer,WebRtcPipeWireCamera)
+apps_profile=(--user-data-dir="$HOME/.config/microsoft-edge-apps")
 
 launch() {
-  setsid uwsm-app -- "$1" >/dev/null 2>&1 &
+  setsid runapp -o -- microsoft-edge-stable "${edge_flags[@]}" "$@" >/dev/null 2>&1 &
 }
 
 waitfor() { # $1 = window class regex; give up after 20s
@@ -33,12 +38,12 @@ for _ in $(seq 150); do
   sleep 0.2
 done
 
-launch microsoft-edge.desktop
+launch
 
-launch webapp-edge-teams.desktop
+launch "${apps_profile[@]}" --app=https://teams.microsoft.com
 waitfor '^msedge-teams\.microsoft\.com'
 
-launch webapp-edge-outlook.desktop
+launch "${apps_profile[@]}" --app=https://outlook.cloud.microsoft/mail
 waitfor '^msedge-outlook\.cloud\.microsoft'
 
 waitfor '^microsoft-edge$'
