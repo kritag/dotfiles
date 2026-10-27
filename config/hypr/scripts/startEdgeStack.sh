@@ -26,12 +26,19 @@ waitfor() { # $1 = window class regex; give up after 20s
   return 1
 }
 
+# Edge only checks for a notification daemon at startup; if it launches before
+# DMS owns org.freedesktop.Notifications, webapp notifications stay silent.
+for _ in $(seq 150); do
+  busctl --user status org.freedesktop.Notifications >/dev/null 2>&1 && break
+  sleep 0.2
+done
+
 launch microsoft-edge.desktop
 
 launch webapp-edge-teams.desktop
 waitfor '^msedge-teams\.microsoft\.com'
 
 launch webapp-edge-outlook.desktop
-waitfor '^msedge-outlook\.office365\.com'
+waitfor '^msedge-outlook\.cloud\.microsoft'
 
 waitfor '^microsoft-edge$'
