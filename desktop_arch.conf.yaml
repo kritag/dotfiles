@@ -47,7 +47,6 @@
     - gnome-text-editor
     - go-yq
     - goverlay
-    - grub-btrfs
     - gst-libav
     - gst-plugin-pipewire
     - gvfs-smb
@@ -171,3 +170,4 @@
 - sudo:
     - shell:
         - ["systemctl enable --now NetworkManager bluetooth", "Enable networking and bluetooth"]
+        - ["[ ! -d /boot/grub ] || pacman -S --needed --noconfirm grub-btrfs", "Install grub-btrfs on GRUB systems only (it depends on grub)"]

@@ -34,8 +34,8 @@ everything else (the rest is declared in `desktop_arch`):
 4. `wpa_supplicant` (Network)
 5. `wireless-regdb` (Network)
 
-`python`, `sudo` and `base-devel` are not in any netinstall group (untested
-unticked).
+`python`, `sudo`, `base-devel` and `openssh` come with the base install; `git`
+does not.
 
 First boot: `sudo pacman -S git`, then `./install desktop_arch graphical desktop`.
 
