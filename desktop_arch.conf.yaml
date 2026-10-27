@@ -188,8 +188,6 @@
     - spicetify-cli
     - tinty-git
     - tone3000-bin
-    - tonelib-gfx-bin
-    - tonelib-metal-bin
     - yabridge-wine10-git
     - yabridgectl-wine10-git
     - zen-browser-bin
