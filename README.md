@@ -26,25 +26,16 @@ host profile.
 ## CachyOS
 
 Installer: **btrfs**, **Limine**. Package page: tick only these five, untick
-everything else (the rest is declared in `desktop_arch`):
+everything else:
 
 1. `cachyos-kernel-manager` (CachyOS Packages)
-2. `cachyos-settings` (CachyOS Packages)
-3. `networkmanager` (Base-devel + Common packages > Network)
-4. `wpa_supplicant` (Network)
-5. `wireless-regdb` (Network)
+1. `cachyos-settings` (CachyOS Packages)
+1. `networkmanager` (Base-devel + Common packages > Network)
+1. `wpa_supplicant` (Network)
+1. `wireless-regdb` (Network)
 
-`python`, `sudo`, `base-devel` and `openssh` come with the base install; `git`
-does not.
-
-First boot: `sudo pacman -S git`, then `./install desktop_arch graphical desktop`.
-
-CachyOS repos come before Arch's in `/etc/pacman.conf` (`cachyos-v3`,
-`cachyos-extra-v3`, `cachyos-core-v3`, `cachyos`, then `core`, `extra`,
-`multilib`), so same-named packages are CachyOS's x86-64-v3 builds (`dux-gop`,
-`mesa`, ...; `dms-shell` is 2.0.0 there vs 1.6.3 in Arch). `downgrade`,
-`grimblast-git`, `protonplus`, `zen-browser-bin` and `yay` are prebuilt in the
-`cachyos` repo, so `yay -S` takes them from there instead of building the AUR.
+First boot: `sudo pacman -S git`, then
+`./install desktop_arch graphical desktop`.
 
 ## Server
 
@@ -83,7 +74,6 @@ scripts/dms-sync.sh desktop workstation   # <from> <to>, shows diff, asks first
 - Settings per host: `config/dms/settings-{desktop,workstation}.json`. Sync
   before editing on the other host.
 - Plugin ids: `bootstrap-dms-plugins.sh` line in the host yaml.
-- Desktop autologin: Settings → Greeter → auto login.
 
 ## Fingerprint / YubiKey login
 
@@ -102,9 +92,6 @@ ykman config usb --disable OTP
 ```
 ACTION=="remove", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ENV{PRODUCT}=="1050/*", RUN+="/usr/bin/loginctl lock-sessions"
 ```
-
-Keyring: don't start `gnome-keyring-daemon` from `autostart.lua` or with
-`--replace`. Undo: remove the symlink in `~/.local/share/dbus-1/services/`.
 
 ## Private overlay
 
