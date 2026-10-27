@@ -2,7 +2,8 @@
 
 Dotbot-managed. Idempotent: re-run `./install` after any change.
 
-Needs: `git`, `bash`, `python3`. Arch: `yay`. Fedora: `dnf`.
+Needs: `git`, `bash`, `python3`. Arch: `yay` is bootstrapped by `desktop_arch`.
+Fedora: `dnf`.
 
 ## Install
 
@@ -21,6 +22,23 @@ Profiles: `default` `graphical` `desktop` `desktop_arch` `server_fedora`
 
 `graphical` is shared by `desktop` and `workstation`: run it right before the
 host profile.
+
+## CachyOS
+
+Installer: **btrfs**, **Limine**. Package page: untick everything except
+**Network**: `networkmanager`, `wpa_supplicant`, `wireless-regdb` (the three
+from that group I have on Arch). Untick the rest of Network. Everything else is
+declared in `desktop_arch`. `python`, `sudo` and `base-devel` are not in any
+netinstall group (untested unticked).
+
+First boot: `sudo pacman -S git`, then `./install desktop_arch graphical desktop`.
+
+CachyOS repos come before Arch's in `/etc/pacman.conf` (`cachyos-v3`,
+`cachyos-extra-v3`, `cachyos-core-v3`, `cachyos`, then `core`, `extra`,
+`multilib`), so same-named packages are CachyOS's x86-64-v3 builds (`dux-gop`,
+`mesa`, ...; `dms-shell` is 2.0.0 there vs 1.6.3 in Arch). `downgrade`,
+`grimblast-git`, `protonplus`, `zen-browser-bin` and `yay` are prebuilt in the
+`cachyos` repo, so `yay -S` takes them from there instead of building the AUR.
 
 ## Server
 

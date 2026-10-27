@@ -13,6 +13,7 @@
         - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
 - pacman:
     - accountsservice
+    - alsa-utils
     - archlinux-contrib
     - bat
     - bat-extras
@@ -30,6 +31,7 @@
     - eza
     - fastfetch
     - fd
+    - ffmpegthumbnailer
     - ffmpeg
     - file-roller
     - fwupd
@@ -44,9 +46,13 @@
     - gnome-keyring
     - gnome-text-editor
     - go-yq
+    - goverlay
     - grub-btrfs
+    - gst-libav
+    - gst-plugin-pipewire
     - gvfs-smb
     - gvfs-mtp
+    - hwinfo
     - hyprland
     - hyprland-guiutils
     - hyprlock
@@ -84,6 +90,9 @@
     - os-prober
     - pacman-contrib
     - papirus-icon-theme
+    - pipewire
+    - pipewire-alsa
+    - pipewire-pulse
     - playerctl
     - plymouth
     - power-profiles-daemon
@@ -93,11 +102,13 @@
     - qbittorrent
     - qt6-multimedia
     - realtime-privileges
+    - rebuild-detector
     - reflector
     - ripgrep
     - sassc
     - rocm-smi-lib
     - seahorse
+    - smartmontools
     - snapper
     - socat
     - solaar
@@ -119,6 +130,8 @@
     - vulkan-radeon
     - vulkan-tools
     - wireless-regdb
+    - wireplumber
+    - wpa_supplicant
     - wget
     - wl-clipboard
     - xdg-desktop-portal
@@ -155,3 +168,6 @@
     - tinty-git
     - zen-browser-bin
     - zsh-patina-bin
+- sudo:
+    - shell:
+        - ["systemctl enable --now NetworkManager bluetooth", "Enable networking and bluetooth"]
