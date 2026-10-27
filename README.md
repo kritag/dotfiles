@@ -25,11 +25,17 @@ host profile.
 
 ## CachyOS
 
-Installer: **btrfs**, **Limine**. Package page: untick everything except
-**Network**: `networkmanager`, `wpa_supplicant`, `wireless-regdb` (the three
-from that group I have on Arch). Untick the rest of Network. Everything else is
-declared in `desktop_arch`. `python`, `sudo` and `base-devel` are not in any
-netinstall group (untested unticked).
+Installer: **btrfs**, **Limine**. Package page: tick only these five, untick
+everything else (the rest is declared in `desktop_arch`):
+
+1. `cachyos-kernel-manager` (CachyOS Packages)
+2. `cachyos-settings` (CachyOS Packages)
+3. `networkmanager` (Base-devel + Common packages > Network)
+4. `wpa_supplicant` (Network)
+5. `wireless-regdb` (Network)
+
+`python`, `sudo` and `base-devel` are not in any netinstall group (untested
+unticked).
 
 First boot: `sudo pacman -S git`, then `./install desktop_arch graphical desktop`.
 
