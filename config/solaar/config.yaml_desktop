@@ -11,7 +11,7 @@
     rgb_control, rgb_zone_, rgb_idle_effect, rgb_idle_timeout, rgb_sleep_timeout, rgb_startup_animation, rgb_shutdown_animation, dpi_extended, led_control,
     led_zone_]
   _battery: 4100
-  _config_cookie: [41, 150]
+  _config_cookie: [146, 160]
   _modelId: 4093C0940000
   _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: 99E7686C
@@ -35,7 +35,7 @@
     logivoice-ng-state, logivoice-comp-state, logivoice-deesser-state, logivoice-depopper-state, logivoice-limiter-state, logivoice-hpf-state, rgb_startup_animation,
     rgb_shutdown_animation, reprogrammable-keys]
   _battery: 4097
-  _config_cookie: [41, 151]
+  _config_cookie: [146, 159]
   _modelId: B35F408EC343
   _sensitive: {brightness_control: false, divert-gkeys: false, hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore,
     onboard_profiles: false, per-key-lighting: ignore, report_rate: false, rgb_control: false, rgb_zone_1: false, rgb_zone_2: false}
