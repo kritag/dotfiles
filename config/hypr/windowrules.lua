@@ -212,12 +212,22 @@ hl.window_rule({
 	move = "cursor_x cursor_y",
 })
 
+-- hl.layer_rule({
+-- 	match = {
+-- 		namespace = "^(dms:(bar|tooltip|toast|dock-context-menu|tray-menu-window|control-center|notification-center-popout|dash|system-update|process-list-popout|battery|popout|app-launcher))$",
+-- 	},
+-- 	ignore_alpha = 0.0,
+-- })
+
 hl.layer_rule({
-	match = {
-		namespace = "^(dms:(bar|tooltip|toast|dock-context-menu|tray-menu-window|control-center|notification-center-popout|dash|system-update|process-list-popout|battery|popout|app-launcher))$",
-	},
-	ignore_alpha = 0.0,
+	match = { namespace = "^dms:bar$" },
+	xray = true,
 })
+
+hl.window_rule({ match = { class = "^(dev\\.duxlabs\\.shell|com\\.danklinux\\.dms)$" }, float = true })
+
+-- DMS-RULE: id=dms-window-opaque, name=DMS Window Opaque
+hl.window_rule({ match = { class = "^(dev\\.duxlabs\\.shell|com\\.danklinux\\.dms)$" }, opaque = true })
 
 -- Firefox/Zen extension popups (Bitwarden etc.) open as separate windows titled
 -- "Extension: (<name>) ...". The title is only set after the window maps, so a
