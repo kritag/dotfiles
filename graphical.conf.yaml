@@ -53,6 +53,7 @@
       path: fonts/*
 - shell:
     - [systemctl --user enable gcr-ssh-agent.socket]
+    - [". ~/.config/user-dirs.dirs; mkdir -p $XDG_DOCUMENTS_DIR $XDG_DOWNLOAD_DIR $XDG_PICTURES_DIR $XDG_VIDEOS_DIR $XDG_PROJECTS_DIR; rmdir ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Public ~/Templates ~/Videos 2>/dev/null; true", "Create the user dirs from user-dirs.dirs, drop the empty defaults"]
     - ["[ -e ~/.config/DankMaterialShell ] || ln -s dms ~/.config/DankMaterialShell", "Let DMS 1.x find its config in ~/.config/dms"]
     - [systemctl --user enable dms, "Start the DMS shell with the graphical session"]
     - [systemctl --user enable --now znap-update.timer, "Pull zsh plugins weekly"]
