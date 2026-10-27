@@ -174,7 +174,7 @@
   "batteryLockTimeout": 900,
   "batterySuspendTimeout": 7200,
   "lockBeforeSuspend": true,
-  "launchPrefix": "uwsm-app --",
+  "launchPrefix": "runapp -o --",
   "terminalsAlwaysDark": true,
   "matugenTemplateNeovim": true,
   "modalDarkenBackground": false,
@@ -204,6 +204,15 @@
     },
     "dms_notepad": {
       "enabled": false
+    },
+    "dms_qr_generator": {
+      "trigger": "qrg"
+    },
+    "dms_power": {
+      "trigger": "pw"
+    },
+    "dms_clipboard_search": {
+      "trigger": "cb"
     }
   },
   "launcherPluginVisibility": {

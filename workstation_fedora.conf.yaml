@@ -131,6 +131,7 @@
         - qt6-qtmultimedia
         - quickshell
         - ripgrep
+        - runapp
         - sassc
         - seahorse
         - slack
