@@ -10,16 +10,22 @@
 - sudo:
     - shell:
         - ["grep -q '^\\[multilib\\]' /etc/pacman.conf || { sed -i -e 's/^#\\s*LogFile/LogFile/' -e 's/^#\\s*Color/Color/' -e 's/^#\\s*ParallelDownloads/ParallelDownloads/' -e 's/^#\\s*ILoveCandy/ILoveCandy/' -e '/^#\\s*\\[multilib\\]/,/^#\\s*Include/s/^#\\s*//' /etc/pacman.conf && pacman -Syu --noconfirm; }", "Configure pacman defaults, enable multilib and sync"]
+        - ["grep -q '^\\[proaudio\\]' /etc/pacman.conf || { curl -fsS https://arch.osamc.de/proaudio/osamc.gpg | pacman-key --add - && pacman-key --lsign-key 762AE5DB2B38786364BD81C4B9141BCC62D38EE5 && printf '\\n[proaudio]\\nServer = https://arch.osamc.de/$repo/$arch\\n' >> /etc/pacman.conf && pacman -Sy; }", "Add the proaudio repo (tuxguitar, ratatouille)"]
         - ["sed -i 's/^#\\?MAKEFLAGS=.*/MAKEFLAGS=\"-j16\"/' /etc/makepkg.conf", "Enable parallel makepkg builds"]
 - pacman:
     - accountsservice
+    - aida-x-lv2
     - alsa-utils
     - archlinux-contrib
+    - ardour
     - bat
     - bat-extras
+    - bind
     - bluez
     - bluez-utils
     - btop
+    - calf
+    - carla
     - cava
     - chafa
     - cpio
@@ -28,11 +34,12 @@
     - dmidecode
     - dms-shell
     - duf
+    - dux-gop
     - eza
     - fastfetch
     - fd
-    - ffmpegthumbnailer
     - ffmpeg
+    - ffmpegthumbnailer
     - file-roller
     - fwupd
     - fzf
@@ -49,8 +56,8 @@
     - goverlay
     - gst-libav
     - gst-plugin-pipewire
-    - gvfs-smb
     - gvfs-mtp
+    - gvfs-smb
     - hwinfo
     - hyprland
     - hyprland-guiutils
@@ -73,6 +80,7 @@
     - libnewt
     - libreoffice-fresh
     - loupe
+    - lsp-plugins
     - lutris
     - make
     - man-db
@@ -86,10 +94,12 @@
     - noto-fonts-emoji
     - npm
     - obs-studio
+    - openscad
     - pacman-contrib
     - papirus-icon-theme
     - pipewire
     - pipewire-alsa
+    - pipewire-jack
     - pipewire-pulse
     - playerctl
     - plymouth
@@ -98,14 +108,18 @@
     - protontricks
     - python
     - qbittorrent
+    - qpwgraph
     - qt6-multimedia
+    - ratatouille
+    - ratatouille-lv2
     - realtime-privileges
     - rebuild-detector
     - reflector
     - ripgrep
-    - sassc
     - rocm-smi-lib
+    - sassc
     - seahorse
+    - signal-desktop
     - smartmontools
     - snapper
     - socat
@@ -113,25 +127,31 @@
     - spotify-launcher
     - sqlite
     - steam
+    - strace
     - systemd-resolvconf
     - tealdeer
+    - telegram-desktop
     - terminus-font
     - thunar
     - thunar-archive-plugin
     - thunar-volman
     - tree-sitter-cli
     - ttf-nerd-fonts-symbols
+    - tuxguitar
+    - unrar
     - unzip
+    - uv
     - uwsm
     - vim
     - vivid
     - vulkan-radeon
     - vulkan-tools
+    - wget
     - wireless-regdb
     - wireplumber
-    - wpa_supplicant
-    - wget
     - wl-clipboard
+    - wpa_supplicant
+    - x42-plugins
     - xdg-desktop-portal
     - xdg-desktop-portal-gtk
     - xdg-desktop-portal-hyprland
@@ -144,25 +164,34 @@
     # - bambustudio-appimage
     - bibata-cursor-theme-bin
     - downgrade
+    - dux-files-git
     - dux-greeter-bin
     - dux-search-bin
     - evince-no-gnome
     - game-devices-udev
     # - gpu-screen-recorder-gtk
     - grimblast-git
-    - hazelnut-bin
+    - guitarix-git
     # - hyprfm-git
     # - hyprland-preview-share-picker-git
+    - jotta-cli
     - lucidglyph
+    - mpv-thumbfast-git
+    - neural-amp-modeler-ui-lv2
     - obsidian-bin
     - oh-my-posh-bin
     - papirus-folders
+    # - plymouth-theme-archlinux
     - protonhax
     - protonplus
-    # - plymouth-theme-archlinux
     # - pulsecontrol-git
     - spicetify-cli
     - tinty-git
+    - tone3000-bin
+    - tonelib-gfx-bin
+    - tonelib-metal-bin
+    - yabridge-wine10-git
+    - yabridgectl-wine10-git
     - zen-browser-bin
     - zsh-patina-bin
 - sudo:

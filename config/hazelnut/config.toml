@@ -36,10 +36,19 @@ create_destination = true
 [[rule]]
 name = "archives"
 [rule.condition]
-extensions = ["zip", "tar", "gz", "xz", "bz2", "7z", "iso"]
+extensions = ["zip", "tar", "gz", "xz", "bz2", "7z"]
 [rule.action]
 type = "move"
 destination = "~/downloads/archives"
+create_destination = true
+
+[[rule]]
+name = "isos"
+[rule.condition]
+extensions = ["iso"]
+[rule.action]
+type = "move"
+destination = "~/downloads/isos"
 create_destination = true
 
 [[rule]]
@@ -59,3 +68,23 @@ extensions = ["mp4", "mkv", "webm", "mov"]
 type = "move"
 destination = "~/videos/downloads"
 create_destination = true
+
+# yaml/yml: stamp the name (always .yaml), then move. Stamped names hit
+# yaml-sort first and stop, so yaml-stamp never renames a file twice.
+[[rule]]
+name = "yaml-sort"
+stop_processing = true
+[rule.condition]
+name_regex = '_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.yaml$'
+[rule.action]
+type = "move"
+destination = "~/documents/yaml"
+create_destination = true
+
+[[rule]]
+name = "yaml-stamp"
+[rule.condition]
+extensions = ["yaml", "yml"]
+[rule.action]
+type = "rename"
+pattern = "{name}_{datetime}.yaml"
