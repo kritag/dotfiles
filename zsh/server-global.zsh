@@ -28,7 +28,6 @@ setopt APPEND_HISTORY EXTENDED_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_FIND_NO_DUPS 
 source $_ZSH_DIR/aliases.zsh
 
 # Completion: the dump lives in the user's cache; fall back to no dump when $HOME is read-only.
-fpath=($_ZSH_DIR/completions $fpath)
 autoload -Uz compinit
 { mkdir -p $ZSH_CACHE_DIR && compinit -d $ZSH_CACHE_DIR/zcompdump; } 2>/dev/null || compinit -D
 

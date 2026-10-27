@@ -2,6 +2,7 @@
 # Server profile: shared zsh for every user. Run as root.
 #  - hooks zsh/server-global.zsh into /etc/zshrc (zsh reads it for every interactive shell)
 #  - removes the old bash hook
+#  - copies zsh/completions into /usr/local/share/zsh/site-functions (root-owned, so compinit trusts it; repo dirs are not)
 #  - builds the shared theme (tinty colours, bat, eza, LS_COLORS) into .server-generated/
 #  - keeps the SSH_* variables through sudo
 set -euo pipefail
@@ -28,6 +29,9 @@ sed -i '/^# >>> dotfiles >>>$/,/^# <<< dotfiles <<<$/d' /etc/zshrc
 printf '# >>> dotfiles >>>\n[[ -r %q ]] && source %q\n# <<< dotfiles <<<\n' "$hook" "$hook" >>/etc/zshrc
 
 rm -f /etc/profile.d/dotfiles.sh
+
+install -d -m 0755 /usr/local/share/zsh/site-functions
+install -m 0644 "$repo"/zsh/completions/_* /usr/local/share/zsh/site-functions/
 
 # runs as the repo owner so the generated files do not end up root-owned in the repo;
 # the theme is the one last chosen with themeSwitch.sh --server, everforest on the first run
