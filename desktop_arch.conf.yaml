@@ -86,7 +86,6 @@
     - noto-fonts-emoji
     - npm
     - obs-studio
-    - os-prober
     - pacman-contrib
     - papirus-icon-theme
     - pipewire
@@ -142,27 +141,25 @@
     - zoxide
     - zsh
 - yay:
-    - bambustudio-appimage
+    # - bambustudio-appimage
     - bibata-cursor-theme-bin
     - downgrade
-    - dracula-gtk-theme
-    - dracula-icons-theme
     - dux-greeter-bin
     - dux-search-bin
     - evince-no-gnome
     - game-devices-udev
-    - gpu-screen-recorder-gtk
+    # - gpu-screen-recorder-gtk
     - grimblast-git
-    - hyprfm-git
-    - hyprland-preview-share-picker-git
+    # - hyprfm-git
+    # - hyprland-preview-share-picker-git
     - lucidglyph
     - obsidian-bin
     - oh-my-posh-bin
     - papirus-folders
     - protonhax
     - protonplus
-    - plymouth-theme-archlinux
-    - pulsecontrol-git
+    # - plymouth-theme-archlinux
+    # - pulsecontrol-git
     - spicetify-cli
     - tinty-git
     - zen-browser-bin
@@ -170,4 +167,6 @@
 - sudo:
     - shell:
         - ["systemctl enable --now NetworkManager bluetooth", "Enable networking and bluetooth"]
-        - ["[ ! -d /boot/grub ] || pacman -S --needed --noconfirm grub-btrfs", "Install grub-btrfs on GRUB systems only (it depends on grub)"]
+        - ["! systemctl cat avahi-daemon.service >/dev/null 2>&1 || systemctl disable --now avahi-daemon.service avahi-daemon.socket", "Disable avahi (not used)"]
+        - ["[ ! -d /boot/grub ] || pacman -S --needed --noconfirm grub-btrfs os-prober", "Install the GRUB helpers on GRUB systems only (not Limine)"]
+        - ["for p in netctl jfsutils f2fs-tools xfsprogs s-nail; do ! pacman -Qq $p >/dev/null 2>&1 || pacman -Rns --noconfirm $p; done", "Remove unused installer-base packages (CachyOS)"]

@@ -4,6 +4,12 @@ set -euo pipefail
 
 command -v yay >/dev/null && exit 0
 
+# CachyOS ships yay in its repo; on Arch it is not there and the AUR build below runs.
+if pacman -Si yay >/dev/null 2>&1; then
+  sudo pacman -S --needed --noconfirm yay
+  exit 0
+fi
+
 sudo pacman -S --needed --noconfirm git base-devel
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
