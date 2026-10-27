@@ -18,6 +18,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = [
     "docx",
     "doc",
@@ -41,6 +42,7 @@ enabled = true
 stop_processing = true
 
 [rule.condition]
+is_hidden = false
 extensions = []
 name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.(md|markdown)$'
 
@@ -56,6 +58,7 @@ enabled = true
 stop_processing = true
 
 [rule.condition]
+is_hidden = false
 extensions = []
 name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.json$'
 
@@ -71,6 +74,7 @@ enabled = true
 stop_processing = true
 
 [rule.condition]
+is_hidden = false
 extensions = []
 name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.pdf$'
 
@@ -86,6 +90,7 @@ enabled = true
 stop_processing = true
 
 [rule.condition]
+is_hidden = false
 extensions = []
 name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.(sh|bash|zsh)$'
 
@@ -101,6 +106,7 @@ enabled = true
 stop_processing = true
 
 [rule.condition]
+is_hidden = false
 extensions = []
 name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.(gp|gp3|gp4|gp5|gpx|ptb|tg|tbt)$'
 
@@ -116,6 +122,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = [
     "md",
     "markdown",
@@ -144,6 +151,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = [
     "3mf",
     "stl",
@@ -165,6 +173,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = [
     "png",
     "jpg",
@@ -186,6 +195,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = [
     "zip",
     "tar",
@@ -208,6 +218,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = ["iso"]
 
 [rule.action]
@@ -222,6 +233,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = [
     "rpm",
     "deb",
@@ -242,6 +254,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = [
     "mp4",
     "mkv",
@@ -261,6 +274,7 @@ enabled = true
 stop_processing = true
 
 [rule.condition]
+is_hidden = false
 extensions = []
 name_regex = '_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.yaml$'
 
@@ -276,6 +290,7 @@ enabled = true
 stop_processing = false
 
 [rule.condition]
+is_hidden = false
 extensions = [
     "yaml",
     "yml",
