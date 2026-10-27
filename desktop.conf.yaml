@@ -10,6 +10,8 @@
 - link:
     ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings-desktop.json
+    ~/.config/solaar/config.yaml: config/solaar/config.yaml_desktop
+    ~/.config/solaar/rules.yaml: config/solaar/rules.yaml_desktop
     ~/.face: logos/Arch-linux-logo.png
     ~/.config/mimeapps.list: config/mimeapps-desktop.list
 - shell:

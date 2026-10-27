@@ -32,7 +32,7 @@
     - cups-pk-helper
     - discord
     - dmidecode
-    # - dms-shell
+    - dux-shell
     - duf
     - dux-gop
     - eza
