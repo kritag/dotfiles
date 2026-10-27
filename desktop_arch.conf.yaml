@@ -150,6 +150,7 @@
     - game-devices-udev
     # - gpu-screen-recorder-gtk
     - grimblast-git
+    - hazelnut-bin
     # - hyprfm-git
     # - hyprland-preview-share-picker-git
     - lucidglyph
