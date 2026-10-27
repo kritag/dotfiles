@@ -2,8 +2,9 @@
 
 Dotbot-managed. Idempotent: re-run `./install` after any change.
 
-Needs: `git`, `bash`, `python3`. Arch: `yay` is bootstrapped by `desktop_arch`.
-Fedora: `dnf`.
+Needs: `git`, `bash`, `sudo`. `./install` installs the `dotbot` binary first:
+Arch/CachyOS from the AUR (builds `yay` if missing), Fedora from the
+`bonvaffel/cli-tools` copr. Other distros: install `dotbot` yourself.
 
 ## Install
 
@@ -22,6 +23,10 @@ Profiles: `default` `graphical` `desktop` `desktop_arch` `server_fedora`
 
 `graphical` is shared by `desktop` and `workstation`: run it right before the
 host profile.
+
+Clones from before the submodule removal: run
+`git submodule deinit -f dotbot; rm -rf dotbot .git/modules/dotbot` before the
+next `git pull`.
 
 ## CachyOS
 
