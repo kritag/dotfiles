@@ -96,6 +96,21 @@ create_destination = true
 overwrite = false
 
 [[rule]]
+name = "guitar-sort"
+enabled = true
+stop_processing = true
+
+[rule.condition]
+extensions = []
+name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.(gp|gp3|gp4|gp5|gpx|ptb|tg|tbt)$'
+
+[rule.action]
+type = "move"
+destination = "~/documents/guitar-tabs"
+create_destination = true
+overwrite = false
+
+[[rule]]
 name = "stamp"
 enabled = true
 stop_processing = false
@@ -109,6 +124,14 @@ extensions = [
     "sh",
     "bash",
     "zsh",
+    "gp",
+    "gp3",
+    "gp4",
+    "gp5",
+    "gpx",
+    "ptb",
+    "tg",
+    "tbt",
 ]
 
 [rule.action]
