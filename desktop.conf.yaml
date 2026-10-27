@@ -24,4 +24,4 @@
         - [install -D -m 0644 services/reflector.conf /etc/xdg/reflector/reflector.conf && systemctl enable reflector.timer --now, "Configure reflector and schedule mirror refresh"]
         - [systemctl enable lactd --now]
         - [systemctl enable --now btrfs-scrub@mnt-storage.timer]
-        - [systemctl enable --now grub-btrfsd.service]
+        - ["[ ! -d /boot/grub ] || systemctl enable --now grub-btrfsd.service", "Watch for snapshots in the GRUB menu (GRUB only)"]
