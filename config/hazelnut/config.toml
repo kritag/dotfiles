@@ -1,90 +1,263 @@
 [general]
+log_level = "info"
 debounce_seconds = 1
-notifications_enabled = true
+polling_interval_secs = 5
+log_retention = 1000
+start_daemon_on_launch = false
+notifications_enabled = false
+theme = "everforest"
 
 [[watch]]
 path = "~/downloads"
 recursive = false
+rules = []
 
 [[rule]]
 name = "documents"
+enabled = true
+stop_processing = false
+
 [rule.condition]
-extensions = ["pdf", "docx", "doc", "xlsx", "pptx", "odt", "ods", "txt", "csv"]
+extensions = [
+    "docx",
+    "doc",
+    "xlsx",
+    "pptx",
+    "odt",
+    "ods",
+    "txt",
+    "csv",
+]
+
 [rule.action]
 type = "move"
 destination = "~/documents/{ext}"
 create_destination = true
+overwrite = false
+
+[[rule]]
+name = "markdown-sort"
+enabled = true
+stop_processing = true
+
+[rule.condition]
+extensions = []
+name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.(md|markdown)$'
+
+[rule.action]
+type = "move"
+destination = "~/documents/markdown"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "json-sort"
+enabled = true
+stop_processing = true
+
+[rule.condition]
+extensions = []
+name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.json$'
+
+[rule.action]
+type = "move"
+destination = "~/documents/json"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "pdf-sort"
+enabled = true
+stop_processing = true
+
+[rule.condition]
+extensions = []
+name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.pdf$'
+
+[rule.action]
+type = "move"
+destination = "~/documents/pdf"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "shell-sort"
+enabled = true
+stop_processing = true
+
+[rule.condition]
+extensions = []
+name_regex = '(?i)_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.(sh|bash|zsh)$'
+
+[rule.action]
+type = "move"
+destination = "~/documents/scripts"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "stamp"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "md",
+    "markdown",
+    "json",
+    "pdf",
+    "sh",
+    "bash",
+    "zsh",
+]
+
+[rule.action]
+type = "rename"
+pattern = "{name}_{datetime}.{ext}"
 
 [[rule]]
 name = "3d-printing"
+enabled = true
+stop_processing = false
+
 [rule.condition]
-extensions = ["3mf", "stl", "step", "stp", "obj", "gcode"]
+extensions = [
+    "3mf",
+    "stl",
+    "step",
+    "stp",
+    "obj",
+    "gcode",
+]
+
 [rule.action]
 type = "move"
 destination = "~/documents/3d-printing"
 create_destination = true
+overwrite = false
 
 [[rule]]
 name = "images"
+enabled = true
+stop_processing = false
+
 [rule.condition]
-extensions = ["png", "jpg", "jpeg", "webp", "gif", "svg"]
+extensions = [
+    "png",
+    "jpg",
+    "jpeg",
+    "webp",
+    "gif",
+    "svg",
+]
+
 [rule.action]
 type = "move"
 destination = "~/pictures/downloads"
 create_destination = true
+overwrite = false
 
 [[rule]]
 name = "archives"
+enabled = true
+stop_processing = false
+
 [rule.condition]
-extensions = ["zip", "tar", "gz", "xz", "bz2", "7z"]
+extensions = [
+    "zip",
+    "tar",
+    "gz",
+    "xz",
+    "bz2",
+    "7z",
+    "zst",
+]
+
 [rule.action]
 type = "move"
 destination = "~/downloads/archives"
 create_destination = true
+overwrite = false
 
 [[rule]]
 name = "isos"
+enabled = true
+stop_processing = false
+
 [rule.condition]
 extensions = ["iso"]
+
 [rule.action]
 type = "move"
 destination = "~/downloads/isos"
 create_destination = true
+overwrite = false
 
 [[rule]]
 name = "installers"
+enabled = true
+stop_processing = false
+
 [rule.condition]
-extensions = ["rpm", "deb", "appimage", "flatpakref", "run"]
+extensions = [
+    "rpm",
+    "deb",
+    "appimage",
+    "flatpakref",
+    "run",
+]
+
 [rule.action]
 type = "move"
 destination = "~/downloads/installers"
 create_destination = true
+overwrite = false
 
 [[rule]]
 name = "video"
+enabled = true
+stop_processing = false
+
 [rule.condition]
-extensions = ["mp4", "mkv", "webm", "mov"]
+extensions = [
+    "mp4",
+    "mkv",
+    "webm",
+    "mov",
+]
+
 [rule.action]
 type = "move"
 destination = "~/videos/downloads"
 create_destination = true
+overwrite = false
 
-# yaml/yml: stamp the name (always .yaml), then move. Stamped names hit
-# yaml-sort first and stop, so yaml-stamp never renames a file twice.
 [[rule]]
 name = "yaml-sort"
+enabled = true
 stop_processing = true
+
 [rule.condition]
+extensions = []
 name_regex = '_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.yaml$'
+
 [rule.action]
 type = "move"
 destination = "~/documents/yaml"
 create_destination = true
+overwrite = false
 
 [[rule]]
 name = "yaml-stamp"
+enabled = true
+stop_processing = false
+
 [rule.condition]
-extensions = ["yaml", "yml"]
+extensions = [
+    "yaml",
+    "yml",
+]
+
 [rule.action]
 type = "rename"
 pattern = "{name}_{datetime}.yaml"
