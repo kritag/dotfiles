@@ -118,6 +118,7 @@
     - reflector
     - ripgrep
     - rocm-smi-lib
+    - rsync
     - sassc
     - seahorse
     - signal-desktop
