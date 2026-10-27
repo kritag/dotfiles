@@ -17,7 +17,7 @@ blocks:
     alignment: left
     segments:
       - type: session
-        template: '{{ if .SSHSession }} {{ .UserName }} {{ end }}'
+        template: '{{ if .SSHSession }} {{ .UserName }}@{{ .HostName }} {{ end }}'
         foreground: magenta
         background: transparent
         style: plain
