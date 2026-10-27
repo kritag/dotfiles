@@ -15,8 +15,10 @@
     ~/.config/gtk-4.0/sidebar-label-fix.css: config/gtk-4.0/sidebar-label-fix.css
     ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json
     ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
+    ~/.config/hazelnut/config.toml: config/hazelnut/config.toml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
+    ~/.config/systemd/user/hazelnut.service: services/hazelnut.service
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
@@ -56,6 +58,7 @@
     - [". ~/.config/user-dirs.dirs; mkdir -p $XDG_DOCUMENTS_DIR $XDG_DOWNLOAD_DIR $XDG_PICTURES_DIR $XDG_VIDEOS_DIR $XDG_PROJECTS_DIR; rmdir ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Projects ~/Public ~/Templates ~/Videos 2>/dev/null; true", "Create the user dirs from user-dirs.dirs, drop the empty defaults"]
     - ["[ -e ~/.config/DankMaterialShell ] || ln -s dms ~/.config/DankMaterialShell", "Let DMS 1.x find its config in ~/.config/dms"]
     - [systemctl --user enable dms, "Start the DMS shell with the graphical session"]
+    - [systemctl --user enable --now hazelnut.service, "Sort ~/downloads as files arrive"]
     - [systemctl --user enable --now znap-update.timer, "Pull zsh plugins weekly"]
     - [~/.local/bin/zen-link-userjs, "Link Zen profile user.js from dotfiles"]
     - [fc-cache -fv]

@@ -1,0 +1,61 @@
+[general]
+debounce_seconds = 1
+notifications_enabled = true
+
+[[watch]]
+path = "~/downloads"
+recursive = false
+
+[[rule]]
+name = "documents"
+[rule.condition]
+extensions = ["pdf", "docx", "doc", "xlsx", "pptx", "odt", "ods", "txt", "csv"]
+[rule.action]
+type = "move"
+destination = "~/documents/{ext}"
+create_destination = true
+
+[[rule]]
+name = "3d-printing"
+[rule.condition]
+extensions = ["3mf", "stl", "step", "stp", "obj", "gcode"]
+[rule.action]
+type = "move"
+destination = "~/documents/3d-printing"
+create_destination = true
+
+[[rule]]
+name = "images"
+[rule.condition]
+extensions = ["png", "jpg", "jpeg", "webp", "gif", "svg"]
+[rule.action]
+type = "move"
+destination = "~/pictures/downloads"
+create_destination = true
+
+[[rule]]
+name = "archives"
+[rule.condition]
+extensions = ["zip", "tar", "gz", "xz", "bz2", "7z", "iso"]
+[rule.action]
+type = "move"
+destination = "~/downloads/archives"
+create_destination = true
+
+[[rule]]
+name = "installers"
+[rule.condition]
+extensions = ["rpm", "deb", "appimage", "flatpakref", "run"]
+[rule.action]
+type = "move"
+destination = "~/downloads/installers"
+create_destination = true
+
+[[rule]]
+name = "video"
+[rule.condition]
+extensions = ["mp4", "mkv", "webm", "mov"]
+[rule.action]
+type = "move"
+destination = "~/videos/downloads"
+create_destination = true
