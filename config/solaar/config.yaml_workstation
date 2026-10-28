@@ -1,4 +1,4 @@
-- 1.1.18
+- 1.1.20
 - _NAME: MX Mechanical Mini
   _modelId: B36700000000
   _sensitive: {divert-keys: true}
@@ -13,12 +13,6 @@
   fn-swap: false
   multiplatform: 0
 - _NAME: MX Master 3S
-  _absent: [hi-res-scroll, lowres-scroll-mode, scroll-ratchet-torque, onboard_profiles, report_rate, report_rate_extended, pointer_speed, dpi_extended,
-    speed-change, backlight, backlight_level, backlight_duration_hands_out, backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control,
-    led_zone_, rgb_control, rgb_zone_, brightness_control, per-key-lighting, fn-swap, persistent-remappable-keys, disable-keyboard-keys, force-sensing,
-    crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-gestures, gesture2-divert, gesture2-params, haptic-level,
-    haptic-play, sidetone, equalizer, adc_power_management]
-  _battery: 4100
   _modelId: B03400000000
   _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: CE678A1A
@@ -44,3 +38,24 @@
   dpi: 1250
   onboard_profiles: 1
   report_rate: 1
+- _NAME: ERGO M575S Trackball
+  _absent: [hi-res-scroll, hires-smooth-invert, hires-smooth-resolution, hires-scroll-mode, scroll-ratchet, scroll-ratchet-torque, smart-shift, thumb-scroll-invert,
+    thumb-scroll-mode, onboard_profiles, report_rate, report_rate_extended, pointer_speed, dpi_extended, speed-change, backlight, backlight_level, backlight_duration_hands_out,
+    backlight_duration_hands_in, backlight_duration_powered, backlight-timed, led_control, led_zone_, rgb_control, rgb_zone_, per-key-lighting, brightness_control,
+    rgb_idle_effect, rgb_idle_timeout, rgb_sleep_timeout, rgb_startup_animation, rgb_shutdown_animation, fn-swap, persistent-remappable-keys, disable-keyboard-keys,
+    force-sensing, crown-smooth, divert-crown, divert-gkeys, m-key-leds, mr-key-led, multiplatform, gesture2-gestures, gesture2-divert, gesture2-params,
+    analog-button-tuning, haptic-level, haptic-play, sidetone, equalizer, adc_power_management, headset-eco-mode, headset-do-not-disturb, headset-mic-mute,
+    headset-mic-snr, headset-ai-nr, headset-ai-nr-level, headset-sidetone, headset-mic-gain, headset-mix-balance, headset-auto-sleep, headset-onboard-eq,
+    headset-eq-active-preset, headset-advanced-eq, headset_led_control, headset-onboard-effect, headset_per_zone_lighting, headset-signature-startup, headset-signature-shutdown,
+    headset-signature-passive, logivoice-nr-state, logivoice-ng-state, logivoice-comp-state, logivoice-deesser-state, logivoice-depopper-state, logivoice-limiter-state,
+    logivoice-hpf-state]
+  _battery: 4100
+  _config_cookie: [137, 63]
+  _modelId: B04100000000
+  _sensitive: {dpi: false}
+  _unitId: 7ED426EF
+  change-host: null
+  divert-keys: {82: 0, 83: 0, 86: 0}
+  dpi: 800
+  lowres-scroll-mode: false
+  reprogrammable-keys: {80: 80, 81: 81, 82: 82, 83: 83, 86: 86}
