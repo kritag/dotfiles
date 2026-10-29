@@ -97,7 +97,6 @@
     - noto-fonts-cjk
     - noto-fonts-emoji
     - npm
-    - obs-studio
     - openscad
     - pacman-contrib
     - papirus-icon-theme
@@ -182,6 +181,7 @@
     - jotta-cli
     - mpv-thumbfast-git
     - neural-amp-modeler-ui-lv2
+    - obs-studio-browser
     - obsidian-bin
     - openlogi-bin
     - oh-my-posh-bin
