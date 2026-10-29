@@ -96,7 +96,7 @@ action = "Undo"
 action = "Redo"
 
 [devices."serial:2601za94eew8".bindings]
-MiddleClick = "RightClick"
+MiddleClick = "MiddleClick"
 
 [devices."unit:99e7686c"]
 report_rate = 1000
