@@ -9,15 +9,15 @@ kind = "trackball"
 [devices."serial:2601za94eew8".identity.model_info]
 entity_count = 3
 unit_id = [
-  0,
-  0,
-  0,
-  0,
+    0,
+    0,
+    0,
+    0,
 ]
 model_ids = [
-  45121,
-  0,
-  0,
+    45121,
+    0,
+    0,
 ]
 extended_model_id = 2
 
@@ -96,7 +96,7 @@ action = "Undo"
 action = "Redo"
 
 [devices."serial:2601za94eew8".bindings]
-MiddleClick = "MiddleClick"
+MiddleClick = "RightClick"
 
 [devices."unit:99e7686c"]
 report_rate = 1000
@@ -109,15 +109,15 @@ kind = "mouse"
 [devices."unit:99e7686c".identity.model_info]
 entity_count = 3
 unit_id = [
-  0,
-  0,
-  0,
-  0,
+    0,
+    0,
+    0,
+    0,
 ]
 model_ids = [
-  16531,
-  49300,
-  0,
+    16531,
+    49300,
+    0,
 ]
 extended_model_id = 0
 
@@ -175,15 +175,15 @@ kind = "keyboard"
 [devices."unit:af7dce4c".identity.model_info]
 entity_count = 5
 unit_id = [
-  0,
-  0,
-  0,
-  0,
+    0,
+    0,
+    0,
+    0,
 ]
 model_ids = [
-  45919,
-  16526,
-  49987,
+    45919,
+    16526,
+    49987,
 ]
 extended_model_id = 0
 
