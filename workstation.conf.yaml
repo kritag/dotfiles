@@ -12,8 +12,6 @@
     ~/.functions_k8s: zsh/functions_k8s.zsh
     ~/.config/hypr/autostart.lua: config/hypr-workstation/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings-workstation.json
-    ~/.config/solaar/config.yaml: config/solaar/config.yaml_workstation
-    ~/.config/solaar/rules.yaml: config/solaar/rules.yaml_workstation
     ~/.config/openlogi/config.toml: config/openlogi/config.toml
     ~/.local/bin/webapp-edge: scripts/webapp-edge.sh
     ~/.local/share/applications/microsoft-edge.desktop: applications/microsoft-edge.desktop
