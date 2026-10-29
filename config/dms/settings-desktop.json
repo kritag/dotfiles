@@ -547,10 +547,6 @@
           "workspaceFocusedBorderEnabled": false,
           "workspaceFocusedCustomColor": "#6750A4",
           "workspaceUnfocusedCustomColor": "#49454E"
-        },
-        {
-          "id": "island",
-          "enabled": false
         }
       ],
       "rightWidgets": [
@@ -564,7 +560,7 @@
           "minimumWidth": false
         },
         {
-          "id": "amdGpuMonitor:variant_1791660342937",
+          "id": "amdGpuMonitor",
           "enabled": true
         },
         {
