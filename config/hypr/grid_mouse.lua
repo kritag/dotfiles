@@ -153,8 +153,10 @@ grid_binds[2] = hl.bind("SUPER + mouse:273", function()
 	end
 end, { mouse = true })
 
-hl.bind("SUPER + mouse:272", stop, { release = true, ignore_mods = true, non_consuming = true })
-hl.bind("SUPER + mouse:273", stop, { release = true, ignore_mods = true, non_consuming = true })
+-- transparent: releasing SUPER before the button recomputes Hyprland's bind shadowing while the
+-- button is still held, which would otherwise shadow these release binds and swallow the release
+hl.bind("SUPER + mouse:272", stop, { release = true, ignore_mods = true, non_consuming = true, transparent = true })
+hl.bind("SUPER + mouse:273", stop, { release = true, ignore_mods = true, non_consuming = true, transparent = true })
 
 -- native drag/resize for every other layout
 local native_binds = {

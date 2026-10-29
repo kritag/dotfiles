@@ -31,7 +31,7 @@
   thumb-scroll-mode: false
 - _NAME: PRO X Wireless
   _modelId: 4093C0940000
-  _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
+  _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore, report_rate: false}
   _serial: 99E7686C
   _unitId: 99E7686C
   _wpid: '4093'
@@ -49,6 +49,7 @@
   reprogrammable-keys: {80: 80, 81: 81, 82: 82, 83: 83, 86: 86}
 - _NAME: G915 TKL LIGHTSPEED Wireless RGB Mechanical Gaming Keyboard
   _modelId: B35F408EC343
+  _sensitive: {hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore}
   _serial: AF7DCE4C
   _unitId: AF7DCE4C
   _wpid: 408E
