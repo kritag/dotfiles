@@ -13,7 +13,6 @@ return {
             },
           },
         },
-        tombi = { enabled = false },
         tailwindcss = {
           -- -- exclude a filetype from the default_config
           -- filetypes_exclude = { "markdown" },
