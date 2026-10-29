@@ -13,6 +13,7 @@ return {
             },
           },
         },
+        tombi = { enabled = false },
         tailwindcss = {
           -- -- exclude a filetype from the default_config
           -- filetypes_exclude = { "markdown" },
@@ -28,7 +29,6 @@ return {
               hover = true,
               schemas = {
                 ["https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"] = "*omp*.{yml,yaml}",
-                ["https://f.jstanger.dev/github/ironbar/schema.json"] = "*ironbar/*conf*.{yml,yaml}",
                 ["https://www.schemastore.org/github-issue-forms.json"] = "**/.github/ISSUE_TEMPLATE/*.{yml,yamk}",
               },
             },
