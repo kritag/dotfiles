@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=jshell-java11-openjdk
+Exec=true
+NoDisplay=true
