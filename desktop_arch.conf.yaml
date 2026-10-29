@@ -205,4 +205,5 @@
         - ["! systemctl cat avahi-daemon.service >/dev/null 2>&1 || systemctl disable --now avahi-daemon.service avahi-daemon.socket", "Disable avahi (not used)"]
         - ["[ ! -d /boot/grub ] || pacman -S --needed --noconfirm grub-btrfs os-prober", "Install the GRUB helpers on GRUB systems only (not Limine)"]
         - ["! pacman -Si cachyos-gaming-meta >/dev/null 2>&1 || pacman -S --needed --noconfirm cachyos-gaming-meta", "Install the CachyOS gaming stack (proton-cachyos-slr, umu, wine) on CachyOS only"]
+        - ["! systemctl cat pci-latency.service >/dev/null 2>&1 || systemctl enable --now pci-latency.service", "Tune PCI latency timers (CachyOS only)"]
         - ["for p in netctl jfsutils f2fs-tools xfsprogs s-nail; do ! pacman -Qq $p >/dev/null 2>&1 || pacman -Rns --noconfirm $p; done", "Remove unused installer-base packages (CachyOS)"]
