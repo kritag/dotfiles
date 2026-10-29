@@ -50,7 +50,7 @@
     headset-signature-passive, logivoice-nr-state, logivoice-ng-state, logivoice-comp-state, logivoice-deesser-state, logivoice-depopper-state, logivoice-limiter-state,
     logivoice-hpf-state]
   _battery: 4100
-  _config_cookie: [137, 64]
+  _config_cookie: [137, 65]
   _modelId: B04100000000
   _sensitive: {dpi: false}
   _unitId: 7ED426EF

@@ -67,7 +67,7 @@ cd /opt/dotfiles && git pull && ./install server_fedora   # new packages or link
 ## Zen
 
 ```bash
-scripts/zen-link-userjs.sh    # links config/zen/user.js into the active profile
+scripts/zen-link-userjs.sh    # links user.js and the DMS-themed userChrome.css into the active profile
 ```
 
 ## DMS
