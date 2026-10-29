@@ -755,5 +755,7 @@
       "island": false,
       "dot": true
     }
-  ]
+  ],
+  "notepadShowLineNumbers": true,
+  "notepadAutoSave": true
 }
