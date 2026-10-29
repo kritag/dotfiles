@@ -16,6 +16,7 @@
     - accountsservice
     - aida-x-lv2
     - alsa-utils
+    - amdgpu_top
     - archlinux-contrib
     - ardour
     - bash-completion
