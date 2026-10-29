@@ -20,6 +20,7 @@
     ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.config/systemd/user/hazelnut.service: services/hazelnut.service
     ~/.config/systemd/user/thunar.service.d/after-session.conf: services/thunar-after-session.conf
+    ~/.config/systemd/user/app-@autostart.service.d/after-dms.conf: services/autostart-after-dms.conf
     ~/.config/systemd/user/znap-update.service: services/znap-update.service
     ~/.config/systemd/user/znap-update.timer: services/znap-update.timer
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
