@@ -17,6 +17,10 @@ hl.config({
 			passes = 2,
 			new_optimizations = true,
 			ignore_opacity = true,
+			variant = "acrylic",
+			acrylic = { tint = "rgba(a7c08014)" },
+			aurora = { color1 = "rgba(a7c08029)", color2 = "rgba(7fbbb37a)" },
+			fluid_jar = { color = "rgba(a7c080cc)" },
 		},
 	},
 })
