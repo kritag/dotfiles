@@ -165,7 +165,7 @@
     - zoxide
     - zsh
 - yay:
-    # - bambustudio-appimage
+    - bambustudio-appimage
     - bibata-cursor-theme-bin
     - downgrade
     - dux-files-git
@@ -173,11 +173,11 @@
     - dux-search-bin
     - evince-no-gnome
     - game-devices-udev
-    # - gpu-screen-recorder-gtk
+    - gpu-screen-recorder-gtk
     - grimblast-git
     - guitarix-git
-    # - hyprfm-git
-    # - hyprland-preview-share-picker-git
+    - hyprfm-git
+    - hyprland-preview-share-picker-git
     - hazelnut-bin
     - jotta-cli
     - lucidglyph
@@ -190,7 +190,7 @@
     # - plymouth-theme-archlinux
     - protonhax
     - protonplus
-    # - pulsecontrol-git
+    - pulsecontrol-git
     - runapp
     - spicetify-cli
     - tinty-git
