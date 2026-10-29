@@ -6,6 +6,16 @@ blocks:
     alignment: left
     segments:
       - type: claude
+        style: diamond
+        leading_diamond: 
+        trailing_diamond: 
+        foreground: '22'
+        background: green
+        background_templates:
+          - '{{ if and .Vim (eq .Vim.Mode "INSERT") }}23{{ end }}'
+          - '{{ if and .Vim (or (eq .Vim.Mode "VISUAL") (eq .Vim.Mode "VISUAL LINE")) }}red{{ end }}'
+        template: '{{ if .Vim }}<b>{{ if eq .Vim.Mode "INSERT" }}I{{ else if eq .Vim.Mode "VISUAL" }}V{{ else if eq .Vim.Mode "VISUAL LINE" }}V-L{{ else }}N{{ end }}</b>{{ end }}'
+      - type: claude
         style: plain
         foreground: blue
         background: transparent
