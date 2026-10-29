@@ -138,7 +138,6 @@
         - slack
         - snapper
         - socat
-        - solaar
         - sops
         - sqlite
         - sshuttle
@@ -175,7 +174,6 @@
     - shell:
         - ["[ \"$(plymouth-set-default-theme)\" = spinner ] || plymouth-set-default-theme spinner -R", "Set plymouth theme (rebuilds initramfs only on change)"]
         - [systemctl mask keybase-redirector.service, "Mask keybase-redirector.service"]
-        - [rm -f /etc/xdg/autostart/solaar.desktop]
 - shell:
     - [kubectl-krew update && kubectl-krew install view-secret]
     - [scripts/bootstrap-private-overlay.sh, Run private post-install overlay from Keybase if present]

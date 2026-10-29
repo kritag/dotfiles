@@ -20,5 +20,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[filter "solaar"]
-	clean = sed -E '/^  _(config_cookie|battery):/d'
