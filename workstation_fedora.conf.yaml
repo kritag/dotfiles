@@ -19,7 +19,6 @@
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo ] || dnf copr enable avengemedia/danklinux -y", "Enable copr avengemedia/danklinux"]
         - ["rpm -q rpmfusion-free-release || dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm", "Enable RPM Fusion free"]
         - ["grep -rqs yumrepos/edge /etc/yum.repos.d || dnf config-manager addrepo --from-repofile=https://packages.microsoft.com/yumrepos/edge/config.repo --overwrite --save-filename=/etc/yum.repos.d/microsoft-edge.repo", "Enable the Microsoft Edge repo"]
-        - ["rpm -q openlogi || dnf install -y https://github.com/AprilNEA/OpenLogi/releases/download/v0.8.18/openlogi-v0.8.18-linux-amd64.rpm", "Install OpenLogi (GitHub release rpm, pinned)"]
         - ["rpm -q rpmfusion-nonfree-release || dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm", "Enable RPM Fusion nonfree"]
     - dnf:
         - ImageMagick
@@ -114,6 +113,7 @@
         - obsidian
         - oc
         - oh-my-posh
+        - openlogi
         - pam-u2f
         - pamu2fcfg
         - papers
