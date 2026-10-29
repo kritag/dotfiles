@@ -50,3 +50,8 @@ mkdir -p "$profile_dir"
 ln -sfn "$SOURCE_USERJS" "$target_userjs"
 
 echo "Linked $target_userjs -> $SOURCE_USERJS"
+
+mkdir -p "$profile_dir/chrome"
+ln -sfn "$(dirname "$SOURCE_USERJS")/userChrome.css" "$profile_dir/chrome/userChrome.css"
+ln -sfn "$HOME/.config/dms/zen.css" "$profile_dir/chrome/dms-zen.css"
+echo "Linked $profile_dir/chrome/{userChrome,dms-zen}.css"
