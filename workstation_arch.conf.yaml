@@ -106,9 +106,6 @@
     - systemd-resolvconf
     - tealdeer
     - terminus-font
-    - thunar
-    - thunar-archive-plugin
-    - thunar-volman
     - tree-sitter-cli
     - ttf-nerd-fonts-symbols
     - unzip

@@ -8,7 +8,7 @@ hl.config({
 		initial_workspace_tracking = 1,
 		key_press_enables_dpms = true,
 		mouse_move_enables_dpms = false,
-		swallow_regex = "(foot|kitty|allacritty|Alacritty|thunar)",
+		swallow_regex = "(foot|kitty|allacritty|Alacritty)",
 		vrr = 2,
 	},
 	ecosystem = {
