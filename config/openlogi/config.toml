@@ -1,5 +1,5 @@
 schema_version = 10
-selected_device = "unit:99e7686c"
+selected_device = "unit:af7dce4c"
 
 [devices."serial:2601za94eew8".identity]
 display_name = "ERGO M575S Trackball"
@@ -9,15 +9,15 @@ kind = "trackball"
 [devices."serial:2601za94eew8".identity.model_info]
 entity_count = 3
 unit_id = [
-  0,
-  0,
-  0,
-  0,
+    0,
+    0,
+    0,
+    0,
 ]
 model_ids = [
-  45121,
-  0,
-  0,
+    45121,
+    0,
+    0,
 ]
 extended_model_id = 2
 
@@ -109,15 +109,15 @@ kind = "mouse"
 [devices."unit:99e7686c".identity.model_info]
 entity_count = 3
 unit_id = [
-  0,
-  0,
-  0,
-  0,
+    0,
+    0,
+    0,
+    0,
 ]
 model_ids = [
-  16531,
-  49300,
-  0,
+    16531,
+    49300,
+    0,
 ]
 extended_model_id = 0
 
@@ -175,15 +175,15 @@ kind = "keyboard"
 [devices."unit:af7dce4c".identity.model_info]
 entity_count = 5
 unit_id = [
-  0,
-  0,
-  0,
-  0,
+    0,
+    0,
+    0,
+    0,
 ]
 model_ids = [
-  45919,
-  16526,
-  49987,
+    45919,
+    16526,
+    49987,
 ]
 extended_model_id = 0
 
@@ -236,7 +236,7 @@ disable_keys = false
 [devices."unit:af7dce4c".lighting]
 enabled = true
 color = "007aff"
-brightness = 65
+brightness = 55
 
 [app_settings]
 launch_at_login = true
