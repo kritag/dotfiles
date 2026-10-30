@@ -9,15 +9,15 @@ kind = "trackball"
 [devices."serial:2601za94eew8".identity.model_info]
 entity_count = 3
 unit_id = [
-    0,
-    0,
-    0,
-    0,
+  0,
+  0,
+  0,
+  0,
 ]
 model_ids = [
-    45121,
-    0,
-    0,
+  45121,
+  0,
+  0,
 ]
 extended_model_id = 2
 
@@ -109,15 +109,15 @@ kind = "mouse"
 [devices."unit:99e7686c".identity.model_info]
 entity_count = 3
 unit_id = [
-    0,
-    0,
-    0,
-    0,
+  0,
+  0,
+  0,
+  0,
 ]
 model_ids = [
-    16531,
-    49300,
-    0,
+  16531,
+  49300,
+  0,
 ]
 extended_model_id = 0
 
@@ -175,15 +175,15 @@ kind = "keyboard"
 [devices."unit:af7dce4c".identity.model_info]
 entity_count = 5
 unit_id = [
-    0,
-    0,
-    0,
-    0,
+  0,
+  0,
+  0,
+  0,
 ]
 model_ids = [
-    45919,
-    16526,
-    49987,
+  45919,
+  16526,
+  49987,
 ]
 extended_model_id = 0
 
@@ -244,7 +244,7 @@ check_for_updates = false
 auto_install_updates = false
 update_prompt_seen = true
 show_in_menu_bar = true
-capture_mouse_events = true
+capture_mouse_events = false
 smooth_scroll = false
 vertical_scroll_sensitivity = 14
 app_icon = "openlogi"
