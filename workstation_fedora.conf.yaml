@@ -174,6 +174,7 @@
     - shell:
         - ["[ \"$(plymouth-set-default-theme)\" = spinner ] || plymouth-set-default-theme spinner -R", "Set plymouth theme (rebuilds initramfs only on change)"]
         - [systemctl mask keybase-redirector.service, "Mask keybase-redirector.service"]
+        - [systemctl disable --now iscsi-starter.service iscsid.socket iscsiuio.socket, "Disable iSCSI (iscsi.service waits on network-online, delays boot ~6s)"]
 - shell:
     - [kubectl-krew update && kubectl-krew install view-secret]
     - [scripts/bootstrap-private-overlay.sh, Run private post-install overlay from Keybase if present]
