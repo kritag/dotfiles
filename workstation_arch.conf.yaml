@@ -127,6 +127,7 @@
 - yay:
     - bibata-cursor-theme-bin
     - downgrade
+    - dux-files-git
     - dux-greeter-bin
     - dux-search-bin
     - dracula-gtk-theme
