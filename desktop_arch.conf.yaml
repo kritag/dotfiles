@@ -112,7 +112,9 @@
     - python
     - qbittorrent
     - qpwgraph
+    - qt5-wayland
     - qt6-multimedia
+    - qt6-wayland
     - ratatouille
     - ratatouille-lv2
     - realtime-privileges
@@ -135,9 +137,6 @@
     - tealdeer
     - telegram-desktop
     - terminus-font
-    - thunar
-    - thunar-archive-plugin
-    - thunar-volman
     - tree-sitter-cli
     - ttf-nerd-fonts-symbols
     - tuxguitar

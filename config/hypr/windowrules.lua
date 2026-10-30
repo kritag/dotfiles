@@ -1,7 +1,7 @@
 hl.window_rule({
 	name = "opacity-90",
 	match = {
-		class = "^(spotify|org.gnome.Calculator|org.gnome.Nautilus|org.kde.dolphin|steam|discord|Thunar|thunar|dev.duxlabs.files|net.lutris.Lutris|org.gnome.Calendar|pcmanfm|Rofi|xdg-desktop-portal-gtk|org.qbittorrent.qBittorrent)$",
+		class = "^(spotify|org.gnome.Calculator|org.gnome.Nautilus|org.kde.dolphin|steam|discord|dev.duxlabs.files|net.lutris.Lutris|org.gnome.Calendar|pcmanfm|Rofi|xdg-desktop-portal-gtk|org.qbittorrent.qBittorrent)$",
 	},
 	opacity = "0.90 0.90",
 })
@@ -65,18 +65,6 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = "(monitor_w*0.4) (monitor_h*0.7)",
-})
-
--- Progress has no parent window, so it would tile; float it at its own size.
--- Other Thunar dialogs (rename, replace, new folder) float at their own size already.
-hl.window_rule({
-	name = "thunar-progress",
-	match = {
-		class = "^(Thunar|thunar)$",
-		title = "^(File Operation Progress)$",
-	},
-	float = true,
-	move = "(monitor_w-window_w-10) 150",
 })
 
 hl.window_rule({

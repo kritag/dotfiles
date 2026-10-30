@@ -17,6 +17,7 @@
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:sneexy:zen-browser.repo ] || dnf copr enable sneexy/zen-browser -y", "Enable copr sneexy/zen-browser"]
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:dms.repo ] || dnf copr enable avengemedia/dms -y", "Enable copr avengemedia/dms"]
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo ] || dnf copr enable avengemedia/danklinux -y", "Enable copr avengemedia/danklinux"]
+        - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux.repo ] || dnf copr enable duxlabs/dux -y", "Enable copr duxlabs/dux"]
         - ["rpm -q rpmfusion-free-release || dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm", "Enable RPM Fusion free"]
         - ["grep -rqs yumrepos/edge /etc/yum.repos.d || dnf config-manager addrepo --from-repofile=https://packages.microsoft.com/yumrepos/edge/config.repo --overwrite --save-filename=/etc/yum.repos.d/microsoft-edge.repo", "Enable the Microsoft Edge repo"]
         - ["rpm -q rpmfusion-nonfree-release || dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm", "Enable RPM Fusion nonfree"]
@@ -44,6 +45,7 @@
         - dnf-automatic
         - dnf-plugins-core
         - duf
+        - dux-files-git
         - eza
         - fastfetch
         - fd-find
@@ -146,9 +148,6 @@
         - tar
         - tealdeer
         - terraform
-        - thunar
-        - thunar-archive-plugin
-        - thunar-volman
         - tinty
         - tree
         - tree-sitter-cli

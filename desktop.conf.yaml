@@ -12,6 +12,7 @@
     ~/.config/dms/settings.json: config/dms/settings-desktop.json
     ~/.config/openlogi/config.toml: config/openlogi/config.toml
     ~/.config/environment.d/gaming.conf: config/environment.d/gaming.conf
+    ~/.config/pipewire/pipewire.conf.d/10-lowlatency.conf: config/pipewire/10-lowlatency.conf
     ~/.face: logos/Arch-linux-logo.png
     ~/.config/mimeapps.list: config/mimeapps-desktop.list
 - shell:
