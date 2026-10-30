@@ -67,25 +67,16 @@ hl.window_rule({
 	size = "(monitor_w*0.4) (monitor_h*0.7)",
 })
 
+-- Progress has no parent window, so it would tile; float it at its own size.
+-- Other Thunar dialogs (rename, replace, new folder) float at their own size already.
 hl.window_rule({
-	name = "Thunar-Progress-bar",
+	name = "thunar-progress",
 	match = {
-		class = "^(Thunar|thunar|org.gnome.FileRoller)$",
-		title = "^(File Operation Progress|Confirm to replace files|Create New Folder|Extract)$",
+		class = "^(Thunar|thunar)$",
+		title = "^(File Operation Progress)$",
 	},
 	float = true,
-	size = "(monitor_w*0.2) (monitor_h*0.1)",
 	move = "(monitor_w-window_w-10) 150",
-})
-
-hl.window_rule({
-	name = "thunar",
-	match = {
-		class = "^(Thunar|thunar|org.gnome.FileRoller)$",
-		title = "negative:^(File Operation Progress|Confirm to replace files|Create New Folder|Extract)$",
-	},
-	center = true,
-	size = "(monitor_w*0.4) (monitor_h*0.7)",
 })
 
 hl.window_rule({
