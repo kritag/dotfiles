@@ -1,7 +1,7 @@
 hl.window_rule({
 	name = "opacity-90",
 	match = {
-		class = "^(spotify|org.gnome.Calculator|org.gnome.Nautilus|org.kde.dolphin|steam|discord|Thunar|thunar|net.lutris.Lutris|org.gnome.Calendar|pcmanfm|Rofi|xdg-desktop-portal-gtk|org.qbittorrent.qBittorrent)$",
+		class = "^(spotify|org.gnome.Calculator|org.gnome.Nautilus|org.kde.dolphin|steam|discord|Thunar|thunar|dev.duxlabs.files|net.lutris.Lutris|org.gnome.Calendar|pcmanfm|Rofi|xdg-desktop-portal-gtk|org.qbittorrent.qBittorrent)$",
 	},
 	opacity = "0.90 0.90",
 })
