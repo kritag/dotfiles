@@ -194,13 +194,13 @@
     - tone3000-bin
     - wineasio
     - zen-browser-bin
+    - zsh-patina-bin
 - shell:
     - command: pacman -Qq yabridge-wine10-git yabridgectl-wine10-git >/dev/null 2>&1 || scripts/bootstrap-yabridge.sh
       description: Build yabridge without the CachyOS -O3/LTO flags
       stdin: true
       stdout: true
       stderr: true
-    - zsh-patina-bin
 - sudo:
     - shell:
         - ["systemctl enable --now NetworkManager bluetooth", "Enable networking and bluetooth"]
