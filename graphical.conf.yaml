@@ -25,6 +25,7 @@
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
     ~/.config/uwsm/default-id: config/uwsm/default-id
     ~/.config/uwsm/env: config/uwsm/env
+    ~/.local/bin/mount-iso: scripts/mount-iso.sh
     ~/.local/bin/webapp-firefox: scripts/webapp-firefox.sh
     ~/.local/bin/webapp-zen: scripts/webapp-zen.sh
     ~/.local/bin/zen-link-userjs: scripts/zen-link-userjs.sh

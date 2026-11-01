@@ -192,9 +192,14 @@
     - spicetify-cli
     - tinty-git
     - tone3000-bin
-    - yabridge-wine10-git
-    - yabridgectl-wine10-git
+    - wineasio
     - zen-browser-bin
+- shell:
+    - command: pacman -Qq yabridge-wine10-git yabridgectl-wine10-git >/dev/null 2>&1 || scripts/bootstrap-yabridge.sh
+      description: Build yabridge without the CachyOS -O3/LTO flags
+      stdin: true
+      stdout: true
+      stderr: true
     - zsh-patina-bin
 - sudo:
     - shell:

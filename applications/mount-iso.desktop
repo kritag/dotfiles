@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Mount Disk Image
+Comment=Mount ISO and disk images read-only
+Icon=media-optical
+Exec=mount-iso %F
+MimeType=application/vnd.efi.iso;application/x-cd-image;application/x-iso9660-image;application/x-raw-disk-image;
+NoDisplay=false
+Terminal=false
