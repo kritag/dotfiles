@@ -346,7 +346,7 @@ hl.layout.register("grid", {
 
 		if mouse_cmd == "detach" then
 			-- "detach <id>": window is being dragged (floated); free its slot
-			if remove_id(ws, msg:match("^%S+%s+(%d+)")) then
+			if remove_id(ws, msg:match("^%S+%s+(%w+)")) then
 				save_state()
 			end
 			return true
@@ -354,7 +354,7 @@ hl.layout.register("grid", {
 			-- "drop <id> <target> <px> <py>": dragged window released over
 			-- `target`; px/py is the cursor position inside it, 0-100. The
 			-- window joins the target's column on the side the cursor is on.
-			local id, target, px, py = msg:match("^%S+%s+(%d+)%s+(%d+)%s+(%d+)%s+(%d+)")
+			local id, target, px, py = msg:match("^%S+%s+(%w+)%s+(%w+)%s+(%d+)%s+(%d+)")
 			remove_id(ws, id)
 			local dc, dr = find_window(ws, target)
 			if not dc then
@@ -370,7 +370,7 @@ hl.layout.register("grid", {
 			-- "mresize <id> <dx> <dy> <l|r> <t|b>": pixel deltas from a mouse
 			-- drag, grabbed on the given side of the window. Only the boundary
 			-- on that side moves (the neighbour gives or takes the space).
-			local id, dx, dy, ex, ey = msg:match("^%S+%s+(%d+)%s+(-?%d+)%s+(-?%d+)%s+(%a)%s+(%a)")
+			local id, dx, dy, ex, ey = msg:match("^%S+%s+(%w+)%s+(-?%d+)%s+(-?%d+)%s+(%a)%s+(%a)")
 			local ci, ri = find_window(ws, id)
 			if not ci then
 				return true

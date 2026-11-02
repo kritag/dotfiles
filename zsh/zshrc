@@ -48,7 +48,6 @@ compdef _kubectl kubecolor
 # Make autocomplete work for the jctl() function
 compdef _journalctl jctl
 compdef _zr zr
-Sourcing k8s related stuff if using k8s
 if command -v kubectl &>/dev/null; then
   source $HOME/.functions_k8s
 fi

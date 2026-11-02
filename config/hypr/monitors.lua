@@ -13,7 +13,7 @@ hl.monitor({
 	scale = 1,
 	vrr = 1,
 	cm = "srgb",
-	bitdepth = 10,
+	bitdepth = 8,
 })
 
 local samsung_c34h89x = {
