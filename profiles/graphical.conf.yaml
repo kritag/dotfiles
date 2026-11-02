@@ -8,6 +8,11 @@
       create: true
       backup: true
       force: true
+# Drop links left dangling when a file moves or is removed in the repo.
+- clean:
+    - ~/.local/share/applications
+    - ~/.local/share/fonts
+    - ~/.local/bin
 - link:
     ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf
     ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
