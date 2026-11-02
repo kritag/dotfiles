@@ -1,0 +1,33 @@
+# Run after graphical.conf.yaml (see there).
+- plugins:
+    - profiles/plugins/sudo.py
+- defaults:
+    link:
+      relink: true
+      create: true
+      backup: true
+      force: true
+- link:
+    ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
+    ~/.config/dms/settings.json: config/dms/settings-desktop.json
+    ~/.functions_k8s: zsh/functions_k8s.zsh
+    ~/.config/openlogi/config.toml: config/openlogi/config.toml
+    ~/.config/environment.d/gaming.conf: config/environment.d/gaming.conf
+    ~/.config/pipewire/pipewire.conf.d/10-lowlatency.conf: config/pipewire/10-lowlatency.conf
+    ~/.face: assets/logos/Arch-linux-logo.png
+    ~/.config/mimeapps.list: config/mimeapps-desktop.list
+- shell:
+    - [scripts/bootstrap-desktop-webapps.sh, "Create webapp launchers"]
+    - [scripts/bootstrap-empty-keyring.sh, "Create the default keyring without a password"]
+    - [scripts/bootstrap-dms-plugins.sh calculator dankActions dankGifSearch amdGpuMonitor, "Install DMS plugins"]
+    - ["[ -e ~/.config/kitty/current-theme.conf ] || DOTFILES_BOOTSTRAP=1 dbus-run-session -- scripts/themeSwitch.sh everforest", "Apply the first theme"]
+    - ["systemctl is-enabled greetd >/dev/null 2>&1 || DMS_PRIVESC=sudo dms-greeter enable -y", "Enable the DMS greeter (greetd)"]
+    - ["DMS_PRIVESC=sudo dms-greeter sync -y", "Sync the DMS theme and settings to the greeter"]
+- sudo:
+    - shell:
+        - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
+        - [install -D -m 0644 system/services/reflector.conf /etc/xdg/reflector/reflector.conf && systemctl enable reflector.timer --now, "Configure reflector and schedule mirror refresh"]
+        - [systemctl enable lactd --now]
+        - [systemctl enable --now btrfs-scrub@mnt-storage.timer]
+        - [systemctl enable --now snapper-timeline.timer, "Hourly snapper snapshots"]
+        - ["[ ! -d /boot/grub ] || systemctl enable --now grub-btrfsd.service", "Watch for snapshots in the GRUB menu (GRUB only)"]

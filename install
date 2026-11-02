@@ -10,7 +10,7 @@ cd "${BASEDIR}"
 
 "${BASEDIR}/scripts/bootstrap-dotbot.sh"
 
-# default.conf.yaml is the workstation shell setup; server profiles use the shared server one instead.
+# profiles/default.conf.yaml is the workstation shell setup; server profiles use the shared server one instead.
 if [[ "${1:-}" == server* ]]; then
   configs=("$@")
 else
@@ -21,5 +21,5 @@ for conf in "${configs[@]}"; do
   dotbot \
     -v \
     -d "${BASEDIR}" \
-    -c "${conf}${CONFIG_SUFFIX}"
+    -c "profiles/${conf}${CONFIG_SUFFIX}"
 done

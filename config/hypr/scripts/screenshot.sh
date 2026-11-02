@@ -8,7 +8,7 @@ set -eu
 mode="${1:-area}" # area|screen|active
 out="${2:?output path required}"
 
-BLACK="$(dirname "$(readlink -f "$0")")/../../../solid_background/black.png"
+BLACK="$(dirname "$(readlink -f "$0")")/../../../assets/solid_background/black.png"
 
 opt() { hyprctl getoption "$1" -j | jq -r ".$2"; }
 

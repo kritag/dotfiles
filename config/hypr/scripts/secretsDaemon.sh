@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# D-Bus activation entry for org.freedesktop.secrets (see services/org.freedesktop.secrets.service).
+# D-Bus activation entry for org.freedesktop.secrets (see system/services/org.freedesktop.secrets.service).
 # Starts the daemon already unlocked with the TPM-sealed password, so whichever client asks
 # first can never activate a locked one. Falls back to the stock locked daemon if unsealing fails.
 dir="$HOME/.config/keyring-tpm"

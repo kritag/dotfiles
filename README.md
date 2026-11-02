@@ -8,8 +8,9 @@ Arch/CachyOS from the AUR (builds `yay` if missing), Fedora from the
 
 ## Install
 
-`./install [profile...]` runs `default` first, then each profile (name without
-`.conf.yaml`). Profiles starting with `server` skip `default`.
+`./install [profile...]` runs `default` first, then each profile (a file in
+`profiles/`, name without `.conf.yaml`). Profiles starting with `server` skip
+`default`.
 
 ```bash
 ./install                                            # default only
@@ -28,6 +29,20 @@ Clones from before the submodule removal: run
 `git submodule deinit -f dotbot; rm -rf dotbot .git/modules/dotbot` before the
 next `git pull`.
 
+## Layout
+
+```
+profiles/   dotbot profiles (*.conf.yaml) and their plugins/
+config/     tool configs, incl. zsh/ and applications/ (.desktop files)
+scripts/    bootstrap and helper scripts
+system/     services/ (systemd units, /etc drop-ins), pkgbuilds/
+assets/     fonts/ wallpapers/ logos/ solid_background/
+```
+
+Clones from before this layout: re-run `./install <profiles>` right after the
+pull, or the old `~/.zshrc` and other links dangle. Servers: re-run
+`./install server_fedora` to repoint the `/etc/zshrc` hook.
+
 ## CachyOS
 
 Installer: **btrfs**, **Limine**. Package page: tick only these five, untick
@@ -44,7 +59,7 @@ First boot: `sudo pacman -S git`, then
 
 ## Server
 
-Shared zsh for all users via `/etc/zshrc` → `zsh/server-global.zsh`. Root and
+Shared zsh for all users via `/etc/zshrc` → `config/zsh/server-global.zsh`. Root and
 users with their own `~/.zshrc` symlink are skipped.
 
 ```bash
@@ -61,7 +76,7 @@ cd /opt/dotfiles && git pull                       # config only, applies on nex
 cd /opt/dotfiles && git pull && ./install server_fedora   # new packages or links
 ```
 
-- Per-user links (`server_user.conf.yaml`) apply on a user's first shell and
+- Per-user links (`profiles/server_user.conf.yaml`) apply on a user's first shell and
   after a pull that changes the file.
 
 ## Zen
