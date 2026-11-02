@@ -1,7 +1,7 @@
 hl.window_rule({
 	name = "opacity-90",
 	match = {
-		class = "^(spotify|org.gnome.Calculator|org.gnome.Nautilus|org.kde.dolphin|steam|discord|dev.duxlabs.files|net.lutris.Lutris|org.gnome.Calendar|pcmanfm|Rofi|xdg-desktop-portal-gtk|org.qbittorrent.qBittorrent)$",
+		class = "^(spotify|org.gnome.Calculator|org.gnome.Nautilus|org.kde.dolphin|steam|discord|net.lutris.Lutris|org.gnome.Calendar|xdg-desktop-portal-gtk|org.qbittorrent.qBittorrent)$",
 	},
 	opacity = "0.90 0.90",
 })
@@ -15,7 +15,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "float-apps",
 	match = {
-		class = "^(org.gnome.Calculator|org.gnome.TextEditor|org.gnome.Loupe|org.gnome.font-viewer|org.gnome.Calendar|org.kde.dolphin|org.gnome.Nautilus|Keybase|Rofi|org.quickshell|one.alynx.showmethekey|showmethekey-gtk|com.vysp3r.ProtonPlus|xdg-desktop-portal-gtk)$",
+		class = "^(org.gnome.Calculator|org.gnome.TextEditor|org.gnome.Loupe|org.gnome.font-viewer|org.gnome.Calendar|org.kde.dolphin|org.gnome.Nautilus|Keybase|org.quickshell|one.alynx.showmethekey|showmethekey-gtk|com.vysp3r.ProtonPlus|xdg-desktop-portal-gtk)$",
 	},
 	float = true,
 	center = true,
@@ -190,13 +190,6 @@ hl.window_rule({
 	float = true,
 	move = "cursor_x cursor_y",
 })
-
--- hl.layer_rule({
--- 	match = {
--- 		namespace = "^(dms:(bar|tooltip|toast|dock-context-menu|tray-menu-window|control-center|notification-center-popout|dash|system-update|process-list-popout|battery|popout|app-launcher))$",
--- 	},
--- 	ignore_alpha = 0.0,
--- })
 
 hl.layer_rule({
 	match = { namespace = "^dms:bar$" },
