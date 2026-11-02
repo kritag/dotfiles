@@ -77,7 +77,7 @@ local function tick()
 		local dx, dy = math.floor(cur.x - last.x), math.floor(cur.y - last.y)
 		if dx ~= 0 or dy ~= 0 then
 			last = { x = last.x + dx, y = last.y + dy }
-			layout_msg(("mresize %d %d %d %s %s"):format(id, dx, dy, edge[1], edge[2]))
+			layout_msg(("mresize %s %d %d %s %s"):format(id, dx, dy, edge[1], edge[2]))
 		end
 	else
 		hl.dispatch(hl.dsp.window.move({
@@ -111,7 +111,7 @@ local function stop()
 	end
 	float(w, false)
 	if target then
-		layout_msg(("drop %d %d %d %d"):format(w.stable_id, target.stable_id, math.floor(px), math.floor(py)))
+		layout_msg(("drop %s %s %d %d"):format(w.stable_id, target.stable_id, math.floor(px), math.floor(py)))
 	end
 end
 
