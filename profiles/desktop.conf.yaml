@@ -10,7 +10,7 @@
 - link:
     ~/.config/hypr/autostart.lua: config/hypr-desktop/autostart.lua
     ~/.config/dms/settings.json: config/dms/settings-desktop.json
-    ~/.functions_k8s: zsh/functions_k8s.zsh
+    ~/.functions_k8s: config/zsh/functions_k8s.zsh
     ~/.config/openlogi/config.toml: config/openlogi/config.toml
     ~/.config/environment.d/gaming.conf: config/environment.d/gaming.conf
     ~/.config/pipewire/pipewire.conf.d/10-lowlatency.conf: config/pipewire/10-lowlatency.conf
