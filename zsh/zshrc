@@ -48,11 +48,10 @@ compdef _kubectl kubecolor
 # Make autocomplete work for the jctl() function
 compdef _journalctl jctl
 compdef _zr zr
-# Sourcing k8s related stuff if using k8s
-#if command -v kubectl &> /dev/null
-#then
-#    source $HOME/.functions_k8s
-#fi
+Sourcing k8s related stuff if using k8s
+if command -v kubectl &>/dev/null; then
+  source $HOME/.functions_k8s
+fi
 
 eval "$(zsh-patina activate)"
 znap eval oh-my-posh 'oh-my-posh init zsh --config $HOME/.config/oh-my-posh/omp.yaml'
