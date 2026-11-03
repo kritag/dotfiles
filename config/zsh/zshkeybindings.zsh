@@ -107,9 +107,12 @@ bindkey -M vicmd '^ ' autosuggest-accept
 # Make the zsh-vi plugin not overwrite fzf-history-widget in insert mode
 function zvm_after_init() {
   zvm_bindkey viins "^R" fzf-history-widget
+  zvm_bindkey viins '^[.' insert-last-word
   # zvm_bindkey viins "^[OA" history-substring-search-up
   # zvm_bindkey viins "^[OB" history-substring-search-down
   # zvm_bindkey viins "^[[A" history-substring-search-up
   # zvm_bindkey viins "^[[B" history-substring-search-down
 }
 bindkey -v
+# [Alt-.] - insert the last argument of the previous command, repeat to go further back
+bindkey -M viins '^[.' insert-last-word
