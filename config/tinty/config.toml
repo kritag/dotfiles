@@ -45,7 +45,7 @@ name = "hypr"
 path = "~/.config/tinted-theming/tinty/templates/hypr"
 themes-dir = "colors"
 supported-systems = ["base24"]
-hook = "mkdir -p ~/.config/hypr && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/hypr/colors.lua"
+hook = "mkdir -p ~/.config/hypr && sed \"s/@@FONT@@/${TINTY_FONT:-Geist}/g\" \"$TINTY_THEME_FILE_PATH\" > ~/.config/hypr/colors.lua"
 
 [[items]]
 name = "lazygit"
@@ -60,6 +60,22 @@ path = "~/.config/tinted-theming/tinty/templates/spicetify"
 themes-dir = "colors"
 supported-systems = ["base24"]
 hook = "mkdir -p ~/.config/spicetify/Themes/tinty && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/spicetify/Themes/tinty/color.ini"
+
+# Full ModernZ modernz.conf; config/mpv/script-opts/modernz.conf is a symlink to the output.
+[[items]]
+name = "mpv"
+path = "~/.config/tinted-theming/tinty/templates/mpv"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/tinted-theming/generated && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/tinted-theming/generated/modernz.conf"
+
+# ModernZ pause_indicator_lite.conf; config/mpv/script-opts/pause_indicator_lite.conf links to the output.
+[[items]]
+name = "mpv-pause-indicator"
+path = "~/.config/tinted-theming/tinty/templates/mpv-pause-indicator"
+themes-dir = "colors"
+supported-systems = ["base24"]
+hook = "mkdir -p ~/.config/tinted-theming/generated && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/tinted-theming/generated/pause_indicator_lite.conf"
 
 [[items]]
 name = "slack"
@@ -87,7 +103,7 @@ name = "hyprland-preview-share-picker"
 path = "~/.config/tinted-theming/tinty/templates/hyprland-preview-share-picker"
 themes-dir = "colors"
 supported-systems = ["base24"]
-hook = "mkdir -p ~/.config/hyprland-preview-share-picker && cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/hyprland-preview-share-picker/colors.css"
+hook = "mkdir -p ~/.config/hyprland-preview-share-picker && sed \"s/@@FONT@@/${TINTY_FONT:-Geist}/g\" \"$TINTY_THEME_FILE_PATH\" > ~/.config/hyprland-preview-share-picker/colors.css"
 
 # Paste the result into Kagi settings > custom CSS. Dark only.
 [[items]]

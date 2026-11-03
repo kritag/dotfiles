@@ -1,9 +1,12 @@
+local colors = require("colors")
+
 hl.config({
 	misc = {
 		animate_manual_resizes = true,
 		disable_hyprland_logo = true,
 		disable_splash_rendering = true,
 		enable_swallow = false,
+		font_family = colors.font,
 		force_default_wallpaper = 0,
 		initial_workspace_tracking = 1,
 		key_press_enables_dpms = true,
@@ -17,8 +20,6 @@ hl.config({
 	},
 	render = {
 		direct_scanout = 2,
-	},
-	cursor = {
-		no_break_fs_vrr = 2,
+		cm_auto_hdr = 0,
 	},
 })

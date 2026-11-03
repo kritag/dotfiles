@@ -74,6 +74,8 @@ fi
 
 # First run on a machine: fetch the scheme and template repos.
 [[ -d "$TINTY_DATA/scheme-repos" ]] || tinty sync
+# Link items added to config.toml since then; build/apply fail on an uninstalled item.
+tinty install >/dev/null
 
 # Templates are built into gitignored output dirs, so rebuild before applying.
 tinty build --quiet
@@ -95,7 +97,6 @@ sub ~/.config/dms/settings.json "themes/$dms/theme.json" "s|\"customThemeFile\":
 sub ~/.config/dms/settings.json "\"fontFamily\": \"$TINTY_FONT\"" "s#^\(  \"\(fontFamily\|displayFontFamily\|lockScreenFontFamily\)\": \"\)[^\"]*#\1$TINTY_FONT#"
 sub ~/.config/dms/settings.json "\"monoFontFamily\": \"$TINTY_MONOFONT\"" "s|^\(  \"monoFontFamily\": \"\)[^\"]*|\1$TINTY_MONOFONT|; s|^\(   \+\"fontFamily\": \"\)[^\"]*|\1$TINTY_MONOFONT|"
 sub ~/.config/mpv/mpv.conf "osd-font=\"$TINTY_FONT\"" "s|^osd-font=.*|osd-font=\"$TINTY_FONT\"|"
-sub ~/.config/mpv/script-opts/modernz.conf "font=\"$TINTY_FONT\"" "s|^font=.*|font=\"$TINTY_FONT\"|"
 
 # Fonts: kitty (nvim follows it) and fontconfig's sans-serif/monospace aliases.
 sed -i --follow-symlinks "s|^font_family .*|font_family      family=\"$TINTY_MONOFONT\"|" ~/.config/kitty/kitty.conf
