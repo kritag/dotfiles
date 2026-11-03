@@ -27,7 +27,9 @@
     - shell:
         - [systemctl enable paccache.timer --now, Enable deletion of cached pacman packages]
         - [install -D -m 0644 system/services/reflector.conf /etc/xdg/reflector/reflector.conf && systemctl enable reflector.timer --now, "Configure reflector and schedule mirror refresh"]
+        - ["rg -q 'ppfeaturemask=0xFFF7FFFF' /etc/modprobe.d/99-amdgpu-overdrive.conf 2>/dev/null || { install -Dm0644 system/lact/99-amdgpu-overdrive.conf /etc/modprobe.d/99-amdgpu-overdrive.conf && if command -v limine-mkinitcpio >/dev/null; then limine-mkinitcpio; else mkinitcpio -P; fi; }", "Unlock amdgpu overdrive for LACT (initramfs rebuilt on first install, reboot after)"]
         - [systemctl enable lactd --now]
+        - ["cmp -s system/lact/config.yaml /etc/lact/config.yaml || if rg -q '^gpus:' /etc/lact/config.yaml 2>/dev/null; then echo 'LACT: /etc/lact/config.yaml differs from the repo, left alone'; else install -Dm0644 system/lact/config.yaml /etc/lact/config.yaml && systemctl restart lactd; fi", "Apply the LACT GPU tuning"]
         - [systemctl enable --now btrfs-scrub@mnt-storage.timer]
         - [systemctl enable --now snapper-timeline.timer, "Hourly snapper snapshots"]
         - ["[ ! -d /boot/grub ] || systemctl enable --now grub-btrfsd.service", "Watch for snapshots in the GRUB menu (GRUB only)"]
