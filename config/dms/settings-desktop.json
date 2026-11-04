@@ -488,7 +488,7 @@
       "value": "exposure_plus_2"
     }
   },
-  "m3ElevationEnabled": true,
+  "m3ElevationEnabled": false,
   "bluetoothMprisEnabled": true,
   "displayFontFamily": "Noto Sans",
   "barConfigs": [
@@ -547,11 +547,10 @@
           "showSpecialWorkspaces": true,
           "workspaceFocusedBorderEnabled": false,
           "workspaceFocusedCustomColor": "#6750A4",
-          "workspaceUnfocusedCustomColor": "#49454E"
-        },
-        {
-          "id": "island",
-          "enabled": false
+          "workspaceUnfocusedCustomColor": "#49454E",
+          "workspaceIndicatorStyle": "pills",
+          "workspaceActiveAppHighlightEnabled": true,
+          "workspaceUnfocusedAppsFullOpacity": false
         }
       ],
       "rightWidgets": [
@@ -565,15 +564,15 @@
           "minimumWidth": false
         },
         {
-          "id": "amdGpuMonitor:variant_1791660342937",
-          "enabled": true
-        },
-        {
           "id": "memUsage",
           "enabled": true,
           "minimumWidth": true,
           "showInGb": false,
           "showSwap": false
+        },
+        {
+          "id": "amdGpuMonitor:variant_1793284506427",
+          "enabled": true
         },
         {
           "id": "weather",
@@ -598,7 +597,7 @@
         }
       ],
       "spacing": 4,
-      "innerPadding": 4,
+      "innerPadding": 0,
       "bottomGap": 0,
       "transparency": 0,
       "widgetTransparency": 1,
@@ -611,7 +610,7 @@
       "borderColor": "surfaceText",
       "borderOpacity": 1,
       "borderThickness": 1,
-      "fontScale": 1.3,
+      "fontScale": 1.2,
       "autoHide": false,
       "autoHideDelay": 250,
       "openOnOverview": false,
@@ -621,14 +620,16 @@
       "widgetOutlineEnabled": false,
       "batteryColorMode": "level",
       "attachToScreenEdge": false,
-      "maximizeWidgetIcons": false,
-      "maximizeWidgetText": false,
+      "maximizeWidgetIcons": true,
+      "maximizeWidgetText": true,
       "widgetPadding": 10,
       "barInsetPadding": 10,
       "followInterfaceStyle": false,
       "widgetFollowInterfaceStyle": true,
       "island": false,
-      "dot": false
+      "dot": false,
+      "surfaceColor": "default",
+      "widgetStyle": "pills"
     },
     {
       "id": "dot1792568059203",
@@ -773,5 +774,7 @@
       "enabled": false
     }
   ],
-  "greeterAutoLogin": true
+  "greeterAutoLogin": true,
+  "hyprlandLayoutRadiusOverride": -1,
+  "focusRingEnabled": true
 }
