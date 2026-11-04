@@ -94,6 +94,7 @@
     - mpv
     - neovim
     - networkmanager
+    - noto-fonts
     - noto-fonts-cjk
     - noto-fonts-emoji
     - npm
@@ -138,6 +139,7 @@
     - telegram-desktop
     - terminus-font
     - tree-sitter-cli
+    - ttf-jetbrains-mono
     - ttf-nerd-fonts-symbols
     - tuxguitar
     - unrar

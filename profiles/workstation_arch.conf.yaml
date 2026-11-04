@@ -76,6 +76,7 @@
     - mpv
     - neovim
     - networkmanager
+    - noto-fonts
     - noto-fonts-emoji
     - obs-studio
     - openbsd-netcat
@@ -107,6 +108,7 @@
     - tealdeer
     - terminus-font
     - tree-sitter-cli
+    - ttf-jetbrains-mono
     - ttf-nerd-fonts-symbols
     - unzip
     - uwsm
