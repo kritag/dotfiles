@@ -16,6 +16,7 @@
 - link:
     ~/.config/MangoHud/MangoHud.conf: config/Mangohud/MangoHud.conf
     ~/.config/fontconfig/fonts.conf: config/fontconfig/fonts.conf
+    ~/.config/environment.d/lucidglyph-freetype-properties.conf: config/environment.d/lucidglyph-freetype-properties.conf
     ~/.config/hypr/.luarc.json: config/hypr/.luarc.json
     ~/.config/gtk-4.0/sidebar-label-fix.css: config/gtk-4.0/sidebar-label-fix.css
     ~/.config/dms/plugin_settings.json: config/dms/plugin_settings.json

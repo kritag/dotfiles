@@ -68,8 +68,6 @@
         - google-noto-color-emoji-fonts
         - google-noto-emoji-fonts
         - google-noto-sans-cjk-vf-fonts
-        - google-noto-sans-vf-fonts
-        - google-noto-serif-vf-fonts
         - gpu-screen-recorder-gtk
         - grimblast
         - gvfs-mtp
@@ -83,7 +81,6 @@
         - inotify-tools
         - intel-media-driver
         - iwlwifi-mld-firmware
-        - jetbrains-mono-fonts
         - jq
         - k9s
         - keepassxc
