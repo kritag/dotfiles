@@ -139,8 +139,8 @@
     }
   ],
   "centeringMode": "geometric",
-  "greeterEnableFprint": false,
-  "greeterEnableU2f": false,
+  "greeterEnableFprint": true,
+  "greeterEnableU2f": true,
   "spotlightSectionViewModes": {
     "plugin_dankHyprlandWindows": "tile"
   },
@@ -233,6 +233,7 @@
       "showOnLastDisplay": false,
       "position": 1,
       "mode": "compact",
+      "middleClickAction": "close",
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 40,
@@ -547,6 +548,10 @@
           "workspaceFocusedBorderEnabled": false,
           "workspaceFocusedCustomColor": "#6750A4",
           "workspaceUnfocusedCustomColor": "#49454E"
+        },
+        {
+          "id": "island",
+          "enabled": false
         }
       ],
       "rightWidgets": [
@@ -560,7 +565,7 @@
           "minimumWidth": false
         },
         {
-          "id": "amdGpuMonitor",
+          "id": "amdGpuMonitor:variant_1791660342937",
           "enabled": true
         },
         {
@@ -744,12 +749,28 @@
       "attachToScreenEdge": false,
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
-      "widgetPadding": 8,
+      "widgetPadding": 5,
       "barInsetPadding": 10,
       "followInterfaceStyle": false,
       "widgetFollowInterfaceStyle": true,
       "island": false,
-      "dot": true
+      "dot": true,
+      "islandCompactThickness": 32,
+      "islandSatelliteGap": 6
+    }
+  ],
+  "notepadShowLineNumbers": true,
+  "notepadAutoSave": true,
+  "density": "dense",
+  "interfaceStyle": "expressive",
+  "weatherProviders": [
+    {
+      "id": "metno",
+      "enabled": true
+    },
+    {
+      "id": "openmeteo",
+      "enabled": false
     }
   ],
   "greeterAutoLogin": true
