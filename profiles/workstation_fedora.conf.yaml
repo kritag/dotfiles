@@ -15,9 +15,9 @@
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:bonvaffel:cli-tools.repo ] || dnf copr enable bonvaffel/cli-tools -y", "Enable copr bonvaffel/cli-tools"]
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:sdegler:hyprland.repo ] || dnf copr enable sdegler/hyprland -y", "Enable copr sdegler/hyprland"]
         - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:sneexy:zen-browser.repo ] || dnf copr enable sneexy/zen-browser -y", "Enable copr sneexy/zen-browser"]
-        - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:dms.repo ] || dnf copr enable avengemedia/dms -y", "Enable copr avengemedia/dms"]
-        - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo ] || dnf copr enable avengemedia/danklinux -y", "Enable copr avengemedia/danklinux"]
-        - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux.repo ] || dnf copr enable duxlabs/dux -y", "Enable copr duxlabs/dux"]
+        - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dms.repo ] || dnf copr enable duxlabs/dms -y", "Enable copr duxlabs/dms"]
+        - ["[ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux-repo.repo ] || dnf copr enable duxlabs/dux-repo -y", "Enable copr duxlabs/dux-repo"]
+        - ["for r in avengemedia/dms avengemedia/danklinux; do [ -e /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:${r%/*}:${r#*/}.repo ] && dnf copr remove -y $r; done; true", "Remove legacy avengemedia coprs"]
         - ["rpm -q rpmfusion-free-release || dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm", "Enable RPM Fusion free"]
         - ["grep -rqs yumrepos/edge /etc/yum.repos.d || dnf config-manager addrepo --from-repofile=https://packages.microsoft.com/yumrepos/edge/config.repo --overwrite --save-filename=/etc/yum.repos.d/microsoft-edge.repo", "Enable the Microsoft Edge repo"]
         - ["rpm -q rpmfusion-nonfree-release || dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm", "Enable RPM Fusion nonfree"]
@@ -37,15 +37,15 @@
         - bibata-cursor-theme
         - btop
         - btrfsmaintenance
-        - danksearch
         - dbus-daemon
         - ddcutil
         - dms
-        - dms-greeter
         - dnf-automatic
         - dnf-plugins-core
         - duf
         - dux-files-git
+        - dux-greeter
+        - dux-search
         - eza
         - fastfetch
         - fd-find

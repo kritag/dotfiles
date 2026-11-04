@@ -46,6 +46,8 @@ virtual_thumbwheel = false
 pointer_scaling = false
 force_sensing = false
 disable_keys = false
+onboard_profiles = false
+button_spy = false
 
 [devices."serial:2601za94eew8".links."direct:046d:b041".capabilities]
 buttons = true
@@ -66,6 +68,8 @@ virtual_thumbwheel = false
 pointer_scaling = false
 force_sensing = false
 disable_keys = false
+onboard_profiles = false
+button_spy = false
 
 [devices."serial:2601za94eew8".action_ring]
 enabled = false
@@ -146,6 +150,8 @@ virtual_thumbwheel = false
 pointer_scaling = false
 force_sensing = false
 disable_keys = false
+onboard_profiles = true
+button_spy = true
 
 [devices."unit:99e7686c".links."receiver:0a88b07e:slot:1".capabilities]
 buttons = false
@@ -166,6 +172,8 @@ virtual_thumbwheel = false
 pointer_scaling = false
 force_sensing = false
 disable_keys = false
+onboard_profiles = true
+button_spy = true
 
 [devices."unit:af7dce4c".identity]
 display_name = "G915 TKL"
@@ -212,6 +220,8 @@ virtual_thumbwheel = false
 pointer_scaling = false
 force_sensing = false
 disable_keys = false
+onboard_profiles = true
+button_spy = false
 
 [devices."unit:af7dce4c".links."receiver:0a88b07e:slot:2".capabilities]
 buttons = true
@@ -232,6 +242,8 @@ virtual_thumbwheel = false
 pointer_scaling = false
 force_sensing = false
 disable_keys = false
+onboard_profiles = true
+button_spy = false
 
 [devices."unit:af7dce4c".lighting]
 enabled = true
