@@ -139,8 +139,8 @@
     }
   ],
   "centeringMode": "geometric",
-  "greeterEnableFprint": true,
-  "greeterEnableU2f": true,
+  "greeterEnableFprint": false,
+  "greeterEnableU2f": false,
   "spotlightSectionViewModes": {
     "plugin_dankHyprlandWindows": "tile"
   },
@@ -178,9 +178,9 @@
   "terminalsAlwaysDark": true,
   "matugenTemplateNeovim": true,
   "modalDarkenBackground": false,
-  "enableFprint": true,
+  "enableFprint": false,
   "maxFprintTries": 3,
-  "enableU2f": true,
+  "enableU2f": false,
   "lockScreenSecurityKeyShortcut": "Ctrl+space",
   "lockScreenSecurityKeyShortcutEnabled": true,
   "osdAlwaysShowValue": true,
