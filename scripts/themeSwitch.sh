@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # themeSwitch.sh <theme>           workstation/desktop: every tool in $HOME, GTK and kitty included
 # themeSwitch.sh --server <theme>  server, run as the repo owner: writes only .server-generated/, shared by all users
-DOCFONT="'Geist 11'"
-MONOFONT="'Geist Mono 11'"
-FONT="'Geist 11'"
+DOCFONT="'Noto Sans 11'"
+MONOFONT="'JetBrains Mono 11'"
+FONT="'Noto Sans 11'"
+SERIFFONT="Noto Serif" # fontconfig serif alias only
 # Family name only (no size), for templates that set font-family; read by tinty hooks.
 export TINTY_FONT="$(tr -d "'" <<<"$FONT" | sed -E 's/ [0-9.]+$//')"
 export TINTY_MONOFONT="$(tr -d "'" <<<"$MONOFONT" | sed -E 's/ [0-9.]+$//')"
@@ -98,9 +99,9 @@ sub ~/.config/dms/settings.json "\"fontFamily\": \"$TINTY_FONT\"" "s#^\(  \"\(fo
 sub ~/.config/dms/settings.json "\"monoFontFamily\": \"$TINTY_MONOFONT\"" "s|^\(  \"monoFontFamily\": \"\)[^\"]*|\1$TINTY_MONOFONT|; s|^\(   \+\"fontFamily\": \"\)[^\"]*|\1$TINTY_MONOFONT|"
 sub ~/.config/mpv/mpv.conf "osd-font=\"$TINTY_FONT\"" "s|^osd-font=.*|osd-font=\"$TINTY_FONT\"|"
 
-# Fonts: kitty (nvim follows it) and fontconfig's sans-serif/monospace aliases.
+# Fonts: kitty (nvim follows it) and fontconfig's sans-serif/serif/monospace aliases.
 sed -i --follow-symlinks "s|^font_family .*|font_family      family=\"$TINTY_MONOFONT\"|" ~/.config/kitty/kitty.conf
-sed -zi --follow-symlinks "s|\(<family>sans-serif</family>\s*<prefer>\s*<family>\)[^<]*|\1$TINTY_FONT|; s|\(<family>monospace</family>\s*<prefer>\s*<family>\)[^<]*|\1$TINTY_MONOFONT|" ~/.config/fontconfig/fonts.conf
+sed -zi --follow-symlinks "s|\(<family>sans-serif</family>\s*<prefer>\s*<family>\)[^<]*|\1$TINTY_FONT|; s|\(<family>serif</family>\s*<prefer>\s*<family>\)[^<]*|\1$SERIFFONT|; s|\(<family>monospace</family>\s*<prefer>\s*<family>\)[^<]*|\1$TINTY_MONOFONT|" ~/.config/fontconfig/fonts.conf
 
 read -ra kitty_args <<<"$kitty"
 kitten themes "${kitty_args[@]}"

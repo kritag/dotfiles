@@ -163,8 +163,8 @@
       "cursorHideTimeout": 0
     }
   },
-  "fontFamily": "Geist",
-  "monoFontFamily": "Geist Mono",
+  "fontFamily": "Noto Sans",
+  "monoFontFamily": "JetBrains Mono",
   "fontWeight": 500,
   "useSystemSoundTheme": true,
   "acMonitorTimeout": 1800,
@@ -233,6 +233,7 @@
       "showOnLastDisplay": false,
       "position": 1,
       "mode": "compact",
+      "middleClickAction": "close",
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 40,
@@ -318,7 +319,7 @@
         "autoPosition": true,
         "colorMode": "default",
         "customColor": "#ffffff",
-        "fontFamily": "Geist Mono"
+        "fontFamily": "JetBrains Mono"
       }
     },
     {
@@ -409,7 +410,7 @@
         "autoPosition": true,
         "colorMode": "default",
         "customColor": "#ffffff",
-        "fontFamily": "Geist Mono"
+        "fontFamily": "JetBrains Mono"
       }
     },
     {
@@ -478,7 +479,7 @@
       }
     }
   ],
-  "lockScreenFontFamily": "Geist",
+  "lockScreenFontFamily": "Noto Sans",
   "connectedFrameBarStyleBackups": {},
   "frameEnabled": false,
   "workspaceNameIcons": {
@@ -489,7 +490,7 @@
   },
   "m3ElevationEnabled": true,
   "bluetoothMprisEnabled": true,
-  "displayFontFamily": "Geist",
+  "displayFontFamily": "Noto Sans",
   "barConfigs": [
     {
       "id": "default",
@@ -748,14 +749,28 @@
       "attachToScreenEdge": false,
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
-      "widgetPadding": 8,
+      "widgetPadding": 5,
       "barInsetPadding": 10,
       "followInterfaceStyle": false,
       "widgetFollowInterfaceStyle": true,
       "island": false,
-      "dot": true
+      "dot": true,
+      "islandCompactThickness": 32,
+      "islandSatelliteGap": 6
     }
   ],
   "notepadShowLineNumbers": true,
-  "notepadAutoSave": true
+  "notepadAutoSave": true,
+  "density": "dense",
+  "interfaceStyle": "expressive",
+  "weatherProviders": [
+    {
+      "id": "metno",
+      "enabled": true
+    },
+    {
+      "id": "openmeteo",
+      "enabled": false
+    }
+  ]
 }
