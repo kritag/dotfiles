@@ -21,14 +21,14 @@ stop_processing = false
 is_hidden = false
 size_greater_than = 0
 extensions = [
-    "docx",
-    "doc",
-    "xlsx",
-    "pptx",
-    "odt",
-    "ods",
-    "txt",
-    "csv",
+  "docx",
+  "doc",
+  "xlsx",
+  "pptx",
+  "odt",
+  "ods",
+  "txt",
+  "csv",
 ]
 
 [rule.action]
@@ -131,21 +131,21 @@ stop_processing = false
 is_hidden = false
 size_greater_than = 0
 extensions = [
-    "md",
-    "markdown",
-    "json",
-    "pdf",
-    "sh",
-    "bash",
-    "zsh",
-    "gp",
-    "gp3",
-    "gp4",
-    "gp5",
-    "gpx",
-    "ptb",
-    "tg",
-    "tbt",
+  "md",
+  "markdown",
+  "json",
+  "pdf",
+  "sh",
+  "bash",
+  "zsh",
+  "gp",
+  "gp3",
+  "gp4",
+  "gp5",
+  "gpx",
+  "ptb",
+  "tg",
+  "tbt",
 ]
 
 [rule.action]
@@ -161,12 +161,12 @@ stop_processing = false
 is_hidden = false
 size_greater_than = 0
 extensions = [
-    "3mf",
-    "stl",
-    "step",
-    "stp",
-    "obj",
-    "gcode",
+  "3mf",
+  "stl",
+  "step",
+  "stp",
+  "obj",
+  "gcode",
 ]
 
 [rule.action]
@@ -184,12 +184,12 @@ stop_processing = false
 is_hidden = false
 size_greater_than = 0
 extensions = [
-    "png",
-    "jpg",
-    "jpeg",
-    "webp",
-    "gif",
-    "svg",
+  "png",
+  "jpg",
+  "jpeg",
+  "webp",
+  "gif",
+  "svg",
 ]
 
 [rule.action]
@@ -207,13 +207,14 @@ stop_processing = false
 is_hidden = false
 size_greater_than = 0
 extensions = [
-    "zip",
-    "tar",
-    "gz",
-    "xz",
-    "bz2",
-    "7z",
-    "zst",
+  "zip",
+  "tar",
+  "gz",
+  "xz",
+  "bz2",
+  "7z",
+  "zst",
+  "rar",
 ]
 
 [rule.action]
@@ -247,11 +248,11 @@ stop_processing = false
 is_hidden = false
 size_greater_than = 0
 extensions = [
-    "rpm",
-    "deb",
-    "appimage",
-    "flatpakref",
-    "run",
+  "rpm",
+  "deb",
+  "appimage",
+  "flatpakref",
+  "run",
 ]
 
 [rule.action]
@@ -269,10 +270,10 @@ stop_processing = false
 is_hidden = false
 size_greater_than = 0
 extensions = [
-    "mp4",
-    "mkv",
-    "webm",
-    "mov",
+  "mp4",
+  "mkv",
+  "webm",
+  "mov",
 ]
 
 [rule.action]
@@ -307,8 +308,8 @@ stop_processing = false
 is_hidden = false
 size_greater_than = 0
 extensions = [
-    "yaml",
-    "yml",
+  "yaml",
+  "yml",
 ]
 
 [rule.action]
