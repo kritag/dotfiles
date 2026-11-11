@@ -1,5 +1,5 @@
-schema_version = 10
-selected_device = "unit:99e7686c"
+schema_version = 11
+selected_device = "unit:af7dce4c"
 
 [devices."serial:2601za94eew8".identity]
 display_name = "ERGO M575S Trackball"
@@ -20,6 +20,14 @@ model_ids = [
     0,
 ]
 extended_model_id = 2
+
+[app_settings.momentum_scrolling]
+enabled = false
+pixels_per_notch = 28
+glide_shape = "smooth"
+max_glide_speed = 8000
+glide_ms = 400
+repeat_boost = 135
 
 [devices."serial:2601za94eew8".identity.model_info.transports]
 usb = false
@@ -48,6 +56,7 @@ force_sensing = false
 disable_keys = false
 onboard_profiles = false
 button_spy = false
+sidetone = false
 
 [devices."serial:2601za94eew8".links."direct:046d:b041".capabilities]
 buttons = true
@@ -70,10 +79,12 @@ force_sensing = false
 disable_keys = false
 onboard_profiles = false
 button_spy = false
+sidetone = false
 
 [devices."serial:2601za94eew8".action_ring]
 enabled = false
 haptics = true
+size = "medium"
 
 [devices."serial:2601za94eew8".action_ring.default.slots.Top]
 action = "Cut"
@@ -152,6 +163,7 @@ force_sensing = false
 disable_keys = false
 onboard_profiles = true
 button_spy = true
+sidetone = false
 
 [devices."unit:99e7686c".links."receiver:0a88b07e:slot:1".capabilities]
 buttons = false
@@ -174,6 +186,7 @@ force_sensing = false
 disable_keys = false
 onboard_profiles = true
 button_spy = true
+sidetone = false
 
 [devices."unit:99e7686c".links."direct:046d:c094".capabilities]
 buttons = false
@@ -196,6 +209,7 @@ force_sensing = false
 disable_keys = false
 onboard_profiles = true
 button_spy = true
+sidetone = false
 
 [devices."unit:af7dce4c".identity]
 display_name = "G915 TKL"
@@ -244,6 +258,7 @@ force_sensing = false
 disable_keys = false
 onboard_profiles = true
 button_spy = false
+sidetone = false
 
 [devices."unit:af7dce4c".links."receiver:0a88b07e:slot:2".capabilities]
 buttons = true
@@ -266,6 +281,7 @@ force_sensing = false
 disable_keys = false
 onboard_profiles = true
 button_spy = false
+sidetone = false
 
 [devices."unit:af7dce4c".links."direct:046d:c343".capabilities]
 buttons = true
@@ -288,6 +304,7 @@ force_sensing = false
 disable_keys = false
 onboard_profiles = true
 button_spy = false
+sidetone = false
 
 [devices."unit:af7dce4c".lighting]
 enabled = true
