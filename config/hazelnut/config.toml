@@ -1,6 +1,6 @@
 [general]
 log_level = "info"
-debounce_seconds = 1
+debounce_seconds = 5
 polling_interval_secs = 5
 log_retention = 1000
 start_daemon_on_launch = false
