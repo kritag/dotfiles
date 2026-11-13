@@ -23,7 +23,6 @@
     ~/.config/hyprland-preview-share-picker/config.yaml: config/hyprland-preview-share-picker/config.yaml
     ~/.config/hazelnut/config.toml: config/hazelnut/config.toml
     ~/.config/shuck/shuck.toml: config/shuck/shuck.toml
-    ~/.config/spotify-launcher.conf: config/spotify-launcher/spotify-launcher.conf
     ~/.config/systemd/user/hazelnut.service: system/services/hazelnut.service
     ~/.config/systemd/user/app-@autostart.service.d/after-dms.conf: system/services/autostart-after-dms.conf
     ~/.config/systemd/user/znap-update.service: system/services/znap-update.service

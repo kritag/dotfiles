@@ -1,7 +1,7 @@
 hl.window_rule({
 	name = "opacity-90",
 	match = {
-		class = "^(spotify|org.gnome.Calculator|org.gnome.Nautilus|org.kde.dolphin|steam|discord|net.lutris.Lutris|org.gnome.Calendar|xdg-desktop-portal-gtk|org.qbittorrent.qBittorrent)$",
+		class = "^(spotifast|org.gnome.Calculator|org.gnome.Nautilus|org.kde.dolphin|steam|discord|net.lutris.Lutris|org.gnome.Calendar|xdg-desktop-portal-gtk|org.qbittorrent.qBittorrent)$",
 	},
 	opacity = "0.90 0.90",
 })
@@ -59,8 +59,8 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "spotify",
-	match = { class = "^(spotify|Spotify)$" },
+	name = "spotifast",
+	match = { class = "^(spotifast|Spotifast)$" },
 	workspace = "4 silent",
 	float = true,
 	center = true,

@@ -129,7 +129,6 @@
     - smartmontools
     - snapper
     - socat
-    - spotify-launcher
     - sqlite
     - steam
     - strace
@@ -190,6 +189,7 @@
     - pulsecontrol-git
     - runapp
     - spicetify-cli
+    - spotifast-bin
     - tinty-git
     - tone3000-bin
     - wineasio
