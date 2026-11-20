@@ -100,7 +100,6 @@
         - libva-intel-driver
         - libva-utils
         - loupe
-        - lpf-spotify-client
         - make
         - man-db
         - mangohud
@@ -140,6 +139,7 @@
         - snapper
         - socat
         - sops
+        - spotifast
         - sqlite
         - sshuttle
         - stern
